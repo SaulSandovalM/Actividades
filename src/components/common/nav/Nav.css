@@ -1,0 +1,51 @@
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 15%;
+	background: #092432;
+	z-index: 1;
+}
+.navbar-navigation {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.navbar-left {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+}
+.subnav {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	padding-left: 30px;
+}
+.logo {
+  width: 90%;
+  height: 67px;
+}
+.nav-col {
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px;
+}
+.nav-t {
+	color: #FFF;
+}
+.deco {
+	text-decoration: none;
+}
+.deco-c {
+	text-decoration: none;
+	cursor: pointer;
+}
+.arrow {
+	height: 10px;
+	padding-left: 10px;
+	padding-top: 26px;
+}
