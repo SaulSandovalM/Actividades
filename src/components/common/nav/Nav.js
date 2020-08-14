@@ -19,13 +19,8 @@ class Nav extends Component {
           <img className='logo' src={logoH} alt='' />
         </div>
         <div className='navbar-left'>
-          <Link to='/Fondos' className='deco'>
-            <h3 className='nav-t'>Fondos</h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/Caratula' className='deco'>
-            <h3 className='nav-t'>Caratula</h3>
+          <Link to='/Actividades' className='deco'>
+            <h3 className='nav-t'>Actividades</h3>
           </Link>
         </div>
         <div className='navbar-left'>

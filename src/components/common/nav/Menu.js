@@ -2,26 +2,26 @@ import React from 'react'
 import { bool } from 'prop-types'
 import Nav from './Nav'
 import { StyledMenu } from './Menu.styled'
-import firebase from '../../../Firebase'
+// import firebase from '../../../Firebase'
 
 const Menu = ({ open, ...props }) => {
-  var user = firebase.auth().currentUser
-  var email
+  // var user = firebase.auth().currentUser
+  // var email
+  //
+  // if (user != null) {
+  //   email = user.email
+  // }
 
-  if (user != null) {
-    email = user.email
-  }
-
-  let admin
-  if (email === 'administrador@procu.com') {
-    admin = 'ADMIN'
-  }
+  // let admin
+  // if (email === 'administrador@procu.com') {
+  //   admin = 'ADMIN'
+  // }
 
   const isHidden = open !== false
 
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-      {admin === 'ADMIN' && <Nav />}
+      <Nav />
     </StyledMenu>
   )
 }
