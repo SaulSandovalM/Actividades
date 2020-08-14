@@ -8,7 +8,7 @@ export default class Common extends Component {
         <div className='common-container'>
           <div className='common-content'>
             <p className='common-p'>
-              Bienvenido a Financieros
+              Bienvenido al Sistema de Actividades
             </p>
           </div>
           <div className='common-content'>
