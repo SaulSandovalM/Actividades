@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import firebase from '../../Firebase'
 import './Generacionm.css'
-import { Link } from 'react-router-dom'
 
 export default class Generacionm extends Component {
   constructor() {
     super()
     this.ref = firebase.firestore().collection('messages')
     this.state = {
-      poara: '',
+      para: '',
       asunto: '',
-      descripcion: ''
+      descripcion: '',
+      imgp: 0
     }
   }
 
@@ -20,18 +20,39 @@ export default class Generacionm extends Component {
     this.setState(state)
   }
 
+  handleImage (event) {
+    const file = event.target.files[0]
+    const storageRef = firebase.storage().ref(`imgs/${file.name}`)
+    const task = storageRef.put(file)
+    task.on('state_changed', (snapshot) => {
+      const percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      this.setState({
+        imgp: percentage
+      })
+    }, error => {
+      console.error(error.message)
+    }, () => storageRef.getDownloadURL().then(url => {
+      const record = url
+      this.setState({
+        imagen: record
+      })
+    }))
+  }
+
   onSubmit = (e) => {
     e.preventDefault()
-    const { para, asunto, descripcion } = this.state
+    const { para, asunto, descripcion, imagen } = this.state
     this.ref.add({
       para,
       asunto,
-      descripcion
+      descripcion,
+      imagen
     }).then((docRef) => {
       this.setState({
         para: '',
         asunto: '',
-        descripcion: ''
+        descripcion: '',
+        imagen: ''
       })
       this.props.history.push('/')
     })
@@ -66,9 +87,9 @@ export default class Generacionm extends Component {
               </div>
               <div>
                 <label for='img'>Imagen:</label>
-                <input type='file' />
+                <input type='file' onChange={this.handleImage.bind(this)} />
               </div>
-              <button type='submit' class='btn btn-success'>Enviar</button>
+              <button type='submit'>Enviar</button>
             </form>
           </div>
         </div>
