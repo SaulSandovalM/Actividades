@@ -76,7 +76,7 @@ function App (props) {
       />
       <ProtectedRoute
         exact
-        path='/Sactividad'
+        path='/Sactividad/:id'
         component={Sactividad}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
