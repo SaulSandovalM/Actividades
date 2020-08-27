@@ -3,13 +3,12 @@ import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import ProtectedRoute from './ProtectedRoute'
 import Login from './components/common/login/Login'
-// import Common from './components/common/home/Common' // agregas la ruta de tu archivo
-// import Archivo from './components/archivo/Archivo' <-- mas o menos asi te debe de quedar
 import Generacionm from './components/generaciondem/Generacionm'
 import Mgenerales from './components/mgenerales/Mgenerales'
 import Editarm from './components/editarm/Editarm'
 import Showm from './components/editarm/Showm'
-import Verm from './components/editarm/Verm'
+import Aregistradas from './components/aregistradas/Aregistradas'
+import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
 import Sactividad from './components/sactividad/Sactividad'
 
@@ -18,13 +17,6 @@ function App (props) {
   return (
     <Switch>
       <Route path='/Login' component={Login} />
-      {/* <ProtectedRoute
-        exact
-        path='/'
-        component={Common}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      /> */}
       <ProtectedRoute
         exact
         path='/'
@@ -48,15 +40,29 @@ function App (props) {
       />
       <ProtectedRoute
         exact
-        path='/Vermensajes/:id'
-        component={Verm}
+        path='/Editarmensaje/:id'
+        component={Editarm}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
       <ProtectedRoute
         exact
-        path='/Editarmensaje/:id'
-        component={Editarm}
+        path='/ActividadesRegistradas'
+        component={Aregistradas}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/AgregarActividad'
+        component={Aactividad}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/EditarActividad/:id'
+        component={Eactividad}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
@@ -84,4 +90,4 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, {})(App)

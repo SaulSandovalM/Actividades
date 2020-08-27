@@ -1,0 +1,26 @@
+.mgenerales-container {
+  margin: 80px;
+}
+.content-message {
+  border: 1px solid grey;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 10px 5px 5px grey;
+  border-radius: 5px;
+}
+.content-asunto {
+  width: 100%;
+}
+.content-desimg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.w-desc {
+  width: 70%
+}
+.w-imagen {
+  width: 25%;
+}

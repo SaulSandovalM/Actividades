@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Aactividad.css'
+import './Aregistradas.css'
 import firebase from '../../Firebase'
 
 export default class Aactividad extends Component {

@@ -9,7 +9,8 @@ export default class Editarm extends Component {
       key: '',
       asunto: '',
       descripcion: '',
-      para: ''
+      para: '',
+      imagen: ''
     }
   }
 
@@ -22,7 +23,8 @@ export default class Editarm extends Component {
           key: doc.id,
           asunto: messages.asunto,
           descripcion: messages.descripcion,
-          para: messages.para
+          para: messages.para,
+          imagen: messages.imagen
         })
       } else {
         console.log('No hay documento!')
@@ -38,54 +40,56 @@ export default class Editarm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, para } = this.state
+    const { asunto, descripcion, para, imagen } = this.state
     const updateRef = firebase.firestore().collection('messages').doc(this.state.key)
     updateRef.set({
       asunto,
       descripcion,
-      para
+      para,
+      imagen
     }).then((docRef) => {
       this.setState({
         key: '',
         asunto: '',
         descripcion: '',
-        para: ''
+        para: '',
+        imagen: ''
       })
-      this.props.history.push('/')
+      this.props.history.push('/Listademensajes')
     })
     .catch((error) => {
       console.error('Error al agregar: ', error)
     })
   }
 
- render() {
-   return (
-     <div style={{ margin: '80px' }}>
-       <div>
-         <div>
-           <h3>
-             Edicion de Mensajes
-           </h3>
-         </div>
-         <div>
-           <form onSubmit={this.onSubmit}>
-             <div>
-               <label for='asunto'>Asunto:</label>
-               <input type='text' name='asunto' value={this.state.asunto} onChange={this.onChange} placeholder='asunto' />
-             </div>
-             <div>
-               <label for='descripcion'>Descripcion:</label>
-               <input type='text' name='descripcion' value={this.state.descripcion} onChange={this.onChange} placeholder='descripcion' />
-             </div>
-             <div>
-               <label for='para'>Para:</label>
-               <input type='text' name='para' value={this.state.para} onChange={this.onChange} placeholder='para' />
-             </div>
-             <button type='submit'>Enviar</button>
-           </form>
-         </div>
-       </div>
-     </div>
-   )
- }
+  render() {
+    return (
+      <div style={{ margin: '80px' }}>
+        <div>
+          <div>
+            <h1>Edicion de Mensajes</h1>
+          </div>
+          <div>
+            <form className='container-edit' onSubmit={this.onSubmit}>
+              <div className='content-edit'>
+                <label className='title-e' for='asunto'>Asunto:</label>
+                <input className='input-e' name='asunto' value={this.state.asunto} onChange={this.onChange} placeholder='asunto' />
+              </div>
+              <div className='content-edit'>
+                <label className='title-e' for='para'>Para:</label>
+                <input className='input-e' name='para' value={this.state.para} onChange={this.onChange} placeholder='para' />
+              </div>
+              <div className='content-edit'>
+                <label className='title-e' for='descripcion'>Descripcion:</label>
+                <textarea cols='80' rows='3' className='input-e' name='descripcion' value={this.state.descripcion} onChange={this.onChange} placeholder='descripcion' />
+              </div>
+              <div className='button-e'>
+                <button className='style-button-e' type='submit'>Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }

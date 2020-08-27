@@ -15,13 +15,14 @@ export default class Mgenerales extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const messages = [];
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, img } = doc.data();
+      const { asunto, descripcion, imagen, para } = doc.data();
       messages.push({
         key: doc.id,
         doc,
         asunto,
+        para,
         descripcion,
-        img,
+        imagen,
       });
     });
     this.setState({
@@ -36,24 +37,20 @@ export default class Mgenerales extends Component {
   render() {
     return (
       <div>
-        <div style={{ margin: '80px' }}>
+        <div className='mgenerales-container'>
           <div>
-            <h1>
-              MENSAJES GENERALES
-            </h1>
+            <h1>Mensajes Generales</h1>
           </div>
           <div>
-            <table>
-              <tbody>
-                {this.state.messages.map(messages =>
-                  <tr>
-                    <td>{messages.asunto}</td>
-                    <td>{messages.descripcion}</td>
-                    <td>{messages.img}</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
+            {this.state.messages.map(messages =>
+              <div className='content-message'>
+                <div className='content-asunto'><b>{messages.asunto}</b></div>
+                <div className='content-desimg'>
+                  <div className='w-desc'>{messages.descripcion}</div>
+                  <img className='w-imagen' src={messages.imagen} alt='' />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
