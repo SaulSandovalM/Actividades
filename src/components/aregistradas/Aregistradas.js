@@ -51,7 +51,8 @@ export default class Aregistradas extends Component {
               <div className='title-r'><p className='p-margin-r'><b>Mensaje</b></p></div>
               <div className='title-r'><p className='p-margin-r'><b>Para</b></p></div>
               <div className='title-r'><p className='p-margin-r'><b>Fecha</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Editar</b></p></div>
+              <div className='title-ra'><p className='p-margin-r'><b>Editar</b></p></div>
+              <div className='title-ra'><p className='p-margin-r'><b>Evidencia</b></p></div>
               <div className='bor' />
             </div>
             <div>
@@ -62,7 +63,8 @@ export default class Aregistradas extends Component {
                   <div className='title-r'><p className='p-margin-r'>{actividades.lugar}</p></div>
                   <div className='title-r'><p className='p-margin-r'>{actividades.direccion}</p></div>
                   <div className='title-r'><p className='p-margin-r'>{actividades.fechai}</p></div>
-                  <div className='title-r'><p className='p-margin-r'><Link to={`/EditarActividad/${actividades.key}`}>Editar</Link></p></div>
+                  <div className='title-ra'><p className='p-margin-r'><Link to={`/EditarActividad/${actividades.key}`}>Editar</Link></p></div>
+                  <div className='title-ra'><p className='p-margin-r'><Link to={`/Sactividad`}>Evidencia</Link></p></div>
                   <div className='bor' />
                 </div>
               )}
