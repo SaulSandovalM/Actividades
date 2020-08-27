@@ -46,20 +46,24 @@ export default class Aregistradas extends Component {
           </div>
           <div>
             <div className='content-title-r'>
+              <div className='bor' style={{borderRight: '1px solid #d0d0d0'}} />
               <div className='title-r'><p className='p-margin-r'><b>Asunto</b></p></div>
               <div className='title-r'><p className='p-margin-r'><b>Mensaje</b></p></div>
               <div className='title-r'><p className='p-margin-r'><b>Para</b></p></div>
               <div className='title-r'><p className='p-margin-r'><b>Fecha</b></p></div>
               <div className='title-r'><p className='p-margin-r'><b>Editar</b></p></div>
+              <div className='bor' />
             </div>
             <div>
               {this.state.actividades.map(actividades =>
                 <div className='content-title'>
+                  <div className='bor' style={{borderRight: '1px solid #d0d0d0'}} />
                   <div className='title-r'><p className='p-margin-r'>{actividades.tipoA}</p></div>
                   <div className='title-r'><p className='p-margin-r'>{actividades.lugar}</p></div>
                   <div className='title-r'><p className='p-margin-r'>{actividades.direccion}</p></div>
                   <div className='title-r'><p className='p-margin-r'>{actividades.fechai}</p></div>
                   <div className='title-r'><p className='p-margin-r'><Link to={`/EditarActividad/${actividades.key}`}>Editar</Link></p></div>
+                  <div className='bor' />
                 </div>
               )}
             </div>

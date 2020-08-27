@@ -2,16 +2,15 @@
   margin: 80px;
 }
 .content-title-r {
-  border-left: 1px solid;
-  border-top: 1px solid;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
 .title-r {
-  border-right: 1px solid;
-  width: 20%;
+  border-right: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+  width: 19.2%;
 }
 .p-margin-r {
   margin: 6px;

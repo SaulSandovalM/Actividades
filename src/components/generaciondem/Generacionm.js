@@ -72,7 +72,7 @@ export default class Generacionm extends Component {
             </h1>
           </div>
           <div>
-            <form className='form-container' onSubmit={this.onSubmit}>
+            <form className='form-container-g' onSubmit={this.onSubmit}>
               <div className='form-content'>
                 <label for='para' className='text-g'>Para:</label>
                 <input className='input-g' name='para' value={para} onChange={this.onChange} placeholder='Direcciones' />

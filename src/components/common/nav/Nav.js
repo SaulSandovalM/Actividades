@@ -16,7 +16,9 @@ class Nav extends Component {
     return (
       <div className='nav-col'>
         <div className='navbar-navigation'>
-          <img className='logo' src={logoH} alt='' />
+          <Link to='/'>
+            <img className='logo' src={logoH} alt='' />
+          </Link>
         </div>
         <div className='navbar-left'>
           <Link to='/Listademensajes' className='deco'>
@@ -31,6 +33,11 @@ class Nav extends Component {
         <div className='navbar-left'>
           <Link to='/ActividadesRegistradas' className='deco'>
             <h3 className='nav-t'>Actividades Registradas</h3>
+          </Link>
+        </div>
+        <div className='navbar-left'>
+          <Link to='/Reportes' className='deco'>
+            <h3 className='nav-t'>Reportes</h3>
           </Link>
         </div>
         <div className='navbar-left'>

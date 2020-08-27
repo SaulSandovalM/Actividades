@@ -2,17 +2,19 @@
   margin: 80px;
 }
 .content-title {
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
 .title-a {
-  border-right: 1px solid;
-  width: 25%;
+  border-left: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+  width: 24%;
+}
+.bor {
+  border-bottom: 1px solid #d0d0d0;
+  width: 2%;
 }
 .container-edit {
   width: 100%;
