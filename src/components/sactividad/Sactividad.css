@@ -1,3 +1,57 @@
+.input-f-s {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.mar-for {
+  margin-top: 20px;
+}
+.p-fs {
+  margin: 4px;
+}
+.container-ss {
+  margin: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .margin-vale {
   margin-top: 20px;
   border: 2px solid;
