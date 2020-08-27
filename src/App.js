@@ -10,6 +10,8 @@ import Mgenerales from './components/mgenerales/Mgenerales'
 import Editarm from './components/editarm/Editarm'
 import Showm from './components/editarm/Showm'
 import Verm from './components/editarm/Verm'
+import Aactividad from './components/aactividad/Aactividad'
+import Sactividad from './components/sactividad/Sactividad'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -55,6 +57,20 @@ function App (props) {
         exact
         path='/Editarmensaje/:id'
         component={Editarm}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Actividades/'
+        component={Aactividad}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Sactividad/'
+        component={Sactividad}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
