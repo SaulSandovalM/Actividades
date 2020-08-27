@@ -1,0 +1,40 @@
+.container-aactividad {
+  margin: 80px;
+}
+.content-aa {
+  width: 100%;
+}
+.input-c-c {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.style-check {
+  margin-top: 18px;
+  margin-right: 10px;
+}
+.style-check-i {
+  margin-top: 8px;
+  margin-right: 10px;
+}
+.content-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.p-t-aa {
+  margin: 5px;
+}
+.select {
+  width: 50%;
+  height: 30px;
+}
+.button-aa {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.style-button-aa {
+  padding: 5px 10px 5px 10px;
+}

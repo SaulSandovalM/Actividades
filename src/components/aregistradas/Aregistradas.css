@@ -1,0 +1,27 @@
+.container-aregistradas {
+  margin: 80px;
+}
+.content-title-r {
+  border-left: 1px solid;
+  border-top: 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.title-r {
+  border-right: 1px solid;
+  width: 20%;
+}
+.p-margin-r {
+  margin: 6px;
+}
+.button-r {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.style-button-r {
+  padding: 5px 10px 5px 10px;
+}
