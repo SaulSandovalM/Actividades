@@ -1,0 +1,47 @@
+.container-show {
+  margin: 80px;
+}
+.content-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.title-a {
+  border-left: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+  width: 24%;
+}
+.bor {
+  border-bottom: 1px solid #d0d0d0;
+  width: 2%;
+}
+.container-edit {
+  width: 100%;
+}
+.content-edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+  width: 100%;
+}
+.title-e {
+  text-align: right;
+  width: 10%;
+}
+.input-e {
+  width: 85%;
+}
+.button-e {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  width: 100%;
+}
+.style-button-e {
+  padding: 5px 10px 5px 10px;
+}
+.p-padding {
+  margin: 6px;
+}

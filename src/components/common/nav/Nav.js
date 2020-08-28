@@ -16,11 +16,28 @@ class Nav extends Component {
     return (
       <div className='nav-col'>
         <div className='navbar-navigation'>
-          <img className='logo' src={logoH} alt='' />
+          <Link to='/'>
+            <img className='logo' src={logoH} alt='' />
+          </Link>
         </div>
         <div className='navbar-left'>
-          <Link to='/Actividades' className='deco'>
-            <h3 className='nav-t'>Actividades</h3>
+          <Link to='/Listademensajes' className='deco'>
+            <h3 className='nav-t'>Lista de Mensajes</h3>
+          </Link>
+        </div>
+        <div className='navbar-left'>
+          <Link to='/Generaciondemensajes' className='deco'>
+            <h3 className='nav-t'>Generacion de Mensajes</h3>
+          </Link>
+        </div>
+        <div className='navbar-left'>
+          <Link to='/ActividadesRegistradas' className='deco'>
+            <h3 className='nav-t'>Actividades Registradas</h3>
+          </Link>
+        </div>
+        <div className='navbar-left'>
+          <Link to='/Reportes' className='deco'>
+            <h3 className='nav-t'>Reportes</h3>
           </Link>
         </div>
         <div className='navbar-left'>

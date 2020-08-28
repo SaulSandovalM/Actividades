@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import './Aactividad.css'
+import './Aregistradas.css'
 import firebase from '../../Firebase'
 
 export default class Aactividad extends Component {
-  constructor () {
-    super()
-    this.ref = firebase.firestore().collection('actividades')
+  constructor (props) {
+    super(props)
     this.state = {
       convocados: '',
       convoca: '',
@@ -22,6 +21,33 @@ export default class Aactividad extends Component {
     }
   }
 
+  componentDidMount () {
+    const ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id)
+    ref.get().then((doc) => {
+      if (doc.exists) {
+        const actividades = doc.data()
+        this.setState({
+          key: doc.id,
+          asunto: actividades.asunto,
+          convocados: actividades.convocados,
+          convoca: actividades.convoca,
+          fechai: actividades.fechai,
+          fechaf: actividades.fechaf,
+          tipoA: actividades.tipoA,
+          estado: actividades.estado,
+          internaE: actividades.internaE,
+          municipio: actividades.municipio,
+          quien: actividades.quien,
+          lugar: actividades.lugar,
+          imparte: actividades.imparte,
+          desc: actividades.desc
+        })
+      } else {
+        console.log('No hay documento!')
+      }
+    })
+  }
+
   onChange = (e) => {
     const state = this.state
     state[e.target.name] = e.target.value
@@ -32,7 +58,8 @@ export default class Aactividad extends Component {
     e.preventDefault()
     const { convocados, convoca, fechai, fechaf, tipoA, estado, internaE,
             municipio, quien, lugar, imparte, desc } = this.state
-    this.ref.add({
+    const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
+    updateRef.set({
       convocados,
       convoca,
       fechai,
@@ -74,7 +101,7 @@ export default class Aactividad extends Component {
       <div>
         <div className='container-aactividad'>
           <div>
-            <h1>Agregar Actividad</h1>
+            <h1>Editar de Actividad</h1>
           </div>
           <form className='content-aa' onSubmit={this.onSubmit}>
             <div className='input-c-c'>

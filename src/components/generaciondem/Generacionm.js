@@ -3,7 +3,7 @@ import firebase from '../../Firebase'
 import './Generacionm.css'
 
 export default class Generacionm extends Component {
-  constructor() {
+  constructor () {
     super()
     this.ref = firebase.firestore().collection('messages')
     this.state = {
@@ -72,18 +72,22 @@ export default class Generacionm extends Component {
             </h1>
           </div>
           <div>
-            <form onSubmit={this.onSubmit}>
-              <div>
-                <label for='para'>Para:</label>
-                <input type='text' name='para' value={para} onChange={this.onChange} placeholder='Yo mero :v' />
+            <form className='form-container-g' onSubmit={this.onSubmit}>
+              <div className='form-content'>
+                <label for='para' className='text-g'>Para:</label>
+                <input className='input-g' name='para' value={para} onChange={this.onChange} placeholder='Direcciones' />
               </div>
-              <div>
-                <label for='asunto'>Asunto:</label>
-                <input type='text' name='asunto' value={asunto} onChange={this.onChange} placeholder='lo que sea ' />
+              <div className='form-content'>
+                <label for='asunto' className='text-g'>Asunto:</label>
+                <input className='input-g' name='asunto' value={asunto} onChange={this.onChange} placeholder='Asunto' />
               </div>
-              <div>
-                <label for='descripcion'>Descripcion:</label>
-                <textArea name='descripcion' onChange={this.onChange} placeholder='lo que sea :v' cols='80' rows='3'>{descripcion}</textArea>
+              <div className='form-content'>
+                <label for='descripcion' className='text-g'>Descripcion:</label>
+                <textArea className='input-g' name='descripcion' onChange={this.onChange} placeholder='Mensaje' cols='80' rows='3'>{descripcion}</textArea>
+              </div>
+              <div className='form-content'>
+                <label for='img' className='text-g'>Imagen:</label>
+                <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
               </div>
               <div>
                 <label for='img'>Imagen:</label>
