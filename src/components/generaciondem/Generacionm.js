@@ -89,9 +89,11 @@ export default class Generacionm extends Component {
                 <label for='img' className='text-g'>Imagen:</label>
                 <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
               </div>
-              <div className='buton-g'>
-                <button className='style-button' type='submit'>Enviar</button>
+              <div>
+                <label for='img'>Imagen:</label>
+                <input type='file' onChange={this.handleImage.bind(this)} />
               </div>
+              <button type='submit'>Enviar</button>
             </form>
           </div>
         </div>

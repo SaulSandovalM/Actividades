@@ -5,17 +5,18 @@ import firebase from '../../Firebase'
 export default class Mgenerales extends Component {
   constructor(props) {
     super(props);
-    this.ref = firebase.firestore().collection('messages');
+    this.ref = firebase.firestore().collection('messages')
     this.unsubscribe = null;
     this.state = {
-      messages: []
+      messages: [],
+      imgs: null
     };
   }
 
   onCollectionUpdate = (querySnapshot) => {
     const messages = [];
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, imagen, para } = doc.data();
+      const { asunto, descripcion, para, imagen } = doc.data();
       messages.push({
         key: doc.id,
         doc,
