@@ -42,7 +42,7 @@ export default class Reportes extends Component {
         <div className='search-r'>
           <div className='content-s'>
             <div className='content-s'>
-              <p className='p-s'>Buscar: </p>
+              <p className='p-s'>Periodo: </p>
               <input type='date' />
             </div>
             <div className='content-s'>

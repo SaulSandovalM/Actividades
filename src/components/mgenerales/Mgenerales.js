@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Mgenerales.css'
 import firebase from '../../Firebase'
+import { Link } from 'react-router-dom'
 
 export default class Mgenerales extends Component {
   constructor(props) {
@@ -16,12 +17,11 @@ export default class Mgenerales extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const messages = [];
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, para, imagen } = doc.data();
+      const { asunto, descripcion, imagen } = doc.data();
       messages.push({
         key: doc.id,
         doc,
         asunto,
-        para,
         descripcion,
         imagen,
       });
@@ -40,7 +40,10 @@ export default class Mgenerales extends Component {
       <div>
         <div className='mgenerales-container'>
           <div>
-            <h1>Mensajes Generales</h1>
+            <h1>Boletin PGJEH</h1>
+          </div>
+          <div className='button-r'>
+            <button className='style-button-r'><Link to='/Generaciondemensajes'>Agregar</Link></button>
           </div>
           <div>
             {this.state.messages.map(messages =>

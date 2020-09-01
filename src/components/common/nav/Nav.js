@@ -26,11 +26,6 @@ class Nav extends Component {
           </Link>
         </div>
         <div className='navbar-left'>
-          <Link to='/Generaciondemensajes' className='deco'>
-            <h3 className='nav-t'>Generacion de Mensajes</h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
           <Link to='/ActividadesRegistradas' className='deco'>
             <h3 className='nav-t'>Actividades Registradas</h3>
           </Link>

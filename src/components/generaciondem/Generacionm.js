@@ -7,7 +7,6 @@ export default class Generacionm extends Component {
     super()
     this.ref = firebase.firestore().collection('messages')
     this.state = {
-      para: '',
       asunto: '',
       descripcion: '',
       imgp: 0
@@ -41,15 +40,13 @@ export default class Generacionm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { para, asunto, descripcion, imagen } = this.state
+    const { asunto, descripcion, imagen } = this.state
     this.ref.add({
-      para,
       asunto,
       descripcion,
       imagen
     }).then((docRef) => {
       this.setState({
-        para: '',
         asunto: '',
         descripcion: '',
         imagen: ''
@@ -62,21 +59,18 @@ export default class Generacionm extends Component {
   }
 
   render() {
-    const { asunto, descripcion, para } = this.state
+    const { asunto, descripcion } = this.state
     return (
       <div style={{ margin: '80px' }}>
         <div>
           <div>
             <h1>
-              Generacion de mensajes generales
+              Generacion de Boletin
             </h1>
           </div>
           <div>
             <form className='form-container-g' onSubmit={this.onSubmit}>
-              <div className='form-content'>
-                <label for='para' className='text-g'>Para:</label>
-                <input className='input-g' name='para' value={para} onChange={this.onChange} placeholder='Direcciones' />
-              </div>
+
               <div className='form-content'>
                 <label for='asunto' className='text-g'>Asunto:</label>
                 <input className='input-g' name='asunto' value={asunto} onChange={this.onChange} placeholder='Asunto' />
@@ -88,10 +82,6 @@ export default class Generacionm extends Component {
               <div className='form-content'>
                 <label for='img' className='text-g'>Imagen:</label>
                 <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
-              </div>
-              <div>
-                <label for='img'>Imagen:</label>
-                <input type='file' onChange={this.handleImage.bind(this)} />
               </div>
               <button type='submit'>Enviar</button>
             </form>

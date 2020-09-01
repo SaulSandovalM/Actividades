@@ -14,7 +14,7 @@ export default class Sactividad extends Component {
       evidencias: []
     }
   }
-
+ 
   onCollectionUpdate = (querySnapshot) => {
     const evidencias = [];
     querySnapshot.forEach((doc) => {
