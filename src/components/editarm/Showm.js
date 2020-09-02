@@ -16,13 +16,13 @@ export default class Showm extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const messages = []
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, para, imagen } = doc.data()
+      const { asunto, descripcion, estatus, imagen } = doc.data()
       messages.push({
         key: doc.id,
         doc, // DocumentSnapshot
         asunto,
         descripcion,
-        para,
+        estatus,
         imagen
       })
     })
@@ -47,7 +47,7 @@ export default class Showm extends Component {
               <div className='bor' />
               <div className='title-a'><p className='p-padding'><b>Asunto</b></p></div>
               <div className='title-a'><p className='p-padding'><b>Mensaje</b></p></div>
-              <div className='title-a'><p className='p-padding'><b>Para</b></p></div>
+              <div className='title-a'><p className='p-padding'><b>Estatus</b></p></div>
               <div className='title-a'><p className='p-padding'><b>Editar</b></p></div>
               <div className='bor' style={{borderLeft: '1px solid #d0d0d0'}} />
             </div>
@@ -57,7 +57,7 @@ export default class Showm extends Component {
                   <div className='bor' />
                   <div className='title-a'><p className='p-padding'>{messages.asunto}</p></div>
                   <div className='title-a'><p className='p-padding'>{messages.descripcion}</p></div>
-                  <div className='title-a'><p className='p-padding'>{messages.para}</p></div>
+                  <div className='title-a'><p className='p-padding'>{messages.estatus}</p></div>
                   <div className='title-a'><p className='p-padding'><Link to={`/Editarmensaje/${messages.key}`}>Editar</Link></p></div>
                   <div className='bor' style={{borderLeft: '1px solid #d0d0d0'}} />
                 </div>

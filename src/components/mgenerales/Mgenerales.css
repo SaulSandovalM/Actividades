@@ -24,3 +24,31 @@
 .w-imagen {
   width: 25%;
 }
+
+.content-tarjeta{
+  height: 80vh;
+  padding: 5px;
+  width: 80vh;
+  box-shadow: 10px 5px 5px grey;
+  margin-bottom: 50px;
+}
+.image{
+  height: 60%;
+  width: 100%;
+}
+.image2{
+  height: 100%;
+  width: 100%;
+}
+.content-message2{
+  height: 40%;
+  width: 100%;
+  padding-top:30px;
+}
+.desc{
+  margin-top:10px;
+}
+.content-all{
+  display: flex;
+  justify-content: center;
+}

@@ -9,7 +9,6 @@ export default class Editarm extends Component {
       key: '',
       asunto: '',
       descripcion: '',
-      para: '',
       imagen: ''
     }
   }
@@ -23,7 +22,6 @@ export default class Editarm extends Component {
           key: doc.id,
           asunto: messages.asunto,
           descripcion: messages.descripcion,
-          para: messages.para,
           imagen: messages.imagen
         })
       } else {
@@ -40,19 +38,17 @@ export default class Editarm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, para, imagen } = this.state
+    const { asunto, descripcion, imagen } = this.state
     const updateRef = firebase.firestore().collection('messages').doc(this.state.key)
     updateRef.set({
       asunto,
       descripcion,
-      para,
       imagen
     }).then((docRef) => {
       this.setState({
         key: '',
         asunto: '',
         descripcion: '',
-        para: '',
         imagen: ''
       })
       this.props.history.push('/Listademensajes')
@@ -74,10 +70,6 @@ export default class Editarm extends Component {
               <div className='content-edit'>
                 <label className='title-e' for='asunto'>Asunto:</label>
                 <input className='input-e' name='asunto' value={this.state.asunto} onChange={this.onChange} placeholder='asunto' />
-              </div>
-              <div className='content-edit'>
-                <label className='title-e' for='para'>Para:</label>
-                <input className='input-e' name='para' value={this.state.para} onChange={this.onChange} placeholder='para' />
               </div>
               <div className='content-edit'>
                 <label className='title-e' for='descripcion'>Descripcion:</label>

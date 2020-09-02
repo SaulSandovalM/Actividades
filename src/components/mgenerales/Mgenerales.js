@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default class Mgenerales extends Component {
   constructor(props) {
     super(props);
-    this.ref = firebase.firestore().collection('messages')
+    this.ref = firebase.firestore().collection('messages').orderBy("asunto")
     this.unsubscribe = null;
     this.state = {
       messages: [],
@@ -47,17 +47,33 @@ export default class Mgenerales extends Component {
           </div>
           <div>
             {this.state.messages.map(messages =>
-              <div className='content-message'>
-                <div className='content-asunto'><b>{messages.asunto}</b></div>
-                <div className='content-desimg'>
-                  <div className='w-desc'>{messages.descripcion}</div>
-                  <img className='w-imagen' src={messages.imagen} alt='' />
+              <div className='content-all'>
+                <div className='content-tarjeta'>
+                 <div className='image'>
+                  <img className='image2' src={messages.imagen} alt=''/>
+                 </div>
+                 <div className='content-message2'>
+                  <div className='asunto'>
+                    <b>{messages.asunto}</b>
+                  </div>
+                  <div className='desc'>
+                    {messages.descripcion}
+                  </div>
+                 </div>
                 </div>
               </div>
-            )}
+            ).reverse()}
           </div>
         </div>
       </div>
     )
   }
 }
+
+{/*<div className='content-message'>
+  <div className='content-asunto'><b>{messages.asunto}</b></div>
+  <div className='content-desimg'>
+    <div className='w-desc'>{messages.descripcion}</div>
+    <img className='w-imagen' src={messages.imagen} alt='' />
+  </div>
+</div>*/}

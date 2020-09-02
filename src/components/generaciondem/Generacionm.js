@@ -9,7 +9,8 @@ export default class Generacionm extends Component {
     this.state = {
       asunto: '',
       descripcion: '',
-      imgp: 0
+      imgp: 0,
+      estatus: 'Activo'
     }
   }
 
@@ -40,16 +41,18 @@ export default class Generacionm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen } = this.state
+    const { asunto, descripcion, imagen, estatus } = this.state
     this.ref.add({
       asunto,
       descripcion,
-      imagen
+      imagen,
+      estatus
     }).then((docRef) => {
       this.setState({
         asunto: '',
         descripcion: '',
-        imagen: ''
+        imagen: '',
+        estatus: ''
       })
       this.props.history.push('/')
     })
@@ -59,7 +62,7 @@ export default class Generacionm extends Component {
   }
 
   render() {
-    const { asunto, descripcion } = this.state
+    const { asunto, descripcion, estatus } = this.state
     return (
       <div style={{ margin: '80px' }}>
         <div>
