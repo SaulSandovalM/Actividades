@@ -85,6 +85,7 @@ export default class Generacionm extends Component {
               <div className='form-content'>
                 <label for='img' className='text-g'>Imagen:</label>
                 <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
+                <progress value={this.state.imgp}/>
               </div>
               <button type='submit'>Enviar</button>
             </form>

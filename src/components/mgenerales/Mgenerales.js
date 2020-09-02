@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default class Mgenerales extends Component {
   constructor(props) {
     super(props);
-    this.ref = firebase.firestore().collection('messages').orderBy("asunto")
+    this.ref = firebase.firestore().collection('messages')
     this.unsubscribe = null;
     this.state = {
       messages: [],
