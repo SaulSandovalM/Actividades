@@ -10,6 +10,7 @@ import Showm from './components/editarm/Showm'
 import Aregistradas from './components/aregistradas/Aregistradas'
 import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
+import Abusqueda from './components/abusqueda/Abusqueda'
 import Sactividad from './components/sactividad/Sactividad'
 import Reportes from './components/reportes/Reportes'
 
@@ -71,6 +72,13 @@ function App (props) {
         exact
         path='/Actividades'
         component={Aactividad}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/BusquedaActividad'
+        component={Abusqueda}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />

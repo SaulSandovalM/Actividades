@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Editarm.css'
 import firebase from '../../Firebase'
+import Switch from "react-switch";
 
 export default class Editarm extends Component {
   constructor (props) {
@@ -9,8 +10,10 @@ export default class Editarm extends Component {
       key: '',
       asunto: '',
       descripcion: '',
-      imagen: ''
+      imagen: '',
+      checked: true
     }
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount () {
@@ -30,26 +33,51 @@ export default class Editarm extends Component {
     })
   }
 
+  handleImage (event) {
+    const file = event.target.files[0]
+    const storageRef = firebase.storage().ref(`imgs/${file.name}`)
+    const task = storageRef.put(file)
+    task.on('state_changed', (snapshot) => {
+      const percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      this.setState({
+        imgp: percentage
+      })
+    }, error => {
+      console.error(error.message)
+    }, () => storageRef.getDownloadURL().then(url => {
+      const record = url
+      this.setState({
+        imagen: record
+      })
+    }))
+  }
+
   onChange = (e) => {
     const state = this.state
     state[e.target.name] = e.target.value
     this.setState({ messages:state })
   }
 
+  handleChange(checked) {
+    this.setState({ checked });
+  }
+
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen } = this.state
+    const { asunto, descripcion, imagen, checked } = this.state
     const updateRef = firebase.firestore().collection('messages').doc(this.state.key)
     updateRef.set({
       asunto,
       descripcion,
-      imagen
+      imagen,
+      checked
     }).then((docRef) => {
       this.setState({
         key: '',
         asunto: '',
         descripcion: '',
-        imagen: ''
+        imagen: '',
+        checked: true
       })
       this.props.history.push('/Listademensajes')
     })
@@ -67,6 +95,11 @@ export default class Editarm extends Component {
           </div>
           <div>
             <form className='container-edit' onSubmit={this.onSubmit}>
+            <div>
+                <label>
+                  <Switch onChange={this.handleChange} checked={this.state.checked} />
+                </label>
+              </div>
               <div className='content-edit'>
                 <label className='title-e' for='asunto'>Asunto:</label>
                 <input className='input-e' name='asunto' value={this.state.asunto} onChange={this.onChange} placeholder='asunto' />
@@ -74,6 +107,11 @@ export default class Editarm extends Component {
               <div className='content-edit'>
                 <label className='title-e' for='descripcion'>Descripcion:</label>
                 <textarea cols='80' rows='3' className='input-e' name='descripcion' value={this.state.descripcion} onChange={this.onChange} placeholder='descripcion' />
+              </div>
+              <div className='form-content'>
+                <label for='img' className='text-g'>Imagen:</label>
+                <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
+                <progress value={this.state.imgp} />
               </div>
               <div className='button-e'>
                 <button className='style-button-e' type='submit'>Enviar</button>
