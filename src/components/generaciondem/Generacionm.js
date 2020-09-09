@@ -71,7 +71,7 @@ export default class Generacionm extends Component {
   }
 
   render() {
-    const { asunto, descripcion, estatus, checked } = this.state
+    const { asunto, descripcion } = this.state
     return (
       <div style={{ margin: '80px' }}>
         <div>
