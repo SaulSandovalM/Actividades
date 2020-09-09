@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import firebase from '../../Firebase'
 import './Generacionm.css'
+import Switch from "react-switch";
 
 export default class Generacionm extends Component {
   constructor () {
@@ -10,8 +11,10 @@ export default class Generacionm extends Component {
       asunto: '',
       descripcion: '',
       imgp: 0,
-      estatus: 'Activo'
+      estatus: 'Activo',
+      checked: true
     }
+    this.handleChange = this.handleChange.bind(this);
   }
 
   onChange = (e) => {
@@ -39,20 +42,26 @@ export default class Generacionm extends Component {
     }))
   }
 
+  handleChange(checked) {
+    this.setState({ checked });
+  }
+
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen, estatus } = this.state
+    const { asunto, descripcion, imagen, estatus, checked} = this.state
     this.ref.add({
       asunto,
       descripcion,
       imagen,
-      estatus
+      estatus,
+      checked
     }).then((docRef) => {
       this.setState({
         asunto: '',
         descripcion: '',
         imagen: '',
-        estatus: ''
+        estatus: '',
+        checked: true
       })
       this.props.history.push('/')
     })
@@ -62,7 +71,7 @@ export default class Generacionm extends Component {
   }
 
   render() {
-    const { asunto, descripcion, estatus } = this.state
+    const { asunto, descripcion, estatus, checked } = this.state
     return (
       <div style={{ margin: '80px' }}>
         <div>
@@ -73,7 +82,11 @@ export default class Generacionm extends Component {
           </div>
           <div>
             <form className='form-container-g' onSubmit={this.onSubmit}>
-
+            <div>
+                <label>
+                  <Switch onChange={this.handleChange} checked={this.state.checked} />
+                </label>
+              </div>
               <div className='form-content'>
                 <label for='asunto' className='text-g'>Asunto:</label>
                 <input className='input-g' name='asunto' value={asunto} onChange={this.onChange} placeholder='Asunto' />
@@ -85,6 +98,7 @@ export default class Generacionm extends Component {
               <div className='form-content'>
                 <label for='img' className='text-g'>Imagen:</label>
                 <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
+                <progress value={this.state.imgp} />
               </div>
               <button type='submit'>Enviar</button>
             </form>
