@@ -35,7 +35,7 @@ export default class Reportes extends Component {
 
   render () {
     return (
-      <div className='container-show'>
+      <div className='container-show' style={{ paddingLeft: '13%' }}>
         <div>
           <h1>Reportes</h1>
         </div>
@@ -49,9 +49,6 @@ export default class Reportes extends Component {
               <p className='p-s'>a: </p>
               <input type='date' />
             </div>
-          </div>
-          <div className='content-s'>
-            <button>Agregar</button>
           </div>
         </div>
         <div className='content-t-r' style={{ marginTop: '30px' }}>

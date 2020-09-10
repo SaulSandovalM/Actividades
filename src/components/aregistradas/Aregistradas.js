@@ -36,7 +36,7 @@ export default class Aregistradas extends Component {
 
   render () {
     return (
-      <div>
+      <div style={{ paddingLeft: '13%' }}>
         <div className='container-aregistradas'>
           <div>
             <h1>Actividades Registradas</h1>

@@ -37,7 +37,7 @@ export default class Verm extends Component {
 
   render () {
     return (
-      <div style={{ margin: '80px' }}>
+      <div style={{ margin: '80px', paddingLeft: '13%' }}>
         <div>
           <div>
             <dl>

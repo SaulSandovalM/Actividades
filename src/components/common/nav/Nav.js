@@ -31,8 +31,18 @@ class Nav extends Component {
           </Link>
         </div>
         <div className='navbar-left'>
+          <Link to='/BusquedaActividad' className='deco'>
+            <h3 className='nav-t'>Busqueda</h3>
+          </Link>
+        </div>
+        <div className='navbar-left'>
           <Link to='/Reportes' className='deco'>
             <h3 className='nav-t'>Reportes</h3>
+          </Link>
+        </div>
+        <div className='navbar-left'>
+          <Link to='/Autorizacion' className='deco'>
+            <h3 className='nav-t'>Autorizacion</h3>
           </Link>
         </div>
         <div className='navbar-left'>

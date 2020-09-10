@@ -10,8 +10,10 @@ import Showm from './components/editarm/Showm'
 import Aregistradas from './components/aregistradas/Aregistradas'
 import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
+import Abusqueda from './components/abusqueda/Abusqueda'
 import Sactividad from './components/sactividad/Sactividad'
 import Reportes from './components/reportes/Reportes'
+import Autorizacion from './components/autorizacion/Autorizacion'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -76,6 +78,13 @@ function App (props) {
       />
       <ProtectedRoute
         exact
+        path='/BusquedaActividad'
+        component={Abusqueda}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
         path='/Sactividad/:id'
         component={Sactividad}
         isAuthenticated={isAuthenticated}
@@ -85,6 +94,13 @@ function App (props) {
         exact
         path='/Reportes'
         component={Reportes}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Autorizacion'
+        component={Autorizacion}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
