@@ -16,14 +16,15 @@ export default class Showm extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const messages = []
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, estatus, imagen } = doc.data()
+      const { asunto, descripcion, estatus, imagen, checked } = doc.data()
       messages.push({
         key: doc.id,
-        doc, // DocumentSnapshot
+        doc,
         asunto,
         descripcion,
         estatus,
-        imagen
+        imagen,
+        checked
       })
     })
     this.setState({
@@ -37,7 +38,7 @@ export default class Showm extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ paddingLeft: '13%' }}>
         <div className='container-show'>
           <div>
             <h1>Mensajes Realizados</h1>

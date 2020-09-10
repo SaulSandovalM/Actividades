@@ -1,5 +1,6 @@
-.container-aregistradas {
-  margin: 80px;
+.container-aregistradas-b {
+  margin-left: 80px;
+  margin-right: 20px;
 }
 .content-title-r {
   display: flex;
@@ -10,7 +11,7 @@
 .title-r {
   border-right: 1px solid #d0d0d0;
   border-bottom: 1px solid #d0d0d0;
-  width: 19.2%;
+  width: 10.3%;
 }
 .title-ra {
   border-right: 1px solid #d0d0d0;

@@ -48,7 +48,7 @@ export default class Generacionm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen, estatus, checked} = this.state
+    const { asunto, descripcion, imagen, estatus, checked } = this.state
     this.ref.add({
       asunto,
       descripcion,
@@ -73,7 +73,7 @@ export default class Generacionm extends Component {
   render() {
     const { asunto, descripcion } = this.state
     return (
-      <div style={{ margin: '80px' }}>
+      <div style={{ margin: '80px', paddingLeft: '13%' }}>
         <div>
           <div>
             <h1>

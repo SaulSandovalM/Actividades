@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Editarm.css'
 import firebase from '../../Firebase'
-import Switch from "react-switch";
+import Switch from 'react-switch';
 
 export default class Editarm extends Component {
   constructor (props) {
@@ -11,7 +11,8 @@ export default class Editarm extends Component {
       asunto: '',
       descripcion: '',
       imagen: '',
-      checked: true
+      checked: true,
+      imgc: 0
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -25,7 +26,8 @@ export default class Editarm extends Component {
           key: doc.id,
           asunto: messages.asunto,
           descripcion: messages.descripcion,
-          imagen: messages.imagen
+          imagen: messages.imagen,
+          checked: messages.checked
         })
       } else {
         console.log('No hay documento!')
@@ -40,7 +42,7 @@ export default class Editarm extends Component {
     task.on('state_changed', (snapshot) => {
       const percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
       this.setState({
-        imgp: percentage
+        imgc: percentage
       })
     }, error => {
       console.error(error.message)
@@ -77,7 +79,8 @@ export default class Editarm extends Component {
         asunto: '',
         descripcion: '',
         imagen: '',
-        checked: true
+        checked: true,
+        estatus: ''
       })
       this.props.history.push('/Listademensajes')
     })
@@ -88,7 +91,7 @@ export default class Editarm extends Component {
 
   render() {
     return (
-      <div style={{ margin: '80px' }}>
+      <div style={{ margin: '80px', paddingLeft: '13%' }}>
         <div>
           <div>
             <h1>Edicion de Mensajes</h1>
@@ -111,7 +114,7 @@ export default class Editarm extends Component {
               <div className='form-content'>
                 <label for='img' className='text-g'>Imagen:</label>
                 <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
-                <progress value={this.state.imgp} />
+                <progress value={this.state.imgc} />
               </div>
               <div className='button-e'>
                 <button className='style-button-e' type='submit'>Enviar</button>

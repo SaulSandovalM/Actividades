@@ -41,6 +41,11 @@ class Nav extends Component {
           </Link>
         </div>
         <div className='navbar-left'>
+          <Link to='/Autorizacion' className='deco'>
+            <h3 className='nav-t'>Autorizacion</h3>
+          </Link>
+        </div>
+        <div className='navbar-left'>
           <div className='deco'>
             <button
               onClick={this.handleLogout}

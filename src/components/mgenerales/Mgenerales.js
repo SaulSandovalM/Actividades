@@ -37,7 +37,7 @@ export default class Mgenerales extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ paddingLeft: '13%' }}>
         <div className='mgenerales-container'>
           <div>
             <h1>Boletin PGJEH</h1>

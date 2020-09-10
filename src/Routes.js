@@ -13,10 +13,10 @@ import { theme } from './theme'
 const store = configureStore()
 
 function Routes () {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const node = useRef()
   const menuId = 'main-menu'
-  useOnClickOutside(node, () => setOpen(false))
+  useOnClickOutside(node, () => setOpen(true))
 
   return (
     <ThemeProvider theme={theme}>

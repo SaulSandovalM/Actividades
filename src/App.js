@@ -13,6 +13,7 @@ import Aactividad from './components/aactividad/Aactividad'
 import Abusqueda from './components/abusqueda/Abusqueda'
 import Sactividad from './components/sactividad/Sactividad'
 import Reportes from './components/reportes/Reportes'
+import Autorizacion from './components/autorizacion/Autorizacion'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -93,6 +94,13 @@ function App (props) {
         exact
         path='/Reportes'
         component={Reportes}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Autorizacion'
+        component={Autorizacion}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />

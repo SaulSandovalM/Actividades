@@ -71,7 +71,7 @@ export default class Aactividad extends Component {
     const { convocados, convoca, fechai, fechaf, tipoA, estado, internaE,
             municipio, quien, lugar, imparte, desc } = this.state
     return (
-      <div>
+      <div style={{ paddingLeft: '13%' }}>
         <div className='container-aactividad'>
           <div>
             <h1>Agregar Actividad</h1>
