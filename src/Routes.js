@@ -23,10 +23,8 @@ function Routes () {
       <Provider store={store}>
         <Router>
           <div ref={node}>
-            <FocusLock disabled={!open}>
-              <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+
               <Menu open={open} setOpen={setOpen} id={menuId} />
-            </FocusLock>
           </div>
           <App />
         </Router>
