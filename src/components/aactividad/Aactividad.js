@@ -69,11 +69,8 @@ export default class Aactividad extends Component {
   }
 
   componentDidMount() {
-    this.unsubscribe = this.refestado.onSnapshot(this.onCollectionUpdateEstado)
-  }
-
-  componentDidMount() {
     this.unsubscribe = this.reftipo.onSnapshot(this.onCollectionUpdateTipo)
+    this.unsubscribe = this.refestado.onSnapshot(this.onCollectionUpdateEstado)
   }
 
   onSubmit = (e) => {
