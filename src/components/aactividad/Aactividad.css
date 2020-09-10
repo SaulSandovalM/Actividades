@@ -28,6 +28,7 @@
 .select {
   width: 50%;
   height: 30px;
+  border: 1px solid #d0d0d0;
 }
 .button-aa {
   display: flex;

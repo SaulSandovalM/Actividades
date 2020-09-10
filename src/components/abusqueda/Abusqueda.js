@@ -46,9 +46,15 @@ export default class Aregistradas extends Component {
           <div>
             <div className='input-c-c'>
               <p className='p-t-aa'>Tipo de Actividad:</p>
+              <select className='borderSelect' style={{ width: '150px'}}>
+                <option>Conferencia</option>
+              </select>
             </div>
-            <div>
-              <p className='p-t-aa'>Periodo:</p>
+            <div className='input-c-c'>
+                <p className='p-t-aa'>Periodo:</p>
+                <select className='borderSelect' style={{ width: '150px'}}>
+                  <option>Conferencia</option>
+                </select>
             </div>
           </div>
           <div className='button-r'>

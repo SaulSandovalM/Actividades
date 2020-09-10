@@ -6,19 +6,29 @@ export default class Aactividad extends Component {
   constructor () {
     super()
     this.ref = firebase.firestore().collection('actividades')
+    this.refestado = firebase.firestore().collection('estados')
+    this.reftipo = firebase.firestore().collection('tipoActividad')
+    this.unsubscribe = null
     this.state = {
+      estados: [],
+      tipoActividad: [],
+      tema: '',
+      ainterna: '',
+      aexterna: '',
+      convocamos: '',
       convocados: '',
       convoca: '',
       fechai: '',
       fechaf: '',
       tipoA: '',
       estado: '',
-      internaE: '',
       municipio: '',
       quien: '',
       lugar: '',
       imparte: '',
-      desc: ''
+      desc: '',
+      prioridad: '',
+      servidores: ''
     }
   }
 
@@ -28,37 +38,85 @@ export default class Aactividad extends Component {
     this.setState(state)
   }
 
+  onCollectionUpdateEstado = (querySnapshot) => {
+    const estados = []
+    querySnapshot.forEach((doc) => {
+      const { estado } = doc.data()
+      estados.push({
+        key: doc.id,
+        doc,
+        estado
+      })
+    })
+    this.setState({
+      estados
+   })
+  }
+
+  onCollectionUpdateTipo = (querySnapshot) => {
+    const tipoActividad = []
+    querySnapshot.forEach((doc) => {
+      const { actividad } = doc.data()
+      tipoActividad.push({
+        key: doc.id,
+        doc,
+        actividad
+      })
+    })
+    this.setState({
+      tipoActividad
+   })
+  }
+
+  componentDidMount() {
+    this.unsubscribe = this.refestado.onSnapshot(this.onCollectionUpdateEstado)
+  }
+
+  componentDidMount() {
+    this.unsubscribe = this.reftipo.onSnapshot(this.onCollectionUpdateTipo)
+  }
+
   onSubmit = (e) => {
     e.preventDefault()
-    const { convocados, convoca, fechai, fechaf, tipoA, estado, internaE,
-            municipio, quien, lugar, imparte, desc } = this.state
+    const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
+          municipio, quien, lugar, imparte, desc, prioridad, servidores } = this.state
     this.ref.add({
+      tema,
+      ainterna,
+      aexterna,
+      convocamos,
       convocados,
       convoca,
       fechai,
       fechaf,
       tipoA,
       estado,
-      internaE,
       municipio,
       quien,
       lugar,
       imparte,
-      desc
+      desc,
+      prioridad,
+      servidores
     }).then((docRef) => {
       this.setState({
+        tema: '',
+        ainterna: '',
+        aexterna: '',
+        convocamos: '',
         convocados: '',
         convoca: '',
         fechai: '',
         fechaf: '',
         tipoA: '',
         estado: '',
-        internaE: '',
         municipio: '',
         quien: '',
         lugar: '',
         imparte: '',
-        desc: ''
+        desc: '',
+        prioridad: '',
+        servidores: ''
       })
       this.props.history.push('/ActividadesRegistradas')
     })
@@ -68,8 +126,8 @@ export default class Aactividad extends Component {
   }
 
   render () {
-    const { convocados, convoca, fechai, fechaf, tipoA, estado, internaE,
-            municipio, quien, lugar, imparte, desc } = this.state
+    const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
+            municipio, quien, lugar, imparte, desc, prioridad, servidores } = this.state
     return (
       <div style={{ paddingLeft: '13%' }}>
         <div className='container-aactividad'>
@@ -78,15 +136,55 @@ export default class Aactividad extends Component {
           </div>
           <form className='content-aa' onSubmit={this.onSubmit}>
             <div className='input-c-c'>
-              <p>Convodados:</p>
+              <p className='p-t-aa'>Tema:</p>
+              <input name='quien' value={tema} onChange={this.onChange} />
+            </div>
+            <div className='input-c-c'>
+              <p>Actividad Interna</p>
+              <input className='style-check' type='checkbox' name='ainterna'
+                value={ainterna} onChange={this.onChange}/>
+              <p>Actividad Externa</p>
+              <input className='style-check' type='checkbox' name='aexterna'
+                value={aexterna} onChange={this.onChange}/>
+            </div>
+            <div className='input-c-c'>
+              <p className='p-t-aa'>Tipo de Actividad:</p>
+              <select className='select'>
+              <option></option>
+                {this.state.tipoActividad.map(tipoActividad =>
+                  <option>{tipoActividad.actividad}</option>
+                )}
+              </select>
+            </div>
+            <div className='input-c-c'>
+              <p>Convocamos:</p>
+              <input className='style-check' type='checkbox' name='convocamos'
+              value={convocamos} onChange={this.onChange}/>
+              <p>Convocados:</p>
               <input className='style-check' type='checkbox' name='convocados'
                 value={convocados} onChange={this.onChange}/>
-              <input className='style-check' type='checkbox' />
             </div>
             <div className='content-row'>
               <div className='input-c-c'>
-                <p className='p-t-aa'>Quien Convoca:</p>
-                <select className='select' name='convoca' value={convoca}
+                <p className='p-t-aa'>Convocados por dependencia/persona externa:</p>
+                <input name='quien' value={convoca} onChange={this.onChange} />
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Imparte:</p>
+                <input name='quien' value={imparte} onChange={this.onChange} />
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Estado:</p>
+                <select className='select'>
+                <option></option>
+                  {this.state.estados.map(estados =>
+                    <option>{estados.estado}</option>
+                  )}
+                </select>
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Municipio:</p>
+                <select className='select' name='estado' value={municipio}
                   onChange={this.onChange}>
                   <option></option>
                   <option value="grapefruit">Grapefruit</option>
@@ -95,74 +193,38 @@ export default class Aactividad extends Component {
                   <option value="mango">Mango</option>
                 </select>
               </div>
+            </div>
+            <div className='content-row'>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Lugar Específico:</p>
+                <input name='lugar' value={lugar} onChange={this.onChange} />
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Nivel de prioridad:</p>
+                <select className='select' name='prioridad' value={prioridad}
+                  onChange={this.onChange}>
+                  <option></option>
+                  <option value="grapefruit">Grapefruit</option>
+                  <option value="lime">Lime</option>
+                  <option selected value="coconut">Coconut</option>
+                  <option value="mango">Mango</option>
+                </select>
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Servidores públicos participantes:</p>
+                <input name='servidores' value={servidores} onChange={this.onChange} />
+              </div>
+            </div>
+            <div className='content-row'>
               <div className='input-c-c'>
                 <p className='p-t-aa'>Fecha de Inicio:</p>
                 <input type='date' name='fechai' value={fechai}
                   onChange={this.onChange} />
               </div>
-            </div>
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Tipo de Actividad:</p>
-                <select className='select' name='tipoA' value={tipoA}
-                  onChange={this.onChange}>
-                  <option></option>
-                  <option value="grapefruit">Grapefruit</option>
-                  <option value="lime">Lime</option>
-                  <option selected value="coconut">Coconut</option>
-                  <option value="mango">Mango</option>
-                </select>
-              </div>
               <div className='input-c-c'>
                 <p className='p-t-aa'>Fecha de Fin:</p>
                 <input type='date' name='fechaf' value={fechaf}
                   onChange={this.onChange} />
-              </div>
-            </div>
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Estado:</p>
-                <select className='select' name='estado' value={estado}
-                  onChange={this.onChange}>
-                  <option></option>
-                  <option value="grapefruit">Grapefruit</option>
-                  <option value="lime">Lime</option>
-                  <option selected value="coconut">Coconut</option>
-                  <option value="mango">Mango</option>
-                </select>
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Interna Externa:</p>
-                <input className='style-check-i' type='checkbox'
-                  name='internaE' value={internaE}onChange={this.onChange} />
-                <input className='style-check-i' type='checkbox' />
-              </div>
-            </div>
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Municipio:</p>
-                <select className='select' name='municipio' value={municipio}
-                  onChange={this.onChange}>
-                  <option></option>
-                  <option value="grapefruit">Grapefruit</option>
-                  <option value="lime">Lime</option>
-                  <option selected value="coconut">Coconut</option>
-                  <option value="mango">Mango</option>
-                </select>
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Con quien:</p>
-                <input name='quien' value={quien} onChange={this.onChange} />
-              </div>
-            </div>
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Lugar:</p>
-                <input name='lugar' value={lugar} onChange={this.onChange} />
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Imparte:</p>
-                <input name='imparte' value={imparte} onChange={this.onChange} />
               </div>
             </div>
             <div>

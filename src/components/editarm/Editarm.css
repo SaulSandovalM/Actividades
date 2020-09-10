@@ -1,6 +1,13 @@
 .container-show {
   margin: 80px;
 }
+.form-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+  width: 100%;
+}
 .content-title {
   display: flex;
   flex-direction: row;
@@ -44,4 +51,7 @@
 }
 .p-padding {
   margin: 6px;
+}
+.progress3{
+  width: 85%;
 }
