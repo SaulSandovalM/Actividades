@@ -8,20 +8,22 @@ export default class Sactividad extends Component {
     this.ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id).collection('evidencias')
     this.unsubscribe = null;
     this.state = {
+      seguimiento: '',
       evidencia: 0,
       titulo: '',
       descripcion: '',
       evidencias: []
     }
   }
- 
+
   onCollectionUpdate = (querySnapshot) => {
     const evidencias = [];
     querySnapshot.forEach((doc) => {
-      const { evidencia, titulo, descripcion } = doc.data();
+      const { seguimiento, evidencia, titulo, descripcion } = doc.data();
       evidencias.push({
         key: doc.id,
         doc,
+        seguimiento,
         evidencia,
         titulo,
         descripcion
@@ -59,13 +61,15 @@ export default class Sactividad extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { evidencia, titulo, descripcion } = this.state
+    const { seguimiento, evidencia, titulo, descripcion } = this.state
     this.ref.add({
+      seguimiento,
       evidencia,
       titulo,
       descripcion
     }).then((docRef) => {
       this.setState({
+        seguimiento: '',
         evidencia: '',
         titulo: '',
         descripcion: ''
@@ -77,7 +81,7 @@ export default class Sactividad extends Component {
   }
 
   render () {
-    const { evidencia, descripcion, titulo } = this.state
+    const { seguimiento, evidencia, descripcion, titulo } = this.state
     return (
       <div>
         <div className='container-ss'>
@@ -132,9 +136,12 @@ export default class Sactividad extends Component {
           </div>
           <form className='mar-for' onSubmit={this.onSubmit}>
             <div>
-              <div className='input-f-s'>
-                <p className='p-fs'>Evidencias: </p>
-                <input name='evidencia' value={evidencia} onChange={this.onChange} />
+              <div className='form-content'>
+                <label for='img' className='text-g'>Evidencia:</label>
+                <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
+                <progress className='progress' value={this.state.imgp}>
+                {this.state.imgp} %
+                </progress>
               </div>
               <div className='input-f-s'>
                 <p className='p-fs'>Titulo: </p>
@@ -142,6 +149,16 @@ export default class Sactividad extends Component {
               </div>
               <div className='input-f-s'>
                 <p className='p-fs'>Descripcion: </p>
+                <input name='descripcion' value={descripcion} onChange={this.onChange}/>
+              </div>
+              <div className='input-f-s'>
+              <p>Se llevó acabo la actividad:</p>
+              <input className='style-check' type='checkbox' name='seguimiento'
+                value={seguimiento} onChange={this.onChange}/>
+              <input className='style-check' type='checkbox' />
+              </div>
+              <div className='input-f-s'>
+                <p className='p-fs'>¿Por qué?: </p>
                 <input name='descripcion' value={descripcion} onChange={this.onChange}/>
               </div>
             </div>
