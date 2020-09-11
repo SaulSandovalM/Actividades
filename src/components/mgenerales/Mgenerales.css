@@ -1,5 +1,5 @@
 .mgenerales-container {
-  margin: 80px;
+  padding: 80px;
 }
 .content-message {
   border: 1px solid grey;
@@ -26,11 +26,11 @@
 }
 
 .content-tarjeta{
-  height: 80vh;
   padding: 5px;
   width: 80vh;
   box-shadow: 10px 5px 5px grey;
   margin-bottom: 50px;
+  background-color: white;
 }
 .image{
   height: 60%;

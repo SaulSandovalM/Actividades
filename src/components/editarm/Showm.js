@@ -38,10 +38,13 @@ export default class Showm extends Component {
 
   render() {
     return (
-      <div style={{ paddingLeft: '13%' }}>
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
         <div className='container-show'>
           <div>
-            <h1>Mensajes Realizados</h1>
+            <h1>Lista de Anuncios</h1>
+          </div>
+          <div className='button-r'>
+            <button className='style-button-r'><Link to='/Generaciondemensajes'>Agregar</Link></button>
           </div>
           <div>
             <div className='content-title'>

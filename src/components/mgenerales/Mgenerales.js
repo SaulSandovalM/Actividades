@@ -37,13 +37,10 @@ export default class Mgenerales extends Component {
 
   render() {
     return (
-      <div style={{ paddingLeft: '13%' }}>
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
         <div className='mgenerales-container'>
           <div>
             <h1>Boletin PGJEH</h1>
-          </div>
-          <div className='button-r'>
-            <button className='style-button-r'><Link to='/Generaciondemensajes'>Agregar</Link></button>
           </div>
           <div>
             {this.state.messages.map(messages =>
@@ -58,6 +55,9 @@ export default class Mgenerales extends Component {
                   </div>
                   <div className='desc'>
                     {messages.descripcion}
+                  </div>
+                  <div>
+                    <p>11/09/2020</p>
                   </div>
                  </div>
                 </div>

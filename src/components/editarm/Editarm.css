@@ -1,5 +1,6 @@
 .container-show {
-  margin: 80px;
+  padding: 80px;
+  height: 82vh;
 }
 .form-content {
   display: flex;

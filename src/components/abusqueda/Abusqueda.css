@@ -1,5 +1,6 @@
 .container-aregistradas-b {
-  margin: 80px;
+  padding: 80px;
+  height: 82vh;
 }
 .content-title-r {
   display: flex;

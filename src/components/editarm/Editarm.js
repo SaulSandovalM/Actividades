@@ -91,10 +91,10 @@ export default class Editarm extends Component {
 
   render() {
     return (
-      <div style={{ margin: '80px', paddingLeft: '13%' }}>
-        <div>
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
+        <div className='container-show'>
           <div>
-            <h1>Edicion de Mensajes</h1>
+            <h1>Editar Anuncio</h1>
           </div>
           <div>
             <form className='container-edit' onSubmit={this.onSubmit}>

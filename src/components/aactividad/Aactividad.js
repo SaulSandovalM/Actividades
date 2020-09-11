@@ -126,7 +126,7 @@ export default class Aactividad extends Component {
     const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
             municipio, quien, lugar, imparte, desc, prioridad, servidores } = this.state
     return (
-      <div style={{ paddingLeft: '13%' }}>
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
         <div className='container-aactividad'>
           <div>
             <h1>Agregar Actividad</h1>
@@ -134,7 +134,7 @@ export default class Aactividad extends Component {
           <form className='content-aa' onSubmit={this.onSubmit}>
             <div className='input-c-c'>
               <p className='p-t-aa'>Tema:</p>
-              <input name='quien' value={tema} onChange={this.onChange} />
+              <input name='tema' value={tema} onChange={this.onChange} />
             </div>
             <div className='input-c-c'>
               <p>Actividad Interna</p>
@@ -164,11 +164,11 @@ export default class Aactividad extends Component {
             <div className='content-row'>
               <div className='input-c-c'>
                 <p className='p-t-aa'>Convocados por dependencia/persona externa:</p>
-                <input name='quien' value={convoca} onChange={this.onChange} />
+                <input name='convoca' value={convoca} onChange={this.onChange} />
               </div>
               <div className='input-c-c'>
                 <p className='p-t-aa'>Imparte:</p>
-                <input name='quien' value={imparte} onChange={this.onChange} />
+                <input name='imparte' value={imparte} onChange={this.onChange} />
               </div>
               <div className='input-c-c'>
                 <p className='p-t-aa'>Estado:</p>
