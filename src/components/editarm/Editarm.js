@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Editarm.css'
 import firebase from '../../Firebase'
-import Switch from 'react-switch';
+import Switch from 'react-switch'
 
 export default class Editarm extends Component {
   constructor (props) {
@@ -12,9 +12,10 @@ export default class Editarm extends Component {
       descripcion: '',
       imagen: '',
       checked: true,
+      num: '',
       imgc: 0
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount () {
@@ -27,7 +28,8 @@ export default class Editarm extends Component {
           asunto: messages.asunto,
           descripcion: messages.descripcion,
           imagen: messages.imagen,
-          checked: messages.checked
+          checked: messages.checked,
+          num: messages.num
         })
       } else {
         console.log('No hay documento!')
@@ -66,13 +68,14 @@ export default class Editarm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen, checked } = this.state
+    const { asunto, descripcion, imagen, checked, num } = this.state
     const updateRef = firebase.firestore().collection('messages').doc(this.state.key)
     updateRef.set({
       asunto,
       descripcion,
       imagen,
-      checked
+      checked,
+      num
     }).then((docRef) => {
       this.setState({
         key: '',
@@ -80,7 +83,7 @@ export default class Editarm extends Component {
         descripcion: '',
         imagen: '',
         checked: true,
-        estatus: ''
+        num: ''
       })
       this.props.history.push('/Listademensajes')
     })
@@ -91,35 +94,33 @@ export default class Editarm extends Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
-        <div className='container-show'>
-          <div>
-            <h1>Editar Anuncio</h1>
+      <div style={{ margin: '80px', paddingLeft: '13%' }}>
+        <div>
+          <div className='form-content-sw'>
+            <h1 className='h1-g'>
+              Edición de Mensaje
+            </h1>
+            <div>
+              <Switch checked={this.state.checked} onChange={this.handleChange} />
+            </div>
           </div>
           <div>
             <form className='container-edit' onSubmit={this.onSubmit}>
-            <div>
-                <label>
-                  <Switch onChange={this.handleChange} checked={this.state.checked} />
-                </label>
-              </div>
               <div className='content-edit'>
-                <label className='title-e' for='asunto'>Asunto:</label>
+                <label className='title-e'>Asunto:</label>
                 <input className='input-e' name='asunto' value={this.state.asunto} onChange={this.onChange} placeholder='asunto' />
               </div>
               <div className='content-edit'>
-                <label className='title-e' for='descripcion'>Descripcion:</label>
+                <label className='title-e'>Descripcion:</label>
                 <textarea cols='80' rows='3' className='input-e' name='descripcion' value={this.state.descripcion} onChange={this.onChange} placeholder='descripcion' />
               </div>
               <div className='form-content'>
-                <label for='img' className='text-g'>Imagen:</label>
+                <label className='text-g'>Imagen:</label>
                 <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
               </div>
               <div className='form-content'>
-                <label for='img' className='text-g'></label>
-                  <progress className='progress3' value={this.state.imgp}>
-                  {this.state.imgp} %
-                  </progress>
+                <label className='text-g' />
+                <progress className='progress3' value={this.state.imgc} />
               </div>
               <div className='button-e'>
                 <button className='style-button-e' type='submit'>Enviar</button>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default class Showm extends Component {
   constructor (props) {
     super(props)
-    this.ref = firebase.firestore().collection('messages').orderBy('num', 'desc')
+    this.ref = firebase.firestore().collection('messages').orderBy('num', 'asc')
     this.unsubscribe = null
     this.state = {
       messages: []
@@ -42,6 +42,9 @@ export default class Showm extends Component {
         <div className='container-list-s'>
           <div>
             <h1>Mensajes</h1>
+          </div>
+          <div className='button-r'>
+            <button className='style-button-r'><Link to='/Generaciondemensajes'>Agregar</Link></button>
           </div>
           <div>
             <div className='content-title'>
