@@ -35,7 +35,8 @@ export default class Reportes extends Component {
 
   render () {
     return (
-      <div className='container-show' style={{ paddingLeft: '13%' }}>
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
+      <div className='container-show' >
         <div>
           <h1>Reportes</h1>
         </div>
@@ -76,6 +77,7 @@ export default class Reportes extends Component {
               <div className='bor' style={{ borderLeft: '1px solid #d0d0d0' }} />
             </div>
           )}
+        </div>
         </div>
       </div>
     )

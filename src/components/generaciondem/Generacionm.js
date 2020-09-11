@@ -95,11 +95,11 @@ export default class Generacionm extends Component {
     const { asunto, descripcion } = this.state
     this.state.num = this.state.contador.num
     return (
-      <div style={{ margin: '80px', paddingLeft: '13%' }}>
-        <div>
-          <div className='form-content-sw'>
-            <h1 className='h1-g'>
-              Generacion de Boletin
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
+        <div className='mgenerales-containerG'>
+          <div>
+            <h1>
+              Generar Anuncio
             </h1>
             <div>
               <Switch checked={this.state.checked} />
