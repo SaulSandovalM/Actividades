@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default class Showm extends Component {
   constructor (props) {
     super(props)
-    this.ref = firebase.firestore().collection('messages')
+    this.ref = firebase.firestore().collection('messages').orderBy('num', 'desc')
     this.unsubscribe = null
     this.state = {
       messages: []
@@ -16,15 +16,15 @@ export default class Showm extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const messages = []
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, estatus, imagen, checked } = doc.data()
+      const { asunto, descripcion, imagen, checked, num } = doc.data()
       messages.push({
         key: doc.id,
         doc,
         asunto,
         descripcion,
-        estatus,
         imagen,
-        checked
+        checked,
+        num
       })
     })
     this.setState({
@@ -39,9 +39,9 @@ export default class Showm extends Component {
   render() {
     return (
       <div style={{ paddingLeft: '13%' }}>
-        <div className='container-show'>
+        <div className='container-list-s'>
           <div>
-            <h1>Mensajes Realizados</h1>
+            <h1>Mensajes</h1>
           </div>
           <div>
             <div className='content-title'>
@@ -58,7 +58,18 @@ export default class Showm extends Component {
                   <div className='bor' />
                   <div className='title-a'><p className='p-padding'>{messages.asunto}</p></div>
                   <div className='title-a'><p className='p-padding'>{messages.descripcion}</p></div>
-                  <div className='title-a'><p className='p-padding'>{messages.estatus}</p></div>
+                  <div className='title-a'>
+                    { messages.checked &&
+                      <p className='p-padding'>
+                        Activo
+                      </p>
+                    }
+                    { !messages.checked &&
+                      <p className='p-padding'>
+                        Inactivo
+                      </p>
+                    }
+                  </div>
                   <div className='title-a'><p className='p-padding'><Link to={`/Editarmensaje/${messages.key}`}>Editar</Link></p></div>
                   <div className='bor' style={{borderLeft: '1px solid #d0d0d0'}} />
                 </div>

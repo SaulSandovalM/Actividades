@@ -4,8 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
 import configureStore from './store/configureStore'
 import { useOnClickOutside } from './hooks'
-import FocusLock from 'react-focus-lock'
-import Burger from './components/common/nav/Burger'
 import Menu from './components/common/nav/Menu'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
@@ -23,8 +21,7 @@ function Routes () {
       <Provider store={store}>
         <Router>
           <div ref={node}>
-
-              <Menu open={open} setOpen={setOpen} id={menuId} />
+            <Menu open={open} setOpen={setOpen} id={menuId} />
           </div>
           <App />
         </Router>

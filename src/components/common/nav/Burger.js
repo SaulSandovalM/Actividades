@@ -4,8 +4,7 @@ import { StyledBurger } from './Burger.styled'
 
 const Burger = ({ open, setOpen, ...props }) => {
   return (
-    <StyledBurger>
-    </StyledBurger>
+    <StyledBurger />
   )
 }
 

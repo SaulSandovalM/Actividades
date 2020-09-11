@@ -11,7 +11,6 @@ export default class Generacionm extends Component {
       asunto: '',
       descripcion: '',
       imgp: 0,
-      estatus: 'Activo',
       checked: true
     }
     this.handleChange = this.handleChange.bind(this);
@@ -48,19 +47,17 @@ export default class Generacionm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen, estatus, checked } = this.state
+    const { asunto, descripcion, imagen, checked } = this.state
     this.ref.add({
       asunto,
       descripcion,
       imagen,
-      estatus,
       checked
     }).then((docRef) => {
       this.setState({
         asunto: '',
         descripcion: '',
         imagen: '',
-        estatus: '',
         checked: true
       })
       this.props.history.push('/')
