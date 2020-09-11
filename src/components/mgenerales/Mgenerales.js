@@ -42,9 +42,6 @@ export default class Mgenerales extends Component {
           <div>
             <h1>Boletin PGJEH</h1>
           </div>
-          <div className='button-r'>
-            <button className='style-button-r'><Link to='/Generaciondemensajes'>Agregar</Link></button>
-          </div>
           <div>
             {this.state.messages.map(messages =>
               <div className='content-all'>
