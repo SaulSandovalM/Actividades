@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default class Showm extends Component {
   constructor (props) {
     super(props)
-    this.ref = firebase.firestore().collection('messages').orderBy('num', 'desc')
+    this.ref = firebase.firestore().collection('messages').orderBy('num', 'asc')
     this.unsubscribe = null
     this.state = {
       messages: []

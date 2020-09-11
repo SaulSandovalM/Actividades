@@ -11,15 +11,20 @@ export default class Generacionm extends Component {
       asunto: '',
       descripcion: '',
       imgp: 0,
-      checked: true
+      checked: true,
+      num: '',
+      contador: {},
     }
-    this.handleChange = this.handleChange.bind(this);
   }
 
   onChange = (e) => {
     const state = this.state
     state[e.target.name] = e.target.value
     this.setState(state)
+  }
+
+  componentDidMount() {
+    this.consumoNum()
   }
 
   handleImage (event) {
@@ -41,25 +46,28 @@ export default class Generacionm extends Component {
     }))
   }
 
-  handleChange(checked) {
-    this.setState({ checked });
-  }
-
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen, checked } = this.state
+    const { asunto, descripcion, imagen, checked, num } = this.state
     this.ref.add({
       asunto,
       descripcion,
       imagen,
-      checked
+      checked,
+      num
     }).then((docRef) => {
       this.setState({
         asunto: '',
         descripcion: '',
         imagen: '',
-        checked: true
+        checked: true,
+        num: ''
       })
+      const statsRef = firebase.firestore().collection('messages').doc('--contador--')
+      const increment = firebase.firestore.FieldValue.increment(1)
+      const batch = firebase.firestore().batch()
+      batch.set(statsRef, { num: increment }, { merge: true })
+      batch.commit()
       this.props.history.push('/')
     })
     .catch((error) => {
@@ -67,40 +75,75 @@ export default class Generacionm extends Component {
     })
   }
 
+  consumoNum = () => {
+    const ref = firebase.firestore().collection('messages').doc('--contador--')
+    ref.get().then((doc) => {
+      if (doc.exists) {
+        this.setState({
+          contador: doc.data(),
+          key: doc.id,
+          isLoading: false
+        })
+        console.log(doc.data())
+      } else {
+        console.log('No hay nada!')
+      }
+    })
+  }
+
   render() {
     const { asunto, descripcion } = this.state
+    this.state.num = this.state.contador.num
     return (
       <div style={{ margin: '80px', paddingLeft: '13%' }}>
         <div>
-          <div>
-            <h1>
+          <div className='form-content-sw'>
+            <h1 className='h1-g'>
               Generacion de Boletin
             </h1>
+            <div>
+              <Switch checked={this.state.checked} />
+            </div>
           </div>
           <div>
             <form className='form-container-g' onSubmit={this.onSubmit}>
-            <div>
-                <label>
-                  <Switch onChange={this.handleChange} checked={this.state.checked} />
-                </label>
+              <div className='form-content-g'>
+                <label className='text-g'>Asunto:</label>
+                <input
+                  className='input-g'
+                  name='asunto'
+                  value={asunto}
+                  onChange={this.onChange}
+                  placeholder='Asunto'
+                  required
+                />
               </div>
-              <div className='form-content'>
-                <label for='asunto' className='text-g'>Asunto:</label>
-                <input className='input-g' name='asunto' value={asunto} onChange={this.onChange} placeholder='Asunto' />
+              <div className='form-content-g'>
+                <label className='text-g'>Descripcion:</label>
+                <textArea
+                  className='input-g'
+                  name='descripcion'
+                  onChange={this.onChange}
+                  placeholder='Mensaje'
+                  cols='80'
+                  rows='3'
+                  required
+                >
+                  {descripcion}
+                </textArea>
               </div>
-              <div className='form-content'>
-                <label for='descripcion' className='text-g'>Descripcion:</label>
-                <textArea className='input-g' name='descripcion' onChange={this.onChange} placeholder='Mensaje' cols='80' rows='3'>{descripcion}</textArea>
+              <div className='form-content-g'>
+                <label className='text-g'>Imagen:</label>
+                <input
+                  className='input-g'
+                  type='file'
+                  onChange={this.handleImage.bind(this)}
+                  required
+                />
               </div>
-              <div className='form-content'>
-                <label for='img' className='text-g'>Imagen:</label>
-                <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
-              </div>
-              <div className='form-content'>
-                <label for='img' className='text-g'></label>
-                  <progress className='progress2' value={this.state.imgp}>
-                  {this.state.imgp} %
-                  </progress>
+              <div className='form-content-g'>
+                <label className='text-g' required />
+                <progress className='progress2' value={this.state.imgp} />
               </div>
               <div className='button-e'>
                 <button className='style-button-e' type='submit'>Enviar</button>

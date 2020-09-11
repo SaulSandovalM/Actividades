@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import firebase from '../../Firebase'
 import './Sactividad.css'
+import Switch from 'react-switch'
 
 export default class Sactividad extends Component {
   constructor (props) {
@@ -11,22 +12,24 @@ export default class Sactividad extends Component {
       imgevi: '',
       titulo: '',
       descripcion: '',
-      seguimiento: '',
+      seguimiento: true,
       porque: '',
       evidencia: '',
       evidencias: [],
       imge: 0
     }
+    this.handleChange = this.handleChange.bind(this)
   }
 
   onCollectionUpdate = (querySnapshot) => {
     const evidencias = [];
     querySnapshot.forEach((doc) => {
-      const { seguimiento, evidencia, titulo, descripcion, porque } = doc.data();
+      const { seguimientos, seguimienton, evidencia, titulo, descripcion, porque } = doc.data();
       evidencias.push({
         key: doc.id,
         doc,
-        seguimiento,
+        seguimientos,
+        seguimienton,
         evidencia,
         titulo,
         descripcion,
@@ -46,6 +49,10 @@ export default class Sactividad extends Component {
     const state = this.state
     state[e.target.name] = e.target.value
     this.setState(state)
+  }
+
+  handleChange(seguimiento) {
+    this.setState({ seguimiento });
   }
 
   handleImage (event) {
@@ -77,7 +84,8 @@ export default class Sactividad extends Component {
       porque
     }).then((docRef) => {
       this.setState({
-        seguimiento: '',
+        seguimientos: false,
+        seguimienton: false,
         titulo: '',
         descripcion: '',
         porque: ''
@@ -89,96 +97,94 @@ export default class Sactividad extends Component {
   }
 
   render () {
-    const { seguimiento, descripcion, titulo, porque } = this.state
+    const { descripcion, titulo, porque } = this.state
     return (
       <div style={{ paddingLeft: '13%' }}>
         <div className='container-ss'>
           <div>
             <h1>Seguimiento de Actividad</h1>
           </div>
-          <div>
-            <div className='caja-inputs'>
-              <div className='table-left' />
-              <div className='table-v-num'>
-                <b>#</b>
-              </div>
-              <div className='table-v-importe'>
-                <b>Titulo</b>
-              </div>
-              <div className='table-v-fechae'>
-                <b>Descripción</b>
-              </div>
-              <div className='table-v-cantidad'>
-                <b>Evidencia</b>
-              </div>
-              <div className='table-v-cantidad'>
-                <b>Editar</b>
-              </div>
-              <div className='table-right'>
-              </div>
-            </div>
-            {this.state.evidencias.map(evidencias =>
-              <div className='caja-inputs'>
-                <div className='table-left' />
-                <div className='table-v-num'>
-                  <b>#</b>
-                </div>
-                <div className='table-v-importe'>
-                  <b>{evidencias.titulo}</b>
-                </div>
-                <div className='table-v-fechae'>
-                  <b>{evidencias.descripcion}</b>
-                </div>
-                <div className='table-v-cantidad'>
-                  {evidencias.evidencia &&
-                    <input type='checkbox' checked />
-                  }
-                </div>
-                <div className='table-v-cantidad'>
-                  <b>Editar</b>
-                </div>
-                <div className='table-right'>
-                </div>
-              </div>
-            )}
-          </div>
           <form className='mar-for' onSubmit={this.onSubmit}>
             <div>
-              <div className='form-content'>
-                <label for='img' className='text-g'>Evidencia:</label>
+              <div className='form-content-sa'>
+                <label className='text-g'>Evidencia:</label>
                 <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
-                <progress className='progress' value={this.state.imge}>
-                  {this.state.imgevi} %
-                </progress>
               </div>
-              <div className='input-f-s'>
-                <p className='p-fs'>Titulo: </p>
-                <input name='titulo' value={titulo} onChange={this.onChange} />
+              <div className='form-content-sa'>
+                <label className='text-g'></label>
+                <progress className='input-g' value={this.state.imge} />
               </div>
-              <div className='input-f-s'>
-                <p className='p-fs'>Descripcion: </p>
-                <input name='descripcion' value={descripcion} onChange={this.onChange}/>
+              <div className='form-content-sa'>
+                <label className='text-g'>Titulo: </label>
+                <input className='input-g' name='titulo' value={titulo} onChange={this.onChange} />
               </div>
-              <div className='input-f-s'>
-              <p>Se llevó acabo la actividad:</p>
-              <input
-                className='style-check'
-                type='checkbox'
-                name='seguimiento'
-                value={seguimiento}
-                onChange={this.onChange}
-              />
-              <input className='style-check' type='checkbox' />
+              <div className='form-content-sa'>
+                <label className='text-g'>Descripcion: </label>
+                <input className='input-g' name='descripcion' value={descripcion} onChange={this.onChange}/>
               </div>
-              <div className='input-f-s'>
-                <p className='p-fs'>¿Por qué?: </p>
-                <input name='porque' value={porque} onChange={this.onChange}/>
+              <div className='form-content-sa'>
+                <label className='text-g'>Actividad Realizada: </label>
+                <div className='input-g'>
+                  <Switch checked={this.state.seguimiento} onChange={this.handleChange} />
+                  {this.state.seguimiento &&
+                    <p>Si</p>
+                  }
+                </div>
               </div>
+              {!this.state.seguimiento &&
+              <div className='form-content-sa'>
+                <label className='text-g'>¿Porque?: </label>
+                <input className='input-g' value={porque} onChange={this.onChange}/>
+              </div>}
             </div>
             <div className='boton-v'>
               <button type='submit'>Guardar</button>
             </div>
           </form>
+          <div>
+            <div className='caja-inputs'>
+              <div className='table-ev-l' />
+              <div className='table-ev-n'>
+                <b>#</b>
+              </div>
+              <div className='table-t-sa'>
+                <b>Titulo</b>
+              </div>
+              <div className='table-t-sa'>
+                <b>Descripción</b>
+              </div>
+              <div className='table-ed-sa'>
+                <b>Evidencia</b>
+              </div>
+              <div className='table-ed-sa'>
+                <b>Editar</b>
+              </div>
+              <div className='table-ev-r' />
+            </div>
+            {this.state.evidencias.map(evidencias =>
+              <div className='caja-inputs'>
+                <div className='table-ev-l' />
+                <div className='table-ev-n'>
+                  <b></b>
+                </div>
+                <div className='table-t-sa'>
+                  <b>{evidencias.titulo}</b>
+                </div>
+                <div className='table-t-sa'>
+                  <b>{evidencias.descripcion}</b>
+                </div>
+                <div className='table-ed-sa'>
+                  {evidencias.evidencia &&
+                    <input type='checkbox' checked />
+                  }
+                </div>
+                <div className='table-ed-sa'>
+                  <b>Editar</b>
+                </div>
+                <div className='table-ev-r' />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     )
