@@ -8,10 +8,12 @@ export default class Aactividad extends Component {
     this.ref = firebase.firestore().collection('actividades')
     this.refestado = firebase.firestore().collection('estados')
     this.reftipo = firebase.firestore().collection('tipoActividad')
+    this.refprioridad = firebase.firestore().collection('prioridad')
     this.unsubscribe = null
     this.state = {
       estados: [],
       tipoActividad: [],
+      prioridad: [],
       tema: '',
       ainterna: '',
       aexterna: '',
@@ -27,7 +29,6 @@ export default class Aactividad extends Component {
       lugar: '',
       imparte: '',
       desc: '',
-      prioridad: '',
       servidores: ''
     }
   }
@@ -68,9 +69,25 @@ export default class Aactividad extends Component {
    })
   }
 
+  onCollectionUpdatePrioridad = (querySnapshot) => {
+    const prioridad = []
+    querySnapshot.forEach((doc) => {
+      const { nprioridad } = doc.data()
+      prioridad.push({
+        key: doc.id,
+        doc,
+        nprioridad
+      })
+    })
+    this.setState({
+      prioridad
+   })
+  }
+
   componentDidMount() {
     this.unsubscribe = this.reftipo.onSnapshot(this.onCollectionUpdateTipo)
     this.unsubscribe = this.refestado.onSnapshot(this.onCollectionUpdateEstado)
+    this.unsubscribe = this.refprioridad.onSnapshot(this.onCollectionUpdatePrioridad)
   }
 
   onSubmit = (e) => {
@@ -125,6 +142,7 @@ export default class Aactividad extends Component {
   render () {
     const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
             municipio, quien, lugar, imparte, desc, prioridad, servidores } = this.state
+            console.log(this.state.tipoActividad)
     return (
       <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
         <div className='container-aactividad'>
@@ -166,10 +184,13 @@ export default class Aactividad extends Component {
                 <p className='p-t-aa'>Convocados por dependencia/persona externa:</p>
                 <input name='convoca' value={convoca} onChange={this.onChange} />
               </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Imparte:</p>
-                <input name='imparte' value={imparte} onChange={this.onChange} />
-              </div>
+              { this.state.tipoActividad.actividad === 'Curso' &&
+                <div className='input-c-c'>
+                  <p className='p-t-aa'>Imparte:</p>
+                  <input name='imparte' value={imparte} onChange={this.onChange} />
+                </div>
+              }
+
               <div className='input-c-c'>
                 <p className='p-t-aa'>Estado:</p>
                 <select className='select'>
@@ -198,13 +219,11 @@ export default class Aactividad extends Component {
               </div>
               <div className='input-c-c'>
                 <p className='p-t-aa'>Nivel de prioridad:</p>
-                <select className='select' name='prioridad' value={prioridad}
-                  onChange={this.onChange}>
-                  <option></option>
-                  <option value="grapefruit">Grapefruit</option>
-                  <option value="lime">Lime</option>
-                  <option selected value="coconut">Coconut</option>
-                  <option value="mango">Mango</option>
+                <select className='select'>
+                <option></option>
+                  {this.state.prioridad.map(prioridad =>
+                    <option>{prioridad.nprioridad}</option>
+                  )}
                 </select>
               </div>
               <div className='input-c-c'>

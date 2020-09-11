@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default class Mgenerales extends Component {
   constructor(props) {
     super(props);
-    this.ref = firebase.firestore().collection('messages')
+    this.ref = firebase.firestore().collection('messages').orderBy('num','asc')
     this.unsubscribe = null;
     this.state = {
       messages: [],
@@ -17,13 +17,15 @@ export default class Mgenerales extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const messages = [];
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, imagen } = doc.data();
+      const { asunto, descripcion, imagen, fecha, checked } = doc.data();
       messages.push({
         key: doc.id,
         doc,
         asunto,
         descripcion,
         imagen,
+        fecha,
+        checked
       });
     });
     this.setState({
@@ -45,22 +47,26 @@ export default class Mgenerales extends Component {
           <div>
             {this.state.messages.map(messages =>
               <div className='content-all'>
+              {messages.checked &&
                 <div className='content-tarjeta'>
                  <div className='image'>
                   <img className='image2' src={messages.imagen} alt=''/>
                  </div>
                  <div className='content-message2'>
+                 <div>
                   <div className='asunto'>
                     <b>{messages.asunto}</b>
                   </div>
                   <div className='desc'>
                     {messages.descripcion}
                   </div>
+                  </div>
                   <div>
-                    <p>11/09/2020</p>
+                    {messages.fecha}
                   </div>
                  </div>
                 </div>
+              }
               </div>
             ).reverse()}
           </div>
