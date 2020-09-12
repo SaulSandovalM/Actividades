@@ -7,18 +7,19 @@ export default class Aactividad extends Component {
     super()
     this.ref = firebase.firestore().collection('actividades')
     this.refestado = firebase.firestore().collection('estados')
-    this.reftipo = firebase.firestore().collection('tipoActividad')
     this.refprioridad = firebase.firestore().collection('prioridad')
+    this.refdirecciones = firebase.firestore().collection('direcciones')
     this.unsubscribe = null
     this.state = {
       estados: [],
-      tipoActividad: [],
+      tipoActividad: '',
       prioridad: [],
+      direcciones: [],
       tema: '',
       ainterna: '',
       aexterna: '',
       convocamos: '',
-      convocados: '',
+      convocados: false,
       convoca: '',
       fechai: '',
       fechaf: '',
@@ -31,12 +32,19 @@ export default class Aactividad extends Component {
       desc: '',
       servidores: ''
     }
+    this.handleChange = this.handleChange.bind(this)
   }
 
   onChange = (e) => {
     const state = this.state
     state[e.target.name] = e.target.value
     this.setState(state)
+  }
+
+  handleChange(convocados) {
+    this.setState({
+      convocados: !this.state.convocados,
+    });
   }
 
   onCollectionUpdateEstado = (querySnapshot) => {
@@ -51,21 +59,6 @@ export default class Aactividad extends Component {
     })
     this.setState({
       estados
-   })
-  }
-
-  onCollectionUpdateTipo = (querySnapshot) => {
-    const tipoActividad = []
-    querySnapshot.forEach((doc) => {
-      const { actividad } = doc.data()
-      tipoActividad.push({
-        key: doc.id,
-        doc,
-        actividad
-      })
-    })
-    this.setState({
-      tipoActividad
    })
   }
 
@@ -84,16 +77,31 @@ export default class Aactividad extends Component {
    })
   }
 
+  onCollectionUpdateDirecciones = (querySnapshot) => {
+    const direcciones = []
+    querySnapshot.forEach((doc) => {
+      const { Direccion } = doc.data()
+      direcciones.push({
+        key: doc.id,
+        doc,
+        Direccion
+      })
+    })
+    this.setState({
+      direcciones
+   })
+  }
+
   componentDidMount() {
-    this.unsubscribe = this.reftipo.onSnapshot(this.onCollectionUpdateTipo)
     this.unsubscribe = this.refestado.onSnapshot(this.onCollectionUpdateEstado)
     this.unsubscribe = this.refprioridad.onSnapshot(this.onCollectionUpdatePrioridad)
+    this.unsubscribe = this.refdirecciones.onSnapshot(this.onCollectionUpdateDirecciones)
   }
 
   onSubmit = (e) => {
     e.preventDefault()
     const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
-          municipio, quien, lugar, imparte, desc, prioridad, servidores } = this.state
+          municipio, quien, lugar, imparte, desc, prioridad, servidores, tipoActividad } = this.state
     this.ref.add({
       tema,
       ainterna,
@@ -111,14 +119,15 @@ export default class Aactividad extends Component {
       imparte,
       desc,
       prioridad,
-      servidores
+      servidores,
+      tipoActividad
     }).then((docRef) => {
       this.setState({
         tema: '',
         ainterna: '',
         aexterna: '',
         convocamos: '',
-        convocados: '',
+        convocados: false,
         convoca: '',
         fechai: '',
         fechaf: '',
@@ -130,7 +139,8 @@ export default class Aactividad extends Component {
         imparte: '',
         desc: '',
         prioridad: '',
-        servidores: ''
+        servidores: '',
+        tipoActividad: ''
       })
       this.props.history.push('/ActividadesRegistradas')
     })
@@ -140,9 +150,16 @@ export default class Aactividad extends Component {
   }
 
   render () {
-    const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
-            municipio, quien, lugar, imparte, desc, prioridad, servidores } = this.state
-            console.log(this.state.tipoActividad)
+    const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, estado,
+            municipio, lugar, imparte, desc, prioridad, servidores, tipoActividad } = this.state
+            console.log(this.state.convocados)
+            let impart;
+            if(this.state.tipoActividad === 'Curso' || this.state.tipoActividad === 'Conferencia'){
+              impart = <div className='input-c-c'>
+                <p className='p-t-aa'>Imparte:</p>
+                <input name='imparte' value={imparte} onChange={this.onChange} />
+              </div>
+            }
     return (
       <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
         <div className='container-aactividad'>
@@ -164,11 +181,14 @@ export default class Aactividad extends Component {
             </div>
             <div className='input-c-c'>
               <p className='p-t-aa'>Tipo de Actividad:</p>
-              <select className='select'>
-              <option></option>
-                {this.state.tipoActividad.map(tipoActividad =>
-                  <option>{tipoActividad.actividad}</option>
-                )}
+              <select className='select' name='tipoActividad' onChange={this.onChange} value={tipoActividad}>
+                <option></option>
+                <option name='tipoActividad'>Curso</option>
+                <option name='tipoActividad'>Conferencia</option>
+                <option name='tipoActividad'>Taller</option>
+                <option name='tipoActividad'>Reunión de Trabajo</option>
+                <option name='tipoActividad'>Otro</option>
+
               </select>
             </div>
             <div className='input-c-c'>
@@ -176,24 +196,30 @@ export default class Aactividad extends Component {
               <input className='style-check' type='checkbox' name='convocamos'
               value={convocamos} onChange={this.onChange}/>
               <p>Convocados:</p>
-              <input className='style-check' type='checkbox' name='convocados'
-                value={convocados} onChange={this.onChange}/>
+              <input className='style-check' type='checkbox'
+                value={this.state.convocados} onChange={this.handleChange}/>
             </div>
+            { this.state.convocados && <div className='input-c-c'>
+              <p className='p-t-aa'>Convocados por:</p>
+              <select className='select'>
+              <option></option>
+                {this.state.direcciones.map(direcciones =>
+                  <option>{direcciones.Direccion}</option>
+                )}
+              </select>
+            </div>}
             <div className='content-row'>
               <div className='input-c-c'>
                 <p className='p-t-aa'>Convocados por dependencia/persona externa:</p>
                 <input name='convoca' value={convoca} onChange={this.onChange} />
               </div>
-              { this.state.tipoActividad.actividad === 'Curso' &&
-                <div className='input-c-c'>
-                  <p className='p-t-aa'>Imparte:</p>
-                  <input name='imparte' value={imparte} onChange={this.onChange} />
-                </div>
+              {
+                impart
               }
 
               <div className='input-c-c'>
                 <p className='p-t-aa'>Estado:</p>
-                <select className='select'>
+                <select className='select' value={estado}>
                 <option></option>
                   {this.state.estados.map(estados =>
                     <option>{estados.estado}</option>
