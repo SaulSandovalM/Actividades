@@ -9,12 +9,14 @@ export default class Aactividad extends Component {
     this.refestado = firebase.firestore().collection('estados')
     this.refprioridad = firebase.firestore().collection('prioridad')
     this.refdirecciones = firebase.firestore().collection('direcciones')
+    this.refmunicipios = firebase.firestore().collection('municipios')
     this.unsubscribe = null
     this.state = {
       estados: [],
       tipoActividad: '',
       prioridad: [],
       direcciones: [],
+      municipios: [],
       tema: '',
       ainterna: '',
       aexterna: '',
@@ -92,10 +94,26 @@ export default class Aactividad extends Component {
    })
   }
 
+  onCollectionUpdateMunicipios = (querySnapshot) => {
+    const municipios = []
+    querySnapshot.forEach((doc) => {
+      const { municipio } = doc.data()
+      municipios.push({
+        key: doc.id,
+        doc,
+        municipio
+      })
+    })
+    this.setState({
+      municipios
+   })
+  }
+
   componentDidMount() {
     this.unsubscribe = this.refestado.onSnapshot(this.onCollectionUpdateEstado)
     this.unsubscribe = this.refprioridad.onSnapshot(this.onCollectionUpdatePrioridad)
     this.unsubscribe = this.refdirecciones.onSnapshot(this.onCollectionUpdateDirecciones)
+    this.unsubscribe = this.refmunicipios.onSnapshot(this.onCollectionUpdateMunicipios)
   }
 
   onSubmit = (e) => {
@@ -226,17 +244,15 @@ export default class Aactividad extends Component {
                   )}
                 </select>
               </div>
-              <div className='input-c-c'>
+              { this.state.estado && <div className='input-c-c'>
                 <p className='p-t-aa'>Municipio:</p>
-                <select className='select' name='estado' value={municipio}
-                  onChange={this.onChange}>
-                  <option></option>
-                  <option value="grapefruit">Grapefruit</option>
-                  <option value="lime">Lime</option>
-                  <option selected value="coconut">Coconut</option>
-                  <option value="mango">Mango</option>
+                <select className='select'>
+                <option></option>
+                  {this.state.municipios.map(municipios =>
+                    <option>{municipios.municipio}</option>
+                  )}
                 </select>
-              </div>
+              </div>}
             </div>
             <div className='content-row'>
               <div className='input-c-c'>
