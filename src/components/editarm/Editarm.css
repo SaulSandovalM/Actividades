@@ -41,10 +41,11 @@
 }
 .title-e {
   text-align: right;
-  width: 10%;
+  width: 20%;
 }
 .input-e {
   width: 85%;
+
 }
 .button-e {
   display: flex;
@@ -54,6 +55,13 @@
 }
 .style-button-e {
   padding: 5px 10px 5px 10px;
+  color: white;
+  background: #092432;
+}
+
+.style-button-r{
+  background-color:#092432;
+  color:  #ffffff;
 }
 .p-padding {
   margin: 6px;
@@ -65,4 +73,8 @@
 }
 .progress3{
   width: 85%;
+}
+.input-e2 {
+  width: 40px;
+  height: 500px;
 }

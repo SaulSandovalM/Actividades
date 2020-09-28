@@ -5,8 +5,33 @@
 }
 .content-s {
   display: flex;
-  flex-direction: row;
+  flex-direction:space-between;
   margin-right: 20px;
+}
+/* Botones*/
+.modificacion{
+  display:flex;
+  flex-direction: space-between;
+
+}
+
+.btn-search{
+  display: flex;
+  margin:1px;
+  padding-left: 50px;
+
+
+}
+.btn-1{
+  background: #092432;
+  color: #ffffff;
+}
+.btn-space{
+  padding-left: 10px;
+}
+.btn-2{
+  background: #092432;
+  color: #ffffff;
 }
 .p-s {
   margin: 4px;

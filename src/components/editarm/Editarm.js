@@ -112,7 +112,7 @@ export default class Editarm extends Component {
               </div>
               <div className='content-edit'>
                 <label className='title-e'>Descripcion:</label>
-                <textarea cols='80' rows='3' className='input-e' name='descripcion' value={this.state.descripcion} onChange={this.onChange} placeholder='descripcion' />
+                <textarea cols='80' rows='3' className='input-g' name='descripcion' value={this.state.descripcion} onChange={this.onChange} placeholder='descripcion' />
               </div>
               <div className='form-content'>
                 <label className='text-g'>Imagen:</label>

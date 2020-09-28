@@ -26,9 +26,12 @@
   justify-content: flex-end;
   margin-bottom: 20px;
   width: 100%;
+  text-decoration: none;
+
 }
 .style-button-r {
   padding: 5px 10px 5px 10px;
+
 }
 .content-list-ea {
   border: 1px solid;

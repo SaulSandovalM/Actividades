@@ -42,7 +42,7 @@ export default class Aregistradas extends Component {
             <h1>Actividades Registradas</h1>
           </div>
           <div className='button-r'>
-            <button className='style-button-r'><Link to='/AgregarActividad'>Agregar</Link></button>
+            <Link to='/AgregarActividad'><button className='style-button-r'>Agregar</button></Link>
           </div>
           <div>
             <div className='content-title-r'>

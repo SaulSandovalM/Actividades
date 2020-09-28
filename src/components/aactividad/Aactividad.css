@@ -1,22 +1,15 @@
 .container-aactividad {
-  padding: 80px;
-  height: 82vh;
+  padding: 5px 80px ;
+  height: 42vh;
 }
 .content-aa {
   width: 100%;
 }
-.input-c-c {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-}
-.style-check {
-  margin-top: 18px;
-  margin-right: 10px;
-}
+
 .style-check-i {
   margin-top: 8px;
   margin-right: 10px;
+
 }
 .content-row {
   display: flex;
@@ -24,19 +17,167 @@
   margin-bottom: 10px;
 }
 .p-t-aa {
-  margin: 5px;
+  margin: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.ejemplo{
+width: 100%;
+
 }
 .select {
   width: 50%;
-  height: 30px;
+  height: 25px;
   border: 1px solid #d0d0d0;
+  margin-top: 0px;
 }
 .button-aa {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
   width: 100%;
+  padding-top: 20PX;
+
 }
 .style-button-aa {
   padding: 5px 10px 5px 10px;
 }
+.boton-act{
+  background-color: #092432;
+  color: #ffffff;
+}
+/*Ediccion primer bloque*/
+.pri-bloque{
+      display: flex;
+      height: auto;
+
+
+}
+.input-c-c {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 20px;
+  margin-top: 30px;
+}
+.input-c-c2 {
+  display: flex;
+  flex-direction: row;
+    padding-left: 150px;
+    margin-top: 2px;
+
+}
+.style-checka {
+  margin-top: 28px;
+  margin-right: 25px;
+
+
+
+}
+.text-act2{
+  margin: 25px 10px 0px 0px ;
+
+
+}
+/*segundo bloque*/
+.seg-bloque{
+  display:flex;
+}
+.p-t-aa1{
+  margin: 2px;
+  padding: 2px 5px 0px 5px;
+
+}
+.text-act3{
+  margin: 5px 10px 0px 0px ;
+}
+.text-act4{
+    margin: 5px 3px 0px 40px ;
+}
+.input-c-c3{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 20px;
+  padding-left: 300px;
+  margin-top: 27px;
+}
+.style-checkb{
+  margin-top: 8px;
+  margin-left: 25px;
+}
+/*tercer bloque*/
+.input-c-c4 {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 20px;
+  margin-top: 30px
+}
+.p-t-aaer {
+  margin: 10px;
+  width: 200px;
+  padding-left: 50px;
+  padding-right: 0px;
+
+}
+.p-t-aa2 {
+  margin-top: 20px;
+  padding-left: 30px;
+  padding-right: 20px;
+
+}
+.convocas{
+  margin-top: 14.5px;
+  height: 15px;
+  width: 300px;
+}
+.select2 {
+  width: 50%;
+  height: 25px;
+  border: 1px solid #d0d0d0;
+  margin-top: 11px;
+}
+/*menu estra*/
+.p-t-aaex {
+  margin-top: 15px;
+  padding-left: 50px;
+  padding-right: 5px;
+}
+.inp-imp{
+  margin-top: 10px;
+  height: 15px;
+}
+/*cuarta parte*/
+
+.content-rowta {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.inp-ta{
+  margin-top: 0px;
+  height: 15px;
+}
+.p-t-aata{
+  margin: 2px;
+  padding-left: 5px;
+  padding-right: 3px;
+
+}
+/*quinta parte*/
+.content-rowita {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+/*sesta parte*/
+.caja-des{
+margin:10px 0px 10px 5px;
+height: 150px;
+width: 1000px;
+
+}
+/*parte boton */

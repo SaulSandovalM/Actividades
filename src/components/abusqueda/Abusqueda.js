@@ -58,7 +58,7 @@ export default class Aregistradas extends Component {
             </div>
           </div>
           <div className='button-r'>
-            <button className='style-button-r'><Link to=''>Buscar</Link></button>
+            <Link to=''><button className='style-button-r'>Buscar</button></Link>
           </div>
           <div>
             <div className='content-title-r'>

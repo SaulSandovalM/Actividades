@@ -44,7 +44,7 @@ export default class Showm extends Component {
             <h1>Mensajes</h1>
           </div>
           <div className='button-r'>
-            <button className='style-button-r'><Link to='/Generaciondemensajes'>Agregar</Link></button>
+            <Link to='/Generaciondemensajes'><button className='style-button-r'>Agregar</button></Link>
           </div>
           <div>
             <div className='content-title'>

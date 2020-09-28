@@ -40,6 +40,7 @@ export default class Reportes extends Component {
         <div>
           <h1>Reportes</h1>
         </div>
+        <div class='modificacion'>
         <div className='search-r'>
           <div className='content-s'>
             <div className='content-s'>
@@ -50,8 +51,22 @@ export default class Reportes extends Component {
               <p className='p-s'>a: </p>
               <input type='date' />
             </div>
+
           </div>
+
         </div>
+        <div className='btn-search'>
+              <div>
+                  <button className='btn-1'>Buscar</button>
+              </div>
+              <div className="btn-space">
+              <button className='btn-2'>Limpiar</button>
+              </div>
+
+        </div>
+      </div>
+
+
         <div className='content-t-r' style={{ marginTop: '30px' }}>
           <div className='bor' />
           <div className='title-re'><b>Actividad</b></div>
