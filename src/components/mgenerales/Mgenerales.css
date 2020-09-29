@@ -1,5 +1,15 @@
+.mg-conta {
+  background: #fafafa;
+  margin-left: 18%;
+  min-height: 100vh;
+}
 .mgenerales-container {
-  padding: 80px;
+  padding: 80px 20px 20px 20px;
+}
+.mg-mp {
+  margin: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid;
 }
 .content-message {
   border: 1px solid grey;
@@ -24,7 +34,6 @@
 .w-imagen {
   width: 25%;
 }
-
 .content-tarjeta{
   padding: 5px;
   width: 80vh;
@@ -39,6 +48,7 @@
 .image2{
   height: 100%;
   width: 100%;
+  border-radius: 6px;
 }
 .content-message2{
   height: 40%;
@@ -54,4 +64,53 @@
 .content-all{
   display: flex;
   justify-content: center;
+}
+.mes-content {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.mes-area {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+.mes-text {
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding-right: 5px;
+}
+.mes-date {
+  font-size: 10px;
+  color: grey;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+}
+.mes-desc {
+  font-size: 12px;
+}
+.mes-p {
+  margin: 0;
+}
+.mes-img {
+  height: 200px;
+}
+.mes-img-cars {
+  margin-top: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  width: 200px;
+  height: 100%;
+}
+.div-mg {
+  position: fixed;
+  background: #fafafa;
+  width: 100%;
+  padding: 20px 20px 0px 20px;
 }

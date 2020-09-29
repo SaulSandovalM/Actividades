@@ -39,32 +39,32 @@ export default class Mgenerales extends Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
-        <div className='mgenerales-container'>
-          <div>
-            <h1>Boletin PGJEH</h1>
+      <div className='mg-conta'>
+        <div>
+          <div className='div-mg'>
+            <h3 className='mg-mp'>Boletin PGJEH</h3>
           </div>
-          <div>
+          <div className='mgenerales-container'>
             {this.state.messages.map(messages =>
-              <div className='content-all'>
+              <div>
               {messages.checked &&
-                <div className='content-tarjeta'>
-                 <div className='image'>
-                  <img className='image2' src={messages.imagen} alt=''/>
-                 </div>
-                 <div className='content-message2'>
-                 <div>
-                  <div className='asunto'>
-                    <b>{messages.asunto}</b>
+                <div className='mes-content'>
+                  <div className='mes-area'>
+                    <div className='mes-text'>
+                      <p>Dirección de Informática</p>
+                    </div>
+                    <div className='mes-date'>
+                      <p>{messages.fecha}</p>
+                    </div>
                   </div>
-                  <div className='desc'>
-                    {messages.descripcion}
+                  <div className='mes-desc'>
+                    <p className='mes-p'>{messages.descripcion}</p>
                   </div>
+                  <div className='mes-img'>
+                    <div className='mes-img-cars'>
+                      <img className='image2' src={messages.imagen} alt='' />
+                    </div>
                   </div>
-                  <div>
-                    {messages.fecha}
-                  </div>
-                 </div>
                 </div>
               }
               </div>

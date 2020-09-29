@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import firebase from '../../Firebase'
 import './Generacionm.css'
-import Switch from "react-switch";
+import Switch from 'react-switch';
 
 export default class Generacionm extends Component {
   constructor () {
@@ -14,6 +14,7 @@ export default class Generacionm extends Component {
       checked: true,
       num: '',
       contador: {},
+      fecha: ''
     }
   }
 
@@ -48,13 +49,14 @@ export default class Generacionm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen, checked, num } = this.state
+    const { asunto, descripcion, imagen, checked, num, fecha } = this.state
     this.ref.add({
       asunto,
       descripcion,
       imagen,
       checked,
-      num
+      num,
+      fecha
     }).then((docRef) => {
       this.setState({
         asunto: '',
@@ -94,6 +96,13 @@ export default class Generacionm extends Component {
   render() {
     const { asunto, descripcion } = this.state
     this.state.num = this.state.contador.num
+
+    var meses = new Array ('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+    var f = new Date();
+    var fecha = (f.getDate() + ' de ' + meses[f.getMonth()] + ' de ' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes());
+    console.log(fecha)
+    this.state.fecha = fecha
+
     return (
       <div style={{ margin: '80px', paddingLeft: '13%' }}>
         <div>
