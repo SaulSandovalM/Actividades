@@ -7,7 +7,7 @@ export const StyledMenu = styled.nav`
   background: #092432;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   height: 100vh;
-  width: 18%;
+  width: 256px;
   text-align: left;
   position: fixed;
   top: 0;

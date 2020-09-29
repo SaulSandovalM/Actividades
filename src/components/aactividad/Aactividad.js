@@ -158,7 +158,8 @@ export default class Aactividad extends Component {
         desc: '',
         prioridad: '',
         servidores: '',
-        tipoActividad: ''      })
+        tipoActividad: ''
+      })
       this.props.history.push('/ActividadesRegistradas')
     })
     .catch((error) => {
@@ -235,9 +236,7 @@ export default class Aactividad extends Component {
                 <p className='p-t-aa'>Convocados por dependencia/persona externa:</p>
                 <input className='convocas' name='convoca' value={convoca} onChange={this.onChange} />
               </div>
-              {
-                impart
-              }
+
 
               <div className='input-c-c'>
                 <p className='p-t-aa2'>Estado:</p>
