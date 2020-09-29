@@ -178,7 +178,7 @@ export default class Aactividad extends Component {
               </div>
             }
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '15%' }}>
         <div className='container-aactividad'>
           <div>
             <h1>Agregar Actividad</h1>
@@ -233,7 +233,7 @@ export default class Aactividad extends Component {
             <div className='content-row'>
               <div className='input-c-c'>
                 <p className='p-t-aa'>Convocados por dependencia/persona externa:</p>
-                <input className='convocas' name='convocas' value={convoca} onChange={this.onChange} />
+                <input className='convocas' name='convoca' value={convoca} onChange={this.onChange} />
               </div>
               {
                 impart
@@ -241,14 +241,14 @@ export default class Aactividad extends Component {
 
               <div className='input-c-c'>
                 <p className='p-t-aa2'>Estado:</p>
-                <select className='select2' value={estado}>
+                <select className='select2'>
                 <option></option>
                   {this.state.estados.map(estados =>
                     <option>{estados.estado}</option>
                   )}
                 </select>
               </div>
-              { this.state.estado && <div className='input-c-c'>
+              <div className='input-c-c'>
                 <p className='p-t-aa'>Municipio:</p>
                 <select className='select'>
                 <option></option>
@@ -256,7 +256,7 @@ export default class Aactividad extends Component {
                     <option>{municipios.municipio}</option>
                   )}
                 </select>
-              </div>}
+              </div>
             </div>
             <div className='content-rowta '>
               <div className='input-c-c'>
