@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import firebase from '../../Firebase'
 import './Generacionm.css'
-import Switch from 'react-switch';
+import Switch from 'react-switch'
+import TextField from '@material-ui/core/TextField'
+import Fab from '@material-ui/core/Fab';
+import DoneIcon from '@material-ui/icons/Done'
 
 export default class Generacionm extends Component {
   constructor () {
@@ -97,14 +100,14 @@ export default class Generacionm extends Component {
     const { asunto, descripcion } = this.state
     this.state.num = this.state.contador.num
 
-    var meses = new Array ('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
-    var f = new Date();
-    var fecha = (f.getDate() + ' de ' + meses[f.getMonth()] + ' de ' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes());
+    var meses = new Array ('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre')
+    var f = new Date()
+    var fecha = (f.getDate() + ' de ' + meses[f.getMonth()] + ' de ' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes())
     console.log(fecha)
     this.state.fecha = fecha
 
     return (
-      <div style={{ margin: '80px', paddingLeft: '13%' }}>
+      /*<div style={{ margin: '80px', paddingLeft: '256px' }}>
         <div>
           <div className='form-content-sw'>
             <h1 className='h1-g'>
@@ -159,6 +162,22 @@ export default class Generacionm extends Component {
               </div>
             </form>
           </div>
+        </div>
+      </div>*/
+      <div className='mg-conta'>
+        <div>
+          <div className='div-mg'>
+            <h2 className='mg-mp'>Generacion de Boletin</h2>
+          </div>
+          <form noValidate autoComplete='off' className='mensajesg-container'>
+            <TextField id='standard-basic' label='Asunto' />
+            <TextField id='standard-basic' label='Descripción' style={{marginTop: '15px'}} />
+          </form>
+        </div>
+        <div className='add-b'>
+          <Fab color='primary' aria-label='add' style={{background: 'green'}}>
+            <DoneIcon />
+          </Fab>
         </div>
       </div>
     )

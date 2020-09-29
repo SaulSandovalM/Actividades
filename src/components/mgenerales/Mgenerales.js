@@ -44,27 +44,27 @@ export default class Mgenerales extends Component {
           <div className='div-mg'>
             <h3 className='mg-mp'>Boletin PGJEH</h3>
           </div>
-          <div className='mgenerales-container'>
+          <div>
             {this.state.messages.map(messages =>
-              <div>
+              <div className='content-all'>
               {messages.checked &&
-                <div className='mes-content'>
-                  <div className='mes-area'>
-                    <div className='mes-text'>
-                      <p>Dirección de Informática</p>
-                    </div>
-                    <div className='mes-date'>
-                      <p>{messages.fecha}</p>
-                    </div>
+                <div className='content-tarjeta'>
+                 <div className='image'>
+                  <img className='image2' src={messages.imagen} alt=''/>
+                 </div>
+                 <div className='content-message2'>
+                 <div>
+                  <div className='asunto'>
+                    <b>{messages.asunto}</b>
                   </div>
-                  <div className='mes-desc'>
-                    <p className='mes-p'>{messages.descripcion}</p>
+                  <div className='desc'>
+                    {messages.descripcion}
                   </div>
-                  <div className='mes-img'>
-                    <div className='mes-img-cars'>
-                      <img className='image2' src={messages.imagen} alt='' />
-                    </div>
                   </div>
+                  <div>
+                    {messages.fecha}
+                  </div>
+                 </div>
                 </div>
               }
               </div>
