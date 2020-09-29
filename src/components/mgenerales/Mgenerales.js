@@ -48,7 +48,7 @@ export default class Mgenerales extends Component {
             {this.state.messages.map(messages =>
               <div className='content-all'>
               {messages.checked &&
-                <div className='content-tarjeta'>
+                <div className='content-tarjeta'style={{marginTop:'60px'}}>
                  <div className='image'>
                   <img className='image2' src={messages.imagen} alt=''/>
                  </div>

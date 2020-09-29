@@ -1,0 +1,161 @@
+.fader{
+  padding-left: 250px;
+}
+.prueba{
+  display: flex;
+  flex-direction: space-between;
+}
+/**Texto*/
+.txt-age{
+margin-bottom: 0px;
+width: 700px;
+
+}
+.txt-res{
+  width: 600px;
+  margin-top: 10px;
+  color: rgb(58, 128, 186);
+  margin-bottom: 10px;
+
+}
+.txt-fe{
+  color: rgb(58, 128, 186);
+  margin-top: 0px;
+}
+.linea
+{
+    margin-top: 0px;
+    border: 3px solid rgb(145, 208, 37);
+    width: 350px;
+    margin-left:0px;
+
+
+}
+.caja{
+  background-color:#2B608B;
+  height: 910px;
+  width: 500px;
+  margin: 0px 0px 0px 350px ;
+  border: 2px solid red ;
+
+}
+/*
+.prueba2{
+   background-color: black;
+
+}*/
+.portada{
+  padding-left: 30px;
+  padding-top: 600px;
+  width: 230px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/*logos*/
+.logos{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+      }
+
+.ims{
+height: 100px;
+width: 100px;
+}
+.ims2{
+  height: 100px;
+}
+/*Siguientes hojas parte procurador*/
+.sigui-pa{
+  padding-top: 40px;
+}
+.esp-pro{
+  padding-top: 90px;
+  border: 3px solid #91D025;
+  height: 600px;
+  margin-left:0px;
+}
+.datos-esp-pro{
+  display: flex;
+}
+
+.datos-esp-pro{
+    padding-left: 20px;
+
+}
+.datos-pro{
+
+  margin-top: 0px;
+}
+
+.linea-pro{
+  border: 2px solid #91D025;
+  width: 200px;
+  margin-top: 0px;
+
+}
+.datos-esp-pro{
+  padding-top:  25px;
+  padding-right: 20px;
+
+}
+.datos-pro-fe{
+padding-left: 60px;
+}
+.datos-pro-text{
+width: 500px;
+}
+.tipo-text{
+  text-align: justify;
+}
+.text-arro{
+  color:#3A80BA ;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+.text-pro{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #C2C2C2;
+  font-weight: bold;
+  font-size: 19px;
+}
+/*icons*/
+.conju-pro{
+  display: flex;
+  flex-direction: column;
+}
+.icons-pos{
+  display: flex;
+  width:250px;
+}
+.icons{
+  padding-right:10px;
+  padding-top: 3px;
+  width: 30px;
+  height:30px;
+}
+.icons-txt{
+margin: 3px;
+}
+.iconmano{
+  width: 50px;
+  height: 50px;
+}
+.txt-mano{
+  width: 500px;
+  text-align: justify;
+  background: rgba(58, 129, 186, 0.5);
+}
+.mano{
+  display: flex;
+  flex-direction: column;
+}
+.centro-mano{
+  padding-top: 400px;
+  display: flex;
+  justify-content: center;
+}
