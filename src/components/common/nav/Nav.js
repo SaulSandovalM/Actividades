@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { logoutUser } from '../../../actions'
 import { connect } from 'react-redux'
 import './Nav.css'
-import { MailOutline, Search, CalendarToday, ListAlt, EventAvailable, Person } from '@material-ui/icons';
 import logoH from '../../../imgs/logo_h.svg'
 
 class Nav extends Component {
@@ -62,7 +61,7 @@ class Nav extends Component {
               <p className='nav-t'>Autorización</p>
             </Link>
           </div>
-        </div>  
+        </div>
         <div className='navbar-left'>
           <Link to='/Autorizacion' className='deco' onClick={this.handleLogout}>
             <span className='material-icons icon-s'>

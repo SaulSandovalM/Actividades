@@ -42,7 +42,7 @@ export default class Mgenerales extends Component {
       <div className='mg-conta'>
         <div>
           <div className='div-mg'>
-            <h3 className='mg-mp'>Boletin PGJEH</h3>
+            <h3 className='mg-mp' style={{fontSize: '40px'}}>Boletin PGJEH</h3>
           </div>
           <div>
             {this.state.messages.map(messages =>

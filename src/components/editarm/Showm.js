@@ -44,7 +44,7 @@ export default class Showm extends Component {
       <div className='mg-conta'>
         <div>
           <div className='div-mg'>
-            <h2 className='mg-mp'>Mensajes</h2>
+            <h1 className='mg-mp' style={{fontSize: '40px'}}>Mensajes</h1>
           </div>
           <div className='mensajes-container'>
             {this.state.messages.map(messages =>

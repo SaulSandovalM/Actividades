@@ -1,5 +1,5 @@
 .mg-conta {
-  background: #fafafa;
+  background: #E1E2E1;
   margin-left: 256px;
   min-height: 100vh;
 }
@@ -22,13 +22,14 @@
   margin-top: 80px;
 }
 .mensajes-container {
-  padding: 150px 20px 20px 20px;
+  padding: 160px 20px 20px 20px;
 }
 .div-mg {
   position: fixed;
-  background: #fafafa;
+  background: #092432;
+  color: #FFFFFF;
   width: 100%;
-  padding: 100px 20px 0px 20px;
+  padding: 80px 20px 0px 20px;
 }
 .form-content {
   display: flex;
@@ -143,6 +144,7 @@
 .mg-cg {
   font-size: 14px;
   color: grey;
+  width: 300px;
 }
 .mes-m {
   margin: 0;
