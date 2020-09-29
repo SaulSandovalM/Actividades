@@ -14,6 +14,8 @@ import Abusqueda from './components/abusqueda/Abusqueda'
 import Sactividad from './components/sactividad/Sactividad'
 import Reportes from './components/reportes/Reportes'
 import Autorizacion from './components/autorizacion/Autorizacion'
+import Agendapdf from './components/documentos/Agendapdf'
+import Agendasemanal from './components/documentos/Agendasemanal'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -104,6 +106,23 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
+
+      <ProtectedRoute
+        exact
+        path='/Agendapdf'
+        component={Agendapdf}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Agendasemanal'
+        component={Agendasemanal}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+
     </Switch>
   )
 }
