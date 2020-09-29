@@ -99,7 +99,7 @@ export default class Sactividad extends Component {
   render () {
     const { descripcion, titulo, porque } = this.state
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '15%' }}>
         <div className='container-ss'>
           <div>
             <h1>Seguimiento de Actividad</h1>

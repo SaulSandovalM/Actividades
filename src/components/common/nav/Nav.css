@@ -7,17 +7,20 @@
 	z-index: 1;
 }
 .navbar-navigation {
-	height: 100%;
+	height: 50px;
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
+	margin-bottom: 50px;
 }
 .navbar-left {
 	height: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: left;
+	height: 32px;
+	margin-bottom: 5px;
 }
 .subnav {
 	display: flex;
@@ -26,18 +29,47 @@
 	padding-left: 30px;
 }
 .logo {
-  width: 90%;
-  height: 67px;
+  display: flex;
+	justify-content: center;
 }
 .nav-col {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
 }
 .nav-t {
 	color: #FFF;
+  display: flex;
+  justify-content: left;
+	font-size: 14px;
+	margin: 5px;
+}
+.icon-lm {
+  margin-right: 25px;
+}
+.icon-s {
+	font-size: 20px;
+	margin: 3px;
+	margin-right: 20px;
+	margin-left: 20px;
 }
 .deco {
 	text-decoration: none;
+  width: 100%;
+	display: flex;
+	justify-content: flex-start;
+}
+.deco:hover {
+	background-color: #dc5f70;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+.deco:visited {
+	background-color: #dc5f70;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 }
 .deco-c {
 	text-decoration: none;

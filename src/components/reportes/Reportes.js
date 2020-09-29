@@ -35,7 +35,7 @@ export default class Reportes extends Component {
 
   render () {
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
+      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '15%' }}>
       <div className='container-show' >
         <div>
           <h1>Reportes</h1>

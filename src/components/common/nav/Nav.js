@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { logoutUser } from '../../../actions'
 import { connect } from 'react-redux'
 import './Nav.css'
+import { MailOutline, Search, CalendarToday, ListAlt, EventAvailable, Person } from '@material-ui/icons';
 import logoH from '../../../imgs/logo_h.svg'
 
 class Nav extends Component {
@@ -15,35 +16,61 @@ class Nav extends Component {
     const { isLoggingOut, logoutError } = this.props
     return (
       <div className='nav-col'>
-        <div className='navbar-navigation'>
-          <Link to='/'>
-            <img className='logo' src={logoH} alt='' />
-          </Link>
-        </div>
+        <div>
+          <div className='navbar-navigation'>
+            <Link to='/' className='logo'>
+              <h3>Hidalgo</h3>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/Listademensajes' className='deco'>
+              <span className='material-icons icon-s'>
+                email
+              </span>
+              <p className='nav-t'>Mensajes</p>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/ActividadesRegistradas' className='deco'>
+              <span className='material-icons icon-s'>
+                calendar_today
+              </span>
+              <p className='nav-t'>Actividades</p>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/BusquedaActividad' className='deco'>
+              <span className='material-icons icon-s'>
+                search
+              </span>
+              <p className='nav-t'>Busqueda</p>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/Reportes' className='deco'>
+              <span className='material-icons icon-s'>
+                description
+              </span>
+              <p className='nav-t'>Reportes</p>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/Autorizacion' className='deco'>
+              <span className='material-icons icon-s'>
+                assignment_turned_in
+              </span>
+              <p className='nav-t'>Autorización</p>
+            </Link>
+          </div>
+        </div>  
         <div className='navbar-left'>
-          <Link to='/Listademensajes' className='deco'>
-            <h3 className='nav-t'>Lista de Mensajes</h3>
+          <Link to='/Autorizacion' className='deco' onClick={this.handleLogout}>
+            <span className='material-icons icon-s'>
+              person
+            </span>
+            <p className='nav-t'>Salir</p>
           </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/ActividadesRegistradas' className='deco'>
-            <h3 className='nav-t'>Actividades Registradas</h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/BusquedaActividad' className='deco'>
-            <h3 className='nav-t'>Busqueda</h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/Reportes' className='deco'>
-            <h3 className='nav-t'>Reportes</h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/Autorizacion' className='deco'>
-            <h3 className='nav-t'>Autorizacion</h3>
-          </Link>
+<<<<<<< HEAD
         </div>
         <div className='navbar-left'>
           <Link to='/Agendapdf' className='deco'>
@@ -69,6 +96,10 @@ class Nav extends Component {
             {isLoggingOut && <p>Cerrando Sesion....</p>}
             {logoutError && <p>Error al Cerrar Sesion</p>}
           </div>
+=======
+          {isLoggingOut && <p>Cerrando Sesion....</p>}
+          {logoutError && <p>Error al Cerrar Sesion</p>}
+>>>>>>> 90717b28c0357978ebfa43342e433947fff5c4a0
         </div>
       </div>
     )

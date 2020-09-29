@@ -1,11 +1,34 @@
+.mg-conta {
+  background: #fafafa;
+  margin-left: 256px;
+  min-height: 100vh;
+}
 .container-show {
   padding: 80px;
   height: 82vh;
+}
+.add-b {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+  padding: 20px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
 }
 .container-list-s {
   margin-left: 80px;
   margin-right: 20px;
   margin-top: 80px;
+}
+.mensajes-container {
+  padding: 150px 20px 20px 20px;
+}
+.div-mg {
+  position: fixed;
+  background: #fafafa;
+  width: 100%;
+  padding: 100px 20px 0px 20px;
 }
 .form-content {
   display: flex;
@@ -19,11 +42,21 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  border-bottom: .5px solid grey;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 20px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.content-title:hover {
+  background: #cdcdcd;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .title-a {
   border-left: 1px solid #d0d0d0;
   border-bottom: 1px solid #d0d0d0;
-  width: 24%;
+  width: 30%;
 }
 .bor {
   border-bottom: 1px solid #d0d0d0;
@@ -45,7 +78,6 @@
 }
 .input-e {
   width: 85%;
-
 }
 .button-e {
   display: flex;
@@ -58,7 +90,6 @@
   color: white;
   background: #092432;
 }
-
 .style-button-r{
   background-color:#092432;
   color:  #ffffff;
@@ -77,4 +108,70 @@
 .input-e2 {
   width: 40px;
   height: 500px;
+}
+.men-titulo {
+  width: 22%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.men-desc {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-height: 20px;
+}
+.col-cen-s {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 75%;
+}
+.mg-c {
+  font-size: 14px;
+  padding-right: 5px;
+  padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.mg-cg {
+  font-size: 14px;
+  color: grey;
+}
+.mes-m {
+  margin: 0;
+}
+.cover {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  margin-left: -320px;
+}
+.row-w:hover {
+  opacity: 1;
+}
+.col-icon-c {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.icon-e {
+  font-size: 20px;
+  margin: 3px;
+}
+.row-w {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 100%;
+  opacity: 0;
 }

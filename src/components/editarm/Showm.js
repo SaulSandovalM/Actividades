@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './Editarm.css'
 import firebase from '../../Firebase'
 import { Link } from 'react-router-dom'
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add'
 
 export default class Showm extends Component {
   constructor (props) {
@@ -16,7 +18,7 @@ export default class Showm extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const messages = []
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, imagen, checked, num } = doc.data()
+      const { asunto, descripcion, imagen, checked, num, fecha } = doc.data()
       messages.push({
         key: doc.id,
         doc,
@@ -24,7 +26,8 @@ export default class Showm extends Component {
         descripcion,
         imagen,
         checked,
-        num
+        num,
+        fecha
       })
     })
     this.setState({
@@ -38,47 +41,44 @@ export default class Showm extends Component {
 
   render() {
     return (
-      <div style={{ paddingLeft: '13%' }}>
-        <div className='container-list-s'>
-          <div>
-            <h1>Mensajes</h1>
+      <div className='mg-conta'>
+        <div>
+          <div className='div-mg'>
+            <h2 className='mg-mp'>Mensajes</h2>
           </div>
-          <div className='button-r'>
-            <Link to='/Generaciondemensajes'><button className='style-button-r'>Agregar</button></Link>
-          </div>
-          <div>
-            <div className='content-title'>
-              <div className='bor' />
-              <div className='title-a'><p className='p-padding'><b>Asunto</b></p></div>
-              <div className='title-a'><p className='p-padding'><b>Mensaje</b></p></div>
-              <div className='title-a'><p className='p-padding'><b>Estatus</b></p></div>
-              <div className='title-a'><p className='p-padding'><b>Editar</b></p></div>
-              <div className='bor' style={{borderLeft: '1px solid #d0d0d0'}} />
-            </div>
-            <div>
-              {this.state.messages.map(messages =>
-                <div className='content-title'>
-                  <div className='bor' />
-                  <div className='title-a'><p className='p-padding'>{messages.asunto}</p></div>
-                  <div className='title-a'><p className='p-padding'>{messages.descripcion}</p></div>
-                  <div className='title-a'>
-                    { messages.checked &&
-                      <p className='p-padding'>
-                        Activo
-                      </p>
-                    }
-                    { !messages.checked &&
-                      <p className='p-padding'>
-                        Inactivo
-                      </p>
-                    }
-                  </div>
-                  <div className='title-a'><p className='p-padding'><Link to={`/Editarmensaje/${messages.key}`}>Editar</Link></p></div>
-                  <div className='bor' style={{borderLeft: '1px solid #d0d0d0'}} />
+          <div className='mensajes-container'>
+            {this.state.messages.map(messages =>
+              <div className='content-title'>
+                <div className='men-titulo'>
+                  <p className='mes-p mg-c'>{messages.asunto}</p>
                 </div>
-              )}
-            </div>
+                <div className='col-cen-s'>
+                  <div className='men-desc'>
+                    <p className='mes-m mg-c'>{messages.descripcion}</p>
+                    <p className='mes-p mg-cg'>- {messages.fecha}</p>
+                  </div>
+                </div>
+                <div className='cover'>
+                  <div className='col-icon-c'>
+                    <div className='row-w'>
+                      <Link to={`/Editarmensaje/${messages.key}`}>
+                        <span className='material-icons icon-e'>
+                          edit
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
+        </div>
+        <div className='add-b'>
+          <Link to='/Generaciondemensajes'>
+            <Fab color='primary' aria-label='add' style={{background: '#092432'}}>
+              <AddIcon />
+            </Fab>
+          </Link>
         </div>
       </div>
     )

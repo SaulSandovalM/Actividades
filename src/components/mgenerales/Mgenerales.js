@@ -39,16 +39,16 @@ export default class Mgenerales extends Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
-        <div className='mgenerales-container'>
-          <div>
-            <h1>Boletin PGJEH</h1>
+      <div className='mg-conta'>
+        <div>
+          <div className='div-mg'>
+            <h3 className='mg-mp'>Boletin PGJEH</h3>
           </div>
           <div>
             {this.state.messages.map(messages =>
               <div className='content-all'>
               {messages.checked &&
-                <div className='content-tarjeta'>
+                <div className='content-tarjeta'style={{marginTop:'60px'}}>
                  <div className='image'>
                   <img className='image2' src={messages.imagen} alt=''/>
                  </div>
