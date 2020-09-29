@@ -35,9 +35,15 @@
 }
 .nav-t {
 	color: #FFF;
+  display: flex;
+  justify-content: left;
+}
+.icon-lm {
+  margin-right: 25px;
 }
 .deco {
 	text-decoration: none;
+  width: 100%;
 }
 .deco-c {
 	text-decoration: none;
