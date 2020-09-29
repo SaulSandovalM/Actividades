@@ -16,65 +16,62 @@ class Nav extends Component {
     const { isLoggingOut, logoutError } = this.props
     return (
       <div className='nav-col'>
-        <div className='navbar-navigation'>
-          <Link to='/'>
-            <img className='logo' src={logoH} alt='' />
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/Listademensajes' className='deco'>
-            <h3 className='nav-t'>
-              <MailOutline className='icon-lm' />
-              Mensajes
-            </h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/ActividadesRegistradas' className='deco'>
-            <h3 className='nav-t'>
-              <CalendarToday className='icon-lm' />
-              Actividades
-            </h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/BusquedaActividad' className='deco'>
-            <h3 className='nav-t'>
-              <Search className='icon-lm' />
-              Busqueda
-            </h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/Reportes' className='deco'>
-            <h3 className='nav-t'>
-              <ListAlt className='icon-lm' />
-              Reportes
-            </h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/Autorizacion' className='deco'>
-            <h3 className='nav-t'>
-              <EventAvailable className='icon-lm' />
-              Autorizacion
-            </h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <div className='deco'>
-            <button
-              onClick={this.handleLogout}
-              className='nav-t'
-              style={{ background: '#092432', border: 'none' }}>
-              <h3 className='nav-t'>
-                <Person className='icon-lm' />
-                Cerrar Sesion
-              </h3>
-            </button>
-            {isLoggingOut && <p>Cerrando Sesion....</p>}
-            {logoutError && <p>Error al Cerrar Sesion</p>}
+        <div>
+          <div className='navbar-navigation'>
+            <Link to='/' className='logo'>
+              <h3>Hidalgo</h3>
+            </Link>
           </div>
+          <div className='navbar-left'>
+            <Link to='/Listademensajes' className='deco'>
+              <span className='material-icons icon-s'>
+                email
+              </span>
+              <p className='nav-t'>Mensajes</p>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/ActividadesRegistradas' className='deco'>
+              <span className='material-icons icon-s'>
+                calendar_today
+              </span>
+              <p className='nav-t'>Actividades</p>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/BusquedaActividad' className='deco'>
+              <span className='material-icons icon-s'>
+                search
+              </span>
+              <p className='nav-t'>Busqueda</p>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/Reportes' className='deco'>
+              <span className='material-icons icon-s'>
+                description
+              </span>
+              <p className='nav-t'>Reportes</p>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/Autorizacion' className='deco'>
+              <span className='material-icons icon-s'>
+                assignment_turned_in
+              </span>
+              <p className='nav-t'>Autorización</p>
+            </Link>
+          </div>
+        </div>  
+        <div className='navbar-left'>
+          <Link to='/Autorizacion' className='deco' onClick={this.handleLogout}>
+            <span className='material-icons icon-s'>
+              person
+            </span>
+            <p className='nav-t'>Salir</p>
+          </Link>
+          {isLoggingOut && <p>Cerrando Sesion....</p>}
+          {logoutError && <p>Error al Cerrar Sesion</p>}
         </div>
       </div>
     )
