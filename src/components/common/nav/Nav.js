@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { logoutUser } from '../../../actions'
 import { connect } from 'react-redux'
+import logoH from '../../../imgs/logo2.png'
 import './Nav.css'
-import logoH from '../../../imgs/logo_h.svg'
 
 class Nav extends Component {
   handleLogout = () => {
@@ -18,23 +18,31 @@ class Nav extends Component {
         <div>
           <div className='navbar-navigation'>
             <Link to='/' className='logo'>
-              <h3>Hidalgo</h3>
+              <img className='logoimg' src={logoH} alt='' />
             </Link>
           </div>
           <div className='navbar-left'>
             <Link to='/Listademensajes' className='deco'>
-              <span className='material-icons icon-s'>
-                email
-              </span>
-              <p className='nav-t'>Mensajes</p>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    email
+                  </span>
+                  <p className='nav-t'>Mensajes</p>
+                </div>
+              </div>
             </Link>
           </div>
           <div className='navbar-left'>
             <Link to='/ActividadesRegistradas' className='deco'>
-              <span className='material-icons icon-s'>
-                calendar_today
-              </span>
-              <p className='nav-t'>Actividades</p>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    calendar_today
+                  </span>
+                  <p className='nav-t'>Actividades</p>
+                </div>
+              </div>
             </Link>
           </div>
           <div className='navbar-left'>
@@ -49,36 +57,53 @@ class Nav extends Component {
           </div>
           <div className='navbar-left'>
             <Link to='/BusquedaActividad' className='deco'>
-              <span className='material-icons icon-s'>
-                search
-              </span>
-              <p className='nav-t'>Busqueda</p>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    search
+                  </span>
+                  <p className='nav-t'>Busqueda</p>
+                </div>
+              </div>
             </Link>
           </div>
           <div className='navbar-left'>
             <Link to='/Reportes' className='deco'>
-              <span className='material-icons icon-s'>
-                description
-              </span>
-              <p className='nav-t'>Reportes</p>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    description
+                  </span>
+                  <p className='nav-t'>Reportes</p>
+                </div>
+              </div>
             </Link>
           </div>
           <div className='navbar-left'>
             <Link to='/Autorizacion' className='deco'>
-              <span className='material-icons icon-s'>
-                assignment_turned_in
-              </span>
-              <p className='nav-t'>Autorización</p>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    assignment_turned_in
+                  </span>
+                  <p className='nav-t'>Autorización</p>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
         <div className='navbar-left'>
           <Link to='/Autorizacion' className='deco' onClick={this.handleLogout}>
-            <span className='material-icons icon-s'>
-              person
-            </span>
-            <p className='nav-t'>Salir</p>
+            <div className='hover-center'>
+              <div className='row-h'>
+                <span className='material-icons icon-s'>
+                  person
+                </span>
+                <p className='nav-t'>Salir</p>
+              </div>
+            </div>
           </Link>
+<<<<<<< HEAD
         </div>
 
 
@@ -95,6 +120,10 @@ class Nav extends Component {
             {isLoggingOut && <p>Cerrando Sesion....</p>}
             {logoutError && <p>Error al Cerrar Sesion</p>}
           </div>
+=======
+          {isLoggingOut && <p>Cerrando Sesion....</p>}
+          {logoutError && <p>Error al Cerrar Sesion</p>}
+>>>>>>> 1fd8b8047a4ee7fdf31d5f651aec56a7bf38b07a
         </div>
       </div>
     )
