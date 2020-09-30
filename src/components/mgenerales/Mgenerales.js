@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import './Mgenerales.css'
 import firebase from '../../Firebase'
-import { Link } from 'react-router-dom'
 
 export default class Mgenerales extends Component {
   constructor(props) {
     super(props);
-    this.ref = firebase.firestore().collection('messages').orderBy('num','asc')
+    this.ref = firebase.firestore().collection('messages')
     this.unsubscribe = null;
     this.state = {
       messages: [],
@@ -40,37 +39,31 @@ export default class Mgenerales extends Component {
   render() {
     return (
       <div className='mg-conta'>
-        <div>
-          <div className='div-mg'>
-            <h3 className='mg-mp' style={{fontSize: '40px'}}>Boletin PGJEH</h3>
-          </div>
-          <div>
-            {this.state.messages.map(messages =>
-              <div className='content-all'>
-              {messages.checked &&
-                <div className='content-tarjeta'style={{marginTop:'60px'}}>
-                 <div className='image'>
-                  <img className='image2' src={messages.imagen} alt=''/>
-                 </div>
-                 <div className='content-message2'>
-                 <div>
-                  <div className='asunto'>
-                    <b>{messages.asunto}</b>
-                  </div>
-                  <div className='desc'>
-                    {messages.descripcion}
-                  </div>
-                  </div>
-                  <div>
-                    {messages.fecha}
-                  </div>
-                 </div>
+        {this.state.messages.map(messages =>
+          <div className='content-all'>
+            {messages.checked &&
+              <div className='content-tarjeta'>
+                <div className='dir-content'>
+                  <p className='mg-asunto'>{messages.asunto}</p>
+                  <p className='mg-area'>{messages.asunto} - {messages.fecha}</p>
                 </div>
-              }
+                <div className='image'>
+                  <img className='image2' src={messages.imagen} alt=''/>
+                </div>
+                <div className='content-message2'>
+                  <div className='content-desc'>
+                    <div>
+                      <b>{messages.asunto}</b>
+                    </div>
+                    <div className='desc'>
+                      {messages.descripcion}
+                    </div>
+                  </div>
+                </div>
               </div>
-            ).reverse()}
+            }
           </div>
-        </div>
+        )}
       </div>
     )
   }

@@ -3,12 +3,101 @@
   margin-left: 256px;
   min-height: 100vh;
 }
+.content-all {
+  display: flex;
+  justify-content: flex-start;
+}
+.content-tarjeta {
+  background-color: white;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  margin: 20px;
+  width: 50%;
+}
+.dir-content {
+  padding-left: 20px;
+}
+.mg-asunto {
+  font-weight: bold;
+  margin: 20px 0 5px 0;
+}
+.mg-area {
+  color: grey;
+  font-size: 14px;
+  margin-top: 0;
+}
+.image {
+  width: 100%;
+}
+.image2 {
+  width: 100%;
+}
+.content-message2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.content-desc {
+  padding: 15px;
+}
+.desc{
+  margin-top: 10px;
+}
+.fecha-mg {
+  font-size: 14px;
+  padding: 15px;
+  color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .mgenerales-container {
   padding: 80px 20px 20px 20px;
-}
-.mg-mp {
-  margin: 0;
-  padding-bottom: 20px;
 }
 .content-message {
   border: 1px solid grey;
@@ -33,37 +122,11 @@
 .w-imagen {
   width: 25%;
 }
-.content-tarjeta{
-  padding: 5px;
-  width: 80vh;
-  box-shadow: 10px 5px 5px grey;
-  margin-bottom: 50px;
-  background-color: white;
-}
-.image{
-  height: 60%;
-  width: 100%;
-}
-.image2{
-  height: 100%;
-  width: 100%;
-  border-radius: 6px;
-}
-.content-message2{
-  height: 40%;
-  width: 100%;
-  padding-top:10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.desc{
-  margin-top:10px;
-}
-.content-all{
-  display: flex;
-  justify-content: center;
-}
+
+
+
+
+
 .mes-content {
   width: 100%;
   margin-bottom: 20px;
@@ -106,10 +169,4 @@
   border-radius: 6px;
   width: 200px;
   height: 100%;
-}
-.div-mg {
-  position: fixed;
-  background: #fafafa;
-  width: 100%;
-  padding: 20px 20px 0px 20px;
 }

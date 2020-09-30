@@ -1,7 +1,11 @@
+/* Estilos Show */
 .mg-conta {
-  background: #E1E2E1;
+  background: #fafafa;
   margin-left: 256px;
   min-height: 100vh;
+}
+.mensajes-container {
+  padding: 20px;
 }
 .container-show {
   padding: 80px;
@@ -21,9 +25,7 @@
   margin-right: 20px;
   margin-top: 80px;
 }
-.mensajes-container {
-  padding: 160px 20px 20px 20px;
-}
+
 .div-mg {
   position: fixed;
   background: #092432;

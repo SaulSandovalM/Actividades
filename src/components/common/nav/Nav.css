@@ -1,10 +1,9 @@
-.navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 15%;
-	background: #092432;
-	z-index: 1;
+.nav-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+	justify-content: space-between;
+	width: 100%;
 }
 .navbar-navigation {
 	height: 50px;
@@ -13,70 +12,54 @@
 	flex-direction: column;
 	justify-content: center;
 	margin-bottom: 50px;
-}
-.navbar-left {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: left;
-	height: 32px;
-	margin-bottom: 5px;
-}
-.subnav {
-	display: flex;
-	flex-direction: row;
-	justify-content: left;
-	padding-left: 30px;
+  margin-top: 50px;
 }
 .logo {
   display: flex;
 	justify-content: center;
 }
-.nav-col {
+.logoimg {
+  width: 120px;
+  height: 100px;
+}
+.navbar-left {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	height: 100%;
-	width: 100%;
-}
-.nav-t {
-	color: #FFF;
-  display: flex;
-  justify-content: left;
-	font-size: 18px;
-	margin: 3px;
-}
-.icon-lm {
-  margin-right: 25px;
-}
-.icon-s {
-	font-size: 22px;
-	margin: 3px;
-	margin-right: 20px;
-	margin-left: 20px;
+	justify-content: center;
+	height: 42px;
+	margin-bottom: 5px;
 }
 .deco {
 	text-decoration: none;
   width: 100%;
+  height: 100%;
 	display: flex;
 	justify-content: flex-start;
 }
 .deco:hover {
 	background-color: #dc5f70;
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
 }
-.deco:visited {
-	background-color: #dc5f70;
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
+.hover-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.deco-c {
-	text-decoration: none;
-	cursor: pointer;
+.row-h {
+  display: flex;
+  justify-content: center;
 }
-.arrow {
-	height: 10px;
-	padding-left: 10px;
-	padding-top: 26px;
+.icon-s {
+	font-size: 22px;
+	margin: 2px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.nav-t {
+	color: #FFF;
+  display: flex;
+  font-size: 18px;
+	margin: 3px;
 }
