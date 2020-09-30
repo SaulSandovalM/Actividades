@@ -121,8 +121,6 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-
-
     </Switch>
   )
 }
