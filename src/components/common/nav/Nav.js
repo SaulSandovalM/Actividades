@@ -38,6 +38,16 @@ class Nav extends Component {
             </Link>
           </div>
           <div className='navbar-left'>
+            <Link to='/Agendapdf' className='deco'>
+              <h3 className='nav-t'>Agendapdf</h3>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/Agendasemanal' className='deco'>
+              <h3 className='nav-t'>Agendasemanal</h3>
+            </Link>
+          </div>
+          <div className='navbar-left'>
             <Link to='/BusquedaActividad' className='deco'>
               <span className='material-icons icon-s'>
                 search
@@ -70,16 +80,7 @@ class Nav extends Component {
             <p className='nav-t'>Salir</p>
           </Link>
         </div>
-        <div className='navbar-left'>
-          <Link to='/Agendapdf' className='deco'>
-            <h3 className='nav-t'>Agendapdf</h3>
-          </Link>
-        </div>
-        <div className='navbar-left'>
-          <Link to='/Agendasemanal' className='deco'>
-            <h3 className='nav-t'>Agendasemanal</h3>
-          </Link>
-        </div>
+
 
         <div className='navbar-left'>
           <div className='deco'>
@@ -94,10 +95,6 @@ class Nav extends Component {
             {isLoggingOut && <p>Cerrando Sesion....</p>}
             {logoutError && <p>Error al Cerrar Sesion</p>}
           </div>
-=======
-          {isLoggingOut && <p>Cerrando Sesion....</p>}
-          {logoutError && <p>Error al Cerrar Sesion</p>}
->>>>>>> 90717b28c0357978ebfa43342e433947fff5c4a0
         </div>
       </div>
     )
