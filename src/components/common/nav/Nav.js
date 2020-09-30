@@ -69,7 +69,6 @@ class Nav extends Component {
             </span>
             <p className='nav-t'>Salir</p>
           </Link>
-<<<<<<< HEAD
         </div>
         <div className='navbar-left'>
           <Link to='/Agendapdf' className='deco'>
