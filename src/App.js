@@ -16,6 +16,11 @@ import Reportes from './components/reportes/Reportes'
 import Autorizacion from './components/autorizacion/Autorizacion'
 import Agendapdf from './components/documentos/Agendapdf'
 import Agendasemanal from './components/documentos/Agendasemanal'
+<<<<<<< HEAD
+import Reporteniveldir from './components/documentos/Reporteniveldir'
+
+=======
+>>>>>>> 1fd8b8047a4ee7fdf31d5f651aec56a7bf38b07a
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props

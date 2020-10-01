@@ -1,5 +1,5 @@
-.fader{
-  padding-left: 250px;
+.fader{padding-left: 260px;
+
 }
 .prueba{
   display: flex;
@@ -158,4 +158,34 @@ margin: 3px;
   padding-top: 400px;
   display: flex;
   justify-content: center;
+}
+
+/*reporte Nivel direccion*/
+.fader-reporte{
+padding-left: 300px;
+
+}
+/* nombre y cargo*/
+.Nombre-cargo{
+  display: flex;
+  justify-content: space-between;
+}
+/*Tabla*/
+.tabla-reporteniveldir{
+  width:1600px;
+}
+.tab-arriba{
+  width: 1200px;
+
+}
+.filas-tab{
+  width:  10%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  background: #3A80BA;
+  color:white;
+}
+.columas-tab{
+  height: 20px;
+  text-align: right;
 }
