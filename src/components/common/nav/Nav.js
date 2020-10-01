@@ -103,7 +103,6 @@ class Nav extends Component {
               </div>
             </div>
           </Link>
-<<<<<<< HEAD
         </div>
 
 
@@ -120,10 +119,7 @@ class Nav extends Component {
             {isLoggingOut && <p>Cerrando Sesion....</p>}
             {logoutError && <p>Error al Cerrar Sesion</p>}
           </div>
-=======
-          {isLoggingOut && <p>Cerrando Sesion....</p>}
-          {logoutError && <p>Error al Cerrar Sesion</p>}
->>>>>>> 1fd8b8047a4ee7fdf31d5f651aec56a7bf38b07a
+
         </div>
       </div>
     )
