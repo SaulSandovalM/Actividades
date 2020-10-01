@@ -8,7 +8,7 @@ import AddIcon from '@material-ui/icons/Add'
 export default class Showm extends Component {
   constructor (props) {
     super(props)
-    this.ref = firebase.firestore().collection('messages').orderBy('num', 'asc')
+    this.ref = firebase.firestore().collection('messages')
     this.unsubscribe = null
     this.state = {
       messages: []
@@ -18,7 +18,7 @@ export default class Showm extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const messages = []
     querySnapshot.forEach((doc) => {
-      const { asunto, descripcion, imagen, checked, num, fecha } = doc.data()
+      const { asunto, descripcion, imagen, checked, fecha } = doc.data()
       messages.push({
         key: doc.id,
         doc,
@@ -26,7 +26,6 @@ export default class Showm extends Component {
         descripcion,
         imagen,
         checked,
-        num,
         fecha
       })
     })
@@ -47,19 +46,26 @@ export default class Showm extends Component {
             {this.state.messages.map(messages =>
               <div className='content-title'>
                 <div className='men-titulo'>
-                  <p className='mes-p mg-c'>{messages.asunto}</p>
+                  <div style={{display: 'flex'}}>
+                    <span className='material-icons icon-sh'>
+                      label_important
+                    </span>
+                    <p className='mg-c'>
+                      {messages.asunto}
+                    </p>
+                  </div>
                 </div>
                 <div className='col-cen-s'>
                   <div className='men-desc'>
-                    <p className='mes-m mg-c'>{messages.descripcion}</p>
-                    <p className='mes-p mg-cg'>- {messages.fecha}</p>
+                    <p className='mes-m-show mg-c'>{messages.descripcion}</p>
+                    <p className='mes-p-show mg-cg'>- {messages.fecha}</p>
                   </div>
                 </div>
                 <div className='cover'>
                   <div className='col-icon-c'>
                     <div className='row-w'>
                       <Link to={`/Editarmensaje/${messages.key}`}>
-                        <span className='material-icons icon-e'>
+                        <span className='material-icons icon-sh2'>
                           edit
                         </span>
                       </Link>
@@ -72,7 +78,7 @@ export default class Showm extends Component {
         </div>
         <div className='add-b'>
           <Link to='/Generaciondemensajes'>
-            <Fab color='primary' aria-label='add' style={{background: '#092432'}}>
+            <Fab color='primary' aria-label='add' style={{background: 'green'}}>
               <AddIcon />
             </Fab>
           </Link>

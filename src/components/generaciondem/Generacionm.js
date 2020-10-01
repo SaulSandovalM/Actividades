@@ -58,14 +58,8 @@ export default class Generacionm extends Component {
         asunto: '',
         descripcion: '',
         imagen: '',
-        checked: true,
-        num: ''
+        checked: true
       })
-      const statsRef = firebase.firestore().collection('messages').doc('--contador--')
-      const increment = firebase.firestore.FieldValue.increment(1)
-      const batch = firebase.firestore().batch()
-      batch.set(statsRef, { num: increment }, { merge: true })
-      batch.commit()
       this.props.history.push('/')
       alert('Se Envio el formulario')
     })
@@ -77,78 +71,18 @@ export default class Generacionm extends Component {
   render() {
     const { asunto, descripcion } = this.state
 
-    var meses = new Array ('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre')
+    var meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
     var f = new Date()
-    var fecha = (f.getDate() + ' de ' + meses[f.getMonth()] + ' de ' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes())
-    this.state.fecha = fecha
-    console.log(this.state.asunto)
-    console.log(fecha)
-    console.log(this.state.checked)
+    var date = (f.getDate() + ' de ' + meses[f.getMonth()] + ' de ' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes())
+    this.state.fecha = date
 
     return (
-      /*<div style={{ margin: '80px', paddingLeft: '256px' }}>
-        <div>
-          <div className='form-content-sw'>
-            <h1 className='h1-g'>
-              Generacion de Boletin
-            </h1>
-            <div>
-              <Switch checked={this.state.checked} />
-            </div>
-          </div>
-          <div>
-            <form className='form-container-g' onSubmit={this.onSubmit}>
-              <div className='form-content-g'>
-                <label className='text-g'>Asunto:</label>
-                <input
-                  className='input-g'
-                  name='asunto'
-                  value={asunto}
-                  onChange={this.onChange}
-                  placeholder='Asunto'
-                  required
-                />
-              </div>
-              <div className='form-content-g'>
-                <label className='text-g'>Descripcion:</label>
-                <textArea
-                  className='input-g'
-                  name='descripcion'
-                  onChange={this.onChange}
-                  placeholder='Mensaje'
-                  cols='80'
-                  rows='3'
-                  required
-                >
-                  {descripcion}
-                </textArea>
-              </div>
-              <div className='form-content-g'>
-                <label className='text-g'>Imagen:</label>
-                <input
-                  className='input-g'
-                  type='file'
-                  onChange={this.handleImage.bind(this)}
-                  required
-                />
-              </div>
-              <div className='form-content-g'>
-                <label className='text-g' required />
-                <progress className='progress2' value={this.state.imgp} />
-              </div>
-              <div className='button-e'>
-                <button className='style-button-e' type='submit'>Enviar</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>*/
       <div className='mg-conta'>
         <div>
           <div className='divtop-mg' />
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
-              <h2>Generacion de Boletin</h2>
+              <h2>Generación de Boletin</h2>
               <TextField
                 id='standard-basic'
                 label='Asunto'
@@ -163,6 +97,15 @@ export default class Generacionm extends Component {
                 style={{marginTop: '15px'}}
                 name='descripcion'
                 value={descripcion}
+                onChange={this.onChange}
+                required
+              />
+              <TextField
+                id='standard-basic'
+                label='Fecha'
+                style={{marginTop: '15px'}}
+                name='fecha'
+                value={date}
                 onChange={this.onChange}
                 required
               />

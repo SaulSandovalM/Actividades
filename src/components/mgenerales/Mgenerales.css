@@ -5,7 +5,7 @@
 }
 .content-all {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .content-tarjeta {
   background-color: white;
