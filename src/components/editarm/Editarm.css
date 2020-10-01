@@ -1,8 +1,9 @@
-/* Estilos Show */
-.mg-conta {
-  background: #fafafa;
-  margin-left: 256px;
-  min-height: 100vh;
+.link-fab {
+  position: absolute;
+  right: 0;
+  padding-right: 20%;
+  margin-top: -30px;
+  z-index: 2;
 }
 .mensajes-container {
   padding: 20px;
@@ -48,7 +49,7 @@
   border-bottom: .5px solid grey;
   padding-top: 5px;
   padding-bottom: 5px;
-  height: 20px;
+  height: 30px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -118,6 +119,22 @@
   justify-content: center;
   flex-direction: column;
 }
+.icon-sh {
+  color: grey;
+  font-size: 25px;
+  margin-top: 12px;
+}
+.icon-sh2 {
+  color: blue;
+  font-size: 25px;
+  margin-top: 12px;
+}
+.mes-m-show {
+  margin: 6px;
+}
+.mes-p-show {
+  margin: 5px;
+}
 .men-desc {
   width: 100%;
   display: flex;
@@ -134,7 +151,7 @@
   width: 75%;
 }
 .mg-c {
-  font-size: 14px;
+  font-size: 16px;
   padding-right: 5px;
   padding-left: 10px;
   overflow: hidden;

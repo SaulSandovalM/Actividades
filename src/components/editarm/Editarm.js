@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import './Editarm.css'
 import firebase from '../../Firebase'
-import Switch from 'react-switch'
+import TextField from '@material-ui/core/TextField'
+import Fab from '@material-ui/core/Fab'
+import DoneIcon from '@material-ui/icons/Done'
+import Input from '@material-ui/core/Input'
 
 export default class Editarm extends Component {
   constructor (props) {
@@ -12,8 +15,8 @@ export default class Editarm extends Component {
       descripcion: '',
       imagen: '',
       checked: true,
-      num: '',
-      imgc: 0
+      imgc: 0,
+      fecha: ''
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -29,7 +32,7 @@ export default class Editarm extends Component {
           descripcion: messages.descripcion,
           imagen: messages.imagen,
           checked: messages.checked,
-          num: messages.num
+          fecha: messages.fecha
         })
       } else {
         console.log('No hay documento!')
@@ -68,14 +71,14 @@ export default class Editarm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { asunto, descripcion, imagen, checked, num } = this.state
+    const { asunto, descripcion, imagen, checked, fecha } = this.state
     const updateRef = firebase.firestore().collection('messages').doc(this.state.key)
     updateRef.set({
       asunto,
       descripcion,
       imagen,
       checked,
-      num
+      fecha
     }).then((docRef) => {
       this.setState({
         key: '',
@@ -83,7 +86,7 @@ export default class Editarm extends Component {
         descripcion: '',
         imagen: '',
         checked: true,
-        num: ''
+        fecha: ''
       })
       this.props.history.push('/Listademensajes')
     })
@@ -94,36 +97,50 @@ export default class Editarm extends Component {
 
   render() {
     return (
-      <div style={{ margin: '80px', paddingLeft: '13%' }}>
+      <div className='mg-conta'>
         <div>
-          <div className='form-content-sw'>
-            <h1 className='h1-g'>
-              Edición de Mensaje
-            </h1>
-            <div>
-              <Switch checked={this.state.checked} onChange={this.handleChange} />
-            </div>
-          </div>
-          <div>
-            <form className='container-edit' onSubmit={this.onSubmit}>
-              <div className='content-edit'>
-                <label className='title-e'>Asunto:</label>
-                <input className='input-e' name='asunto' value={this.state.asunto} onChange={this.onChange} placeholder='asunto' />
-              </div>
-              <div className='content-edit'>
-                <label className='title-e'>Descripcion:</label>
-                <textarea cols='80' rows='3' className='input-g' name='descripcion' value={this.state.descripcion} onChange={this.onChange} placeholder='descripcion' />
-              </div>
-              <div className='form-content'>
-                <label className='text-g'>Imagen:</label>
-                <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
-              </div>
-              <div className='form-content'>
-                <label className='text-g' />
-                <progress className='progress3' value={this.state.imgc} />
-              </div>
-              <div className='button-e'>
-                <button className='style-button-e' type='submit'>Enviar</button>
+          <div className='divtop-mg' />
+          <div className='form-content-gm'>
+            <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
+              <h2>Edición de Boletin</h2>
+              <TextField
+                id='standard-basic'
+                label='Asunto'
+                name='asunto'
+                value={this.state.asunto}
+                onChange={this.onChange}
+                required
+              />
+              <TextField
+                id='standard-basic'
+                label='Descripción'
+                style={{marginTop: '15px'}}
+                name='descripcion'
+                value={this.state.descripcion}
+                onChange={this.onChange}
+                required
+              />
+              <TextField
+                id='standard-basic'
+                label='Fecha'
+                style={{ marginTop: '15px' }}
+                name='fecha'
+                value={ this.state.fecha }
+                onChange={ this.onChange }
+                required
+                disabled
+              />
+              <Input
+                type='file'
+                style={{ marginTop: '30px' }}
+                onChange={this.handleImage.bind(this)}
+                required
+              />
+              <progress className='progress2' value={this.state.imgc} />
+              <div className='add-gb'>
+                <Fab color='primary' aria-label='add' style={{background: 'green'}} type='submit'>
+                  <DoneIcon />
+                </Fab>
               </div>
             </form>
           </div>

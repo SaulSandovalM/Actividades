@@ -46,16 +46,6 @@ class Nav extends Component {
             </Link>
           </div>
           <div className='navbar-left'>
-            <Link to='/Agendapdf' className='deco'>
-              <h3 className='nav-t'>Agendapdf</h3>
-            </Link>
-          </div>
-          <div className='navbar-left'>
-            <Link to='/Agendasemanal' className='deco'>
-              <h3 className='nav-t'>Agendasemanal</h3>
-            </Link>
-          </div>
-          <div className='navbar-left'>
             <Link to='/BusquedaActividad' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -103,6 +93,7 @@ class Nav extends Component {
               </div>
             </div>
           </Link>
+<<<<<<< HEAD
         </div>
 
 
@@ -120,6 +111,10 @@ class Nav extends Component {
             {logoutError && <p>Error al Cerrar Sesion</p>}
           </div>
 
+=======
+          {isLoggingOut && <p>Cerrando Sesion....</p>}
+          {logoutError && <p>Error al Cerrar Sesion</p>}
+>>>>>>> 246d485ade9cdb9307dff7859b401c1c9a3787d4
         </div>
       </div>
     )

@@ -43,21 +43,14 @@ export default class Mgenerales extends Component {
           <div className='content-all'>
             {messages.checked &&
               <div className='content-tarjeta'>
-                <div className='dir-content'>
-                  <p className='mg-asunto'>{messages.asunto}</p>
-                  <p className='mg-area'>{messages.asunto} - {messages.fecha}</p>
-                </div>
-                <div className='image'>
-                  <img className='image2' src={messages.imagen} alt=''/>
-                </div>
-                <div className='content-message2'>
-                  <div className='content-desc'>
-                    <div>
-                      <b>{messages.asunto}</b>
-                    </div>
-                    <div className='desc'>
-                      {messages.descripcion}
-                    </div>
+                <div className='space-b'>
+                  <div className='dir-content'>
+                    <p className='mg-asunto'>{messages.asunto}</p>
+                    <p className='mg-area'>Direccion de Informatica - {messages.fecha}</p>
+                    <p>{messages.descripcion}</p>
+                  </div>
+                  <div className='image'>
+                    <img className='image2' src={messages.imagen} alt=''/>
                   </div>
                 </div>
               </div>
