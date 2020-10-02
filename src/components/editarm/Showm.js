@@ -41,44 +41,61 @@ export default class Showm extends Component {
   render() {
     return (
       <div className='mg-conta'>
-        <div>
-          <div className='mensajes-container'>
-            {this.state.messages.map(messages =>
-              <div className='content-title'>
-                <div className='men-titulo'>
-                  <div style={{display: 'flex'}}>
-                    <span className='material-icons icon-sh'>
-                      label_important
-                    </span>
-                    <p className='mg-c'>
-                      {messages.asunto}
-                    </p>
-                  </div>
-                </div>
-                <div className='col-cen-s'>
-                  <div className='men-desc'>
-                    <p className='mes-m-show mg-c'>{messages.descripcion}</p>
-                    <p className='mes-p-show mg-cg'>- {messages.fecha}</p>
-                  </div>
-                </div>
-                <div className='cover'>
-                  <div className='col-icon-c'>
-                    <div className='row-w'>
-                      <Link to={`/Editarmensaje/${messages.key}`}>
-                        <span className='material-icons icon-sh2'>
-                          edit
-                        </span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+        <div className='nav-lm'>
+          <h1 className='h1-lm'>Mis Mensajes</h1>
+        </div>
+        <div className='mes-center'>
+          <div className='mes-container'>
+            <div className='head-mes'>
+              Asunto
+            </div>
+            <div className='head-mesd'>
+              Descripcion
+            </div>
+            <div className='head-mesf'>
+              Fecha
+            </div>
           </div>
         </div>
+        {this.state.messages.map(messages =>
+          <div className='mes-center2'>
+            <div className='mes-container-map'>
+              <span className='material-icons icon-sh' style={{ marginLeft: '-40px', marginRight: '14px'}}>
+                label_important
+              </span>
+              <div className='head-mes'>
+                {messages.asunto}
+              </div>
+              <div className='head-mesd'>
+                {messages.descripcion}
+              </div>
+              <div className='head-mesf'>
+                {messages.fecha}
+              </div>
+            </div>
+          </div>
+        )}
+        {this.state.messages.map(messages =>
+          <div className='mes-center2'>
+            <div className='mes-container-map'>
+              <span className='material-icons icon-sh' style={{ marginLeft: '-40px', marginRight: '14px'}}>
+                label_important
+              </span>
+              <div className='head-mes'>
+                {messages.asunto}
+              </div>
+              <div className='head-mesd'>
+                {messages.descripcion}
+              </div>
+              <div className='head-mesf'>
+                {messages.fecha}
+              </div>
+            </div>
+          </div>
+        )}
         <div className='add-b'>
           <Link to='/Generaciondemensajes'>
-            <Fab color='primary' aria-label='add' style={{background: 'green'}}>
+            <Fab color='primary' aria-label='add' style={{background: '#71b631'}}>
               <AddIcon />
             </Fab>
           </Link>

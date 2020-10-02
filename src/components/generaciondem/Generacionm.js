@@ -73,7 +73,7 @@ export default class Generacionm extends Component {
 
     var meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
     var f = new Date()
-    var date = (f.getDate() + ' de ' + meses[f.getMonth()] + ' de ' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes())
+    var date = (meses[f.getMonth()] + ' ' + f.getDate() + ' de ' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes())
     this.state.fecha = date
 
     return (
@@ -84,7 +84,6 @@ export default class Generacionm extends Component {
             <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
               <h2>Generación de Boletin</h2>
               <TextField
-                id='standard-basic'
                 label='Asunto'
                 name='asunto'
                 value={asunto}
@@ -92,7 +91,6 @@ export default class Generacionm extends Component {
                 required
               />
               <TextField
-                id='standard-basic'
                 label='Descripción'
                 style={{marginTop: '15px'}}
                 name='descripcion'
@@ -101,7 +99,6 @@ export default class Generacionm extends Component {
                 required
               />
               <TextField
-                id='standard-basic'
                 label='Fecha'
                 style={{marginTop: '15px'}}
                 name='fecha'
