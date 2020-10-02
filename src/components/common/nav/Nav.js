@@ -93,28 +93,8 @@ class Nav extends Component {
               </div>
             </div>
           </Link>
-<<<<<<< HEAD
-        </div>
-
-
-        <div className='navbar-left'>
-          <div className='deco'>
-            <button
-              onClick={this.handleLogout}
-              className='nav-t'
-              style={{ background: '#092432', border: 'none' }}>
-              <h3 className='nav-t'>
-                Cerrar Sesion
-              </h3>
-            </button>
-            {isLoggingOut && <p>Cerrando Sesion....</p>}
-            {logoutError && <p>Error al Cerrar Sesion</p>}
-          </div>
-
-=======
           {isLoggingOut && <p>Cerrando Sesion....</p>}
           {logoutError && <p>Error al Cerrar Sesion</p>}
->>>>>>> 246d485ade9cdb9307dff7859b401c1c9a3787d4
         </div>
       </div>
     )
