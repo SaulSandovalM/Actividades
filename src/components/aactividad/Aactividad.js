@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import './Aactividad.css'
 import firebase from '../../Firebase'
+import TextField from '@material-ui/core/TextField'
+import Fab from '@material-ui/core/Fab'
+import DoneIcon from '@material-ui/icons/Done'
 
 export default class Aactividad extends Component {
   constructor () {
@@ -178,125 +181,47 @@ export default class Aactividad extends Component {
                 <input className='inp-imp' name='imparte' value={imparte} onChange={this.onChange} />
               </div>
             }
+
+    var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
+    var f = new Date()
+    var date = (meses[f.getMonth()] + ' ' + f.getDate() + ', ' + f.getFullYear())
+    this.state.fecha = date
+
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '15%' }}>
-        <div className='container-aactividad'>
-          <div>
-            <h1>Agregar Actividad</h1>
+      <div className='mg-conta'>
+        <div>
+          <div className='divtop-mg' />
+          <div className='form-content-gm'>
+            <form noValidate autoComplete='off' className='mensajesg-container'>
+              <h2>Agregar Actividad</h2>
+              <TextField
+                label='Asunto'
+                name='asunto'
+                onChange={this.onChange}
+                required
+              />
+              <TextField
+                label='Descripción'
+                style={{marginTop: '15px'}}
+                name='descripcion'
+                onChange={this.onChange}
+                required
+              />
+              <TextField
+                label='Fecha'
+                style={{ marginTop: '15px' }}
+                name='fecha'
+                value={date}
+                onuChange={this.onChange}
+                required
+              />
+              <div className='add-gb'>
+                <Fab color='primary' aria-label='add' style={{background: 'green'}} type='submit'>
+                  <DoneIcon />
+                </Fab>
+              </div>
+            </form>
           </div>
-          <form className='content-aa' onSubmit={this.onSubmit}>
-
-          <div className="pri-bloque"        >
-              <div className='input-c-c'>
-                  <p className='p-t-aa'>Tema:</p>
-                  <input className="ejemplo" name='tema' value={tema} onChange={this.onChange} />
-                  </div>
-
-                  <div className='input-c-c2'>
-                  <p className="text-act2">Actividad Interna</p>
-                  <input className='style-checka' type='checkbox' name='ainterna' value={ainterna} onChange={this.onChange}/>
-                  <p className="text-act2">Actividad Externa</p>
-                  <input className='style-checka' type='checkbox' name='aexterna' value={aexterna} onChange={this.onChange}/>
-              </div>
-          </div>
-<div className='seg-bloque'>
-            <div className='input-c-c'>
-              <p className='p-t-aa1 '>Tipo de Actividad:</p>
-              <select className='select' name='tipoActividad' onChange={this.onChange} value={tipoActividad}>
-                <option></option>
-                <option name='tipoActividad'>Curso</option>
-                <option name='tipoActividad'>Conferencia</option>
-                <option name='tipoActividad'>Taller</option>
-                <option name='tipoActividad'>Reunión de Trabajo</option>
-                <option name='tipoActividad'>Otro</option>
-              </select>
-            </div>
-
-            <div className='input-c-c3'>
-
-              <p className='text-act3'>Convocamos:</p>
-                  <input className='style-checkb' type='checkbox' name='convocamos' value={convocamos} onChange={this.onChange}/>
-              <p className="text-act4">Convocados:</p>
-                  <input className='style-checkb' type='checkbox' value={this.state.convocados} onChange={this.handleChange}/>
-            </div>
-
-            </div>
-
-            { this.state.convocados && <div className='input-c-c4'>
-              <p className='p-t-aa'>Convocados por:</p>
-              <select className='select'>
-              <option></option>
-                {this.state.direcciones.map(direcciones =>
-                  <option>{direcciones.Direccion}</option>
-                )}
-              </select>
-            </div>}
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Convocados por dependencia/persona externa:</p>
-                <input className='convocas' name='convoca' value={convoca} onChange={this.onChange} />
-              </div>
-
-
-              <div className='input-c-c'>
-                <p className='p-t-aa2'>Estado:</p>
-                <select className='select2'>
-                <option></option>
-                  {this.state.estados.map(estados =>
-                    <option>{estados.estado}</option>
-                  )}
-                </select>
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Municipio:</p>
-                <select className='select'>
-                <option></option>
-                  {this.state.municipios.map(municipios =>
-                    <option>{municipios.municipio}</option>
-                  )}
-                </select>
-              </div>
-            </div>
-            <div className='content-rowta '>
-              <div className='input-c-c'>
-                <p className='p-t-aata'>Lugar Específico:</p>
-                <input className='inp-ta' name='lugar' value={lugar} onChange={this.onChange} />
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aata'>Nivel de prioridad:</p>
-                <select className='select'>
-                <option></option>
-                  {this.state.prioridad.map(prioridad =>
-                    <option>{prioridad.nprioridad}</option>
-                  )}
-                </select>
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aata'>Servidores públicos participantes:</p>
-                <input className='inp-ta' name='servidores' value={servidores} onChange={this.onChange} />
-              </div>
-            </div>
-            <div className='content-rowita '>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Fecha de Inicio:</p>
-                <input  type='date' name='fechai' value={fechai}
-                  onChange={this.onChange} />
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Fecha de Fin:</p>
-                <input  type='date' name='fechaf' value={fechaf}
-                  onChange={this.onChange} />
-              </div>
-            </div>
-            <div>
-              <p className='p-t-aa'>Descripción:</p>
-              <textarea className='caja-des' cols='80' rows='3' name='desc' value={desc}
-                onChange={this.onChange} />
-            </div>
-            <div className='button-aa'>
-              <button className='boton-act' type='submit' >Guardar</button>
-            </div>
-          </form>
         </div>
       </div>
     )

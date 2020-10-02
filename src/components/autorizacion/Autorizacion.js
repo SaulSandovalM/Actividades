@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Autorizacion.css'
 import firebase from '../../Firebase'
+import { Link } from 'react-router-dom'
 
 export default class Autorizacion extends Component {
   constructor (props) {
@@ -35,24 +36,50 @@ export default class Autorizacion extends Component {
 
   render () {
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
-        <div className='container-show-a'>
-          <div>
-            <h1>Autorizacion</h1>
+      <div className='mg-conta'>
+        <div className='nav-mm'>
+          <h1 className='h1-lm'>Autorización</h1>
+        </div>
+        <div className='mes-center' style={{ position: 'fixed', marginTop: '120px', background: '#fafafa' }}>
+          <div className='mes-container' style={{ marginRight: '256px' }}>
+            <div className='head-mes' style={{paddingLeft: '6.5%', color: 'grey'}}>
+              Asunto
+            </div>
+            <div className='head-mesd' style={{ color: 'grey' }}>
+              Descripcion
+            </div>
+            <div className='head-mesf' style={{ color: 'grey' }}>
+              Fecha
+            </div>
+            <div className='one-po' />
           </div>
-          <div>
-            {this.state.actividades.map(actividades =>
-              <div className='content-title'>
-                <div className='bor' style={{borderRight: '1px solid #d0d0d0'}} />
-                <div className='title-r'><p className='p-margin-r'>{actividades.tipoA}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.lugar}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.direccion}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.fechai}</p></div>
-                <div className='title-r'><button className='p-margin-r'>Autorizar</button></div>
-                <div className='bor' />
+        </div>
+        <div style={{paddingTop: '195px'}}>
+          {this.state.actividades.map(actividades =>
+            <div className='mes-center2'>
+              <div className='mes-container-map'>
+                <span className='material-icons icon-sh' style={{ marginLeft: '-40px', marginRight: '14px'}}>
+                  label_important
+                </span>
+                <div className='head-mes' style={{fontWeight: 'bold'}}>
+                  {actividades.tipoA}
+                </div>
+                <div className='head-mesd' style={{color: '#424242'}}>
+                  {actividades.lugar}
+                </div>
+                <div className='head-mesf' style={{color: '#424242'}}>
+                  {actividades.fechai}
+                </div>
+                <div className='one-po'>
+                  <Link to={`/Editarmensaje/${actividades.key}`}>
+                    <span className='material-icons icon-edit'>
+                      done
+                    </span>
+                  </Link>
+                </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     )

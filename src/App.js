@@ -106,7 +106,6 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-
       <ProtectedRoute
         exact
         path='/Agendapdf'
@@ -121,7 +120,6 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-      
     </Switch>
   )
 }
