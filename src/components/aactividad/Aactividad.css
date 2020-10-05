@@ -185,3 +185,11 @@ width: 1000px;
 
 }
 /*parte boton */
+.date-cont {
+  display: flex;
+  justify-content: space-between;
+}
+.martop-dt {
+  color: rgb(118, 118, 118);
+  margin-top: 30px;
+}

@@ -71,9 +71,9 @@ export default class Generacionm extends Component {
   render() {
     const { asunto, descripcion } = this.state
 
-    var meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
+    var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
     var f = new Date()
-    var date = (meses[f.getMonth()] + ' ' + f.getDate() + ' de ' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes())
+    var date = (meses[f.getMonth()] + ' ' + f.getDate() + ', ' + f.getFullYear())
     this.state.fecha = date
 
     return (
