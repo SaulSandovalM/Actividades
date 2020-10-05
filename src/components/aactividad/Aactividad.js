@@ -182,21 +182,22 @@ export default class Aactividad extends Component {
       <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '15%' }}>
         <div className='container-aactividad'>
           <div>
-            <h1>Agregar Actividad</h1>
+
           </div>
           <form className='content-aa' onSubmit={this.onSubmit}>
 
           <div className="pri-bloque"        >
               <div className='input-c-c'>
-                  <p className='p-t-aa'>Tema:</p>
+                  <p className='p-t-aa'>Actividad:</p>
+
+
                   <input className="ejemplo" name='tema' value={tema} onChange={this.onChange} />
                   </div>
 
                   <div className='input-c-c2'>
-                  <p className="text-act2">Actividad Interna</p>
-                  <input className='style-checka' type='checkbox' name='ainterna' value={ainterna} onChange={this.onChange}/>
-                  <p className="text-act2">Actividad Externa</p>
-                  <input className='style-checka' type='checkbox' name='aexterna' value={aexterna} onChange={this.onChange}/>
+                  <p className="text-act2">Actividad Organizada por la Procuraduria</p>
+
+
               </div>
           </div>
 <div className='seg-bloque'>
@@ -233,7 +234,7 @@ export default class Aactividad extends Component {
             </div>}
             <div className='content-row'>
               <div className='input-c-c'>
-                <p className='p-t-aa'>Convocados por dependencia/persona externa:</p>
+                <p className='p-t-aa'>Dependencia que convoca</p>
                 <input className='convocas' name='convoca' value={convoca} onChange={this.onChange} />
               </div>
 
@@ -262,17 +263,9 @@ export default class Aactividad extends Component {
                 <p className='p-t-aata'>Lugar Específico:</p>
                 <input className='inp-ta' name='lugar' value={lugar} onChange={this.onChange} />
               </div>
+
               <div className='input-c-c'>
-                <p className='p-t-aata'>Nivel de prioridad:</p>
-                <select className='select'>
-                <option></option>
-                  {this.state.prioridad.map(prioridad =>
-                    <option>{prioridad.nprioridad}</option>
-                  )}
-                </select>
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aata'>Servidores públicos participantes:</p>
+                <p className='p-t-aata'>Responsable de la Actividad:</p>
                 <input className='inp-ta' name='servidores' value={servidores} onChange={this.onChange} />
               </div>
             </div>
@@ -288,13 +281,18 @@ export default class Aactividad extends Component {
                   onChange={this.onChange} />
               </div>
             </div>
-            <div>
-              <p className='p-t-aa'>Descripción:</p>
-              <textarea className='caja-des' cols='80' rows='3' name='desc' value={desc}
+            <div className='input-c-c'>
+              <p className='p-t-aa'>Hora de Inicio</p>
+              <input  type='date' name='fechaf' value={fechaf}
+                onChange={this.onChange} />
+            </div>
+            <div className='input-c-c'>
+              <p className='p-t-aa'>Hora de Termina</p>
+              <input  type='date' name='fechaf' value={fechaf}
                 onChange={this.onChange} />
             </div>
             <div className='button-aa'>
-              <button className='boton-act' type='submit' >Guardar</button>
+              <button className='boton-act' type="time" >Guardar</button>
             </div>
           </form>
         </div>

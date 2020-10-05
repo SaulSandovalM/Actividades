@@ -21,7 +21,7 @@ export default class Agendasemanal extends Component{
                   <div class='linea'>
                   </div>
                   <div>
-                  <h2 className='txt-res'>RESUMEN SEMANAL </h2>
+                  <h2 className='txt-res'>RELEVANTES</h2>
                   <p className='txt-fe'>Enero 13 2019</p>
                    </div>
               </div>
