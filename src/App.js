@@ -17,6 +17,8 @@ import Reportes from './components/reportes/Reportes'
 import Autorizacion from './components/autorizacion/Autorizacion'
 import Agendapdf from './components/documentos/Agendapdf'
 import Agendasemanal from './components/documentos/Agendasemanal'
+import Reporteniveldir from './components/documentos/Reporteniveldir'
+import Reportepdf from './components/documentos/Reportepdf'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -128,6 +130,24 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
+<<<<<<< HEAD
+      <ProtectedRoute
+        exact
+        path='/Reporteniveldir'
+        component={Reporteniveldir}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Reportepdf'
+        component={Reportepdf}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+=======
+>>>>>>> b2adacf2baa840520a429ae4fcb231fb64bdbf75
     </Switch>
   )
 }

@@ -81,19 +81,74 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
+
           <div className='navbar-left'>
             <Link to='/Autorizacion' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>
-                    assignment_turned_in
+                    description
                   </span>
                   <p className='nav-t'>Autorización</p>
                 </div>
               </div>
             </Link>
           </div>
+
+          <div className='navbar-left'>
+            <Link to='/Agendapdf' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    description
+                  </span>
+                  <p className='nav-t'>Resumen Semanal</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className='navbar-left'>
+            <Link to='/Agendasemanal' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    description
+                  </span>
+                  <p className='nav-t'>Agenda Semanal</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className='navbar-left'>
+            <Link to='/Reporteniveldir' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    description
+                  </span>
+                  <p className='nav-t'>Reporte Direccion</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+
+          <div className='navbar-left'>
+            <Link to='/Reportepdf' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    description
+                  </span>
+                  <p className='nav-t'>Agenda</p>
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
+
         <div className='navbar-left'>
           <Link to='/Autorizacion' className='deco' onClick={this.handleLogout}>
             <div className='hover-center'>

@@ -7,95 +7,108 @@ export default class Reporteniveldir extends Component{
     return(
     <div className='fader-reporte'>
 
-    <div className='Nombre-cargo'>
-      <div>
-        <p>Nombre</p>
-        <p>Cargo</p>
+      <div className='Nombre-cargo'>
+        <div>
+          <div className='name'>
+          <p className='name' >Nombre:</p>
+        </div>
+          <div className='cargo'>
+          <p className='cargo'>Cargo:</p>
+        </div>
+
       </div>
 
       <div>
-        <h3>Mercedes Citlali Mendoza Meza</h3>
-        <h3>Directora del Instituto de Formacion Profesional de la Procuraduria</h3>
+        <h3 className='h3-top'>Mercedes Citlali Mendoza Meza
+        <br/>
+        Directora del Instituto de Formacion Profesional de la Procuraduria</h3>
       </div>
     </div>
     <div className='tabla-reporteniveldir'>
 
     <tr className='tab-arriba'>
-        <th className='filas-tab'>Fecha</th>
-        <th className='filas-tab'>Hora</th>
-        <th className='filas-tab'>Lugar</th>
-        <th className='filas-tab'>Actividad</th>
-        <th className='filas-tab'>Beneficio para PGJEH</th>
-        <th className='filas-tab'>RELEVANCIA</th>
+        <th className='filas-tab filas-tab1'>No.</th>
+        <th className='filas-tab filas-tab1'>Fecha</th>
+        <th className='filas-tab filas-tab2'>Hora</th>
+        <th className='filas-tab filas-tab3'>Lugar</th>
+        <th className='filas-tab filas-tab4'>Actividad</th>
+        <th className='filas-tab filas-tab5'>Beneficio para PGJEH</th>
+        <th className='filas-tab filas-tab6'>RELEVANCIA</th>
     </tr>
 
   <tr className='tab-abajo'>
   <td className='columnas-tab'>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab columna-tab-bori'>3</td>
   </tr>
   <tr>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
+  <td className='columnas-tab'>2</td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab columna-tab-bori'></td>
   </tr>
   <tr>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab columna-tab-bori'></td>
   </tr>
   <tr>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
+  <td className='columnas-tab'>4</td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab columna-tab-bori'></td>
   </tr>
   <tr>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
+  <td className='columnas-tab'>5</td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab columna-tab-bori'></td>
   </tr>
   <tr>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
+  <td className='columnas-tab'>7</td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab columna-tab-bori'></td>
+  </tr>  <tr>
+  <td className='columnas-tab'>8</td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab columna-tab-bori'></td>
   </tr>
   <tr>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
+  <td className='columnas-tab'>9</td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab'></td>
+  <td className='columnas-tab columna-tab-bori'></td>
   </tr>
-  <tr>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  <td>1</td>
-  </tr>
-    </div>
-
-    </div>
+  </div>
+  </div>
   )
   }
 }
