@@ -130,7 +130,6 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-<<<<<<< HEAD
       <ProtectedRoute
         exact
         path='/Reporteniveldir'
@@ -145,9 +144,6 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-
-=======
->>>>>>> b2adacf2baa840520a429ae4fcb231fb64bdbf75
     </Switch>
   )
 }
