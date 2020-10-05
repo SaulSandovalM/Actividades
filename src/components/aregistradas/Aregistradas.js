@@ -18,13 +18,14 @@ export default class Aregistradas extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoA, lugar, fechai } = doc.data()
+      const { tipoA, imparte, fechai, fechaf } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
         tipoA,
-        lugar,
-        fechai
+        imparte,
+        fechai,
+        fechaf
       })
     })
     this.setState({
@@ -39,51 +40,77 @@ export default class Aregistradas extends Component {
   render () {
     return (
       <div className='mg-conta'>
-        <div className='nav-mm'>
-          <h1 className='h1-lm'>Mis Actividades</h1>
+        <div className='nav-ma'>
+          <h1 className='h1-ar'>Mis Actividades</h1>
         </div>
-        <div className='mes-center' style={{ position: 'fixed', marginTop: '120px', background: '#fafafa' }}>
-          <div className='mes-container' style={{ marginRight: '256px' }}>
-            <div className='head-mes' style={{paddingLeft: '6.5%', color: 'grey'}}>
-              Asunto
+
+        <div className='calendar-container'>
+          <div className='calendar-content'>
+            <div className='week-cont'>
+              <div className='space-cal' />
+              <p className='title-week'>Lunes</p>
+              <p className='title-week'>Martes</p>
+              <p className='title-week'>Miercoles</p>
+              <p className='title-week'>Jueves</p>
+              <p className='title-week'>Viernes</p>
+              <p className='title-week'>Sabado</p>
+              <p className='title-week'>Domingo</p>
+              <div className='space-cal' />
             </div>
-            <div className='head-mesd' style={{ color: 'grey' }}>
-              Descripcion
-            </div>
-            <div className='head-mesf' style={{ color: 'grey' }}>
-              Fecha
-            </div>
-            <div className='one-po' />
-          </div>
-        </div>
-        <div style={{paddingTop: '195px'}}>
-          {this.state.actividades.map(actividades =>
-            <div className='mes-center2'>
-              <div className='mes-container-map'>
-                <span className='material-icons icon-sh' style={{ marginLeft: '-40px', marginRight: '14px'}}>
-                  label_important
-                </span>
-                <div className='head-mes' style={{fontWeight: 'bold'}}>
-                  {actividades.tipoA}
+            <div className='activity-container'>
+              <div className='space-cal' />
+              <div className='day-container'>
+                <div className='day-content'>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === 'hoy' &&
+                        <div className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoA}</p>
+                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
+                          <p className='hora-activity'>{actividades.imparte}</p>
+                        </div>
+                      }
+                    </div>
+                  )}
                 </div>
-                <div className='head-mesd' style={{color: '#424242'}}>
-                  {actividades.lugar}
+                <div className='day-content'>
+                  <div className='card-cal-cont'>
+                    <p className='title-activity'>Actividad de Prueba</p>
+                    <p className='hora-activity'>9am - 10am</p>
+                    <p className='hora-activity'>Procuraduria General</p>
+                  </div>
                 </div>
-                <div className='head-mesf' style={{color: '#424242'}}>
-                  {actividades.fechai}
+                <div className='day-content'>
+                  <div className='card-cal-cont'>
+                    <p className='title-activity'>Actividad de Prueba</p>
+                    <p className='hora-activity'>9am - 10am</p>
+                    <p className='hora-activity'>Procuraduria General</p>
+                  </div>
                 </div>
-                <div className='one-po'>
-                  <Link to={`/Editarmensaje/${actividades.key}`}>
-                    <span className='material-icons icon-edit'>
-                      create
-                    </span>
-                  </Link>
+                <div className='day-content'>
+                  <div className='card-cal-cont'>
+                    <p className='title-activity'>Actividad de Prueba</p>
+                    <p className='hora-activity'>9am - 10am</p>
+                    <p className='hora-activity'>Procuraduria General</p>
+                  </div>
+                </div>
+                <div className='day-content'>
+                  <div className='card-cal-cont'>
+                    <p className='title-activity'>Actividad de Prueba</p>
+                    <p className='hora-activity'>9am - 10am</p>
+                    <p className='hora-activity'>Procuraduria General</p>
+                  </div>
+                </div>
+                <div className='day-content'>
+                </div>
+                <div className='day-content'>
                 </div>
               </div>
+              <div className='space-cal' />
             </div>
-          )}
+          </div>
         </div>
-        <div className='add-m' style={{position: 'fixed'}}>
+        <div className='add-ar'>
           <Link to='/AgregarActividad'>
             <Fab color='primary' aria-label='add' style={{background: '#71b631'}}>
               <AddIcon />

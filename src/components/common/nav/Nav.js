@@ -38,9 +38,21 @@ class Nav extends Component {
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>
-                    calendar_today
+                    event_note
                   </span>
                   <p className='nav-t'>Actividades</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/ActividadInforme' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    event_available
+                  </span>
+                  <p className='nav-t'>Informes</p>
                 </div>
               </div>
             </Link>
