@@ -20,6 +20,8 @@
 }
 .p-margin-r {
   margin: 6px;
+  text-decoration: none;
+
 }
 .button-r {
   display: flex;

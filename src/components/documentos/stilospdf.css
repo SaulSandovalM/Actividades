@@ -6,6 +6,12 @@
   flex-direction: space-between;
 }
 /**Texto*/
+.txt-age-1{
+margin-bottom: 0px;
+font-size: 70px;
+width: 700px;
+
+}
 .txt-age{
 margin-bottom: 0px;
 width: 700px;
@@ -31,22 +37,19 @@ width: 700px;
 
 
 }
-.caja{
-  background-color:#2B608B;
-  height: 910px;
-  width: 500px;
-  margin: 0px 0px 0px 700px ;
-  border: 2px solid red ;
+
+.prueba2{
+  padding-left: 300px;
 
 }
-/*
-.prueba2{
-   background-color: black;
-
-}*/
+.img-azul{
+  width: 600px;
+  height:880px;
+  padding-bottom: 50px;
+}
 .portada{
-  padding-left: 30px;
-  padding-top: 600px;
+  padding-left: 100px;
+  padding-top: 500px;
   width: 230px;
   text-align: left;
   display: flex;

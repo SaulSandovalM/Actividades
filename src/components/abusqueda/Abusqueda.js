@@ -84,8 +84,12 @@ export default class Aregistradas extends Component {
                 <div className='title-r'><p className='p-margin-r'>{actividades.fechai}</p></div>
                 <div className='title-r'><p className='p-margin-r'>{actividades.fechaf}</p></div>
                 <div className='title-r'><p className='p-margin-r'>{actividades.estado}</p></div>
-                <div className='title-r'><p className='p-margin-r'><Link to={`/Sactividad/${actividades.key}`}>Evidencia</Link></p></div>
-                <div className='title-r'><p className='p-margin-r'><Link to={`/EditarActividad/${actividades.key}`}>Editar</Link></p></div>
+
+                <div className='title-r'>
+                  <Link to={`/Sactividad/${actividades.key}`}>
+                <p className='p-margin-r'>Evidencia</p></Link>
+                </div>
+                <div className='title-r'><Link to={`/EditarActividad/${actividades.key}`}><p className='p-margin-r'>Editar</p></Link></div>
                 <div className='bor' />
               </div>
             )}
