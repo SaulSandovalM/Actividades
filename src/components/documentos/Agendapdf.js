@@ -13,7 +13,9 @@ export default class Agendasemanal extends Component{
   render(){
     return(
       <div className='fader'>
-      <a href='documentos/Agendapdf.js' download="Reporte2020">Descargar Archivo</a>
+      <a href='documentos/Agendapdf.js' download="Reporte2020">
+    Descargar Archivo
+      </a>
       <div>
               <div className='prueba'>
 
@@ -38,10 +40,10 @@ export default class Agendasemanal extends Component{
                   <div className="logos">
 
                   <div>
-                    <img className='ims2' src={logo} alt='' />
+                    {/*<img className='ims2' src={logo} alt='' />*/}
                   </div>
                   <div>
-                    <img className='ims' src={logo2} alt='' />
+                    {/*<img className='ims' src={logo2} alt='' />*/}
                   </div>
                   </div>
                 </div>
