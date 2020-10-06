@@ -7,6 +7,8 @@ import iconfe from './icons/iconfe.png'
 import iconhora from './icons/iconhora.png'
 import iconubi from './icons/iconubi.png'
 import iconmano from './icons/iconmano.png'
+import presentacion from './icons/presentacion .png'
+import presentacionv from './icons/presentacionv.png'
 export default class Agendasemanal extends Component{
   render(){
     return(
@@ -26,7 +28,7 @@ export default class Agendasemanal extends Component{
                    </div>
               </div>
                 <div className='caja'>
-                  <box className='prueba2'></box>
+                  <div className='prueba2'> <img className='img-azul' src={presentacion} alt=''/></div>
 
                   <div className="logos">
 
@@ -194,7 +196,7 @@ export default class Agendasemanal extends Component{
                      </div>
 
                      <div className='paq-1'>
-                     <p  className='paq-1'>Maestría  en Género, Derecho y Proceso Penal, impartida por el Centro de Estudios de Posgrado </p>
+                     <p  className='paq-1'>3 caso  en Género, Derecho y Proceso Penal, impartida por el Centro de Estudios de Posgrado </p>
                      </div>
                     </div>
                    <div>
@@ -205,7 +207,10 @@ export default class Agendasemanal extends Component{
 
 
                   <div className='caja'>
-                    <box className='prueba2'></box>
+                    <div className='prueba2'>
+                    <img className='img-azul' src={presentacionv} alt=''/>
+
+                    </div>
                     <div className="logos">
                     <div>
                       <img className='ims2' src={logo} alt='' />
