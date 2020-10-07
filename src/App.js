@@ -10,12 +10,15 @@ import Showm from './components/editarm/Showm'
 import Aregistradas from './components/aregistradas/Aregistradas'
 import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
+import Ainforme from './components/aregistradas/Ainforme'
 import Abusqueda from './components/abusqueda/Abusqueda'
 import Sactividad from './components/sactividad/Sactividad'
 import Reportes from './components/reportes/Reportes'
 import Autorizacion from './components/autorizacion/Autorizacion'
 import Agendapdf from './components/documentos/Agendapdf'
 import Agendasemanal from './components/documentos/Agendasemanal'
+import Reporteniveldir from './components/documentos/Reporteniveldir'
+import Reportepdf from './components/documentos/Reportepdf'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -54,6 +57,13 @@ function App (props) {
         exact
         path='/ActividadesRegistradas'
         component={Aregistradas}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/ActividadInforme'
+        component={Ainforme}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
@@ -117,6 +127,20 @@ function App (props) {
         exact
         path='/Agendasemanal'
         component={Agendasemanal}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Reporteniveldir'
+        component={Reporteniveldir}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Reportepdf'
+        component={Reportepdf}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />

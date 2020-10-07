@@ -243,7 +243,6 @@ export default class Aactividad extends Component {
                 name='fecha'
                 required
               />
-
               <div className='add-gb'>
                 <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
                   <DoneIcon />

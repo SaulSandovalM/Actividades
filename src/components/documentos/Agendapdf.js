@@ -7,38 +7,43 @@ import iconfe from './icons/iconfe.png'
 import iconhora from './icons/iconhora.png'
 import iconubi from './icons/iconubi.png'
 import iconmano from './icons/iconmano.png'
+import presentacion from './icons/presentaciona.png'
+
 export default class Agendasemanal extends Component{
   render(){
     return(
       <div className='fader'>
+      <a href='documentos/Agendapdf.js' download="Reporte2020">
+    Descargar Archivo
+      </a>
       <div>
-              <div className='prueba'>
-
+            <div className='prueba'>
               <div className='portada'>
               <div>
-                  <h1 className='txt-age'>ACTIVIDADES</h1>
-               </div>
-                  <div class='linea'>
-                  </div>
-                  <div>
-                  <h2 className='txt-res'>RESUMEN SEMANAL </h2>
-                  <p className='txt-fe'>Enero 13 2019</p>
-                   </div>
+                  <p className='txt-age-1'>ACTIVIDADES</p>
               </div>
-                <div className='caja'>
-                  <box className='prueba2'></box>
+                  <div class='linea'>  </div>
+              <div>
+                  <h2 className='txt-res'>RELEVANTES</h2>
+                  <p className='txt-fe'>Enero 13 2019</p>
+              </div>
+              </div>
 
-                  <div className="logos">
+            <div className='caja'>
+              <div className='prueba2'>
+                <img className='img-azul' src={presentacion} alt=''/>
+              </div>
 
+            <div className="logos">
+              <div>
+                <img className='ims22' src={logo} alt='' />
+              </div>
                   <div>
-                    <img className='ims2' src={logo} alt='' />
-                  </div>
-                  <div>
-                    <img className='ims' src={logo2} alt='' />
+                      <img className='ims' src={logo2} alt='' />
                   </div>
                   </div>
-                </div>
-                </div>
+                  </div>
+                  </div>
 
                   <div  className='sigui-pa'>
                     <div className='esp-pro'>
@@ -83,8 +88,7 @@ export default class Agendasemanal extends Component{
 
                     </div>
                     <div  className='datos-pro-text' >
-                    <p className='tipo-text'>Reunión en Tula en pregira con Jorge Arzubide de ProJusticia y Rebeca Fernández Calleja del Instituto de Resultados Rápidos, para afinar detalles del “Reto de los 100 días”.
-</p>
+                    <p className='tipo-text'>Reunión en Tula en pregira con Jorge Arzubide de ProJusticia y Rebeca Fernández Calleja del Instituto de Resultados Rápidos, para afinar detalles del “Reto de los 100 días”.</p>
                     </div>
 
                     </div>

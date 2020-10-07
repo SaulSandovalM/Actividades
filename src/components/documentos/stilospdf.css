@@ -6,6 +6,12 @@
   flex-direction: space-between;
 }
 /**Texto*/
+.txt-age-1{
+margin-bottom: 0px;
+font-size: 70px;
+width: 700px;
+
+}
 .txt-age{
 margin-bottom: 0px;
 width: 700px;
@@ -28,25 +34,23 @@ width: 700px;
     border: 3px solid rgb(145, 208, 37);
     width: 350px;
     margin-left:0px;
-
-
 }
-.caja{
-  background-color:#2B608B;
-  height: 910px;
-  width: 500px;
-  margin: 0px 0px 0px 350px ;
-  border: 2px solid red ;
 
-}
-/*
 .prueba2{
-   background-color: black;
+  padding-left: 300px;
 
-}*/
+
+}
+.img-azul{
+  width: 600px;
+  height:880px;
+  padding-bottom: 50px;
+  z-index: -1;
+  position:relative;
+}
 .portada{
-  padding-left: 30px;
-  padding-top: 600px;
+  padding-left: 100px;
+  padding-top: 500px;
   width: 230px;
   text-align: left;
   display: flex;
@@ -66,6 +70,10 @@ width: 100px;
 }
 .ims2{
   height: 100px;
+  margin-top:0px;
+  z-index: 1;
+  position:absolute;
+
 }
 /*Siguientes hojas parte procurador*/
 .sigui-pa{
@@ -78,6 +86,7 @@ width: 100px;
   margin-left:0px;
 }
 .datos-esp-pro{
+
   display: flex;
 }
 
@@ -159,16 +168,67 @@ margin: 3px;
   display: flex;
   justify-content: center;
 }
+/* afendapdf*/
+.nombre-agendasemanal{
+  color: #3A80BA;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 0px;
 
+}
+.cargo-age{
+  margin-top:0px;
+}
+.fecha-hora-ubi{
+  padding-top: 70px;
+}
+.paq-1{
+  display: flex;
+  padding-left: 30px;
+  padding-top: 5px;
+}
+.dte{
+
+
+
+}
+.sigueinte-parte{
+  height: 950px;
+  display: flex;
+  justify-content: space-between;
+}
 /*reporte Nivel direccion*/
 .fader-reporte{
-padding-left: 300px;
+padding-left: 270px;
 
 }
 /* nombre y cargo*/
 .Nombre-cargo{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0px;
+}
+.name{
+  text-align: center;
+  height: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  width: 300px;
+   background-color: #3A80BA;
+   color:white;
+}
+.cargo{
+  text-align: center;
+  height: 30px;
+  margin-top: 0px;
+  background-color: #1239;
+  color:white;
+  font-weight: bold;
+}
+.h3-top{
+  margin-top: 0px;
+  text-align: center;
 }
 /*Tabla*/
 .tabla-reporteniveldir{
@@ -176,16 +236,124 @@ padding-left: 300px;
 }
 .tab-arriba{
   width: 1200px;
-
 }
+
 .filas-tab{
-  width:  10%;
-  border: 1px solid #000;
+  height:10%;
   border-collapse: collapse;
   background: #3A80BA;
   color:white;
+  border-top: 1px solid #000;
+  border-left:  1px solid #000;
+  border-bottom: 1px solid #000;
+
 }
-.columas-tab{
-  height: 20px;
-  text-align: right;
+.columna-tab-bori{
+  border-right:  1px solid #000;
+}
+.filas-tab1{
+  width: 80px;
+}
+.filas-tab2{
+  width: 70px;
+}
+.filas-tab3{
+  width: 100px;
+}
+.filas-tab4{
+  width: 250px;
+}
+.filas-tab5{
+  width: 500px;
+}
+.filas-tab6{
+  width:200px;
+}
+.columnas-tab{
+  height: 100px;
+  text-align: center;
+  margin-top:50px;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+
+}
+
+/*reportes pdf*/
+
+.fader-reporte{
+  padding-left: 270px;
+
+}
+/*imagenes titulo reporte pdf*/
+.icons-reporte{
+  width: 70px;
+  padding-left: 60px;
+}
+.icons-reporte2{
+  width: 200px;
+  height: 70px;
+  padding-right: 60px;
+}
+.titulo-reporte{
+display: flex;
+justify-content: center;
+}
+.fecha-reporte{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+  font-weight:bold;
+  padding-top: 10px;
+}
+.tabla-reporte{
+  padding-top: 40px;
+}
+.dir-reporte{
+  border: 1px solid #000;
+  font-weight: bold;
+  padding-right: 20px;
+  width: 1055px;
+
+}
+.titulo-reporte{
+  text-align: center;
+}
+
+.filas-gene{
+border: 1px solid #000;
+}
+.tab-arribarep{
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    background-color: #1239;
+}
+.filas-taba1{
+  width: 60px;
+
+}
+.filas-taba2{
+  width: 70px;
+
+}
+.filas-taba3{
+  width: 300px;
+
+}
+.filas-taba4{
+  width: 250px;
+}
+.filas-taba5{
+  width: 250px;
+}
+.filas-taba6{
+  width: 250px;
+}
+.columnas-a{
+  border-bottom: 1px solid #000;
+  border-right:  1px solid #000;
+
+  height: 100px;
+}
+.col-1{
+  border-left:1px solid #000;
 }

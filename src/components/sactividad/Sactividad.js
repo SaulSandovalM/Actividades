@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import firebase from '../../Firebase'
 import './Sactividad.css'
 import Switch from 'react-switch'
+import TextField from '@material-ui/core/TextField'
+import Fab from '@material-ui/core/Fab'
+import DoneIcon from '@material-ui/icons/Done'
+import Input from '@material-ui/core/Input'
 
 export default class Sactividad extends Component {
   constructor (props) {
@@ -104,6 +108,7 @@ export default class Sactividad extends Component {
           <div>
             <h1>Seguimiento de Actividad</h1>
           </div>
+          
           <form className='mar-for' onSubmit={this.onSubmit}>
             <div>
               <div className='form-content-sa'>
@@ -114,6 +119,8 @@ export default class Sactividad extends Component {
                 <label className='text-g'></label>
                 <progress className='input-g' value={this.state.imge} />
               </div>
+
+
               <div className='form-content-sa'>
                 <label className='text-g'>Titulo: </label>
                 <input className='input-g' name='titulo' value={titulo} onChange={this.onChange} />
