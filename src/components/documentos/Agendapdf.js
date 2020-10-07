@@ -7,7 +7,7 @@ import iconfe from './icons/iconfe.png'
 import iconhora from './icons/iconhora.png'
 import iconubi from './icons/iconubi.png'
 import iconmano from './icons/iconmano.png'
-import presentacion from './icons/presentacion .png'
+import presentacion from './icons/presentaciona.png'
 
 export default class Agendasemanal extends Component{
   render(){
@@ -17,37 +17,33 @@ export default class Agendasemanal extends Component{
     Descargar Archivo
       </a>
       <div>
-              <div className='prueba'>
-
-
+            <div className='prueba'>
               <div className='portada'>
               <div>
                   <p className='txt-age-1'>ACTIVIDADES</p>
-               </div>
-                  <div class='linea'>
-                  </div>
-                  <div>
+              </div>
+                  <div class='linea'>  </div>
+              <div>
                   <h2 className='txt-res'>RELEVANTES</h2>
                   <p className='txt-fe'>Enero 13 2019</p>
-                   </div>
               </div>
-                <div className='caja'>
-                  <div className='prueba2'>
+              </div>
 
-                  <img className='img-azul' src={presentacion} alt=''/>
-                  </div>
+            <div className='caja'>
+              <div className='prueba2'>
+                <img className='img-azul' src={presentacion} alt=''/>
+              </div>
 
-                  <div className="logos">
-
+            <div className="logos">
+              <div>
+                <img className='ims22' src={logo} alt='' />
+              </div>
                   <div>
-                    {/*<img className='ims2' src={logo} alt='' />*/}
-                  </div>
-                  <div>
-                    {/*<img className='ims' src={logo2} alt='' />*/}
+                      <img className='ims' src={logo2} alt='' />
                   </div>
                   </div>
-                </div>
-                </div>
+                  </div>
+                  </div>
 
                   <div  className='sigui-pa'>
                     <div className='esp-pro'>

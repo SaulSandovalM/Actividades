@@ -34,18 +34,19 @@ width: 700px;
     border: 3px solid rgb(145, 208, 37);
     width: 350px;
     margin-left:0px;
-
-
 }
 
 .prueba2{
   padding-left: 300px;
+
 
 }
 .img-azul{
   width: 600px;
   height:880px;
   padding-bottom: 50px;
+  z-index: -1;
+  position:relative;
 }
 .portada{
   padding-left: 100px;
@@ -69,6 +70,10 @@ width: 100px;
 }
 .ims2{
   height: 100px;
+  margin-top:0px;
+  z-index: 1;
+  position:absolute;
+
 }
 /*Siguientes hojas parte procurador*/
 .sigui-pa{
@@ -81,6 +86,7 @@ width: 100px;
   margin-left:0px;
 }
 .datos-esp-pro{
+
   display: flex;
 }
 

@@ -44,10 +44,11 @@ export default class Aregistradas extends Component {
             <h1>Busqueda Actividades</h1>
           </div>
           <div>
-            <div className='input-c-c'>
-              <p className='p-t-aa'>Tipo de Actividad:</p>
-              <select className='borderSelect' style={{ width: '150px'}}>
-                <option>Conferencia</option>
+            <div className='input-c-qc'>
+              <p className='p-t-aa1'>Tipo de Actividad:</p>
+              <select className='borderSelect' style={{}}>
+                <option>Conferencia, dio</option>
+
               </select>
             </div>
             <div className='input-c-c'>
@@ -71,7 +72,7 @@ export default class Aregistradas extends Component {
               <div className='title-r'><p className='p-margin-r'><b>Hora</b></p></div>
               <div className='title-r'><p className='p-margin-r'><b>Estado</b></p></div>
               <div className='title-r'><p className='p-margin-r'><b>Evidencia</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Editar</b></p></div>
+              <div className='title-r'><p className='p-margin-r'><b>Reagendar</b></p></div>
               <div className='bor' />
             </div>
             {this.state.actividades.map(actividades =>
@@ -89,7 +90,7 @@ export default class Aregistradas extends Component {
                   <Link to={`/Sactividad/${actividades.key}`}>
                 <p className='p-margin-r'>Evidencia</p></Link>
                 </div>
-                <div className='title-r'><Link to={`/EditarActividad/${actividades.key}`}><p className='p-margin-r'>Editar</p></Link></div>
+                <Link to={`/EditarActividad/${actividades.key}`}><div className='title-r'><p className='p-margin-r'>Reagendar</p></div></Link>
                 <div className='bor' />
               </div>
             )}
