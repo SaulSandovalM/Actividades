@@ -4,6 +4,8 @@ import firebase from '../../Firebase'
 import TextField from '@material-ui/core/TextField'
 import Fab from '@material-ui/core/Fab'
 import DoneIcon from '@material-ui/icons/Done'
+import MenuItem from '@material-ui/core/MenuItem'
+import Select from '@material-ui/core/Select'
 
 export default class Aactividad extends Component {
   // constructor () {
@@ -231,12 +233,16 @@ export default class Aactividad extends Component {
                 name='asunto'
                 required
               />
-              <TextField
+              <Select
                 label='Tipo Actividad'
                 style={{ marginTop: '15px' }}
                 name='descripcion'
                 required
-              />
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
               <TextField
                 label='Convoca'
                 style={{ marginTop: '15px' }}
