@@ -63,3 +63,13 @@
   font-size: 18px;
 	margin: 3px;
 }
+.position-border {
+    display: flex;
+    justify-content: center;
+}
+.border-nav{
+  border-top: 2px solid white;
+  height: 5px;
+
+
+}
