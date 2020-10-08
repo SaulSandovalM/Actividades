@@ -33,6 +33,7 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
+          <div className='position-border'><div className='border-nav'/></div>
           <div className='navbar-left'>
             <Link to='/ActividadesRegistradas' className='deco'>
               <div className='hover-center'>
@@ -57,6 +58,7 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
+          <div className='border-nav'/>
           <div className='navbar-left'>
             <Link to='/BusquedaActividad' className='deco'>
               <div className='hover-center'>
@@ -94,6 +96,7 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
+          <div className='border-nav'/>
 
           <div className='navbar-left'>
             <Link to='/Agendapdf' className='deco'>

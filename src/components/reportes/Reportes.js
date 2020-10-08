@@ -6,6 +6,7 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import InputLabel from '@material-ui/core/InputLabel'
+import TextField from '@material-ui/core/TextField'
 
 export default class Reportes extends Component {
   constructor (props) {
@@ -46,27 +47,34 @@ export default class Reportes extends Component {
         <div className='nav-mm'>
           <h1 className='h1-lm'>Reportes</h1>
         </div>
+
         <div className='imp-busq'>
+        <p >Fecha y hora de inicio *</p>
+        <div className='btn-reportes'>
+          <TextField
+            type='date'
+            style={{ width: '45%' }}
+            name='fecha'
+            required
+          />
+        </div>
+        <div className='imp-busq'>
+        <p >Fecha y hora de inicio *</p>
+        <div className='btn-reportes'>
+          <TextField
+            type='date'
+            style={{ width: '45%' }}
+            name='fecha'
+            required
+          />
+        </div>
+        </div>
 
-        <FormControl style={{width:'30%', marginRight:'5%', marginLeft:'3.5%'}}>
-          <InputLabel>Fecha de Periodo Inicial</InputLabel>
-          <Select>
-            <MenuItem value={10}>Convocatoria</MenuItem>
-            <MenuItem value={20}>Congreso</MenuItem>
-            <MenuItem value={30}>Junta</MenuItem>
-          </Select>
-        </FormControl>
 
 
 
-        <FormControl style={{width:'30%'}}>
-          <InputLabel>Fecha de Periodo Final</InputLabel>
-          <Select>
-            <MenuItem value={10}>Periodo</MenuItem>
-            <MenuItem value={20}>Periodo</MenuItem>
-            <MenuItem value={30}>Periodo</MenuItem>
-          </Select>
-        </FormControl>
+
+
 
         <div className='btn-reportes'>
         <bottom className='btn-b-l'>Buscar </bottom>
@@ -106,7 +114,7 @@ export default class Reportes extends Component {
                 <div className='head-mes-1' >{actividades.Lugar}</div>
                 <div className='head-mes-1' >{actividades.Lugar}</div>
                 <div className='one-po'>
-                  
+
                 </div>
               </div>
             </div>
