@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import './Abusqueda.css'
 import firebase from '../../Firebase'
 import { Link } from 'react-router-dom'
+import FormControl from '@material-ui/core/FormControl'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import InputLabel from '@material-ui/core/InputLabel'
 
 export default class Aregistradas extends Component {
   constructor (props) {
@@ -38,65 +42,76 @@ export default class Aregistradas extends Component {
 
   render () {
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '13%' }}>
-        <div className='container-aregistradas-b'>
-          <div>
-            <h1>Busqueda Actividades</h1>
-          </div>
-          <div>
-            <div className='input-c-qc'>
-              <p className='p-t-aa1'>Tipo de Actividad:</p>
-              <select className='borderSelect' style={{}}>
-                <option>Conferencia, dio</option>
+      <div className='mg-conta'>
+        <div className='nav-mm'>
+          <h1 className='h1-lm'>Busqueda</h1>
+        </div>
+        <div className='imp-busq'>
 
-              </select>
-            </div>
-            <div className='input-c-c'>
-                <p className='p-t-aa'>Periodo:</p>
-                <select className='borderSelect' style={{ width: '150px'}}>
-                  <option>Conferencia</option>
-                </select>
-            </div>
-          </div>
-          <div className='button-r'>
-            <Link to=''><button className='style-button-r'>Buscar</button></Link>
-          </div>
-          <div>
-            <div className='content-title-r'>
-              <div className='bor' style={{ borderRight: '1px solid #d0d0d0' }} />
-              <div className='title-r'><p className='p-margin-r'><b>Actividad</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Convoca</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Para</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Lugar</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Fecha</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Hora</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Estado</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Evidencia</b></p></div>
-              <div className='title-r'><p className='p-margin-r'><b>Reagendar</b></p></div>
-              <div className='bor' />
-            </div>
-            {this.state.actividades.map(actividades =>
-              <div className='content-title'>
-                <div className='bor' style={{ borderRight: '1px solid #d0d0d0' }} />
-                <div className='title-r'><p className='p-margin-r'>{actividades.tipoA}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.convoca}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.Quien}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.lugar}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.fechai}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.fechaf}</p></div>
-                <div className='title-r'><p className='p-margin-r'>{actividades.estado}</p></div>
+        <FormControl style={{width:'30%', marginRight:'20%', marginLeft:'3.5%'}}>
+          <InputLabel>Tipo de Actividad</InputLabel>
+          <Select>
+            <MenuItem value={10}>Convocatoria</MenuItem>
+            <MenuItem value={20}>Congreso</MenuItem>
+            <MenuItem value={30}>Junta</MenuItem>
+          </Select>
+        </FormControl>
 
-                <div className='title-r'>
-                  <Link to={`/Sactividad/${actividades.key}`}>
-                <p className='p-margin-r'>Evidencia</p></Link>
-                </div>
-                <Link to={`/EditarActividad/${actividades.key}`}><div className='title-r'><p className='p-margin-r'>Reagendar</p></div></Link>
-                <div className='bor' />
-              </div>
-            )}
+
+
+        <FormControl style={{width:'30%'}}>
+          <InputLabel>Periodo</InputLabel>
+          <Select>
+            <MenuItem value={10}>Periodo</MenuItem>
+            <MenuItem value={20}>Periodo</MenuItem>
+            <MenuItem value={30}>Periodo</MenuItem>
+          </Select>
+        </FormControl>
+
+        </div>
+        <div className='mes-center' style={{ position: 'fixed', marginTop: '200px', background: '#fafafa' }}>
+          <div className='mes-container' style={{ marginRight: '256px' }}>
+            <div className='head-mes-1' style={{paddingLeft: '6.5%', color: 'grey'}}>Actividad</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Convocado</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Para</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Lugar</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Fecha</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Hora</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Estado</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Estatus</div>
+
+
+            <div className='one-po' />
           </div>
         </div>
+        <div style={{paddingTop: '270px'}}>
+          {this.state.actividades.map(actividades =>
+            <div className='mes-center2'>
+              <div className='mes-container-map' >
+                <span className='material-icons icon-sh' style={{ marginLeft: '-40px', marginRight: '14px'}}>
+                  label_important
+                </span>
+                <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>
+                <div className='head-mes-1' >{actividades.Actividad}</div>
+                <div className='head-mes-1' >{actividades.Lugar}</div>
+                <div className='head-mes-1' >{actividades.tipoA}</div>
+                <div className='head-mes-1' >{actividades.Actividad}</div>
+                <div className='head-mes-1' >{actividades.Lugar}</div>
+                <div className='head-mes-1' >{actividades.Lugar}</div>
+                <div className='head-mes-1' >{actividades.Lugar}</div>
+                <div className='one-po'>
+                  <Link to={`/Editarmensaje/${actividades.key}`}>
+                    <span className='material-icons icon-block'>
+                      block
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
+
     )
   }
 }

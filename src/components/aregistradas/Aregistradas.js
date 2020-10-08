@@ -43,6 +43,13 @@ export default class Aregistradas extends Component {
         <div className='nav-ma'>
           <h1 className='h1-ar'>Mis Actividades</h1>
         </div>
+        <div className='add-ar'>
+          <Link to='/AgregarActividad'>
+            <Fab color='primary' aria-label='add' style={{background: '#71b631'}}>
+              <AddIcon />
+            </Fab>
+          </Link>
+        </div>
 
         <div className='calendar-container'>
           <div className='calendar-content'>
@@ -110,13 +117,7 @@ export default class Aregistradas extends Component {
             </div>
           </div>
         </div>
-        <div className='add-ar'>
-          <Link to='/AgregarActividad'>
-            <Fab color='primary' aria-label='add' style={{background: '#71b631'}}>
-              <AddIcon />
-            </Fab>
-          </Link>
-        </div>
+
       </div>
     )
   }

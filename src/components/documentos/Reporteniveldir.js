@@ -37,7 +37,7 @@ export default class Reporteniveldir extends Component{
     </tr>
 
   <tr className='tab-abajo'>
-  <td className='columnas-tab'>1</td>
+  <td className='columnas-tab num-c'>1</td>
   <td className='columnas-tab'></td>
   <td className='columnas-tab'></td>
   <td className='columnas-tab'></td>
@@ -55,7 +55,7 @@ export default class Reporteniveldir extends Component{
   <td className='columnas-tab columna-tab-bori'></td>
   </tr>
   <tr>
-  <td className='columnas-tab'></td>
+  <td className='columnas-tab'>3</td>
   <td className='columnas-tab'></td>
   <td className='columnas-tab'></td>
   <td className='columnas-tab'></td>

@@ -51,3 +51,20 @@
     padding: 80px;
     height: 82vh;
 }
+.btn-reportes{
+  width: 20%;
+  padding-left: 1350px;
+  padding-top: 20px;
+
+display: flex;
+justify-content: flex-start;
+z-index: -1;
+position: fixed;
+}
+.btn-b-l{
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  background: #092432;
+  padding: 5px;
+}

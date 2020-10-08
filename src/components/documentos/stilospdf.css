@@ -204,6 +204,7 @@ padding-left: 270px;
 }
 /* nombre y cargo*/
 .Nombre-cargo{
+  padding-top: 50px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 0px;
@@ -229,6 +230,7 @@ padding-left: 270px;
 .h3-top{
   margin-top: 0px;
   text-align: center;
+  padding-right: 500px;
 }
 /*Tabla*/
 .tabla-reporteniveldir{
@@ -272,12 +274,13 @@ padding-left: 270px;
 .columnas-tab{
   height: 100px;
   text-align: center;
-  margin-top:50px;
   border-left: 1px solid #000;
   border-bottom: 1px solid #000;
 
 }
+.num-c{
 
+}
 /*reportes pdf*/
 
 .fader-reporte{
@@ -297,6 +300,7 @@ padding-left: 270px;
 .titulo-reporte{
 display: flex;
 justify-content: center;
+padding-right:  400px;
 }
 .fecha-reporte{
   display: flex;
@@ -304,6 +308,7 @@ justify-content: center;
   padding-right: 60px;
   font-weight:bold;
   padding-top: 10px;
+  padding-right: 300px;
 }
 .tabla-reporte{
   padding-top: 40px;
@@ -312,7 +317,7 @@ justify-content: center;
   border: 1px solid #000;
   font-weight: bold;
   padding-right: 20px;
-  width: 1055px;
+  width: 1160px;
 
 }
 .titulo-reporte{
