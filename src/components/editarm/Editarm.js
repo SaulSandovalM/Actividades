@@ -96,13 +96,14 @@ export default class Editarm extends Component {
   }
 
   render() {
+
     return (
       <div className='mg-conta'>
         <div>
           <div className='divtop-mg' />
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
-              <h2>Edición de Boletin</h2>
+              <h2>Edición de Mensajes</h2>
               <TextField
                 id='standard-basic'
                 label='Asunto'
@@ -120,22 +121,7 @@ export default class Editarm extends Component {
                 onChange={this.onChange}
                 required
               />
-              <p className='martop-dt'>Fecha y hora de Finalizacion *</p>
-              <div className='date-cont'>
-                <TextField
-                  type='date'
-                  style={{ width: '45%' }}
-                  name='fecha'
-                  placeholdercolor='grey'
-                  required
-                />
-                <TextField
-                  type='time'
-                  style={{ width: '45%' }}
-                  name='fecha'
-                  required
-                />
-              </div>
+
               <Input
                 type='file'
                 style={{ marginTop: '30px' }}

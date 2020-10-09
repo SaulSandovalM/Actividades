@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import firebase from '../../Firebase'
 import './Sactividad.css'
-import Switch from 'react-switch'
 import TextField from '@material-ui/core/TextField'
 import Fab from '@material-ui/core/Fab'
 import DoneIcon from '@material-ui/icons/Done'
 import Input from '@material-ui/core/Input'
+import Switch from '@material-ui/core/Switch'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import { withStyles } from '@material-ui/core/styles';
 
 export default class Sactividad extends Component {
   constructor (props) {
@@ -13,31 +15,40 @@ export default class Sactividad extends Component {
     this.ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id).collection('evidencias')
     this.unsubscribe = null;
     this.state = {
-      imgevi: '',
-      titulo: '',
-      descripcion: '',
-      seguimiento: true,
-      porque: '',
+      imgeevi: ' ',
+      relevancia: '',
+      resultado: '',
       evidencia: '',
       evidencias: [],
-      imge: 0
+      imge: 0,
+      checkedCancelada: false,
+      checkedReprogramar: false,
+      motivo_cancelado: '',
+      fechai: '',
+      horai: '',
+      fechaf: '',
+      horaf: ''
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChangeCancel = this.handleChangeCancel.bind(this)
+    this.handleChangeRe = this.handleChangeRe.bind(this)
   }
 
   onCollectionUpdate = (querySnapshot) => {
     const evidencias = [];
     querySnapshot.forEach((doc) => {
-      const { seguimientos, seguimienton, evidencia, titulo, descripcion, porque } = doc.data();
+      const { seguimientos, seguimienton, evidencia, relevancia, motivo_cancelado, fechai, horai, fechaf, horaf } = doc.data();
       evidencias.push({
         key: doc.id,
         doc,
         seguimientos,
         seguimienton,
         evidencia,
-        titulo,
-        descripcion,
-        porque
+        relevancia,
+        motivo_cancelado,
+        fechai,
+        horai,
+        fechaf,
+        horaf
       });
     });
     this.setState({
@@ -55,8 +66,16 @@ export default class Sactividad extends Component {
     this.setState(state)
   }
 
-  handleChange(seguimiento) {
-    this.setState({ seguimiento });
+  handleChangeCancel(checkedCancelada) {
+    this.setState({
+      checkedCancelada: !this.state.checkedCancelada,
+    });
+  }
+
+  handleChangeRe(checkedReprogramar) {
+    this.setState({
+      checkedReprogramar: !this.state.checkedReprogramar,
+    });
   }
 
   handleImage (event) {
@@ -73,27 +92,41 @@ export default class Sactividad extends Component {
     }, () => storageRef.getDownloadURL().then(url => {
       const record = url
       this.setState({
-        evidencia: record
+        imgeevi: record
       })
     }))
   }
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { seguimiento, titulo, descripcion, porque } = this.state
+    const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar, fechai, horai, fechaf, horaf, imgeevi } = this.state
     this.ref.add({
-      seguimiento,
-      titulo,
-      descripcion,
-      porque
+      resultado,
+      relevancia,
+      motivo_cancelado,
+      checkedCancelada,
+      checkedReprogramar,
+      fechai,
+      horai,
+      fechaf,
+      horaf,
+      imgeevi
     }).then((docRef) => {
       this.setState({
-        seguimientos: false,
+        resultado: '',
         seguimienton: false,
-        titulo: '',
         descripcion: '',
-        porque: ''
+        motivo_cancelado: '',
+        checkedCancelada: false,
+        checkedReprogramar: false,
+        fechai: '',
+        horai: '',
+        fechaf: '',
+        horaf: '',
+        imgeevi: ''
       })
+      this.props.history.push('/ActividadInforme')
+        alert('Se Envio el formulario')
     })
     .catch((error) => {
       console.error('Error al crear: ', error)
@@ -101,99 +134,184 @@ export default class Sactividad extends Component {
   }
 
   render () {
-    const { descripcion, titulo, porque } = this.state
+    const IOSSwitch = withStyles((theme) => ({
+      root: {
+        width: 42,
+        height: 26,
+        padding: 0,
+        margin: theme.spacing(1),
+      },
+      switchBase: {
+        padding: 1,
+        '&$checked': {
+          transform: 'translateX(16px)',
+          color: theme.palette.common.white,
+          '& + $track': {
+            backgroundColor: '#52d869',
+            opacity: 1,
+            border: 'none',
+          },
+        },
+        '&$focusVisible $thumb': {
+          color: '#52d869',
+          border: '6px solid #fff',
+        },
+      },
+      thumb: {
+        width: 24,
+        height: 24,
+      },
+      track: {
+        borderRadius: 26 / 2,
+        border: `1px solid ${theme.palette.grey[400]}`,
+        backgroundColor: theme.palette.grey[50],
+        opacity: 1,
+        transition: theme.transitions.create(['background-color', 'border']),
+      },
+      checked: {},
+      focusVisible: {},
+    }))(({ classes, ...props }) => {
+      return (
+        <Switch
+          focusVisibleClassName={classes.focusVisible}
+          disableRipple
+          classes={{
+            root: classes.root,
+            switchBase: classes.switchBase,
+            thumb: classes.thumb,
+            track: classes.track,
+            checked: classes.checked,
+          }}
+          {...props}
+
+        />
+      );
+    });
+    console.log(this.state.horaf)
     return (
-      <div>
-        <div className='mg-conta'>
-          <div className='nav-mm'>
-            <h1>Seguimiento de Actividad</h1>
-          </div>
+      <div className='mg-conta'>
+        <div>
+          <div className='divtop-mg' />
+          <div className='form-content-gm'>
+            <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
+              <h2>Seguimiento de Actividad</h2>
+              <TextField
+                label='Resultados obtenidos'
+                style={{marginTop: '15px'}}
+                name='resultado'
+                onChange={this.onChange}
+                inputProps={{
+                  maxLength: 150,
+                }}
+                multiline
+                required
+              />
+              <TextField
+                label='Relevancia'
+                style={{marginTop: '15px'}}
+                name='relevancia'
+                onChange={this.onChange}
+                inputProps={{
+                  maxLength: 300,
+                }}
+                multiline
+                required
+              />
 
-          <form className='mes-center' style={{ position: 'fixed', marginTop: '120px', background: '#fafafa' }} onSubmit={this.onSubmit}>
-            <div>
-              <div className='form-content-sa'>
-                <label className='text-g'>Evidencia:</label>
-                <input className='input-g' type='file' onChange={this.handleImage.bind(this)} />
-              </div>
-              <div className='form-content-sa'>
-                <label className='text-g'></label>
-                <progress className='input-g' value={this.state.imge} />
+              <FormControlLabel
+                control={<IOSSwitch
+                  name='checkedCancelada'
+                  checked={this.state.checkedCancelada}
+                  onChange={this.handleChangeCancel}
+                  />}
+                label='¿Actividad cancelada?'
+                style={{ marginTop: '20px' }}
+              />
+             {this.state.checkedCancelada === true &&
+               <div className='div_cancel'>
+                 <TextField
+                   label='Motivo de cancelación'
+                   style={{marginTop: '15px'}}
+                   name='motivo_cancelado'
+                   onChange={this.onChange}
+                   inputProps={{
+                     maxLength: 300,
+                   }}
+                   multiline
+                   required
+                 />
+
+                  <FormControlLabel
+                    control={<IOSSwitch name='checkedReprogramar'
+                      checked={this.state.checkedReprogramar}
+                      onChange={this.handleChangeRe}
+                    />}
+                    label='Re-programar'
+                    style={{ marginTop: '20px' }}
+                  />
+                </div>
+              }
+              {this.state.checkedReprogramar === true &&
+              <div>
+              <p className='martop-dt'>Fecha y hora de inicio *</p>
+              <div className='date-cont'>
+                <TextField
+                  type='date'
+                  style={{ width: '45%' }}
+                  name='fechai'
+                  onChange={this.onChange}
+                  required
+                />
+                <TextField
+                  type='time'
+                  style={{ width: '45%' }}
+                  name='horai'
+                  onChange={this.onChange}
+                  required
+                />
               </div>
 
+              <p className='martop-dt'>Fecha y hora de Finalizacion *</p>
+              <div className='date-cont'>
+                <TextField
+                  type='date'
+                  style={{ width: '45%' }}
+                  name='fechaf'
+                  onChange={this.onChange}
+                  placeholdercolor='grey'
+                  required
+                />
+                <TextField
+                  type='time'
+                  style={{ width: '45%' }}
+                  name='horaf'
+                  onChange={this.onChange}
+                  required
+                />
+              </div>
+              </div>
+            }
+            {this.state.checkedCancelada === false &&
+              <div>
+                <Input
+                  type='file'
+                  style={{marginTop: '30px'}}
+                  onChange={this.handleImage.bind(this)}
+                />
+                <progress className='progress2' value={this.state.imge} />
 
-              <div className='form-content-sa'>
-                <label className='text-g'>Titulo: </label>
-                <input className='input-g' name='titulo' value={titulo} onChange={this.onChange} />
               </div>
-              <div className='form-content-sa'>
-                <label className='text-g'>Descripcion: </label>
-                <input className='input-g' name='descripcion' value={descripcion} onChange={this.onChange}/>
+            }
+              <div className='add-gb'>
+                <Fab color='primary' aria-label='add' style={{background: 'green'}} type='submit'>
+                  <DoneIcon />
+                </Fab>
               </div>
-              <div className='form-content-sa'>
-                <label className='text-g'>Actividad Realizada: </label>
-                <div className='input-g'>
-                  <Switch checked={this.state.seguimiento} onChange={this.handleChange} />
-                  {this.state.seguimiento &&
-                    <p>Si</p>
-                  }
-                </div>
-              </div>
-              {!this.state.seguimiento &&
-              <div className='form-content-sa'>
-                <label className='text-g'>¿Porque?: </label>
-                <input className='input-g' value={porque} onChange={this.onChange}/>
-              </div>}
-            </div>
-            <div className='boton-v'>
-              <button type='submit'>Guardar</button>
-            </div>
-          </form>
-          <div>
-            <div className='caja-inputs'>
-              <div className='table-ev-l' />
-              <div className='table-ev-n'>
-                <b>#</b>
-              </div>
-              <div className='table-t-sa'>
-                <b>Titulo</b>
-              </div>
-              <div className='table-t-sa'>
-                <b>Descripción</b>
-              </div>
-              <div className='table-ed-sa'>
-                <b>Evidencia</b>
-              </div>
-              <div className='table-ed-sa'>
-                <b>Editar</b>
-              </div>
-              <div className='table-ev-r' />
-            </div>
-            {this.state.evidencias.map(evidencias =>
-              <div className='caja-inputs'>
-                <div className='table-ev-l' />
-                <div className='table-ev-n'>
-                  <b></b>
-                </div>
-                <div className='table-t-sa'>
-                  <b>{evidencias.titulo}</b>
-                </div>
-                <div className='table-t-sa'>
-                  <b>{evidencias.descripcion}</b>
-                </div>
-                <div className='table-ed-sa'>
-                  {evidencias.evidencia &&
-                    <input type='checkbox' checked />
-                  }
-                </div>
-                <div className='table-ed-sa'>
-                  <b>Editar</b>
-                </div>
-                <div className='table-ev-r' />
-              </div>
-            )}
+            </form>
           </div>
         </div>
       </div>
+
     )
   }
 }

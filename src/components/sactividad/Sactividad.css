@@ -1,3 +1,7 @@
+.div_cancel{
+  display: flex;
+  flex-direction: column;
+}
 .nav-ma {
   background: #092432;
   color: white;

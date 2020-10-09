@@ -73,7 +73,7 @@ export default class Generacionm extends Component {
 
     var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
     var f = new Date()
-    var date = (meses[f.getMonth()] + ' ' + f.getDate() + ', ' + f.getFullYear())
+    var date = (f.getDate() + '/' + meses[f.getMonth()] + '/' + f.getFullYear() + ', '+ f.getHours() + ':' + f.getMinutes())
     this.state.fecha = date
 
     return (
@@ -82,7 +82,7 @@ export default class Generacionm extends Component {
           <div className='divtop-mg' />
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
-              <h2>Generación de Boletin</h2>
+              <h2>Generación de Mensajes</h2>
               <TextField
                 label='Asunto'
                 name='asunto'
@@ -98,22 +98,7 @@ export default class Generacionm extends Component {
                 onChange={this.onChange}
                 required
               />
-              <p className='martop-dt'>Fecha y hora*</p>
-              <div className='date-cont'>
-                <TextField
-                  type='date'
-                  style={{ width: '45%' }}
-                  name='fecha'
-                  placeholdercolor='grey'
-                  required
-                />
-                <TextField
-                  type='time'
-                  style={{ width: '45%' }}
-                  name='fecha'
-                  required
-                />
-              </div>
+
               <Input
                 type='file'
                 style={{marginTop: '30px'}}
