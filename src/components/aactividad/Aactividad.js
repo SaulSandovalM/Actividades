@@ -10,7 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Switch from '@material-ui/core/Switch'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles'
 
 export default class Aactividad extends Component {
    constructor () {
@@ -43,9 +43,11 @@ export default class Aactividad extends Component {
        imparte: '',
        desc: '',
        servidores: '',
-       checked: true
+       checkedOrganizada: false,
+       otro : ''
      }
      this.handleChange = this.handleChange.bind(this)
+     this.handleChangeOr = this.handleChangeOr.bind(this)
    }
 
    onChange = (e) => {
@@ -57,6 +59,12 @@ export default class Aactividad extends Component {
    handleChange(convocados) {
      this.setState({
        convocados: !this.state.convocados,
+     });
+   }
+
+   handleChangeOr(checkedOrganizada) {
+     this.setState({
+       checkedOrganizada: !this.state.checkedOrganizada,
      });
    }
 
@@ -130,7 +138,7 @@ export default class Aactividad extends Component {
    onSubmit = (e) => {
    e.preventDefault()
      const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
-           municipio, quien, lugar, imparte, desc, prioridad, servidores, tipoActividad } = this.state
+           municipio, quien, lugar, imparte, desc, prioridad, servidores, tipoActividad, checkedOrganizada, otro } = this.state
      this.ref.add({
        tema,
        ainterna,
@@ -149,7 +157,9 @@ export default class Aactividad extends Component {
        desc,
        prioridad,
        servidores,
-       tipoActividad
+       tipoActividad,
+       checkedOrganizada,
+       otro
      }).then((docRef) => {
        this.setState({
          tema: '',
@@ -169,7 +179,9 @@ export default class Aactividad extends Component {
          desc: '',
          prioridad: '',
          servidores: '',
-         tipoActividad: ''
+         tipoActividad: '',
+         checkedOrganizada: false,
+         otro: ''
        })
        this.props.history.push('/ActividadesRegistradas')
      })
@@ -248,26 +260,27 @@ export default class Aactividad extends Component {
     });
 
 
-
+console.log(this.state.descripcion)
     return (
       <div className='aa-conta'>
         <div>
           <div className='divtop-mg' />
-          <div className='form-content-gm'>
+          <div className='form-content-ac'>
             <form noValidate autoComplete='off' className='mensajesg-container2'>
+              <div style={{height: '100%'}}>
               <h2>Agregar Actividad</h2>
               <p className='martop-dt'>Fecha y hora de inicio *</p>
               <div className='date-cont'>
                 <TextField
                   type='date'
                   style={{ width: '45%' }}
-                  name='fecha'
+                  name='fechai'
                   required
                 />
                 <TextField
                   type='time'
                   style={{ width: '45%' }}
-                  name='fecha'
+                  name='horai'
                   required
                 />
               </div>
@@ -276,57 +289,87 @@ export default class Aactividad extends Component {
                 <TextField
                   type='date'
                   style={{ width: '45%' }}
-                  name='fecha'
+                  name='fechaf'
                   placeholdercolor='grey'
                   required
                 />
                 <TextField
                   type='time'
                   style={{ width: '45%' }}
-                  name='fecha'
+                  name='horaf'
                   required
                 />
               </div>
               <TextField
                 label='Actividad'
-                style={{ marginTop: '15px' }}
+                style={{ marginTop: '15px', width: '100%' }}
                 name='asunto'
                 required
               />
+              <div className='div_cancel'>
+                <TextField
+                  label='Objetivo'
+                  style={{marginTop: '15px'}}
+                  name='objetivo'
+                  onChange={this.onChange}
+                  inputProps={{
+                    maxLength: 300,
+                  }}
+                  multiline
+                  required
+                />
+              </div>
               <FormControlLabel
-                control={<IOSSwitch name='checkedB' />}
+                control={<IOSSwitch name='checkedOrganizada'
+                checked={this.state.checkedOrganizada}
+                onChange={this.handleChangeOr}
+                />}
                 label='Actividad organizada por procuraduría'
                 style={{ marginTop: '20px' }}
               />
-              <FormControl style={{ marginTop: '15px' }}>
+
+              <FormControl style={{ marginTop: '15px', width:'100%' }}>
                 <InputLabel id='demo-simple-select-outlined-label'>Tipo Actividad</InputLabel>
                 <Select
                   labelId='demo-simple-select-outlined-label'
                   id='demo-simple-select-outlined'
                   label='Tipo Actividad'
                   name='descripcion'
+                  onChange={this.onChange}
                   required
                 >
-                  <MenuItem value={10}>Taller</MenuItem>
-                  <MenuItem value={20}>Reunión de Trabajo</MenuItem>
-                  <MenuItem value={30}>Curso</MenuItem>
-                  <MenuItem value={40}>Conferencia</MenuItem>
-                  <MenuItem value={50}>Otro</MenuItem>
+                  <MenuItem value={'taller'}>Taller</MenuItem>
+                  <MenuItem value={'reunion'}>Reunión de Trabajo</MenuItem>
+                  <MenuItem value={'curso'}>Curso</MenuItem>
+                  <MenuItem value={'conferencia'}>Conferencia</MenuItem>
+                  <MenuItem value={'otro'}>Otro</MenuItem>
                 </Select>
               </FormControl>
+              {this.state.descripcion === 'otro' &&
+                <TextField
+                  label='Otro'
+                  style={{ marginTop: '15px', width: '100%' }}
+                  name='otro'
+                />
+              }
+
+              <div className='date-cont'>
               <TextField
                 label='Convoca'
-                style={{ marginTop: '15px' }}
+                style={{ marginTop: '15px', width: '45%'}}
                 name='convoca'
                 required
               />
               <TextField
                 label='Dependencia/Institución que convoca'
-                style={{ marginTop: '15px' }}
+                style={{ marginTop: '15px', width: '45%'}}
                 name='dependencia'
                 required
               />
-              <FormControl style={{ marginTop: '15px' }}>
+              </div>
+
+              <div className='date-cont'>
+              <FormControl style={{ marginTop: '15px', width: '45%' }}>
                 <InputLabel id='demo-simple-select-outlined-label'>Estados</InputLabel>
                 <Select
                   labelId='demo-simple-select-outlined-label'
@@ -341,7 +384,7 @@ export default class Aactividad extends Component {
                   <MenuItem value={40}>Querétaro</MenuItem>
                 </Select>
               </FormControl>
-              <FormControl style={{ marginTop: '15px' }}>
+              <FormControl style={{ marginTop: '15px', width: '45%' }}>
                 <InputLabel id='demo-simple-select-outlined-label'>
                   Municipio
                 </InputLabel>
@@ -358,13 +401,15 @@ export default class Aactividad extends Component {
                   <MenuItem value={40}>Bernardo Quintana</MenuItem>
                 </Select>
               </FormControl>
+              </div>
+
               <TextField
                 label='Lugar Especifico'
-                style={{ marginTop: '15px' }}
+                style={{ marginTop: '15px', width: '100%' }}
                 name='dependencia'
                 required
               />
-              <FormControl style={{ marginTop: '15px' }}>
+              <FormControl style={{ marginTop: '15px', width: '100%' }}>
                 <InputLabel id='demo-simple-select-outlined-label'>Responsable de Actividad</InputLabel>
                 <Select
                   labelId='demo-simple-select-outlined-label'
@@ -379,22 +424,20 @@ export default class Aactividad extends Component {
                   <MenuItem value={40}>Mercedes Citlali Mendoza Meza</MenuItem>
                 </Select>
               </FormControl>
-              <FormControl style={{ marginTop: '15px' }}>
-                <InputLabel id='demo-simple-select-outlined-label'>Asistente</InputLabel>
-                <Select
-                  labelId='demo-simple-select-outlined-label'
-                  id='demo-simple-select-outlined'
-                  label='Asistente'
-                  name='asistente'
-                  required
-                >
-                  <MenuItem value={10}>Raúl Arroyo</MenuItem>
-                  <MenuItem value={20}>León Maximiliano Hernández Valdés</MenuItem>
-                  <MenuItem value={30}>Victor Ariel Peréz Benítez</MenuItem>
-                  <MenuItem value={40}>Mercedes Citlali Mendoza Meza</MenuItem>
-                </Select>
-              </FormControl>
-              <div className='add-gb'>
+
+              <TextField
+                label='Asistente'
+                style={{marginTop: '15px', width: '100%'}}
+                name='asistente'
+                onChange={this.onChange}
+                inputProps={{
+                  maxLength: 300,
+                }}
+                multiline
+                required
+              />
+              </div>
+              <div className='save-bt'>
                 <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
                   <DoneIcon />
                 </Fab>
