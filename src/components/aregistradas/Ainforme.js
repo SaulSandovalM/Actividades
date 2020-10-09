@@ -71,7 +71,7 @@ export default class AInformes extends Component {
                   {actividades.fechai}
                 </div>
                 <div className='one-po'>
-                  <Link to={`/Editarmensaje/${actividades.key}`}>
+                  <Link to={`/Sactividad/${actividades.key}`}>
                     <span className='material-icons icon-edit'>
                       create
                     </span>

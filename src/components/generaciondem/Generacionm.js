@@ -98,14 +98,22 @@ export default class Generacionm extends Component {
                 onChange={this.onChange}
                 required
               />
-              <TextField
-                label='Fecha'
-                style={{marginTop: '15px'}}
-                name='fecha'
-                value={date}
-                onChange={this.onChange}
-                required
-              />
+              <p className='martop-dt'>Fecha y hora*</p>
+              <div className='date-cont'>
+                <TextField
+                  type='date'
+                  style={{ width: '45%' }}
+                  name='fecha'
+                  placeholdercolor='grey'
+                  required
+                />
+                <TextField
+                  type='time'
+                  style={{ width: '45%' }}
+                  name='fecha'
+                  required
+                />
+              </div>
               <Input
                 type='file'
                 style={{marginTop: '30px'}}

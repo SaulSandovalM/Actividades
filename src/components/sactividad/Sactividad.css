@@ -1,3 +1,14 @@
+.nav-ma {
+  background: #092432;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: center;
+  margin-top: -20px;
+  width: 100%;
+  z-index: 1;
+}
 .input-f-s {
   display: flex;
   flex-direction: row;

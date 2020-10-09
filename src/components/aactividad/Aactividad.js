@@ -13,170 +13,170 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { withStyles } from '@material-ui/core/styles';
 
 export default class Aactividad extends Component {
-  // constructor () {
-  //   super()
-  //   this.ref = firebase.firestore().collection('actividades')
-  //   this.refestado = firebase.firestore().collection('estados')
-  //   this.refprioridad = firebase.firestore().collection('prioridad')
-  //   this.refdirecciones = firebase.firestore().collection('direcciones')
-  //   this.refmunicipios = firebase.firestore().collection('municipios')
-  //   this.unsubscribe = null
-  //   this.state = {
-  //     estados: [],
-  //     tipoActividad: '',
-  //     prioridad: [],
-  //     direcciones: [],
-  //     municipios: [],
-  //     tema: '',
-  //     ainterna: '',
-  //     aexterna: '',
-  //     convocamos: '',
-  //     convocados: false,
-  //     convoca: '',
-  //     fechai: '',
-  //     fechaf: '',
-  //     tipoA: '',
-  //     estado: '',
-  //     municipio: '',
-  //     quien: '',
-  //     lugar: '',
-  //     imparte: '',
-  //     desc: '',
-  //     servidores: '',
-  //     checked: true
-  //   }
-  //   this.handleChange = this.handleChange.bind(this)
-  // }
-  //
-  // onChange = (e) => {
-  //   const state = this.state
-  //   state[e.target.name] = e.target.value
-  //   this.setState(state)
-  // }
-  //
-  // handleChange(convocados) {
-  //   this.setState({
-  //     convocados: !this.state.convocados,
-  //   });
-  // }
-  //
-  // onCollectionUpdateEstado = (querySnapshot) => {
-  //   const estados = []
-  //   querySnapshot.forEach((doc) => {
-  //     const { estado } = doc.data()
-  //     estados.push({
-  //       key: doc.id,
-  //       doc,
-  //       estado
-  //     })
-  //   })
-  //   this.setState({
-  //     estados
-  //  })
-  // }
-  //
-  // onCollectionUpdatePrioridad = (querySnapshot) => {
-  //   const prioridad = []
-  //   querySnapshot.forEach((doc) => {
-  //     const { nprioridad } = doc.data()
-  //     prioridad.push({
-  //       key: doc.id,
-  //       doc,
-  //       nprioridad
-  //     })
-  //   })
-  //   this.setState({
-  //     prioridad
-  //  })
-  // }
-  //
-  // onCollectionUpdateDirecciones = (querySnapshot) => {
-  //   const direcciones = []
-  //   querySnapshot.forEach((doc) => {
-  //     const { Direccion } = doc.data()
-  //     direcciones.push({
-  //       key: doc.id,
-  //       doc,
-  //       Direccion
-  //     })
-  //   })
-  //   this.setState({
-  //     direcciones
-  //  })
-  // }
-  //
-  // onCollectionUpdateMunicipios = (querySnapshot) => {
-  //   const municipios = []
-  //   querySnapshot.forEach((doc) => {
-  //     const { municipio } = doc.data()
-  //     municipios.push({
-  //       key: doc.id,
-  //       doc,
-  //       municipio
-  //     })
-  //   })
-  //   this.setState({
-  //     municipios
-  //  })
-  // }
-  //
-  // componentDidMount() {
-  //   this.unsubscribe = this.refestado.onSnapshot(this.onCollectionUpdateEstado)
-  //   this.unsubscribe = this.refprioridad.onSnapshot(this.onCollectionUpdatePrioridad)
-  //   this.unsubscribe = this.refdirecciones.onSnapshot(this.onCollectionUpdateDirecciones)
-  //   this.unsubscribe = this.refmunicipios.onSnapshot(this.onCollectionUpdateMunicipios)
-  // }
-  //
-  // onSubmit = (e) => {
-  //   e.preventDefault()
-  //   const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
-  //         municipio, quien, lugar, imparte, desc, prioridad, servidores, tipoActividad } = this.state
-  //   this.ref.add({
-  //     tema,
-  //     ainterna,
-  //     aexterna,
-  //     convocamos,
-  //     convocados,
-  //     convoca,
-  //     fechai,
-  //     fechaf,
-  //     tipoA,
-  //     estado,
-  //     municipio,
-  //     quien,
-  //     lugar,
-  //     imparte,
-  //     desc,
-  //     prioridad,
-  //     servidores,
-  //     tipoActividad
-  //   }).then((docRef) => {
-  //     this.setState({
-  //       tema: '',
-  //       ainterna: '',
-  //       aexterna: '',
-  //       convocamos: '',
-  //       convocados: false,
-  //       convoca: '',
-  //       fechai: '',
-  //       fechaf: '',
-  //       tipoA: '',
-  //       estado: '',
-  //       municipio: '',
-  //       quien: '',
-  //       lugar: '',
-  //       imparte: '',
-  //       desc: '',
-  //       prioridad: '',
-  //       servidores: '',
-  //       tipoActividad: ''
-  //     })
-  //     this.props.history.push('/ActividadesRegistradas')
-  //   })
-  //   .catch((error) => {
-  //     console.error('Error al crear: ', error)
-  //   })
-  // }
+   constructor () {
+     super()
+     this.ref = firebase.firestore().collection('actividades')
+     this.refestado = firebase.firestore().collection('estados')
+     this.refprioridad = firebase.firestore().collection('prioridad')
+     this.refdirecciones = firebase.firestore().collection('direcciones')
+     this.refmunicipios = firebase.firestore().collection('municipios')
+     this.unsubscribe = null
+     this.state = {
+       estados: [],
+       tipoActividad: '',
+       prioridad: [],
+       direcciones: [],
+       municipios: [],
+       tema: '',
+       ainterna: '',
+       aexterna: '',
+       convocamos: '',
+       convocados: false,
+       convoca: '',
+       fechai: '',
+       fechaf: '',
+       tipoA: '',
+       estado: '',
+       municipio: '',
+       quien: '',
+       lugar: '',
+       imparte: '',
+       desc: '',
+       servidores: '',
+       checked: true
+     }
+     this.handleChange = this.handleChange.bind(this)
+   }
+
+   onChange = (e) => {
+     const state = this.state
+     state[e.target.name] = e.target.value
+     this.setState(state)
+   }
+
+   handleChange(convocados) {
+     this.setState({
+       convocados: !this.state.convocados,
+     });
+   }
+
+   onCollectionUpdateEstado = (querySnapshot) => {
+     const estados = []
+     querySnapshot.forEach((doc) => {
+       const { estado } = doc.data()
+       estados.push({
+         key: doc.id,
+         doc,
+         estado
+       })
+     })
+     this.setState({
+       estados
+    })
+   }
+
+   onCollectionUpdatePrioridad = (querySnapshot) => {
+     const prioridad = []
+     querySnapshot.forEach((doc) => {
+       const { nprioridad } = doc.data()
+     prioridad.push({
+         key: doc.id,
+         doc,
+         nprioridad
+       })
+     })
+     this.setState({
+       prioridad
+    })
+   }
+
+   onCollectionUpdateDirecciones = (querySnapshot) => {
+     const direcciones = []
+     querySnapshot.forEach((doc) => {
+       const { Direccion } = doc.data()
+       direcciones.push({
+         key: doc.id,
+         doc,
+         Direccion
+       })
+     })
+     this.setState({
+       direcciones
+    })
+   }
+
+   onCollectionUpdateMunicipios = (querySnapshot) => {
+     const municipios = []
+     querySnapshot.forEach((doc) => {
+       const { municipio } = doc.data()
+       municipios.push({
+         key: doc.id,
+         doc,
+         municipio
+       })
+     })
+     this.setState({
+       municipios
+    })
+   }
+
+   componentDidMount() {
+     this.unsubscribe = this.refestado.onSnapshot(this.onCollectionUpdateEstado)
+     this.unsubscribe = this.refprioridad.onSnapshot(this.onCollectionUpdatePrioridad)
+     this.unsubscribe = this.refdirecciones.onSnapshot(this.onCollectionUpdateDirecciones)
+     this.unsubscribe = this.refmunicipios.onSnapshot(this.onCollectionUpdateMunicipios)
+   }
+
+   onSubmit = (e) => {
+   e.preventDefault()
+     const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, tipoA, estado,
+           municipio, quien, lugar, imparte, desc, prioridad, servidores, tipoActividad } = this.state
+     this.ref.add({
+       tema,
+       ainterna,
+       aexterna,
+       convocamos,
+       convocados,
+       convoca,
+       fechai,
+       fechaf,
+       tipoA,
+       estado,
+       municipio,
+       quien,
+       lugar,
+       imparte,
+       desc,
+       prioridad,
+       servidores,
+       tipoActividad
+     }).then((docRef) => {
+       this.setState({
+         tema: '',
+         ainterna: '',
+         aexterna: '',
+         convocamos: '',
+         convocados: false,
+         convoca: '',
+         fechai: '',
+         fechaf: '',
+         tipoA: '',
+         estado: '',
+         municipio: '',
+         quien: '',
+         lugar: '',
+         imparte: '',
+         desc: '',
+         prioridad: '',
+         servidores: '',
+         tipoActividad: ''
+       })
+       this.props.history.push('/ActividadesRegistradas')
+     })
+     .catch((error) => {
+       console.error('Error al crear: ', error)
+     })
+   }
 
   render () {
     // const { tema, ainterna, aexterna, convocamos, convocados, convoca, fechai, fechaf, estado,

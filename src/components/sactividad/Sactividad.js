@@ -103,13 +103,13 @@ export default class Sactividad extends Component {
   render () {
     const { descripcion, titulo, porque } = this.state
     return (
-      <div style={{ backgroundColor: '#FAFAFA', paddingLeft: '15%' }}>
-        <div className='container-ss'>
-          <div>
+      <div>
+        <div className='mg-conta'>
+          <div className='nav-mm'>
             <h1>Seguimiento de Actividad</h1>
           </div>
-          
-          <form className='mar-for' onSubmit={this.onSubmit}>
+
+          <form className='mes-center' style={{ position: 'fixed', marginTop: '120px', background: '#fafafa' }} onSubmit={this.onSubmit}>
             <div>
               <div className='form-content-sa'>
                 <label className='text-g'>Evidencia:</label>

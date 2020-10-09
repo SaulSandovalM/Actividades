@@ -120,16 +120,22 @@ export default class Editarm extends Component {
                 onChange={this.onChange}
                 required
               />
-              <TextField
-                id='standard-basic'
-                label='Fecha'
-                style={{ marginTop: '15px' }}
-                name='fecha'
-                value={ this.state.fecha }
-                onChange={ this.onChange }
-                required
-                disabled
-              />
+              <p className='martop-dt'>Fecha y hora de Finalizacion *</p>
+              <div className='date-cont'>
+                <TextField
+                  type='date'
+                  style={{ width: '45%' }}
+                  name='fecha'
+                  placeholdercolor='grey'
+                  required
+                />
+                <TextField
+                  type='time'
+                  style={{ width: '45%' }}
+                  name='fecha'
+                  required
+                />
+              </div>
               <Input
                 type='file'
                 style={{ marginTop: '30px' }}
