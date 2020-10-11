@@ -25,11 +25,11 @@ export default class Mgenerales extends Component {
         imagen,
         fecha,
         checked
-      });
-    });
+      })
+    })
     this.setState({
       messages
-   });
+   })
   }
 
   componentDidMount() {
