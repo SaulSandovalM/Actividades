@@ -261,6 +261,7 @@ export default class Aactividad extends Component {
 
 
 console.log(this.state.descripcion)
+console.log(this.state.estados)
     return (
       <div className='aa-conta'>
         <div>
@@ -376,31 +377,38 @@ console.log(this.state.descripcion)
                   id='demo-simple-select-outlined'
                   label='Estados'
                   name='estados'
+                  onChange={this.onChange}
+
                   required
                 >
-                  <MenuItem value={10}>Aguascalientes</MenuItem>
-                  <MenuItem value={20}>Hidalgo</MenuItem>
-                  <MenuItem value={30}>Nuevo León</MenuItem>
-                  <MenuItem value={40}>Querétaro</MenuItem>
+                {this.state.estados.map(estados =>
+                  <MenuItem value="">
+                  {estados.estado}
+                 </MenuItem>
+               )}
                 </Select>
               </FormControl>
-              <FormControl style={{ marginTop: '15px', width: '45%' }}>
-                <InputLabel id='demo-simple-select-outlined-label'>
-                  Municipio
-                </InputLabel>
-                <Select
-                  labelId='demo-simple-select-outlined-label'
-                  id='demo-simple-select-outlined'
-                  label='Municipio'
-                  name='municipio'
-                  required
-                >
-                  <MenuItem value={10}>Pachuca</MenuItem>
-                  <MenuItem value={20}>Actopan</MenuItem>
-                  <MenuItem value={30}>San Nicolas</MenuItem>
-                  <MenuItem value={40}>Bernardo Quintana</MenuItem>
-                </Select>
-              </FormControl>
+
+              {this.state.estados === this.state.municipios &&
+                <FormControl style={{ marginTop: '15px', width: '45%' }}>
+                  <InputLabel id='demo-simple-select-outlined-label'>
+                    Municipio
+                  </InputLabel>
+                  <Select
+                    labelId='demo-simple-select-outlined-label'
+                    id='demo-simple-select-outlined'
+                    label='Municipios'
+                    name='municipios'
+                    required
+                  >
+                  {this.state.municipios.map(municipios =>
+                    <MenuItem value="">
+                    {municipios.municipio}
+                   </MenuItem>
+                    )}
+                  </Select>
+                </FormControl>
+              }
               </div>
 
               <TextField
