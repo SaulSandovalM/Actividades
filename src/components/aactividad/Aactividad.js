@@ -28,10 +28,10 @@ export default class Aactividad extends Component {
       tipoActividad: '',
       convoca: '',
       dependencia: '',
-      estado: '',
-      municipio: '',
+      estados: '',
+      municipios: '',
       lugar: '',
-      resposable: '',
+      responsable: '',
       asistente: '',
       otro : ''
     }
@@ -60,8 +60,8 @@ export default class Aactividad extends Component {
   onSubmit = (e) => {
     e.preventDefault()
     const { fechai, horai, fechaf, horaf, actividad, objetivo, checkedOrganizada,
-            tipoActividad, convoca, dependencia, estado, municipio, lugar,
-            resposable, asistente, otro } = this.state
+            tipoActividad, convoca, dependencia, estados, municipios, lugar,
+            responsable, asistente, otro } = this.state
     this.ref.add({
       fechai,
       horai,
@@ -73,10 +73,10 @@ export default class Aactividad extends Component {
       tipoActividad,
       convoca,
       dependencia,
-      estado,
-      municipio,
+      estados,
+      municipios,
       lugar,
-      resposable,
+      responsable,
       asistente,
       otro
     }).then((docRef) => {
@@ -91,14 +91,15 @@ export default class Aactividad extends Component {
         tipoActividad: '',
         convoca: '',
         dependencia: '',
-        estado: '',
-        municipio: '',
+        estados: '',
+        municipios: '',
         lugar: '',
-        resposable: '',
+        responsable: '',
         asistente: '',
         otro : ''
       })
       this.props.history.push('/ActividadesRegistradas')
+      alert('Se Envio el formulario')
     })
     .catch((error) => {
       console.error('Error al crear: ', error)
@@ -164,7 +165,7 @@ export default class Aactividad extends Component {
         <div>
           <div className='divtop-mg' />
           <div className='form-content-ac'>
-            <form noValidate autoComplete='off' className='mensajesg-container2'>
+            <form noValidate autoComplete='off' className='mensajesg-container2' onSubmit={this.onSubmit}>
               <div style={{height: '100%'}}>
               <h2>Agregar Actividad</h2>
               <p className='martop-dt'>Fecha y hora de inicio</p>
@@ -1254,7 +1255,7 @@ export default class Aactividad extends Component {
               <TextField
                 label='Lugar Especifico'
                 style={{ marginTop: '15px', width: '100%' }}
-                name='dependencia'
+                name='lugar'
                 required
               />
               <FormControl style={{ marginTop: '15px', width: '100%' }}>
@@ -1264,10 +1265,32 @@ export default class Aactividad extends Component {
                   name='responsable'
                   required
                 >
-                  <MenuItem value={10}>Raúl Arroyo</MenuItem>
-                  <MenuItem value={20}>León Maximiliano Hernández Valdés</MenuItem>
-                  <MenuItem value={30}>Victor Ariel Peréz Benítez</MenuItem>
-                  <MenuItem value={40}>Mercedes Citlali Mendoza Meza</MenuItem>
+                  <MenuItem value={'Raúl Arroyo'}>Raúl Arroyo</MenuItem>
+                  <MenuItem value={'Víctor Ariel Pérez Benítez'}>Víctor Ariel Pérez Benítez</MenuItem>
+                  <MenuItem value={'Manuel García Guzmán'}>Manuel García Guzmán</MenuItem>
+                  <MenuItem value={'Eduardo González Mata'}>Eduardo González Mata</MenuItem>
+                  <MenuItem value={'Sonia Esmeralda Mejía González'}>Sonia Esmeralda Mejía González</MenuItem>
+                  <MenuItem value={'Lucio Rosas Braco'}>Lucio Rosas Braco</MenuItem>
+                  <MenuItem value={'Sissi Anette Rodríguez Fernández'}>Sissi Anette Rodríguez Fernández</MenuItem>
+                  <MenuItem value={'Jacob Alejandro Tolentino Habib'}>Jacob Alejandro Tolentino Habib</MenuItem>
+                  <MenuItem value={'Lourdes Herrera Fragoso'}>Lourdes Herrera Fragoso</MenuItem>
+                  <MenuItem value={'Mercedes Citlali Mendoza Meza'}>Mercedes Citlali Mendoza Meza</MenuItem>
+                  <MenuItem value={'Michel Izguerra'}>Michel Izguerra</MenuItem>
+                  <MenuItem value={'Gilberto Ramírez Rico'}>Gilberto Ramírez Rico</MenuItem>
+                  <MenuItem value={'Humberto Vieyra Alamilla'}>Humberto Vieyra Alamilla</MenuItem>
+                  <MenuItem value={'Edwin Hernández Garrido'}>Edwin Hernández Garrido</MenuItem>
+                  <MenuItem value={'Arturo Flores Molina'}>Arturo Flores Molina</MenuItem>
+                  <MenuItem value={'Laura Isabel Torres Villegas'}>Laura Isabel Torres Villegas</MenuItem>
+                  <MenuItem value={'Eder Arteaga Tavera'}>Eder Arteaga Tavera</MenuItem>
+                  <MenuItem value={'Luz María Ramírez Pérez'}>Luz María Ramírez Pérez</MenuItem>
+                  <MenuItem value={'León Maximiliano Hernández Valdés'}>León Maximiliano Hernández Valdés</MenuItem>
+                  <MenuItem value={'Sergio Zúñiga Hernández'}>Sergio Zúñiga Hernández</MenuItem>
+                  <MenuItem value={'José Manning Ramírez'}>José Manning Ramírez</MenuItem>
+                  <MenuItem value={'Yolanda Samperio Delgadillo'}>Yolanda Samperio Delgadillo</MenuItem>
+                  <MenuItem value={'Vladimir Andrade Soto'}>Vladimir Andrade Soto</MenuItem>
+                  <MenuItem value={'Ricardo César Gonzáles Baños'}>Ricardo César Gonzáles Baños</MenuItem>
+                  <MenuItem value={'Víctor Austria Mercado'}>Víctor Austria Mercado</MenuItem>
+                  <MenuItem value={'Gerardo Flores Álvarez'}>Gerardo Flores Álvarez</MenuItem>
                 </Select>
               </FormControl>
               <TextField
