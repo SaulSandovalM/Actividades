@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactToPrint from 'react-to-print'
 import './stilospdf.css'
 import firebase from '../../Firebase'
 import logo from './icons/logo.png'
@@ -10,20 +11,29 @@ import iconmano from './icons/iconmano.png'
 import presentacion from './icons/presentacion .png'
 import presentacionv from './icons/presentacionv.png'
 export default class Agendasemanal extends Component{
+  constructor (props) {
+    super(props)
+    this.state = {
+      prueba: ''
+    }
+  }
+
   render(){
     return(
+
       <div className='fader'>
-      <div>
-              <div className='prueba'>
+
+      <div  >
+              <div className='prueba'  ref={el => (this.imp = el)}>
 
               <div className='portada'>
               <div>
-                  <h1 className='txt-age'>AGENDA DE TRABAJO</h1>
+                  <p className='txt-age-2'>AGENDA DE TRABAJO</p>
                </div>
-                  <div class='linea'>
+                  <div class='linea-2'>
                   </div>
                   <div>
-                  <h2 className='txt-res'>RESUMEN SEMANAL </h2>
+                  <h2 className='txt-res2'>RESUMEN SEMANAL </h2>
                   <p className='txt-fe'>Enero 13 2019</p>
                    </div>
               </div>
@@ -219,6 +229,12 @@ export default class Agendasemanal extends Component{
                       <img className='ims' src={logo2} alt='' />
                     </div>
                     </div>
+
+                    {this.state.prueba &&
+                            <ReactToPrint
+                              trigger={() => <buttom >imprimir</buttom>}
+                              content={() => this.imp}
+                            />}
                   </div>
 
 

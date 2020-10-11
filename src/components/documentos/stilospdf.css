@@ -1,9 +1,12 @@
 .fader{padding-left: 260px;
 
+
 }
 .prueba{
   display: flex;
   flex-direction: space-between;
+  width: 900px;
+
 }
 /**Texto*/
 .txt-age-1{
@@ -22,25 +25,23 @@ width: 700px;
   margin-top: 10px;
   color: rgb(58, 128, 186);
   margin-bottom: 10px;
-
+  font-size: 70px;
 }
 .txt-fe{
   color: rgb(58, 128, 186);
   margin-top: 0px;
+  font-size: 40px;
 }
 .linea
 {
     margin-top: 0px;
-    border: 3px solid rgb(145, 208, 37);
-    width: 350px;
+    border: 5px solid rgb(145, 208, 37);
+    width: 453px;
     margin-left:0px;
 }
 
-.prueba2{
-  padding-left: 300px;
+/*  este */
 
-
-}
 .img-azul{
   width: 600px;
   height:880px;
@@ -51,7 +52,7 @@ width: 700px;
 .portada{
   padding-left: 100px;
   padding-top: 500px;
-  width: 230px;
+  width: 700px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -100,18 +101,18 @@ width: 100px;
 }
 
 .linea-pro{
-  border: 2px solid #91D025;
-  width: 200px;
+  border:  2px solid #91D025;
+  width: 300px;
   margin-top: 0px;
 
 }
 .datos-esp-pro{
   padding-top:  25px;
-  padding-right: 20px;
+  padding-right: 10px;
 
 }
 .datos-pro-fe{
-padding-left: 60px;
+padding-left: 30px;
 }
 .datos-pro-text{
 width: 500px;
@@ -168,7 +169,7 @@ margin: 3px;
   display: flex;
   justify-content: center;
 }
-/* afendapdf*/
+/* agendapdf*/
 .nombre-agendasemanal{
   color: #3A80BA;
   font-size: 30px;
@@ -187,11 +188,29 @@ margin: 3px;
   padding-left: 30px;
   padding-top: 5px;
 }
-.dte{
-
-
+/* text*/
+.txt-res2{
+  width: 600px;
+  margin-top: 10px;
+  color: rgb(58, 128, 186);
+  margin-bottom: 10px;
+  font-size: 58px;
+}
+.txt-age-2{
+  margin-bottom: 0px;
+  font-size: 60px;
+  width: 700px;
+  color: rgb(13, 33, 66);
 
 }
+.linea-2
+{
+    margin-top: 0px;
+    border: 5px solid rgb(145, 208, 37);
+    width: 630px;
+    margin-left:0px;
+}
+
 .sigueinte-parte{
   height: 950px;
   display: flex;
