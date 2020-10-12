@@ -33,11 +33,48 @@ export default class Aregistradas extends Component {
    })
   }
 
+
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
 
+  sumarDiasL(fecha, dias){
+    fecha.setDate(fecha.getDate() + dias === 0);
+    return fecha;
+  }
+
+  sumarDiasMa(fecha, dias){
+    fecha.setDate(fecha.getDate() + dias === 1);
+    return fecha;
+  }
+
+  sumarDiasMi(fecha, dias){
+    fecha.setDate(fecha.getDate() + dias === 2);
+    return fecha;
+  }
+
+  sumarDiasJ(fecha, dias){
+    fecha.setDate(fecha.getDate() + dias === 3);
+    return fecha;
+  }
+
+  sumarDiasV(fecha, dias){
+    fecha.setDate(fecha.getDate() + dias === 4);
+    return fecha;
+  }
+
+  sumarDiasS(fecha, dias){
+    fecha.setDate(fecha.getDate() + dias === 5);
+    return fecha;
+  }
+
+  sumarDiasD(fecha, dias){
+    fecha.setDate(fecha.getDate() + dias === 6);
+    return fecha;
+  }
+
   render () {
+
     return (
       <div className='mg-conta'>
         <div className='nav-ma'>
@@ -70,9 +107,9 @@ export default class Aregistradas extends Component {
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
-                      {actividades.fechai === 'hoy' &&
+                      {actividades.fechai === this.sumarDiasL &&
                         <div className='card-cal-cont'>
-                          <p className='title-activity'>{actividades.tipoA}</p>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
                           <p className='hora-activity'>{actividades.imparte}</p>
                         </div>
@@ -81,32 +118,95 @@ export default class Aregistradas extends Component {
                   )}
                 </div>
                 <div className='day-content'>
-                  <div className='card-cal-cont'>
-                    <p className='title-activity'>Actividad de Prueba</p>
-                    <p className='hora-activity'>9am - 10am</p>
-                    <p className='hora-activity'>Procuraduria General</p>
-                  </div>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === this.sumarDiasMa &&
+                        <div className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
+                          <p className='hora-activity'>{actividades.imparte}</p>
+                        </div>
+                      }
+                    </div>
+                  )}
                 </div>
                 <div className='day-content'>
-                  <div className='card-cal-cont'>
-                    <p className='title-activity'>Actividad de Prueba</p>
-                    <p className='hora-activity'>9am - 10am</p>
-                    <p className='hora-activity'>Procuraduria General</p>
-                  </div>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === this.sumarDiasMi &&
+                        <div className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
+                          <p className='hora-activity'>{actividades.imparte}</p>
+                        </div>
+                      }
+                    </div>
+                  )}
                 </div>
                 <div className='day-content'>
-                  <div className='card-cal-cont'>
-                    <p className='title-activity'>Actividad de Prueba</p>
-                    <p className='hora-activity'>9am - 10am</p>
-                    <p className='hora-activity'>Procuraduria General</p>
-                  </div>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === this.sumarDiasJ &&
+                        <div className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
+                          <p className='hora-activity'>{actividades.imparte}</p>
+                        </div>
+                      }
+                    </div>
+                  )}
                 </div>
                 <div className='day-content'>
-                  <div className='card-cal-cont'>
-                    <p className='title-activity'>Actividad de Prueba</p>
-                    <p className='hora-activity'>9am - 10am</p>
-                    <p className='hora-activity'>Procuraduria General</p>
-                  </div>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === this.sumarDiasJ &&
+                        <div className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
+                          <p className='hora-activity'>{actividades.imparte}</p>
+                        </div>
+                      }
+                    </div>
+                  )}
+                </div>
+                <div className='day-content'>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === this.sumarDiasV &&
+                        <div className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
+                          <p className='hora-activity'>{actividades.imparte}</p>
+                        </div>
+                      }
+                    </div>
+                  )}
+                </div>
+                <div className='day-content'>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === this.sumarDiasS &&
+                        <div className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
+                          <p className='hora-activity'>{actividades.imparte}</p>
+                        </div>
+                      }
+                    </div>
+                  )}
+                </div>
+                <div className='day-content'>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === this.sumarDiasD &&
+                        <div className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
+                          <p className='hora-activity'>{actividades.imparte}</p>
+                        </div>
+                      }
+                    </div>
+                  )}
                 </div>
                 <div className='day-content'>
                 </div>
