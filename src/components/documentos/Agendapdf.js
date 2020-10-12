@@ -129,10 +129,7 @@ export default class Agendasemanal extends Component{
 
                 </div>
                   <div className='esp-pro'>
-                  <div className='centro-mano'>
 
-
-                  </div>
                   </div>
            </div>
 
