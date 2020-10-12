@@ -9,6 +9,7 @@ import iconubi from './icons/iconubi.png'
 import iconmano from './icons/iconmano.png'
 import presentacion from './icons/presentacion .png'
 import presentacionv from './icons/presentacionv.png'
+
 export default class Agendasemanal extends Component{
 
   render(){
@@ -18,6 +19,7 @@ export default class Agendasemanal extends Component{
 
       <div  >
               <div className='prueba' >
+
 
               <div className='portada'>
               <div>
@@ -129,7 +131,7 @@ export default class Agendasemanal extends Component{
                       </div>
 
                       <div className='paq-1'>
-                      <p className='paq-1'>Doctorado en Anticxxxxorrupción y Sistema de Justicia, impartido por el Centro de Estudios de Posgrado</p>
+                      <p className='paq-1'>Doctorado en Anticorrupción y Sistema de Justicia, impartido por el Centro de Estudios de Posgrado</p>
                       </div>
                      </div>
                     <div>
@@ -222,6 +224,7 @@ export default class Agendasemanal extends Component{
                       <img className='ims' src={logo2} alt='' />
                     </div>
                     </div>
+
                   </div>
 
 
