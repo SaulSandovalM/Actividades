@@ -101,11 +101,11 @@ export default class Reportes extends Component {
             <div className='one-po' />
           </div>
         </div>
-        <div style={{paddingTop: '270px'}}>
+        <div style={{paddingTop: '270px', marginLeft: '0px'}}>
           {this.state.actividades.map(actividades =>
-            <div className='mes-center2'>
+            <div className='mes-center3'>
               <div className='mes-container-map' >
-                <span className='material-icons icon-sh' style={{ marginLeft: '-40px', marginRight: '14px'}}>
+                <span className='material-icons icon-sh' style={{ marginLeft: '-10px', marginRight: '1px'}}>
                   label_important
                 </span>
                 <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>

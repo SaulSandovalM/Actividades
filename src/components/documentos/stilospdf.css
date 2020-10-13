@@ -2,6 +2,69 @@
 
 
 }
+/* Agenda Semanal*/
+.contenedor-1{
+  display: flex;
+  justify-content: space-between;
+}
+.sub-contenedor{
+  padding:500px 30px;
+}
+.img-azul{
+  width: 700px;
+  height:880px;
+  padding-bottom: 50px;
+  z-index: -1;
+  position:relative;
+}
+/* segunda hoja*/
+.paquete-1{
+  display: flex;
+  width:300px;
+}
+.paquete-1T{
+  width: 500px;
+}
+.paq-1{
+  display: flex;
+  padding-left: 20px;
+  padding-top: 5px;
+  text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .prueba{
   display: flex;
   flex-direction: space-between;
@@ -42,13 +105,7 @@ width: 700px;
 
 /*  este */
 
-.img-azul{
-  width: 600px;
-  height:880px;
-  padding-bottom: 50px;
-  z-index: -1;
-  position:relative;
-}
+
 .portada{
   padding-left: 100px;
   padding-top: 500px;
@@ -186,11 +243,7 @@ margin: 3px;
 .fecha-hora-ubi{
   padding-top: 70px;
 }
-.paq-1{
-  display: flex;
-  padding-left: 30px;
-  padding-top: 5px;
-}
+
 /* text*/
 .txt-res2{
   width: 600px;
@@ -203,7 +256,7 @@ margin: 3px;
   margin-bottom: 0px;
   font-size: 60px;
   width: 700px;
-  color: rgb(13, 33, 66);
+  color: rgb(43, 96, 139);
 
 }
 .linea-2
@@ -383,4 +436,7 @@ border: 1px solid #000;
 }
 .col-1{
   border-left:1px solid #000;
+}
+.botons{
+  padding-left: 800px;
 }
