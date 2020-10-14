@@ -20,34 +20,51 @@ export default class Agendasemanal extends Component{
 
   render(){
     return(
-      <div className='fader' >
-      <div className='contedorall' ref={el => (this.agenda= el)}>
-        <div className='contenedor-1'>
-          <div className="sub-contenedor">
-          <p className='txt-age-1'>ACTIVIDADES</p>
-          <div class='linea'>  </div>
-          <h2 className='txt-res'>RELEVANTES</h2>
-          <p className='txt-fe'>Enero 13 2019</p>
-          </div>
-
-        <div className='sub-contenedor-2'>
-         <div className='caja'>
-            <div className='prueba2'> <img className='img-azul' src={presentacion} alt=''/></div>
-          </div>
-
-          <div style={{ background: 'red', height: '20px', width: '30px',  }}>
-            {this.state.contenedorall &&
-              <ReactToPrint
-              trigger={() => <buttom classname='botons'>imprimir</buttom>}
-              content={() => this.agenda}
-              />}
-              </div>
-        </div>
+<div className='fader' >
+<div className='btn-imprimir'>
+  <ReactToPrint
+  trigger={() => <span class="material-icons" style={{cursor:'pointer'}}>
+  print
+  </span>}
+  content={() => this.agenda}
+  />
+</div>
 
 
+  <div className='contedorall' ref={el => (this.agenda= el)}>
+      <div className='contenedor-1'>
+    <div className="sub-contenedor">
+        <p className='txt-age-1'>ACTIVIDADES</p>
+        <div class='linea'>  </div>
+        <h2 className='txt-res'>RELEVANTES</h2>
+        <p className='txt-fe'>Enero 13 2019</p>
+    </div>
 
+<div className='sub-contenedor-2'>
+  <div className='caja'>
+      <div className='prueba2'> <img className='img-azul' src={presentacion} alt=''/></div>
+  </div>
+</div>
+</div>
+
+<div>
+    <div className='esp-pro'></div>
+    <div>
+      <div>
+          <p className='text-arro'>Raúl ARROYO</p>
+          <p className='text-pro'>Procurador General</p>
+          <div className='linea-pro'></div>
       </div>
+      <div>
+      <div className='line-v'></div>
       </div>
+
+      <div>
+      </div>
+
+    </div>
+</div>
+
 
 
 
@@ -186,6 +203,8 @@ export default class Agendasemanal extends Component{
                */}
 
     </div>
+    </div>
+
 
 
 
