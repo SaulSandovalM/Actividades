@@ -18,11 +18,11 @@ export default class Aregistradas extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoA, imparte, fechai, fechaf } = doc.data()
+      const { tipoActividad, imparte, fechai, fechaf } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
-        tipoA,
+        tipoActividad,
         imparte,
         fechai,
         fechaf
@@ -102,12 +102,12 @@ export default class Aregistradas extends Component {
               <div className='space-cal' />
             </div>
             <div className='activity-container'>
-              <div className='space-cal' />
+            <div className='space-cal' />
               <div className='day-container'>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
-                      {actividades.fechai === this.sumarDiasL &&
+                      {actividades.fechai === '2020-10-12' &&
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
@@ -120,7 +120,7 @@ export default class Aregistradas extends Component {
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
-                      {actividades.fechai === this.sumarDiasMa &&
+                      {actividades.fechai === '2020-10-13' &&
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
@@ -133,7 +133,7 @@ export default class Aregistradas extends Component {
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
-                      {actividades.fechai === this.sumarDiasMi &&
+                      {actividades.fechai === '2020-10-14' &&
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
@@ -146,7 +146,7 @@ export default class Aregistradas extends Component {
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
-                      {actividades.fechai === this.sumarDiasJ &&
+                      {actividades.fechai === '2020-10-15' &&
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
@@ -159,7 +159,7 @@ export default class Aregistradas extends Component {
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
-                      {actividades.fechai === this.sumarDiasJ &&
+                      {actividades.fechai === '2020-10-16' &&
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
@@ -172,7 +172,7 @@ export default class Aregistradas extends Component {
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
-                      {actividades.fechai === this.sumarDiasV &&
+                      {actividades.fechai === '2020-10-17' &&
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
@@ -194,23 +194,6 @@ export default class Aregistradas extends Component {
                       }
                     </div>
                   )}
-                </div>
-                <div className='day-content'>
-                  {this.state.actividades.map(actividades =>
-                    <div>
-                      {actividades.fechai === this.sumarDiasD &&
-                        <div className='card-cal-cont'>
-                          <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.fechai} - {actividades.fechaf}</p>
-                          <p className='hora-activity'>{actividades.imparte}</p>
-                        </div>
-                      }
-                    </div>
-                  )}
-                </div>
-                <div className='day-content'>
-                </div>
-                <div className='day-content'>
                 </div>
               </div>
               <div className='space-cal' />
