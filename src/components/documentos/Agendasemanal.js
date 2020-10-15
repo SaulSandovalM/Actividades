@@ -24,12 +24,15 @@ export default class Agendasemanal extends Component{
     return(
 <div className='fader' >
 
-    <div className='btn-imprimir'>
-      <ReactToPrint
-      trigger={() => <buttom className='btn-b-l-2' style={{ cursor:'pointer'}}>Imprimir</buttom>}
-      content={() => this.agenda}
-      />
-    </div>
+<div className='btn-imprimir'>
+<p>Imprimir</p>
+  <ReactToPrint
+  trigger={() => <span class="material-icons" style={{cursor:'pointer'}}>
+  print
+  </span>}
+  content={() => this.agenda}
+  />
+</div>
 
   <div className='contedorall' ref={el => (this.agenda= el)}>
 
