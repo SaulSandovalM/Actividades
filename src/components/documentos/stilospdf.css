@@ -1,9 +1,6 @@
 .fader{padding-left: 260px;
 }
 /* Agenda Semanal*/
-.contedorall{
-
-}
 .contenedor-1{
   display: flex;
   justify-content: space-between;
@@ -16,7 +13,7 @@
   padding:500px 0px 0px 30px;
 }
 .txt-res2{
-  width: 500px;
+  /* DEBUG:  */  width: 500px;
   margin-top: 10px;
   color: rgb(58, 128, 186);
   margin-bottom: 10px;
@@ -141,44 +138,20 @@ justify-content: space-between;
 .tipo-text{
   text-align: justify;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .prueba{
   display: flex;
   flex-direction: space-between;
   width: 900px;
-
 }
 /**Texto*/
 .txt-age-1{
 margin-bottom: 0px;
 font-size: 70px;
 width: 700px;
-
 }
 .txt-age{
 margin-bottom: 0px;
 width: 700px;
-
 }
 .txt-res{
   width: 600px;
@@ -199,10 +172,7 @@ width: 700px;
     width: 453px;
     margin-left:0px;
 }
-
 /*  este */
-
-
 .portada{
   padding-left: 100px;
   padding-top: 500px;
@@ -211,14 +181,12 @@ width: 700px;
   display: flex;
   flex-direction: column;
 }
-
 /*logos*/
 .logos{
   display: flex;
   justify-content: space-between;
   padding-right: 30px;
-      }
-
+}
 .ims{
 height: 100px;
 width: 100px;
@@ -228,7 +196,6 @@ width: 100px;
   margin-top:0px;
   z-index: 1;
   position:absolute;
-
 }
 /*Siguientes hojas parte procurador*/
 .sigui-pa{
@@ -238,18 +205,13 @@ width: 100px;
   border: 3px solid #91D025;
   height: 80%;
   margin-left:0px;
-
 }
 .datos-esp-pro{
-
   display: flex;
   padding-left: 20px;
 }
-
-
 .datos-pro{
-
-  margin-top: 0px;
+margin-top: 0px;
 }
 
 .linea-pro{
@@ -266,7 +228,6 @@ width: 100px;
 .datos-pro-fe{
 padding-left: 30px;
 }
-
 .text-arro{
   color:#3A80BA ;
   font-weight: bold;
@@ -289,7 +250,6 @@ padding-left: 30px;
   display: flex;
   width:250px;
 }
-
 .icons-txt{
 margin: 3px;
 }
@@ -307,7 +267,6 @@ margin: 3px;
   display: flex;
   padding-right: 10px;
   width: 200px;
-
 }
 .centro-mano{
   padding-top: 400px;
@@ -328,15 +287,12 @@ margin: 3px;
 .fecha-hora-ubi{
   padding-top: 70px;
 }
-
 /* text*/
-
 .txt-age-2{
   margin-bottom: 0px;
   font-size: 55px;
   width: 700px;
   color: rgb(43, 96, 139);
-
 }
 .linea-2
 {
@@ -353,8 +309,7 @@ margin: 3px;
 }
 /*reporte Nivel direccion*/
 .fader-reporte{
-padding-left: 270px;
-
+  padding-left: 260px;
 }
 /* nombre y cargo*/
 .Nombre-cargo{
@@ -387,54 +342,15 @@ padding-left: 270px;
   padding-right: 500px;
 }
 /*Tabla*/
-.tabla-reporteniveldir{
-  width:1600px;
+table{
+  table-layout:fixed;
 }
-.tab-arriba{
-  width: 1200px;
+td{
+  border-left:1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
-.filas-tab{
-  height:10%;
-  border-collapse: collapse;
-  background: #3A80BA;
-  color:white;
-  border-top: 1px solid #000;
-  border-left:  1px solid #000;
-  border-bottom: 1px solid #000;
-
-}
-.columna-tab-bori{
-  border-right:  1px solid #000;
-}
-.filas-tab1{
-  width: 80px;
-}
-.filas-tab2{
-  width: 70px;
-}
-.filas-tab3{
-  width: 100px;
-}
-.filas-tab4{
-  width: 250px;
-}
-.filas-tab5{
-  width: 500px;
-}
-.filas-tab6{
-  width:200px;
-}
-.columnas-tab{
-  height: 100px;
-  text-align: center;
-  border-left: 1px solid #000;
-  border-bottom: 1px solid #000;
-
-}
-.num-c{
-
-}
 /*reportes pdf*/
 
 .fader-reporte{

@@ -26,20 +26,19 @@ export default class Agendasemanal extends Component {
     onCollectionUpdate = (querySnapshot) => {
       const actividades = []
       querySnapshot.forEach((doc) => {
-        const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo} = doc.data()
+        const {fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado } = doc.data()
         actividades.push({
           key: doc.id,
           doc,
-          tipoActividad,
-          imparte,
           fechai,
           fechaf,
           convoca,
-          dependencia,
           horai,
-          objetivo
-
-
+          objetivo,
+          resposable,
+          imagen,
+          lugar,
+          estado
         })
       })
       this.setState({
@@ -75,7 +74,7 @@ export default class Agendasemanal extends Component {
                   </p>
                   {this.state.actividades.map(actividades =>
                   <p className='txt-fe'>
-                  {actividades.fechai}
+                  {}
                   </p>
                 )}
                 </div>
@@ -87,13 +86,10 @@ export default class Agendasemanal extends Component {
                   </div>
                 </div>
               </div>
-
-
-
           <div>
             {this.state.actividades.map(actividades =>
             <div>
-              <div className='segunda-vista'>
+              {/*<div className='segunda-vista'>
                 <div className='coontenedor-2da-vista'>
                   <div className='contenedor-2'>
                     <p className='nombre-agendasemanal'>{actividades.responsable}Mercedes Citlali Mendoza Meza</p>
@@ -102,7 +98,7 @@ export default class Agendasemanal extends Component {
                   </div>
                 </div>
 
-                <div className='datos-agenda'>
+              <div className='datos-agenda'>
                   <div className='datos-paq-1'>
                     <div>
                       <div className='paquete-1'>
@@ -250,6 +246,7 @@ export default class Agendasemanal extends Component {
                           </p>
                         </div>
                       </div>
+
                       <div className='paquete-1T'>
                         <p className='paq-1'>
                         {actividades.tipoActividad}
@@ -260,12 +257,14 @@ export default class Agendasemanal extends Component {
                   </div>
                 </div>
               </div>
+              */}
+
               <div className='tercera-parte'>
                 <div>
                   <div className='coontenedor-2da-vista'>
                     <div className='contenedor-2'>
                       <p className='nombre-agendasemanal'>
-                        {actividades.responsable}Mercedes Citlali Mendoza Meza
+                        {actividades.responsable}
                       </p>
                       <p className='cargo-age'>
                         {actividades.convoca}
@@ -281,7 +280,7 @@ export default class Agendasemanal extends Component {
                         </div>
                         <div>
                           <p className='icons-txt paq-1'>
-                            {actividades.fechai}
+                            {actividades.fechai}-{actividades.fechaf}
                           </p>
                         </div>
                       </div>
@@ -291,7 +290,7 @@ export default class Agendasemanal extends Component {
                         </div>
                         <div>
                           <p className='icons-txt paq-1'>
-                            {actividades.horai}
+                            {actividades.horai}-{actividades.horaf}
                           </p>
                         </div>
                       </div>
@@ -301,13 +300,15 @@ export default class Agendasemanal extends Component {
                         </div>
                         <div>
                           <p className='icons-txt paq-1'>
-                            {actividades.municipio}
+                          {actividades.lugar}
+                          {actividades.municipio}
+                          {actividades.estado}
                           </p>
                         </div>
                       </div>
                       <div className='paquete-1T'>
                         <p className='paq-1'>
-                          {actividades.tipoActividad}
+                          {actividades.objetivo}
                         </p>
                       </div>
                     </div>
@@ -318,7 +319,7 @@ export default class Agendasemanal extends Component {
                         </div>
                         <div className=''>
                           <p className='icons-txt paq-1'>
-                            {actividades.fechai}
+                            {actividades.fechai}-{actividades.fechaf}
                           </p>
                         </div>
                       </div>
@@ -328,7 +329,7 @@ export default class Agendasemanal extends Component {
                         </div>
                         <div>
                           <p className='icons-txt paq-1'>
-                            {actividades.horai}
+                            {actividades.horai}-{actividades.horaf} hrs
                           </p>
                         </div>
                       </div>
@@ -341,13 +342,15 @@ export default class Agendasemanal extends Component {
                         </div>
                         <div>
                           <p className='icons-txt paq-1'>
-                            {actividades.municipio}
+                          {actividades.lugar}
+                          {actividades.municipio}
+                          {actividades.estado}
                           </p>
                         </div>
                       </div>
                       <div className='paquete-1T'>
                         <p className='paq-1'>
-                          {actividades.tipoActividad}
+                          {actividades.objetivo}
                         </p>
                       </div>
                     </div>

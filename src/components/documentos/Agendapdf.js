@@ -22,19 +22,19 @@ export default class Agendasemanal extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, imagen} = doc.data()
+      const { fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
-        tipoActividad,
-        imparte,
         fechai,
         fechaf,
         convoca,
-        dependencia,
         horai,
         objetivo,
-        imagen
+        resposable,
+        imagen,
+        lugar,
+        estado
 
 
       })
@@ -80,7 +80,7 @@ export default class Agendasemanal extends Component {
               <div>
                 <div classname='img-mano'>
                   <div className='esp-pro'>
-              
+                    {actividades.imagen}
                   </div>
                   <div className='txt-img-mano'>
                     <div>
@@ -96,8 +96,8 @@ export default class Agendasemanal extends Component {
                 <div>
                   <div className='txt-abajo'>
                     <div className='datos-persona'>
-                      <p className='text-arro'>{actividades.convoca}Raul ARROYO</p>
-                      <p className='text-pro'>{actividades.cargo}Procurador General</p>
+                      <p className='text-arro'>{actividades.responsable}</p>
+                      <p className='text-pro'>{actividades.convoca}</p>
                       <div className='linea-pro' />
                     </div>
 
@@ -105,14 +105,14 @@ export default class Agendasemanal extends Component {
                       <div className='icons1'>
                         <div className='icons-pos'>
                           <img className='icons' src={iconfe} alt='' />
-                          <p className='icons-txt'>{actividades.fechai}Enero 8</p>
+                          <p className='icons-txt'>{actividades.fechai}-{actividades.fechaf} </p>
                         </div>
                       </div>
 
                       <div className='icons'>
                         <div className='icons-pos'>
                           <img className='icons' src={iconhora} alt='' />
-                          <p className='icons-txt'>{actividades.horai}12-15hr</p>
+                          <p className='icons-txt'>{actividades.horai}-{actividades.horaf} hrs</p>
                         </div>
                       </div>
 
@@ -120,7 +120,10 @@ export default class Agendasemanal extends Component {
                         <div className='icons-pos'>
                           <img className='icons' src={iconubi} alt='' />
                           <p className='icons-txt'>
+                            {actividades.lugar}
                             {actividades.municipio}
+                            {actividades.estado}
+
                           </p>
                         </div>
                       </div>
@@ -128,7 +131,7 @@ export default class Agendasemanal extends Component {
 
                     <div className='datos-reunion'>
                       <div className='datos-pro-text'>
-                        <p className='tipo-text'>{actividades.objetivo}Reunión en Tula en pregira con Jorge Arzubide de ProJusticia y Rebeca Fernández Calleja del Instituto de Resultados Rápidos, para afinar detalles del “Reto de los 100 días”.</p>
+                        <p className='tipo-text'>{actividades.objetivo}</p>
                       </div>
                     </div>
                   </div>
