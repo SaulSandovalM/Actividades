@@ -40,12 +40,12 @@ class Nav extends Component {
                   <span className='material-icons icon-s'>
                     event_note
                   </span>
-                  <p className='nav-t'>Actividades</p>
+                  <p className='nav-t'>Agenda</p>
                 </div>
               </div>
             </Link>
           </div>
-          <div className='navbar-left'>
+          {/* <div className='navbar-left'>
             <Link to='/ActividadInforme' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -56,7 +56,7 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-          </div>
+          </div> */}
           <div className='border-nav'/>
           <div className='navbar-left'>
             <Link to='/BusquedaActividad' className='deco'>
