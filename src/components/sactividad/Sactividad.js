@@ -187,7 +187,7 @@ export default class Sactividad extends Component {
         />
       );
     });
-    console.log(this.state.horaf)
+
     return (
       <div className='mg-conta'>
         <div>
@@ -197,113 +197,113 @@ export default class Sactividad extends Component {
               <h2>Seguimiento de Actividad</h2>
               <TextField
                 label='Resultados obtenidos'
-                style={{marginTop: '15px'}}
+                style={{ marginTop: '15px' }}
                 name='resultado'
                 onChange={this.onChange}
                 inputProps={{
-                  maxLength: 150,
+                  maxLength: 150
                 }}
                 multiline
                 required
               />
               <TextField
                 label='Relevancia'
-                style={{marginTop: '15px'}}
+                style={{ marginTop: '15px' }}
                 name='relevancia'
                 onChange={this.onChange}
                 inputProps={{
-                  maxLength: 300,
+                  maxLength: 300
                 }}
                 multiline
                 required
               />
-
               <FormControlLabel
-                control={<IOSSwitch
-                  name='checkedCancelada'
-                  checked={this.state.checkedCancelada}
-                  onChange={this.handleChangeCancel}
-                  />}
+                control={
+                  <IOSSwitch
+                    name='checkedCancelada'
+                    checked={this.state.checkedCancelada}
+                    onChange={this.handleChangeCancel}
+                  />
+                }
                 label='¿Actividad cancelada?'
                 style={{ marginTop: '20px' }}
               />
-             {this.state.checkedCancelada === true &&
-               <div className='div_cancel'>
-                 <TextField
-                   label='Motivo de cancelación'
-                   style={{marginTop: '15px'}}
-                   name='motivo_cancelado'
-                   onChange={this.onChange}
-                   inputProps={{
-                     maxLength: 300,
-                   }}
-                   multiline
-                   required
-                 />
-
+              {this.state.checkedCancelada === true &&
+                <div className='div_cancel'>
+                  <TextField
+                    label='Motivo de cancelación'
+                    style={{marginTop: '15px'}}
+                    name='motivo_cancelado'
+                    onChange={this.onChange}
+                    inputProps={{
+                      maxLength: 300,
+                    }}
+                    multiline
+                    required
+                  />
                   <FormControlLabel
-                    control={<IOSSwitch name='checkedReprogramar'
-                      checked={this.state.checkedReprogramar}
-                      onChange={this.handleChangeRe}
-                    />}
+                    control={
+                      <IOSSwitch name='checkedReprogramar'
+                        checked={this.state.checkedReprogramar}
+                        onChange={this.handleChangeRe}
+                      />
+                    }
                     label='Re-programar'
                     style={{ marginTop: '20px' }}
                   />
                 </div>
               }
               {this.state.checkedReprogramar === true &&
-              <div>
-              <p className='martop-dt'>Fecha y hora de inicio *</p>
-              <div className='date-cont'>
-                <TextField
-                  type='date'
-                  style={{ width: '45%' }}
-                  name='fechai'
-                  onChange={this.onChange}
-                  required
-                />
-                <TextField
-                  type='time'
-                  style={{ width: '45%' }}
-                  name='horai'
-                  onChange={this.onChange}
-                  required
-                />
-              </div>
-
-              <p className='martop-dt'>Fecha y hora de Finalizacion *</p>
-              <div className='date-cont'>
-                <TextField
-                  type='date'
-                  style={{ width: '45%' }}
-                  name='fechaf'
-                  onChange={this.onChange}
-                  placeholdercolor='grey'
-                  required
-                />
-                <TextField
-                  type='time'
-                  style={{ width: '45%' }}
-                  name='horaf'
-                  onChange={this.onChange}
-                  required
-                />
-              </div>
-              </div>
-            }
-            {this.state.checkedCancelada === false &&
-              <div>
-                <Input
-                  type='file'
-                  style={{marginTop: '30px'}}
-                  onChange={this.handleImage.bind(this)}
-                />
-                <progress className='progress2' value={this.state.imge} />
-
-              </div>
-            }
+                <div>
+                  <p className='martop-dt'>Fecha y hora de inicio *</p>
+                  <div className='date-cont'>
+                    <TextField
+                      type='date'
+                      style={{ width: '45%' }}
+                      name='fechai'
+                      onChange={this.onChange}
+                      required
+                    />
+                    <TextField
+                      type='time'
+                      style={{ width: '45%' }}
+                      name='horai'
+                      onChange={this.onChange}
+                      required
+                    />
+                  </div>
+                  <p className='martop-dt'>Fecha y hora de Finalizacion *</p>
+                  <div className='date-cont'>
+                    <TextField
+                      type='date'
+                      style={{ width: '45%' }}
+                      name='fechaf'
+                      onChange={this.onChange}
+                      placeholdercolor='grey'
+                      required
+                    />
+                    <TextField
+                      type='time'
+                      style={{ width: '45%' }}
+                      name='horaf'
+                      onChange={this.onChange}
+                      required
+                    />
+                  </div>
+                </div>
+              }
+              {this.state.checkedCancelada === false &&
+                <div>
+                  <Input
+                    type='file'
+                    style={{marginTop: '30px'}}
+                    onChange={this.handleImage.bind(this)}
+                  />
+                  <progress className='progress2' value={this.state.imge} />
+                </div>
+              }
               <div className='add-gb'>
-                <Fab color='primary' aria-label='add' style={{background: 'green'}} type='submit'>
+                <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
                   <DoneIcon />
                 </Fab>
               </div>
@@ -311,7 +311,6 @@ export default class Sactividad extends Component {
           </div>
         </div>
       </div>
-
     )
   }
 }

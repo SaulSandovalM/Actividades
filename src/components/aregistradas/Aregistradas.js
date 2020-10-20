@@ -48,6 +48,11 @@ export default class Aregistradas extends Component {
     const miercoles = f.getFullYear() + '-' + meses2[f.getMonth()] + '-' + (f.getDate() + f.getDay()+3)
     const jueves = f.getFullYear() + '-' + meses2[f.getMonth()] + '-' + (f.getDate() + f.getDay()+4)
     const viernes = f.getFullYear() + '-' + meses2[f.getMonth()] + '-' + (f.getDate() + f.getDay()+5)
+    const dia1 = (f.getDate() + f.getDay()+1)
+    const dia2 = (f.getDate() + f.getDay()+2)
+    const dia3 = (f.getDate() + f.getDay()+3)
+    const dia4 = (f.getDate() + f.getDay()+4)
+    const dia5 = (f.getDate() + f.getDay()+5)
 
     return (
       <div className='mg-conta'>
@@ -66,24 +71,24 @@ export default class Aregistradas extends Component {
             <div className='week-cont'>
               <div className='space-cal' />
               <div className='title-week'>
-                <p style={{ margin: '10px 0 0 0' }}>Lunes</p>
-                <p style={{ margin: '0px', fontSize: '20px' }}>19</p>
+                <p className='p-dia-n'>Lunes</p>
+                <p className='p-dia'>{dia1}</p>
               </div>
               <div className='title-week'>
-                <p style={{ margin: '10px 0 0 0' }}>Martes</p>
-                <p style={{ margin: '0px', fontSize: '20px' }}>20</p>
+                <p className='p-dia-n'>Martes</p>
+                <p className='p-dia'>{dia2}</p>
               </div>
               <div className='title-week'>
-                <p style={{ margin: '10px 0 0 0' }}>Miercoles</p>
-                <p style={{ margin: '0px', fontSize: '20px' }}>21</p>
+                <p className='p-dia-n'>Miercoles</p>
+                <p className='p-dia'>{dia3}</p>
               </div>
               <div className='title-week'>
-                <p style={{ margin: '10px 0 0 0' }}>Jueves</p>
-                <p style={{ margin: '0px', fontSize: '20px' }}>22</p>
+                <p className='p-dia-n'>Jueves</p>
+                <p className='p-dia'>{dia4}</p>
               </div>
               <div className='title-week'>
-                <p style={{ margin: '10px 0 0 0' }}>Viernes</p>
-                <p style={{ margin: '0px', fontSize: '20px' }}>23</p>
+                <p className='p-dia-n'>Viernes</p>
+                <p className='p-dia'>{dia5}</p>
               </div>
               <div className='space-cal' />
             </div>
@@ -94,11 +99,11 @@ export default class Aregistradas extends Component {
                   {this.state.actividades.map(actividades =>
                     <div>
                       {actividades.fechai === lunes &&
-                        <div className='card-cal-cont'>
+                        <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                        </div>
+                        </Link>
                       }
                     </div>
                   )}
@@ -151,7 +156,6 @@ export default class Aregistradas extends Component {
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
                         </div>
-                        
                       }
                     </div>
                   )}
