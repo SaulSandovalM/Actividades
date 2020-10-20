@@ -311,6 +311,7 @@ export default class Sactividad extends Component {
           </div>
         </div>
       </div>
+
     )
   }
 }
