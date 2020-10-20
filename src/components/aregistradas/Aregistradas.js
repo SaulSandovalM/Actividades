@@ -110,7 +110,7 @@ export default class Aregistradas extends Component {
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.imparte}</p>
+                          <p className='hora-activity'>{actividades.lugar}</p>
                         </div>
                       }
                     </div>
@@ -123,7 +123,7 @@ export default class Aregistradas extends Component {
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.imparte}</p>
+                          <p className='hora-activity'>{actividades.lugar}</p>
                         </div>
                       }
                     </div>
@@ -136,7 +136,7 @@ export default class Aregistradas extends Component {
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.imparte}</p>
+                          <p className='hora-activity'>{actividades.lugar}</p>
                         </div>
                       }
                     </div>
@@ -149,7 +149,7 @@ export default class Aregistradas extends Component {
                         <div className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.imparte}</p>
+                          <p className='hora-activity'>{actividades.lugar}</p>
                         </div>
                       }
                     </div>
