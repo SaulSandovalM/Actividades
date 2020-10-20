@@ -1302,6 +1302,7 @@ export default class Aactividad extends Component {
                 label='Lugar Especifico'
                 style={{ marginTop: '15px', width: '100%' }}
                 name='lugar'
+                onChange={this.onChange}
                 required
               />
               <FormControl style={{ marginTop: '15px', width: '100%' }}>
