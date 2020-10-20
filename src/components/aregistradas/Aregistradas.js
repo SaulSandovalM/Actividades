@@ -151,6 +151,7 @@ export default class Aregistradas extends Component {
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
                         </div>
+                        
                       }
                     </div>
                   )}

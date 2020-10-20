@@ -12,220 +12,368 @@ import presentacion from './icons/presentacion .png'
 import presentacionv from './icons/presentacionv.png'
 
 
-export default class Agendasemanal extends Component{
-  constructor (props) {
-    super(props)
-    this.state = {
-      contenedorall: ''
+export default class Agendasemanal extends Component {
+    constructor (props) {
+      super(props)
+      this.ref = firebase.firestore().collection('actividades')
+      this.unsubscribe = null
+      this.state = {
+        actividades: []
+
+      }
     }
-  }
 
-  render(){
-    return(
-<div className='fader' >
+    onCollectionUpdate = (querySnapshot) => {
+      const actividades = []
+      querySnapshot.forEach((doc) => {
+        const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo} = doc.data()
+        actividades.push({
+          key: doc.id,
+          doc,
+          tipoActividad,
+          imparte,
+          fechai,
+          fechaf,
+          convoca,
+          dependencia,
+          horai,
+          objetivo
 
-<div className='btn-imprimir'>
-<p>Imprimir</p>
-  <ReactToPrint
-  trigger={() => <span class="material-icons" style={{cursor:'pointer'}}>
-  print
-  </span>}
-  content={() => this.agenda}
-  />
-</div>
 
-  <div className='contedorall' ref={el => (this.agenda= el)}>
+        })
+      })
+      this.setState({
+        actividades
+     })
+    }
 
-      <div className='contenedor-1'>
-          <div className="sub-contenedor">
-                <p className='txt-age-2'>AGENDA DE TRABAJO</p>
-                <div class='linea-2'></div>
-                <p2 className='txt-res2'>RESUMEN SEMANAL </p2>
-                <p className='txt-fe'>Enero 13 2019</p>
-          </div>
-          <div className='sub-contenedor-2'>
-            <div className='caja'>
-                <div className='prueba2'> <img className='img-azul' src={presentacion} alt=''/></div>
-            </div>
-          </div>
-     </div>
-     <div className='segunda-vista'>
-        <div className='coontenedor-2da-vista'>
-          <div className='contenedor-2'>
-              <p className='nombre-agendasemanal'>Mercedes Citlali Mendoza Meza</p>
-              <p className='cargo-age'>Directora del Instituto de Formación Profesional de la Procuraduría</p>
-              <div className='linea-pro'></div>
-          </div>
+    componentDidMount() {
+      this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+    }
+
+
+  render () {
+    return (
+      <div className='fader'>
+        <div className='btn-imprimir'>
+          <p>Imprimir</p>
+          <ReactToPrint
+            trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
+            content={() => this.agenda}
+          />
         </div>
+        <div className='contedorall' ref={el => (this.agenda = el)}>
 
-
-      <div className='datos-agenda'>
-      <div className='datos-paq-1'>
-        <div>
-          <div className='paquete-1'>
-            <div><img className='iconmano paq-1'src={iconfe} alt=''/></div>
-            <div className=''><p className='icons-txt paq-1'>Noviembre 30</p></div>
-          </div>
-            <div className='paquete-1'>
-            <div><img className='iconmano paq-1'src={iconhora} alt=''/></div>
-            <div><p className='icons-txt paq-1'>12-15hr</p></div>
-          </div>
-          <div className='paquete-1' >
-            <div> <img className='iconmano paq-1' src={iconubi} alt='' /></div>
-            <div> <p className='icons-txt paq-1'>Tula de Allende, Hidalgo</p></div>
-          </div>
-            <div className='paquete-1T'>
-            <p className='paq-1'>Ciclo de Cine Jurídico 2020, proyección de la película “Lista de Schindler”.kjjkdfbd bgjkd bgjkdfbdkbgk jdbgdgbk jbgkjdfg bj ksdbgjkdsbfg KSJSSKSK SKSKSKSK
-            fkjdbgkjfdbgkdfgbkjfbgkdfbbdg </p>
-          </div>
-            </div>
-
-            <div className='bot-paq'>
-              <div className='paquete-1 bot-paq'>
-                <div><img className='iconmano paq-1'src={iconfe} alt=''/></div>
-                <div className=''><p className='icons-txt paq-1'>Noviembre 30</p></div>
-              </div>
-                <div className='paquete-1'>
-                <div><img className='iconmano paq-1'src={iconhora} alt=''/></div>
-                <div><p className='icons-txt paq-1'>12-15hr</p></div>
-              </div>
-                <div className='paquete-1'>
-                <div> <img className='iconmano paq-1' src={iconubi} alt='' /></div>
-                <div> <p className='icons-txt paq-1'>Tula de Allende, Hidalgo</p></div>
-              </div>
-                <div className='paquete-1T'>
-                <p className='paq-1'>Ciclo de Cine Jurídico 2020, proyección de la película “Lista de Schindler”.kjjkdfbd bgjkd bgjkdfbdkbgk jdbgdgbk jbgkjdfg bj ksdbgjkdsbfg KSJSSKSK SKSKSKSK
-                fkjdbgkjfdbgkdfgbkjfbgkdfbbdg </p>
-              </div>
+              <div className='contenedor-1'>
+                <div className='sub-contenedor'>
+                  <p className='txt-age-2'>
+                  AGENDA DE TRABAJO
+                  </p>
+                  <div class='linea-2' />
+                  <p className='txt-res2'>
+                  RESUMEN SEMANAL
+                  </p>
+                  {this.state.actividades.map(actividades =>
+                  <p className='txt-fe'>
+                  {actividades.fechai}
+                  </p>
+                )}
                 </div>
-            </div>
-
-
-              <div  className='datos-paq-1'>
-                <div>
-                  <div className='paquete-1'>
-                    <div><img className='iconmano paq-1'src={iconfe} alt=''/></div>
-                    <div className=''><p className='icons-txt paq-1'>Noviembre 30</p></div>
-                  </div>
-                    <div className='paquete-1'>
-                    <div><img className='iconmano paq-1'src={iconhora} alt=''/></div>
-                    <div><p className='icons-txt paq-1'>12-15hr</p></div>
-                  </div>
-                    <div className='paquete-1'>
-                    <div> <img className='iconmano paq-1' src={iconubi} alt='' /></div>
-                    <div> <p className='icons-txt paq-1'>Tula de Allende, Hidalgo</p></div>
-                  </div>
-                    <div className='paquete-1T'>
-                    <p className='paq-1'>Ciclo de Cine Jurídico 2020, proyección de la película “Lista de Schindler”.kjjkdfbd bgjkd bgjkdfbdkbgk jdbgdgbk jbgkjdfg bj ksdbgjkdsbfg KSJSSKSK SKSKSKSK
-                    fkjdbgkjfdbgkdfgbkjfbgkdfbbdg </p>
-                  </div>
+                <div className='sub-contenedor-2'>
+                  <div className='caja'>
+                    <div className='prueba2'>
+                      <img className='img-azul' src={presentacion} alt='' />
                     </div>
+                  </div>
+                </div>
+              </div>
 
+
+
+          <div>
+            {this.state.actividades.map(actividades =>
+            <div>
+              <div className='segunda-vista'>
+                <div className='coontenedor-2da-vista'>
+                  <div className='contenedor-2'>
+                    <p className='nombre-agendasemanal'>{actividades.responsable}Mercedes Citlali Mendoza Meza</p>
+                    <p className='cargo-age'>{actividades.convoca}Directora del Instituto de Formación Profesional de la Procuraduría</p>
+                    <div className='linea-pro' />
+                  </div>
+                </div>
+
+                <div className='datos-agenda'>
+                  <div className='datos-paq-1'>
+                    <div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconfe} alt='' />
+                        </div>
+                        <div className=''>
+                          <p className='icons-txt paq-1'>
+                            {actividades.fechai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconhora} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                          {actividades.horai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconubi} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                          {actividades.municipio}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1T'>
+                        <p className='paq-1'>
+                          {actividades.actividad}
+                        </p>
+                      </div>
+                    </div>
                     <div className='bot-paq'>
                       <div className='paquete-1 bot-paq'>
-                        <div><img className='iconmano paq-1'src={iconfe} alt=''/></div>
-                        <div className=''><p className='icons-txt paq-1'>Noviembre 30</p></div>
-                      </div>
-                        <div className='paquete-1'>
-                        <div><img className='iconmano paq-1'src={iconhora} alt=''/></div>
-                        <div><p className='icons-txt paq-1'>12-15hr</p></div>
-                      </div>
-                        <div className='paquete-1'>
-                        <div> <img className='iconmano paq-1' src={iconubi} alt='' /></div>
-                        <div> <p className='icons-txt paq-1'>Tula de Allende, Hidalgo</p></div>
-                      </div>
-                        <div className='paquete-1T'>
-                        <p className='paq-1'>Ciclo de Cine Jurídico 2020, proyección de la película “Lista de Schindler”.kjjkdfbd bgjkd bgjkdfbdkbgk jdbgdgbk jbgkjdfg bj ksdbgjkdsbfg KSJSSKSK SKSKSKSK
-                        fkjdbgkjfdbgkdfgbkjfbgkdfbbdg </p>
-                      </div>
+                        <div>
+                          <img className='iconmano paq-1' src={iconfe} alt='' />
                         </div>
+                        <div className=''>
+                          <p className='icons-txt paq-1'>
+                            {actividades.fechai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconhora} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.horai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconubi} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.municipio}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1T'>
+                        <p className='paq-1'>
+                        {actividades.tipoActividad}
+
+                        </p>
+                      </div>
                     </div>
-      </div>
+                  </div>
+                  <div className='datos-paq-1'>
+                    <div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconfe} alt='' />
+                        </div>
+                        <div className=''>
+                          <p className='icons-txt paq-1'>
+                            {actividades.fechai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconhora} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.horai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconubi} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.municipio}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1T'>
+                        <p className='paq-1'>
+                        {actividades.tipoActividad}
 
+                        </p>
+                      </div>
+                    </div>
+                    <div className='bot-paq'>
+                      <div className='paquete-1 bot-paq'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconfe} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.fechai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconhora} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.horai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconubi} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.municipio}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1T'>
+                        <p className='paq-1'>
+                        {actividades.tipoActividad}
 
-
-    </div>
-
-
-    <div className='tercera-parte'>
-
-    <div>
-    <div className='coontenedor-2da-vista'>
-      <div className='contenedor-2'>
-          <p className='nombre-agendasemanal'>Mercedes Citlali Mendoza Meza</p>
-          <p className='cargo-age'>Directora del Instituto de Formación Profesional de la Procuraduría</p>
-          <div className='linea-pro'></div>
-      </div>
-    </div>
-
-
-    <div  className='datos-paq-1'>
-      <div>
-        <div className='paquete-1'>
-          <div><img className='iconmano paq-1'src={iconfe} alt=''/></div>
-          <div className=''><p className='icons-txt paq-1'>Noviembre 30</p></div>
-        </div>
-          <div className='paquete-1'>
-          <div><img className='iconmano paq-1'src={iconhora} alt=''/></div>
-          <div><p className='icons-txt paq-1'>12-15hr</p></div>
-        </div>
-          <div className='paquete-1'>
-          <div> <img className='iconmano paq-1' src={iconubi} alt='' /></div>
-          <div> <p className='icons-txt paq-1'>Tula de Allende, Hidalgo</p></div>
-        </div>
-          <div className='paquete-1T'>
-          <p className='paq-1'>Ciclo de Cine Jurídico 2020, proyección de la película “Lista de Schindler”.kjjkdfbd bgjkd bgjkdfbdkbgk jdbgdgbk jbgkjdfg bj ksdbgjkdsbfg KSJSSKSK SKSKSKSK
-          fkjdbgkjfdbgkdfgbkjfbgkdfbbdg </p>
-        </div>
-          </div>
-
-          <div className='bot-paq'>
-            <div className='paquete-1 bot-paq'>
-              <div><img className='iconmano paq-1'src={iconfe} alt=''/></div>
-              <div className=''><p className='icons-txt paq-1'>Noviembre 30</p></div>
-            </div>
-              <div className='paquete-1'>
-              <div><img className='iconmano paq-1'src={iconhora} alt=''/></div>
-              <div><p className='icons-txt paq-1'>12-15hr</p></div>
-            </div>
-              <div className='paquete-1'>
-              <div> <img className='iconmano paq-1' src={iconubi} alt='' /></div>
-              <div> <p className='icons-txt paq-1'>Tula de Allende, Hidalgo</p></div>
-            </div>
-              <div className='paquete-1T'>
-              <p className='paq-1'>Ciclo de Cine Jurídico 2020, proyección de la película “Lista de Schindler”.kjjkdfbd bgjkd bgjkdfbdkbgk jdbgdgbk jbgkjdfg bj ksdbgjkdsbfg KSJSSKSK SKSKSKSK
-              fkjdbgkjfdbgkdfgbkjfbgkdfbbdg </p>
-            </div>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-          </div>
-          </div>
+              <div className='tercera-parte'>
+                <div>
+                  <div className='coontenedor-2da-vista'>
+                    <div className='contenedor-2'>
+                      <p className='nombre-agendasemanal'>
+                        {actividades.responsable}Mercedes Citlali Mendoza Meza
+                      </p>
+                      <p className='cargo-age'>
+                        {actividades.convoca}
+                      </p>
+                      <div className='linea-pro' />
+                    </div>
+                  </div>
+                  <div className='datos-paq-1'>
+                    <div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconfe} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.fechai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconhora} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.horai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconubi} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.municipio}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1T'>
+                        <p className='paq-1'>
+                          {actividades.tipoActividad}
+                        </p>
+                      </div>
+                    </div>
+                    <div className='bot-paq'>
+                      <div className='paquete-1 bot-paq'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconfe} alt='' />
+                        </div>
+                        <div className=''>
+                          <p className='icons-txt paq-1'>
+                            {actividades.fechai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconhora} alt='' />
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.horai}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1'>
+                        <div>
+                          <img className='iconmano paq-1' src={iconubi} alt='' />
+                          <p className='icons-txt paq-1'>
 
-          <div className=''>
-          <div className='sub-contenedor-2'>
-            <div className='caja'>
-                <div className='prueba2'> <img className='img-verde' src={presentacionv} alt=''/></div>
+                          </p>
+                        </div>
+                        <div>
+                          <p className='icons-txt paq-1'>
+                            {actividades.municipio}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='paquete-1T'>
+                        <p className='paq-1'>
+                          {actividades.tipoActividad}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className=''>
+                  <div className='sub-contenedor-2'>
+                    <div className='caja'>
+                      <div className='prueba2'>
+                        <img className='img-verde' src={presentacionv} alt='' />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            )}
           </div>
+          <div className='btn-imprimir'>
+            <ReactToPrint
+              trigger={() => <span class='material-icons' style={{ cursor: 'pointer' }}>print</span>}
+              content={() => this.agenda}
+            />
           </div>
-    </div>
-
-
-
-    <div className='btn-imprimir'>
-      <ReactToPrint
-      trigger={() => <buttom className='btn-b-l-2' style={{ cursor:'pointer'}}>Imprimir</buttom>}
-      content={() => this.agenda}
-      />
-    </div>
-
-</div>
-
-</div>
-
-
-
-
+        </div>
+      </div>
     )
-
   }
 }
