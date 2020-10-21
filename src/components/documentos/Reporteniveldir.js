@@ -43,7 +43,8 @@ export default class Reporteniveldir extends Component {
   render () {
     return (
       <div className='fader-reporte' >
-        <div ref={el => (this.agenda = el)}>
+      <div ref={el => (this.agenda = el)}>
+        <div>
         <div className='Nombre-cargo' >
           <div>
             <div className='name'>
@@ -95,6 +96,8 @@ export default class Reporteniveldir extends Component {
 
 
           </div>
+
+        </div>
       </div>
     )
   }
