@@ -33,7 +33,6 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
-          <div className='position-border'><div className='border-nav'/></div>
           <div className='navbar-left'>
             <Link to='/ActividadesRegistradas' className='deco'>
               <div className='hover-center'>
@@ -41,12 +40,12 @@ class Nav extends Component {
                   <span className='material-icons icon-s'>
                     event_note
                   </span>
-                  <p className='nav-t'>Actividades</p>
+                  <p className='nav-t'>Agenda</p>
                 </div>
               </div>
             </Link>
           </div>
-          <div className='navbar-left'>
+          {/* <div className='navbar-left'>
             <Link to='/ActividadInforme' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -57,8 +56,7 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-          </div>
-          <div className='border-nav'/>
+          </div> */}
           <div className='navbar-left'>
             <Link to='/BusquedaActividad' className='deco'>
               <div className='hover-center'>
@@ -83,8 +81,7 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
-
-          <div className='navbar-left'>
+          {/* <div className='navbar-left'>
             <Link to='/Autorizacion' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -95,10 +92,8 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-          </div>
-          <div className='border-nav'/>
-
-          <div className='navbar-left'>
+          </div> */}
+          {/* <div className='navbar-left'>
             <Link to='/Agendapdf' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -109,9 +104,8 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-          </div>
-
-          <div className='navbar-left'>
+          </div> */}
+          {/*<div className='navbar-left'>
             <Link to='/Agendasemanal' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -122,9 +116,8 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-          </div>
-
-          <div className='navbar-left'>
+          </div>*/}
+          {/*<div className='navbar-left'>
             <Link to='/Reporteniveldir' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -135,10 +128,8 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-          </div>
-
-
-          <div className='navbar-left'>
+          </div>*/}
+          {/*<div className='navbar-left'>
             <Link to='/Reportepdf' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -149,9 +140,8 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-          </div>
+          </div>*/}
         </div>
-
         <div className='navbar-left'>
           <Link to='/Autorizacion' className='deco' onClick={this.handleLogout}>
             <div className='hover-center'>

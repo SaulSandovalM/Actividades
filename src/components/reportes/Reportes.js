@@ -48,44 +48,47 @@ export default class Reportes extends Component {
           <h1 className='h1-lm'>Reportes</h1>
         </div>
 
-        <div className='imp-busq'>
-        <p >Fecha y hora de inicio *</p>
-        <div className='btn-reportes'>
-          <TextField
-            type='date'
-            style={{ width: '45%' }}
-            name='fecha'
-            required
-          />
+        <div className='busq'>
+          <div className='imp-busq-2'>
+            <div className='btn-reportes'>
+              <p className='txt-rep'>Fecha inicial:* </p>
+              <TextField
+                type='date'
+                style={{  width: '30%', paddingLeft: '20px' }}
+                name='fecha'
+                required
+                />
+                <p className='txt-rep'>Fecha final:* </p>
+                <TextField
+                  type='date'
+                  style={{ width: '35%', paddingLeft:'20px' }}
+                  name='fecha'
+                  required
+                />
+
+
+                <div className='btn-reportes-1'>
+                <bottom className='btn-b-l'>Buscar </bottom>
+                <bottom className='btn-b-l'>Limpiar</bottom>
+                </div>
+
+              </div>
+
+
+
+
+
         </div>
-        <div className='imp-busq'>
-        <p >Fecha y hora de inicio *</p>
-        <div className='btn-reportes'>
-          <TextField
-            type='date'
-            style={{ width: '45%' }}
-            name='fecha'
-            required
-          />
-        </div>
-        </div>
 
 
 
 
-
-
-
-        <div className='btn-reportes'>
-        <bottom className='btn-b-l'>Buscar </bottom>
-        <bottom className='btn-b-l'>Limpiar</bottom>
-        </div>
 
         </div>
 
         <div className='mes-center' style={{ position: 'fixed', marginTop: '200px', background: '#fafafa' }}>
           <div className='mes-container' style={{ marginRight: '256px' }}>
-            <div className='head-mes-1' style={{paddingLeft: '6.5%', color: 'grey'}}>Actividad</div>
+            <div className='head-mes-1' style={{paddingLeft: '3.5%', color: 'grey'}}>Actividad</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Lugar</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Fiscalia/Direccion</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Fecha</div>
@@ -98,11 +101,11 @@ export default class Reportes extends Component {
             <div className='one-po' />
           </div>
         </div>
-        <div style={{paddingTop: '270px'}}>
+        <div style={{paddingTop: '270px', marginLeft: '0px'}}>
           {this.state.actividades.map(actividades =>
-            <div className='mes-center2'>
+            <div className='mes-center3'>
               <div className='mes-container-map' >
-                <span className='material-icons icon-sh' style={{ marginLeft: '-40px', marginRight: '14px'}}>
+                <span className='material-icons icon-sh' style={{ marginLeft: '-10px', marginRight: '1px'}}>
                   label_important
                 </span>
                 <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>

@@ -52,9 +52,10 @@
     height: 82vh;
 }
 .btn-reportes{
-  width: 20%;
-  padding-left: 1350px;
+  width: 70%;
+  padding-left: 40px;
   padding-top: 20px;
+
 
 display: flex;
 justify-content: flex-start;
@@ -67,4 +68,36 @@ position: fixed;
   color: white;
   background: #092432;
   padding: 5px;
+}
+.imp-busq-2{
+  width: 90%;
+  margin-top: 120px;
+  position:fixed;
+  z-index: 4;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fafafa;
+
+
+}
+
+.txt-rep{
+  padding-left: 10px;
+  margin-top: 9px;
+}
+
+.btn-reportes-1{
+  width: 100%;
+  padding-left: 1100px;
+  display: flex;
+  position: fixed;
+  z-index: -1;
+}
+.mes-center3 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-left: 0px;
+  padding-left: 0px;
 }

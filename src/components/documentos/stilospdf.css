@@ -1,69 +1,192 @@
 .fader{padding-left: 260px;
+}
+/* Agenda Semanal*/
+.contenedor-1{
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
 
+  padding-bottom: 100px;
+
+}
+.sub-contenedor{
+  padding:500px 0px 0px 30px;
+}
+.txt-res2{
+  /* DEBUG:  */  width: 500px;
+  margin-top: 10px;
+  color: rgb(58, 128, 186);
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: bold;
+}
+.img-azul{
+
+  padding-left: 0px;
+  width: 500px;
+  height:1000px;
+}
+/* segunda hoja*/
+.segunda-vista{
+  height: 1000px;
+}
+.sub-contenedor-2{
+  height: 100px;
+}
+.contenedor-2{
+  padding-left:20px;
+}
+.paquete-1{
+  display: flex;
+  width:500px;
+}
+.paquete-1T{
+  width: 500px;
+  padding: 0px 50px;
+}
+.icons{
+  padding-right:10px;
+  padding-top: 3px;
+  width: 30px;
+  height:30px;
+}
+.paq-1{
+  display: flex;
+  padding-left: 20px;
+  padding-top: 5px;
+  text-align: justify;
+}
+ /*Datos de la segunda hoja de la vista de la segunda hoja*/
+ .datos-agenda{
+   padding-top: 50px;
+   display: flex;
+   justify-content: space-between;
+ }
+.paq{
+  padding-right: 0px;
+}
+
+.bot-paq{
+  padding-top: 30px
+
+}
+
+.tercera-parte{
+height: 1000px;
+display: flex;
+justify-content: space-between;
+
+
+}
+.btn-imprimir{
+  display:flex;
+  justify-content:flex-end;
+
+}
+.btn-b-l-2{
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  background: #092432;
+  padding: 5px;
+
+}
+.img-verde{
+  padding-left: 0px;
+  width: 500px;
+  height:900px;
+}
+/*vista de  actividades elevantes*/
+.line-v{
+  border-left: 6px solid #092432;
+  height: 100px;
+}
+
+
+.txt-abajo{
+  display: flex;
+  padding-top:20px;
+  width: 100%;
+
+
+}
+.img-mano{
+  height: 100vh;
+  width: 100%;
+}
+.txt-img-mano{
+  display:flex;
+  justify-content:center;
+}
+.txt-com-mano{
+  margin-top: 10px;
+}
+.datos-persona{
+  width:33%;
+
+}
+.datos-generales{
+  width: 33%;
+}
+
+.datos-reunion{
+  width: 33%;
+}
+.datos-pro-text{
+  width: 100%;
+}
+.tipo-text{
+  text-align: justify;
 }
 .prueba{
   display: flex;
   flex-direction: space-between;
+  width: 900px;
 }
 /**Texto*/
 .txt-age-1{
 margin-bottom: 0px;
 font-size: 70px;
 width: 700px;
-
 }
 .txt-age{
 margin-bottom: 0px;
 width: 700px;
-
 }
 .txt-res{
   width: 600px;
   margin-top: 10px;
   color: rgb(58, 128, 186);
   margin-bottom: 10px;
-
+  font-size: 70px;
 }
 .txt-fe{
   color: rgb(58, 128, 186);
   margin-top: 0px;
+  font-size: 40px;
 }
 .linea
 {
     margin-top: 0px;
-    border: 3px solid rgb(145, 208, 37);
-    width: 350px;
+    border: 5px solid rgb(145, 208, 37);
+    width: 453px;
     margin-left:0px;
 }
-
-.prueba2{
-  padding-left: 300px;
-
-
-}
-.img-azul{
-  width: 600px;
-  height:880px;
-  padding-bottom: 50px;
-  z-index: -1;
-  position:relative;
-}
+/*  este */
 .portada{
   padding-left: 100px;
   padding-top: 500px;
-  width: 230px;
+  width: 700px;
   text-align: left;
   display: flex;
   flex-direction: column;
 }
-
 /*logos*/
 .logos{
   display: flex;
   justify-content: space-between;
   padding-right: 30px;
-      }
-
+}
 .ims{
 height: 100px;
 width: 100px;
@@ -73,51 +196,37 @@ width: 100px;
   margin-top:0px;
   z-index: 1;
   position:absolute;
-
 }
 /*Siguientes hojas parte procurador*/
 .sigui-pa{
   padding-top: 40px;
 }
 .esp-pro{
-  padding-top: 90px;
   border: 3px solid #91D025;
-  height: 600px;
+  height: 80%;
   margin-left:0px;
 }
 .datos-esp-pro{
-
   display: flex;
-}
-
-.datos-esp-pro{
-    padding-left: 20px;
-
+  padding-left: 20px;
 }
 .datos-pro{
-
-  margin-top: 0px;
+margin-top: 0px;
 }
 
 .linea-pro{
-  border: 2px solid #91D025;
-  width: 200px;
+  border:  2px solid #91D025;
+  width: 300px;
   margin-top: 0px;
 
 }
 .datos-esp-pro{
   padding-top:  25px;
-  padding-right: 20px;
+  padding-right: 10px;
 
 }
 .datos-pro-fe{
-padding-left: 60px;
-}
-.datos-pro-text{
-width: 500px;
-}
-.tipo-text{
-  text-align: justify;
+padding-left: 30px;
 }
 .text-arro{
   color:#3A80BA ;
@@ -141,18 +250,12 @@ width: 500px;
   display: flex;
   width:250px;
 }
-.icons{
-  padding-right:10px;
-  padding-top: 3px;
-  width: 30px;
-  height:30px;
-}
 .icons-txt{
 margin: 3px;
 }
 .iconmano{
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 .txt-mano{
   width: 500px;
@@ -160,15 +263,17 @@ margin: 3px;
   background: rgba(58, 129, 186, 0.5);
 }
 .mano{
+  padding-left: 25px;
   display: flex;
-  flex-direction: column;
+  padding-right: 10px;
+  width: 200px;
 }
 .centro-mano{
   padding-top: 400px;
   display: flex;
   justify-content: center;
 }
-/* afendapdf*/
+/* agendapdf*/
 .nombre-agendasemanal{
   color: #3A80BA;
   font-size: 30px;
@@ -182,16 +287,21 @@ margin: 3px;
 .fecha-hora-ubi{
   padding-top: 70px;
 }
-.paq-1{
-  display: flex;
-  padding-left: 30px;
-  padding-top: 5px;
+/* text*/
+.txt-age-2{
+  margin-bottom: 0px;
+  font-size: 55px;
+  width: 700px;
+  color: rgb(43, 96, 139);
 }
-.dte{
-
-
-
+.linea-2
+{
+    margin-top: 0px;
+    border: 5px solid rgb(145, 208, 37);
+    width: 580px;
+    margin-left:0px;
 }
+
 .sigueinte-parte{
   height: 950px;
   display: flex;
@@ -199,8 +309,7 @@ margin: 3px;
 }
 /*reporte Nivel direccion*/
 .fader-reporte{
-padding-left: 270px;
-
+  padding-left: 260px;
 }
 /* nombre y cargo*/
 .Nombre-cargo{
@@ -233,54 +342,15 @@ padding-left: 270px;
   padding-right: 500px;
 }
 /*Tabla*/
-.tabla-reporteniveldir{
-  width:1600px;
+table{
+  table-layout:fixed;
 }
-.tab-arriba{
-  width: 1200px;
+td{
+  border-left:1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
-.filas-tab{
-  height:10%;
-  border-collapse: collapse;
-  background: #3A80BA;
-  color:white;
-  border-top: 1px solid #000;
-  border-left:  1px solid #000;
-  border-bottom: 1px solid #000;
-
-}
-.columna-tab-bori{
-  border-right:  1px solid #000;
-}
-.filas-tab1{
-  width: 80px;
-}
-.filas-tab2{
-  width: 70px;
-}
-.filas-tab3{
-  width: 100px;
-}
-.filas-tab4{
-  width: 250px;
-}
-.filas-tab5{
-  width: 500px;
-}
-.filas-tab6{
-  width:200px;
-}
-.columnas-tab{
-  height: 100px;
-  text-align: center;
-  border-left: 1px solid #000;
-  border-bottom: 1px solid #000;
-
-}
-.num-c{
-
-}
 /*reportes pdf*/
 
 .fader-reporte{
@@ -361,4 +431,7 @@ border: 1px solid #000;
 }
 .col-1{
   border-left:1px solid #000;
+}
+.botons{
+  padding-left: 800px;
 }
