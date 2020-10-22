@@ -288,6 +288,7 @@ margin: 3px;
   padding-top: 70px;
 }
 /* text*/
+
 .txt-age-2{
   margin-bottom: 0px;
   font-size: 55px;
@@ -310,46 +311,101 @@ margin: 3px;
 /*reporte Nivel direccion*/
 .fader-reporte{
   padding-left: 260px;
+  width:1600px;
 }
 /* nombre y cargo*/
 .Nombre-cargo{
-  padding-top: 50px;
+  padding-left:36px;
+  padding-right:36px;
+  padding-top: 30px;
   display: flex;
-  justify-content: space-between;
   margin-bottom: 0px;
+  width: 1400px;
 }
-.name{
-  text-align: center;
-  height: 30px;
-  margin-top: 0px;
+.name1{
+  height: 40px;
+  margin-top: 10px;
   margin-bottom: 0px;
-
-  width: 300px;
+  width:300px;
    background-color: #3A80BA;
    color:white;
 }
-.cargo{
+.name{
+
+    text-align: center;
+    padding-bottom: 0px;
+    font-weight: bold;
+  }
+
+  .cargo{
   text-align: center;
-  height: 30px;
-  margin-top: 0px;
+  height: 40px;
+  margin: 0px;
   background-color: #1239;
   color:white;
   font-weight: bold;
 }
 .h3-top{
-  margin-top: 0px;
   text-align: center;
-  padding-right: 500px;
+  padding-top:3px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+
+
 }
 /*Tabla*/
 table{
-  table-layout:fixed;
+  border-collapse: collapse;
 }
-td{
-  border-left:1px solid black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+
+.tabla-dir{
+  padding-left: 40px;
+  width:1500px;
 }
+.tabla-top{
+  padding: 10px;
+}
+.all-tabla{
+  font-size:12px;
+  text-align: center;
+  border:1px solid black;
+
+}
+.color-t{
+  background:  #3A80BA;
+  color: white;
+}
+.color-t2{
+  background:  #1239;
+  color: white;
+}
+.tabla-n{
+  width:25px;
+}
+.tabla-f{
+  width:140px;
+
+}
+.tabla-h{
+  width:100px;
+
+}
+.tabla-l{
+  width:150px;
+}
+.tabla-a{
+  width: 350px;
+  padding:5px;
+}
+.tabla-b{
+  width: 420px;
+}
+.tabla-r{
+  width:200px;
+}
+
+
+
 
 /*reportes pdf*/
 

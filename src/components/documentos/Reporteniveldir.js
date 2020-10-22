@@ -43,47 +43,143 @@ export default class Reporteniveldir extends Component {
   render () {
     return (
       <div className='fader-reporte' >
+
+      <div>
+        {this.state.actividades.map(actividades =>
       <div ref={el => (this.agenda = el)}>
-        <div>
+        <div className='all'>
         <div className='Nombre-cargo' >
           <div>
-            <div className='name'>
+            <div className='name1'>
               <p className='name'>Nombre:</p>
             </div>
             <div className='cargo'>
               <p className='cargo'>Cargo:</p>
             </div>
           </div>
-          <div>
-            <h3 className='h3-top'>Mercedes Citlali Mendoza Meza<br />
-              Directora del Instituto de Formacion Profesional de la Procuraduria
+          <div className='Nom-car'>
+            <h3 className='h3-top'>{actividades.responsable}Mercedes Citlali Mendoza Meza</h3>
+            <h3 className='h3-top'>{actividades.cargo}Directora del Instituto de Formacion Profesional de la Procuraduria
             </h3>
           </div>
         </div>
-        <div className='tabla-reporteniveldir'>
+
+
+
+        <div className="tabla-dir">
         <table>
           <tr>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Lugar</th>
-            <th>Actividad</th>
-            <th>Beneficio para la PGJEH</th>
-            <th>RELEVANCIA</th>
+          <th className='all-tabla tabla-n'>No.</th>
+            <th className='all-tabla tabla-top color-t'>Fecha</th>
+            <th className='all-tabla tabla-top color-t2'>Hora</th>
+            <th className='all-tabla tabla-top color-t'>Lugar</th>
+            <th className='all-tabla tabla-top color-t2'>Actividad</th>
+            <th className='all-tabla tabla-top color-t'>Beneficio para la PGJEH</th>
+            <th className='all-tabla tabla-top color-t2'>RELEVANCIA</th>
           </tr>
-
           <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>6</td>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
 
           </tr>
+          <tr>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+
+          </tr>
+          <tr>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+
+          </tr>
+          <tr>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+
+          </tr>
+          <tr>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+
+          </tr>
+          <tr>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+
+          </tr>
+          <tr>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+
+          </tr>
+          <tr>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+
+          </tr>
+          <tr>
+            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
+            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
+            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+
+          </tr>
+
+
+
 
         </table>
         </div>
+
+
+
+          </div>
+
+        </div>
+      )}
         <div className='btn-imprimir'>
           <p>Imprimir</p>
           <ReactToPrint
@@ -94,10 +190,8 @@ export default class Reporteniveldir extends Component {
 
         </div>
 
-
-          </div>
-
         </div>
+
       </div>
     )
   }
