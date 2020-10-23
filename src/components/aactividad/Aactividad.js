@@ -322,6 +322,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Apozol'}>Apozol</MenuItem>
@@ -371,6 +372,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Abalá'}>Abalá</MenuItem>
@@ -422,6 +424,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acajete'}>Acajete</MenuItem>
@@ -470,6 +473,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acuamanala de Miguel Hidalgo'}>Acuamanala de Miguel Hidalgo</MenuItem>
@@ -518,6 +522,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Abasolo'}>Abasolo</MenuItem>
@@ -563,6 +568,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Balancán'}>Balancán</MenuItem>
@@ -587,6 +593,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Aconchi'}>Aconchi</MenuItem>
@@ -636,6 +643,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Ahome'}>Ahome</MenuItem>
@@ -661,6 +669,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Ahualulco'}>Ahualulco</MenuItem>
@@ -710,6 +719,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Bacalar'}>Bacalar</MenuItem>
@@ -728,6 +738,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Amealco de Bonfil'}>Amealco de Bonfil</MenuItem>
@@ -753,6 +764,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acajete'}>Acajete</MenuItem>
@@ -802,6 +814,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Abejones'}>Abejones</MenuItem>
@@ -850,6 +863,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Abasolo'}>Abasolo</MenuItem>
@@ -898,6 +912,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acaponeta'}>Acaponeta</MenuItem>
@@ -925,6 +940,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Amacuzac'}>Amacuzac</MenuItem>
@@ -964,6 +980,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acuitzio'}>Acuitzio</MenuItem>
@@ -1013,6 +1030,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acambay de Ruíz Castañeda'}>Acambay de Ruíz Castañeda</MenuItem>
@@ -1062,6 +1080,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acatic'}>Acatic</MenuItem>
@@ -1110,6 +1129,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acatlán'}>Acatlán</MenuItem>
@@ -1159,6 +1179,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Acapulco de Juárez'}>Acapulco de Juárez</MenuItem>
@@ -1208,6 +1229,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Abasolo'}>Abasolo</MenuItem>
@@ -1255,6 +1277,7 @@ export default class Aactividad extends Component {
                     <Select
                       label='Municipios'
                       name='municipios'
+                      onChange={this.onChange}
                       required
                     >
                       <MenuItem value={'Canatlán'}>Canatlán</MenuItem>
@@ -1298,6 +1321,81 @@ export default class Aactividad extends Component {
                       <MenuItem value={'Villagrán'}>Villagrán</MenuItem>
                       <MenuItem value={'Xichú'}>Xichú</MenuItem>
                       <MenuItem value={'Yuriria'}>Yuriria</MenuItem>
+                  </Select>}
+                  {this.state.estados === 'Ciudad de México' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Azcapotzalco'}>Azcapotzalco</MenuItem>
+                      <MenuItem value={'Coyoacán'}>Coyoacán</MenuItem>
+                      <MenuItem value={'Cuajimalpa de Morelos'}>Cuajimalpa de Morelos</MenuItem>
+                      <MenuItem value={'Gustavo A. Madero'}>Gustavo A. Madero</MenuItem>
+                      <MenuItem value={'Iztacalco'}>Iztacalco</MenuItem>
+                      <MenuItem value={'Iztapalapa'}>Iztapalapa</MenuItem>
+                      <MenuItem value={'La Magdalena Contreras'}>La Magdalena Contreras</MenuItem>
+                      <MenuItem value={'Milpa Alta'}>Milpa Alta</MenuItem>
+                      <MenuItem value={'Álvaro Obregón'}>Álvaro Obregón</MenuItem>
+                      <MenuItem value={'Tláhuac'}>Tláhuac</MenuItem>
+                      <MenuItem value={'Tlalpan'}>Tlalpan</MenuItem>
+                      <MenuItem value={'Xochimilco'}>Xochimilco</MenuItem>
+                      <MenuItem value={'Benito Juárez'}>Benito Juárez</MenuItem>
+                      <MenuItem value={'Cuauhtémoc'}>Cuauhtémoc</MenuItem>
+                      <MenuItem value={'Miguel Hidalgo'}>Miguel Hidalgo</MenuItem>
+                      <MenuItem value={'Venustiano Carranza'}>Venustiano Carranza</MenuItem>
+                  </Select>}
+                  {this.state.estados === 'Chihuahua' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Ahumada'}>Ahumada</MenuItem>
+                      <MenuItem value={'Aldama'}>Aldama</MenuItem>
+                      <MenuItem value={'Allende'}>Allende</MenuItem>
+                      <MenuItem value={'Aquiles Serdán'}>Aquiles Serdán</MenuItem>
+                      <MenuItem value={'Ascensión'}>Ascensión</MenuItem>
+                      <MenuItem value={'Bachíniva'}>Bachíniva</MenuItem>
+                      <MenuItem value={'Balleza'}>Balleza</MenuItem>
+                      <MenuItem value={'Batopilas'}>Batopilas</MenuItem>
+                      <MenuItem value={'Bocoyna'}>Bocoyna</MenuItem>
+                      <MenuItem value={'Buenaventura'}>Buenaventura</MenuItem>
+                      <MenuItem value={'Camargo'}>Camargo</MenuItem>
+                      <MenuItem value={'Carichí'}>Carichí</MenuItem>
+                      <MenuItem value={'Casas Grandes'}>Casas Grandes</MenuItem>
+                      <MenuItem value={'Coronado'}>Coronado</MenuItem>
+                      <MenuItem value={'Coyame del Sotol'}>Coyame del Sotol</MenuItem>
+                      <MenuItem value={'La Cruz'}>La Cruz</MenuItem>
+                      <MenuItem value={'Cuauhtémoc'}>Cuauhtémoc</MenuItem>
+                      <MenuItem value={'Cusihuiriachi'}>Cusihuiriachi</MenuItem>
+                      <MenuItem value={'Chihuahua'}>Chihuahua</MenuItem>
+                      <MenuItem value={'Chínipas'}>Chínipas</MenuItem>
+                      <MenuItem value={'Delicias'}>Delicias</MenuItem>
+                      <MenuItem value={'Dr. Belisario Domínguez'}>Dr. Belisario Domínguez</MenuItem>
+                      <MenuItem value={'Galeana'}>Galeana</MenuItem>
+                      <MenuItem value={'Santa Isabel'}>Santa Isabel</MenuItem>
+                      <MenuItem value={'Gómez Farías'}>Gómez Farías</MenuItem>
+                      <MenuItem value={'Gran Morelos'}>Gran Morelos</MenuItem>
+                      <MenuItem value={'Guachochi'}>Guachochi</MenuItem>
+                      <MenuItem value={'Guadalupe'}>Guadalupe</MenuItem>
+                      <MenuItem value={'Guadalupe y Calvo'}>Guadalupe y Calvo</MenuItem>
+                      <MenuItem value={'Guazapares'}>Guazapares</MenuItem>
+                      <MenuItem value={'Guerrero'}>Guerrero</MenuItem>
+                      <MenuItem value={'Hidalgo del Parral'}>Hidalgo del Parral</MenuItem>
+                      <MenuItem value={'Huejotitán'}>Huejotitán</MenuItem>
+                      <MenuItem value={'Ignacio Zaragoza'}>Ignacio Zaragoza</MenuItem>
+                      <MenuItem value={'Janos'}>Janos</MenuItem>
+                      <MenuItem value={'Jiménez'}>Jiménez</MenuItem>
+                      <MenuItem value={'Juárez'}>Juárez</MenuItem>
+                      <MenuItem value={'Matachí'}>Matachí</MenuItem>
+                      <MenuItem value={'Matamoros'}>Matamoros</MenuItem>
+                      <MenuItem value={'Meoqui'}>Meoqui</MenuItem>
+                      <MenuItem value={'Morelos'}>Morelos</MenuItem>
+                      <MenuItem value={'Moris'}>Moris</MenuItem>
+                      <MenuItem value={'Namiquipa'}>Namiquipa</MenuItem>
                   </Select>}
                 </FormControl>
               </div>
