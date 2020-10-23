@@ -45,7 +45,6 @@ export default class Reporteniveldir extends Component {
       <div className='fader-reporte' >
 
       <div>
-        {this.state.actividades.map(actividades =>
       <div ref={el => (this.agenda = el)}>
         <div className='all'>
         <div className='Nombre-cargo' >
@@ -57,11 +56,13 @@ export default class Reporteniveldir extends Component {
               <p className='cargo'>Cargo:</p>
             </div>
           </div>
+          {/*{this.state.actividades.map(actividades =>*/}
           <div className='Nom-car'>
-            <h3 className='h3-top'>{actividades.responsable}Mercedes Citlali Mendoza Meza</h3>
-            <h3 className='h3-top'>{actividades.cargo}Directora del Instituto de Formacion Profesional de la Procuraduria
+            <h3 className='h3-top'>{/*{actividades.convoca}*/}Mercedes Citlali Mendoza Meza</h3>
+            <h3 className='h3-top'>{/*{actividades.dependencia}*/}Directora del Instituto de Formacion Profesional de la Procuraduria
             </h3>
           </div>
+        )}
         </div>
 
 
@@ -77,7 +78,9 @@ export default class Reporteniveldir extends Component {
             <th className='all-tabla tabla-top color-t'>Beneficio para la PGJEH</th>
             <th className='all-tabla tabla-top color-t2'>RELEVANCIA</th>
           </tr>
+            {this.state.actividades.map(actividades =>
           <tr>
+
             <td className='all-tabla color-t'>1</td>
             <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
             <td className='all-tabla tabla-h'>{ actividades.horai }</td>
@@ -87,86 +90,8 @@ export default class Reporteniveldir extends Component {
             <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
 
           </tr>
-          <tr>
-            <td className='all-tabla color-t'>1</td>
-            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
-            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
-            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+        )}
 
-          </tr>
-          <tr>
-            <td className='all-tabla color-t'>1</td>
-            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
-            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
-            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
-
-          </tr>
-          <tr>
-            <td className='all-tabla color-t'>1</td>
-            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
-            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
-            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
-
-          </tr>
-          <tr>
-            <td className='all-tabla color-t'>1</td>
-            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
-            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
-            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
-
-          </tr>
-          <tr>
-            <td className='all-tabla color-t'>1</td>
-            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
-            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
-            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
-
-          </tr>
-          <tr>
-            <td className='all-tabla color-t'>1</td>
-            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
-            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
-            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
-
-          </tr>
-          <tr>
-            <td className='all-tabla color-t'>1</td>
-            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
-            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
-            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
-
-          </tr>
-          <tr>
-            <td className='all-tabla color-t'>1</td>
-            <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
-            <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-            <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-            <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
-            <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
-
-          </tr>
 
 
 
@@ -179,7 +104,7 @@ export default class Reporteniveldir extends Component {
           </div>
 
         </div>
-      )}
+
         <div className='btn-imprimir'>
           <p>Imprimir</p>
           <ReactToPrint

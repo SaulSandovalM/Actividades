@@ -404,7 +404,16 @@ table{
   width:200px;
 }
 
+.sub-ca{
+  padding-left: 50px;
+  width: 1380px;
 
+}
+.sub-fe{
+  width: 1380px;
+  display: flex;
+  justify-content: flex-end;
+}
 
 
 /*reportes pdf*/
@@ -424,9 +433,12 @@ table{
   padding-right: 60px;
 }
 .titulo-reporte{
+width: 1400px;
+padding-top: 50px;
 display: flex;
 justify-content: center;
-padding-right:  400px;
+padding-right:400px;
+padding-bottom: 30px;
 }
 .fecha-reporte{
   display: flex;
