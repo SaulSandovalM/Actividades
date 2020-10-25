@@ -92,8 +92,6 @@ export default class Reportes extends Component {
             <div className='head-mes-1' style={{ color: 'grey' }}>Lugar</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Fiscalia/Direccion</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Fecha</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Editar</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Evidencia</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Relevante</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Estatus</div>
 
@@ -109,13 +107,13 @@ export default class Reportes extends Component {
                   label_important
                 </span>
                 <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>
-                <div className='head-mes-1' >{actividades.Actividad}</div>
-                <div className='head-mes-1' >{actividades.Lugar}</div>
-                <div className='head-mes-1' >{actividades.tipoA}</div>
-                <div className='head-mes-1' >{actividades.Actividad}</div>
-                <div className='head-mes-1' >{actividades.Lugar}</div>
-                <div className='head-mes-1' >{actividades.Lugar}</div>
-                <div className='head-mes-1' >{actividades.Lugar}</div>
+                <div className='head-mes-1'>{actividades.Actividad}</div>
+                <div className='head-mes-1'>{actividades.Lugar}</div>
+                <div className='head-mes-1'>{actividades.tipoA}</div>
+                <div className='head-mes-1'>{actividades.Actividad}</div>
+                <div className='head-mes-1'>{actividades.Lugar}</div>
+                <div className='head-mes-1'>{actividades.Lugar}</div>
+                <div className='head-mes-1'>{actividades.Lugar}</div>
                 <div className='one-po'>
 
                 </div>

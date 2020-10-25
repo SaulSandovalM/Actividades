@@ -88,7 +88,7 @@ export default class Aregistradas extends Component {
         </div>
         <div className='mes-center' style={{ position: 'fixed', marginTop: '195px', background: '#fafafa' }}>
           <div className='mes-container' style={{ marginRight: '256px' }}>
-            <div className='head-mes-1' style={{ paddingLeft: '6.5%', color: 'grey' }}>Actividad</div>
+            <div className='head-mes-1' style={{ paddingLeft:'2.5%', color: 'grey' }}>Actividad</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Convocado</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Para</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Lugar</div>
@@ -103,7 +103,7 @@ export default class Aregistradas extends Component {
           {filterData.map(actividades =>
             <div className='mes-center2'>
               <div className='mes-container-map'>
-                <span className='material-icons icon-sh' style={{ marginLeft: '-40px', marginRight: '14px' }}>
+                <span className='material-icons icon-sh' style={{ marginLeft: '-30px', marginRight: '14px' }}>
                   label_important
                 </span>
                 <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.actividad}</div>

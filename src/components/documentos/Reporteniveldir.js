@@ -83,7 +83,7 @@ export default class Reporteniveldir extends Component {
 
             <td className='all-tabla color-t'>1</td>
             <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-            <td className='all-tabla tabla-h'>{ actividades.horai }</td>
+            <td className='all-tabla tabla-h'>{ actividades.horai } hrs.</td>
             <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
             <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
             <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
@@ -118,6 +118,7 @@ export default class Reporteniveldir extends Component {
         </div>
 
       </div>
+
     )
   }
 }

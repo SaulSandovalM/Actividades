@@ -40,6 +40,7 @@
   flex-direction: row;
   width: 100%;
 }
+
 .title-t-es {
   display: flex;
   flex-direction: row;
@@ -65,13 +66,14 @@
 
 }
 .head-mes-1{
-  width: 12.5%;
+
+  width: 50.5%;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  line-height: 20px;
+  line-height:30px;
 }
 .icon-block {
     color: red;
