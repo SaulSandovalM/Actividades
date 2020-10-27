@@ -3,17 +3,18 @@
 /* Agenda Semanal*/
 .contenedor-1{
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   height: 100vh;
+  padding-bottom:200px;
 
-  padding-bottom: 100px;
+
 
 }
 .sub-contenedor{
-  padding:500px 0px 0px 30px;
+  padding:500px 0px 0px 40px;
 }
 .txt-res2{
-  /* DEBUG:  */  width: 500px;
+  width: 500px;
   margin-top: 10px;
   color: rgb(58, 128, 186);
   margin-bottom: 10px;
@@ -23,8 +24,8 @@
 .img-azul{
 
   padding-left: 0px;
-  width: 500px;
-  height:1000px;
+  width:900px;
+  height: 900px;
 }
 /* segunda hoja*/
 .segunda-vista{
@@ -57,6 +58,17 @@
   text-align: justify;
 }
  /*Datos de la segunda hoja de la vista de la segunda hoja*/
+.imagen-carga{
+  display:flex;
+  justify-content: flex-end;
+  width:70%;
+}
+.prueba2{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
  .datos-agenda{
    padding-top: 50px;
    display: flex;
@@ -101,14 +113,10 @@ justify-content: space-between;
   border-left: 6px solid #092432;
   height: 100px;
 }
-
-
 .txt-abajo{
   display: flex;
   padding-top:20px;
   width: 100%;
-
-
 }
 .img-mano{
   height: 100vh;

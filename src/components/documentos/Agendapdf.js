@@ -6,7 +6,8 @@ import iconfe from './icons/iconfe.png'
 import iconhora from './icons/iconhora.png'
 import iconubi from './icons/iconubi.png'
 import iconmano from './icons/iconmano.png'
-import presentacion from './icons/presentacion .png'
+import precentacion from './icons/precentacion.png'
+import imagen from './icons/Imagen1.jpg'
 
 export default class Agendasemanal extends Component {
   constructor (props) {
@@ -58,18 +59,20 @@ export default class Agendasemanal extends Component {
             content={() => this.agenda}
           />
         </div>
+
+
         <div className='contedorall' ref={el => (this.agenda = el)}>
           <div className='contenedor-1'>
             <div className='sub-contenedor'>
               <p className='txt-age-1'>ACTIVIDADES</p>
               <div className='linea' />
               <h2 className='txt-res'>RELEVANTES</h2>
-              <p className='txt-fe'>Enero 13 2019</p>
+              <p className='txt-fe'>Enero 13 2020</p>
             </div>
             <div className='sub-contenedor-2'>
               <div className='caja'>
                 <div className='prueba2'>
-                  <img className='img-azul' src={presentacion} alt='' />
+                  <img className='img-azul' src={precentacion} alt='' />
                 </div>
               </div>
             </div>
@@ -80,7 +83,9 @@ export default class Agendasemanal extends Component {
               <div>
                 <div classname='img-mano'>
                   <div className='esp-pro'>
-                    {actividades.imagen}
+                  <div className='prueba2'>
+                    <img className='imagen-carga' src={imagen} alt='' />
+                  </div>
                   </div>
                   <div className='txt-img-mano'>
                     <div>
@@ -88,7 +93,7 @@ export default class Agendasemanal extends Component {
                     </div>
                     <div>
                       <p className='txt-com-mano'>
-                        incidencia delictiva en el municipio de Tula de Allende
+                        Incidencia delictiva en el municipio de Tula de Allende
                       </p>
                     </div>
                   </div>

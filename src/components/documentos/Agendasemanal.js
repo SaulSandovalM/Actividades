@@ -8,7 +8,7 @@ import iconfe from './icons/iconfe.png'
 import iconhora from './icons/iconhora.png'
 import iconubi from './icons/iconubi.png'
 import iconmano from './icons/iconmano.png'
-import presentacion from './icons/presentacion .png'
+import precentacion from './icons/precentacion.png'
 import presentacionv from './icons/presentacionv.png'
 
 
@@ -81,7 +81,7 @@ export default class Agendasemanal extends Component {
                 <div className='sub-contenedor-2'>
                   <div className='caja'>
                     <div className='prueba2'>
-                      <img className='img-azul' src={presentacion} alt='' />
+                      <img className='img-azul' src={precentacion} alt='' />
                     </div>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export default class Agendasemanal extends Component {
           <div>
             {this.state.actividades.map(actividades =>
             <div>
-              {/*<div className='segunda-vista'>
+              <div className='segunda-vista'>
                 <div className='coontenedor-2da-vista'>
                   <div className='contenedor-2'>
                     <p className='nombre-agendasemanal'>{actividades.responsable}Mercedes Citlali Mendoza Meza</p>
