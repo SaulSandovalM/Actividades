@@ -218,6 +218,15 @@ width: 1000px;
   top: 0;
   position: absolute;
 }
+.save-btr {
+  display: flex;
+  z-index: 2;
+  padding-top: 80px;
+  margin-right: -100px;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
 .form-content-ac {
   display: flex;
   justify-content: center;

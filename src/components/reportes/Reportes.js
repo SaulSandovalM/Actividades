@@ -23,13 +23,16 @@ export default class Reportes extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoA, lugar, fechai } = doc.data()
+      const { tipoA, lugar, fechai, estatus, area } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
         tipoA,
         lugar,
-        fechai
+        fechai,
+        estatus,
+        area
+
       })
     })
     this.setState({
@@ -68,7 +71,7 @@ export default class Reportes extends Component {
 
 
                 <div className='btn-reportes-1'>
-                <bottom className='btn-b-l'>Buscar </bottom>
+
                 <bottom className='btn-b-l'>Limpiar</bottom>
                 </div>
 
@@ -86,14 +89,15 @@ export default class Reportes extends Component {
 
         </div>
 
-        <div className='mes-center' style={{ position: 'fixed', marginTop: '200px', background: '#fafafa' }}>
+        <div className='mes-center' style={{ position: 'fixed', marginTop: '183px', background: '#fafafa' }}>
           <div className='mes-container' style={{ marginRight: '256px' }}>
             <div className='head-mes-1' style={{paddingLeft: '3.5%', color: 'grey'}}>Actividad</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Lugar</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Fiscalia/Direccion</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Fecha</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Relevante</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Estatus</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Imprimir</div>
+
 
 
             <div className='one-po' />
@@ -107,13 +111,11 @@ export default class Reportes extends Component {
                   label_important
                 </span>
                 <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>
-                <div className='head-mes-1'>{actividades.Actividad}</div>
                 <div className='head-mes-1'>{actividades.Lugar}</div>
-                <div className='head-mes-1'>{actividades.tipoA}</div>
-                <div className='head-mes-1'>{actividades.Actividad}</div>
-                <div className='head-mes-1'>{actividades.Lugar}</div>
-                <div className='head-mes-1'>{actividades.Lugar}</div>
-                <div className='head-mes-1'>{actividades.Lugar}</div>
+                <div className='head-mes-1'>{actividades.area}</div>
+                <div className='head-mes-1'>{actividades.fechai}</div>
+                <div className='head-mes-1'>{actividades.estatus}</div>
+                <div className='head-mes-1'>Impresion</div>
                 <div className='one-po'>
 
                 </div>

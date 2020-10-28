@@ -115,11 +115,31 @@ export default class Aregistradas extends Component {
                 <div className='head-mes-1'>{actividades.estados}</div>
                 <div className='head-mes-1'>{actividades.estatus}</div>
                 <div className='one-po'>
-                  <Link to={`/Editarmensaje/${actividades.key}`}>
-                    <span className='material-icons icon-block'>
+
+                  {actividades.estatus === 'Cancelado'&& <Link to={`/Editarmensaje/${actividades.key}`}>
+                    <span className='material-icons icon-block' >
                       block
                     </span>
+                  </Link>}
+
+                  {actividades.estatus === 'En proceso'&& <Link to={`/Editarmensaje/${actividades.key}`}>
+                    <span className='material-icons icon-block'style={{color:'blue'}}>
+                    cached
+                    </span>
                   </Link>
+                }
+
+                  {actividades.estatus === 'Reprogramado'&& <Link to={`/Editarmensaje/${actividades.key}`}>
+                    <span className='material-icons icon-block' style={{color:'orange'}}>
+                    restore
+                    </span>
+                  </Link>}
+
+                  {actividades.estatus === 'Realizado'&& <Link to={`/Editarmensaje/${actividades.key}`}>
+                    <span className='material-icons icon-block'style={{color:'green'}}>
+                  check_circle
+                    </span>
+                  </Link>}
                 </div>
               </div>
             </div>

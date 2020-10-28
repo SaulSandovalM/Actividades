@@ -5,7 +5,7 @@ import firebase from '../../Firebase'
 export default class Mgenerales extends Component {
   constructor(props) {
     super(props);
-    this.ref = firebase.firestore().collection('messages')
+    this.ref = firebase.firestore().collection('messages').orderBy("fecha","desc")
     this.unsubscribe = null;
     this.state = {
       messages: [],

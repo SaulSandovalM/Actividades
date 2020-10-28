@@ -4,6 +4,7 @@ import firebase from '../../Firebase'
 import TextField from '@material-ui/core/TextField'
 import Fab from '@material-ui/core/Fab'
 import DoneIcon from '@material-ui/icons/Done'
+import CloseIcon from '@material-ui/icons/Close'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import InputLabel from '@material-ui/core/InputLabel'
@@ -13,8 +14,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { withStyles } from '@material-ui/core/styles'
 
 export default class Aactividad extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.ref = firebase.firestore().collection('actividades')
     this.unsubscribe = null
     this.state = {
@@ -57,6 +58,10 @@ export default class Aactividad extends Component {
       checkedOrganizada: !this.state.checkedOrganizada,
     })
   }
+
+  handleBack() {
+      this.props.history.push('/ActividadesRegistradas');
+    }
 
   onSubmit = (e) => {
     e.preventDefault()
@@ -1415,31 +1420,33 @@ export default class Aactividad extends Component {
                   required
                 >
                   <MenuItem value={'Raúl Arroyo'}>Raúl Arroyo</MenuItem>
-                  <MenuItem value={'Víctor Ariel Pérez Benítez'}>Víctor Ariel Pérez Benítez</MenuItem>
-                  <MenuItem value={'Manuel García Guzmán'}>Manuel García Guzmán</MenuItem>
+                  <MenuItem value={'Arturo Flores Molina'}>Arturo Flores Molina</MenuItem>
+                  <MenuItem value={'Diana Corona Meneses'}>Diana Corona Meneses</MenuItem>
+                  <MenuItem value={'Eder Arteaga Tavera'}>Eder Arteaga Tavera</MenuItem>
                   <MenuItem value={'Eduardo González Mata'}>Eduardo González Mata</MenuItem>
-                  <MenuItem value={'Sonia Esmeralda Mejía González'}>Sonia Esmeralda Mejía González</MenuItem>
-                  <MenuItem value={'Lucio Rosas Braco'}>Lucio Rosas Braco</MenuItem>
-                  <MenuItem value={'Sissi Anette Rodríguez Fernández'}>Sissi Anette Rodríguez Fernández</MenuItem>
-                  <MenuItem value={'Jacob Alejandro Tolentino Habib'}>Jacob Alejandro Tolentino Habib</MenuItem>
-                  <MenuItem value={'Lourdes Herrera Fragoso'}>Lourdes Herrera Fragoso</MenuItem>
-                  <MenuItem value={'Mercedes Citlali Mendoza Meza'}>Mercedes Citlali Mendoza Meza</MenuItem>
-                  <MenuItem value={'Michel Izguerra'}>Michel Izguerra</MenuItem>
+                  <MenuItem value={'Edwin Hernández Garrido'}>Edwin Hernández Garrido</MenuItem>
+                  <MenuItem value={'Gerardo Flores Álvarez'}>Gerardo Flores Álvarez</MenuItem>
                   <MenuItem value={'Gilberto Ramírez Rico'}>Gilberto Ramírez Rico</MenuItem>
                   <MenuItem value={'Humberto Vieyra Alamilla'}>Humberto Vieyra Alamilla</MenuItem>
-                  <MenuItem value={'Edwin Hernández Garrido'}>Edwin Hernández Garrido</MenuItem>
-                  <MenuItem value={'Arturo Flores Molina'}>Arturo Flores Molina</MenuItem>
-                  <MenuItem value={'Laura Isabel Torres Villegas'}>Laura Isabel Torres Villegas</MenuItem>
-                  <MenuItem value={'Eder Arteaga Tavera'}>Eder Arteaga Tavera</MenuItem>
-                  <MenuItem value={'Luz María Ramírez Pérez'}>Luz María Ramírez Pérez</MenuItem>
-                  <MenuItem value={'León Maximiliano Hernández Valdés'}>León Maximiliano Hernández Valdés</MenuItem>
-                  <MenuItem value={'Sergio Zúñiga Hernández'}>Sergio Zúñiga Hernández</MenuItem>
+                  <MenuItem value={'Jacob Alejandro Tolentino Habib'}>Jacob Alejandro Tolentino Habib</MenuItem>
                   <MenuItem value={'José Manning Ramírez'}>José Manning Ramírez</MenuItem>
-                  <MenuItem value={'Yolanda Samperio Delgadillo'}>Yolanda Samperio Delgadillo</MenuItem>
-                  <MenuItem value={'Vladimir Andrade Soto'}>Vladimir Andrade Soto</MenuItem>
+                  <MenuItem value={'Laura Isabel Torres Villegas'}>Laura Isabel Torres Villegas</MenuItem>
+                  <MenuItem value={'León Maximiliano Hernández Valdés'}>León Maximiliano Hernández Valdés</MenuItem>
+                  <MenuItem value={'Lourdes Herrera Fragoso'}>Lourdes Herrera Fragoso</MenuItem>
+                  <MenuItem value={'Lucio Rosas Braco'}>Lucio Rosas Braco</MenuItem>
+                  <MenuItem value={'Luz María Ramírez Pérez'}>Luz María Ramírez Pérez</MenuItem>
+                  <MenuItem value={'Manuel García Guzmán'}>Manuel García Guzmán</MenuItem>
+                  <MenuItem value={'Mercedes Citlali Mendoza Meza'}>Mercedes Citlali Mendoza Meza</MenuItem>
+                  <MenuItem value={'Michel Izguerra'}>Michel Izguerra</MenuItem>
                   <MenuItem value={'Ricardo César Gonzáles Baños'}>Ricardo César Gonzáles Baños</MenuItem>
-                  <MenuItem value={'Víctor Austria Mercado'}>Víctor Austria Mercado</MenuItem>
-                  <MenuItem value={'Gerardo Flores Álvarez'}>Gerardo Flores Álvarez</MenuItem>
+                  <MenuItem value={'Sergio Zúñiga Hernández'}>Sergio Zúñiga Hernández</MenuItem>
+                  <MenuItem value={'Sissi Anette Rodríguez Fernández'}>Sissi Anette Rodríguez Fernández</MenuItem>
+                  <MenuItem value={'Sonia Esmeralda Mejía González'}>Sonia Esmeralda Mejía González</MenuItem>
+                  <MenuItem value={'Víctor Ariel Pérez Benítez'}>Víctor Ariel Pérez Benítez</MenuItem>
+                  <MenuItem value={'Víctor Austria Mercado'}></MenuItem>
+                  <MenuItem value={'Vladimir Andrade Soto'}>Vladimir Andrade Soto</MenuItem>
+                  <MenuItem value={'Yolanda Samperio Delgadillo'}>Yolanda Samperio Delgadillo</MenuItem>
+
                 </Select>
               </FormControl>
               <TextField
@@ -1457,6 +1464,11 @@ export default class Aactividad extends Component {
               <div className='save-bt'>
                 <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
                   <DoneIcon />
+                </Fab>
+              </div>
+              <div className='save-btr'>
+                <Fab color='primary' aria-label='add' style={{ background: 'red' }} onClick={this.handleBack.bind(this)}>
+                  <CloseIcon />
                 </Fab>
               </div>
             </form>
