@@ -8,7 +8,6 @@ import iconubi from './icons/iconubi.png'
 import iconmano from './icons/iconmano.png'
 import precentacion from './icons/precentacion.png'
 import imagen from './icons/Imagen1.jpg'
-
 export default class Agendasemanal extends Component {
   constructor (props) {
     super(props)
@@ -78,12 +77,28 @@ export default class Agendasemanal extends Component {
             </div>
           </div>
 
+
           <div>
+            <div>
+              <div className='imagen-pre'>
+                  <img className='imagen-carga' src={imagen} alt='' />
+              </div>
+            </div>
+            <div>
+            
+
+            </div>
+
+
+          </div>
+
+
+          {/*<div>
             {this.state.actividades.map(actividades =>
               <div>
                 <div classname='img-mano'>
                   <div className='esp-pro'>
-                  <div className='prueba2'>
+                  <div className='imagen-pre'>
                     <img className='imagen-carga' src={imagen} alt='' />
                   </div>
                   </div>
@@ -144,6 +159,7 @@ export default class Agendasemanal extends Component {
               </div>
             )}
           </div>
+          */}
 
           <div className='btn-imprimir'>
             <ReactToPrint

@@ -4,11 +4,7 @@
 .contenedor-1{
   display: flex;
   justify-content:space-between;
-  height: 100vh;
-  padding-bottom:200px;
-
-
-
+  height: 125vh;
 }
 .sub-contenedor{
   padding:500px 0px 0px 40px;
@@ -20,6 +16,7 @@
   margin-bottom: 10px;
   font-size: 48px;
   font-weight: bold;
+  font: Arial;
 }
 .img-azul{
 
@@ -30,6 +27,9 @@
 /* segunda hoja*/
 .segunda-vista{
   height: 1000px;
+}
+.imagen-carga{
+  height: 750px;
 }
 .sub-contenedor-2{
   height: 100px;
@@ -58,10 +58,10 @@
   text-align: justify;
 }
  /*Datos de la segunda hoja de la vista de la segunda hoja*/
-.imagen-carga{
+.imagen-pre{
   display:flex;
-  justify-content: flex-end;
-  width:70%;
+  justify-content: center;
+
 }
 .prueba2{
   display: flex;
@@ -154,7 +154,9 @@ justify-content: space-between;
 /**Texto*/
 .txt-age-1{
 margin-bottom: 0px;
-font-size: 70px;
+font-size: 700%;
+font:bold;
+
 width: 700px;
 }
 .txt-age{
