@@ -62,7 +62,6 @@ export default class Reporteniveldir extends Component {
             <h3 className='h3-top'>{/*{actividades.dependencia}*/}Directora del Instituto de Formacion Profesional de la Procuraduria
             </h3>
           </div>
-        )}
         </div>
 
 
@@ -80,16 +79,17 @@ export default class Reporteniveldir extends Component {
           </tr>
             {this.state.actividades.map(actividades =>
           <tr>
-
-            <td className='all-tabla color-t'>1</td>
+            <td className='all-tabla color-t'></td>
             <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
             <td className='all-tabla tabla-h'>{ actividades.horai } hrs.</td>
             <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
             <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
             <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
             <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
-
           </tr>
+
+
+
         )}
 
 
@@ -106,7 +106,7 @@ export default class Reporteniveldir extends Component {
         </div>
 
         <div className='btn-imprimir'>
-          <p>Imprimir</p>
+          <p className='txt-impri'>Imprimir</p>
           <ReactToPrint
             trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
             content={() => this.agenda}

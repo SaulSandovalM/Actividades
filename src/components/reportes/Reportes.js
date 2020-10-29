@@ -91,31 +91,50 @@ export default class Reportes extends Component {
 
         <div className='mes-center' style={{ position: 'fixed', marginTop: '183px', background: '#fafafa' }}>
           <div className='mes-container' style={{ marginRight: '256px' }}>
-            <div className='head-mes-1' style={{paddingLeft: '3.5%', color: 'grey'}}>Actividad</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Lugar</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Fiscalia/Direccion</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Fecha</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Estatus</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Imprimir</div>
-
-
-
+            <div className='head-mes-rep' style={{paddingLeft: '3.5%', color: 'grey'}}>Actividad</div>
+            <div className='head-mes-rep' style={{ color: 'grey' }}>Lugar</div>
+            <div className='head-mes-rep' style={{ color: 'grey' }}>Fiscalia/Direccion</div>
+            <div className='head-mes-rep' style={{ color: 'grey' }}>Fecha</div>
+            <div className='head-mes-rep' style={{ color: 'grey' }}>Estatus</div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Imprimir</div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Imprimir</div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Imprimir</div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Imprimir</div>
             <div className='one-po' />
           </div>
         </div>
-        <div style={{paddingTop: '270px', marginLeft: '0px'}}>
+        <div style={{ paddingTop: '270px', marginLeft: '0px' }}>
           {this.state.actividades.map(actividades =>
             <div className='mes-center3'>
               <div className='mes-container-map' >
                 <span className='material-icons icon-sh' style={{ marginLeft: '-10px', marginRight: '1px'}}>
                   label_important
                 </span>
-                <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>
-                <div className='head-mes-1'>{actividades.Lugar}</div>
-                <div className='head-mes-1'>{actividades.area}</div>
-                <div className='head-mes-1'>{actividades.fechai}</div>
-                <div className='head-mes-1'>{actividades.estatus}</div>
-                <div className='head-mes-1'>Impresion</div>
+                <div className='head-mes-rep' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>
+                <div className='head-mes-rep'>{actividades.Lugar}</div>
+                <div className='head-mes-rep'>{actividades.area}</div>
+                <div className='head-mes-rep'>{actividades.fechai}</div>
+                <div className='head-mes-rep'>{actividades.estatus}</div>
+                <div className='head-mes-imp'>
+                  <span class='material-icons' style={{ cursor:'pointer' }}>
+                    article
+                  </span>
+                </div>
+                <div className='head-mes-imp'>
+                  <span class='material-icons' style={{ cursor:'pointer' }}>
+                    article
+                  </span>
+                </div>
+                <div className='head-mes-imp'>
+                  <span class='material-icons' style={{ cursor:'pointer' }}>
+                    article
+                  </span>
+                </div>
+                <div className='head-mes-imp'>
+                  <span class='material-icons' style={{ cursor:'pointer' }}>
+                    article
+                  </span>
+                </div>
                 <div className='one-po'>
 
                 </div>

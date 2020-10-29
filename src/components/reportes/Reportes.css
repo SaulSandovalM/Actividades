@@ -97,3 +97,21 @@
   margin-left: 0px;
   padding-left: 0px;
 }
+.head-mes-rep {
+  width: 16.5%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-height: 30px;
+}
+.head-mes-imp {
+  width: 4%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-height: 30px;
+}
