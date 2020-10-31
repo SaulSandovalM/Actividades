@@ -96,10 +96,10 @@ export default class Reportes extends Component {
             <div className='head-mes-rep' style={{ color: 'grey' }}>Fiscalia/Direccion</div>
             <div className='head-mes-rep' style={{ color: 'grey' }}>Fecha</div>
             <div className='head-mes-rep' style={{ color: 'grey' }}>Estatus</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Imprimir</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Imprimir</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Imprimir</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Imprimir</div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Agenda</div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Reporte</div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Agenda </div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Actividades</div>
             <div className='one-po' />
           </div>
         </div>
@@ -116,23 +116,23 @@ export default class Reportes extends Component {
                 <div className='head-mes-rep'>{actividades.fechai}</div>
                 <div className='head-mes-rep'>{actividades.estatus}</div>
                 <div className='head-mes-imp'>
-                  <span class='material-icons' style={{ cursor:'pointer' }}>
+                  <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>
                     article
                   </span>
                 </div>
                 <div className='head-mes-imp'>
-                  <span class='material-icons' style={{ cursor:'pointer' }}>
+                  <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>
                     article
                   </span>
                 </div>
                 <div className='head-mes-imp'>
-                  <span class='material-icons' style={{ cursor:'pointer' }}>
-                    article
+                  <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
+                    picture_as_pdf
                   </span>
                 </div>
                 <div className='head-mes-imp'>
-                  <span class='material-icons' style={{ cursor:'pointer' }}>
-                    article
+                  <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
+                    picture_as_pdf
                   </span>
                 </div>
                 <div className='one-po'>
