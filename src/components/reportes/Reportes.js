@@ -20,6 +20,8 @@ export default class Reportes extends Component {
     }
   }
 
+
+
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
@@ -39,6 +41,11 @@ export default class Reportes extends Component {
       actividades
    })
   }
+
+  resetear = (e) =>{
+            e.preventDefault()
+            this.setState({count:0})
+        }
 
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
@@ -68,25 +75,12 @@ export default class Reportes extends Component {
                   name='fecha'
                   required
                 />
-
-
-                <div className='btn-reportes-1'>
-
-                <bottom className='btn-b-l'>Limpiar</bottom>
-                </div>
+                <a href='/Reportes'  className = ''>
+                <button className='btn-b-l'>Limpiar</button>
+                </a>
 
               </div>
-
-
-
-
-
         </div>
-
-
-
-
-
         </div>
 
         <div className='mes-center' style={{ position: 'fixed', marginTop: '183px', background: '#fafafa' }}>
@@ -116,24 +110,32 @@ export default class Reportes extends Component {
                 <div className='head-mes-rep'>{actividades.fechai}</div>
                 <div className='head-mes-rep'>{actividades.estatus}</div>
                 <div className='head-mes-imp'>
+                <a  className='hiper' href='/Reportepdf'>
                   <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>
                     article
                   </span>
+                </a>
                 </div>
                 <div className='head-mes-imp'>
+                  <a className='hiper' href='/Reporteniveldir'>
                   <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>
                     article
                   </span>
+                  </a>
                 </div>
                 <div className='head-mes-imp'>
-                  <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
+                  <a className='hiper' href='/Agendasemanal'>
+                   <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
                     picture_as_pdf
                   </span>
+                  </a>
                 </div>
                 <div className='head-mes-imp'>
-                  <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
+                  <a className='hiper' href='/'>
+                   <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
                     picture_as_pdf
                   </span>
+                  </a>
                 </div>
                 <div className='one-po'>
 
