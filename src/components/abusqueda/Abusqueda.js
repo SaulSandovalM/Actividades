@@ -91,7 +91,7 @@ export default class Aregistradas extends Component {
             <div className='head-mes-1' style={{ paddingLeft:'2.5%', color: 'grey' }}>Actividad</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Convocado</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Para</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Lugar</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>dLugar</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Fecha</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Hora</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Estado</div>
@@ -116,30 +116,30 @@ export default class Aregistradas extends Component {
                 <div className='head-mes-1'>{actividades.estatus}</div>
                 <div className='one-po'>
 
-                  {actividades.estatus === 'Cancelado'&& <Link to={`/Editarmensaje/${actividades.key}`}>
+                  {actividades.estatus === 'Cancelado'&&
                     <span className='material-icons icon-block' >
                       block
                     </span>
-                  </Link>}
+                  }
 
-                  {actividades.estatus === 'En proceso'&& <Link to={`/Editarmensaje/${actividades.key}`}>
-                    <span className='material-icons icon-block'style={{color:'blue'}}>
+                  {actividades.estatus === 'En proceso'&&
+                    <span className='material-icons icon-block hip'style={{color:'blue'}}>
                     cached
                     </span>
-                  </Link>
-                }
 
-                  {actividades.estatus === 'Reprogramado'&& <Link to={`/Editarmensaje/${actividades.key}`}>
+                  }
+
+                  {actividades.estatus === 'Reprogramado'&&
                     <span className='material-icons icon-block' style={{color:'orange'}}>
                     restore
                     </span>
-                  </Link>}
+                  }
 
-                  {actividades.estatus === 'Realizado'&& <Link to={`/Editarmensaje/${actividades.key}`}>
+                  {actividades.estatus === 'Realizado'&&
                     <span className='material-icons icon-block'style={{color:'green'}}>
                   check_circle
                     </span>
-                  </Link>}
+                  }
                 </div>
               </div>
             </div>
