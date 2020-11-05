@@ -75,13 +75,17 @@
   -webkit-box-orient: vertical;
   line-height:30px;
 }
+.status-abus{
+    display: flex;
+     justify-content: space-around;
+}
+
 .icon-block {
     color: red;
     margin-top: -4px;
     padding: 0;
     margin: 0;
     text-decoration:none;
-
 }
 .imp-busq{
 width: 100%;

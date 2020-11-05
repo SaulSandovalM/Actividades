@@ -63,14 +63,6 @@ margin-top:0;
   height:30px;
 }
 .paq-1{
-  display: flex;
-  padding-left: 20px;
-  padding-top: 5px;
-  text-align: justify;
-}
- /*Datos de la segunda hoja de la vista de la segunda hoja*/
-.imagen-pre{
-  display:flex;
   justify-content: center;
 
 }
@@ -102,7 +94,7 @@ justify-content: space-between;
 
 }
 .btn-imprimir{
-  padding-top:5%; 
+  padding-top:5%;
   display:flex;
   justify-content:center;
 

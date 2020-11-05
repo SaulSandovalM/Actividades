@@ -95,7 +95,7 @@ export default class Aregistradas extends Component {
             <div className='head-mes-1' style={{ color: 'grey' }}>Fecha</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Hora</div>
             <div className='head-mes-1' style={{ color: 'grey' }}>Estado</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Estatus</div>
+            <div className='head-mes-1 status-abus' style={{ color: 'grey' }}>Estatus</div>
             <div className='one-po' />
           </div>
         </div>
@@ -113,7 +113,7 @@ export default class Aregistradas extends Component {
                 <div className='head-mes-1'>{actividades.fechai}</div>
                 <div className='head-mes-1'>{actividades.horai}</div>
                 <div className='head-mes-1'>{actividades.estados}</div>
-                <div className='head-mes-1'>{actividades.estatus}</div>
+                <div className='head-mes-1 status-abus'  >{actividades.estatus}
                 <div className='one-po'>
 
                   {actividades.estatus === 'Cancelado'&&
@@ -140,6 +140,7 @@ export default class Aregistradas extends Component {
                   check_circle
                     </span>
                   }
+                </div>
                 </div>
               </div>
             </div>
