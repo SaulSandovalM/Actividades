@@ -106,14 +106,13 @@ export default class Reporteniveldir extends Component {
         </div>
 
         <div className='btn-imprimir'>
-          <p className='txt-impri'>Imprimir</p>
+
           <ReactToPrint
             trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
             content={() => this.agenda}
           />
-
-
-        </div>
+            <p className='txt-impri'>Imprimir</p>
+        </div> 
 
         </div>
 

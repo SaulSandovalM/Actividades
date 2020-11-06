@@ -31,13 +31,13 @@
 .mes-center {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content:center;
   padding-top: 30px;
 }
 .icon-edit {
   color: grey;
   margin-top: -4px;
-  padding: 0;
+  padding-left:10;
   margin: 0;
 }
 .mes-center2 {
@@ -246,10 +246,13 @@
   justify-content: center;
   flex-direction: column;
 }
+
 .icon-sh {
   color: #e73c4e;
   font-size: 25px;
   margin-top: -4px;
+
+
 }
 .icon-sh2 {
   color: blue;

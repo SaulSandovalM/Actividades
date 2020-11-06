@@ -91,11 +91,12 @@ export default class Reportepdf extends Component {
             </div>
           </div>
           <div className='btn-imprimir'>
-            <p>Imprimir</p>
+
             <ReactToPrint
               trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
               content={() => this.agenda}
             />
+              <p className='txt-impri'>Imprimir</p>
           </div>
 
         </div>

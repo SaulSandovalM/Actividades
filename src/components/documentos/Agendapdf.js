@@ -85,7 +85,7 @@ export default class Agendasemanal extends Component {
               </div>
             </div>
             <div>
-            
+
 
             </div>
 
@@ -93,7 +93,7 @@ export default class Agendasemanal extends Component {
           </div>
 
 
-          {/*<div>
+        <div>
             {this.state.actividades.map(actividades =>
               <div>
                 <div classname='img-mano'>
@@ -159,7 +159,11 @@ export default class Agendasemanal extends Component {
               </div>
             )}
           </div>
-          */}
+
+
+
+
+          
 
           <div className='btn-imprimir'>
             <ReactToPrint
