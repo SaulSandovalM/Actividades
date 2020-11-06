@@ -21,8 +21,6 @@ export default class Aactividad extends Component {
     this.state = {
       fechai: '',
       horai: '',
-      fechaf: '',
-      horaf: '',
       actividad: '',
       objetivo: '',
       checkedOrganizada: false,
@@ -35,7 +33,8 @@ export default class Aactividad extends Component {
       responsable: '',
       asistente: '',
       otro : '',
-      estatus : 'En proceso'
+      estatus : 'En proceso',
+      duracion : ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleChangeOr = this.handleChangeOr.bind(this)
@@ -65,14 +64,12 @@ export default class Aactividad extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { fechai, horai, fechaf, horaf, actividad, objetivo, checkedOrganizada,
+    const { fechai, horai, actividad, objetivo, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus } = this.state
+            responsable, asistente, otro, estatus, duracion } = this.state
     this.ref.add({
       fechai,
       horai,
-      fechaf,
-      horaf,
       actividad,
       objetivo,
       checkedOrganizada,
@@ -85,13 +82,12 @@ export default class Aactividad extends Component {
       responsable,
       asistente,
       otro,
-      estatus
+      estatus,
+      duracion
     }).then((docRef) => {
       this.setState({
         fechai: '',
         horai: '',
-        fechaf: '',
-        horaf: '',
         actividad: '',
         objetivo: '',
         checkedOrganizada: false,
@@ -104,7 +100,8 @@ export default class Aactividad extends Component {
         responsable: '',
         asistente: '',
         otro : '',
-        estatus : 'En proceso'
+        estatus : 'En proceso',
+        duracion : ''
       })
       this.props.history.push('/ActividadesRegistradas')
       alert('Se Envio el formulario')
@@ -193,21 +190,12 @@ export default class Aactividad extends Component {
                   required
                 />
               </div>
-              <p className='martop-dt'>Fecha y hora de Finalizacion *</p>
               <div className='date-cont'>
                 <TextField
-                  type='date'
-                  style={{ width: '45%' }}
+                  label='Duración'
+                  style={{ marginTop: '15px', width: '45%' }}
+                  name='duracion'
                   onChange={this.onChange}
-                  name='fechaf'
-                  placeholdercolor='grey'
-                  required
-                />
-                <TextField
-                  type='time'
-                  style={{ width: '45%' }}
-                  onChange={this.onChange}
-                  name='horaf'
                   required
                 />
               </div>
