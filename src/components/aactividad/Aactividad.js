@@ -21,8 +21,6 @@ export default class Aactividad extends Component {
     this.state = {
       fechai: '',
       horai: '',
-      fechaf: '',
-      horaf: '',
       actividad: '',
       objetivo: '',
       checkedOrganizada: false,
@@ -35,7 +33,8 @@ export default class Aactividad extends Component {
       responsable: '',
       asistente: '',
       otro : '',
-      estatus : 'En proceso'
+      estatus : 'En proceso',
+      duracion : ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleChangeOr = this.handleChangeOr.bind(this)
@@ -65,14 +64,12 @@ export default class Aactividad extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { fechai, horai, fechaf, horaf, actividad, objetivo, checkedOrganizada,
+    const { fechai, horai, actividad, objetivo, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus } = this.state
+            responsable, asistente, otro, estatus, duracion } = this.state
     this.ref.add({
       fechai,
       horai,
-      fechaf,
-      horaf,
       actividad,
       objetivo,
       checkedOrganizada,
@@ -85,13 +82,12 @@ export default class Aactividad extends Component {
       responsable,
       asistente,
       otro,
-      estatus
+      estatus,
+      duracion
     }).then((docRef) => {
       this.setState({
         fechai: '',
         horai: '',
-        fechaf: '',
-        horaf: '',
         actividad: '',
         objetivo: '',
         checkedOrganizada: false,
@@ -104,7 +100,8 @@ export default class Aactividad extends Component {
         responsable: '',
         asistente: '',
         otro : '',
-        estatus : 'En proceso'
+        estatus : 'En proceso',
+        duracion : ''
       })
       this.props.history.push('/ActividadesRegistradas')
       alert('Se Envio el formulario')
@@ -193,21 +190,12 @@ export default class Aactividad extends Component {
                   required
                 />
               </div>
-              <p className='martop-dt'>Fecha y hora de Finalizacion *</p>
               <div className='date-cont'>
                 <TextField
-                  type='date'
-                  style={{ width: '45%' }}
+                  label='Duración'
+                  style={{ marginTop: '15px', width: '45%' }}
+                  name='duracion'
                   onChange={this.onChange}
-                  name='fechaf'
-                  placeholdercolor='grey'
-                  required
-                />
-                <TextField
-                  type='time'
-                  style={{ width: '45%' }}
-                  onChange={this.onChange}
-                  name='horaf'
                   required
                 />
               </div>
@@ -1402,6 +1390,184 @@ export default class Aactividad extends Component {
                       <MenuItem value={'Moris'}>Moris</MenuItem>
                       <MenuItem value={'Namiquipa'}>Namiquipa</MenuItem>
                   </Select>}
+                  {this.state.estados === 'Chiapas' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Acacoyagua'}>Acacoyagua</MenuItem>
+                      <MenuItem value={'Acala'}>Acala</MenuItem>
+                      <MenuItem value={'Acapetahua'}>Acapetahua</MenuItem>
+                      <MenuItem value={'Altamirano'}>Altamirano</MenuItem>
+                      <MenuItem value={'Amatán'}>Amatán</MenuItem>
+                      <MenuItem value={'Amatenango de la Frontera'}>Amatenango de la Frontera</MenuItem>
+                      <MenuItem value={'Amatenango del Valle'}>Amatenango del Valle</MenuItem>
+                      <MenuItem value={'Angel Albino Corzo'}>Angel Albino Corzo</MenuItem>
+                      <MenuItem value={'Arriaga'}>Arriaga</MenuItem>
+                      <MenuItem value={'Bejucal de Ocampo'}>Bejucal de Ocampo</MenuItem>
+                      <MenuItem value={'Bella Vista'}>Bella Vista</MenuItem>
+                      <MenuItem value={'Berriozábal'}>Berriozábal</MenuItem>
+                      <MenuItem value={'Bochil'}>Bochil</MenuItem>
+                      <MenuItem value={'El Bosque'}>El Bosque</MenuItem>
+                      <MenuItem value={'Cacahoatán'}>Cacahoatán</MenuItem>
+                      <MenuItem value={'Catazajá'}>Catazajá</MenuItem>
+                      <MenuItem value={'Cintalapa'}>Cintalapa</MenuItem>
+                      <MenuItem value={'Coapilla'}>Coapilla</MenuItem>
+                      <MenuItem value={'Comitán de Domínguez'}>Comitán de Domínguez</MenuItem>
+                      <MenuItem value={'La Concordia'}>La Concordia</MenuItem>
+                      <MenuItem value={'Copainalá'}>Copainalá</MenuItem>
+                      <MenuItem value={'Chalchihuitán'}>Chalchihuitán</MenuItem>
+                      <MenuItem value={'Chamula'}>Chamula</MenuItem>
+                      <MenuItem value={'Chanal'}>Chanal</MenuItem>
+                      <MenuItem value={'Chapultenango'}>Chapultenango</MenuItem>
+                      <MenuItem value={'Chenalhó'}>Chenalhó</MenuItem>
+                      <MenuItem value={'Chiapa de Corzo'}>Chiapa de Corzo</MenuItem>
+                      <MenuItem value={'Chiapilla'}>Chiapilla</MenuItem>
+                      <MenuItem value={'Chicoasén'}>Chicoasén</MenuItem>
+                      <MenuItem value={'Chicomuselo'}>Chicomuselo</MenuItem>
+                      <MenuItem value={'Chilón'}>Chilón</MenuItem>
+                      <MenuItem value={'Escuintla'}>Escuintla</MenuItem>
+                      <MenuItem value={'Francisco León'}>Francisco León</MenuItem>
+                      <MenuItem value={'Frontera Comalapa'}>Frontera Comalapa</MenuItem>
+                      <MenuItem value={'Frontera Hidalgo'}>Frontera Hidalgo</MenuItem>
+                      <MenuItem value={'La Grandeza'}>La Grandeza</MenuItem>
+                      <MenuItem value={'Huehuetán'}>Huehuetán</MenuItem>
+                      <MenuItem value={'Ixtacomitán'}>Ixtacomitán</MenuItem>
+                      <MenuItem value={'Ixtapa'}>Ixtapa</MenuItem>
+                      <MenuItem value={'Ixtapangajoya'}>Ixtapangajoya</MenuItem>
+                      <MenuItem value={'Jiquipilas'}>Jiquipilas</MenuItem>
+                      <MenuItem value={'Jitotol'}>Jitotol</MenuItem>
+                      <MenuItem value={'Juárez'}>Juárez</MenuItem>
+                  </Select>}
+                  {this.state.estados === 'Colima' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Armería'}>Armería</MenuItem>
+                      <MenuItem value={'Colima'}>Colima</MenuItem>
+                      <MenuItem value={'Comala'}>Comala</MenuItem>
+                      <MenuItem value={'Coquimatlán'}>Coquimatlán</MenuItem>
+                      <MenuItem value={'Cuauhtémoc'}>Cuauhtémoc</MenuItem>
+                      <MenuItem value={'Ixtlahuacán'}>Ixtlahuacán</MenuItem>
+                      <MenuItem value={'Manzanillo'}>Manzanillo</MenuItem>
+                      <MenuItem value={'Minatitlán'}>Minatitlán</MenuItem>
+                      <MenuItem value={'Tecomán'}>Tecomán</MenuItem>
+                      <MenuItem value={'Villa de Álvarez'}>Villa de Álvarez</MenuItem>
+                  </Select>}
+                  {this.state.estados === 'Coahuila' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Abasolo'}>Abasolo</MenuItem>
+                      <MenuItem value={'Acuña'}>Acuña</MenuItem>
+                      <MenuItem value={'Allende'}>Allende</MenuItem>
+                      <MenuItem value={'Arteaga'}>Arteaga</MenuItem>
+                      <MenuItem value={'Candela'}>Candela</MenuItem>
+                      <MenuItem value={'Castaños'}>Castaños</MenuItem>
+                      <MenuItem value={'Cuatro Ciénegas'}>Cuatro Ciénegas</MenuItem>
+                      <MenuItem value={'Escobedo'}>Escobedo</MenuItem>
+                      <MenuItem value={'Francisco I. Madero'}>Francisco I. Madero</MenuItem>
+                      <MenuItem value={'Frontera'}>Frontera</MenuItem>
+                      <MenuItem value={'General Cepeda'}>General Cepeda</MenuItem>
+                      <MenuItem value={'Guerrero'}>Guerrero</MenuItem>
+                      <MenuItem value={'Hidalgo'}>Hidalgo</MenuItem>
+                      <MenuItem value={'Jiménez'}>Jiménez</MenuItem>
+                      <MenuItem value={'Juárez'}>Juárez</MenuItem>
+                      <MenuItem value={'Lamadrid'}>Lamadrid</MenuItem>
+                      <MenuItem value={'Matamoros'}>Matamoros</MenuItem>
+                      <MenuItem value={'Monclova'}>Monclova</MenuItem>
+                      <MenuItem value={'Morelos'}>Morelos</MenuItem>
+                      <MenuItem value={'Múzquiz'}>Múzquiz</MenuItem>
+                      <MenuItem value={'Nadadores'}>Nadadores</MenuItem>
+                      <MenuItem value={'Nava'}>Nava</MenuItem>
+                      <MenuItem value={'Ocampo'}>Ocampo</MenuItem>
+                      <MenuItem value={'Parras'}>Parras</MenuItem>
+                      <MenuItem value={'Piedras Negras'}>Piedras Negras</MenuItem>
+                      <MenuItem value={'Progreso'}>Progreso</MenuItem>
+                      <MenuItem value={'Ramos Arizpe'}>Ramos Arizpe</MenuItem>
+                      <MenuItem value={'Sabinas'}>Sabinas</MenuItem>
+                      <MenuItem value={'Sacramento'}>Sacramento</MenuItem>
+                      <MenuItem value={'Saltillo'}>Saltillo</MenuItem>
+                      <MenuItem value={'San Buenaventura'}>San Buenaventura</MenuItem>
+                      <MenuItem value={'San Juan de Sabinas'}>San Juan de Sabinas</MenuItem>
+                      <MenuItem value={'San Pedro'}>San Pedro</MenuItem>
+                      <MenuItem value={'Sierra Mojada'}>Sierra Mojada</MenuItem>
+                      <MenuItem value={'Torreón'}>Torreón</MenuItem>
+                      <MenuItem value={'Viesca'}>Viesca</MenuItem>
+                      <MenuItem value={'Villa Unión'}>Villa Unión</MenuItem>
+                  </Select>}
+                  {this.state.estados === 'Campeche' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Calkiní'}>Calkiní</MenuItem>
+                      <MenuItem value={'Campeche'}>Campeche</MenuItem>
+                      <MenuItem value={'Carmen'}>Carmen</MenuItem>
+                      <MenuItem value={'Champotón'}>Champotón</MenuItem>
+                      <MenuItem value={'Hecelchakán'}>Hecelchakán</MenuItem>
+                      <MenuItem value={'Hopelchén'}>Hopelchén</MenuItem>
+                      <MenuItem value={'Palizada'}>Palizada</MenuItem>
+                      <MenuItem value={'Tenabo'}>Tenabo</MenuItem>
+                      <MenuItem value={'Escárcega'}>Escárcega</MenuItem>
+                      <MenuItem value={'Calakmul'}>Calakmul</MenuItem>
+                      <MenuItem value={'Candelaria'}>Candelaria</MenuItem>
+                  </Select>}
+                  {this.state.estados === 'Baja California Sur' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Comondú'}>Comondú</MenuItem>
+                      <MenuItem value={'Mulegé'}>Mulegé</MenuItem>
+                      <MenuItem value={'La Paz'}>La Paz</MenuItem>
+                      <MenuItem value={'Los Cabos'}>Los Cabos</MenuItem>
+                      <MenuItem value={'Loreto'}>Loreto</MenuItem>
+                  </Select>}
+                  {this.state.estados === 'Baja California' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Ensenada'}>Ensenada</MenuItem>
+                      <MenuItem value={'Mexicali'}>Mexicali</MenuItem>
+                      <MenuItem value={'Tecate'}>Tecate</MenuItem>
+                      <MenuItem value={'Tijuana'}>Tijuana</MenuItem>
+                      <MenuItem value={'Playas de Rosarito'}>Playas de Rosarito</MenuItem>
+                  </Select>}
+                  {this.state.estados === 'Aguascalientes' &&
+                    <Select
+                      label='Municipios'
+                      name='municipios'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value={'Aguascalientes'}>Aguascalientes</MenuItem>
+                      <MenuItem value={'Asientos'}>Asientos</MenuItem>
+                      <MenuItem value={'Calvillo'}>Calvillo</MenuItem>
+                      <MenuItem value={'Cosío'}>Cosío</MenuItem>
+                      <MenuItem value={'Jesús María'}>Jesús María</MenuItem>
+                      <MenuItem value={'Pabellón de Arteaga'}>Pabellón de Arteaga</MenuItem>
+                      <MenuItem value={'Rincón de Romos'}>Rincón de Romos</MenuItem>
+                      <MenuItem value={'San José de Gracia'}>San José de Gracia</MenuItem>
+                      <MenuItem value={'Tepezalá'}>Tepezalá</MenuItem>
+                      <MenuItem value={'El Llano'}>El Llano</MenuItem>
+                      <MenuItem value={'San Francisco de los Romo'}>San Francisco de los Romo</MenuItem>
+                  </Select>}
                 </FormControl>
               </div>
               <TextField
@@ -1419,7 +1585,7 @@ export default class Aactividad extends Component {
                   onChange={this.onChange}
                   required
                 >
-                  <MenuItem value={'Raúl Arroyo'}>Raúl Arroyo</MenuItem>
+                  <MenuItem value={'Raúl ARROYO'}>Raúl ARROYO</MenuItem>
                   <MenuItem value={'Arturo Flores Molina'}>Arturo Flores Molina</MenuItem>
                   <MenuItem value={'Diana Corona Meneses'}>Diana Corona Meneses</MenuItem>
                   <MenuItem value={'Eder Arteaga Tavera'}>Eder Arteaga Tavera</MenuItem>
