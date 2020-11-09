@@ -52,11 +52,11 @@ export default class Agendasemanal extends Component {
     return (
       <div className='fader'>
         <div className='btn-imprimir'>
-          <p>Imprimir</p>
-          <ReactToPrint
-            trigger={() => <span className='material-icons' style={{ cursor: 'pointer' }}>print</span>}
-            content={() => this.agenda}
-          />
+        <ReactToPrint
+          trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
+          content={() => this.agenda}
+        />
+          <p className='txt-impri'>Imprimir</p>
         </div>
 
 
@@ -163,13 +163,14 @@ export default class Agendasemanal extends Component {
 
 
 
-          
+
 
           <div className='btn-imprimir'>
-            <ReactToPrint
-              trigger={() => <span class='material-icons' style={{ cursor: 'pointer' }}>print</span>}
-              content={() => this.agenda}
-            />
+          <ReactToPrint
+            trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
+            content={() => this.agenda}
+          />
+            <p className='txt-impri'>Imprimir</p>
           </div>
         </div>
       </div>
