@@ -109,12 +109,13 @@ export default class Reportes extends Component {
                 <div className='head-mes-rep'>{actividades.area}</div>
                 <div className='head-mes-rep'>{actividades.fechai}</div>
                 <div className='head-mes-rep'>{actividades.estatus}</div>
+
                 <div className='head-mes-imp'>
-                <a  className='hiper' href='/Reportepdf'>
+                  <a  className='hiper' href='/Reportepdf'>
                   <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>
                     article
                   </span>
-                </a>
+                  </a>
                 </div>
                 <div className='head-mes-imp'>
                   <a className='hiper' href='/Reporteniveldir'>
@@ -123,6 +124,7 @@ export default class Reportes extends Component {
                   </span>
                   </a>
                 </div>
+
                 <div className='head-mes-imp'>
                   <a className='hiper' href='/Agendasemanal'>
                    <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
@@ -130,6 +132,7 @@ export default class Reportes extends Component {
                   </span>
                   </a>
                 </div>
+
                 <div className='head-mes-imp'>
                   <a className='hiper' href='/Agendapdf'>
                    <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>

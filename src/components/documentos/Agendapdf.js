@@ -171,6 +171,7 @@ export default class Agendasemanal extends Component {
             content={() => this.agenda}
           />
             <p className='txt-impri'>Imprimir</p>
+            <button href='/Agendawpdf'>Regresar</button>
           </div>
         </div>
       </div>
