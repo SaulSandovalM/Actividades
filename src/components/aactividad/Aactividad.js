@@ -104,7 +104,7 @@ export default class Aactividad extends Component {
         duracion : ''
       })
       this.props.history.push('/ActividadesRegistradas')
-      alert('Se Envio el formulario')
+      alert('Se Envio el formular')
     })
     .catch((error) => {
       console.error('Error al crear: ', error)

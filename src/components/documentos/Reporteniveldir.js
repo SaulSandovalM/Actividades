@@ -39,11 +39,25 @@ export default class Reporteniveldir extends Component {
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
+  handleBack() {
+      this.props.history.push('/Reportes');
+    }
 
   render () {
     return (
-      <div className='fader-reporte' >
+      <div className='fader-reporte-r' >
+      <div className='btn-imprimir'>
+      <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+        reply
+      </span>
+        {/*<p className='txt-impri'>Regresar</p>*/}
+      <ReactToPrint
+        trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
+        content={() => this.agenda}
+      />
+          {/*<p className='txt-impri'>Imprimir</p>*/}
 
+      </div>
       <div>
       <div ref={el => (this.agenda = el)}>
         <div className='all'>
@@ -106,13 +120,17 @@ export default class Reporteniveldir extends Component {
         </div>
 
         <div className='btn-imprimir'>
+        <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+          reply
+        </span>
+          {/*<p className='txt-impri'>Regresar</p>*/}
+        <ReactToPrint
+          trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
+          content={() => this.agenda}
+        />
+            {/*<p className='txt-impri'>Imprimir</p>*/}
 
-          <ReactToPrint
-            trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
-            content={() => this.agenda}
-          />
-            <p className='txt-impri'>Imprimir</p>
-        </div> 
+        </div>
 
         </div>
 

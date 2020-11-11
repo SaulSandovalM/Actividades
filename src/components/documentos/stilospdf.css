@@ -91,9 +91,11 @@ justify-content: space-between;
 
 }
 .btn-imprimir{
-  padding-top:5%;
+  width: 130vh;
+  padding-top:2%;
   display:flex;
-  justify-content:center;
+  justify-content:flex-end;
+
 
 }
 .btn-b-l-2{
@@ -320,7 +322,7 @@ margin: 3px;
   justify-content: space-between;
 }
 /*reporte Nivel direccion*/
-.fader-reporte{
+.fader-reporte-r{
   padding-left: 260px;
   width:1600px;
 }
@@ -370,8 +372,8 @@ table{
 }
 
 .tabla-dir{
-  padding-left: 40px;
-  width:1500px;
+  padding-left: 150px;
+  width:1400px;
 }
 .tabla-top{
   padding: 10px;
@@ -402,7 +404,7 @@ table{
 
 }
 .tabla-l{
-  width:150px;
+  width:200px;
 }
 .tabla-a{
   width: 350px;
@@ -416,12 +418,15 @@ table{
 }
 
 .sub-ca{
-  padding-left: 50px;
-  width: 1380px;
-
+  padding-left: 155px;
+  width: 1000px;
+}
+.txt-dir{
+  font-weight: bold;
+  font-size: 100%;
 }
 .sub-fe{
-  width: 1380px;
+  width:1450px;
   display: flex;
   justify-content: flex-end;
 }
@@ -430,7 +435,8 @@ table{
 /*reportes pdf*/
 
 .fader-reporte{
-  padding-left: 270px;
+  padding-left: 170px;
+  width: 90%;
 
 }
 /*imagenes titulo reporte pdf*/
@@ -444,12 +450,12 @@ table{
   padding-right: 60px;
 }
 .titulo-reporte{
-width: 1400px;
-padding-top: 50px;
+
+padding-top: 60px;
 display: flex;
 justify-content: center;
-padding-right:400px;
 padding-bottom: 30px;
+
 }
 .fecha-reporte{
   display: flex;

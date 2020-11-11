@@ -8,6 +8,7 @@ import iconubi from './icons/iconubi.png'
 import iconmano from './icons/iconmano.png'
 import precentacion from './icons/precentacion.png'
 import imagen from './icons/Imagen1.jpg'
+
 export default class Agendasemanal extends Component {
   constructor (props) {
     super(props)
@@ -47,17 +48,26 @@ export default class Agendasemanal extends Component {
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
+  handleBack() {
+      this.props.history.push('/Reportes');
+    }
 
   render () {
     return (
       <div className='fader'>
         <div className='btn-imprimir'>
+        <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+          reply
+        </span>
+          {/*<p className='txt-impri'>Regresar</p>*/}
         <ReactToPrint
           trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
           content={() => this.agenda}
         />
-          <p className='txt-impri'>Imprimir</p>
+            {/*<p className='txt-impri'>Imprimir</p>*/}
+
         </div>
+
 
 
         <div className='contedorall' ref={el => (this.agenda = el)}>
@@ -166,12 +176,16 @@ export default class Agendasemanal extends Component {
 
 
           <div className='btn-imprimir'>
+          <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+            reply
+          </span>
+            {/*<p className='txt-impri'>Regresar</p>*/}
           <ReactToPrint
             trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
             content={() => this.agenda}
           />
-            <p className='txt-impri'>Imprimir</p>
-            <button href='/Agendawpdf'>Regresar</button>
+              {/*<p className='txt-impri'>Imprimir</p>*/}
+
           </div>
         </div>
       </div>

@@ -92,7 +92,7 @@ export default class Reportes extends Component {
             <div className='head-mes-rep' style={{ color: 'grey' }}>Estatus</div>
             <div className='head-mes-imp' style={{ color: 'grey' }}>Agenda</div>
             <div className='head-mes-imp' style={{ color: 'grey' }}>Reporte</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Agenda </div>
+            <div className='head-mes-imp' style={{ color: 'grey' }}>Agenda</div>
             <div className='head-mes-imp' style={{ color: 'grey' }}>Actividades</div>
             <div className='one-po' />
           </div>
