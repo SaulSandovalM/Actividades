@@ -1,9 +1,13 @@
 import React, { Component} from 'react'
+import ReactToPrint from 'react-to-print'
+import Fab from '@material-ui/core/Fab'
+import ReplyIcon from '@material-ui/icons/Reply'
+import ImpIcon from '@material-ui/icons/Print'
 import './stilospdf.css'
 import firebase from '../../Firebase'
 import logoh from './icons/logoh.png'
 import logop from './icons/logo-PGJH.jpg'
-import ReactToPrint from 'react-to-print'
+
 
 export default class Reportepdf extends Component {
   constructor (props) {
@@ -50,20 +54,33 @@ export default class Reportepdf extends Component {
 
   render () {
     return (
+      <div>
+      <div className='btn-imprimir'>
+        <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+          <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
+            <ReplyIcon />
+          </Fab>
+            {/*<p className='txt-impri'>
+              Regresar
+            </p>*/}
+        </span>
+        <div clasName=''>
+          <ReactToPrint
+            trigger={() =>
+          <span class='material-icons impresora-padding' style={{ cursor:'pointer' }}>
+              <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
+                <ImpIcon />
+              </Fab>
+          </span>}
+            content={() => this.agenda}
+          />
+            {/*<p className='txt-impri'>
+              Imprimir
+            </p>*/}
+        </div>
+        </div>
       <div className='fader-reporte' >
 
-          <div className='btn-imprimir'>
-            <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
-              arrow_back
-            </span>
-              {/*<p className='txt-impri'>Regresar</p>*/}
-            <ReactToPrint
-              trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
-              content={() => this.agenda}
-            />
-              {/*<p className='txt-impri'>Imprimir</p>*/}
-
-          </div>
             <div clasName="sub-f">
               <div clasName="imprime" ref={el => (this.agenda = el)}>
                 <div>
@@ -106,23 +123,35 @@ export default class Reportepdf extends Component {
 
                 </div>
               </div>
-              <div className='btn-imprimir'>
-                <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
-                  reply
-                </span>
-                  {/*<p className='txt-impri'>Regresar</p>*/}
-                <ReactToPrint
-                  trigger={() => <span class='material-icons' style={{ cursor:'pointer' }}>print</span>}
-                  content={() => this.agenda}
-                />
-                  {/*<p className='txt-impri'>Imprimir</p>*/}
-                </div>
-
-
             </div>
 
 
       </div>
+      <div className='btn-imprimir'>
+        <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+          <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
+            <ReplyIcon />
+          </Fab>
+            {/*<p className='txt-impri'>
+              Regresar
+            </p>*/}
+        </span>
+        <div clasName=''>
+          <ReactToPrint
+            trigger={() =>
+          <span class='material-icons impresora-padding' style={{ cursor:'pointer' }}>
+              <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
+                <ImpIcon />
+              </Fab>
+          </span>}
+            content={() => this.agenda}
+          />
+            {/*<p className='txt-impri'>
+              Imprimir
+            </p>*/}
+        </div>
+        </div>
+    </div>
     )
   }
 }
