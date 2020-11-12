@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import './Reportes.css'
 import firebase from '../../Firebase'
-import { Link } from 'react-router-dom'
-import FormControl from '@material-ui/core/FormControl'
-import Select from '@material-ui/core/Select'
-import MenuItem from '@material-ui/core/MenuItem'
-import InputLabel from '@material-ui/core/InputLabel'
 import TextField from '@material-ui/core/TextField'
 
 export default class Reportes extends Component {
@@ -16,11 +11,11 @@ export default class Reportes extends Component {
     this.state = {
       actividades: [],
       tipoA: '',
-      ano: ''
+      ano: '',
+      fecha: '',
+      search: ''
     }
   }
-
-
 
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
@@ -42,47 +37,43 @@ export default class Reportes extends Component {
    })
   }
 
-  resetear = (e) =>{
-            e.preventDefault()
-            this.setState({count:0})
-        }
-
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
 
+  handleChange(event) {
+    this.setState({search: event.target.value});
+  }
+
   render () {
+    var moment = require('moment')
+    var date = moment('2020').add(this.state.search, 'weeks').startOf('isoweek').format('YYYY-MM-DD')
+
+    const filterData = this.state.actividades.filter(
+      (actividades) => {
+        return  actividades.fechai.indexOf(date) !== -1
+      }
+    )
+
     return (
       <div className='mg-conta'>
         <div className='nav-mm'>
           <h1 className='h1-lm'>Reportes</h1>
         </div>
-
         <div className='busq'>
           <div className='imp-busq-2'>
             <div className='btn-reportes'>
               <p className='txt-rep'>Fecha inicial:* </p>
               <TextField
-                type='date'
                 style={{  width: '30%', paddingLeft: '20px' }}
                 name='fecha'
                 required
-                />
-                <p className='txt-rep'>Fecha final:* </p>
-                <TextField
-                  type='date'
-                  style={{ width: '35%', paddingLeft:'20px' }}
-                  name='fecha'
-                  required
-                />
-                <a href='/Reportes'  className = ''>
-                <button className='btn-b-l'>Limpiar</button>
-                </a>
-
-              </div>
+                value={this.state.search}
+                onChange={this.handleChange.bind(this)}
+              />
+            </div>
+          </div>
         </div>
-        </div>
-
         <div className='mes-center' style={{ position: 'fixed', marginTop: '183px', background: '#fafafa' }}>
           <div className='mes-container' style={{ marginRight: '256px' }}>
             <div className='head-mes-rep' style={{paddingLeft: '3.5%', color: 'grey'}}>Actividad</div>
@@ -98,7 +89,7 @@ export default class Reportes extends Component {
           </div>
         </div>
         <div style={{ paddingTop: '270px', marginLeft: '0px' }}>
-          {this.state.actividades.map(actividades =>
+          {filterData.map(actividades =>
             <div className='mes-center3'>
               <div className='mes-container-map' >
                 <span className='material-icons icon-sh' style={{ marginLeft: '-10px', marginRight: '1px'}}>

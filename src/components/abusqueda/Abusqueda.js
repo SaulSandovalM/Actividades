@@ -58,6 +58,10 @@ export default class Aregistradas extends Component {
     this.setState({ search: event.target.value.substr(0, 20) })
   }
 
+  handleChange(event) {
+    this.setState({search: event.target.search});
+  }
+
   render () {
     const filterData = this.state.actividades.filter(
       (actividades) => {
@@ -76,7 +80,7 @@ export default class Aregistradas extends Component {
               <InputLabel htmlFor="input-with-icon-adornment">Nombre a buscar</InputLabel>
               <Input
                 value={this.state.search}
-                onChange={this.updateSeacrh.bind(this)}
+                onChange={this.handleChange.bind(this)}
                 startAdornment={
                   <InputAdornment position="start">
                     <Search />

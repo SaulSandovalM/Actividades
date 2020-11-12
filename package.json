@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^7.2.1",
     "date-fns": "^2.16.1",
     "firebase": "^7.18.0",
+    "moment": "^2.29.1",
     "print": "^1.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
