@@ -90,7 +90,7 @@ export default class Agendasemanal extends Component {
                 <p className='txt-age-1'>ACTIVIDADES</p>
                 <div className='linea' />
                 <h2 className='txt-res'>RELEVANTES</h2>
-                <p className='txt-fe'>Enero 13 2020</p>
+                <p className='txt-fe'>Enero 13, 2020</p>
               </div>
               <div className='sub-contenedor-2'>
                 <div className='caja'>
@@ -100,35 +100,20 @@ export default class Agendasemanal extends Component {
                 </div>
               </div>
             </div>
-
-
-            <div>
-              <div>
-                <div className='imagen-pre'>
-                    <img className='imagen-carga' src={imagen} alt='' />
-                </div>
-              </div>
-              <div>
-
-
-              </div>
-
-
-            </div>
-
-
           <div>
               {this.state.actividades.map(actividades =>
                 <div>
                   <div classname='img-mano'>
                     <div className='esp-pro'>
                     <div className='imagen-pre'>
-                      <img className='imagen-carga' src={imagen} alt='' />
+                      <img className='imagen-carga' src={imagen} alt=' ' />
                     </div>
                     </div>
                     <div className='txt-img-mano'>
                       <div>
-                        <img className='iconmano' src={iconmano} alt='' />
+                        <span class="material-icons">
+                          thumb_up
+                        </span>
                       </div>
                       <div>
                         <p className='txt-com-mano'>
@@ -148,21 +133,27 @@ export default class Agendasemanal extends Component {
                       <div className='datos-generales'>
                         <div className='icons1'>
                           <div className='icons-pos'>
-                            <img className='icons' src={iconfe} alt='' />
+                              <span class="material-icons">
+                                date_range
+                              </span>
                             <p className='icons-txt'>{actividades.fechai}-{actividades.fechaf} </p>
                           </div>
                         </div>
 
                         <div className='icons'>
                           <div className='icons-pos'>
-                            <img className='icons' src={iconhora} alt='' />
+                            <span class="material-icons">
+                              alarm
+                            </span>
                             <p className='icons-txt'>{actividades.horai}-{actividades.horaf} hrs</p>
                           </div>
                         </div>
 
                         <div className='icons'>
                           <div className='icons-pos'>
-                            <img className='icons' src={iconubi} alt='' />
+                            <span class="material-icons">
+                              place
+                            </span>
                             <p className='icons-txt'>
                               {actividades.lugar}
                               {actividades.municipio}

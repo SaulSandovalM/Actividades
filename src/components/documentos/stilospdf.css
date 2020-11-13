@@ -27,17 +27,22 @@ margin-top:0;
   font: Arial;
 }
 .img-azul{
-
   padding-left: 0px;
-  width:900px;
-  height: 900px;
+  width:850px;
+  height: 1200px;
 }
 /* segunda hoja*/
 .segunda-vista{
   height: 1000px;
 }
+.imagen-pre{
+  margin-left:auto;
+  margin-right: auto;
+
+}
 .imagen-carga{
-  height: 750px;
+  height: 950px;
+  width: 100%;
 }
 .sub-contenedor-2{
   height: 100px;
@@ -217,7 +222,6 @@ width: 100px;
   padding-top: 40px;
 }
 .esp-pro{
-  border: 3px solid #91D025;
   height: 80%;
   margin-left:0px;
 }

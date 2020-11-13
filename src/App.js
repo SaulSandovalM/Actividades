@@ -15,7 +15,7 @@ import Abusqueda from './components/abusqueda/Abusqueda'
 import Sactividad from './components/sactividad/Sactividad'
 import Reportes from './components/reportes/Reportes'
 import Autorizacion from './components/autorizacion/Autorizacion'
-import Agendapdf from './components/documentos/Agendapdf'
+import Arelevante from './components/documentos/Arelevante'
 import Agendasemanal from './components/documentos/Agendasemanal'
 import Reporteniveldir from './components/documentos/Reporteniveldir'
 import Reportepdf from './components/documentos/Reportepdf'
@@ -118,8 +118,8 @@ function App (props) {
       />
       <ProtectedRoute
         exact
-        path='/Agendapdf'
-        component={Agendapdf}
+        path='/Arelevante'
+        component={Arelevante}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
