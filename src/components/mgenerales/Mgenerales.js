@@ -35,6 +35,9 @@ export default class Mgenerales extends Component {
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
   }
+  handleBack() {
+      this.props.history.push('/ActividadesRegistradas');
+    }
 
   render() {
     return (
@@ -57,6 +60,7 @@ export default class Mgenerales extends Component {
             }
           </div>
         )}
+        
       </div>
     )
   }

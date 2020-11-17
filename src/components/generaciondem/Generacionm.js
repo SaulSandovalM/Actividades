@@ -4,6 +4,7 @@ import './Generacionm.css'
 import TextField from '@material-ui/core/TextField'
 import Fab from '@material-ui/core/Fab'
 import DoneIcon from '@material-ui/icons/Done'
+import CloseIcon from '@material-ui/icons/Close'
 import Input from '@material-ui/core/Input'
 
 export default class Generacionm extends Component {
@@ -67,6 +68,10 @@ export default class Generacionm extends Component {
       console.error('Error al crear: ', error)
     })
   }
+  handleBack() {
+      this.props.history.push('/Listademensajes');
+    }
+
 
   render() {
     const { asunto, descripcion } = this.state
@@ -109,6 +114,11 @@ export default class Generacionm extends Component {
               <div className='add-gb'>
                 <Fab color='primary' aria-label='add' style={{background: 'green'}} type='submit'>
                   <DoneIcon />
+                </Fab>
+              </div>
+              <div className='save-btr'>
+                <Fab color='primary' aria-label='add' style={{ background: 'red' }} onClick={this.handleBack.bind(this)}>
+                  <CloseIcon />
                 </Fab>
               </div>
             </form>
