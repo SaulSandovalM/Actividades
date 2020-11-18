@@ -4,10 +4,12 @@ import './Sactividad.css'
 import TextField from '@material-ui/core/TextField'
 import Fab from '@material-ui/core/Fab'
 import DoneIcon from '@material-ui/icons/Done'
+import CloseIcon from '@material-ui/icons/Close'
 import Input from '@material-ui/core/Input'
 import Switch from '@material-ui/core/Switch'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { withStyles } from '@material-ui/core/styles';
+
 
 export default class Sactividad extends Component {
   constructor (props) {
@@ -79,6 +81,9 @@ export default class Sactividad extends Component {
       checkedReprogramar: !this.state.checkedReprogramar,
     });
   }
+  handleBack() {
+      this.props.history.push('/ActividadesRegistradas');
+    }
 
   handleImage (event) {
     const file = event.target.files[0]
@@ -129,7 +134,7 @@ export default class Sactividad extends Component {
         imgeevi: '',
         estatus : ''
       })
-      this.props.history.push('/ActividadInforme')
+      this.props.history.push('/ActividadesRegistradas')
         alert('Se Envio el formulario')
     })
     .catch((error) => {
@@ -210,28 +215,8 @@ export default class Sactividad extends Component {
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
               <h2>Seguimiento de Actividad</h2>
-              <TextField
-                label='Resultados obtenidos'
-                style={{ marginTop: '15px' }}
-                name='resultado'
-                onChange={this.onChange}
-                inputProps={{
-                  maxLength: 150
-                }}
-                multiline
-                required
-              />
-              <TextField
-                label='Relevancia'
-                style={{ marginTop: '15px' }}
-                name='relevancia'
-                onChange={this.onChange}
-                inputProps={{
-                  maxLength: 300
-                }}
-                multiline
-                required
-              />
+
+
               <FormControlLabel
                 control={
                   <IOSSwitch
@@ -240,7 +225,7 @@ export default class Sactividad extends Component {
                     onChange={this.handleChangeCancel}
                   />
                 }
-                label='¿Actividad cancelada?'
+                label='¿Cancelar Actividad?'
                 style={{ marginTop: '20px' }}
               />
               {this.state.checkedCancelada === true &&
@@ -287,26 +272,46 @@ export default class Sactividad extends Component {
                       required
                     />
                   </div>
-                  <p className='martop-dt'>Fecha y hora de Finalizacion *</p>
+
                   <div className='date-cont'>
                     <TextField
-                      type='date'
-                      style={{ width: '45%' }}
-                      name='fechaf'
-                      onChange={this.onChange}
-                      placeholdercolor='grey'
-                      required
-                    />
-                    <TextField
-                      type='time'
-                      style={{ width: '45%' }}
-                      name='horaf'
+                      label='Duración'
+                      style={{ marginTop: '15px', width: '45%' }}
+                      name='duracion'
                       onChange={this.onChange}
                       required
                     />
+                    <div className='hra-hras'>
+                      <p>hr/hrs</p>
+                    </div>
                   </div>
+
                 </div>
               }
+
+              <TextField
+                label='Descripcion de Actividad'
+                style={{ marginTop: '15px' }}
+                name='resultado'
+                onChange={this.onChange}
+                inputProps={{
+                  maxLength: 150
+                }}
+                multiline
+                required
+              />
+              <TextField
+                label='Relevancia'
+                style={{ marginTop: '15px' }}
+                name='relevancia'
+                onChange={this.onChange}
+                inputProps={{
+                  maxLength: 300
+                }}
+                multiline
+                required
+              />
+
               {this.state.checkedCancelada === false &&
                 <div>
                   <Input
@@ -320,6 +325,11 @@ export default class Sactividad extends Component {
               <div className='add-gb'>
                 <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
                   <DoneIcon />
+                </Fab>
+              </div>
+              <div className='save-btr'>
+                <Fab color='primary' aria-label='add' style={{ background: 'red' }} onClick={this.handleBack.bind(this)}>
+                  <CloseIcon />
                 </Fab>
               </div>
             </form>

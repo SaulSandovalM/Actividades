@@ -11,53 +11,52 @@ import iconubi from './icons/iconubi.png'
 import precentacion from './icons/precentacion.png'
 import presentacionv from './icons/presentacionv.png'
 
-
 export default class Agendasemanal extends Component {
-    constructor (props) {
-      super(props)
-      this.ref = firebase.firestore().collection('actividades')
-      this.unsubscribe = null
-      this.state = {
-        actividades: []
-
-      }
+  constructor (props) {
+    super(props)
+    this.ref = firebase.firestore().collection('actividades')
+    this.unsubscribe = null
+    this.state = {
+      actividades: []
     }
+  }
 
-    onCollectionUpdate = (querySnapshot) => {
-      const actividades = []
-      querySnapshot.forEach((doc) => {
-        const {fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado } = doc.data()
-        actividades.push({
-          key: doc.id,
-          doc,
-          fechai,
-          fechaf,
-          convoca,
-          horai,
-          objetivo,
-          resposable,
-          imagen,
-          lugar,
-          estado
-        })
+  onCollectionUpdate = (querySnapshot) => {
+    const actividades = []
+    querySnapshot.forEach((doc) => {
+      const {fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado } = doc.data()
+      actividades.push({
+        key: doc.id,
+        doc,
+        fechai,
+        fechaf,
+        convoca,
+        horai,
+        objetivo,
+        resposable,
+        imagen,
+        lugar,
+        estado
       })
-      this.setState({
-        actividades
-     })
-    }
+    })
+    this.setState({
+      actividades
+   })
+  }
 
-    componentDidMount() {
-      this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
-    }
-    handleBack() {
-        this.props.history.push('/Reportes');
-      }
+  componentDidMount() {
+    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+  }
+
+  handleBack() {
+    this.props.history.push('/Reportes');
+  }
 
   render () {
     return (
       <div>
         <div className='btn-imprimir'>
-          <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+          <span class="material-icons" style={{ cursor: 'pointer'  }} onClick={this.handleBack.bind(this)}>
             <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
               <ReplyIcon />
             </Fab>
@@ -65,14 +64,14 @@ export default class Agendasemanal extends Component {
                 Regresar
               </p>*/}
           </span>
-          <div clasName=''>
+          <div>
             <ReactToPrint
               trigger={() =>
-            <span class='material-icons impresora-padding' style={{ cursor:'pointer' }}>
-                <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
-                  <ImpIcon />
-                </Fab>
-            </span>}
+                <span class='material-icons impresora-padding' style={{ cursor:'pointer' }}>
+                    <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
+                      <ImpIcon />
+                    </Fab>
+                </span>}
               content={() => this.agenda}
             />
               {/*<p className='txt-impri'>
@@ -82,7 +81,6 @@ export default class Agendasemanal extends Component {
           </div>
           <div className='fader'>
             <div className='contedorall' ref={el => (this.agenda = el)}>
-
                   <div className='contenedor-1'>
                     <div className='sub-contenedor'>
                       <p className='txt-age-2'>
@@ -388,7 +386,7 @@ export default class Agendasemanal extends Component {
                   </div>
                 </div>
                 )}
-              </div>              
+              </div>
             </div>
             </div>
             <div className='btn-imprimir'>

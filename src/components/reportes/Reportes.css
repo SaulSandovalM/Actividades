@@ -105,6 +105,15 @@
   -webkit-box-orient: vertical;
   line-height: 30px;
 }
+.head-mes-rep-dir {
+  width: 26.5%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-height: 30px;
+}
 .head-mes-imp {
   width: 6%;
   overflow: hidden;

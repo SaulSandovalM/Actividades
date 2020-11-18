@@ -14,11 +14,14 @@ import Ainforme from './components/aregistradas/Ainforme'
 import Abusqueda from './components/abusqueda/Abusqueda'
 import Sactividad from './components/sactividad/Sactividad'
 import Reportes from './components/reportes/Reportes'
+import Reportesniveldir from './components/reportes/Reportesniveldir'
 import Autorizacion from './components/autorizacion/Autorizacion'
 import Arelevante from './components/documentos/Arelevante'
 import Agendasemanal from './components/documentos/Agendasemanal'
 import Reporteniveldir from './components/documentos/Reporteniveldir'
 import Reportepdf from './components/documentos/Reportepdf'
+import Tarchivos from './components/textos/Tarchivos'
+import Tpresentacion from './components/textos/Tpresentacion'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -111,6 +114,13 @@ function App (props) {
       />
       <ProtectedRoute
         exact
+        path='/Reportesniveldir'
+        component={Reportesniveldir}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
         path='/Autorizacion'
         component={Autorizacion}
         isAuthenticated={isAuthenticated}
@@ -144,7 +154,22 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
+      <ProtectedRoute
+        exact
+        path='/Tarchivos/:id'
+        component={Tarchivos}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Tpresentacion'
+        component={Tpresentacion}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
     </Switch>
+
   )
 }
 function mapStateToProps (state) {

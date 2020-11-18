@@ -93,12 +93,8 @@ export default class Aregistradas extends Component {
         <div className='mes-center' style={{ position: 'fixed', marginTop: '195px', background: '#fafafa' }}>
           <div className='mes-container' style={{ marginRight: '256px' }}>
             <div className='head-mes-1' style={{ paddingLeft:'2.5%', color: 'grey' }}>Actividad</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Convocado</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Para</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>dLugar</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Fecha</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Hora</div>
-            <div className='head-mes-1' style={{ color: 'grey' }}>Estado</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Lugar</div>
+            <div className='head-mes-1' style={{ color: 'grey' }}>Fecha/Hora</div>
             <div className='head-mes-1 status-abus' style={{ color: 'grey' }}>Estatus</div>
             <div className='one-po' />
           </div>
@@ -111,12 +107,8 @@ export default class Aregistradas extends Component {
                   label_important
                 </span>
                 <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.actividad}</div>
-                <div className='head-mes-1'>{actividades.convoca}</div>
-                <div className='head-mes-1'>{actividades.responsable}</div>
-                <div className='head-mes-1'>{actividades.lugar}</div>
-                <div className='head-mes-1'>{actividades.fechai}</div>
-                <div className='head-mes-1'>{actividades.horai}</div>
-                <div className='head-mes-1'>{actividades.estados}</div>
+                <div className='head-mes-1'>{actividades.lugar, actividades.estados }</div>
+                <div className='head-mes-1'>{actividades.fechai, actividades.horai}</div>
                 <div className='head-mes-1 status-abus'  >{actividades.estatus}
                 <div className='one-po'>
 

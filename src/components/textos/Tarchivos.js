@@ -1,44 +1,29 @@
 import React, { Component } from 'react'
-import './Editarm.css'
+import './Tarchivos.css'
 import firebase from '../../Firebase'
 import TextField from '@material-ui/core/TextField'
 import Fab from '@material-ui/core/Fab'
 import DoneIcon from '@material-ui/icons/Done'
-import Input from '@material-ui/core/Input'
 import CloseIcon from '@material-ui/icons/Close'
+import Input from '@material-ui/core/Input'
 
-export default class Editarm extends Component {
-  constructor (props) {
-    super(props)
+export default class Tarchivos extends Component {
+  constructor () {
+    super()
+    this.ref = firebase.firestore().collection('messages')
     this.state = {
-      key: '',
       asunto: '',
       descripcion: '',
-      imagen: '',
+      imgp: 0,
       checked: true,
-      imgc: 0,
       fecha: ''
     }
-    this.handleChange = this.handleChange.bind(this)
   }
 
-  componentDidMount () {
-    const ref = firebase.firestore().collection('messages').doc(this.props.match.params.id)
-    ref.get().then((doc) => {
-      if (doc.exists) {
-        const messages = doc.data()
-        this.setState({
-          key: doc.id,
-          asunto: messages.asunto,
-          descripcion: messages.descripcion,
-          imagen: messages.imagen,
-          checked: messages.checked,
-          fecha: messages.fecha
-        })
-      } else {
-        console.log('No hay documento!')
-      }
-    })
+  onChange = (e) => {
+    const state = this.state
+    state[e.target.name] = e.target.value
+    this.setState(state)
   }
 
   handleImage (event) {
@@ -48,7 +33,7 @@ export default class Editarm extends Component {
     task.on('state_changed', (snapshot) => {
       const percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
       this.setState({
-        imgc: percentage
+        imgp: percentage
       })
     }, error => {
       console.error(error.message)
@@ -60,21 +45,10 @@ export default class Editarm extends Component {
     }))
   }
 
-  onChange = (e) => {
-    const state = this.state
-    state[e.target.name] = e.target.value
-    this.setState({ messages:state })
-  }
-
-  handleChange(checked) {
-    this.setState({ checked });
-  }
-
   onSubmit = (e) => {
     e.preventDefault()
     const { asunto, descripcion, imagen, checked, fecha } = this.state
-    const updateRef = firebase.firestore().collection('messages').doc(this.state.key)
-    updateRef.set({
+    this.ref.add({
       asunto,
       descripcion,
       imagen,
@@ -82,25 +56,30 @@ export default class Editarm extends Component {
       fecha
     }).then((docRef) => {
       this.setState({
-        key: '',
         asunto: '',
         descripcion: '',
         imagen: '',
-        checked: true,
-        fecha: ''
+        checked: true
       })
-      this.props.history.push('/Listademensajes')
+      this.props.history.push('/')
+      alert('Se Envio el formulario')
     })
     .catch((error) => {
-      console.error('Error al agregar: ', error)
+      console.error('Error al crear: ', error)
     })
   }
-
   handleBack() {
       this.props.history.push('/Listademensajes');
     }
 
+
   render() {
+    const { asunto, descripcion } = this.state
+
+    var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
+    var f = new Date()
+    var date = (f.getDate() + '/' + meses[f.getMonth()] + '/' + f.getFullYear() + ', '+ f.getHours() + ':' + f.getMinutes())
+    this.state.fecha = date
 
     return (
       <div className='mg-conta'>
@@ -108,32 +87,38 @@ export default class Editarm extends Component {
           <div className='divtop-mg' />
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
-              <h2>Edición de Mensajes</h2>
+              <h2>Edicion de Evidencia</h2>
               <TextField
-                id='standard-basic'
-                label='Asunto'
+                label='Descripcion de Actividad'
                 name='asunto'
-                value={this.state.asunto}
+                value={asunto}
                 onChange={this.onChange}
                 required
               />
               <TextField
-                id='standard-basic'
-                label='Descripción'
+                label='Descripcion de Actividad Agenda'
                 style={{marginTop: '15px'}}
                 name='descripcion'
-                value={this.state.descripcion}
+                value={descripcion}
+                onChange={this.onChange}
+                required
+              />
+              <TextField
+                label='Resultados Obtenidos'
+                style={{marginTop: '15px'}}
+                name='descripcion'
+                value={descripcion}
                 onChange={this.onChange}
                 required
               />
 
               <Input
                 type='file'
-                style={{ marginTop: '30px' }}
+                style={{marginTop: '30px'}}
                 onChange={this.handleImage.bind(this)}
                 required
               />
-              <progress className='progress2' value={this.state.imgc} />
+              <progress className='progress2' value={this.state.imgp} />
               <div className='add-gb'>
                 <Fab color='primary' aria-label='add' style={{background: 'green'}} type='submit'>
                   <DoneIcon />

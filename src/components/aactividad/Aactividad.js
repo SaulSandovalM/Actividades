@@ -198,6 +198,9 @@ export default class Aactividad extends Component {
                   onChange={this.onChange}
                   required
                 />
+                <div className='hra-hras'>
+
+                </div>
               </div>
               <TextField
                 label='Actividad'
@@ -219,12 +222,25 @@ export default class Aactividad extends Component {
                   required
                 />
               </div>
+              <div className='div_cancel'>
+                <TextField
+                  label='Descripcion de Actividad en Agenda'
+                  style={{marginTop: '15px'}}
+                  name='Descripción'
+                  onChange={this.onChange}
+                  inputProps={{
+                    maxLength: 300,
+                  }}
+                  multiline
+                  required
+                />
+              </div>
               <FormControlLabel
                 control={<IOSSwitch name='checkedOrganizada'
                 checked={this.state.checkedOrganizada}
                 onChange={this.handleChangeOr}
                 />}
-                label='Actividad organizada por procuraduría'
+                label='Actividad organizada por Procuraduría'
                 style={{ marginTop: '20px' }}
               />
               <FormControl style={{ marginTop: '15px', width:'100%' }}>
@@ -252,7 +268,7 @@ export default class Aactividad extends Component {
               }
               <div className='date-cont'>
                 <TextField
-                  label='Convoca'
+                  label='Dirección'
                   style={{ marginTop: '15px', width: '45%' }}
                   name='convoca'
                   onChange={this.onChange}
@@ -268,7 +284,7 @@ export default class Aactividad extends Component {
               </div>
               <div className='date-cont'>
                 <FormControl style={{ marginTop: '15px', width: '45%' }}>
-                  <InputLabel>Estados</InputLabel>
+                  <InputLabel>Estado</InputLabel>
                   <Select
                     label='Estados'
                     name='estados'
@@ -1637,6 +1653,7 @@ export default class Aactividad extends Component {
                   <CloseIcon />
                 </Fab>
               </div>
+
             </form>
           </div>
         </div>
