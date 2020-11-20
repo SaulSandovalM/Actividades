@@ -128,7 +128,7 @@ export default class Reportes extends Component {
                 </div>
 
                 <div className='head-mes-imp'>
-                  <a className='hiper' href='/Agendapdf'>
+                  <a className='hiper' href='/Arelevante'>
                    <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
                     picture_as_pdf
                   </span>

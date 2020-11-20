@@ -8,6 +8,7 @@ import Mgenerales from './components/mgenerales/Mgenerales'
 import Editarm from './components/editarm/Editarm'
 import Showm from './components/editarm/Showm'
 import Aregistradas from './components/aregistradas/Aregistradas'
+import Oja from './components/aregistradas/Oja'
 import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
 import Ainforme from './components/aregistradas/Ainforme'
@@ -60,6 +61,13 @@ function App (props) {
         exact
         path='/ActividadesRegistradas'
         component={Aregistradas}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Oja/:id'
+        component={Oja}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />

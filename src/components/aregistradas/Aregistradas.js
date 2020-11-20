@@ -4,11 +4,19 @@ import firebase from '../../Firebase'
 import { Link } from 'react-router-dom'
 import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
-import {Button} from 'reactstrap'
+import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, span, p} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import TextField from '@material-ui/core/TextField'
+
 
 
 export default class Aregistradas extends Component {
+  state = {
+    abierto: false,
+  }
+  abrirModal=()=>{
+    this.setState({abierto: !this.state.abierto});
+  }
   constructor (props) {
     super(props)
     this.ref = firebase.firestore().collection('actividades').orderBy('horai', 'asc')
@@ -52,12 +60,20 @@ export default class Aregistradas extends Component {
     const miercoles = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 3)
     const jueves = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 4)
     const viernes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 5)
+    const sabado = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 6)
+    const domingo = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 7)
+
+
     const dia1 = (f.getDate() + f.getDay() + 1)
     const dia2 = (f.getDate() + f.getDay() + 2)
     const dia3 = (f.getDate() + f.getDay() + 3)
     const dia4 = (f.getDate() + f.getDay() + 4)
     const dia5 = (f.getDate() + f.getDay() + 5)
+    const dia6 = (f.getDate() + f.getDay() + 6)
+    const dia7 = (f.getDate() + f.getDay() + 7)
+
     const mes = meses2[f.getMonth()]
+
 
     return (
       <div className='mg-conta'>
@@ -102,15 +118,56 @@ export default class Aregistradas extends Component {
             <div className='space-cal' />
               <div className='day-container'>
                 <div className='day-content'>
+                <div>
+                <Modal isOpen={this.state.abierto}>
+                  <ModalHeader>
+                    Descripcion de la Activdad
+                    
+                    <ModalBody>
+                      <FormGroup>
+                        <span  class="material-icons" >
+                          remove_red_eye
+                        </span>
+                        <span class="material-icons">
+                          delete
+                        </span>
+                        <span class="material-icons">
+                          edit
+                        </span>
+                      </FormGroup>
+                      {this.state.actividades.map(actividades =>
+                      <FormGroup>
+                        <p className='title-activity-p'>{actividades.tipoActividad}</p>
+                        <p className='hora-activity-p'>{actividades.horai} - {actividades.horaf}</p>
+                        <p className='hora-activity-p'>{actividades.lugar}</p>
+                      </FormGroup>
+                      )}
+                    </ModalBody>
+                  </ModalHeader>
+                  <ModalFooter>
+                    <Button onClick={this.abrirModal}>Cerrar</Button>
+                  </ModalFooter>
+                </Modal>
+
+                </div>
                   {this.state.actividades.map(actividades =>
                     <div>
                       {actividades.fechai === lunes &&
-                        <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
+                        <div className='card-cal-cont'>
+                        <div className='modal-vista'>
+                          <span class="material-icons" onClick={this.abrirModal} style={{ cursor:'pointer'}}>
+                            remove_red_eye
+                          </span>
+                          <span class="material-icons" onClick={this.abrirModal} style={{ cursor:'pointer'}}>
+                            edit
+                          </span>
+                        </div>
+                          <div>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>                        
+                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                          <button>Prueba</button>
-                        </Link>
+                          </div>
+                        </div>
                       }
 
 
@@ -160,12 +217,38 @@ export default class Aregistradas extends Component {
 
                 </div>
                 <div>
-               
+
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
                       {actividades.fechai === viernes &&
+                        <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
+                          <p className='hora-activity'>{actividades.lugar}</p>
+                        </Link>
+                      }
+                    </div>
+                  )}
+                </div>
+                <div className='day-content'>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === sabado &&
+                        <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
+                          <p className='title-activity'>{actividades.tipoActividad}</p>
+                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
+                          <p className='hora-activity'>{actividades.lugar}</p>
+                        </Link>
+                      }
+                    </div>
+                  )}
+                </div>
+                <div className='day-content'>
+                  {this.state.actividades.map(actividades =>
+                    <div>
+                      {actividades.fechai === domingo &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>

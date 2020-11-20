@@ -102,8 +102,18 @@
   font-size: 20px;
 }
 
+/* vista de  modals */
+.modal-vista{
+  display: flex;
+  justify-content:flex-end;
 
-
+}
+.modal-ojo{
+ display: flex;
+ justify-content:center;
+ background: red;
+ filter:alpha(opacity=60); opacity:.6;
+}
 
 
 
