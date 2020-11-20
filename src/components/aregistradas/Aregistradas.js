@@ -149,6 +149,9 @@ export default class Aregistradas extends Component {
                     </div>
                   )}
                 </div>
+                <div>
+               
+                </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div>
