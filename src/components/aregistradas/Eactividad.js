@@ -200,7 +200,7 @@ export default class Aactividad extends Component {
             <div className='button-aa'>
               <button className='style-button-aa' type='submit' >Guardar</button>
             </div>
-        
+
           </form>
         </div>
       </div>
