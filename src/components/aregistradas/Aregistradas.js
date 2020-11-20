@@ -4,6 +4,9 @@ import firebase from '../../Firebase'
 import { Link } from 'react-router-dom'
 import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
+import {Button} from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.css'
+
 
 export default class Aregistradas extends Component {
   constructor (props) {
@@ -94,6 +97,7 @@ export default class Aregistradas extends Component {
               </div>
               <div className='space-cal' />
             </div>
+
             <div className='activity-container'>
             <div className='space-cal' />
               <div className='day-container'>
@@ -103,10 +107,13 @@ export default class Aregistradas extends Component {
                       {actividades.fechai === lunes &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
+                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>                        
                           <p className='hora-activity'>{actividades.lugar}</p>
+                          <button>Prueba</button>
                         </Link>
                       }
+
+
                     </div>
                   )}
                 </div>
@@ -145,9 +152,12 @@ export default class Aregistradas extends Component {
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
                         </Link>
+
                       }
                     </div>
+
                   )}
+
                 </div>
                 <div>
                
@@ -168,6 +178,7 @@ export default class Aregistradas extends Component {
               </div>
               <div className='space-cal' />
             </div>
+
           </div>
         </div>
       </div>
