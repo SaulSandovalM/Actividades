@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Abusqueda.css'
 import firebase from '../../Firebase'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import InputAdornment from '@material-ui/core/InputAdornment'
@@ -107,39 +107,34 @@ export default class Aregistradas extends Component {
                   label_important
                 </span>
                 <div className='head-mes-1' style={{fontWeight: 'bold'}}>{actividades.actividad}</div>
-                <div className='head-mes-1'>{actividades.lugar, actividades.estados }</div>
-                <div className='head-mes-1'>{actividades.fechai, actividades.horai}</div>
-                <div className='head-mes-1 status-abus'  >{actividades.estatus}
+                <div className='head-mes-1'>{actividades.lugar} + {actividades.estados}</div>
+                <div className='head-mes-1'>{actividades.fechai} + {actividades.horai}</div>
+                <div className='head-mes-1 status-abus'>{actividades.estatus}
                 <div className='one-po'>
-
-                  {actividades.estatus === 'Cancelado'&&
-                    <span className='material-icons icon-block' >
+                  {actividades.estatus === 'Cancelado' &&
+                    <span className='material-icons icon-block'>
                       block
                     </span>
                   }
-
-                  {actividades.estatus === 'En proceso'&&
-                    <span className='material-icons icon-block hip'style={{color:'blue'}}>
-                    cached
-                    </span>
-
-                  }
-
-                  {actividades.estatus === 'Reprogramado'&&
-                    <span className='material-icons icon-block' style={{color:'orange'}}>
-                    restore
+                  {actividades.estatus === 'En proceso' &&
+                    <span className='material-icons icon-block hip' style={{ color:'blue' }}>
+                      cached
                     </span>
                   }
-
-                  {actividades.estatus === 'Realizado'&&
-                    <span className='material-icons icon-block'style={{color:'green'}}>
-                  check_circle
+                  {actividades.estatus === 'Reprogramado' &&
+                    <span className='material-icons icon-block' style={{ color:'orange' }}>
+                      restore
                     </span>
                   }
-                </div>
+                  {actividades.estatus === 'Realizado' &&
+                    <span className='material-icons icon-block' style={{ color:'green' }}>
+                      check_circle
+                    </span>
+                  }
                 </div>
               </div>
             </div>
+          </div>
           )}
         </div>
       </div>

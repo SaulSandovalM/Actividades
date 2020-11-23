@@ -68,9 +68,10 @@ export default class Generacionm extends Component {
       console.error('Error al crear: ', error)
     })
   }
-  handleBack() {
-      this.props.history.push('/Listademensajes');
-    }
+
+  handleBack () {
+    this.props.history.push('/Listademensajes');
+  }
 
 
   render() {
@@ -103,7 +104,6 @@ export default class Generacionm extends Component {
                 onChange={this.onChange}
                 required
               />
-
               <Input
                 type='file'
                 style={{marginTop: '30px'}}

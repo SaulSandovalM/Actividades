@@ -42,7 +42,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 20%;
+  width: 14%;
 }
 .activity-container {
   display: flex;
@@ -55,11 +55,11 @@
   width: 89.6%;
 }
 .day-content {
-  padding-top: 30px;
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 19%;
+  padding-top: 30px;
+  width: 14%;
 }
 .card-cal-cont {
   background: rgb(3, 155, 229);

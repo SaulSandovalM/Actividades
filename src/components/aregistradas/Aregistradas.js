@@ -4,26 +4,24 @@ import firebase from '../../Firebase'
 import { Link } from 'react-router-dom'
 import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
-import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, span, p} from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
-import TextField from '@material-ui/core/TextField'
-
-
 
 export default class Aregistradas extends Component {
-  state = {
-    abierto: false,
-  }
-  abrirModal=()=>{
-    this.setState({abierto: !this.state.abierto});
-  }
   constructor (props) {
     super(props)
     this.ref = firebase.firestore().collection('actividades').orderBy('horai', 'asc')
     this.unsubscribe = null
     this.state = {
-      actividades: []
+      actividades: [],
+      abierto: false
     }
+  }
+
+  abrirModal = () => {
+    this.setState({
+      abierto: !this.state.abierto
+    })
   }
 
   onCollectionUpdate = (querySnapshot) => {
@@ -46,7 +44,7 @@ export default class Aregistradas extends Component {
    })
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
 
@@ -63,7 +61,6 @@ export default class Aregistradas extends Component {
     const sabado = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 6)
     const domingo = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 7)
 
-
     const dia1 = (f.getDate() + f.getDay() + 1)
     const dia2 = (f.getDate() + f.getDay() + 2)
     const dia3 = (f.getDate() + f.getDay() + 3)
@@ -73,7 +70,6 @@ export default class Aregistradas extends Component {
     const dia7 = (f.getDate() + f.getDay() + 7)
 
     const mes = meses2[f.getMonth()]
-
 
     return (
       <div className='mg-conta'>
@@ -111,157 +107,146 @@ export default class Aregistradas extends Component {
                 <p className='p-dia-n'>Viernes</p>
                 <p className='p-dia'>{dia5}</p>
               </div>
+              <div className='title-week'>
+                <p className='p-dia-n'>Sabado</p>
+                <p className='p-dia'>{dia6}</p>
+              </div>
+              <div className='title-week'>
+                <p className='p-dia-n'>Domingo</p>
+                <p className='p-dia'>{dia7}</p>
+              </div>
               <div className='space-cal' />
             </div>
-
             <div className='activity-container'>
-            <div className='space-cal' />
+              <div className='space-cal' />
               <div className='day-container'>
                 <div className='day-content'>
-                <div>
-                <Modal isOpen={this.state.abierto}>
-                  <ModalHeader>
-                    Descripcion de la Activdad
-                    
-                    <ModalBody>
-                      <FormGroup>
-                        <span  class="material-icons" >
-                          remove_red_eye
-                        </span>
-                        <span class="material-icons">
-                          delete
-                        </span>
-                        <span class="material-icons">
-                          edit
-                        </span>
-                      </FormGroup>
-                      {this.state.actividades.map(actividades =>
-                      <FormGroup>
-                        <p className='title-activity-p'>{actividades.tipoActividad}</p>
-                        <p className='hora-activity-p'>{actividades.horai} - {actividades.horaf}</p>
-                        <p className='hora-activity-p'>{actividades.lugar}</p>
-                      </FormGroup>
-                      )}
-                    </ModalBody>
-                  </ModalHeader>
-                  <ModalFooter>
-                    <Button onClick={this.abrirModal}>Cerrar</Button>
-                  </ModalFooter>
-                </Modal>
-
-                </div>
+                  <div>
+                    <Modal isOpen={this.state.abierto}>
+                      <ModalHeader>
+                        Descripcion de la Activdad
+                        <ModalBody>
+                          <FormGroup>
+                            <span className='material-icons'>
+                              remove_red_eye
+                            </span>
+                            <span className='material-icons'>
+                              delete
+                            </span>
+                            <span className='material-icons'>
+                              edit
+                            </span>
+                          </FormGroup>
+                          {this.state.actividades.map(actividades =>
+                            <FormGroup key=''>
+                              <p className='title-activity-p'>{actividades.tipoActividad}</p>
+                              <p className='hora-activity-p'>{actividades.horai} - {actividades.horaf}</p>
+                              <p className='hora-activity-p'>{actividades.lugar}</p>
+                            </FormGroup>
+                          )}
+                        </ModalBody>
+                      </ModalHeader>
+                      <ModalFooter>
+                        <Button onClick={this.abrirModal}>Cerrar</Button>
+                      </ModalFooter>
+                    </Modal>
+                  </div>
                   {this.state.actividades.map(actividades =>
-                    <div>
+                    <div key=''>
                       {actividades.fechai === lunes &&
                         <div className='card-cal-cont'>
-                        <div className='modal-vista'>
-                          <span class="material-icons" onClick={this.abrirModal} style={{ cursor:'pointer'}}>
-                            remove_red_eye
-                          </span>
-                          <span class="material-icons" onClick={this.abrirModal} style={{ cursor:'pointer'}}>
-                            edit
-                          </span>
-                        </div>
-                          <div>
-                          <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.lugar}</p>
+                          <div className='modal-vista'>
+                            <span className='material-icons' onClick={this.abrirModal} style={{ cursor: 'pointer' }}>
+                              remove_red_eye
+                            </span>
+                            <span className='material-icons' onClick={this.abrirModal} style={{ cursor: 'pointer' }}>
+                              edit
+                            </span>
                           </div>
-                        </div>
-                      }
-
-
+                          <div>
+                            <p className='title-activity'>{actividades.tipoActividad}</p>
+                            <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
+                            <p className='hora-activity'>{actividades.lugar}</p>
+                          </div>
+                        </div>}
                     </div>
                   )}
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
-                    <div>
+                    <div key=''>
                       {actividades.fechai === martes &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                        </Link>
-                      }
+                        </Link>}
                     </div>
                   )}
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
-                    <div>
+                    <div key=''>
                       {actividades.fechai === miercoles &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                        </Link>
-                      }
+                        </Link>}
                     </div>
                   )}
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
-                    <div>
+                    <div key=''>
                       {actividades.fechai === jueves &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                        </Link>
-
-                      }
+                        </Link>}
                     </div>
-
                   )}
-
-                </div>
-                <div>
-
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
-                    <div>
+                    <div key=''>
                       {actividades.fechai === viernes &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                        </Link>
-                      }
+                        </Link>}
                     </div>
                   )}
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
-                    <div>
+                    <div key=''>
                       {actividades.fechai === sabado &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                        </Link>
-                      }
+                        </Link>}
                     </div>
                   )}
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
-                    <div>
+                    <div key=''>
                       {actividades.fechai === domingo &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
                           <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                        </Link>
-                      }
+                        </Link>}
                     </div>
                   )}
                 </div>
               </div>
               <div className='space-cal' />
             </div>
-
           </div>
         </div>
       </div>

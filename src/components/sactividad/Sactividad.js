@@ -8,14 +8,11 @@ import CloseIcon from '@material-ui/icons/Close'
 import Input from '@material-ui/core/Input'
 import Switch from '@material-ui/core/Switch'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import { withStyles } from '@material-ui/core/styles';
-
+import { withStyles } from '@material-ui/core/styles'
 
 export default class Sactividad extends Component {
   constructor (props) {
     super(props)
-    this.ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id).collection('evidencias')
-    this.unsubscribe = null;
     this.state = {
       imgeevi: ' ',
       relevancia: '',
@@ -30,38 +27,47 @@ export default class Sactividad extends Component {
       horai: '',
       fechaf: '',
       horaf: '',
-      estatus : ''
+      estatus : '',
+      convocados: '',
+      convoca: '',
+      tipoA: '',
+      estado: '',
+      internaE: '',
+      municipio: '',
+      quien: '',
+      lugar: '',
+      imparte: '',
+      desc: ''
     }
     this.handleChangeCancel = this.handleChangeCancel.bind(this)
     this.handleChangeRe = this.handleChangeRe.bind(this)
   }
 
-  onCollectionUpdate = (querySnapshot) => {
-    const evidencias = [];
-    querySnapshot.forEach((doc) => {
-      const { seguimientos, seguimienton, evidencia, relevancia, motivo_cancelado, fechai, horai, fechaf, horaf, estatus } = doc.data();
-      evidencias.push({
-        key: doc.id,
-        doc,
-        seguimientos,
-        seguimienton,
-        evidencia,
-        relevancia,
-        motivo_cancelado,
-        fechai,
-        horai,
-        fechaf,
-        horaf,
-        estatus
-      });
-    });
-    this.setState({
-      evidencias
-   });
-  }
-
-  componentDidMount() {
-    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
+  componentDidMount () {
+    const ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id)
+    ref.get().then((doc) => {
+      if (doc.exists) {
+        const actividades = doc.data()
+        this.setState({
+          key: doc.id,
+          asunto: actividades.asunto,
+          convocados: actividades.convocados,
+          convoca: actividades.convoca,
+          fechai: actividades.fechai,
+          fechaf: actividades.fechaf,
+          tipoA: actividades.tipoA,
+          estado: actividades.estado,
+          internaE: actividades.internaE,
+          municipio: actividades.municipio,
+          quien: actividades.quien,
+          lugar: actividades.lugar,
+          imparte: actividades.imparte,
+          desc: actividades.desc
+        })
+      } else {
+        console.log('No hay documento!')
+      }
+    })
   }
 
   onChange = (e) => {
@@ -73,17 +79,18 @@ export default class Sactividad extends Component {
   handleChangeCancel(checkedCancelada) {
     this.setState({
       checkedCancelada: !this.state.checkedCancelada,
-    });
+    })
   }
 
   handleChangeRe(checkedReprogramar) {
     this.setState({
       checkedReprogramar: !this.state.checkedReprogramar,
-    });
+    })
   }
+
   handleBack() {
-      this.props.history.push('/ActividadesRegistradas');
-    }
+    this.props.history.push('/ActividadesRegistradas')
+  }
 
   handleImage (event) {
     const file = event.target.files[0]
@@ -106,8 +113,11 @@ export default class Sactividad extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar, fechai, horai, fechaf, horaf, imgeevi, estatus } = this.state
-    this.ref.add({
+    const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
+      fechai, horai, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA, estado, internaE,
+              municipio, quien, lugar, imparte, desc } = this.state
+    const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
+    updateRef.set({
       resultado,
       relevancia,
       motivo_cancelado,
@@ -118,7 +128,17 @@ export default class Sactividad extends Component {
       fechaf,
       horaf,
       imgeevi,
-      estatus
+      estatus,
+      convocados,
+      convoca,
+      tipoA,
+      estado,
+      internaE,
+      municipio,
+      quien,
+      lugar,
+      imparte,
+      desc
     }).then((docRef) => {
       this.setState({
         resultado: '',
@@ -132,10 +152,19 @@ export default class Sactividad extends Component {
         fechaf: '',
         horaf: '',
         imgeevi: '',
-        estatus : ''
+        estatus : '',
+        convocados: '',
+        convoca: '',
+        tipoA: '',
+        estado: '',
+        internaE: '',
+        municipio: '',
+        quien: '',
+        lugar: '',
+        imparte: '',
+        desc: ''
       })
       this.props.history.push('/ActividadesRegistradas')
-        alert('Se Envio el formulario')
     })
     .catch((error) => {
       console.error('Error al crear: ', error)
@@ -148,7 +177,7 @@ export default class Sactividad extends Component {
         width: 42,
         height: 26,
         padding: 0,
-        margin: theme.spacing(1),
+        margin: theme.spacing(1)
       },
       switchBase: {
         padding: 1,
@@ -158,27 +187,27 @@ export default class Sactividad extends Component {
           '& + $track': {
             backgroundColor: '#52d869',
             opacity: 1,
-            border: 'none',
+            border: 'none'
           },
         },
         '&$focusVisible $thumb': {
           color: '#52d869',
-          border: '6px solid #fff',
+          border: '6px solid #fff'
         },
       },
       thumb: {
         width: 24,
-        height: 24,
+        height: 24
       },
       track: {
         borderRadius: 26 / 2,
         border: `1px solid ${theme.palette.grey[400]}`,
         backgroundColor: theme.palette.grey[50],
         opacity: 1,
-        transition: theme.transitions.create(['background-color', 'border']),
+        transition: theme.transitions.create(['background-color', 'border'])
       },
       checked: {},
-      focusVisible: {},
+      focusVisible: {}
     }))(({ classes, ...props }) => {
       return (
         <Switch
@@ -192,10 +221,9 @@ export default class Sactividad extends Component {
             checked: classes.checked,
           }}
           {...props}
-
         />
-      );
-    });
+      )
+    })
 
     if (this.state.checkedCancelada){
       this.state.estatus = 'Cancelado'
@@ -206,7 +234,10 @@ export default class Sactividad extends Component {
     if (this.state.checkedCancelada && this.state.checkedReprogramar){
       this.state.estatus = 'Reprogramado'
     }
-    console.log(this.state.estatus)
+
+    const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
+      fechai, horai, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA,
+      estado, internaE, municipio, quien, lugar, imparte, desc } = this.state
 
     return (
       <div className='mg-conta'>
@@ -214,9 +245,105 @@ export default class Sactividad extends Component {
           <div className='divtop-mg' />
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
+            <div className='input-c-c'>
+              <p>Convodados:</p>
+              <input
+                className='style-check'
+                type='checkbox'
+                name='convocados'
+                value={convocados}
+                onChange={this.onChange}
+              />
+              <input className='style-check' type='checkbox' />
+            </div>
+            <div className='content-row'>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Quien Convoca:</p>
+                <select className='select' name='convoca' value={convoca}
+                  onChange={this.onChange}>
+                  <option></option>
+                  <option value="grapefruit">Grapefruit</option>
+                  <option value="lime">Lime</option>
+                  <option selected value="coconut">Coconut</option>
+                  <option value="mango">Mango</option>
+                </select>
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Fecha de Inicio:</p>
+                <input type='date' name='fechai' value={fechai}
+                  onChange={this.onChange} />
+              </div>
+            </div>
+            <div className='content-row'>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Tipo de Actividad:</p>
+                <select className='select' name='tipoA' value={tipoA}
+                  onChange={this.onChange}>
+                  <option></option>
+                  <option value="grapefruit">Grapefruit</option>
+                  <option value="lime">Lime</option>
+                  <option selected value="coconut">Coconut</option>
+                  <option value="mango">Mango</option>
+                </select>
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Fecha de Fin:</p>
+                <input type='date' name='fechaf' value={fechaf}
+                  onChange={this.onChange} />
+              </div>
+            </div>
+            <div className='content-row'>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Estado:</p>
+                <select className='select' name='estado' value={estado}
+                  onChange={this.onChange}>
+                  <option></option>
+                  <option value="grapefruit">Grapefruit</option>
+                  <option value="lime">Lime</option>
+                  <option selected value="coconut">Coconut</option>
+                  <option value="mango">Mango</option>
+                </select>
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Interna Externa:</p>
+                <input className='style-check-i' type='checkbox'
+                  name='internaE' value={internaE}onChange={this.onChange} />
+                <input className='style-check-i' type='checkbox' />
+              </div>
+            </div>
+            <div className='content-row'>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Municipio:</p>
+                <select className='select' name='municipio' value={municipio}
+                  onChange={this.onChange}>
+                  <option></option>
+                  <option value="grapefruit">Grapefruit</option>
+                  <option value="lime">Lime</option>
+                  <option selected value="coconut">Coconut</option>
+                  <option value="mango">Mango</option>
+                </select>
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Con quien:</p>
+                <input name='quien' value={quien} onChange={this.onChange} />
+              </div>
+            </div>
+            <div className='content-row'>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Lugar:</p>
+                <input name='lugar' value={lugar} onChange={this.onChange} />
+              </div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Imparte:</p>
+                <input name='imparte' value={imparte} onChange={this.onChange} />
+              </div>
+            </div>
+            <div>
+              <p>Descripción</p>
+              <textarea cols='80' rows='3' name='desc' value={desc}
+                onChange={this.onChange} />
+            </div>
               <h2>Seguimiento de Actividad</h2>
-
-
               <FormControlLabel
                 control={
                   <IOSSwitch
@@ -272,7 +399,6 @@ export default class Sactividad extends Component {
                       required
                     />
                   </div>
-
                   <div className='date-cont'>
                     <TextField
                       label='Duración'
@@ -285,10 +411,8 @@ export default class Sactividad extends Component {
                       <p>hr/hrs</p>
                     </div>
                   </div>
-
                 </div>
               }
-
               <TextField
                 label='Descripcion de Actividad'
                 style={{ marginTop: '15px' }}
@@ -311,7 +435,6 @@ export default class Sactividad extends Component {
                 multiline
                 required
               />
-
               {this.state.checkedCancelada === false &&
                 <div>
                   <Input
@@ -336,7 +459,6 @@ export default class Sactividad extends Component {
           </div>
         </div>
       </div>
-
     )
   }
 }

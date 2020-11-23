@@ -106,8 +106,13 @@ export default class Aactividad extends Component {
           <form className='content-aa' onSubmit={this.onSubmit}>
             <div className='input-c-c'>
               <p>Convodados:</p>
-              <input className='style-check' type='checkbox' name='convocados'
-                value={convocados} onChange={this.onChange}/>
+              <input
+                className='style-check'
+                type='checkbox'
+                name='convocados'
+                value={convocados}
+                onChange={this.onChange}
+              />
               <input className='style-check' type='checkbox' />
             </div>
             <div className='content-row'>

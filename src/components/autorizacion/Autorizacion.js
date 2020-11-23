@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Autorizacion.css'
-import firebase from '../../Firebase'
-import { Link } from 'react-router-dom'
+// import firebase from '../../Firebase'
+// import { Link } from 'react-router-dom'
 
 export default class Autorizacion extends Component {
   // constructor (props) {
@@ -118,6 +118,7 @@ export default class Autorizacion extends Component {
             </div>
           )}
         </div>*/}
+        
       </div>
     )
   }

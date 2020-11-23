@@ -177,7 +177,6 @@ function App (props) {
         isVerifying={isVerifying}
       />
     </Switch>
-
   )
 }
 function mapStateToProps (state) {
