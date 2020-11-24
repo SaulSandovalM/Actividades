@@ -20,11 +20,11 @@ export default class Tarchivos extends Component {
     }
   }
 
-  onChange = (e) => {
-    const state = this.state
-    state[e.target.name] = e.target.value
-    this.setState(state)
-  }
+  // onChange = (e) => {
+  //   const state = this.state
+  //   state[e.target.name] = e.target.value
+  //   this.setState(state)
+  // }
 
   handleImage (event) {
     const file = event.target.files[0]
@@ -45,40 +45,39 @@ export default class Tarchivos extends Component {
     }))
   }
 
-  onSubmit = (e) => {
-    e.preventDefault()
-    const { asunto, descripcion, imagen, checked, fecha } = this.state
-    this.ref.add({
-      asunto,
-      descripcion,
-      imagen,
-      checked,
-      fecha
-    }).then((docRef) => {
-      this.setState({
-        asunto: '',
-        descripcion: '',
-        imagen: '',
-        checked: true
-      })
-      this.props.history.push('/')
-      alert('Se Envio el formulario')
-    })
-    .catch((error) => {
-      console.error('Error al crear: ', error)
-    })
+  // onSubmit = (e) => {
+  //   e.preventDefault()
+  //   const { asunto, descripcion, imagen, checked, fecha } = this.state
+  //   this.ref.add({
+  //     asunto,
+  //     descripcion,
+  //     imagen,
+  //     checked,
+  //     fecha
+  //   }).then((docRef) => {
+  //     this.setState({
+  //       asunto: '',
+  //       descripcion: '',
+  //       imagen: '',
+  //       checked: true
+  //     })
+  //     this.props.history.push('/')
+  //     alert('Se Envio el formulario')
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error al crear: ', error)
+  //   })
+  // }
+
+  handleBack () {
+    this.props.history.push('/Listademensajes')
   }
-  handleBack() {
-      this.props.history.push('/Listademensajes');
-    }
 
-
-  render() {
+  render () {
     const { asunto, descripcion } = this.state
-
-    var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
+    var meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
     var f = new Date()
-    var date = (f.getDate() + '/' + meses[f.getMonth()] + '/' + f.getFullYear() + ', '+ f.getHours() + ':' + f.getMinutes())
+    var date = (f.getDate() + '/' + meses[f.getMonth()] + '/' + f.getFullYear() + ', ' + f.getHours() + ':' + f.getMinutes())
     this.state.fecha = date
 
     return (
@@ -97,7 +96,7 @@ export default class Tarchivos extends Component {
               />
               <TextField
                 label='Descripcion de Actividad Agenda'
-                style={{marginTop: '15px'}}
+                style={{ marginTop: '15px' }}
                 name='descripcion'
                 value={descripcion}
                 onChange={this.onChange}
@@ -105,16 +104,15 @@ export default class Tarchivos extends Component {
               />
               <TextField
                 label='Resultados Obtenidos'
-                style={{marginTop: '15px'}}
+                style={{ marginTop: '15px' }}
                 name='descripcion'
                 value={descripcion}
                 onChange={this.onChange}
                 required
               />
-
               <Input
                 type='file'
-                style={{marginTop: '30px'}}
+                style={{ marginTop: '30px' }}
                 onChange={this.handleImage.bind(this)}
                 required
               />
@@ -124,7 +122,7 @@ export default class Tarchivos extends Component {
                   <DoneIcon />
                 </Fab>
               </div>
-              <div className='save-btr'>
+              <div className='clo-btr'>
                 <Fab color='primary' aria-label='add' style={{ background: 'red' }} onClick={this.handleBack.bind(this)}>
                   <CloseIcon />
                 </Fab>

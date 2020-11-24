@@ -76,11 +76,17 @@ export default class Generacionm extends Component {
 
   render() {
     const { asunto, descripcion } = this.state
-
+    function addZero(i) {
+      if (i < 10) {
+        i = '0' + i
+      }
+      return i
+    }
     var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
     var f = new Date()
-    var date = (f.getDate() + '/' + meses[f.getMonth()] + '/' + f.getFullYear() + ', '+ f.getHours() + ':' + f.getMinutes())
+    var date = (f.getDate() + '/' + meses[f.getMonth()] + '/' + f.getFullYear() + ', '+ f.getHours() + ':' + addZero(f.getMinutes()))
     this.state.fecha = date
+    console.log(date)
 
     return (
       <div className='mg-conta'>
@@ -108,7 +114,6 @@ export default class Generacionm extends Component {
                 type='file'
                 style={{marginTop: '30px'}}
                 onChange={this.handleImage.bind(this)}
-                required
               />
               <progress className='progress2' value={this.state.imgp} />
               <div className='add-gb'>
@@ -116,7 +121,7 @@ export default class Generacionm extends Component {
                   <DoneIcon />
                 </Fab>
               </div>
-              <div className='save-btr'>
+              <div className='close-btn'>
                 <Fab color='primary' aria-label='add' style={{ background: 'red' }} onClick={this.handleBack.bind(this)}>
                   <CloseIcon />
                 </Fab>

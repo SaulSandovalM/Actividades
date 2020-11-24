@@ -10,11 +10,9 @@
 .content-aa {
   width: 100%;
 }
-
 .style-check-i {
   margin-top: 8px;
   margin-right: 10px;
-
 }
 .content-row {
   display: flex;
@@ -30,7 +28,6 @@
   height: 20px;
   width: 100%;
   margin-top: 14.5px;
-
 }
 .select {
   width: 50%;
@@ -203,7 +200,7 @@ width: 1000px;
   display: flex;
   flex-direction: column;
   width: 50%;
-  position: absolute;
+  position: relative;
   background: white;
   z-index: 2;
   margin-bottom: 50px;
