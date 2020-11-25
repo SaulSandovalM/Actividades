@@ -6,6 +6,7 @@ import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import precentacion from '../documentos/icons/precentacion.png'
 
 export default class Aregistradas extends Component {
   constructor (props) {
@@ -121,7 +122,7 @@ export default class Aregistradas extends Component {
               <div className='space-cal' />
               <div className='day-container'>
                 <div className='day-content'>
-                  <div>
+                  {/*<div>
                     <Modal isOpen={this.state.abierto}>
                       <ModalHeader>
                         Descripcion de la Activdad
@@ -150,7 +151,7 @@ export default class Aregistradas extends Component {
                         <Button onClick={this.abrirModal}>Cerrar</Button>
                       </ModalFooter>
                     </Modal>
-                  </div>
+                  </div>*/}
                   {this.state.actividades.map(actividades =>
                     <div key=''>
                       {actividades.fechai === lunes &&
@@ -171,6 +172,11 @@ export default class Aregistradas extends Component {
                         </div>}
                     </div>
                   )}
+                </div>
+                <div>
+                  <p>
+                  haciendo pruebas
+                  </p>
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
@@ -207,6 +213,11 @@ export default class Aregistradas extends Component {
                         </Link>}
                     </div>
                   )}
+
+
+                <div className='boxy'>Esto es una sola prueba </div>
+
+
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>

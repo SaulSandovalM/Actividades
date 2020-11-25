@@ -185,3 +185,17 @@
 .style-p-ea {
   margin: 4px;
 }
+.boxy{
+      width:300px;
+      background: green;
+      padding: 50px;
+      margin-left: auto;
+      margin-right:auto;
+}
+.card-cal-cont:hover{
+  background: red;
+  width: 198px;
+
+
+
+}

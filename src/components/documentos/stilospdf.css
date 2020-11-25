@@ -448,14 +448,16 @@ table{
 /*imagenes titulo reporte pdf*/
 .icons-reporte{
   width: 70px;
-  padding-left: 60px;
+  padding-left: 10px;
 }
 .icons-reporte2{
   width: 200px;
-  height: 70px;
-  padding-right: 60px;
+  height: 80px;
+  
+
 }
 .titulo-reporte{
+width: 1300px;
 padding-top: 60px;
 display:flex;
 justify-content:center;
