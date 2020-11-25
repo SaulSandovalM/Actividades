@@ -21,7 +21,7 @@ export default class Autorizacion extends Component {
   //       key: doc.id,
   //       doc,
   //       tipoA,
-  //       lugar,
+  //       lugar, 
   //       fechai,
   //       estatus
   //     })
@@ -118,7 +118,7 @@ export default class Autorizacion extends Component {
             </div>
           )}
         </div>*/}
-        
+
       </div>
     )
   }

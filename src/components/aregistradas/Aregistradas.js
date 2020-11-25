@@ -28,7 +28,7 @@ export default class Aregistradas extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad, imparte, lugar, horai, horaf, fechai } = doc.data()
+      const { tipoActividad, imparte, lugar, horai, horaf, fechai, objetivo } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -37,7 +37,8 @@ export default class Aregistradas extends Component {
         lugar,
         horai,
         horaf,
-        fechai
+        fechai,
+        objetivo
       })
     })
     this.setState({
@@ -168,6 +169,7 @@ export default class Aregistradas extends Component {
                             <p className='title-activity'>{actividades.tipoActividad}</p>
                             <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
                             <p className='hora-activity'>{actividades.lugar}</p>
+                            <p className='hora-activity'>{actividades.objetivo}</p>
                           </div>
                         </div>}
                     </div>
