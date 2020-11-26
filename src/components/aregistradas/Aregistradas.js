@@ -123,9 +123,12 @@ export default class Aregistradas extends Component {
               <div className='space-cal' />
               <div className='day-container'>
                 <div className='day-content'>
-                  {/*<div>
+                  <div>
+
+                    <div>
                     <Modal isOpen={this.state.abierto}>
                       <ModalHeader>
+                      <Button onClick={this.abrirModal}>Cerrar</Button>
                         Descripcion de la Activdad
                         <ModalBody>
                           <FormGroup>
@@ -140,11 +143,17 @@ export default class Aregistradas extends Component {
                             </span>
                           </FormGroup>
                           {this.state.actividades.map(actividades =>
+                            <div>
+                            {actividades.fechai === lunes &&
+                            <div>
                             <FormGroup key=''>
                               <p className='title-activity-p'>{actividades.tipoActividad}</p>
                               <p className='hora-activity-p'>{actividades.horai} - {actividades.horaf}</p>
                               <p className='hora-activity-p'>{actividades.lugar}</p>
                             </FormGroup>
+                            </div>
+                          }
+                            </div>
                           )}
                         </ModalBody>
                       </ModalHeader>
@@ -152,7 +161,9 @@ export default class Aregistradas extends Component {
                         <Button onClick={this.abrirModal}>Cerrar</Button>
                       </ModalFooter>
                     </Modal>
-                  </div>*/}
+                    </div>
+
+                  </div>
                   {this.state.actividades.map(actividades =>
                     <div key=''>
                       {actividades.fechai === lunes &&
@@ -191,6 +202,9 @@ export default class Aregistradas extends Component {
                         </Link>}
                     </div>
                   )}
+                  <p>
+                   Esto solo es una  prueba
+                  </p>
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
@@ -217,7 +231,11 @@ export default class Aregistradas extends Component {
                   )}
 
 
-                <div className='boxy'>Esto es una sola prueba </div>
+                <div>
+                  <nav className='navbar'>
+                    <ul className='navbar-nav'>Desgarre</ul>
+                  </nav>
+                </div>
 
 
                 </div>
