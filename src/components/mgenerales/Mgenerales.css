@@ -58,10 +58,17 @@
   color: grey;
 }
 
+.image2:hover{
+    -webkit-transform : scale(7.5,7.5);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 100ms;
+    -moz-transform: scale(1.12,1.12);
+    -moz-transition-timing-function: ease-out;
+    -moz-trasition-duration: 90ms;
+    
 
 
-
-
+}
 
 
 
