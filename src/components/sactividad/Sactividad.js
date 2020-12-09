@@ -245,6 +245,8 @@ export default class Sactividad extends Component {
           <div className='divtop-mg' />
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
+            <h1>Descripcion de Actividad </h1>
+            
             <div className='input-c-c'>
               <p>Convodados:</p>
               <input
