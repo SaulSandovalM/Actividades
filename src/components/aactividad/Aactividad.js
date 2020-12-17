@@ -260,16 +260,7 @@ export default class Aactividad extends Component {
                 }
                 {this.state.checkedOrganizada === false ?
                   <div className='date-cont'>
-                    <TextField
-                      label='Dirección'
-                      style={{ marginTop: '15px', width: '45%' }}
-                      name='convoca'
-                      onChange={this.onChange}
-                      InputLabelProps={{
-                        shrink: true
-                      }}
-                      required
-                    />
+
                     <TextField
                       label='Dependencia/Institución que convoca'
                       style={{ marginTop: '15px', width: '45%' }}
@@ -280,9 +271,31 @@ export default class Aactividad extends Component {
                         shrink: true
                       }}
                     />
+                    <TextField
+                      label='Dirección'
+                      style={{ marginTop: '15px', width: '45%' }}
+                      name='convoca'
+                      onChange={this.onChange}
+                      InputLabelProps={{
+                        shrink: true
+                      }}
+                      required
+                    />
                   </div>
                   :
                   <div className='date-cont'>
+
+                    <TextField
+                      label='Dependencia/Institución que convoca'
+                      style={{ marginTop: '15px', width: '45%' }}
+                      name='dependencia'
+                      onChange={this.onChange}
+                      value='Procuraduria General de Justicia del Estado de Hidalgo'
+                      required
+                      InputLabelProps={{
+                        shrink: true
+                      }}
+                    />
                     <FormControl style={{ marginTop: '15px', width: '45%' }}>
                       <InputLabel>Dirección *</InputLabel>
                       <Select
@@ -319,17 +332,6 @@ export default class Aactividad extends Component {
                         <MenuItem value='Titular del Órgano Interno de Control de la Procuraduría'>Titular del Órgano Interno de Control de la Procuraduría</MenuItem>
                       </Select>
                     </FormControl>
-                    <TextField
-                      label='Dependencia/Institución que convoca'
-                      style={{ marginTop: '15px', width: '45%' }}
-                      name='dependencia'
-                      onChange={this.onChange}
-                      value='Procuraduria General de Justicia del Estado de Hidalgo'
-                      required
-                      InputLabelProps={{
-                        shrink: true
-                      }}
-                    />
                   </div>}
                 {this.state.checkedOrganizada === false ?
                   <div className='date-cont'>
