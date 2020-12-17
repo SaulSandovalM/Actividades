@@ -187,9 +187,7 @@ export default class Aregistradas extends Component {
                   )}
                 </div>
                 <div>
-                  <p>
-                  haciendo pruebas
-                  </p>
+
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
@@ -202,9 +200,7 @@ export default class Aregistradas extends Component {
                         </Link>}
                     </div>
                   )}
-                  <p>
-                   Esto solo es una  prueba
-                  </p>
+
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
@@ -233,7 +229,7 @@ export default class Aregistradas extends Component {
 
                 <div>
                   <nav className='navbar'>
-                    <ul className='navbar-nav'>Desgarre</ul>
+
                   </nav>
                 </div>
 

@@ -16,6 +16,7 @@ export default class Sactividad extends Component {
     this.ref = firebase.firestore().collection('actividades')
 
     this.state = {
+      actividades: '',
       imgeevi: ' ',
       relevancia: '',
       resultado: '',
@@ -44,6 +45,30 @@ export default class Sactividad extends Component {
     this.handleChangeCancel = this.handleChangeCancel.bind(this)
     this.handleChangeRe = this.handleChangeRe.bind(this)
   }
+  onCollectionUpdate = (querySnapshot) => {
+    const actividades = []
+    querySnapshot.forEach((doc) => {
+      const { fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado} = doc.data()
+      actividades.push({
+        key: doc.id,
+        doc,
+        fechai,
+        fechaf,
+        convoca,
+        horai,
+        objetivo,
+        resposable,
+        imagen,
+        lugar,
+        estado
+      })
+    })
+
+    this.setState({
+      actividades
+   })
+  }
+
 
   componentDidMount () {
     const ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id)
@@ -266,17 +291,27 @@ export default class Sactividad extends Component {
             <div>
               <div className='content-row'>
 
+              <div>
 
                 <div className='input-c-c'>
-                    {this.state.actividades.map(actividades =>
-                  <p className='p-t-aa'>{actividades.horai}Quien Convoca:</p>
-                )}
+                  <p className='p-t-aa'>{/*actividades.horai*/}Quien Convoca:</p>
                 </div>
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Fecha de Inicio:</p>
 
               </div>
+              </div>
+
+              <div>
+
+              <div>
+              <div className='input-c-c'>
+                <p className='p-t-aa'>Fecha de Inicio:</p>
+              </div>
+
+              </div>
+              
+              </div>
+
+
             </div>
             <div className='content-row'>
               <div className='input-c-c'>
