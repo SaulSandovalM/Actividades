@@ -7,6 +7,7 @@ import AddIcon from '@material-ui/icons/Add'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import precentacion from '../documentos/icons/precentacion.png'
+import ReactTooltip from 'react-tooltip'
 
 export default class Aregistradas extends Component {
   constructor (props) {
@@ -73,6 +74,7 @@ export default class Aregistradas extends Component {
 
     const mes = meses2[f.getMonth()]
 
+
     return (
       <div className='mg-conta'>
         <div className='nav-ma'>
@@ -97,6 +99,7 @@ export default class Aregistradas extends Component {
                 <p className='p-dia-n'>Martes</p>
                 <p className='p-dia'>{dia2}</p>
               </div>
+
               <div className='title-week'>
                 <p className='p-dia-n'>Miercoles</p>
                 <p className='p-dia'>{dia3}</p>
@@ -189,9 +192,9 @@ export default class Aregistradas extends Component {
                 <div>
 
                 </div>
-                <div className='day-content'>
+                <div className='day-content' data-tip data-for='btnTooltip'>
                   {this.state.actividades.map(actividades =>
-                    <div key=''>
+                    <div key='' >
                       {actividades.fechai === martes &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
@@ -201,7 +204,24 @@ export default class Aregistradas extends Component {
                     </div>
                   )}
 
+                  <ReactTooltip id='btnTooltip'>
+
+                      <p>haciendo algo </p>
+
+
+
+                  </ReactTooltip>
                 </div>
+
+
+
+
+
+
+
+
+
+
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div key=''>
@@ -214,7 +234,9 @@ export default class Aregistradas extends Component {
                     </div>
                   )}
                 </div>
-                <div className='day-content'>
+
+
+                <div className='day-content card '>
                   {this.state.actividades.map(actividades =>
                     <div key=''>
                       {actividades.fechai === jueves &&

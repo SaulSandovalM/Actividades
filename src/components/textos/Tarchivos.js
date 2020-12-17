@@ -70,7 +70,7 @@ export default class Tarchivos extends Component {
   // }
 
   handleBack () {
-    this.props.history.push('/Listademensajes')
+    this.props.history.push('/Tpresentacion')
   }
 
   render () {
