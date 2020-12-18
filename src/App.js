@@ -8,7 +8,7 @@ import Mgenerales from './components/mgenerales/Mgenerales'
 import Editarm from './components/editarm/Editarm'
 import Showm from './components/editarm/Showm'
 import Aregistradas from './components/aregistradas/Aregistradas'
-import Oja from './components/aregistradas/Oja'
+
 import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
 import Ainforme from './components/aregistradas/Ainforme'
@@ -23,6 +23,11 @@ import Reporteniveldir from './components/documentos/Reporteniveldir'
 import Reportepdf from './components/documentos/Reportepdf'
 import Tarchivos from './components/textos/Tarchivos'
 import Tpresentacion from './components/textos/Tpresentacion'
+
+import Iactividad from './components/sactividad/Iactividad'
+import Edactividad from './components/sactividad/Edactividad'
+import Aregistradasdir from './components/aregistradas/Aregistradasdir'
+
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -52,6 +57,28 @@ function App (props) {
       />
       <ProtectedRoute
         exact
+        path='/Edactividad'
+        component={Edactividad}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Iactividad'
+        component={Iactividad}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Aregistradasdir'
+        component={Aregistradasdir}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+      <ProtectedRoute
+        exact
         path='/Editarmensaje/:id'
         component={Editarm}
         isAuthenticated={isAuthenticated}
@@ -61,13 +88,6 @@ function App (props) {
         exact
         path='/ActividadesRegistradas'
         component={Aregistradas}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      />
-      <ProtectedRoute
-        exact
-        path='/Oja/:id'
-        component={Oja}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
