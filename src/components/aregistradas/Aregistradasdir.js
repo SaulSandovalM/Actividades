@@ -190,7 +190,6 @@ export default class Aregistradasdir extends Component {
                   )}
                 </div>
                 <div>
-
                 </div>
                 <div className='day-content' data-tip data-for='btnTooltip'>
                   {this.state.actividades.map(actividades =>
@@ -203,25 +202,7 @@ export default class Aregistradasdir extends Component {
                         </Link>}
                     </div>
                   )}
-
-                  <ReactTooltip id='btnTooltip'>
-
-                      <p>haciendo algo </p>
-
-
-
-                  </ReactTooltip>
                 </div>
-
-
-
-
-
-
-
-
-
-
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div key=''>
@@ -247,15 +228,6 @@ export default class Aregistradasdir extends Component {
                         </Link>}
                     </div>
                   )}
-
-
-                <div>
-                  <nav className='navbar'>
-
-                  </nav>
-                </div>
-
-
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
