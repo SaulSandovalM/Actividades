@@ -188,8 +188,8 @@ width: 1000px;
 }
 /*parte boton */
 .date-cont {
-  display: flex;
-  justify-content: space-between;
+  display:flex;
+  justify-content:space-between;
 }
 .martop-dt {
   color: rgb(118, 118, 118);
@@ -228,4 +228,11 @@ width: 1000px;
   display: flex;
   justify-content: center;
   margin-top: -50px;
+}
+.conjunto-hrs{
+  padding-top: 40px;
+
+  padding-right:380px;
+
+
 }

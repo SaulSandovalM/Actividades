@@ -183,6 +183,8 @@ export default class Aactividad extends Component {
                     required
                   />
                 </div>
+
+
                 <div className='date-cont'>
                   <TextField
                     label='Duración'
@@ -191,15 +193,19 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                     required
                   />
-                  <div className='hra-hras' />
+
+                  <p className='conjunto-hrs'>hr/hra.</p>
                 </div>
+
+
                 <TextField
-                  label='Actividad'
+                  label='Nombre de la Actividad'
                   style={{ marginTop: '15px', width: '100%' }}
                   name='actividad'
                   onChange={this.onChange}
                   required
                 />
+
                 <div className='div_cancel'>
                   <TextField
                     label='Objetivo'

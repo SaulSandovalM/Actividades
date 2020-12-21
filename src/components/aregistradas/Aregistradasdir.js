@@ -28,7 +28,7 @@ export default class Aregistradasdir extends Component {
 
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((doc) => { 
       const { tipoActividad, imparte, lugar, horai, horaf, fechai, objetivo } = doc.data()
       actividades.push({
         key: doc.id,
