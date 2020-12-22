@@ -193,8 +193,9 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                     required
                   />
-
-                  <p className='conjunto-hrs'>hr/hra.</p>
+                  <div  className='conjunto-hrs'>
+                  <p>hr/hra.</p>
+                  </div>
                 </div>
 
 
@@ -221,7 +222,7 @@ export default class Aactividad extends Component {
                 </div>
                 <div className='div_cancel'>
                   <TextField
-                    label='Descripcion de Actividad en Agenda'
+                    label='Descripción de Actividad en Agenda'
                     style={{ marginTop: '15px' }}
                     name='Descripción'
                     onChange={this.onChange}
