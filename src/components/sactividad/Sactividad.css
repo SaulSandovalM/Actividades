@@ -351,8 +351,19 @@ select {
   border: 0px;
 }
 
+.desc-act{
+  width: 100%;
+}
+.desc-p{
+  font-weight: bold;
+}
+.datos-j{
+  display: flex;
+}
+.desc-cin{
+  width:50%;
 
-
+}
 
 
 

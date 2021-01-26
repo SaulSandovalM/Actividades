@@ -273,95 +273,77 @@ export default class Sactividad extends Component {
 
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container-3' onSubmit={this.onSubmit}>
-            <h1>Descripcion de Actividad </h1>
-
-            <div className='input-c-c'>
-              <p>Convodados:</p>
-              <input
-                className='style-check'
-                type='checkbox'
-                name='convocados'
-                value={convocados}
-                onChange={this.onChange}
-              />
-              <input className='style-check' type='checkbox' />
-            </div>
-            |
-            <div>
-            <div>
-              <div className='content-row'>
 
               <div>
-
-                <div className='input-c-c'>
-                  <p className='p-t-aa'>{/*actividades.horai*/}Quien Convoca:</p>
+                <div>
+                <h1>Descripcion de Actividad</h1>
                 </div>
 
+                  <div>
+
+                  <div className='desc-act datos-j'>
+                    <div>
+                    <div className='desc-cin'>
+                      <p className='desc-p'>Tipo de Actividad:</p>
+                    </div>
+                    <div div className='desc-cin'>
+                      <p> Reunion de trabajo con un taller</p>
+                    </div>
+                    </div>
+
+                  </div>
+
+                  <div className='desc-act datos-j'>
+
+                    <p className='desc-p'>Estatus(convocado):</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-p'>Quien Convoca:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                  </div>
+
+
+
+                  <div className='datos-j'>
+                    <p className='desc-p'>Fecha de Inicio:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-p'>Duracion:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                  </div>
+
+                  <div className='datos-j'>
+                    <p className='desc-p'>Estado:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-p'>Municipio:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                  </div>
+
+                  <div className='datos-j'>
+                    <p className='desc-p'>Lugar:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-p'>Interna Externa:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                  </div>
+
+                  <div className='datos-j'>
+                    <p className='desc-p'>Con quien:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-p'>Imparte:</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                  </div>
+
+                  <div>
+                    <p className='desc-p'>Descripción</p>
+                    <p> Reunion de trabajo con un taller  </p>
+                  </div>
+                  </div>
+
+                    <div>
+                    <h2>Seguimiento de Actividad</h2>
+                    </div>
               </div>
-              </div>
-
-              <div>
-
-              <div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Fecha de Inicio:</p>
-              </div>
-
-              </div>
-              
-              </div>
 
 
-            </div>
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Tipo de Actividad:</p>
 
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Fecha de Fin:</p>
-
-              </div>
-            </div>
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Estado:</p>
-
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Interna Externa:</p>
-
-              </div>
-            </div>
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Municipio:</p>
-
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Con quien:</p>
-
-              </div>
-            </div>
-            <div className='content-row'>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Lugar:</p>
-
-              </div>
-              <div className='input-c-c'>
-                <p className='p-t-aa'>Imparte:</p>
-
-              </div>
-            </div>
-            <div>
-              <p>Descripción</p>
-              <textarea cols='80' rows='3' name='desc' value={desc}
-                onChange={this.onChange} />
-            </div>
-            </div>
-
-
-              <h2>Seguimiento de Actividad</h2>
               <FormControlLabel
                 control={
                   <IOSSwitch
