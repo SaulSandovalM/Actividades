@@ -354,6 +354,11 @@ select {
 .desc-act{
   width: 100%;
 }
+.fa-desc{
+  padding-top:3%;
+  padding-left: 2%;
+
+}
 .desc-p{
   font-weight: bold;
 }
@@ -361,8 +366,10 @@ select {
   display: flex;
 }
 .desc-cin{
-  width:50%;
-
+  width:80%;
+}
+.desc-left{
+  padding-left: 2%;
 }
 
 

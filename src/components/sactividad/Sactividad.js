@@ -279,61 +279,60 @@ export default class Sactividad extends Component {
                 <h1>Descripcion de Actividad</h1>
                 </div>
 
-                  <div>
-
+                  <div className='fa-desc'>
                   <div className='desc-act datos-j'>
+
+                    <div className='desc-act datos-j'>
                     <div>
-                    <div className='desc-cin'>
                       <p className='desc-p'>Tipo de Actividad:</p>
                     </div>
-                    <div div className='desc-cin'>
+                    <div className='desc-left'>
                       <p> Reunion de trabajo con un taller</p>
                     </div>
                     </div>
-
-                  </div>
+                    </div>
 
                   <div className='desc-act datos-j'>
 
-                    <p className='desc-p'>Estatus(convocado):</p>
-                    <p> Reunion de trabajo con un taller  </p>
-                    <p className='desc-p'>Quien Convoca:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-p'>Estatus:</p>
+                    <p className='desc-left'>Convocado</p>
+                    <p className='desc-p desc-left'>Quien Convoca:</p>
+                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
                   </div>
 
 
 
                   <div className='datos-j'>
                     <p className='desc-p'>Fecha de Inicio:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
                     <p className='desc-p'>Duracion:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
                   </div>
 
                   <div className='datos-j'>
                     <p className='desc-p'>Estado:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
                     <p className='desc-p'>Municipio:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
                   </div>
 
                   <div className='datos-j'>
                     <p className='desc-p'>Lugar:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
                     <p className='desc-p'>Interna Externa:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'>Reunion de trabajo con un taller  </p>
                   </div>
 
                   <div className='datos-j'>
                     <p className='desc-p'>Con quien:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
                     <p className='desc-p'>Imparte:</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
                   </div>
 
                   <div>
                     <p className='desc-p'>Descripción</p>
-                    <p> Reunion de trabajo con un taller  </p>
+                    <p className='desc-left'>Reunion de trabajo con un taller  </p>
                   </div>
                   </div>
 
