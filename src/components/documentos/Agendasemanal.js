@@ -92,7 +92,7 @@ export default class Agendasemanal extends Component {
                       </p>
                       {this.state.actividades.map(actividades =>
                       <p className='txt-fe'>
-                      {}
+                      
                       </p>
                     )}
                     </div>

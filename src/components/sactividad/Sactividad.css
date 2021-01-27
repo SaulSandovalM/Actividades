@@ -351,27 +351,39 @@ select {
   border: 0px;
 }
 
-.desc-act{
-  width: 100%;
-}
-.fa-desc{
-  padding-top:3%;
-  padding-left: 2%;
 
+
+
+
+
+
+
+/*fer caja de descripcion */
+
+
+.desc-all{
+  padding-top:3%;
+  padding-left:2%;
+  padding-bottom:3%;
+  padding-right: 2%;
+}
+.desc-colum{
+  display: flex;
+  width:100%;
+}
+.desc-pri{
+  width:50%;
+
+}
+.tipo-act{
+  display:flex;
+}
+.desc-left{
+  padding-left:5px;
 }
 .desc-p{
   font-weight: bold;
 }
-.datos-j{
-  display: flex;
-}
-.desc-cin{
-  width:80%;
-}
-.desc-left{
-  padding-left: 2%;
-}
-
 
 
 

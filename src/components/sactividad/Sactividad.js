@@ -14,7 +14,6 @@ export default class Sactividad extends Component {
   constructor (props) {
     super(props)
     this.ref = firebase.firestore().collection('actividades')
-
     this.state = {
       actividades: '',
       imgeevi: ' ',
@@ -48,7 +47,7 @@ export default class Sactividad extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado} = doc.data()
+      const { fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado, municipios,} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -60,6 +59,7 @@ export default class Sactividad extends Component {
         resposable,
         imagen,
         lugar,
+        municipios,
         estado
       })
     })
@@ -141,7 +141,7 @@ export default class Sactividad extends Component {
   onSubmit = (e) => {
     e.preventDefault()
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
-      fechai, horai, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA, estado, internaE,
+      fechai, horai, duracion, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA, estados, internaE,
               municipio, quien, lugar, imparte, desc } = this.state
     const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
     updateRef.set({
@@ -154,12 +154,13 @@ export default class Sactividad extends Component {
       horai,
       fechaf,
       horaf,
+      duracion,
       imgeevi,
       estatus,
       convocados,
       convoca,
       tipoA,
-      estado,
+      estados,
       internaE,
       municipio,
       quien,
@@ -175,6 +176,7 @@ export default class Sactividad extends Component {
         checkedCancelada: false,
         checkedReprogramar: false,
         fechai: '',
+        actividad: '', 
         horai: '',
         fechaf: '',
         horaf: '',
@@ -183,7 +185,7 @@ export default class Sactividad extends Component {
         convocados: '',
         convoca: '',
         tipoA: '',
-        estado: '',
+        estados: '',
         internaE: '',
         municipio: '',
         quien: '',
@@ -264,7 +266,7 @@ export default class Sactividad extends Component {
 
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA,
-      estado, internaE, municipio, quien, lugar, imparte, desc } = this.state
+      estados, internaE, municipios, quien, lugar, imparte, desc } = this.state
 
     return (
       <div className='mg-conta'>
@@ -279,62 +281,80 @@ export default class Sactividad extends Component {
                 <h1>Descripcion de Actividad</h1>
                 </div>
 
-                  <div className='fa-desc'>
-                  <div className='desc-act datos-j'>
 
-                    <div className='desc-act datos-j'>
-                    <div>
-                      <p className='desc-p'>Tipo de Actividad:</p>
-                    </div>
-                    <div className='desc-left'>
-                      <p> Reunion de trabajo con un taller</p>
-                    </div>
-                    </div>
+                  <div className='desc-all' >
+                    <div className='tipo-act'>
+                        <p className='desc-p'>Tipo de Actividad:</p>
+                        <p className='desc-left'>{this.state.actividad}</p>
                     </div>
 
-                  <div className='desc-act datos-j'>
 
-                    <p className='desc-p'>Estatus:</p>
-                    <p className='desc-left'>Convocado</p>
-                    <p className='desc-p desc-left'>Quien Convoca:</p>
-                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
-                  </div>
-
-
-
-                  <div className='datos-j'>
-                    <p className='desc-p'>Fecha de Inicio:</p>
-                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
-                    <p className='desc-p'>Duracion:</p>
-                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
-                  </div>
-
-                  <div className='datos-j'>
-                    <p className='desc-p'>Estado:</p>
-                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
-                    <p className='desc-p'>Municipio:</p>
-                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
-                  </div>
-
-                  <div className='datos-j'>
-                    <p className='desc-p'>Lugar:</p>
-                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
-                    <p className='desc-p'>Interna Externa:</p>
-                    <p className='desc-left'>Reunion de trabajo con un taller  </p>
-                  </div>
-
-                  <div className='datos-j'>
-                    <p className='desc-p'>Con quien:</p>
-                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
-                    <p className='desc-p'>Imparte:</p>
-                    <p className='desc-left'> Reunion de trabajo con un taller  </p>
-                  </div>
-
+              <div className='desc-colum'>
+{/*primera parte */}
+                  <div className='desc-pri'>
                   <div>
-                    <p className='desc-p'>Descripción</p>
-                    <p className='desc-left'>Reunion de trabajo con un taller  </p>
+
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Estatus:</p>
+                      <p className='desc-left'>{this.state.estatus}Convocado</p>
+                    </div>
+
+                    </div>
+
+
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Fecha de Inicio:</p>
+                      <p className='desc-left'>{this.state.fechai}</p>
+                    </div>
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Estado:</p>
+                      <p className='desc-left'>{this.state.estados}</p>
+                    </div>
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Lugar:</p>
+                      <p className='desc-left'>{this.state.lugar}</p>
+                    </div>
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Con quien:</p>
+                      <p className='desc-left'>{this.state.lugar}</p>
+                    </div>
                   </div>
+{/* segunda parte */}
+                  <div className='desc-segu'>
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Convoca:</p>
+                      <p className='desc-left'>{this.state.convoca}Procurador: Andres Lopez Sanchez</p>
+                    </div>
+                    <div className='tipo-act'>
+                    <p className='desc-p'>Duracion:</p>
+                    <p className='desc-left'>{this.state.duracion}23 Horas</p>
+                    </div>
+                    <div className='tipo-act'>
+                    <p className='desc-p'>Municipio:</p>
+                    <p className='desc-left'>{this.state.municipios}</p>
+                    </div>
+                    <div className='tipo-act'>
+                    <p className='desc-p'>Dependencia</p>
+                    <p className='desc-left'>{this.state.dependencias}Interna</p>
+                    </div>
+                    <div className='tipo-act'>
+                    <p className='desc-p'>Responsable:</p>
+                    <p className='desc-left'>{this.state.responsable}</p>
+                    </div>
                   </div>
+              </div>
+              <div>
+              <p className='desc-p'>Descripcion</p>
+              <p className='desc-left'> {this.state.tipoActividad}Alice was beginning to get very tired of sitting by her sister on the
+                                        bank, and of having nothing to do: once or twice she had peeped into the
+                                        book her sister was reading, but it had no pictures or conversations in
+                                        it, 'and what is the use of a book,' thought Alice 'without pictures or
+                                        conversations?'</p>
+              </div>
+            </div>
+
+
+
 
                     <div>
                     <h2>Seguimiento de Actividad</h2>
@@ -457,6 +477,7 @@ export default class Sactividad extends Component {
             </form>
           </div>
         </div>
+
       </div>
     )
   }
