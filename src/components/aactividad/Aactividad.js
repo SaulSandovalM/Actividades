@@ -23,6 +23,7 @@ export default class Aactividad extends Component {
       horai: '',
       actividad: '',
       objetivo: '',
+      descripcion: '',
       checkedOrganizada: false,
       tipoActividad: '',
       convoca: 'Procuraduria General de Justicia del Estado de Hidalgo',
@@ -57,14 +58,15 @@ export default class Aactividad extends Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    const { fechai, horai, actividad, objetivo, checkedOrganizada,
+    const { fechai, horai, actividad, objetivo, descripcion, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus, duracion } = this.state
+            responsable, asistente, otro, estatus,  duracion } = this.state
     this.ref.add({
       fechai,
       horai,
       actividad,
       objetivo,
+      descripcion,
       checkedOrganizada,
       tipoActividad,
       convoca,
@@ -76,6 +78,7 @@ export default class Aactividad extends Component {
       asistente,
       otro,
       estatus,
+
       duracion
     }).then((docRef) => {
       this.setState({
@@ -83,6 +86,7 @@ export default class Aactividad extends Component {
         horai: '',
         actividad: '',
         objetivo: '',
+        descripcion: '',
         checkedOrganizada: false,
         tipoActividad: '',
         convoca: '',
@@ -94,6 +98,7 @@ export default class Aactividad extends Component {
         asistente: '',
         otro : '',
         estatus : 'En proceso',
+
         duracion : ''
       })
       this.props.history.push('/ActividadesRegistradas')
@@ -224,7 +229,7 @@ export default class Aactividad extends Component {
                   <TextField
                     label='Descripción de Actividad en Agenda'
                     style={{ marginTop: '15px' }}
-                    name='Descripción'
+                    name='descripcion'
                     onChange={this.onChange}
                     inputProps={{
                       maxLength: 300

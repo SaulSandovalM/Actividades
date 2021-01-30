@@ -19,6 +19,8 @@ export default class Sactividad extends Component {
       imgeevi: ' ',
       relevancia: '',
       resultado: '',
+      objetivo: '',
+      descripcion: '',
       evidencia: '',
       evidencias: [],
       imge: 0,
@@ -47,12 +49,13 @@ export default class Sactividad extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado, municipios,} = doc.data()
+      const { fechai, resposable, fechaf, convoca, horai, objetivo, descripcion, imagen, lugar, estado, municipios,} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
         fechai,
         fechaf,
+        descripcion,
         convoca,
         horai,
         objetivo,
@@ -83,13 +86,19 @@ export default class Sactividad extends Component {
           fechai: actividades.fechai,
           fechaf: actividades.fechaf,
           tipoA: actividades.tipoA,
-          estado: actividades.estado,
+          estados: actividades.estados,
           internaE: actividades.internaE,
-          municipio: actividades.municipio,
+          municipios: actividades.municipios,
           quien: actividades.quien,
           lugar: actividades.lugar,
           imparte: actividades.imparte,
-          desc: actividades.desc
+          desc: actividades.desc,
+          actividad: actividades.actividad,
+          duracion: actividades.duracion,
+          responsable: actividades.responsable,
+          objetivo: actividades.objetivo,
+          descripcion: actividades.descripcion
+
         })
       } else {
         console.log('No hay documento!')
@@ -142,11 +151,12 @@ export default class Sactividad extends Component {
     e.preventDefault()
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, duracion, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA, estados, internaE,
-              municipio, quien, lugar, imparte, desc } = this.state
+              municipio, quien, lugar, imparte, actividad, objetivo, descripcion, desc } = this.state
     const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
     updateRef.set({
       resultado,
       relevancia,
+      actividad,
       motivo_cancelado,
       checkedCancelada,
       checkedReprogramar,
@@ -154,6 +164,8 @@ export default class Sactividad extends Component {
       horai,
       fechaf,
       horaf,
+      objetivo,
+      descripcion,
       duracion,
       imgeevi,
       estatus,
@@ -176,7 +188,9 @@ export default class Sactividad extends Component {
         checkedCancelada: false,
         checkedReprogramar: false,
         fechai: '',
-        actividad: '', 
+        actividad: '',
+        objetivo: '',
+        descripcion: '',
         horai: '',
         fechaf: '',
         horaf: '',
@@ -266,7 +280,7 @@ export default class Sactividad extends Component {
 
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA,
-      estados, internaE, municipios, quien, lugar, imparte, desc } = this.state
+      estados, internaE, municipios, objetivo, descripcion, quien, lugar, imparte, actividad, desc } = this.state
 
     return (
       <div className='mg-conta'>
@@ -296,7 +310,7 @@ export default class Sactividad extends Component {
 
                     <div className='tipo-act'>
                       <p className='desc-p'>Estatus:</p>
-                      <p className='desc-left'>{this.state.estatus}Convocado</p>
+                      <p className='desc-left'>{this.state.estatus}</p>
                     </div>
 
                     </div>
@@ -327,7 +341,7 @@ export default class Sactividad extends Component {
                     </div>
                     <div className='tipo-act'>
                     <p className='desc-p'>Duracion:</p>
-                    <p className='desc-left'>{this.state.duracion}23 Horas</p>
+                    <p className='desc-left'>{this.state.duracion}</p>
                     </div>
                     <div className='tipo-act'>
                     <p className='desc-p'>Municipio:</p>
@@ -345,11 +359,7 @@ export default class Sactividad extends Component {
               </div>
               <div>
               <p className='desc-p'>Descripcion</p>
-              <p className='desc-left'> {this.state.tipoActividad}Alice was beginning to get very tired of sitting by her sister on the
-                                        bank, and of having nothing to do: once or twice she had peeped into the
-                                        book her sister was reading, but it had no pictures or conversations in
-                                        it, 'and what is the use of a book,' thought Alice 'without pictures or
-                                        conversations?'</p>
+              <p className='desc-left'>{this.state.descripcion}.</p>
               </div>
             </div>
 
@@ -390,7 +400,7 @@ export default class Sactividad extends Component {
                   <FormControlLabel
                     control={
                       <IOSSwitch name='checkedReprogramar'
-                        checked={this.state.checkedReprogramar}
+                        checked={this.state. checkedReprogramar}
                         onChange={this.handleChangeRe}
                       />
                     }
