@@ -28,7 +28,7 @@ import Iactividad from './components/sactividad/Iactividad'
 import Edactividad from './components/sactividad/Edactividad'
 import Aregistradasdir from './components/aregistradas/Aregistradasdir'
 
-import Informacionactividad from './components/visita/Informacionactividad'
+import Informacionactividad from './components/vistas/Informacionactividad'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
