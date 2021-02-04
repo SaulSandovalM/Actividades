@@ -78,7 +78,7 @@ export default class Aregistradas extends Component {
     return (
       <div className='mg-conta'>
         <div className='nav-ma'>
-          <h1 className='h1-ar'>{mes} 2020</h1>
+          <h1 className='h1-ar'>{mes} 2021</h1>
         </div>
         <div className='add-ar'>
           <Link to='/AgregarActividad'>
@@ -190,9 +190,8 @@ export default class Aregistradas extends Component {
                   )}
                 </div>
                 <div>
-
                 </div>
-                <div className='day-content' data-tip data-for='btnTooltip'>
+                <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div key='' >
                       {actividades.fechai === martes &&
@@ -203,25 +202,7 @@ export default class Aregistradas extends Component {
                         </Link>}
                     </div>
                   )}
-
-                  <ReactTooltip id='btnTooltip'>
-
-                      <p>haciendo algo </p>
-
-
-
-                  </ReactTooltip>
                 </div>
-
-
-
-
-
-
-
-
-
-
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div key=''>
@@ -235,8 +216,7 @@ export default class Aregistradas extends Component {
                   )}
                 </div>
 
-
-                <div className='day-content card '>
+                <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div key=''>
                       {actividades.fechai === jueves &&
@@ -247,15 +227,6 @@ export default class Aregistradas extends Component {
                         </Link>}
                     </div>
                   )}
-
-
-                <div>
-                  <nav className='navbar'>
-
-                  </nav>
-                </div>
-
-
                 </div>
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>

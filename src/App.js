@@ -28,6 +28,7 @@ import Iactividad from './components/sactividad/Iactividad'
 import Edactividad from './components/sactividad/Edactividad'
 import Aregistradasdir from './components/aregistradas/Aregistradasdir'
 
+import Informacionactividad from './components/visita/Informacionactividad'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -48,6 +49,7 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
+
       <ProtectedRoute
         exact
         path='/Listademensajes'
@@ -84,8 +86,6 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-7711491319
-
       <ProtectedRoute
         exact
         path='/ActividadesRegistradas'
@@ -198,6 +198,15 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
+      <ProtectedRoute
+        exact
+        path='/Informacionactividad'
+        component={Informacionactividad}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+
     </Switch>
   )
 }
