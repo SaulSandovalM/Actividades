@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import firebase from '../../Firebase'
-
 import './vistas.css'
 
 export default class Informacionactividad extends Component {
   constructor (props) {
     super(props)
     this.ref = firebase.firestore().collection('actividades')
-    this.unsubscribe = null
     this.state = {
-      actividades: '',
       actividades: '',
       imgeevi: ' ',
       relevancia: '',
@@ -17,11 +14,6 @@ export default class Informacionactividad extends Component {
       objetivo: '',
       descripcion: '',
       evidencia: '',
-      evidencias: [],
-      imge: 0,
-      checkedCancelada: false,
-      checkedReprogramar: false,
-      motivo_cancelado: '',
       fechai: '',
       horai: '',
       fechaf: '',
@@ -42,7 +34,7 @@ export default class Informacionactividad extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, asunto,  } = doc.data()
+      const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, asunto, convocados, tipoA, estados, internaE, municipios, quien, desc,  actividad, duracion, lugar, responsable, descripcion,   } = doc.data()
       actividades.push({
         key: doc.id,
         asunto,
@@ -52,16 +44,13 @@ export default class Informacionactividad extends Component {
         doc,
         tipoActividad,
         imparte,
-        fechai,
         fechaf,
         tipoA,
         estados,
-        convoca,
         internaE,
         municipios,
         quien,
         lugar,
-        imparte,
         desc,
         actividad,
         duracion,
@@ -69,9 +58,7 @@ export default class Informacionactividad extends Component {
         objetivo,
         descripcion,
         dependencia,
-
-        horai,
-        objetivo
+        horai
       })
     })
     this.setState({
@@ -79,7 +66,7 @@ export default class Informacionactividad extends Component {
    })
   }
   componentDidMount () {
-    const ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id. hW9YkDD4Zp3oAdYsFEt)
+    const ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id)
     ref.get().then((doc) => {
       if (doc.exists) {
         const actividades = doc.data()
@@ -102,7 +89,16 @@ export default class Informacionactividad extends Component {
           duracion: actividades.duracion,
           responsable: actividades.responsable,
           objetivo: actividades.objetivo,
-          descripcion: actividades.descripcion
+          descripcion: actividades.descripcion,
+          horai: actividades.horai,
+          dependencia : actividades.dependencia,
+          descripcion: actividades.descripcion,
+          doc: actividades.doc,
+          tipoActividad: actividades.tipoActividad,
+          quien: actividades.quien,
+          duracion: actividades.duracion,
+
+
 
         })
       } else {
