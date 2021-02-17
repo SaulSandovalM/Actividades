@@ -20,10 +20,14 @@ export default class Aregistradas extends Component {
     }
   }
 
-  abrirModal = () => {
-    this.setState({
-      abierto: !this.state.abierto
-    })
+
+  handleBack() {
+    this.props.history.push('/Reportes')
+    ;
+  }
+
+  noseFer(){
+    this.props.history.push('/ActividadesRegistradas')
   }
 
   onCollectionUpdate = (querySnapshot) => {
@@ -128,55 +132,20 @@ export default class Aregistradas extends Component {
                 <div className='day-content'>
                   <div>
 
-                    <div>
-                    <Modal isOpen={this.state.abierto}>
-                      <ModalHeader>
-                      <Button onClick={this.abrirModal}>Cerrar</Button>
-                        Descripcion de la Activdad
-                        <ModalBody>
-                          <FormGroup>
-                            <span className='material-icons'>
-                              remove_red_eye
-                            </span>
-                            <span className='material-icons'>
-                              delete
-                            </span>
-                            <span className='material-icons'>
-                              edit
-                            </span>
-                          </FormGroup>
-                          {this.state.actividades.map(actividades =>
-                            <div>
-                            {actividades.fechai === lunes &&
-                            <div>
-                            <FormGroup key=''>
-                              <p className='title-activity-p'>{actividades.tipoActividad}</p>
-                              <p className='hora-activity-p'>{actividades.horai} - {actividades.horaf}</p>
-                              <p className='hora-activity-p'>{actividades.lugar}</p>
-                            </FormGroup>
-                            </div>
-                          }
-                            </div>
-                          )}
-                        </ModalBody>
-                      </ModalHeader>
-                      <ModalFooter>
-                        <Button onClick={this.abrirModal}>Cerrar</Button>
-                      </ModalFooter>
-                    </Modal>
-                    </div>
-
                   </div>
                   {this.state.actividades.map(actividades =>
                     <div key=''>
                       {actividades.fechai === lunes &&
                         <div className='card-cal-cont'>
                           <div className='modal-vista'>
-                            <span className='material-icons' onClick={this.abrirModal} style={{ cursor: 'pointer' }}>
+                            <span className='material-icons' onClick={this.handleBack.bind(this)} style={{ cursor: 'pointer' }}>
                               remove_red_eye
                             </span>
-                            <span className='material-icons' onClick={this.abrirModal} style={{ cursor: 'pointer' }}>
+                            <span className='material-icons' onClick={this.noseFer.bind(this)}  style={{ cursor: 'pointer' }}>
                               edit
+                            </span>
+                            <span className='material-icons' onClick={this.handleBack.bind(this)}  style={{ cursor: 'pointer' }}>
+                              upgrade
                             </span>
                           </div>
                           <div>

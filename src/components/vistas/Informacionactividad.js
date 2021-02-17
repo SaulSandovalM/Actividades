@@ -6,6 +6,7 @@ export default class Informacionactividad extends Component {
   constructor (props) {
     super(props)
     this.ref = firebase.firestore().collection('actividades')
+    this.unsubscribe = null
     this.state = {
       actividades: '',
       imgeevi: ' ',
@@ -14,6 +15,11 @@ export default class Informacionactividad extends Component {
       objetivo: '',
       descripcion: '',
       evidencia: '',
+      evidencias: [],
+      imge: 0,
+      checkedCancelada: false,
+      checkedReprogramar: false,
+      motivo_cancelado: '',
       fechai: '',
       horai: '',
       fechaf: '',
