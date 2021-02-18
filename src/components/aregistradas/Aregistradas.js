@@ -26,9 +26,12 @@ export default class Aregistradas extends Component {
     ;
   }
 
-  noseFer(){
-    this.props.history.push('/ActividadesRegistradas')
+  function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
   }
+
 
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
@@ -141,12 +144,15 @@ export default class Aregistradas extends Component {
                             <span className='material-icons' onClick={this.handleBack.bind(this)} style={{ cursor: 'pointer' }}>
                               remove_red_eye
                             </span>
-                            <span className='material-icons' onClick={this.noseFer.bind(this)}  style={{ cursor: 'pointer' }}>
+                            <span className='material-icons' href='/' onClick={handleClick}  style={{ cursor: 'pointer' }}>
                               edit
                             </span>
                             <span className='material-icons' onClick={this.handleBack.bind(this)}  style={{ cursor: 'pointer' }}>
                               upgrade
                             </span>
+                            <a href="#" onClick={handleClick}>
+      Click me
+    </a>
                           </div>
                           <div>
                             <p className='title-activity'>{actividades.tipoActividad}</p>
