@@ -248,19 +248,86 @@ export default class Aactividad extends Component {
                   style={{ marginTop: '20px' }}
                 />
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
+
                   <InputLabel>Tipo Actividad *</InputLabel>
                   <Select
                     name='tipoActividad'
                     onChange={this.onChange}
                     required
                   >
-                    <MenuItem value='taller'>Taller</MenuItem>
-                    <MenuItem value='reunion'>Reunión de Trabajo</MenuItem>
-                    <MenuItem value='curso'>Curso</MenuItem>
-                    <MenuItem value='conferencia'>Conferencia</MenuItem>
-                    <MenuItem value='otro'>Otro</MenuItem>
+                    <MenuItem value='capacitacion'>Capacitación</MenuItem>
+                    <MenuItem value='vinculacion'>Vinculación </MenuItem>
+                    <MenuItem value='difusion'>Difusión</MenuItem>
+                    <MenuItem value='Gobernador'>Gobernador</MenuItem>
+
                   </Select>
                 </FormControl>
+                {this.state.capacion === 'capacitacion' &&
+                  <TextField
+                    label='Otro'
+                    style={{ marginTop: '15px', width: '100%' }}
+                    name='otro'
+                    onChange={this.onChange}
+                  />
+                }
+
+
+
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+
+                  <InputLabel>Capacitacion *</InputLabel>
+                    <Select
+                      name='capacitacion'
+                      onChange={this.onChangue}
+                      requiere
+                    >
+                    <MenuItem value='taller'>Taller</MenuItem>
+                    <MenuItem value='curso'>Curso</MenuItem>
+                    <MenuItem value='diplomado'>Diplomando</MenuItem>
+                    <MenuItem value='certificado'>Certificado</MenuItem>
+                    <MenuItem value='otra'>Otra</MenuItem>
+                    </Select>
+                </FormControl>
+
+                {this.state.capacion === 'taller' &&
+                  <TextField
+                    label='Otro'
+                    style={{ marginTop: '15px', width: '100%' }}
+                    name='otro'
+                    onChange={this.onChange}
+                  />
+                }
+
+
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Vinculacion *</InputLabel>
+                    <Select
+                      name='viculacion'
+                      onChange={this.onChangue}
+                      requiere
+                    >
+                    <MenuItem value='organo interno'>Organo Interno</MenuItem>
+                    <MenuItem value='organo externo'>Organo Externo</MenuItem>
+                    </Select>
+                </FormControl>
+
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Difusion *</InputLabel>
+                    <Select
+                      name='difusion'
+                      onChange={this.onChangue}
+                      requiere
+                    >
+                    <MenuItem value='organo interno'>Entrevista</MenuItem>
+                    <MenuItem value='organo externo'>Conferencia</MenuItem>
+                    <MenuItem value='organo externo'>Rueda de Prensa</MenuItem>
+                    <MenuItem value='organo externo'>Platica (menor a 3 horas)</MenuItem>
+                    </Select>
+                </FormControl>
+
+
+
+
                 {this.state.tipoActividad === 'otro' &&
                   <TextField
                     label='Otro'
