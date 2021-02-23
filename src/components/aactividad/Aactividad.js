@@ -39,7 +39,6 @@ export default class Aactividad extends Component {
     }
     this.handleChangeOr = this.handleChangeOr.bind(this)
   }
-
   onChange = (e) => {
     const state = this.state
     state[e.target.name] = e.target.value
