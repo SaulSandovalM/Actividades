@@ -248,89 +248,125 @@ export default class Aactividad extends Component {
                   style={{ marginTop: '20px' }}
                 />
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
-
                   <InputLabel>Tipo Actividad *</InputLabel>
                   <Select
                     name='tipoActividad'
                     onChange={this.onChange}
                     required
                   >
-                    <MenuItem value='capacitacion'>Capacitación</MenuItem>
-                    <MenuItem value='vinculacion'>Vinculación </MenuItem>
-                    <MenuItem value='difusion'>Difusión</MenuItem>
-                    <MenuItem value='Gobernador'>Gobernador</MenuItem>
-
+                    <MenuItem value='capacitacion'>Capacitacion</MenuItem>
+                    <MenuItem value='vinculacion'>Vinculacion</MenuItem>
+                    <MenuItem value='difusion'>Difusion</MenuItem>
+                    <MenuItem value='otro'>Otro</MenuItem>
                   </Select>
                 </FormControl>
-                {this.state.capacion === 'capacitacion' &&
-                  <TextField
-                    label='Otro'
-                    style={{ marginTop: '15px', width: '100%' }}
-                    name='otro'
-                    onChange={this.onChange}
-                  />
-                }
 
-
-
+                {this.state.tipoActividad === 'capacitacion' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
-
-                  <InputLabel>Capacitacion *</InputLabel>
+                  <InputLabel>Tipo de capacitacion *</InputLabel>
                     <Select
                       name='capacitacion'
-                      onChange={this.onChangue}
-                      requiere
+                      onChange={this.onChange}
+                      required
                     >
-                    <MenuItem value='taller'>Taller</MenuItem>
-                    <MenuItem value='curso'>Curso</MenuItem>
-                    <MenuItem value='diplomado'>Diplomando</MenuItem>
-                    <MenuItem value='certificado'>Certificado</MenuItem>
-                    <MenuItem value='otra'>Otra</MenuItem>
+                      <MenuItem value='taller'>Taller</MenuItem>
+                      <MenuItem value='curso'>Curso</MenuItem>
+                      <MenuItem value='diplomado'>Diplomando</MenuItem>
+                      <MenuItem value='certificado'>Certificado</MenuItem>
+                      <MenuItem value='otroc'>Otro</MenuItem>
                     </Select>
                 </FormControl>
-
-                {this.state.capacion === 'taller' &&
+                }
+                {this.state.tipoActividad.value === 'otroc' &&
                   <TextField
-                    label='Otro'
+                    label='otro'
                     style={{ marginTop: '15px', width: '100%' }}
                     name='otro'
                     onChange={this.onChange}
                   />
                 }
-
-
+                {this.state.tipoActividad === 'vinculacion' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Vinculacion *</InputLabel>
+                  <InputLabel>Tipo de Vinculacion *</InputLabel>
                     <Select
-                      name='viculacion'
-                      onChange={this.onChangue}
-                      requiere
+                      name='vinculacion'
+                      onChange={this.onChange}
+                      required
                     >
-                    <MenuItem value='organo interno'>Organo Interno</MenuItem>
-                    <MenuItem value='organo externo'>Organo Externo</MenuItem>
+                      <MenuItem value='organizmon'>Organismo Nacional</MenuItem>
+                      <MenuItem value='organismoi'>Organismo Internacional</MenuItem>
+                      <MenuItem value='otrov'>Otro</MenuItem>
                     </Select>
                 </FormControl>
+                }
 
+                {this.state.tipoActividad === 'vinculacion' &&
+                  <TextField
+                    label='vinculacion'
+                    style={{ marginTop: '15px', width: '100%' }}
+                    name='vinculacion'
+                    onChange={this.onChange}
+                  />
+                }
+
+                {this.state.tipoActividad === 'organizmon' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Difusion *</InputLabel>
+                  <InputLabel>Local/Nacional *</InputLabel>
+                    <Select
+                      name='organismon'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='local'>Local</MenuItem>
+                      <MenuItem value='republica'>Resto de la Republica</MenuItem>
+                    </Select>
+                </FormControl>
+                }
+
+                {this.state.tipoActividad === 'organizmon' &&
+                  <TextField
+                    label='organizmon'
+                    style={{ marginTop: '15px', width: '100%' }}
+                    name='organizmon'
+                    onChange={this.onChange}
+                  />
+                }
+
+
+
+
+                {this.state.tipoActividad === 'difusion' &&
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Tipo de Difusión *</InputLabel>
                     <Select
                       name='difusion'
-                      onChange={this.onChangue}
-                      requiere
+                      onChange={this.onChange}
+                      required
                     >
-                    <MenuItem value='organo interno'>Entrevista</MenuItem>
-                    <MenuItem value='organo externo'>Conferencia</MenuItem>
-                    <MenuItem value='organo externo'>Rueda de Prensa</MenuItem>
-                    <MenuItem value='organo externo'>Platica (menor a 3 horas)</MenuItem>
+                      <MenuItem value='organizmon'>Entrevista</MenuItem>
+                      <MenuItem value='organismoi'>Conferencia</MenuItem>
+                      <MenuItem value='organismoi'>Rueda de Prensa</MenuItem>
+                      <MenuItem value='organismoi'>Platica (menor a 3 horas)</MenuItem>
+                      <MenuItem value='otrod'>Otro</MenuItem>
                     </Select>
                 </FormControl>
+                }
+
+                {this.state.tipoActividad === 'difusion' &&
+                  <TextField
+                    label='difusion'
+                    style={{ marginTop: '15px', width: '100%' }}
+                    name='difusion'
+                    onChange={this.onChange}
+                  />
+                }
 
 
 
 
                 {this.state.tipoActividad === 'otro' &&
                   <TextField
-                    label='Otro'
+                    label='otro'
                     style={{ marginTop: '15px', width: '100%' }}
                     name='otro'
                     onChange={this.onChange}
