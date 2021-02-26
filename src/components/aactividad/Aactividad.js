@@ -361,9 +361,6 @@ export default class Aactividad extends Component {
                   />
                 }
 
-
-
-
                 {this.state.tipoActividad === 'otro' &&
                   <TextField
                     label='otro'
