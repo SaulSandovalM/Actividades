@@ -30,6 +30,10 @@ import Aregistradasdir from './components/aregistradas/Aregistradasdir'
 
 import Informacionactividad from './components/vistas/Informacionactividad'
 
+import Estadisgeneral from './components/Estadisticas/Estadisgeneral'
+import Estadisticasint from './components/Estadisticas/Estadisticasint'
+
+
 function App (props) {
   const { isAuthenticated, isVerifying } = props
   return (
@@ -206,8 +210,22 @@ function App (props) {
         isVerifying={isVerifying}
       />
 
-
+      <ProtectedRoute
+        exact
+        path='/Estadisgeneral'
+        component={Estadisgeneral}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Estadisticasint'
+        component={Estadisticasint}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
     </Switch>
+
   )
 }
 function mapStateToProps (state) {

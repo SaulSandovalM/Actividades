@@ -1,0 +1,25 @@
+.fader-est {
+  background: #fafafa;
+  margin-left: 256px;
+  min-height: 100%; /* altura  maxima*/
+}
+.form-content-estage {
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+.mensajesg-container-estge {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  position: relative;
+  background: white;
+  z-index: 2;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.mijo {
+  display: flex;
+  
+}

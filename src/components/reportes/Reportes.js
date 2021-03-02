@@ -69,7 +69,7 @@ export default class Reportes extends Component {
         <div className='busq'>
           <div className='imp-busq-2'>
             <div className='btn-reportes'>
-              <p className='txt-rep'>Fecha inicial:* </p>
+              <p className='txt-rep'>Numero de Semana * </p>
               <TextField
                 style={{  width: '30%', paddingLeft: '20px' }}
                 name='fecha'
