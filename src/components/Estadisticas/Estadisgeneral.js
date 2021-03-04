@@ -11,6 +11,9 @@ import Select from '@material-ui/core/Select'
 import {MDCRipple} from '@material/ripple'
 import { withStyles } from '@material-ui/core/styles'
 import ExportExcel from 'react-export-excel'
+import ReactExport from 'react-export-excel';
+
+
 
 export  default class  Estadisgeneral extends Component {
   constructor (props) {
@@ -61,10 +64,11 @@ export  default class  Estadisgeneral extends Component {
 
     const ciudadesMaspobladas = [
       {
-        cuidad: "Ciudad de Mexico",
+        lugar: "Ciudad de Mexico",
         poblacion: 564854,
         entidad:"estado",
-        pais:"México"
+        pais:"México",
+
       },
       {
         cuidad: "Ciudad dce Mexico",
@@ -92,14 +96,13 @@ export  default class  Estadisgeneral extends Component {
       },
     ];
 
-
     return (
       <div className='fader-est'>
         <div className='divtop-mg' />
           <div className='form-content-estage'>
             <form className='mensajesg-container-estge' onSubmit={this.onSubmit}>
               <div>
-              <h2>Estadistica Geneneral</h2>
+              <h2>Reporte de Estadistica Geneneral</h2>
               </div>
               <div className='datos-est'>
                 <div className='mijo'>
@@ -169,8 +172,9 @@ export  default class  Estadisgeneral extends Component {
 
                     <div className='mdc-button-estg'>
                       <ExcelFile element = {<button class="mdc-button mdc-button--raised">
-                      <span class="mdc-button__label">Generar Reporte</span>
-                    </button>} filename='Excel prueba'>
+                      <span class="mdc-button__label">Generar </span>
+                    </button>} filename='
+                    Excel prueba'>
                     <ExcelSheet data={ciudadesMaspobladas} name='Ciudades mas pobladas'>
                       <ExcelColumn label="ciudad" value="ciudad"/>
                       <ExcelColumn label="Poblacion" value="poblacion"/>
@@ -182,6 +186,7 @@ export  default class  Estadisgeneral extends Component {
                     </ExcelFile>
                     </div>
                   </div>
+
 
 
 

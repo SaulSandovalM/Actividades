@@ -65,6 +65,7 @@ export  default class  Estadisgeneral extends Component {
     const ExcelFile = ExportExcel.ExcelFile;
     const ExcelSheet = ExportExcel.ExcelSheet;
     const ExcelColumn = ExportExcel.ExcelColumn;
+    
 
     const ciudadesMaspobladas = [
       {
@@ -284,6 +285,9 @@ return (
                           <ExcelColumn label="Tipo de Actividad" value="poblacion"/>
                           <ExcelColumn label="Sub Actividad" value="entidad"/>
                           <ExcelColumn label="Numero" value="pais"/>
+                          <ExcelColumn label=" " value=" "/>
+
+
                         </ExcelSheet>
                     </ExcelFile>
                   </div>

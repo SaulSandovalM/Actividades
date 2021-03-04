@@ -310,7 +310,7 @@ export default class Aactividad extends Component {
                   />
                 }
 
-                {this.state.tipoActividad === 'organizmon' &&
+                {this.state.vinculacion === 'organizmon' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Local/Nacional *</InputLabel>
                     <Select
