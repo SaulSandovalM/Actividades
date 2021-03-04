@@ -253,10 +253,11 @@ export default class Aactividad extends Component {
                     name='tipoActividad'
                     onChange={this.onChange}
                     required
-                  >
+                   >
                     <MenuItem value='capacitacion'>Capacitacion</MenuItem>
                     <MenuItem value='vinculacion'>Vinculacion</MenuItem>
                     <MenuItem value='difusion'>Difusion</MenuItem>
+                    <MenuItem value='taller'>Gobernador</MenuItem>
                     <MenuItem value='otro'>Otro</MenuItem>
                   </Select>
                 </FormControl>
@@ -352,6 +353,7 @@ export default class Aactividad extends Component {
                 </FormControl>
                 }
 
+
                 {this.state.tipoActividad === 'difusion' &&
                   <TextField
                     label='difusion'
@@ -359,6 +361,20 @@ export default class Aactividad extends Component {
                     name='difusion'
                     onChange={this.onChange}
                   />
+                }
+                {this.state.tipoActividad === 'gobernador' &&
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Actividades con el gobernador *</InputLabel>
+                    <Select
+                      name='vinculacion'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value=' '>Actividad</MenuItem>
+                      <MenuItem value=' '>Actividad</MenuItem>
+                      <MenuItem value='otrov'>Otro</MenuItem>
+                    </Select>
+                </FormControl>
                 }
 
                 {this.state.tipoActividad === 'otro' &&

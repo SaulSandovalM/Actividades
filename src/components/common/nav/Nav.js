@@ -141,7 +141,33 @@ class Nav extends Component {
               </div>
             </Link>
           </div>*/}
+
+          <div className='navbar-left'>
+            <Link to='/Estadisgeneral' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    show_chart
+                  </span>
+                  <p className='nav-t'>Estadistica G</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className='navbar-left'>
+            <Link to='/Estadisticasint' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    square_foot
+                  </span>
+                  <p className='nav-t'>Estadistica Int</p>
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
+
         <div className='navbar-left'>
           <Link to='/Autorizacion' className='deco' onClick={this.handleLogout}>
             <div className='hover-center'>

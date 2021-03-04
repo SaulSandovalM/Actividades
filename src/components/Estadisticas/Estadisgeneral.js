@@ -8,8 +8,9 @@ import FormControl from '@material-ui/core/FormControl'
 import Switch from '@material-ui/core/Switch'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Select from '@material-ui/core/Select'
+import {MDCRipple} from '@material/ripple'
 import { withStyles } from '@material-ui/core/styles'
-
+import ExportExcel from 'react-export-excel'
 
 export  default class  Estadisgeneral extends Component {
   constructor (props) {
@@ -27,7 +28,6 @@ export  default class  Estadisgeneral extends Component {
       lugar:''
     }
   }
-
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
@@ -51,12 +51,48 @@ export  default class  Estadisgeneral extends Component {
    })
   }
 
-  
   handleChange(event) {
     this.setState({search: event.target.value});
   }
-
   render () {
+    const ExcelFile = ExportExcel.ExcelFile;
+    const ExcelSheet = ExportExcel.ExcelSheet;
+    const ExcelColumn = ExportExcel.ExcelColumn;
+
+    const ciudadesMaspobladas = [
+      {
+        cuidad: "Ciudad de Mexico",
+        poblacion: 564854,
+        entidad:"estado",
+        pais:"México"
+      },
+      {
+        cuidad: "Ciudad dce Mexico",
+        poblacion: 564854,
+        entidad:"estado",
+        pais:"México"
+      },
+      {
+        cuidad: "Ciudad dce Mexico",
+        poblacion: 564854,
+        entidad:"estado",
+        pais:"México"
+      },
+      {
+        cuidad: "Ciudad dce Mexico",
+        poblacion: 564854,
+        entidad:"estado",
+        pais:"México"
+      },
+      {
+        cuidad: "Ciudad dce Mexico",
+        poblacion: 564854,
+        entidad:"estado",
+        pais:"México"
+      },
+    ];
+
+
     return (
       <div className='fader-est'>
         <div className='divtop-mg' />
@@ -67,36 +103,51 @@ export  default class  Estadisgeneral extends Component {
               </div>
               <div className='datos-est'>
                 <div className='mijo'>
-                  <div className='date-cont'>
-                  <TextField
-                    type='date'
-
-                    style={{ width: '' }}
-                    onChange={this.onChange}
-                    name='fechain'
-                    required
-                  />
-
-                  <TextField
-                    type='date'
-                    style={{ width: '' }}
-                    onChange={this.onChange}
-                    name='fechain'
-                    required
-                  />
+                <div className='fechas-esta'>
+                  <div>
+                    <p className='txt-rep'>Fecha inicio *</p>
                   </div>
+                      <div>
+                        <TextField
+                        type='date'
+                        style={{ width: '' }}
+                        onChange={this.onChange}
+                        name='fechain'
+                        required
+                        />
+                    </div>
+                  </div>
+                  <div className='fechas-esta'>
+                    <div>
+                      <p className='txt-rep'>Fecha final *</p>
+                    </div>
+                    <div>
+                      <TextField
+                        type='date'
+                        style={{ width: '' }}
+                        onChange={this.onChange}
+                        name='fechain'
+                        required
+                      />
+                    </div>
+
+                  </div>
+                </div>
+                <div className='semana-int'>
+                  <div>
+                    <p className='txt-rep'>Numero de Semana * </p>
                   </div>
                   <div>
-                  <p className='txt-rep'>Numero de Semana * </p>
-                  <TextField
-                    style={{  width: '30%', paddingLeft: '20px' }}
-                    name='fecha'
-                    required
-                    value={this.state.search}
-                    onChange={this.handleChange.bind(this)}
-
-                  />
+                    <TextField
+                      style={{  width: '57%', paddingLeft: '20px' }}
+                      name='fecha'
+                      required
+                      value={this.state.search}
+                      onChange={this.handleChange.bind(this)}
+                    />
                   </div>
+
+                </div>
                   <div>
                     <div>
                       <FormControl style={{ marginTop: '15px', width: '100%' }}>
@@ -106,19 +157,33 @@ export  default class  Estadisgeneral extends Component {
                         onChange={this.onChange}
                         required
                         >
-                        <MenuItem value='taller'>Taller</MenuItem>
-                        <MenuItem value='taller'>Curso</MenuItem>
-                        <MenuItem value='taller'>Diplomado</MenuItem>
-                        <MenuItem value='taller'>Certificación</MenuItem>
+                        <MenuItem value='capacitacion'>Capacitacion</MenuItem>
+                        <MenuItem value='vinculacion'>Vinculacion</MenuItem>
+                        <MenuItem value='difusion'>Difusion</MenuItem>
                         <MenuItem value='taller'>Gobernador</MenuItem>
-                        <MenuItem value='taller'>Otro</MenuItem>
+                        <MenuItem value='taller'>Otras actividades</MenuItem>
                       </Select>
                       </FormControl>
                     </div>
-                    <div>
 
+
+                    <div className='mdc-button-estg'>
+                      <ExcelFile element = {<button class="mdc-button mdc-button--raised">
+                      <span class="mdc-button__label">Generar Reporte</span>
+                    </button>} filename='Excel prueba'>
+                    <ExcelSheet data={ciudadesMaspobladas} name='Ciudades mas pobladas'>
+                      <ExcelColumn label="ciudad" value="ciudad"/>
+                      <ExcelColumn label="Poblacion" value="poblacion"/>
+                      <ExcelColumn label="Entidad" value="entidad"/>
+                      <ExcelColumn label="Pais" value="pais"/>
+
+
+                    </ExcelSheet>
+                    </ExcelFile>
                     </div>
                   </div>
+
+
 
 
               </div>

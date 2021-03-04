@@ -1,3 +1,6 @@
+@use "@material/button";
+@include button.core-styles;
+
 .fader-est {
   background: #fafafa;
   margin-left: 256px;
@@ -12,14 +15,44 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 50%;
   position: relative;
   background: white;
   z-index: 2;
   margin-bottom: 50px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
+.date-cont {
+  display:flex;
+  justify-content:space-between;
+}
 .mijo {
   display: flex;
-  
+  width: 90%;
+  padding-bottom: 2%;
+  justify-content: space-between;
+
+}
+.fechas-esta{
+  display:flex;
+  justify-content: space-between;
+
+
+}
+
+.mdc-button-estg{
+  padding-top:2%;
+  display: flex;
+  justify-content: flex-end;
+}
+.titulo-int{
+  padding-bottom: 5%;
+}
+.semana-int {
+  display: flex;
+}
+.semana-int {
+  display: flex;
+
 }
