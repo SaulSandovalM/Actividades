@@ -1,6 +1,14 @@
 @use "@material/button";
 @include button.core-styles;
 
+@use "@material/checkbox";
+@use "@material/icon-button";
+@use "@material/data-table/data-table";
+
+
+
+
+
 .fader-est {
   background: #fafafa;
   margin-left: 256px;
@@ -59,4 +67,7 @@
 .columna {
   width: 500px;
   height: 500px;
+}
+.tabla-inte{
+  padding-top: 5%;
 }
