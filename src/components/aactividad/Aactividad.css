@@ -231,6 +231,5 @@ width: 1000px;
 }
 .conjunto-hrs{
   padding-top: 40px;
-  display: flex;
-  justify-content:flex-start;
+  padding-right:500px;
 }

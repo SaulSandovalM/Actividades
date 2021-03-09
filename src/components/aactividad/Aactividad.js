@@ -188,7 +188,6 @@ export default class Aactividad extends Component {
                   />
                 </div>
 
-
                 <div className='date-cont'>
                   <TextField
                     label='Duración'
@@ -224,6 +223,7 @@ export default class Aactividad extends Component {
                     required
                   />
                 </div>
+
                 <div className='div_cancel'>
                   <TextField
                     label='Descripción de Actividad en Agenda'
@@ -244,7 +244,7 @@ export default class Aactividad extends Component {
                       onChange={this.handleChangeOr}
                     />
                   }
-                  label='Actividad organizada por Procuraduría'
+                  label='Seleccione sí la actividad fue organizada por la Procuraduria'
                   style={{ marginTop: '20px' }}
                 />
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
@@ -254,17 +254,25 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                     required
                    >
-                    <MenuItem value='capacitacion'>Capacitacion</MenuItem>
-                    <MenuItem value='vinculacion'>Vinculacion</MenuItem>
-                    <MenuItem value='difusion'>Difusion</MenuItem>
-                    <MenuItem value='taller'>Gobernador</MenuItem>
+                    <MenuItem value='capacitacion'>Capacitación</MenuItem>
+                    <MenuItem value='vinculacion'>Vinculación</MenuItem>
+                    <MenuItem value='difusion'>Difusión</MenuItem>
+                    <MenuItem value='gobernador'>Gobernador</MenuItem>
                     <MenuItem value='otro'>Otro</MenuItem>
                   </Select>
                 </FormControl>
+                {this.state.tipoActividad === 'otro' &&
+                  <TextField
+                    label='Otro tipo de Actividad'
+                    style={{ marginTop: '15px', width: '100%' }}
+                    name='otro'
+                    onChange={this.onChange}
+                  />
+                }
 
                 {this.state.tipoActividad === 'capacitacion' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Tipo de capacitacion *</InputLabel>
+                  <InputLabel>Tipo de Capacitación *</InputLabel>
                     <Select
                       name='capacitacion'
                       onChange={this.onChange}
@@ -273,22 +281,23 @@ export default class Aactividad extends Component {
                       <MenuItem value='taller'>Taller</MenuItem>
                       <MenuItem value='curso'>Curso</MenuItem>
                       <MenuItem value='diplomado'>Diplomando</MenuItem>
-                      <MenuItem value='certificado'>Certificado</MenuItem>
+                      <MenuItem value='certificado'>Certificación</MenuItem>
                       <MenuItem value='otroc'>Otro</MenuItem>
                     </Select>
                 </FormControl>
                 }
-                {this.state.tipoActividad.value === 'otroc' &&
+                {this.state.capacitacion === 'otroc' &&
                   <TextField
-                    label='otro'
+                    label='Otro tipo de Actividad en Certificación'
                     style={{ marginTop: '15px', width: '100%' }}
-                    name='otro'
+                    name='otroc'
                     onChange={this.onChange}
                   />
                 }
+
                 {this.state.tipoActividad === 'vinculacion' &&
-                <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Tipo de Vinculacion *</InputLabel>
+                  <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Tipo de Vinculación *</InputLabel>
                     <Select
                       name='vinculacion'
                       onChange={this.onChange}
@@ -298,16 +307,30 @@ export default class Aactividad extends Component {
                       <MenuItem value='organismoi'>Organismo Internacional</MenuItem>
                       <MenuItem value='otrov'>Otro</MenuItem>
                     </Select>
-                </FormControl>
+                    </FormControl>
                 }
-
-                {this.state.tipoActividad === 'vinculacion' &&
+                {this.state.vinculacion === 'otrov' &&
                   <TextField
-                    label='vinculacion'
+                    label='Otro tipo de Actividad en Vinculación'
                     style={{ marginTop: '15px', width: '100%' }}
-                    name='vinculacion'
+                    name='otrov'
                     onChange={this.onChange}
                   />
+                }
+
+                {this.state.vinculacion === 'otrov' &&
+                  <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Local/Repulica/Internacional</InputLabel>
+                    <Select
+                      name='otrov'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='organizmonlo'>Local</MenuItem>
+                      <MenuItem value='organismoiro'>Resto de la Republica</MenuItem>
+                      <MenuItem value='organimointernacionalo'>Internacional</MenuItem>
+                    </Select>
+                    </FormControl>
                 }
 
                 {this.state.vinculacion === 'organizmon' &&
@@ -324,14 +347,7 @@ export default class Aactividad extends Component {
                 </FormControl>
                 }
 
-                {this.state.tipoActividad === 'organizmon' &&
-                  <TextField
-                    label='organizmon'
-                    style={{ marginTop: '15px', width: '100%' }}
-                    name='organizmon'
-                    onChange={this.onChange}
-                  />
-                }
+
 
 
 
@@ -344,47 +360,66 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='organizmon'>Entrevista</MenuItem>
-                      <MenuItem value='organismoi'>Conferencia</MenuItem>
-                      <MenuItem value='organismoi'>Rueda de Prensa</MenuItem>
-                      <MenuItem value='organismoi'>Platica (menor a 3 horas)</MenuItem>
+                      <MenuItem value='entrevista'>Entrevista</MenuItem>
+                      <MenuItem value='conferencia'>Conferencia</MenuItem>
+                      <MenuItem value='ruedap'>Rueda de Prensa</MenuItem>
+                      <MenuItem value='platica'>Platica (menor a 3 horas)</MenuItem>
                       <MenuItem value='otrod'>Otro</MenuItem>
                     </Select>
                 </FormControl>
                 }
-
-
-                {this.state.tipoActividad === 'difusion' &&
+                {this.state.difusion === 'otrod' &&
                   <TextField
-                    label='difusion'
+                    label='Otro tipo de Actividad en Difusión'
                     style={{ marginTop: '15px', width: '100%' }}
-                    name='difusion'
+                    name='otrod'
                     onChange={this.onChange}
                   />
                 }
+
+
+
+
                 {this.state.tipoActividad === 'gobernador' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Actividades con el gobernador *</InputLabel>
+                  <InputLabel>Actividades con el Gobernador *</InputLabel>
                     <Select
-                      name='vinculacion'
+                      name='gobernador'
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value=' '>Actividad</MenuItem>
-                      <MenuItem value=' '>Actividad</MenuItem>
-                      <MenuItem value='otrov'>Otro</MenuItem>
+                      <MenuItem value='act1 '>Actividad</MenuItem>
+                      <MenuItem value='act2 '>Actividad</MenuItem>
+                      <MenuItem value='otrog'>Otro</MenuItem>
                     </Select>
                 </FormControl>
                 }
-
-                {this.state.tipoActividad === 'otro' &&
+                {this.state.gobernador === 'otrog' &&
                   <TextField
-                    label='otro'
+                    label='Otro tipo de Actividad con el gobernador'
                     style={{ marginTop: '15px', width: '100%' }}
-                    name='otro'
+                    name='otrog'
                     onChange={this.onChange}
                   />
                 }
+
+
+
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Actividad Presencial/Virtual</InputLabel>
+                    <Select
+                      name='previr'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='act1 '>Actividad Presencial</MenuItem>
+                      <MenuItem value='act2 '>Actividad Virtual</MenuItem>
+                    </Select>
+                </FormControl>
+
+
+
+
                 {this.state.checkedOrganizada === false ?
                   <div className='date-cont'>
 
