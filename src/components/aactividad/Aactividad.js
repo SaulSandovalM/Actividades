@@ -254,6 +254,8 @@ export default class Aactividad extends Component {
                       <MenuItem value='Licenciatura'>Licenciatura</MenuItem>
                       <MenuItem value='Maestria'>Maestria</MenuItem>
                       <MenuItem value='Doctorado'>Doctorado</MenuItem>
+                      <MenuItem value='plibro'>Presentación de Libro</MenuItem>
+
                       <MenuItem value='otroc'>Otro</MenuItem>
                     </Select>
                 </FormControl>
@@ -358,8 +360,11 @@ export default class Aactividad extends Component {
                       required
                     >
                       <MenuItem value='entrevista'>Entrevista</MenuItem>
-                      <MenuItem value='conferencia'>Conferencia</MenuItem>
+                      <MenuItem value='conferencia'>Conferencia de Prensa</MenuItem>
                       <MenuItem value='ruedap'>Rueda de Prensa</MenuItem>
+                      <MenuItem value='Doctorado'>Doctorado</MenuItem>
+                      <MenuItem value='Doctorado'>Video Conferencias</MenuItem>
+                      <MenuItem value='Doctorado'>Sintesis Digital</MenuItem>
                       <MenuItem value='otrod'>Otro</MenuItem>
                     </Select>
                 </FormControl>

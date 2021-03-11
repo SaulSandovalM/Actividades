@@ -324,7 +324,6 @@ export default class Sactividad extends Component {
                 <h1>Seguimiento de Actividad</h1>
                 </div>
 
-
                   <div className='desc-all' >
                   <div className='sub-title-sa'>
                   <h5>Información General de la Actividad</h5>
@@ -344,7 +343,7 @@ export default class Sactividad extends Component {
                       <p className='desc-p'>Tipo de Actividad:</p>
                       <p className='desc-left'>{this.state.tipoActividad}{this.state.otro}</p>
                   </div>
-                  
+
                     <div className='tipo-act'>
                         <p className='desc-p'>Nombre deActividad:</p>x
                         <p className='desc-left'>{this.state.actividad}</p>
