@@ -42,7 +42,8 @@ export default class Aactividad extends Component {
       otrov : '',
       organismon : '',
       difusion : '',
-      otrod : ''
+      otrod : '',
+      presencial: '',
 
     }
     this.handleChangeOr = this.handleChangeOr.bind(this)
@@ -106,7 +107,8 @@ export default class Aactividad extends Component {
         otro : '',
         estatus : 'En proceso',
 
-        duracion : ''
+        duracion : '',
+        presencial : '',
       })
       this.props.history.push('/ActividadesRegistradas')
       alert('Se Envio el formular')
@@ -200,9 +202,9 @@ export default class Aactividad extends Component {
                 </div>
 
                 <FormControl style={{ marginTop: '5px', width: '100%' }}>
-                  <InputLabel>¿Actividad Presencial/Virtual</InputLabel>
+                  <InputLabel>Actividad Presencial/Virtual</InputLabel>
                     <Select
-                      name='previr'
+                      name='presencial'
                       onChange={this.onChange}
                       required
                     >

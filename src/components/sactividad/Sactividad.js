@@ -42,8 +42,7 @@ export default class Sactividad extends Component {
       lugar: '',
       imparte: '',
       desc: '',
-      checkedOrganizada: 'Organizada por la PGJH',
-      tipoActividad: '',
+      checkedOrganizada: 'si',
       otro: '',
       capacitacion:'',
       curso: '',
@@ -62,6 +61,7 @@ export default class Sactividad extends Component {
       asistent:'',
       catalogosAct: '',
       tipoActividad: '',
+      presencial: '',
 
 
 
@@ -125,7 +125,8 @@ export default class Sactividad extends Component {
           objetivo: actividades.objetivo,
           descripcion: actividades.descripcion,
           tipoActividad: actividades.tipoActividad,
-          otro: actividades.otro
+          otro: actividades.otro,
+          presencial: actividades.presencial
 
         })
       } else {
@@ -330,11 +331,22 @@ export default class Sactividad extends Component {
                   </div>
 
                   <div className='tipo-act'>
-                      <p className='desc-p'>Tipo de Actividad:</p>
-                      <p className='desc-left'>{this.state.tipoActividad}</p>
+                      <p className='desc-p'>Actividad Generada por:</p>
+                      <p className='desc-left'>{this.state.checkedOrganizada}</p>
                   </div>
+                  <div className='tipo-act'>
+                      <p className='desc-p'>Virtual/Local:</p>
+                      <p className='desc-left'>{this.state.presencial}</p>
+                  </div>
+
+
+                  <div className='tipo-act'>
+                      <p className='desc-p'>Tipo de Actividad:</p>
+                      <p className='desc-left'>{this.state.tipoActividad}{this.state.otro}</p>
+                  </div>
+                  
                     <div className='tipo-act'>
-                        <p className='desc-p'>Nombre deActividad:</p>
+                        <p className='desc-p'>Nombre deActividad:</p>x
                         <p className='desc-left'>{this.state.actividad}</p>
                     </div>
 
