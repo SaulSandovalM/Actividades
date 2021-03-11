@@ -41,7 +41,33 @@ export default class Sactividad extends Component {
       quien: '',
       lugar: '',
       imparte: '',
-      desc: ''
+      desc: '',
+      checkedOrganizada: 'Organizada por la PGJH',
+      tipoActividad: '',
+      otro: '',
+      capacitacion:'',
+      curso: '',
+      otroc:'',
+      otrocc:'',
+      vinculacion: '',
+      otrov:'',
+      organizmon:'',
+      difusion:'',
+      otrod:'',
+      aespeciales:'',
+      otrog:'',
+      actividad: '',
+      dependencia:'',
+      noasistente: '',
+      asistent:'',
+      catalogosAct: '',
+      tipoActividad: '',
+
+
+
+
+
+
     }
     this.handleChangeCancel = this.handleChangeCancel.bind(this)
     this.handleChangeRe = this.handleChangeRe.bind(this)
@@ -49,7 +75,7 @@ export default class Sactividad extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { fechai, resposable, fechaf, convoca, horai, objetivo, descripcion, imagen, lugar, estado, municipios,} = doc.data()
+      const { fechai, resposable, fechaf, convoca, horai, objetivo, descripcion, imagen, lugar, estado, municipios, } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -97,7 +123,9 @@ export default class Sactividad extends Component {
           duracion: actividades.duracion,
           responsable: actividades.responsable,
           objetivo: actividades.objetivo,
-          descripcion: actividades.descripcion
+          descripcion: actividades.descripcion,
+          tipoActividad: actividades.tipoActividad,
+          otro: actividades.otro
 
         })
       } else {
@@ -291,14 +319,22 @@ export default class Sactividad extends Component {
             <form noValidate autoComplete='off' className='mensajesg-container-3' onSubmit={this.onSubmit}>
 
               <div>
-                <div>
-                <h1>Descripcion de Actividad</h1>
+                <div className='title-sa'>
+                <h1>Seguimiento de Actividad</h1>
                 </div>
 
 
                   <div className='desc-all' >
+                  <div className='sub-title-sa'>
+                  <h5>Información General de la Actividad</h5>
+                  </div>
+
+                  <div className='tipo-act'>
+                      <p className='desc-p'>Tipo de Actividad:</p>
+                      <p className='desc-left'>{this.state.tipoActividad}</p>
+                  </div>
                     <div className='tipo-act'>
-                        <p className='desc-p'>Tipo de Actividad:</p>
+                        <p className='desc-p'>Nombre deActividad:</p>
                         <p className='desc-left'>{this.state.actividad}</p>
                     </div>
 

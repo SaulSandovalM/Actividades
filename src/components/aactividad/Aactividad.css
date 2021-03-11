@@ -233,3 +233,12 @@ width: 1000px;
   padding-top: 40px;
   padding-right:500px;
 }
+.act-dbd{
+  display: flex;
+  padding-top: 5%;
+
+}
+.switch-sa-te{
+  padding-top: 1%;
+  padding-right: 2%;
+}

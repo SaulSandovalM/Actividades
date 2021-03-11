@@ -35,7 +35,15 @@ export default class Aactividad extends Component {
       asistente: '',
       otro : '',
       estatus : 'En proceso',
-      duracion : ''
+      duracion : '',
+      capacitacion  : '',
+      otroc : '',
+      vinculacion : '',
+      otrov : '',
+      organismon : '',
+      difusion : '',
+      otrod : ''
+
     }
     this.handleChangeOr = this.handleChangeOr.bind(this)
   }
@@ -170,73 +178,13 @@ export default class Aactividad extends Component {
             <form className='mensajesg-container2' onSubmit={this.onSubmit}>
               <div style={{ height: '100%' }}>
                 <h2>Agregar Actividad</h2>
-                <p className='martop-dt'>Fecha y hora de inicio</p>
-                <div className='date-cont'>
-                  <TextField
-                    type='date'
-                    style={{ width: '45%' }}
-                    onChange={this.onChange}
-                    name='fechai'
-                    required
-                  />
-                  <TextField
-                    type='time'
-                    style={{ width: '45%' }}
-                    onChange={this.onChange}
-                    name='horai'
-                    required
-                  />
+
+                <div className='act-dbd'>
+                <div className= 'switch-sa-te'>
+                  <label>La actividad fue organizada por la PGJH?</label>
                 </div>
 
-                <div className='date-cont'>
-                  <TextField
-                    label='Duración'
-                    style={{ marginTop: '15px', width: '45%' }}
-                    name='duracion'
-                    onChange={this.onChange}
-                    required
-                  />
-                  <div  className='conjunto-hrs'>
-                  <p>hr/hra.</p>
-                  </div>
-                </div>
-
-
-                <TextField
-                  label='Nombre de la Actividad'
-                  style={{ marginTop: '15px', width: '100%' }}
-                  name='actividad'
-                  onChange={this.onChange}
-                  required
-                />
-
-                <div className='div_cancel'>
-                  <TextField
-                    label='Objetivo'
-                    style={{ marginTop: '15px' }}
-                    name='objetivo'
-                    onChange={this.onChange}
-                    inputProps={{
-                      maxLength: 300
-                    }}
-                    multiline
-                    required
-                  />
-                </div>
-
-                <div className='div_cancel'>
-                  <TextField
-                    label='Descripción de Actividad en Agenda'
-                    style={{ marginTop: '15px' }}
-                    name='descripcion'
-                    onChange={this.onChange}
-                    inputProps={{
-                      maxLength: 300
-                    }}
-                    multiline
-                    required
-                  />
-                </div>
+                <div>
                 <FormControlLabel
                   control={
                     <IOSSwitch name='checkedOrganizada'
@@ -244,9 +192,25 @@ export default class Aactividad extends Component {
                       onChange={this.handleChangeOr}
                     />
                   }
-                  label='Seleccione sí la actividad fue organizada por la Procuraduria'
-                  style={{ marginTop: '20px' }}
+                  label='Si'
+                  style={{ marginTop: '0px' }}
                 />
+                </div>
+
+                </div>
+
+                <FormControl style={{ marginTop: '5px', width: '100%' }}>
+                  <InputLabel>¿Actividad Presencial/Virtual</InputLabel>
+                    <Select
+                      name='previr'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='act1 '>Actividad Presencial</MenuItem>
+                      <MenuItem value='act2 '>Actividad Virtual</MenuItem>
+                    </Select>
+                </FormControl>
+
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo Actividad *</InputLabel>
                   <Select
@@ -257,8 +221,10 @@ export default class Aactividad extends Component {
                     <MenuItem value='capacitacion'>Capacitación</MenuItem>
                     <MenuItem value='vinculacion'>Vinculación</MenuItem>
                     <MenuItem value='difusion'>Difusión</MenuItem>
-                    <MenuItem value='gobernador'>Gobernador</MenuItem>
+                    <MenuItem value='aespeciales'>Especiales</MenuItem>
+                    <MenuItem value='Doctorado'>Reunion de Trabajo</MenuItem>
                     <MenuItem value='otro'>Otro</MenuItem>
+
                   </Select>
                 </FormControl>
                 {this.state.tipoActividad === 'otro' &&
@@ -279,9 +245,13 @@ export default class Aactividad extends Component {
                       required
                     >
                       <MenuItem value='taller'>Taller</MenuItem>
+                      <MenuItem value='platica'>Plática (menor a 3 horas)</MenuItem>
                       <MenuItem value='curso'>Curso</MenuItem>
                       <MenuItem value='diplomado'>Diplomando</MenuItem>
                       <MenuItem value='certificado'>Certificación</MenuItem>
+                      <MenuItem value='Licenciatura'>Licenciatura</MenuItem>
+                      <MenuItem value='Maestria'>Maestria</MenuItem>
+                      <MenuItem value='Doctorado'>Doctorado</MenuItem>
                       <MenuItem value='otroc'>Otro</MenuItem>
                     </Select>
                 </FormControl>
@@ -291,6 +261,31 @@ export default class Aactividad extends Component {
                     label='Otro tipo de Actividad en Certificación'
                     style={{ marginTop: '15px', width: '100%' }}
                     name='otroc'
+                    onChange={this.onChange}
+                  />
+                }
+
+                {this.state.capacitacion === 'curso' &&
+                  <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Tipo de Curso *</InputLabel>
+                    <Select
+                      name='curso'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value=''>Curso</MenuItem>
+                      <MenuItem value=''>Curso en Linea</MenuItem>
+                      <MenuItem value=''>Formación Inicial</MenuItem>
+                      <MenuItem value=''>Curso Actualización</MenuItem>
+                      <MenuItem value='otrocc'>Otro</MenuItem>
+                    </Select>
+                    </FormControl>
+                }
+                {this.state.curso === 'otrocc' &&
+                  <TextField
+                    label='Otro tipo de Actividad en Curso'
+                    style={{ marginTop: '15px', width: '100%' }}
+                    name='otrocc'
                     onChange={this.onChange}
                   />
                 }
@@ -363,7 +358,6 @@ export default class Aactividad extends Component {
                       <MenuItem value='entrevista'>Entrevista</MenuItem>
                       <MenuItem value='conferencia'>Conferencia</MenuItem>
                       <MenuItem value='ruedap'>Rueda de Prensa</MenuItem>
-                      <MenuItem value='platica'>Platica (menor a 3 horas)</MenuItem>
                       <MenuItem value='otrod'>Otro</MenuItem>
                     </Select>
                 </FormControl>
@@ -380,16 +374,16 @@ export default class Aactividad extends Component {
 
 
 
-                {this.state.tipoActividad === 'gobernador' &&
+                {this.state.tipoActividad === 'aespeciales' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Actividades con el Gobernador *</InputLabel>
+                  <InputLabel>Actividades Especiales *</InputLabel>
                     <Select
-                      name='gobernador'
+                      name='aespeciales'
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='act1 '>Actividad</MenuItem>
-                      <MenuItem value='act2 '>Actividad</MenuItem>
+                      <MenuItem value='act1 '>Actividades Oficiales</MenuItem>
+                      <MenuItem value='act2 '>Actividad estra Oficiales</MenuItem>
                       <MenuItem value='otrog'>Otro</MenuItem>
                     </Select>
                 </FormControl>
@@ -403,19 +397,77 @@ export default class Aactividad extends Component {
                   />
                 }
 
+                <TextField
+                  label='Nombre de la Actividad'
+                  style={{ marginTop: '15px', width: '100%' }}
+                  name='actividad'
+                  onChange={this.onChange}
+                  required
+                />
+
+                <div className='div_cancel'>
+                  <TextField
+                    label='Objetivo'
+                    style={{ marginTop: '15px' }}
+                    name='objetivo'
+                    onChange={this.onChange}
+                    inputProps={{
+                      maxLength: 300
+                    }}
+                    multiline
+                    required
+                  />
+                </div>
+
+                <div className='div_cancel'>
+                  <TextField
+                    label='Descripción de Actividad en Agenda'
+                    style={{ marginTop: '15px' }}
+                    name='descripcion'
+                    onChange={this.onChange}
+                    inputProps={{
+                      maxLength: 300
+                    }}
+                    multiline
+                    required
+                  />
+                </div>
 
 
-                <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Actividad Presencial/Virtual</InputLabel>
-                    <Select
-                      name='previr'
-                      onChange={this.onChange}
-                      required
-                    >
-                      <MenuItem value='act1 '>Actividad Presencial</MenuItem>
-                      <MenuItem value='act2 '>Actividad Virtual</MenuItem>
-                    </Select>
-                </FormControl>
+
+                <p className='martop-dt'>Fecha y hora de inicio</p>
+                <div className='date-cont'>
+                  <TextField
+                    type='date'
+                    style={{ width: '45%' }}
+                    onChange={this.onChange}
+                    name='fechai'
+                    required
+                  />
+                  <TextField
+                    type='time'
+                    style={{ width: '45%' }}
+                    onChange={this.onChange}
+                    name='horai'
+                    required
+                  />
+                </div>
+
+                <div className='date-cont'>
+                  <TextField
+                    label='Duración'
+                    style={{ marginTop: '15px', width: '45%' }}
+                    name='duracion'
+                    onChange={this.onChange}
+                    required
+                  />
+                  <div  className='conjunto-hrs'>
+                  <p>hr/hra.</p>
+                  </div>
+                </div>
+
+
+
 
 
 
@@ -2190,6 +2242,17 @@ export default class Aactividad extends Component {
                   label='Asistentes'
                   style={{ marginTop: '15px', width: '100%' }}
                   name='asistente'
+                  onChange={this.onChange}
+                  inputProps={{
+                    maxLength: 300
+                  }}
+                  multiline
+                  required
+                />
+                <TextField
+                  label='Numero de Asistentes'
+                  style={{ marginTop: '15px', width: '100%' }}
+                  name='noasistente'
                   onChange={this.onChange}
                   inputProps={{
                     maxLength: 300
