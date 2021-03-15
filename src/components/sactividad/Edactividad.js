@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
 import './Sactividad.css'
-export default class Edactividad extends Component {
-  render () {
-    return (
-      <div>
-        <div>
-        <h1>su va y ven su vasu va y ven su vasu va y ven su vasu va y su va y ven su vasu va y ven su vasu va y ven su vasu va y su va y ven su vasu va y ven su vasu va y ven su vasu va y su va y ven su vasu va y ven su vasu va y ven su vasu va y su va y ven su vasu va y ven su vasu va y ven su vasu va y ven su vasu va y ven su vasu va y ven su vasu va y ven su vasu va y ven su va
-        </h1>
-          <p>Datos</p>
-        </div>
-      </div>
-    )
-  }
+import firebase from '../../Firebase'
+export default class Eactividad extends Component {
+
+
+      render () {
+        return (
+          <div className='mg-conta'>
+            <div>
+              <div className='divtop-mg'/>
+                <div className='form-content-gm'>
+                  <form noValidate autoComplete='off' className='mensajesg-container-3' onSubmit={this.onSubmit}>
+
+                  </form>
+                </div>
+
+            </div>
+          </div>
+        )
+      }
 }

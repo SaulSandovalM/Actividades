@@ -42,7 +42,7 @@ export default class Sactividad extends Component {
       lugar: '',
       imparte: '',
       desc: '',
-      checkedOrganizada: 'si',
+      checkedOrganizada: '',
       otro: '',
       capacitacion:'',
       curso: '',
@@ -62,9 +62,7 @@ export default class Sactividad extends Component {
       catalogosAct: '',
       tipoActividad: '',
       presencial: '',
-
-
-
+      dInvitada: ''
 
 
 
@@ -75,7 +73,7 @@ export default class Sactividad extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { fechai, resposable, fechaf, convoca, horai, objetivo, descripcion, imagen, lugar, estado, municipios, } = doc.data()
+      const { fechai, resposable, fechaf, convoca, horai, objetivo, descripcion, imagen, lugar, estado, municipios, presencial } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -89,7 +87,8 @@ export default class Sactividad extends Component {
         imagen,
         lugar,
         municipios,
-        estado
+        estado,
+        presencial
       })
     })
 
@@ -126,7 +125,9 @@ export default class Sactividad extends Component {
           descripcion: actividades.descripcion,
           tipoActividad: actividades.tipoActividad,
           otro: actividades.otro,
-          presencial: actividades.presencial
+          presencial: actividades.presencial,
+          horai: actividades.horai,
+          dInvitada: actividades.dInvitada
 
         })
       } else {
@@ -180,7 +181,7 @@ export default class Sactividad extends Component {
     e.preventDefault()
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, duracion, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA, estados, internaE,
-              municipio, quien, lugar, imparte, actividad, objetivo, descripcion, desc } = this.state
+              municipio, quien, lugar, imparte, actividad, objetivo, descripcion, desc, presencial } = this.state
     const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
     updateRef.set({
       resultado,
@@ -207,7 +208,9 @@ export default class Sactividad extends Component {
       quien,
       lugar,
       imparte,
-      desc
+      desc,
+      presencial
+
     }).then((docRef) => {
       this.setState({
         resultado: '',
@@ -234,7 +237,9 @@ export default class Sactividad extends Component {
         quien: '',
         lugar: '',
         imparte: '',
-        desc: ''
+        desc: '',
+        presencial: '',
+        dInvitada:''
       })
       this.props.history.push('/ActividadesRegistradas')
     })
@@ -309,7 +314,7 @@ export default class Sactividad extends Component {
 
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA,
-      estados, internaE, municipios, objetivo, descripcion, quien, lugar, imparte, actividad, desc } = this.state
+      estados, internaE, municipios, objetivo, descripcion, quien, lugar, imparte, actividad, desc, presencial } = this.state
 
     return (
       <div className='mg-conta'>
@@ -348,6 +353,30 @@ export default class Sactividad extends Component {
                         <p className='desc-p'>Nombre deActividad:</p>x
                         <p className='desc-left'>{this.state.actividad}</p>
                     </div>
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Objetivo:</p>
+                      <p className='desc-left'>{this.state.objetivo}</p>
+                    </div>
+
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Fecha de Inicio:</p>
+                      <p className='desc-left'>{this.state.fechai}</p>
+                    </div>
+
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Hora de Cita:</p>
+                      <p className='desc-left'>{this.state.horai}</p>
+                    </div>
+                    <div className='tipo-act'>
+                    <p className='desc-p'>Duracion:</p>
+                    <p className='desc-left'>{this.state.duracion}</p>
+                    </div>
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Dependencia</p>
+                      <p className='desc-left'>{this.state.dependencias}</p>
+                    </div>
+
+
 
 
               <div className='desc-colum'>
@@ -363,45 +392,55 @@ export default class Sactividad extends Component {
                     </div>
 
 
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Fecha de Inicio:</p>
-                      <p className='desc-left'>{this.state.fechai}</p>
-                    </div>
+
                     <div className='tipo-act'>
                       <p className='desc-p'>Estado:</p>
                       <p className='desc-left'>{this.state.estados}</p>
-                    </div>
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Lugar:</p>
-                      <p className='desc-left'>{this.state.lugar}</p>
-                    </div>
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Con quien:</p>
-                      <p className='desc-left'>{this.state.lugar}</p>
-                    </div>
-                  </div>
-{/* segunda parte */}
-                  <div className='desc-segu'>
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Convoca:</p>
-                      <p className='desc-left'>{this.state.convoca}Procurador: Andres Lopez Sanchez</p>
-                    </div>
-                    <div className='tipo-act'>
-                    <p className='desc-p'>Duracion:</p>
-                    <p className='desc-left'>{this.state.duracion}</p>
                     </div>
                     <div className='tipo-act'>
                     <p className='desc-p'>Municipio:</p>
                     <p className='desc-left'>{this.state.municipios}</p>
                     </div>
                     <div className='tipo-act'>
-                    <p className='desc-p'>Dependencia</p>
-                    <p className='desc-left'>{this.state.dependencias}Interna</p>
+                      <p className='desc-p'>Lugar:</p>
+                      <p className='desc-left'>{this.state.lugar}</p>
+                    </div>
+                    <div className='tipo-act'>
+                    <p className='desc-p'>Municipio:</p>
+                    <p className='desc-left'>{this.state.municipios}</p>
+                    </div>
+
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Con quien:</p>
+                      <p className='desc-left'>{this.state.lugar}</p>
+                    </div>
+
+                    <div className='tipo-act'>
+                    <p className='desc-p'>Dirección (ubicacion) : </p>
+                    <p className='desc-left'>{this.state.dInvitada}</p>
+                    </div>
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Convoca:</p>
+                      <p className='desc-left'>{this.state.convoca}</p>
                     </div>
                     <div className='tipo-act'>
                     <p className='desc-p'>Responsable:</p>
                     <p className='desc-left'>{this.state.responsable}</p>
                     </div>
+
+
+                  </div>
+{/* segunda parte */}
+                  <div className='desc-segu'>
+
+
+
+
+
+
+
+
+
                   </div>
               </div>
               <div>

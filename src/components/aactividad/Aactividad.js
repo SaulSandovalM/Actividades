@@ -43,7 +43,7 @@ export default class Aactividad extends Component {
       organismon : '',
       difusion : '',
       otrod : '',
-      presencial: '',
+      presencial: ''
 
     }
     this.handleChangeOr = this.handleChangeOr.bind(this)
@@ -68,7 +68,7 @@ export default class Aactividad extends Component {
     e.preventDefault()
     const { fechai, horai, actividad, objetivo, descripcion, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus,  duracion } = this.state
+            responsable, asistente, otro, estatus,  duracion, presencial } = this.state
     this.ref.add({
       fechai,
       horai,
@@ -86,8 +86,9 @@ export default class Aactividad extends Component {
       asistente,
       otro,
       estatus,
-
+      presencial,
       duracion
+
     }).then((docRef) => {
       this.setState({
         fechai: '',
@@ -208,8 +209,8 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='act1 '>Actividad Presencial</MenuItem>
-                      <MenuItem value='act2 '>Actividad Virtual</MenuItem>
+                      <MenuItem value='Presencial'>Actividad Presencial</MenuItem>
+                      <MenuItem value='Virtual '>Actividad Virtual</MenuItem>
                     </Select>
                 </FormControl>
 
@@ -304,7 +305,7 @@ export default class Aactividad extends Component {
                     >
                       <MenuItem value='organizmon'>Organismo Nacional</MenuItem>
                       <MenuItem value='organismoi'>Organismo Internacional</MenuItem>
-                      <MenuItem value='otrov'>Otro</MenuItem>
+                      <MenuItem value='otrocc'>Otro</MenuItem>
                     </Select>
                     </FormControl>
                 }
@@ -321,7 +322,7 @@ export default class Aactividad extends Component {
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Local/Repulica/Internacional</InputLabel>
                     <Select
-                      name='otrov'
+                      name='locRepInt'
                       onChange={this.onChange}
                       required
                     >
@@ -493,9 +494,9 @@ export default class Aactividad extends Component {
                       }}
                     />
                     <TextField
-                      label='Dirección'
+                      label='Dirección Invitada'
                       style={{ marginTop: '15px', width: '45%' }}
-                      name='convoca'
+                      name='dInvitada'
                       onChange={this.onChange}
                       InputLabelProps={{
                         shrink: true
@@ -551,6 +552,8 @@ export default class Aactividad extends Component {
                         <MenuItem value='Fiscal especializado en Delitos de Corrupción'>Fiscal especializado en Delitos de Corrupción</MenuItem>
                         <MenuItem value='Director general de Relaciones Nacionales e Internacionales'>Director general de Relaciones Nacionales e Internacionales</MenuItem>
                         <MenuItem value='Titular del Órgano Interno de Control de la Procuraduría'>Titular del Órgano Interno de Control de la Procuraduría</MenuItem>
+                          <MenuItem value='Titular del Órgano Interno de Control de la Procuraduría'>LIC. LAURA ISABEL TORRES VILLEGAS
+</MenuItem>
                       </Select>
                     </FormControl>
                   </div>}
@@ -2246,7 +2249,7 @@ export default class Aactividad extends Component {
                   />
                 }
                 <TextField
-                  label='Asistentes'
+                  label='Representante'
                   style={{ marginTop: '15px', width: '100%' }}
                   name='asistente'
                   onChange={this.onChange}
