@@ -65,6 +65,7 @@ export default class Aregistradas extends Component {
   render () {
     const filterData = this.state.actividades.filter(
       (actividades) => {
+
         return  actividades.lugar.indexOf(this.state.search) !== -1
       }
     )

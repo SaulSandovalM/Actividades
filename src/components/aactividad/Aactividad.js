@@ -197,6 +197,7 @@ export default class Aactividad extends Component {
                   }
                   label='Si'
                   style={{ marginTop: '0px' }}
+                  name= 'PGjj'
                 />
                 </div>
 

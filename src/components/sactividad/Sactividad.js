@@ -330,133 +330,122 @@ export default class Sactividad extends Component {
                 </div>
 
                   <div className='desc-all' >
-                  <div className='sub-title-sa'>
-                  <h5>Información General de la Actividad</h5>
+
+
+                    <div className='mensajesg-container-3sa'>
+                      <p>Informacion de la Actividad</p>
+                    <div className='combo'>
+
+                        <div className='combo-1'>
+
+                          <div className='tipo-act'>
+                              <p className='desc-p'>Actividad Generada por:</p>
+                              <p className='desc-left'>{this.state.checkedOrganizada} procuraduria Gerneral de justicia de hidalgo</p>
+                          </div>
+
+                          <div className='tipo-act'>
+                              <p className='desc-p'>Tipo de Actividad:</p>
+                              <p className='desc-left'>{this.state.tipoActividad}{this.state.otro}</p>
+                          </div>
+
+
+                          <div className='tipo-act'>
+                            <p className='desc-p'>Objetivo:</p>
+                            <p className='desc-left'>{this.state.objetivo}</p>
+                          </div>
+
+                          <div className='tipo-act'>
+                            <p className='desc-p'>Hora de Cita:</p>
+                            <p className='desc-left'>{this.state.horai}</p>
+                          </div>
+
+                          <div className='tipo-act'>
+                            <p className='desc-p'>Dependencia</p>
+                            <p className='desc-left'>{this.state.dependencias}</p>
+                          </div>
+
+                          <div className='tipo-act'>
+                            <p className='desc-p'>Estado:</p>
+                            <p className='desc-left'>{this.state.estados}</p>
+                          </div>
+
+                          <div className='tipo-act'>
+                            <p className='desc-p'>Lugar:</p>
+                            <p className='desc-left'>{this.state.lugar}</p>
+                          </div>
+
+                          <div className='tipo-act'>
+                          <p className='desc-p'>Dirección (ubicacion) : </p>
+                          <p className='desc-left'>{this.state.dInvitada}</p>
+                          </div>
+
+                          <div className='tipo-act'>
+                            <p className='desc-p'>Responsable:</p>
+                            <p className='desc-left'>{this.state.responsable}</p>
+                          </div>
+
+                      </div>
+                      <div className='combo-2'>
+                        <div className='tipo-act'>
+                            <p className='desc-p'>Virtual/Local:</p>
+                            <p className='desc-left'>{this.state.virpre}</p>
+                        </div>
+
+                        <div className='tipo-act'>
+                            <p className='desc-p'>Sub Tipo-Actividad:</p>
+                            <p className='desc-left'>{this.state.tipoActividad}{this.state.otro}</p>
+                        </div>
+
+                        <div className='tipo-act'>
+                            <p className='desc-p'>Nombre deActividad:</p>x
+                            <p className='desc-left'>{this.state.actividad}</p>
+                        </div>
+
+
+                        <div className='tipo-act'>
+                          <p className='desc-p'>Fecha de Inicio:</p>
+                          <p className='desc-left'>{this.state.fechai}</p>
+                        </div>
+
+                        <div className='tipo-act'>
+                          <p className='desc-p'>Duracion:</p>
+                          <p className='desc-left'>{this.state.duracion}</p>
+                        </div>
+
+                        <div className='tipo-act'>
+                          <p className='desc-p'>Estatus:</p>
+                          <p className='desc-left'>{this.state.estatus}</p>
+                        </div>
+
+                        <div className='tipo-act'>
+                        <p className='desc-p'>Municipio:</p>
+                        <p className='desc-left'>{this.state.municipios}</p>
+                        </div>
+
+                        <div className='tipo-act'>
+                          <p className='desc-p'>Lugar:</p>
+                          <p className='desc-left'>{this.state.lugar}</p>
+                        </div>
+
+                        <div className='tipo-act'>
+                          <p className='desc-p'>Convoca:</p>
+                          <p className='desc-left'>{this.state.convoca}</p>
+                        </div>
+
+
+
+                      </div>
+                    </div>
+                    <div>
+                      <p className='desc-p'>Descripcion</p>
+                      <p className='desc-left'>{this.state.descripcion}.</p>
+                    </div>
                   </div>
-
-                  <div className='tipo-act'>
-                      <p className='desc-p'>Actividad Generada por:</p>
-                      <p className='desc-left'>{this.state.checkedOrganizada}</p>
-                  </div>
-                  <div className='tipo-act'>
-                      <p className='desc-p'>Virtual/Local:</p>
-                      <p className='desc-left'>{this.state.presencial}</p>
-                  </div>
-
-
-                  <div className='tipo-act'>
-                      <p className='desc-p'>Tipo de Actividad:</p>
-                      <p className='desc-left'>{this.state.tipoActividad}{this.state.otro}</p>
-                  </div>
-
-                    <div className='tipo-act'>
-                        <p className='desc-p'>Nombre deActividad:</p>x
-                        <p className='desc-left'>{this.state.actividad}</p>
-                    </div>
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Objetivo:</p>
-                      <p className='desc-left'>{this.state.objetivo}</p>
-                    </div>
-
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Fecha de Inicio:</p>
-                      <p className='desc-left'>{this.state.fechai}</p>
-                    </div>
-
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Hora de Cita:</p>
-                      <p className='desc-left'>{this.state.horai}</p>
-                    </div>
-                    <div className='tipo-act'>
-                    <p className='desc-p'>Duracion:</p>
-                    <p className='desc-left'>{this.state.duracion}</p>
-                    </div>
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Dependencia</p>
-                      <p className='desc-left'>{this.state.dependencias}</p>
-                    </div>
-
-
-
-
-              <div className='desc-colum'>
-{/*primera parte */}
-                  <div className='desc-pri'>
-                  <div>
-
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Estatus:</p>
-                      <p className='desc-left'>{this.state.estatus}</p>
-                    </div>
-
-                    </div>
-
-
-
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Estado:</p>
-                      <p className='desc-left'>{this.state.estados}</p>
-                    </div>
-                    <div className='tipo-act'>
-                    <p className='desc-p'>Municipio:</p>
-                    <p className='desc-left'>{this.state.municipios}</p>
-                    </div>
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Lugar:</p>
-                      <p className='desc-left'>{this.state.lugar}</p>
-                    </div>
-                    <div className='tipo-act'>
-                    <p className='desc-p'>Municipio:</p>
-                    <p className='desc-left'>{this.state.municipios}</p>
-                    </div>
-
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Con quien:</p>
-                      <p className='desc-left'>{this.state.lugar}</p>
-                    </div>
-
-                    <div className='tipo-act'>
-                    <p className='desc-p'>Dirección (ubicacion) : </p>
-                    <p className='desc-left'>{this.state.dInvitada}</p>
-                    </div>
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Convoca:</p>
-                      <p className='desc-left'>{this.state.convoca}</p>
-                    </div>
-                    <div className='tipo-act'>
-                    <p className='desc-p'>Responsable:</p>
-                    <p className='desc-left'>{this.state.responsable}</p>
-                    </div>
-
-
-                  </div>
-{/* segunda parte */}
-                  <div className='desc-segu'>
-
-
-
-
-
-
-
-
-
-                  </div>
+               </div>
               </div>
               <div>
-              <p className='desc-p'>Descripcion</p>
-              <p className='desc-left'>{this.state.descripcion}.</p>
+              <h2>Seguimiento de Actividad</h2>
               </div>
-            </div>
-
-
-
-
-                    <div>
-                    <h2>Seguimiento de Actividad</h2>
-                    </div>
-              </div>
-
 
 
               <FormControlLabel

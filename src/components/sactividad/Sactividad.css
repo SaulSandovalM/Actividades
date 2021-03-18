@@ -83,8 +83,20 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 65%;
   position: absolute;
+  background: white;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.mensajesg-container-3sa {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
   background: white;
   z-index: 2;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -92,6 +104,9 @@
 .sub-title-sa{
 padding-top: 1%;
 padding-bottom: 2%;
+display: flex;
+justify-content: center;
+
 
 }
 
@@ -101,8 +116,10 @@ padding-bottom: 2%;
 }
 
 
-
-
+.combo{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 
