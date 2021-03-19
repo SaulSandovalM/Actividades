@@ -207,7 +207,7 @@ export default class Aactividad extends Component {
                   <InputLabel>Actividad Presencial/Virtual</InputLabel>
                     <Select
                       name='virpre'
-                      
+
                       onChange={this.onChange}
                       required
                     >
@@ -254,9 +254,9 @@ export default class Aactividad extends Component {
                       <MenuItem value='curso'>Curso</MenuItem>
                       <MenuItem value='diplomado'>Diplomando</MenuItem>
                       <MenuItem value='certificado'>Certificación</MenuItem>
-                      <MenuItem value='Licenciatura'>Licenciatura</MenuItem>
-                      <MenuItem value='Maestria'>Maestria</MenuItem>
-                      <MenuItem value='Doctorado'>Doctorado</MenuItem>
+                      <MenuItem value='licenciatu0ra'>Licenciatura</MenuItem>
+                      <MenuItem value='maestria'>Maestria</MenuItem>
+                      <MenuItem value='doctorado'>Doctorado</MenuItem>
                       <MenuItem value='plibro'>Presentación de Libro</MenuItem>
 
                       <MenuItem value='otroc'>Otro</MenuItem>
@@ -350,10 +350,6 @@ export default class Aactividad extends Component {
                 }
 
 
-
-
-
-
                 {this.state.tipoActividad === 'difusion' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Difusión *</InputLabel>
@@ -365,9 +361,9 @@ export default class Aactividad extends Component {
                       <MenuItem value='entrevista'>Entrevista</MenuItem>
                       <MenuItem value='conferencia'>Conferencia de Prensa</MenuItem>
                       <MenuItem value='ruedap'>Rueda de Prensa</MenuItem>
-                      <MenuItem value='Doctorado'>Doctorado</MenuItem>
-                      <MenuItem value='Doctorado'>Video Conferencias</MenuItem>
-                      <MenuItem value='Doctorado'>Sintesis Digital</MenuItem>
+                      <MenuItem value='doctorado'>Doctorado</MenuItem>
+                      <MenuItem value='viconferencia'>Video Conferencias</MenuItem>
+                      <MenuItem value='sintesisd'>Sintesis Digital</MenuItem>
                       <MenuItem value='otrod'>Otro</MenuItem>
                     </Select>
                 </FormControl>
@@ -380,10 +376,6 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                   />
                 }
-
-
-
-
                 {this.state.tipoActividad === 'aespeciales' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Actividades Especiales *</InputLabel>

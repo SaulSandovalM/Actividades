@@ -363,17 +363,16 @@ export default class Sactividad extends Component {
                               <p className='desc-p'>Actividad Generada por:</p>
                               <p className='desc-left'>{this.state.checkedOrganizada} procuraduria Gerneral de justicia de hidalgo</p>
                           </div>
-
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
-                              <p className='desc-left'>{this.state.tipoActividad}
+                              <p className='desc-left'>{this.state.tipoActividad} {this.state.otro}
                               </p>
                           </div>
 
 
                           <div className='tipo-act'>
-                            <p className='desc-p'>Objetivo:</p>
-                            <p className='desc-left'>{this.state.objetivo}</p>
+                              <p className='desc-p'>Virtual/Local:</p>
+                              <p className='desc-left'>{this.state.virpre}</p>
                           </div>
 
                           <div className='tipo-act'>
@@ -381,10 +380,7 @@ export default class Sactividad extends Component {
                             <p className='desc-left'>{this.state.horai}</p>
                           </div>
 
-                          <div className='tipo-act'>
-                            <p className='desc-p'>Dependencia</p>
-                            <p className='desc-left'>{this.state.dependencias}</p>
-                          </div>
+
 
                           <div className='tipo-act'>
                             <p className='desc-p'>Estado:</p>
@@ -396,27 +392,32 @@ export default class Sactividad extends Component {
                             <p className='desc-left'>{this.state.lugar}</p>
                           </div>
 
-                          <div className='tipo-act'>
-                          <p className='desc-p'>Dirección (ubicacion) : </p>
-                          <p className='desc-left'>{this.state.dInvitada}</p>
-                          </div>
+
 
                           <div className='tipo-act'>
                             <p className='desc-p'>Responsable:</p>
                             <p className='desc-left'>{this.state.responsable}</p>
                           </div>
 
+                          <div className='tipo-act'>
+                            <p className='desc-p'>Representante:</p>
+                            <p className='desc-left'>{this.state.asistente}</p>
+                          </div>
+
                       </div>
                       <div className='combo-2'>
-                        <div className='tipo-act'>
-                            <p className='desc-p'>Virtual/Local:</p>
-                            <p className='desc-left'>{this.state.virpre}</p>
-                        </div>
 
-                        <div className='tipo-act'>
-                            <p className='desc-p'>Sub Tipo-Actividad:</p>
-                            <p className='desc-left'>{this.state.capacitacion} {this.state.curso}</p>
-                        </div>
+                      <div className='tipo-act'>
+                        <p className='desc-p'>Convoca:</p>
+                        <p className='desc-left'>{this.state.convoca}</p>
+                      </div>
+
+                      <div className='tipo-act'>
+                          <p className='desc-p'>Sub Tipo-Actividad:</p>
+                          <p className='desc-left'>{this.state.capacitacion} {this.state.curso}</p>
+                      </div>
+
+
 
                         <div className='tipo-act'>
                             <p className='desc-p'>Nombre deActividad:</p>
@@ -440,20 +441,14 @@ export default class Sactividad extends Component {
                         </div>
 
                         <div className='tipo-act'>
-                        <p className='desc-p'>Municipio:</p>
+                          <p className='desc-p'>Municipio:</p>
+                          <p className='desc-left'>{this.state.municipios}</p>
+                        </div>
+
+                        <div className='tipo-act'>
+                        <p className='desc-p'>No. Asistentes:</p>
                         <p className='desc-left'>{this.state.municipios}</p>
                         </div>
-
-                        <div className='tipo-act'>
-                          <p className='desc-p'>Lugar:</p>
-                          <p className='desc-left'>{this.state.lugar}</p>
-                        </div>
-
-                        <div className='tipo-act'>
-                          <p className='desc-p'>Convoca:</p>
-                          <p className='desc-left'>{this.state.convoca}</p>
-                        </div>
-
 
 
                       </div>
@@ -461,6 +456,10 @@ export default class Sactividad extends Component {
                     <div>
                       <p className='desc-p'>Descripcion</p>
                       <p className='desc-left'>{this.state.descripcion}.</p>
+                    </div>
+                    <div>
+                      <p className='desc-p'>Objetivo:</p>
+                      <p className='desc-left'>{this.state.objetivo}</p>
                     </div>
                   </div>
                </div>
