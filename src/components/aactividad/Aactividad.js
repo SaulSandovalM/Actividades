@@ -206,12 +206,13 @@ export default class Aactividad extends Component {
                 <FormControl style={{ marginTop: '5px', width: '100%' }}>
                   <InputLabel>Actividad Presencial/Virtual</InputLabel>
                     <Select
-                      name='presencial'
+                      name='virpre'
+                      
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='Presencial'>Actividad Presencial</MenuItem>
-                      <MenuItem value='Virtual '>Actividad Virtual</MenuItem>
+                      <MenuItem value='presencial'>Actividad Presencial</MenuItem>
+                      <MenuItem value='virtual'>Actividad Virtual</MenuItem>
                     </Select>
                 </FormControl>
 
@@ -226,7 +227,7 @@ export default class Aactividad extends Component {
                     <MenuItem value='vinculacion'>Vinculación</MenuItem>
                     <MenuItem value='difusion'>Difusión</MenuItem>
                     <MenuItem value='aespeciales'>Especiales</MenuItem>
-                    <MenuItem value='Doctorado'>Reunion de Trabajo</MenuItem>
+                    <MenuItem value='reuniont'>Reunion de Trabajo</MenuItem>
                     <MenuItem value='otro'>Otro</MenuItem>
 
                   </Select>
@@ -264,7 +265,7 @@ export default class Aactividad extends Component {
                 }
                 {this.state.capacitacion === 'otroc' &&
                   <TextField
-                    label='Otro tipo de Actividad en Certificación'
+                    label='Otro tipo de Actividad en Capacitación'
                     style={{ marginTop: '15px', width: '100%' }}
                     name='otroc'
                     onChange={this.onChange}
@@ -279,10 +280,10 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value=''>Curso</MenuItem>
-                      <MenuItem value=''>Curso en Linea</MenuItem>
-                      <MenuItem value=''>Formación Inicial</MenuItem>
-                      <MenuItem value=''>Curso Actualización</MenuItem>
+                      <MenuItem value='cursoi'>Curso</MenuItem>
+                      <MenuItem value='cursol'>Curso en Linea</MenuItem>
+                      <MenuItem value='formai'>Formación Inicial</MenuItem>
+                      <MenuItem value='cursoa'>Curso Actualización</MenuItem>
                       <MenuItem value='otrocc'>Otro</MenuItem>
                     </Select>
                     </FormControl>
@@ -304,8 +305,8 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='organizmon'>Organismo Nacional</MenuItem>
-                      <MenuItem value='organismoi'>Organismo Internacional</MenuItem>
+                      <MenuItem value='organizmon'>Organismos Nacionales</MenuItem>
+                      <MenuItem value='organismoi'>Organismos Internacionales</MenuItem>
                       <MenuItem value='otrocc'>Otro</MenuItem>
                     </Select>
                     </FormControl>

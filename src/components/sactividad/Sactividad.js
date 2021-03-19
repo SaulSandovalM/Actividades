@@ -62,7 +62,17 @@ export default class Sactividad extends Component {
       catalogosAct: '',
       tipoActividad: '',
       presencial: '',
-      dInvitada: ''
+      dInvitada: '',
+      subtipoa:'',
+      capacitacion:'',
+      vinculacion:'',
+      difusion:'',
+      aespeciales:'',
+      reuniont:'',
+      virpre:''
+
+
+
 
 
 
@@ -127,7 +137,18 @@ export default class Sactividad extends Component {
           otro: actividades.otro,
           presencial: actividades.presencial,
           horai: actividades.horai,
-          dInvitada: actividades.dInvitada
+          dInvitada: actividades.dInvitada,
+          subtipoa: actividades.subtipoa,
+          otroc: actividades.otroc,
+          otrocc: actividades.otrocc,
+          capacitacion: actividades.capacitacion,
+          vinculacion: actividades.vinculacion,
+          difusion: actividades.difusion,
+          aespeciales: actividades.aespeciales,
+          reuniont: actividades.reuniont,
+          virpre: actividades.virpre
+
+
 
         })
       } else {
@@ -345,7 +366,8 @@ export default class Sactividad extends Component {
 
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
-                              <p className='desc-left'>{this.state.tipoActividad}{this.state.otro}</p>
+                              <p className='desc-left'>{this.state.tipoActividad}
+                              </p>
                           </div>
 
 
@@ -393,11 +415,11 @@ export default class Sactividad extends Component {
 
                         <div className='tipo-act'>
                             <p className='desc-p'>Sub Tipo-Actividad:</p>
-                            <p className='desc-left'>{this.state.tipoActividad}{this.state.otro}</p>
+                            <p className='desc-left'>{this.state.capacitacion} {this.state.curso}</p>
                         </div>
 
                         <div className='tipo-act'>
-                            <p className='desc-p'>Nombre deActividad:</p>x
+                            <p className='desc-p'>Nombre deActividad:</p>
                             <p className='desc-left'>{this.state.actividad}</p>
                         </div>
 
