@@ -57,8 +57,7 @@ export default class Sactividad extends Component {
       otrog:'',
       actividad: '',
       dependencia:'',
-      noasistente: '',
-      asistent:'',
+      asistente:'',
       catalogosAct: '',
       tipoActividad: '',
       presencial: '',
@@ -69,7 +68,15 @@ export default class Sactividad extends Component {
       difusion:'',
       aespeciales:'',
       reuniont:'',
-      virpre:''
+      virpre:'',
+      noasistente:'',
+      representante: '',
+      otrod:'',
+      otrog:'',
+      difusion:'',
+      aespeciales:'',
+      organismon:'',
+      localRepint:''
 
 
 
@@ -146,7 +153,16 @@ export default class Sactividad extends Component {
           difusion: actividades.difusion,
           aespeciales: actividades.aespeciales,
           reuniont: actividades.reuniont,
-          virpre: actividades.virpre
+          virpre: actividades.virpre,
+          noasistente: actividades.noasistente,
+          asistente: actividades.asistente,
+          otrod: actividades.otrod,
+          otrog: actividades.otrog,
+          difusion: actividades.difusion,
+          aespeciales: actividades.aespeciales,
+          organismon: actividades.organismon,
+          localRepint: actividades.localRepint
+
 
 
 
@@ -202,7 +218,7 @@ export default class Sactividad extends Component {
     e.preventDefault()
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, duracion, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA, estados, internaE,
-              municipio, quien, lugar, imparte, actividad, objetivo, descripcion, desc, presencial } = this.state
+              municipio, quien, lugar, imparte, actividad, objetivo, descripcion, desc } = this.state
     const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
     updateRef.set({
       resultado,
@@ -229,8 +245,8 @@ export default class Sactividad extends Component {
       quien,
       lugar,
       imparte,
-      desc,
-      presencial
+      desc
+
 
     }).then((docRef) => {
       this.setState({
@@ -335,7 +351,7 @@ export default class Sactividad extends Component {
 
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA,
-      estados, internaE, municipios, objetivo, descripcion, quien, lugar, imparte, actividad, desc, presencial } = this.state
+      estados, internaE, municipios, objetivo, descripcion, quien, lugar, imparte, actividad, desc} = this.state
 
     return (
       <div className='mg-conta'>
@@ -365,7 +381,7 @@ export default class Sactividad extends Component {
                           </div>
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
-                              <p className='desc-left'>{this.state.tipoActividad} {this.state.otro}
+                              <p className='desc-left'>{this.state.tipoActividad} {this.state.otro} {this.state.otroc} {this.state.otrocc} {this.state.otrov} {this.state.otrod} {this.state.otrog} 
                               </p>
                           </div>
 
@@ -414,7 +430,7 @@ export default class Sactividad extends Component {
 
                       <div className='tipo-act'>
                           <p className='desc-p'>Sub Tipo-Actividad:</p>
-                          <p className='desc-left'>{this.state.capacitacion} {this.state.curso}</p>
+                          <p className='desc-left'>{this.state.capacitacion} {this.state.curso} {this.state.organismon} {this.state.localRepint} {this.state.aespeciales} </p>
                       </div>
 
 
@@ -447,18 +463,18 @@ export default class Sactividad extends Component {
 
                         <div className='tipo-act'>
                         <p className='desc-p'>No. Asistentes:</p>
-                        <p className='desc-left'>{this.state.municipios}</p>
+                        <p className='desc-left'>{this.state.noasistente}</p>
                         </div>
 
 
                       </div>
                     </div>
                     <div>
-                      <p className='desc-p'>Descripcion</p>
+                      <p className='desc-p'>Descripcion de la Actividad </p>
                       <p className='desc-left'>{this.state.descripcion}.</p>
                     </div>
                     <div>
-                      <p className='desc-p'>Objetivo:</p>
+                      <p className='desc-p'>Objetivo de la Actividad:</p>
                       <p className='desc-left'>{this.state.objetivo}</p>
                     </div>
                   </div>

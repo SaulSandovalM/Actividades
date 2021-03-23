@@ -33,17 +33,29 @@ export default class Aactividad extends Component {
       lugar: '',
       responsable: '',
       asistente: '',
-      otro : '',
       estatus : 'En proceso',
       duracion : '',
       capacitacion  : '',
       otroc : '',
       vinculacion : '',
-      otrov : '',
       organismon : '',
       difusion : '',
+      presencial: '',
+      virpre: '',
+      nosistente: '',
+      curso:'',
+      capacitacion:'',
+      difusion:'',
+      aespaciales:'',
+      otro : '',
+      otroc: '',
+      otrov : '',
       otrod : '',
-      presencial: ''
+      otrcc:'',
+      otrog:''
+
+
+
 
     }
     this.handleChangeOr = this.handleChangeOr.bind(this)
@@ -68,7 +80,7 @@ export default class Aactividad extends Component {
     e.preventDefault()
     const { fechai, horai, actividad, objetivo, descripcion, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus,  duracion, presencial } = this.state
+            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso,  } = this.state
     this.ref.add({
       fechai,
       horai,
@@ -86,8 +98,11 @@ export default class Aactividad extends Component {
       asistente,
       otro,
       estatus,
-      presencial,
-      duracion
+      virpre,
+      duracion,
+      noasistente,
+      curso,
+      otroc
 
     }).then((docRef) => {
       this.setState({
@@ -109,7 +124,7 @@ export default class Aactividad extends Component {
         estatus : 'En proceso',
 
         duracion : '',
-        presencial : '',
+
       })
       this.props.history.push('/ActividadesRegistradas')
       alert('Se Envio el formular')
@@ -258,6 +273,9 @@ export default class Aactividad extends Component {
                       <MenuItem value='maestria'>Maestria</MenuItem>
                       <MenuItem value='doctorado'>Doctorado</MenuItem>
                       <MenuItem value='plibro'>Presentación de Libro</MenuItem>
+                      <MenuItem value='seminario'>Seminario</MenuItem>
+                      <MenuItem value='simpocio'>Simponcio (Simposium)</MenuItem>
+                      <MenuItem value='foro'>Foro</MenuItem>
 
                       <MenuItem value='otroc'>Otro</MenuItem>
                     </Select>
@@ -324,7 +342,7 @@ export default class Aactividad extends Component {
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Local/Repulica/Internacional</InputLabel>
                     <Select
-                      name='locRepInt'
+                      name='organismon'
                       onChange={this.onChange}
                       required
                     >
@@ -339,7 +357,7 @@ export default class Aactividad extends Component {
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Local/Nacional *</InputLabel>
                     <Select
-                      name='organismon'
+                      name='locRepInt'
                       onChange={this.onChange}
                       required
                     >
@@ -384,8 +402,8 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='act1 '>Actividades Oficiales</MenuItem>
-                      <MenuItem value='act2 '>Actividad estra Oficiales</MenuItem>
+                      <MenuItem value='actoficial '>Actividades Oficiales</MenuItem>
+                      <MenuItem value='actiofi '>Actividad Extra Oficiales</MenuItem>
                       <MenuItem value='otrog'>Otro</MenuItem>
                     </Select>
                 </FormControl>
