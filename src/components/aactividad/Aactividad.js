@@ -52,7 +52,10 @@ export default class Aactividad extends Component {
       otrov : '',
       otrod : '',
       otrcc:'',
-      otrog:''
+      otrog:'',
+      aespeciales: '',
+      locRepInt: '',
+      aespeciales:'',
 
 
 
@@ -80,7 +83,8 @@ export default class Aactividad extends Component {
     e.preventDefault()
     const { fechai, horai, actividad, objetivo, descripcion, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso,  } = this.state
+            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso, capacitacion,
+            vinculacion, locRepInt, aespeciales} = this.state
     this.ref.add({
       fechai,
       horai,
@@ -102,7 +106,11 @@ export default class Aactividad extends Component {
       duracion,
       noasistente,
       curso,
-      otroc
+      otroc,
+      capacitacion,
+      vinculacion,
+      locRepInt,
+      aespeciales,
 
     }).then((docRef) => {
       this.setState({
@@ -124,6 +132,7 @@ export default class Aactividad extends Component {
         estatus : 'En proceso',
 
         duracion : '',
+
 
       })
       this.props.history.push('/ActividadesRegistradas')
@@ -285,7 +294,7 @@ export default class Aactividad extends Component {
                   <TextField
                     label='Otro tipo de Actividad en Capacitación'
                     style={{ marginTop: '15px', width: '100%' }}
-                    name='otroc'
+                    name='otro'
                     onChange={this.onChange}
                   />
                 }
@@ -325,7 +334,7 @@ export default class Aactividad extends Component {
                     >
                       <MenuItem value='organizmon'>Organismos Nacionales</MenuItem>
                       <MenuItem value='organismoi'>Organismos Internacionales</MenuItem>
-                      <MenuItem value='otrocc'>Otro</MenuItem>
+                      <MenuItem value='otrov'>Otro</MenuItem>
                     </Select>
                     </FormControl>
                 }

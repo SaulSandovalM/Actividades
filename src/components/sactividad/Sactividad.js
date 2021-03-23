@@ -63,7 +63,6 @@ export default class Sactividad extends Component {
       presencial: '',
       dInvitada: '',
       subtipoa:'',
-      capacitacion:'',
       vinculacion:'',
       difusion:'',
       aespeciales:'',
@@ -76,7 +75,9 @@ export default class Sactividad extends Component {
       difusion:'',
       aespeciales:'',
       organismon:'',
-      localRepint:''
+      locRepInt:'',
+      aespeciales:'',
+      aespeciales:'',
 
 
 
@@ -151,7 +152,6 @@ export default class Sactividad extends Component {
           capacitacion: actividades.capacitacion,
           vinculacion: actividades.vinculacion,
           difusion: actividades.difusion,
-          aespeciales: actividades.aespeciales,
           reuniont: actividades.reuniont,
           virpre: actividades.virpre,
           noasistente: actividades.noasistente,
@@ -161,7 +161,9 @@ export default class Sactividad extends Component {
           difusion: actividades.difusion,
           aespeciales: actividades.aespeciales,
           organismon: actividades.organismon,
-          localRepint: actividades.localRepint
+          locRepInt: actividades.locRepIntt,
+          aespeciales: actividades.aespeciales,
+
 
 
 
@@ -381,8 +383,7 @@ export default class Sactividad extends Component {
                           </div>
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
-                              <p className='desc-left'>{this.state.tipoActividad} {this.state.otro} {this.state.otroc} {this.state.otrocc} {this.state.otrov} {this.state.otrod} {this.state.otrog} 
-                              </p>
+                              <p className='desc-left'>{this.state.tipoActividad} {this.state.otro} {this.state.otroc} {this.state.otrov} {this.state.otrod} </p>
                           </div>
 
 
@@ -430,7 +431,7 @@ export default class Sactividad extends Component {
 
                       <div className='tipo-act'>
                           <p className='desc-p'>Sub Tipo-Actividad:</p>
-                          <p className='desc-left'>{this.state.capacitacion} {this.state.curso} {this.state.organismon} {this.state.localRepint} {this.state.aespeciales} </p>
+                          <p className='desc-left'>{this.state.capacitacion} {this.state.otroc} {this.state.vinculacion} {this.state.otrov} {this.state.locRepint} {this.state.aespeciales} {this.state.otrog}</p>
                       </div>
 
 
