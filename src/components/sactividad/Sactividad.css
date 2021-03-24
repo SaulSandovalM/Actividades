@@ -79,8 +79,8 @@
 }
 
 .mensajesg-container-3 {
-  height: 100%;
-  padding: 20px;
+  height: auto;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   width: 65%;
@@ -112,7 +112,8 @@ justify-content: center;
 
 .title-sa {
   display: flex;
-  justify-content: center;
+  justify-content:left;
+  padding-left: 12.5%;
 }
 
 
@@ -120,7 +121,13 @@ justify-content: center;
   display: flex;
   justify-content: space-between;
 }
-
+.txt-info{
+  padding-bottom:2%;
+  font-weight:bold;
+}
+.info-sa{
+  font-weight: bold;
+}
 
 
 
@@ -385,7 +392,7 @@ select {
 
 
 .desc-all{
-  padding-top:3%;
+  padding-top:1%;
   padding-left:2%;
   padding-bottom:3%;
   padding-right: 2%;

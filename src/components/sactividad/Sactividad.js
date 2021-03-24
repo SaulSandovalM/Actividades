@@ -8,6 +8,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import Input from '@material-ui/core/Input'
 import Switch from '@material-ui/core/Switch'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { withStyles } from '@material-ui/core/styles'
 
 export default class Sactividad extends Component {
@@ -358,21 +359,26 @@ export default class Sactividad extends Component {
     return (
       <div className='mg-conta'>
         <div>
-          <div className='divtop-mg' />
+          <div className='divtop-mg'>
+            <div className='title-sa'>
+            <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
+              <DoneIcon />
+            </Fab>
+              <h1>Seguimiento de Actividad</h1>
+            </div>
+           </div>
 
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container-3' onSubmit={this.onSubmit}>
 
               <div>
-                <div className='title-sa'>
-                <h1>Seguimiento de Actividad</h1>
-                </div>
+
 
                   <div className='desc-all' >
 
-
+                    <div className='txt-info'><h4 className='info-sa'>Informacion de la Actividad</h4></div>
                     <div className='mensajesg-container-3sa'>
-                      <p>Informacion de la Actividad</p>
+
                     <div className='combo'>
 
                         <div className='combo-1'>
@@ -482,7 +488,7 @@ export default class Sactividad extends Component {
                </div>
               </div>
               <div>
-              <h2>Seguimiento de Actividad</h2>
+              <p>Deseas cancelar la Actividad</p>
               </div>
 
 
