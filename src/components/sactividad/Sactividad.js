@@ -8,8 +8,8 @@ import CloseIcon from '@material-ui/icons/Close'
 import Input from '@material-ui/core/Input'
 import Switch from '@material-ui/core/Switch'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { withStyles } from '@material-ui/core/styles'
+
 
 export default class Sactividad extends Component {
   constructor (props) {
@@ -361,15 +361,105 @@ export default class Sactividad extends Component {
         <div>
           <div className='divtop-mg'>
             <div className='title-sa'>
-            <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
-              <DoneIcon />
-            </Fab>
-              <h1>Seguimiento de Actividad</h1>
+
+
+
+            <span class="material-icons" style={{ fontSize:60 }} >
+              done_all
+            </span>
+
+
+
+              <h1 style={{ paddingLeft:'1%' }}>Seguimiento de Actividad</h1>
+
             </div>
            </div>
 
           <div className='form-content-gm'>
             <form noValidate autoComplete='off' className='mensajesg-container-3' onSubmit={this.onSubmit}>
+
+            <div className='desc-all' >
+
+              <div className='txt-info'><h4 className='info-sa'>Deseas cancelar la Actividad</h4></div>
+            <div className='mensajesg-container-3sa'>
+
+
+
+
+
+
+            <FormControlLabel
+              control={
+                <IOSSwitch
+                  name='checkedCancelada'
+                  checked={this.state.checkedCancelada}
+                  onChange={this.handleChangeCancel}
+                />
+              }
+              label='¿Cancelar Actividad?'
+              style={{ marginTop: '20px' }}
+            />
+            {this.state.checkedCancelada === true &&
+              <div className='div_cancel'>
+                <TextField
+                  label='Motivo de cancelación'
+                  style={{marginTop: '15px'}}
+                  name='motivo_cancelado'
+                  onChange={this.onChange}
+                  inputProps={{
+                    maxLength: 300,
+                  }}
+                  multiline
+                  required
+                />
+                <FormControlLabel
+                  control={
+                    <IOSSwitch name='checkedReprogramar'
+                      checked={this.state. checkedReprogramar}
+                      onChange={this.handleChangeRe}
+                    />
+                  }
+                  label='Re-programar'
+                  style={{ marginTop: '20px' }}
+                />
+              </div>
+            }
+            {this.state.checkedReprogramar === true &&
+              <div>
+                <p className='martop-dt'>Fecha y hora de inicio *</p>
+                <div className='date-cont'>
+                  <TextField
+                    type='date'
+                    style={{ width: '45%' }}
+                    name='fechai'
+                    onChange={this.onChange}
+                    required
+                  />
+                  <TextField
+                    type='time'
+                    style={{ width: '45%' }}
+                    name='horai'
+                    onChange={this.onChange}
+                    required
+                  />
+                </div>
+                <div className='date-cont'>
+                  <TextField
+                    label='Duración'
+                    style={{ marginTop: '15px', width: '45%' }}
+                    name='duracion'
+                    onChange={this.onChange}
+                    required
+                  />
+                  <div className='hra-hras'>
+                    <p>hr/hrs</p>
+                  </div>
+                </div>
+              </div>
+            }
+
+            </div>
+            </div>
 
               <div>
 
@@ -485,114 +575,57 @@ export default class Sactividad extends Component {
                       <p className='desc-left'>{this.state.objetivo}</p>
                     </div>
                   </div>
+
+
+
                </div>
-              </div>
-              <div>
-              <p>Deseas cancelar la Actividad</p>
+
               </div>
 
+              <div className='desc-all' >
 
-              <FormControlLabel
-                control={
-                  <IOSSwitch
-                    name='checkedCancelada'
-                    checked={this.state.checkedCancelada}
-                    onChange={this.handleChangeCancel}
-                  />
+                <div className='txt-info'><h4 className='info-sa'>Agrega los campos del Seguimiento de la Actividad</h4></div>
+                <div className='mensajesg-container-3sa'>
+                <TextField
+                  label='Descripcion de Actividad'
+                  style={{ marginTop: '15px' }}
+                  name='resultado'
+                  onChange={this.onChange}
+                  inputProps={{
+                    maxLength: 150
+                  }}
+                  multiline
+                  required
+                />
+                <TextField
+                  label='Relevancia'
+                  style={{ marginTop: '15px' }}
+                  name='relevancia'
+                  onChange={this.onChange}
+                  inputProps={{
+                    maxLength: 300
+                  }}
+                  multiline
+                  required
+                />
+
+
+                {this.state.checkedCancelada === false &&
+                  <div>
+                    <Input
+                      type='file'
+                      style={{marginTop: '30px'}}
+                      onChange={this.handleImage.bind(this)}
+                    />
+                    <progress className='progress2' value={this.state.imge} />
+                  </div>
                 }
-                label='¿Cancelar Actividad?'
-                style={{ marginTop: '20px' }}
-              />
-              {this.state.checkedCancelada === true &&
-                <div className='div_cancel'>
-                  <TextField
-                    label='Motivo de cancelación'
-                    style={{marginTop: '15px'}}
-                    name='motivo_cancelado'
-                    onChange={this.onChange}
-                    inputProps={{
-                      maxLength: 300,
-                    }}
-                    multiline
-                    required
-                  />
-                  <FormControlLabel
-                    control={
-                      <IOSSwitch name='checkedReprogramar'
-                        checked={this.state. checkedReprogramar}
-                        onChange={this.handleChangeRe}
-                      />
-                    }
-                    label='Re-programar'
-                    style={{ marginTop: '20px' }}
-                  />
                 </div>
-              }
-              {this.state.checkedReprogramar === true &&
-                <div>
-                  <p className='martop-dt'>Fecha y hora de inicio *</p>
-                  <div className='date-cont'>
-                    <TextField
-                      type='date'
-                      style={{ width: '45%' }}
-                      name='fechai'
-                      onChange={this.onChange}
-                      required
-                    />
-                    <TextField
-                      type='time'
-                      style={{ width: '45%' }}
-                      name='horai'
-                      onChange={this.onChange}
-                      required
-                    />
-                  </div>
-                  <div className='date-cont'>
-                    <TextField
-                      label='Duración'
-                      style={{ marginTop: '15px', width: '45%' }}
-                      name='duracion'
-                      onChange={this.onChange}
-                      required
-                    />
-                    <div className='hra-hras'>
-                      <p>hr/hrs</p>
-                    </div>
-                  </div>
-                </div>
-              }
-              <TextField
-                label='Descripcion de Actividad'
-                style={{ marginTop: '15px' }}
-                name='resultado'
-                onChange={this.onChange}
-                inputProps={{
-                  maxLength: 150
-                }}
-                multiline
-                required
-              />
-              <TextField
-                label='Relevancia'
-                style={{ marginTop: '15px' }}
-                name='relevancia'
-                onChange={this.onChange}
-                inputProps={{
-                  maxLength: 300
-                }}
-                multiline
-                required
-              />
-              {this.state.checkedCancelada === false &&
-                <div>
-                  <Input
-                    type='file'
-                    style={{marginTop: '30px'}}
-                    onChange={this.handleImage.bind(this)}
-                  />
-                  <progress className='progress2' value={this.state.imge} />
-                </div>
-              }
+
+              </div>
+
+
+
               <div className='add-gb'>
                 <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
                   <DoneIcon />
