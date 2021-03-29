@@ -128,7 +128,10 @@ justify-content: center;
 .info-sa{
   font-weight: bold;
 }
+.icon-sa{
+  display: flex;
 
+}
 
 
 

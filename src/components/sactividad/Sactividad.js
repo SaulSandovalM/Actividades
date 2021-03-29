@@ -370,7 +370,7 @@ export default class Sactividad extends Component {
 
 
 
-              <h1 style={{ paddingLeft:'1%' }}>Seguimiento de Actividad</h1>
+              <h1 style={{ paddingLeft:'.8%',  paddingTop:'.5%' }}>Seguimiento de Actividad</h1>
 
             </div>
            </div>
@@ -380,14 +380,17 @@ export default class Sactividad extends Component {
 
             <div className='desc-all' >
 
-              <div className='txt-info'><h4 className='info-sa'>Deseas cancelar la Actividad</h4></div>
+            <div className='icon-sa'>
+            <span class="material-icons" style= {{paddingRight:'.5%', fontSize:35}}>
+              delete_forever
+            </span>
+              <div className='txt-info'>
+                <h4 className='info-sa' style={{padding:'4px'}}>
+                    Cancelar la Actividad
+                </h4>
+                </div>
+              </div>
             <div className='mensajesg-container-3sa'>
-
-
-
-
-
-
             <FormControlLabel
               control={
                 <IOSSwitch
@@ -465,8 +468,12 @@ export default class Sactividad extends Component {
 
 
                   <div className='desc-all' >
-
-                    <div className='txt-info'><h4 className='info-sa'>Informacion de la Actividad</h4></div>
+                  <div className='icon-sa'>
+                  <span class='material-icons' style={{ fontSize:30, paddingRight:'.8%' }} >
+                    feed
+                  </span>
+                    <div className='txt-info'><h4 className='info-sa' style={{padding:'2px'}}>Informacion de la Actividad</h4></div>
+                    </div>
                     <div className='mensajesg-container-3sa'>
 
                     <div className='combo'>
@@ -583,8 +590,12 @@ export default class Sactividad extends Component {
               </div>
 
               <div className='desc-all' >
-
-                <div className='txt-info'><h4 className='info-sa'>Agrega los campos del Seguimiento de la Actividad</h4></div>
+              <div className='icon-sa'>
+              <span class='material-icons' style={{ fontSize:30, paddingRight:'.8%' }} >
+                maps_ugc
+                </span>
+                <div className='txt-info'><h4 className='info-sa'>Agrega Seguimiento de la Actividad</h4></div>
+                </div>
                 <div className='mensajesg-container-3sa'>
                 <TextField
                   label='Descripcion de Actividad'
