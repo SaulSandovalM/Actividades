@@ -38,9 +38,6 @@ export default class Mgenerales extends Component {
   handleBack() {
       this.props.history.push('/ActividadesRegistradas');
     }
-eliminar=(dato)=>{
-  var opcion=confirm("Desea eliminar mensaje"+actividades.id);
-}
   render() {
     return (
       <div className='mg-conta'>

@@ -40,7 +40,9 @@ export default class Aregistradas extends Component {
         horai,
         horaf,
         fechai,
-        objetivo
+        objetivo,
+
+
       })
     })
     this.setState({
@@ -54,16 +56,25 @@ export default class Aregistradas extends Component {
 
   render () {
     var f = new Date()
+    console.log()
+    var saul = f.getDate() - 5
     var meses = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
     var meses2 = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     f.setDate(f.getDate() - f.getDay())
-    const lunes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 1)
-    const martes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 2)
-    const miercoles = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 3)
-    const jueves = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 4)
-    const viernes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 5)
-    const sabado = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 6)
-    const domingo = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 7)
+    const lunes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + ('0' + (f.getDate() + f.getDay()) + 2).slice(-2)
+    console.log(lunes)
+    const martes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' +  ('0' + (f.getDate() + f.getDay()) + 3).slice(-2)
+    console.log(martes)
+    const miercoles = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + ('0' + (f.getDate() + f.getDay()) + 4).slice(-2)
+    console.log(miercoles)
+    const jueves = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + ('0' + (f.getDate() + f.getDay()) + 5).slice(-2)
+    console.log(jueves)
+    const viernes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + ('0' + (f.getDate() + f.getDay()) + 6).slice(-2)
+    console.log(viernes)
+    const sabado = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + ('0' + (f.getDate() + f.getDay()) + 7).slice(-2)
+    console.log(sabado)
+    const domingo = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + ('0' + (f.getDate() + f.getDay()) + 8).slice(-2)
+    console.log(domingo)
 
     const dia1 = (f.getDate() + f.getDay() + 1)
     const dia2 = (f.getDate() + f.getDay() + 2)
@@ -146,7 +157,7 @@ export default class Aregistradas extends Component {
                           </div>
                           <div>
                             <p className='title-activity'>{actividades.tipoActividad}</p>
-                            <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
+                            <p className='hora-activity'>{actividades.horai}  {actividades.horaf}</p>
                             <p className='hora-activity'>{actividades.lugar}</p>
                             <p className='hora-activity'>{actividades.objetivo}</p>
                           </div>
@@ -161,8 +172,9 @@ export default class Aregistradas extends Component {
                     <div key='' >
                       {actividades.fechai === martes &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
+
                           <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
+                          <p className='hora-activity'>{actividades.horai}  {actividades.horaf}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
                         </Link>}
                     </div>
