@@ -13,8 +13,8 @@
 
 
 .h1-ar {
-  margin-top: -10px;
-  padding-left: 100px;
+  margin-top: -1px;
+  padding-left: 1%;
 }
 .calendar-container {
   display: flex;
@@ -61,15 +61,18 @@
   padding-top: 30px;
   width: 14%;
 }
-.card-cal-cont {
-  background: rgb(3, 155, 229);
+.card-cal-cont  {
+  background: #dc5f70;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   margin-top: 5px;
   padding-bottom: 3px;
-  text-decoration: none;
   width: 100%;
+}
+.azul{
+  text-decoration:hover;
+  hover:none;
 }
 .title-activity {
   color: white;
@@ -114,9 +117,12 @@
  background: red;
  filter:alpha(opacity=60); opacity:.6;
 }
-
-
-
+.mes-icon{
+    display: flex;
+}
+.colores{
+  cursor: none;
+}
 
 
 

@@ -22,15 +22,14 @@ export default class Aregistradas extends Component {
 
 
   handleBack() {
-    this.props.history.push('/Reportes')
-    ;
+    this.props.history.push('/Sactividad/');
   }
 
 
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad, imparte, lugar, horai, horaf, fechai, objetivo } = doc.data()
+      const { tipoActividad, imparte, lugar, horai, horaf, fechai, objetivo, actividad,duracion, virpre  } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -41,6 +40,9 @@ export default class Aregistradas extends Component {
         horaf,
         fechai,
         objetivo,
+        actividad,
+        duracion,
+        virpre
 
 
       })
@@ -90,11 +92,16 @@ export default class Aregistradas extends Component {
     return (
       <div className='mg-conta'>
         <div className='nav-ma'>
+          <div className='mes-icon'>
+            <span class="material-icons cosa-1" style={{ fontSize:50, paddingLeft:'5%', paddingBottom:'2%'}}>
+              edit_calendar
+            </span>
           <h1 className='h1-ar'>{mes} 2021</h1>
+        </div>
         </div>
         <div className='add-ar'>
           <Link to='/AgregarActividad'>
-            <Fab color='primary' aria-label='add' style={{ background: '#71b631' }}>
+            <Fab color='primary' aria-label='add' style={{ background: '#71b631'}}>
               <AddIcon />
             </Fab>
           </Link>
@@ -142,40 +149,38 @@ export default class Aregistradas extends Component {
 
                   </div>
                   {this.state.actividades.map(actividades =>
-                    <div key=''>
+                    <div key='' className='colores'>
                       {actividades.fechai === lunes &&
-                        <div className='card-cal-cont'>
-                          <div className='modal-vista'>
-                            <span className='material-icons' onClick={this.handleBack.bind(this)} style={{ cursor: 'pointer' }}>
-                              remove_red_eye
-                            </span>
-                            <span className='material-icons' onClick={this.handleBack.bind(this)}  style={{ cursor: 'pointer' }}>
-                              upgrade
-                            </span>
+                        <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont colores'>
 
+                              <p className='title-activity'>{actividades.tipoActividad}</p>
+                              <p className='hora-activity'>{actividades.actividad}</p>
+                              <p className='hora-activity'>{actividades.virpre}</p>
+                              <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
+                              <p className='hora-activity'>{actividades.lugar}</p>
+                              <p className='hora-activity'>{actividades.objetivo}</p>
 
-                          </div>
-                          <div>
-                            <p className='title-activity'>{actividades.tipoActividad}</p>
-                            <p className='hora-activity'>{actividades.horai}  {actividades.horaf}</p>
-                            <p className='hora-activity'>{actividades.lugar}</p>
-                            <p className='hora-activity'>{actividades.objetivo}</p>
-                          </div>
-                        </div>}
+                        </Link>}
                     </div>
                   )}
                 </div>
                 <div>
                 </div>
+
+
+
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div key='' >
                       {actividades.fechai === martes &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
 
-                          <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai}  {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='title-activity'>{actividades.tipoActividad}</p>
+                        <p className='hora-activity'>{actividades.actividad}</p>
+                        <p className='hora-activity'>{actividades.virpre}</p>
+                        <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
+                        <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='hora-activity'>{actividades.objetivo}</p>
                         </Link>}
                     </div>
                   )}
@@ -184,11 +189,15 @@ export default class Aregistradas extends Component {
                   {this.state.actividades.map(actividades =>
                     <div key=''>
                       {actividades.fechai === miercoles &&
-                        <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
+
+                          <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
                           <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
+                          <p className='hora-activity'>{actividades.actividad}</p>
+                          <p className='hora-activity'>{actividades.virpre}</p>
+                          <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
                           <p className='hora-activity'>{actividades.lugar}</p>
-                        </Link>}
+                          <p className='hora-activity'>{actividades.objetivo}</p>
+                          </Link>}
                     </div>
                   )}
                 </div>
@@ -198,9 +207,12 @@ export default class Aregistradas extends Component {
                     <div key=''>
                       {actividades.fechai === jueves &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
-                          <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='title-activity'>{actividades.tipoActividad}</p>
+                        <p className='hora-activity'>{actividades.actividad}</p>
+                        <p className='hora-activity'>{actividades.virpre}</p>
+                        <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
+                        <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='hora-activity'>{actividades.objetivo}</p>
                         </Link>}
                     </div>
                   )}
@@ -210,9 +222,12 @@ export default class Aregistradas extends Component {
                     <div key=''>
                       {actividades.fechai === viernes &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
-                          <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='title-activity'>{actividades.tipoActividad}</p>
+                        <p className='hora-activity'>{actividades.actividad}</p>
+                        <p className='hora-activity'>{actividades.virpre}</p>
+                        <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
+                        <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='hora-activity'>{actividades.objetivo}</p>
                         </Link>}
                     </div>
                   )}
@@ -222,9 +237,12 @@ export default class Aregistradas extends Component {
                     <div key=''>
                       {actividades.fechai === sabado &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
-                          <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='title-activity'>{actividades.tipoActividad}</p>
+                        <p className='hora-activity'>{actividades.actividad}</p>
+                        <p className='hora-activity'>{actividades.virpre}</p>
+                        <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
+                        <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='hora-activity'>{actividades.objetivo}</p>
                         </Link>}
                     </div>
                   )}
@@ -234,9 +252,12 @@ export default class Aregistradas extends Component {
                     <div key=''>
                       {actividades.fechai === domingo &&
                         <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
-                          <p className='title-activity'>{actividades.tipoActividad}</p>
-                          <p className='hora-activity'>{actividades.horai} - {actividades.horaf}</p>
-                          <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='title-activity'>{actividades.tipoActividad}</p>
+                        <p className='hora-activity'>{actividades.actividad}</p>
+                        <p className='hora-activity'>{actividades.virpre}</p>
+                        <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
+                        <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='hora-activity'>{actividades.objetivo}</p>
                         </Link>}
                     </div>
                   )}
