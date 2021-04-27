@@ -5,6 +5,8 @@ import { loginUser } from '../../../actions'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 import './Login.css'
+import logoH from '../../../imgs/armas.png'
+import centenario from '../../../imgs/centenario.jpg'
 
 class Login extends Component {
   constructor (props) {
@@ -34,13 +36,24 @@ class Login extends Component {
     if (isAuthenticated) {
       return <Redirect to='/' />
     } else {
-      return (
+      return (<div className='fondo'>
         <div className='login-container'>
           <div className='back-login'>
+            <div className='combo-logos'>
+                <img className='logologin' src={logoH} alt='' />
+                  <div><h1 className= 'title-login'>ACTIVIDADES DE LA  POCURADURIA GENERAL DE JUSTICIA HIDALGO</h1></div>
+              <img className='logologin2' src={centenario} alt='' />
+            </div>
+
+
             <div className='login-ins'>
+
               <div className='login-col'>
+
+
+
                 <div className='login'>
-                  <h2 className='login-color'>Bienvenido!</h2>
+                  <h2 className='login-color'>¡Bienvenido!</h2>
                   <div className='border-form-login'>
                     <div className='input-cen-log'>
                       <TextField
@@ -79,6 +92,7 @@ class Login extends Component {
               </div>
             </div>
           </div>
+        </div>
         </div>
       )
     }

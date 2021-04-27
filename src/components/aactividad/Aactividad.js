@@ -208,7 +208,7 @@ export default class Aactividad extends Component {
 
                 <div className='act-dbd'>
                 <div className= 'switch-sa-te'>
-                  <label>La actividad fue organizada por la PGJH?</label>
+                  <label>¿La actividad fue organizada por la PGJH?</label>
                 </div>
 
                 <div>

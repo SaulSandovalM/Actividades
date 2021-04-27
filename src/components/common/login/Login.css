@@ -1,3 +1,7 @@
+.fondo{
+
+}
+
 .login-container {
   height: 100vh;
   position: absolute;
@@ -54,4 +58,21 @@
   margin-top: 30px;
   padding-right: 5%;
   text-align: right;
+}
+.combo-logos{
+  display: flex;
+  justify-content: space-between;
+}
+.logologin{
+  width: 8%;
+  height: 8%;
+
+}
+.logologin2{
+  width: 8%;
+  height: 8%;
+
+}
+.title-login{
+
 }
