@@ -1,7 +1,13 @@
 .fondo{
+  background: url(../../../imgs/pachuca.jpg);
+  background-attachment :fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#787276;
+  background-blend-mode: multiply;
 
 }
-
 .login-container {
   height: 100vh;
   position: absolute;
@@ -14,7 +20,8 @@
 }
 .login-ins {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 5%
 }
 .login-col {
   display: flex;
@@ -73,6 +80,7 @@
   height: 8%;
 
 }
-.title-login{
-
+.red{
+  background-color: rgba(235, 5, 222, .5) ;
+  opacity: 50;
 }

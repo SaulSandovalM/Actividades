@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import './Login.css'
 import logoH from '../../../imgs/armas.png'
 import centenario from '../../../imgs/centenario.jpg'
+import pachuca from '../../../imgs/pachuca.jpg'
 
 class Login extends Component {
   constructor (props) {
@@ -36,12 +37,20 @@ class Login extends Component {
     if (isAuthenticated) {
       return <Redirect to='/' />
     } else {
-      return (<div className='fondo'>
+      return (
+      <div >
         <div className='login-container'>
           <div className='back-login'>
+            <div className='fondo'>
+
+
+
+
             <div className='combo-logos'>
                 <img className='logologin' src={logoH} alt='' />
-                  <div><h1 className= 'title-login'>ACTIVIDADES DE LA  POCURADURIA GENERAL DE JUSTICIA HIDALGO</h1></div>
+
+                <div > prueba </div>
+
               <img className='logologin2' src={centenario} alt='' />
             </div>
 
@@ -53,7 +62,7 @@ class Login extends Component {
 
 
                 <div className='login'>
-                  <h2 className='login-color'>¡Bienvenido!</h2>
+                  <h2 className='login-color'>Iniciar Sesión</h2>
                   <div className='border-form-login'>
                     <div className='input-cen-log'>
                       <TextField
@@ -87,11 +96,23 @@ class Login extends Component {
                         ENTRAR
                       </Button>
                     </div>
+
                   </div>
                 </div>
+
+
+              </div>
+              <div className= 'red'>
+              <h5>Actividades de PGDJH</h5>
+
+              <p>Bienvenido al Sistema de organizacion de Actividades</p>
+              <p>Sistema de organizacion de Actividades</p>
+
+
               </div>
             </div>
           </div>
+        </div>
         </div>
         </div>
       )
@@ -106,5 +127,6 @@ function mapStateToProps (state) {
     isAuthenticated: state.auth.isAuthenticated
   }
 }
+
 
 export default (connect(mapStateToProps)(Login))
