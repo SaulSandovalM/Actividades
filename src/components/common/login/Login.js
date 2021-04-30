@@ -5,9 +5,9 @@ import { loginUser } from '../../../actions'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 import './Login.css'
-import logoH from '../../../imgs/armas.png'
+import logoH from '../../../imgs/logo2.png'
 import centenario from '../../../imgs/centenario.jpg'
-import pachuca from '../../../imgs/pachuca.jpg'
+
 
 class Login extends Component {
   constructor (props) {
@@ -38,29 +38,26 @@ class Login extends Component {
       return <Redirect to='/' />
     } else {
       return (
-      <div >
+
         <div className='login-container'>
           <div className='back-login'>
             <div className='fondo'>
-
-
-
-
             <div className='combo-logos'>
-                <img className='logologin' src={logoH} alt='' />
-
-                <div > prueba </div>
-
-              <img className='logologin2' src={centenario} alt='' />
+              <img className='logologin' src={logoH} alt='' />
             </div>
+              <div className='login-ins'>
+                <div className= 'cajatext-log'>
 
+                  <div className='text-log'>
+                    <p className='letreros'>¡Regresaste!</p>
+                    <h5 className='letrero'>Actividades <br/>
+                    PGJEH</h5>
+                    <p className='letreros'>¡Bienvenid@!</p>
 
-            <div className='login-ins'>
-
-              <div className='login-col'>
-
-
-
+                    <p>Sistema de control y organizacion de las Actividades  más relevantes de la Procuraduria General de Justicia del Estado de Hidalgo</p>
+                  </div>
+                  </div>
+                  <div className='login-col'>
                 <div className='login'>
                   <h2 className='login-color'>Iniciar Sesión</h2>
                   <div className='border-form-login'>
@@ -97,24 +94,22 @@ class Login extends Component {
                       </Button>
                     </div>
 
+
+                    <p>Manual </p>
+                    <p>Soporte ext.9292</p>
+
                   </div>
                 </div>
 
 
               </div>
-              <div className= 'red'>
-              <h5>Actividades de PGDJH</h5>
 
-              <p>Bienvenido al Sistema de organizacion de Actividades</p>
-              <p>Sistema de organizacion de Actividades</p>
-
-
-              </div>
             </div>
           </div>
         </div>
+
         </div>
-        </div>
+
       )
     }
   }
