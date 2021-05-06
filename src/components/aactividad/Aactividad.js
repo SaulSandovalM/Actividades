@@ -481,20 +481,20 @@ export default class Aactividad extends Component {
                     required
                   />
                 </div>
-
+                <div className='conjunto-hrs'>
                 <div className='date-cont'>
                   <TextField
                     label='Duración'
-                    style={{ marginTop: '15px', width: '45%' }}
+                    style={{ marginTop: '15px', width: '100%' }}
                     name='duracion'
                     onChange={this.onChange}
                     required
                   />
-                  <div  className='conjunto-hrs'>
-                  <p>hr/hra.</p>
-                  </div>
                 </div>
-
+                <div className='hrs-hr'>
+                <p>Hr/Hrs</p>
+                </div>
+                </div>
 
 
 
@@ -546,35 +546,36 @@ export default class Aactividad extends Component {
                         onChange={this.onChange}
                         required
                       >
-                        <MenuItem value='Subprocurador de Procedimientos Penales Región Oriente'>Subprocurador de Procedimientos Penales Región Oriente</MenuItem>
-                        <MenuItem value='Director general de la Unidad Especializada en el Combate al Secuestro'>Director general de la Unidad Especializada en el Combate al Secuestro</MenuItem>
-                        <MenuItem value='Director general de Servicios Periciales'>Director general de Servicios Periciales</MenuItem>
-                        <MenuItem value='Directora general de la Coordinación de Investigación y Recuperación de Vehículos Robados'>Directora general de la Coordinación de Investigación y Recuperación de Vehículos Robados</MenuItem>
-                        <MenuItem value='Secretaria del Despacho del C. Procurador '>Secretaria del Despacho del C. Procurador </MenuItem>
-                        <MenuItem value='Director de Planeación'>Director de Planeación</MenuItem>
-                        <MenuItem value='Subprocuradora de Procedimientos Penales Región Poniente'>Subprocuradora de Procedimientos Penales Región Poniente</MenuItem>
-                        <MenuItem value='Director general Jurídico'>Director general Jurídico</MenuItem>
-                        <MenuItem value='Secretaria del Procurador'>Secretaria del Procurador</MenuItem>
-                        <MenuItem value='Directora del Instituto de Formación Profesional de la Procuraduría'>Directora del Instituto de Formación Profesional de la Procuraduría</MenuItem>
-                        <MenuItem value='Visitador general'>Visitador general</MenuItem>
-                        <MenuItem value='Encargado de la Dirección general del Sistema Tradicional'>Encargado de la Dirección general del Sistema Tradicional</MenuItem>
-                        <MenuItem value='Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares'>Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares</MenuItem>
-                        <MenuItem value='Director general de la Policía Investigadora'>Director general de la Policía Investigadora</MenuItem>
-                        <MenuItem value='Subprocurador de Derechos Humanos y Servicios a la Comunidad'>Subprocurador de Derechos Humanos y Servicios a la Comunidad</MenuItem>
-                        <MenuItem value='Directora de Prevención del Delito y Atención Ciudadana'>Directora de Prevención del Delito y Atención Ciudadana</MenuItem>
-                        <MenuItem value='Coordinador de Comunicación Social'>Coordinador de Comunicación Social</MenuItem>
-                        <MenuItem value='Despacho del Procurador'>Despacho del Procurador</MenuItem>
-                        <MenuItem value='Fiscal para la Atención de Delitos de Género'>Fiscal para la Atención de Delitos de Género</MenuItem>
-                        <MenuItem value='Director general de Administración y Finanzas'>Director general de Administración y Finanzas</MenuItem>
-                        <MenuItem value='Fiscalía Especializada en Delitos Electorales'>Fiscalía Especializada en Delitos Electorales</MenuItem>
-                        <MenuItem value='Director general del Centro de Justicia Restaurativa Penal'>Director general del Centro de Justicia Restaurativa Penal</MenuItem>
-                        <MenuItem value='Fiscal especializada para la Atención  de los Delitos de Trata de Personas'>Fiscal especializada para la Atención  de los Delitos de Trata de Personas</MenuItem>
-                        <MenuItem value='Director general del Centro de Operación Estratégica'>Director general del Centro de Operación Estratégica</MenuItem>
-                        <MenuItem value='Fiscal especializado en Delitos de Corrupción'>Fiscal especializado en Delitos de Corrupción</MenuItem>
-                        <MenuItem value='Director general de Relaciones Nacionales e Internacionales'>Director general de Relaciones Nacionales e Internacionales</MenuItem>
-                        <MenuItem value='Titular del Órgano Interno de Control de la Procuraduría'>Titular del Órgano Interno de Control de la Procuraduría</MenuItem>
-                          <MenuItem value='Titular del Órgano Interno de Control de la Procuraduría'>LIC. LAURA ISABEL TORRES VILLEGAS
-</MenuItem>
+                        <MenuItem value=  'Subprocurador de Procedimientos Penales Región Oriente'>Subprocurador de Procedimientos Penales Región Oriente</MenuItem>
+                        <MenuItem value=  'Director general de la Unidad Especializada en el Combate al Secuestro'>Director general de la Unidad Especializada en el Combate al Secuestro</MenuItem>
+                        <MenuItem value=  'Director general de Servicios Periciales'>Director general de Servicios Periciales</MenuItem>
+                        <MenuItem value=  'Directora general de la Coordinación de Investigación y Recuperación de Vehículos Robados'>Directora general de la Coordinación de Investigación y Recuperación de Vehículos Robados</MenuItem>
+                        <MenuItem value=  'Secretaria del Despacho del C. Procurador '>Secretaria del Despacho del C. Procurador </MenuItem>
+                        <MenuItem value=  'Director de Planeación'>Director de Planeación</MenuItem>
+                        <MenuItem value=  'Subprocuradora de Procedimientos Penales Región Poniente'>Subprocuradora de Procedimientos Penales Región Poniente</MenuItem>
+                        <MenuItem value=  'Director general Jurídico'>Director general Jurídico</MenuItem>
+                        <MenuItem value=  'Secretaria del Procurador'>Secretaria del Procurador</MenuItem>
+                        <MenuItem value=  'Directora del Instituto de Formación Profesional de la Procuraduría'>Directora del Instituto de Formación Profesional de la Procuraduría</MenuItem>
+                        <MenuItem value=  'Visitador general'>Visitador general</MenuItem>
+                        <MenuItem value=  'Encargado de la Dirección general del Sistema Tradicional'>Encargado de la Dirección general del Sistema Tradicional</MenuItem>
+                        <MenuItem value=  'Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares'>Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares</MenuItem>
+                        <MenuItem value=  'Director general de la Policía Investigadora'>Director general de la Policía Investigadora</MenuItem>
+                        <MenuItem value=  'Subprocurador de Derechos Humanos y Servicios a la Comunidad'>Subprocurador de Derechos Humanos y Servicios a la Comunidad</MenuItem>
+                        <MenuItem value=  'Directora de Prevención del Delito y Atención Ciudadana'>Directora de Prevención del Delito y Atención Ciudadana</MenuItem>
+                        <MenuItem value=  'Coordinador de Comunicación Social'>Coordinador de Comunicación Social</MenuItem>
+                        <MenuItem value=  'Despacho del Procurador'>Despacho del Procurador</MenuItem>
+                        <MenuItem value=  'Fiscal para la Atención de Delitos de Género'>Fiscal para la Atención de Delitos de Género</MenuItem>
+                        <MenuItem value=  'Director general de Administración y Finanzas'>Director general de Administración y Finanzas</MenuItem>
+                        <MenuItem value=  'Fiscalía Especializada en Delitos Electorales'>Fiscalía Especializada en Delitos Electorales</MenuItem>
+                        <MenuItem value=  'Director general del Centro de Justicia Restaurativa Penal'>Director general del Centro de Justicia Restaurativa Penal</MenuItem>
+                        <MenuItem value=  'Fiscal especializada para la Atención  de los Delitos de Trata de Personas'>Fiscal especializada para la Atención  de los Delitos de Trata de Personas</MenuItem>
+                        <MenuItem value=  'Director general del Centro de Operación Estratégica'>Director general del Centro de Operación Estratégica</MenuItem>
+                        <MenuItem value=  'Fiscal especializado en Delitos de Corrupción'>Fiscal especializado en Delitos de Corrupción</MenuItem>
+                        <MenuItem value=  'Director general de Relaciones Nacionales e Internacionales'>Director general de Relaciones Nacionales e Internacionales</MenuItem>
+                        <MenuItem value=  'Titular del Órgano Interno de Control de la Procuraduría'>Titular del Órgano Interno de Control de la Procuraduría</MenuItem>
+                        <MenuItem value=  'Titular del Órgano Interno de Control de la Procuraduría'>LIC. LAURA ISABEL TORRES VILLEGAS </MenuItem>
+                        <MenuItem value=  'Unidad de Investigacion Patrimonial y Economica'>Unidad de Investigacion Patrimonial y Economica</MenuItem>
+
                       </Select>
                     </FormControl>
                   </div>}
@@ -2244,6 +2245,20 @@ export default class Aactividad extends Component {
                       required
                     >
                       <MenuItem value='Víctor Austria Mercado'>Víctor Austria Mercado</MenuItem>
+                    </Select>
+                  </FormControl>
+                }
+
+                {this.state.convoca === 'Unidad de Investigacion Patrimonial y Economica' &&
+                  <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                    <InputLabel>Responsable de Actividad</InputLabel>
+                    <Select
+                      label='Responsable'
+                      name='responsable'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='Víctor Austria Mercado'>Evelia Cruz Gonzalez</MenuItem>
                     </Select>
                   </FormControl>
                 }

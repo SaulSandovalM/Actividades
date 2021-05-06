@@ -230,8 +230,10 @@ width: 1000px;
   margin-top: -50px;
 }
 .conjunto-hrs{
-  padding-top: 40px;
-  padding-right:500px;
+  display: flex;
+}
+.hrs-hr{
+  padding-top:43px;
 }
 .act-dbd{
   display: flex;

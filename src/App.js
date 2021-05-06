@@ -32,6 +32,7 @@ import Informacionactividad from './components/vistas/Informacionactividad'
 
 import Estadisgeneral from './components/Estadisticas/Estadisgeneral'
 import Estadisticasint from './components/Estadisticas/Estadisticasint'
+import Calendario from './components/aregistradas/Calendario'
 
 
 function App (props) {
@@ -221,6 +222,14 @@ function App (props) {
         exact
         path='/Estadisticasint'
         component={Estadisticasint}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+      <ProtectedRoute
+        exact
+        path='/Calendario'
+        component={Calendario}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />

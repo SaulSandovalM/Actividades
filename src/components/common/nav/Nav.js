@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { logoutUser } from '../../../actions'
 import { connect } from 'react-redux'
-import logoH from '../../../imgs/logo2.png'
+import centenario from '../../../imgs/centenario.jpg'
 import './Nav.css'
 import firebase from '../../../Firebase'
 
@@ -150,11 +150,11 @@ class Nav extends Component {
 
           <div className='navbar-navigation'>
             <Link to='/' className='logo'>
-              <img className='logoimg' src={logoH} alt='' />
+              <img className='logoimg' src={centenario} alt='' />
             </Link>
           </div>
           {(
-            admin === 'Derechos Humanos' ||          
+            admin === 'Derechos Humanos' ||
             admin === 'Sub Poniente' ||
             admin === 'Delitos' ||
             admin === 'IFP' ||
