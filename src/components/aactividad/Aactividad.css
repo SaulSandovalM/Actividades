@@ -244,3 +244,72 @@ width: 1000px;
   padding-top: 1%;
   padding-right: 2%;
 }
+/*calemndario*/
+
+
+.fader-calendario{
+width: 100%;
+height: 100vh;
+padding-left:14%;
+padding-top: 30%;
+}
+.sub-fader{
+width: 100%;
+
+
+}
+.nav-ma1 {
+  background: #092432;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: center;
+  margin-top: -1%;
+  width: 100%;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*calemndario*/
