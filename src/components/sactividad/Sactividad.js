@@ -30,7 +30,6 @@ export default class Sactividad extends Component {
       motivo_cancelado: '',
       fechai: '',
       horai: '',
-      fechaf: '',
       horaf: '',
       estatus : '',
       convocados: '',
@@ -92,12 +91,11 @@ export default class Sactividad extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { fechai, resposable, fechaf, convoca, horai, objetivo, descripcion, imagen, lugar, estado, municipios, presencial } = doc.data()
+      const { fechai, resposable, convoca, horai, objetivo, descripcion, imagen, lugar, estado, municipios, presencial } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
         fechai,
-        fechaf,
         descripcion,
         convoca,
         horai,
@@ -125,10 +123,8 @@ export default class Sactividad extends Component {
         this.setState({
           key: doc.id,
           asunto: actividades.asunto,
-          convocados: actividades.convocados,
           convoca: actividades.convoca,
           fechai: actividades.fechai,
-          fechaf: actividades.fechaf,
           tipoA: actividades.tipoA,
           estados: actividades.estados,
           internaE: actividades.internaE,
@@ -220,7 +216,7 @@ export default class Sactividad extends Component {
   onSubmit = (e) => {
     e.preventDefault()
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
-      fechai, horai, duracion, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA, estados, internaE,
+      fechai, horai, duracion, horaf, imgeevi, estatus, convoca, tipoA, estados, internaE,
               municipio, quien, lugar, imparte, actividad, objetivo, descripcion, desc } = this.state
     const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
     updateRef.set({
@@ -232,14 +228,12 @@ export default class Sactividad extends Component {
       checkedReprogramar,
       fechai,
       horai,
-      fechaf,
       horaf,
       objetivo,
       descripcion,
       duracion,
       imgeevi,
       estatus,
-      convocados,
       convoca,
       tipoA,
       estados,
@@ -264,11 +258,9 @@ export default class Sactividad extends Component {
         objetivo: '',
         descripcion: '',
         horai: '',
-        fechaf: '',
         horaf: '',
         imgeevi: '',
         estatus : '',
-        convocados: '',
         convoca: '',
         tipoA: '',
         estados: '',
@@ -355,6 +347,8 @@ export default class Sactividad extends Component {
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, fechaf, horaf, imgeevi, estatus, convocados, convoca, tipoA,
       estados, internaE, municipios, objetivo, descripcion, quien, lugar, imparte, actividad, desc} = this.state
+
+      console.log(resultado)
 
     return (
       <div className='mg-conta'>

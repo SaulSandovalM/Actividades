@@ -256,16 +256,16 @@ export default class Aactividad extends Component {
 
                   </Select>
                 </FormControl>
-                {this.state.tipoActividad === 'otro' &&
+                {this.state.tipoActividad === 'otro' ?
                   <TextField
                     label='Otro tipo de Actividad'
                     style={{ marginTop: '15px', width: '100%' }}
                     name='otro'
                     onChange={this.onChange}
-                  />
+                  /> : null
                 }
 
-                {this.state.tipoActividad === 'capacitacion' &&
+                {this.state.tipoActividad === 'capacitacion' ?
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Capacitación *</InputLabel>
                     <Select
@@ -288,7 +288,7 @@ export default class Aactividad extends Component {
 
                       <MenuItem value='otroc'>Otro</MenuItem>
                     </Select>
-                </FormControl>
+                </FormControl> : null
                 }
                 {this.state.capacitacion === 'otroc' &&
                   <TextField
@@ -324,7 +324,7 @@ export default class Aactividad extends Component {
                   />
                 }
 
-                {this.state.tipoActividad === 'vinculacion' &&
+                {this.state.tipoActividad === 'vinculacion' ?
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Vinculación *</InputLabel>
                     <Select
@@ -336,7 +336,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='organismoi'>Organismos Internacionales</MenuItem>
                       <MenuItem value='otrov'>Otro</MenuItem>
                     </Select>
-                    </FormControl>
+                    </FormControl> :null
                 }
                 {this.state.vinculacion === 'otrov' &&
                   <TextField
@@ -347,7 +347,7 @@ export default class Aactividad extends Component {
                   />
                 }
 
-                {this.state.vinculacion === 'otrov' &&
+                {this.state.vinculacion === 'otrov' ?
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Local/Repulica/Internacional</InputLabel>
                     <Select
@@ -359,10 +359,10 @@ export default class Aactividad extends Component {
                       <MenuItem value='organismoiro'>Resto de la Republica</MenuItem>
                       <MenuItem value='organimointernacionalo'>Internacional</MenuItem>
                     </Select>
-                    </FormControl>
+                    </FormControl> : null
                 }
 
-                {this.state.vinculacion === 'organizmon' &&
+                {this.state.vinculacion === 'organizmon' ?
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Local/Nacional *</InputLabel>
                     <Select
@@ -373,11 +373,11 @@ export default class Aactividad extends Component {
                       <MenuItem value='local'>Local</MenuItem>
                       <MenuItem value='republica'>Resto de la Republica</MenuItem>
                     </Select>
-                </FormControl>
-                }
+                </FormControl> : null
+              }
 
 
-                {this.state.tipoActividad === 'difusion' &&
+                {this.state.tipoActividad === 'difusion' ?
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Difusión *</InputLabel>
                     <Select
@@ -393,7 +393,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='sintesisd'>Sintesis Digital</MenuItem>
                       <MenuItem value='otrod'>Otro</MenuItem>
                     </Select>
-                </FormControl>
+                </FormControl> : null
                 }
                 {this.state.difusion === 'otrod' &&
                   <TextField

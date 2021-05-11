@@ -8,8 +8,8 @@ import firebase from '../../../Firebase'
 
 
 class Nav extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       isHiddenV: true,
       isHiddenP: true
@@ -38,102 +38,10 @@ class Nav extends Component {
     var user = firebase.auth().currentUser
     var email
 
-    if (user != null) {
-        email = user.email
-      }
 
-    let admin
-    if (email === 'procuadmin@gmail.com') {
-     admin = 'ADMIN'
-
-   } else if  (email === 'sderechos@procu.gob.mx'){
-     admin = 'Derechos Humanos'
-
-   } else if  (email === 'subponiente@procu.gob.mx'){
-     admin = 'Sub Poniente'
-
-   }  else if  (email === 'delitosaltoi@procu.gob.mx'){
-     admin = 'Delitos'
-
-   } else if  (email === 'institutofp@procu.gob.mx'){
-     admin = 'IFP'
-
-   } else if  (email === 'cirvr@prou.gob.mx'){
-     admin = 'CIRVR'
-
-   } else if  (email === 'mandamientosj@procu.gob.mx'){
-     admin = 'Mandamientos Judiciales'
-
-   } else if  (email === 'dgjuridica@procu.gob.mx'){
-     admin = 'Juridico'
-
-    } else if  (email === 'fcorrupcion@procu.gob.mx'){
-      admin = 'fcorrupcion'
-
-    } else if  (email === 'felectorales@procu.gob.mx'){
-      admin = 'Electorales'
-
-    } else if  (email === 'relacionesni@procu.gob.mx'){
-      admin = 'R. Internacionales'
-
-    } else if  (email === 'suboriente@procu.gob.mx'){
-      admin = 'Oriente'
-
-    } else if  (email === 'coe@procu.gob.mx'){
-      admin = 'COE'
-
-    } else if  (email === 'dprevencion@procu.gob.mx'){
-      admin = 'Prevencion'
-
-    } else if  (email === 'dgfinanzas@procu.gob.mx'){
-      admin = 'Finanzas'
-
-    } else if  (email === 'justiciar@procu.gob.mx'){
-      admin = 'Justicia R.'
-
-    } else if  (email === 'dgpoliciai@procu.gob.mx'){
-      admin = 'DGPI'
-
-    } else if  (email === 'combatesecuestro@procu.gob.mx'){
-      admin = 'Secuentro'
-
-    } else if  (email === 'inteligenciap@procu.gob.mx'){
-      admin = 'Inteligencia'
-
-    } else if  (email === 'ccomunicacion@procu.gob.mx'){
-      admin = 'Comunicacion'
-
-    } else if  (email === 'visitaduriag@procu.gob.mx'){
-      admin = 'Visitaduria'
-
-    } else if  (email === 'dgpericiales@procu.gob.mx'){
-      admin = 'DGP'
-
-    } else if  (email === 'fer@procu.gob.mx'){
-      admin = 'FERA'
-
-    } else if  (email === 'diana.pgjh@procu.gob.mx'){
-      admin = 'Diana'
-
-    } else if  (email === 'ruth.pgjh@hidalgo.gob.mx'){
-      admin = 'Ruth'
-
-    } else if  (email === 'eloisa.pgjh@procu.gob.mx'){
-      admin = 'Elo'
-
-    } else if  (email === 'mariam.pgjh@procu.gob.mx'){
-      admin = 'Mariam'
-
-    } else if  (email === 'jalfredo.pgjh@procu.gob.mx'){
-      admin = 'Jose Alfredo'
-
-    } else if  (email === 'nadia.pgjh@procu.gob.mx'){
-      admin = 'Nad'
-    }
+  
 
 
-
-    console.log(admin)
 
 
 
@@ -153,28 +61,6 @@ class Nav extends Component {
               <img className='logoimg' src={centenario} alt='' />
             </Link>
           </div>
-          {(
-            admin === 'Derechos Humanos' ||
-            admin === 'Sub Poniente' ||
-            admin === 'Delitos' ||
-            admin === 'IFP' ||
-            admin === 'CIRVR' ||
-            admin === 'Mandamientos Judiciales' ||
-            admin === 'Juridico' ||
-            admin === 'fcorrupcion' ||
-            admin === 'Electorales' ||
-            admin === 'R. Internacionales' ||
-            admin === 'Oriente' ||
-            admin === 'COE' ||
-            admin === 'Prevencion' ||
-            admin === 'Finanzas' ||
-            admin === 'Justicia R' ||
-            admin === 'DGPI' ||
-            admin === 'Secuentro' ||
-            admin === 'Inteligencia' ||
-            admin === 'Comunicacion' ||
-            admin === 'Visitaduria' ||
-            admin === 'DGP') &&
 
             <div className='navbar-left'>
             <Link to='/Listademensajes' className='deco'>
@@ -313,28 +199,7 @@ class Nav extends Component {
             </Link>
           </div>*/
 
-          {(
-            admin === 'Derechos Humanos' ||
-            admin === 'Sub Poniente' ||
-            admin === 'Delitos' ||
-            admin === 'IFP' ||
-            admin === 'CIRVR' ||
-            admin === 'Mandamientos Judiciales' ||
-            admin === 'Juridico' ||
-            admin === 'fcorrupcion' ||
-            admin === 'Electorales' ||
-            admin === 'R. Internacionales' ||
-            admin === 'Oriente' ||
-            admin === 'COE' ||
-            admin === 'Prevencion' ||
-            admin === 'Finanzas' ||
-            admin === 'Justicia R' ||
-            admin === 'DGPI' ||
-            admin === 'Secuentro' ||
-            admin === 'Inteligencia' ||
-            admin === 'Comunicacion' ||
-            admin === 'Visitaduria' ||
-            admin === 'DGP') &&
+
           <div className='navbar-left'>
             <Link to='/Estadisgeneral' className='deco'>
               <div className='hover-center'>
@@ -348,28 +213,7 @@ class Nav extends Component {
             </Link>
           </div>
         }
-        {(
-          admin === 'Derechos Humanos' ||
-          admin === 'Sub Poniente' ||
-          admin === 'Delitos' ||
-          admin === 'IFP' ||
-          admin === 'CIRVR' ||
-          admin === 'Mandamientos Judiciales' ||
-          admin === 'Juridico' ||
-          admin === 'fcorrupcion' ||
-          admin === 'Electorales' ||
-          admin === 'R. Internacionales' ||
-          admin === 'Oriente' ||
-          admin === 'COE' ||
-          admin === 'Prevencion' ||
-          admin === 'Finanzas' ||
-          admin === 'Justicia R' ||
-          admin === 'DGPI' ||
-          admin === 'Secuentro' ||
-          admin === 'Inteligencia' ||
-          admin === 'Comunicacion' ||
-          admin === 'Visitaduria' ||
-          admin === 'DGP') &&
+
           <div className='navbar-left'>
             <Link to='/Estadisticasint' className='deco'>
               <div className='hover-center'>

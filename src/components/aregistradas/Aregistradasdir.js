@@ -28,7 +28,7 @@ export default class Aregistradasdir extends Component {
 
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
-    querySnapshot.forEach((doc) => { 
+    querySnapshot.forEach((doc) => {
       const { tipoActividad, imparte, lugar, horai, horaf, fechai, objetivo } = doc.data()
       actividades.push({
         key: doc.id,
@@ -57,6 +57,7 @@ export default class Aregistradasdir extends Component {
     var meses2 = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     f.setDate(f.getDate() - f.getDay())
     const lunes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 1)
+
     const martes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 2)
     const miercoles = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 3)
     const jueves = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + (f.getDate() + f.getDay() + 4)

@@ -23,6 +23,7 @@
     "firebase": "^7.24.0",
     "moment": "^2.29.1",
     "print": "^1.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-export-excel": "^0.5.3",
