@@ -270,7 +270,10 @@ width: 100%;
   z-index: 1;
 }
 
-
+.fc .fc-col-header-cell-cushion {
+  display: inline-block;
+  padding: px 4px;
+}
 
 
 
