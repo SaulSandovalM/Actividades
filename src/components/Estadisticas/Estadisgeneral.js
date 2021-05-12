@@ -90,40 +90,40 @@ const rows = [
 
     const ciudadesMaspobladas = [
       {
-        ActividadGenerales: "200",
-        poblacion: 564854,
-        Ubicacion:"estado",
+        actividad: "Vinculacion",
+        poblacion: 57,
+        entidad:"Procuraduria General de Justicia del Estado de Hidalgo",
         pais:"México",
         porcetanje: "20%",
 
       },
       {
-        cuidad: "Ciudad dce Mexico",
-        poblacion: 564854,
-        entidad:"estado",
-        pais:"México",
+        actividad: "Capacitacion",
+        poblacion: 4,
+        entidad:"CESI",
+        pais:"Procuraduria General de Justicia del Estado de Hidalgo",
         porcetanje: "20%",
       },
       {
-        cuidad: "Ciudad dce Mexico",
-        poblacion: 564854,
+        actividad: "Ciudad dce Mexico",
+        poblacion: 44,
         entidad:"estado",
-        pais:"México",
-        porcetanje: "30%",
+        pais:"Procuraduria General de Justicia del Estado de Hidalgo",
+        porcetanje:"30%",
       },
       {
-        cuidad: "Ciudad dce Mexico",
-        poblacion: 564854,
+        actividad: "Ciudad dce Mexico",
+        poblacion: 23,
         entidad:"estado",
         pais:"México",
         porcetanje: "10%",
       },
       {
-        cuidad: "Ciudad dce Mexico",
-        poblacion: 564854,
+        actividad: "Ciudad dce Mexico",
+        poblacion: 58 ,
         entidad:"estado",
-        pais:"México",
-        porcetanje: "8%",
+        pais:"Procuraduria General de Justicia del Estado de Hidalgo",
+        porcetanje: "25%",
       },
     ];
 
@@ -201,11 +201,11 @@ const rows = [
                     </button>} filename='
                     Excel prueba'>
                     <ExcelSheet data={ciudadesMaspobladas} name='Ciudades mas pobladas'>
-                      <ExcelColumn label="Tipo de Actividad" value="ActividadesRegistradas"/>
+                      <ExcelColumn label="Tipo de Actividad" value="actividad"/>
                       <ExcelColumn label="Numero de Actividad" value="poblacion"/>
                       <ExcelColumn label="Lugar" value="entidad"/>
                       <ExcelColumn label="Direccion" value="pais"/>
-                      <ExcelColumn label="porcetanje" value="%"/>
+                      <ExcelColumn label="Porcetanje" value="porcetanje"/>
 
 
                     </ExcelSheet>
