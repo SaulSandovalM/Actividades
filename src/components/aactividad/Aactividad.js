@@ -336,7 +336,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='organismoi'>Organismos Internacionales</MenuItem>
                       <MenuItem value='otrov'>Otro</MenuItem>
                     </Select>
-                    </FormControl> :null
+                    </FormControl> : null
                 }
                 {this.state.vinculacion === 'otrov' &&
                   <TextField
