@@ -69,7 +69,7 @@ export default class Reportes extends Component {
         <div className='busq'>
           <div className='imp-busq-2'>
             <div className='btn-reportes'>
-              <p className='txt-rep'>Numero de Semana * </p>
+              <p className='txt-rep'>Fecha:  * </p>
               <TextField
                 style={{  width: '30%', paddingLeft: '20px' }}
                 name='fecha'
@@ -103,7 +103,7 @@ export default class Reportes extends Component {
                 <div className='head-mes-rep' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>
                 <div className='head-mes-rep'>{actividades.lugar} {actividades.municipio} {actividades.estados}</div>
                 <div className='head-mes-rep'>{actividades.area}</div>
-                <div className='head-mes-rep'>{actividades.fecha} {actividades.horai}</div>
+                <div className='head-mes-rep'>{actividades.fecha} - {actividades.horai}</div>
                 <div className='head-mes-imp'>
                   <a  className='hiper' href='/Reportepdf'>
                   <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>

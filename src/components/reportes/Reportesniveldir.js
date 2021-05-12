@@ -52,7 +52,7 @@ export default class Reportesniveldir extends Component {
 
   render () {
     var moment = require('moment')
-    var date = moment('2020').add(this.state.search, 'weeks').startOf('isoweek').format('YYYY-MM-DD')
+    var date = moment('2021').add(this.state.search, 'weeks').startOf('isoweek').format('YYYY-MM-DD')
 
     const filterData = this.state.actividades.filter(
       (actividades) => {
@@ -96,9 +96,9 @@ export default class Reportesniveldir extends Component {
                 <span className='material-icons icon-sh' style={{ marginLeft: '-10px', marginRight: '1px'}}>
                   label_important
                 </span>
-                <div className='head-mes-rep-dir' style={{fontWeight: 'bold'}}>Escribiendo un tipo de actividad{actividades.tipoA}</div>
-                <div className='head-mes-rep-dir'>{actividades.lugar} {actividades.municipios} {actividades.estados}</div>
-                <div className='head-mes-rep-dir'>{actividades.fechai} {actividades.horai}</div>
+                <div className='head-mes-rep-dir' style={{fontWeight: 'bold'}}>Escribiendo un tipo de actividad {actividades.tipoA}</div>
+                <div className='head-mes-rep-dir'>{actividades.lugar}, {actividades.municipios}, {actividades.estados}</div>
+                <div className='head-mes-rep-dir'>{actividades.fechai} - {actividades.horai}</div>
                 <div className='head-mes-imp-dir'>
                   <a  className='hiper' href='/Reportepdf'>
                     <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>

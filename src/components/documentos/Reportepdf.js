@@ -6,7 +6,7 @@ import ImpIcon from '@material-ui/icons/Print'
 import './stilospdf.css'
 import firebase from '../../Firebase'
 import logoh from './icons/logoh.png'
-import logop from './icons/logo-PGJH.jpg'
+import logop from './icons/logo_01.png'
 
 
 export default class Reportepdf extends Component {
@@ -23,7 +23,7 @@ export default class Reportepdf extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipio, asistentes, direccion} = doc.data()
+      const { tipoActividad,lugar, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipio, asistentes, direccion} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -37,7 +37,9 @@ export default class Reportepdf extends Component {
         objetivo,
         municipio,
         asistentes,
-        direccion
+        direccion,
+        lugar,
+
       })
     })
     this.setState({
@@ -86,15 +88,16 @@ export default class Reportepdf extends Component {
                 <div>
                   <div className='titulo-reporte'>
                     <img className='icons-reporte2' src={logop} alt='' />
-                    <h2 className='titulo-repo'>AGENDA SEMANAL DE ACTIVIDAD RELEVANTES</h2>
                     <img className='icons-reporte' src={logoh} alt='' />
                   </div>
 
+                    <h2 className='titulo-repo'>AGENDA SEMANAL DE ACTIVIDAD RELEVANTES</h2>
+
                   <div className='sub-fe'>
-                    <p  className='txt-dir'>Fecha: 30 al 28 Diciembre 2020 </p>
+                    <p  className='txt-dir'>Fecha correspondiente: 8 al 14 Mayo 2021 </p>
                   </div>
                   <div className='sub-ca'>
-                    <p className='txt-dir'>Direccion: </p>
+                    <p className='txt-dir'>DIRECCION:    DESPACHO DEL PROCURADOR</p>
                   </div>
 
 
@@ -112,7 +115,7 @@ export default class Reportepdf extends Component {
                       <tr>
                       <td  className='all-tabla tabla-f'>{actividades.fechai}</td>
                       <td  className='all-tabla tabla-h'>{actividades.horai}</td>
-                      <td  className='all-tabla tabla-a'>{actividades.tipodeActividad}</td>
+                      <td  className='all-tabla tabla-a'>{actividades.tipoActividad}</td>
                       <td  className='all-tabla tabla-l'>{actividades.lugar}</td>
                       <td  className='all-tabla tabla-l'>Huasca de Ocampo{actividades.municipio}</td>
                       <td  className='all-tabla'>{actividades.convoca}</td>

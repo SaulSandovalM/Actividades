@@ -21,7 +21,7 @@ export default class Reporteniveldir extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo} = doc.data()
+      const { tipoActividad, imparte, lugar, fechai, fechaf, convoca, dependencia, horai, objetivo} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -32,7 +32,8 @@ export default class Reporteniveldir extends Component {
         convoca,
         dependencia,
         horai,
-        objetivo
+        objetivo,
+        lugar,
       })
     })
     this.setState({
@@ -89,8 +90,8 @@ export default class Reporteniveldir extends Component {
             </div>
             {/*{this.state.actividades.map(actividades =>*/}
             <div className='Nom-car'>
-              <h3 className='h3-top'>{/*{actividades.convoca}*/}Mercedes Citlali Mendoza Meza</h3>
-              <h3 className='h3-top'>{/*{actividades.dependencia}*/}Directora del Instituto de Formacion Profesional de la Procuraduria
+              <h3 className='h3-top'>{/*{actividades.convoca}*/}DESPACHO DEL PROCURADOR</h3>
+              <h3 className='h3-top'>{/*{actividades.dependencia}*/}SECRETARIA PARTICULAR DEL DESPACHO DEL PROCURADOR
               </h3>
             </div>
           </div>
@@ -106,16 +107,16 @@ export default class Reporteniveldir extends Component {
               <th className='all-tabla tabla-top color-t'>Lugar</th>
               <th className='all-tabla tabla-top color-t2'>Actividad</th>
               <th className='all-tabla tabla-top color-t'>Beneficio para la PGJEH</th>
-              <th className='all-tabla tabla-top color-t2'>RELEVANCIA</th>
+              <th className='all-tabla tabla-top color-t2'>Relevancia</th>
             </tr>
               {this.state.actividades.map(actividades =>
             <tr>
               <td className='all-tabla color-t'></td>
-              <td className='all-tabla tabla-f'>{ actividades.fechai }</td>
-              <td className='all-tabla tabla-h'>{ actividades.horai } hrs.</td>
-              <td className='all-tabla tabla-l'>{ actividades.lugar }</td>
-              <td className='all-tabla tabla-a'>{actividades.tipodeActividad }</td>
-              <td className='all-tabla tabla-b'>{actividades.evidencia}</td>
+              <td className='all-tabla tabla-f'>{actividades.fechai }</td>
+              <td className='all-tabla tabla-h'>{actividades.horai } hrs.</td>
+              <td className='all-tabla tabla-l'>{actividades.lugar}</td>
+              <td className='all-tabla tabla-a'>{actividades.tipoActividad }</td>
+              <td className='all-tabla tabla-b'>{actividades.evidencia}Texto de prueba</td>
               <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
             </tr>
 

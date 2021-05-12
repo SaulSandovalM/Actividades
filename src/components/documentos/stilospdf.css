@@ -447,22 +447,30 @@ table{
 }
 /*imagenes titulo reporte pdf*/
 .icons-reporte{
-  width: 70px;
+  width: 10%;
+  height: 2%;
+
   padding-left: 10px;
 }
 .icons-reporte2{
-  width: 200px;
-  height: 80px;
-  
+  width: 22%;
+  height: 8%;
+
 
 }
 .titulo-reporte{
 width: 1300px;
 padding-top: 60px;
+padding-left: 4%;
 display:flex;
-justify-content:center;
-padding-bottom: 30px;
+justify-content:space-between;
+padding-bottom: 2%;
 
+}
+.titulo-repo{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2%;
 }
 .fecha-reporte{
   display: flex;
