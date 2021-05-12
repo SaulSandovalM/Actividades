@@ -117,7 +117,7 @@ export default class Reporteniveldir extends Component {
               <td className='all-tabla tabla-l'>{actividades.lugar}</td>
               <td className='all-tabla tabla-a'>{actividades.tipoActividad }</td>
               <td className='all-tabla tabla-b'>{actividades.evidencia}Texto de prueba</td>
-              <td className='all-tabla tabla-r'>{actividades.relevacia}</td>
+              <td className='all-tabla tabla-r'>{actividades.relevacia}Relevancia justificada por el sistema (prueba)</td>
             </tr>
 
 

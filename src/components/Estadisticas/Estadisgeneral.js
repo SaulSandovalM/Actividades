@@ -90,35 +90,40 @@ const rows = [
 
     const ciudadesMaspobladas = [
       {
-        lugar: "Ciudad de Mexico",
+        ActividadGenerales: "200",
         poblacion: 564854,
-        entidad:"estado",
+        Ubicacion:"estado",
         pais:"México",
+        porcetanje: "20%",
 
       },
       {
         cuidad: "Ciudad dce Mexico",
         poblacion: 564854,
         entidad:"estado",
-        pais:"México"
+        pais:"México",
+        porcetanje: "20%",
       },
       {
         cuidad: "Ciudad dce Mexico",
         poblacion: 564854,
         entidad:"estado",
-        pais:"México"
+        pais:"México",
+        porcetanje: "30%",
       },
       {
         cuidad: "Ciudad dce Mexico",
         poblacion: 564854,
         entidad:"estado",
-        pais:"México"
+        pais:"México",
+        porcetanje: "10%",
       },
       {
         cuidad: "Ciudad dce Mexico",
         poblacion: 564854,
         entidad:"estado",
-        pais:"México"
+        pais:"México",
+        porcetanje: "8%",
       },
     ];
 
@@ -164,16 +169,10 @@ const rows = [
                 </div>
                 <div className='semana-int'>
                   <div>
-                    <p className='txt-rep'>Numero de Semana * </p>
+
                   </div>
                   <div>
-                    <TextField
-                      style={{  width: '57%', paddingLeft: '20px' }}
-                      name='fecha'
-                      required
-                      value={this.state.search}
-                      onChange={this.handleChange.bind(this)}
-                    />
+
                   </div>
 
                 </div>
@@ -202,10 +201,11 @@ const rows = [
                     </button>} filename='
                     Excel prueba'>
                     <ExcelSheet data={ciudadesMaspobladas} name='Ciudades mas pobladas'>
-                      <ExcelColumn label="ciudad" value="ciudad"/>
-                      <ExcelColumn label="Poblacion" value="poblacion"/>
-                      <ExcelColumn label="Entidad" value="entidad"/>
-                      <ExcelColumn label="Pais" value="pais"/>
+                      <ExcelColumn label="Tipo de Actividad" value="ActividadesRegistradas"/>
+                      <ExcelColumn label="Numero de Actividad" value="poblacion"/>
+                      <ExcelColumn label="Lugar" value="entidad"/>
+                      <ExcelColumn label="Direccion" value="pais"/>
+                      <ExcelColumn label="porcetanje" value="%"/>
 
 
                     </ExcelSheet>
