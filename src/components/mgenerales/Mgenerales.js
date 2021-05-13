@@ -48,7 +48,7 @@ export default class Mgenerales extends Component {
                 <div className='space-b'>
                   <div className='dir-content'>
                     <p className='mg-asunto'>{messages.asunto}</p>
-                    <p className='mg-area'>Direccion de Informatica - {messages.fecha}</p>
+                    <p className='mg-area'>Despacho del Procurador {messages.fecha}</p>
                     <p>{messages.descripcion}</p>
                   </div>
                   <div className='image'>

@@ -145,27 +145,24 @@ export default class Aregistradas extends Component {
               <div className='space-cal' />
               <div className='day-container'>
                 <div className='day-content'>
-                  <div>
-
-                  </div>
                   {this.state.actividades.map(actividades =>
-                    <div key='' className='colores'>
+                    <div key='' >
                       {actividades.fechai === lunes &&
-                        <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont colores'>
+                        <Link to={`/Sactividad/${actividades.key}`} className='card-cal-cont'>
 
-                              <p className='title-activity'>{actividades.tipoActividad}</p>
-                              <p className='hora-activity'>{actividades.actividad}</p>
-                              <p className='hora-activity'>{actividades.virpre}</p>
-                              <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
-                              <p className='hora-activity'>{actividades.lugar}</p>
-                              <p className='hora-activity'>{actividades.objetivo}</p>
-
+                        <p className='title-activity'>{actividades.tipoActividad}</p>
+                        <p className='hora-activity'>{actividades.actividad}</p>
+                        <p className='hora-activity'>{actividades.virpre}</p>
+                        <p className='hora-activity'>{actividades.horai} Duracion: {actividades.duracion}</p>
+                        <p className='hora-activity'>{actividades.lugar}</p>
+                        <p className='hora-activity'>{actividades.objetivo}</p>
                         </Link>}
                     </div>
                   )}
                 </div>
                 <div>
                 </div>
+
 
 
 
@@ -185,6 +182,7 @@ export default class Aregistradas extends Component {
                     </div>
                   )}
                 </div>
+
                 <div className='day-content'>
                   {this.state.actividades.map(actividades =>
                     <div key=''>

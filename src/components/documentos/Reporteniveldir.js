@@ -90,7 +90,7 @@ export default class Reporteniveldir extends Component {
             </div>
             {/*{this.state.actividades.map(actividades =>*/}
             <div className='Nom-car'>
-              <h3 className='h3-top'>{/*{actividades.convoca}*/}DESPACHO DEL PROCURADOR</h3>
+              <h3 className='h3-top'>{/*{actividades.convoca}*/}DIANA CORONA MENESES </h3>
               <h3 className='h3-top'>{/*{actividades.dependencia}*/}SECRETARIA PARTICULAR DEL DESPACHO DEL PROCURADOR
               </h3>
             </div>
