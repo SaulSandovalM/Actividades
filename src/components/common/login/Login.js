@@ -6,7 +6,8 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 import './Login.css'
 import logoH from '../../../imgs/logo2.png'
-import centenario from '../../../imgs/centenario.jpg'
+import centenario from '../../../imgs/logo_01.png'
+import ReactPlayer from 'react-player'
 
 
 class Login extends Component {
@@ -40,27 +41,35 @@ class Login extends Component {
       return (
 
         <div className='login-container'>
+        <div className='fondo-a'/>
           <div className='back-login'>
             <div className='fondo'>
-            <div className='combo-logos'>
-              <img className='logologin' src={logoH} alt='' />
-            </div>
-              <div className='login-ins'>
-                <div className= 'cajatext-log'>
-
-                  <div className='text-log'>
-                    <p className='letreros'>¡Regresaste!</p>
-                    <h5 className='letrero'>Actividades <br/>
-                    PGJEH</h5>
-                    <p className='letreros'>¡Bienvenid@!</p>
-
-                    <p>Sistema de control y organizacion de las Actividades  más relevantes de la Procuraduria General de Justicia del Estado de Hidalgo</p>
+              <div className='combo-logos'> <img className='logologin' src={logoH} alt='Cenetenario' /></div>
+                <div className='login-ins'>
+                  <div className= 'cajatext-log'>
+                      <div className='text-log'>
+                        <p className='letreros'>¡Regresaste!</p>
+                        <h5 className='letrero'>Actividades <br/>PGJEH</h5>
+                        <p className='letreros'>¡Bienvenid@!</p>
+                        <p>Sistema de control y organizacion de las Actividades  más relevantes de la Procuraduria General de Justicia del Estado de Hidalgo</p>
+                      </div>
                   </div>
-                  </div>
+
                   <div className='login-col'>
-                <div className='login'>
-                  <h2 className='login-color'>Iniciar Sesión</h2>
-                  <div className='border-form-login'>
+                    <div className='video'>
+                      <ReactPlayer
+                        url = { require ('../../../imgs/video.mp4') }
+                        width = '100%'
+                        height = '30%px'
+                        playing
+                        loop
+                        replaying
+                      />
+                    </div>
+                    <div className='login'>
+
+                      <h5 className='login-color'>Iniciar Sesión</h5>
+                    <div className='border-form-login'>
                     <div className='input-cen-log'>
                       <TextField
                         label='Correo'
@@ -78,10 +87,10 @@ class Login extends Component {
                         className='contraseña'
                       />
                     </div>
-                    { loginError && (
-                      <p className='error-log'>
-                        Correo o contraseña icorrectos
-                      </p>
+                      { loginError && (
+                        <p className='error-log'>
+                          Correo o contraseña icorrectos
+                        </p>
                     )}
                     <div className='cta2'>
                       <Button
@@ -93,21 +102,16 @@ class Login extends Component {
                         ENTRAR
                       </Button>
                     </div>
-
-
-                    <p>Manual </p>
-                    <p>Soporte ext.9292</p>
-
                   </div>
-                </div>
 
+
+                </div>
 
               </div>
 
             </div>
           </div>
         </div>
-
         </div>
 
       )

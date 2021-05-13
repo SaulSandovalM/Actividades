@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { logoutUser } from '../../../actions'
 import { connect } from 'react-redux'
-import centenario from '../../../imgs/centenario.jpg'
+import centenariopng from '../../../imgs/centenario.png'
 import './Nav.css'
 import firebase from '../../../Firebase'
 
@@ -39,26 +39,12 @@ class Nav extends Component {
     var email
 
 
-
-
-
-
-
-
-
     return (
       <div className='nav-col'>
         <div>
-
-
-
-
-
-
-
           <div className='navbar-navigation'>
             <Link to='/' className='logo'>
-              <img className='logoimg' src={centenario} alt='' />
+              <img className='logoimg-nav' src={centenariopng} alt='' />
             </Link>
           </div>
 
@@ -75,10 +61,6 @@ class Nav extends Component {
             </Link>
           </div>
         }
-
-
-
-
           <div className='navbar-left'>
             <Link to='/ActividadesRegistradas' className='deco'>
               <div className='hover-center'>
@@ -174,7 +156,7 @@ class Nav extends Component {
           </div>
           */}
 
-          <div className='navbar-left'>
+          *<div className='navbar-left'>
             <Link to='/Reporteniveldir' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
