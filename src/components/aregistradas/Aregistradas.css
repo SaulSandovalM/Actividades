@@ -18,7 +18,6 @@
 }
 .calendar-container {
   display: flex;
-  height: 86vh;
   justify-content: center;
 }
 .calendar-content {

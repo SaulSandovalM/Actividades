@@ -26,7 +26,6 @@ import Tpresentacion from './components/textos/Tpresentacion'
 
 import Iactividad from './components/sactividad/Iactividad'
 import Edactividad from './components/sactividad/Edactividad'
-import Aregistradasdir from './components/aregistradas/Aregistradasdir'
 
 import Informacionactividad from './components/vistas/Informacionactividad'
 
@@ -73,13 +72,6 @@ function App (props) {
         exact
         path='/Iactividad'
         component={Iactividad}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      />
-      <ProtectedRoute
-        exact
-        path='/Aregistradasdir'
-        component={Aregistradasdir}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
