@@ -23,6 +23,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 
+
+
 export  default class  Estadisgeneral extends Component {
   constructor (props) {
     super(props)
@@ -75,6 +77,11 @@ export  default class  Estadisgeneral extends Component {
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
+
+
+
+ // console.log(this.state.tipoActividad.lenght)
+
 
 const rows = [
   createData('Total de Actividades', 159, 6.0, 24, 4.0),
@@ -178,6 +185,7 @@ const rows = [
                 </div>
                   <div>
                     <div>
+
                       <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Tipo Actividad *</InputLabel>
                       <Select
@@ -201,6 +209,11 @@ const rows = [
                     </button>} filename='
                     Excel prueba'>
                     <ExcelSheet data={ciudadesMaspobladas} name='Ciudades mas pobladas'>
+                    <div>
+
+                    </div>
+                       <p>poniendo un texto  al ternativo </p>
+                      <ExcelColumn img="../../../imgs/centenario.png"/>
                       <ExcelColumn label="Tipo de Actividad" value="actividad"/>
                       <ExcelColumn label="Numero de Actividad" value="poblacion"/>
                       <ExcelColumn label="Lugar" value="entidad"/>
@@ -216,8 +229,13 @@ const rows = [
           </form>
         </div>
 
-        <div>
-        <TableContainer component={Paper}>
+<div>
+
+  <div>
+
+   <TableContainer component={Paper}>
+
+
     <Table  aria-label="simple table">
       <TableHead>
         <TableRow>
@@ -234,7 +252,7 @@ const rows = [
             <TableCell component="th" scope="row">
               {row.name}
             </TableCell>
-            <TableCell align="right">45415465</TableCell>
+            <TableCell align="right"></TableCell>
             <TableCell align="right"></TableCell>
             <TableCell align="right"></TableCell>
             <TableCell align="right"></TableCell>
@@ -243,6 +261,9 @@ const rows = [
       </TableBody>
     </Table>
   </TableContainer>
+  </div>
+
+
         </div>
         <div className='tabla-inte'>
         <TableContainer component={Paper}>
