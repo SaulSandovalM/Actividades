@@ -25,6 +25,7 @@
     "print": "^1.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-csv": "^2.0.3",
     "react-dom": "^16.13.1",
     "react-export-excel": "^0.5.3",
     "react-focus-lock": "^2.4.1",

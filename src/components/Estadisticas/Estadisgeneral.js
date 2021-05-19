@@ -21,7 +21,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+import {CSVLink} from 'react-csv'
 
 
 
@@ -196,7 +196,8 @@ const rows = [
                         <MenuItem value='capacitacion'>Capacitacion</MenuItem>
                         <MenuItem value='vinculacion'>Vinculacion</MenuItem>
                         <MenuItem value='difusion'>Difusion</MenuItem>
-                        <MenuItem value='taller'>Gobernador</MenuItem>
+                        <MenuItem value='taller'>Especiales</MenuItem>
+                        <MenuItem value='estraoficiale'> Extra Oficiales </MenuItem>
                         <MenuItem value='taller'>Otras actividades</MenuItem>
                       </Select>
                       </FormControl>
@@ -204,12 +205,16 @@ const rows = [
 
 
                     <div className='mdc-button-estg'>
-                      <ExcelFile element = {<button class="mdc-button mdc-button--raised">
+                      <ExcelFile element =
+                      {<button class="mdc-button mdc-button--raised">
                       <span class="mdc-button__label">Generar </span>
                     </button>} filename='
+
                     Excel prueba'>
                     <ExcelSheet data={ciudadesMaspobladas} name='Ciudades mas pobladas'>
                     <div>
+
+
 
                     </div>
                        <p>poniendo un texto  al ternativo </p>
@@ -230,18 +235,21 @@ const rows = [
         </div>
 
 <div>
+<div>
 
+
+</div>
   <div>
 
-   <TableContainer component={Paper}>
+   <TableContainer component={Paper}>   
 
 
     <Table  aria-label="simple table">
       <TableHead>
         <TableRow>
           <TableCell>Actividades Totales</TableCell>
-          <TableCell align="right">Numero </TableCell>
-          <TableCell align="right">%</TableCell>
+          <TableCell align="right"></TableCell>
+          <TableCell align="right"></TableCell>
           <TableCell align="right"></TableCell>
           <TableCell align="right"></TableCell>
         </TableRow>
