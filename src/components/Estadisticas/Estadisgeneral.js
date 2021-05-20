@@ -80,7 +80,7 @@ function createData(name, calories, fat, carbs, protein) {
 
 
 
- // console.log(this.state.tipoActividad.lenght)
+console.log(this.state.tipoActividad !== undefined ? this.state.tipoActividad.length : null)
 
 
 const rows = [
@@ -241,7 +241,7 @@ const rows = [
 </div>
   <div>
 
-   <TableContainer component={Paper}>   
+   <TableContainer component={Paper}>
 
 
     <Table  aria-label="simple table">

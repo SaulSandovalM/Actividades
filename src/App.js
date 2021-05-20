@@ -34,6 +34,9 @@ import Estadisticasint from './components/Estadisticas/Estadisticasint'
 import Calendario from './components/aregistradas/Calendario'
 
 
+import estadisticap from './components/Estadisticas/estadisticap'
+
+
 function App (props) {
   const { isAuthenticated, isVerifying } = props
   return (
@@ -222,6 +225,15 @@ function App (props) {
         exact
         path='/Calendario'
         component={Calendario}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+
+      <ProtectedRoute
+        exact
+        path='/estadisticap'
+        component={estadisticap}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />

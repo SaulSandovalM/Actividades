@@ -52,7 +52,7 @@ export default class Reportesniveldir extends Component {
 
   render () {
     var moment = require('moment')
-    var date = moment('2021').add(this.state.search, 'weeks').startOf('isoweek').format('YYYY-MM-DD')
+    var date = moment('2020').add(this.state.search, 'weeks').startOf('isoweek').format('YYYY-MM-DD')
 
     const filterData = this.state.actividades.filter(
       (actividades) => {
@@ -68,7 +68,7 @@ export default class Reportesniveldir extends Component {
         <div className='busq'>
           <div className='imp-busq-2'>
             <div className='btn-reportes'>
-              <p className='txt-rep'>Fecha inicial:* </p>
+              <p className='txt-rep'>Numero de Semana:* </p>
               <TextField
                 style={{  width: '30%', paddingLeft: '20px' }}
                 name='fecha'
