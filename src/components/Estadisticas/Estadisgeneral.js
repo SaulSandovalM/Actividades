@@ -114,7 +114,7 @@ const rows = [
       {
         actividad: "Ciudad dce Mexico",
         actividad: "Ciudad dce Mexico",
-        actividad: "Ciudad dce Mexico"
+        actividad: "Ciudad dce Mexico",
         poblacion: 44,
         entidad:"estado",
         pais:"Procuraduria General de Justicia del Estado de Hidalgo",
