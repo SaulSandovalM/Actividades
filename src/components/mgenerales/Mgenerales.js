@@ -45,7 +45,8 @@ export default class Mgenerales extends Component {
       <div className='nav-ma'>
         <div className='mes-icon'>
 
-        <h1 className='h1-arq'>¿Que hay de nuevo en la PGJH?</h1>
+        <h1 className='titulo-mesaje'>¡Bienvendo!</h1>
+
       </div>
       </div>
         {this.state.messages.map(messages =>

@@ -64,7 +64,16 @@
      display:flex;
      justify-content: center;
      padding-top: 30px;
-     padding-right:50px;
+     padding-right:48px;
+}
+
+.titulo-mesaje{
+  display: flex;
+  padding-left: 10%;
+  padding-top: 1%;
+
+
+
 }
 
 
