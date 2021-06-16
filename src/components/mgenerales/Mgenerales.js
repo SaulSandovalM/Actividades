@@ -41,8 +41,13 @@ export default class Mgenerales extends Component {
   render() {
     return (
       <div className='mg-conta'>
-      <div className='divtop-mg' />
-      <h1>¿Que hay de nuevo en la PGJH?</h1>
+
+      <div className='nav-ma'>
+        <div className='mes-icon'>
+
+        <h1 className='h1-arq'>¿Que hay de nuevo en la PGJH?</h1>
+      </div>
+      </div>
         {this.state.messages.map(messages =>
           <div className='content-all'>
 

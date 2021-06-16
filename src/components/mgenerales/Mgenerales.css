@@ -63,9 +63,8 @@
     -webkit-transition-duration: 400ms;
      display:flex;
      justify-content: center;
-     width:100%;
-
-
+     padding-top: 30px;
+     padding-right:50px;
 }
 
 

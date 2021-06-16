@@ -80,9 +80,6 @@ function createData(name, calories, fat, carbs, protein) {
 
 
 
-console.log(this.state.tipoActividad == undefined ? this.state.tipoActividad.length : null)
-
-
 const rows = [
   createData('Total de Actividades', 159, 6.0, 24, 4.0),
   createData('Actividades Realizadas por Procuraduria', 237, 9.0, 37, 4.3),
