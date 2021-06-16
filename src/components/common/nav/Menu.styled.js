@@ -9,6 +9,7 @@ export const StyledMenu = styled.nav`
   height: 100vh;
   width: 256px;
   text-align: left;
+  padding: 0rem 2rem 0rem 2rem; /* inluido  */
   position: fixed;
   top: 0;
   left: 0;

@@ -113,7 +113,7 @@ const rows = [
       },
       {
         actividad: "Ciudad dce Mexico",
-        actividad: "Ciudad dce Mexico",
+        actividad: "Ciudad dce Mexic",
         actividad: "Ciudad dce Mexico",
         poblacion: 44,
         entidad:"estado",

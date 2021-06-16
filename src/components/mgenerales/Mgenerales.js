@@ -41,10 +41,15 @@ export default class Mgenerales extends Component {
   render() {
     return (
       <div className='mg-conta'>
+      <div className='divtop-mg' />
+      <h1>¿Que hay de nuevo en la PGJH?</h1>
         {this.state.messages.map(messages =>
           <div className='content-all'>
+
             {messages.checked &&
               <div className='content-tarjeta'>
+
+
                 <div className='space-b'>
                   <div className='dir-content'>
                     <p className='mg-asunto'>{messages.asunto}</p>

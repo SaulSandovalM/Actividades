@@ -236,7 +236,7 @@ function App (props) {
         component={estadisticap}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
-      />
+      />      
     </Switch>
 
   )

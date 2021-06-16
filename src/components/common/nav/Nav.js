@@ -5,6 +5,12 @@ import { connect } from 'react-redux'
 import centenariopng from '../../../imgs/centenario.png'
 import './Nav.css'
 import firebase from '../../../Firebase'
+import Typography from '@material-ui/core/Typography'
+
+
+
+
+
 
 
 class Nav extends Component {
@@ -37,6 +43,8 @@ class Nav extends Component {
     const { isLoggingOut, logoutError } = this.props
     var user = firebase.auth().currentUser
     var email
+
+
 
 
     return (
