@@ -41,21 +41,15 @@ export default class Mgenerales extends Component {
   render() {
     return (
       <div className='mg-conta'>
-
-      <div className='nav-ma'>
-        <div className='mes-icon'>
-
-        <h1 className='titulo-mesaje'>¡Bienvendo!</h1>
-
-      </div>
-      </div>
-        {this.state.messages.map(messages =>
+        <div className='nav-ma'>
+          <div className='mes-icon'>
+            <h1 className='titulo-mesaje'>¡Bienvend@! </h1>
+          </div>
+        </div>
+          {this.state.messages.map(messages =>
           <div className='content-all'>
-
             {messages.checked &&
               <div className='content-tarjeta'>
-
-
                 <div className='space-b'>
                   <div className='dir-content'>
                     <p className='mg-asunto'>{messages.asunto}</p>
@@ -70,7 +64,6 @@ export default class Mgenerales extends Component {
             }
           </div>
         )}
-
       </div>
     )
   }
