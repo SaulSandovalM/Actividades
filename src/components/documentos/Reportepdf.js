@@ -23,7 +23,7 @@ export default class Reportepdf extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad,lugar, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipio, asistentes, direccion} = doc.data()
+      const { tipoActividad,lugar, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipios, asistentes, direccion} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -35,7 +35,7 @@ export default class Reportepdf extends Component {
         dependencia,
         horai,
         objetivo,
-        municipio,
+        municipios,
         asistentes,
         direccion,
         lugar,
@@ -92,10 +92,16 @@ export default class Reportepdf extends Component {
                   </div>
 
                     <h2 className='titulo-repo'>AGENDA SEMANAL DE ACTIVIDAD RELEVANTES</h2>
+                    <div>
 
                   <div className='sub-fe'>
-                    <p  className='txt-dir'>Fecha correspondiente: 8 al 14 Mayo 2021 </p>
+
+                    <p  className='txt-dir'>Fecha correspondiente:  </p>
+
                   </div>
+
+                  </div>
+
                   <div className='sub-ca'>
                     <p className='txt-dir'>DIRECCION:    DESPACHO DEL PROCURADOR</p>
                   </div>
@@ -117,7 +123,7 @@ export default class Reportepdf extends Component {
                       <td  className='all-tabla tabla-h'>{actividades.horai}</td>
                       <td  className='all-tabla tabla-a'>{actividades.tipoActividad}</td>
                       <td  className='all-tabla tabla-l'>{actividades.lugar}</td>
-                      <td  className='all-tabla tabla-l'>Huasca de Ocampo{actividades.municipio}</td>
+                      <td  className='all-tabla tabla-l'>{actividades.municipios}</td>
                       <td  className='all-tabla'>{actividades.convoca}</td>
                       </tr>
                         )}
