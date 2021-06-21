@@ -23,12 +23,13 @@ export default class Reportepdf extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad,lugar, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipios, asistentes, direccion} = doc.data()
+      const { tipoActividad, estados, actividad, lugar, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipios, asistentes, direccion} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
         tipoActividad,
         imparte,
+        estados,
         fechai,
         fechaf,
         convoca,
@@ -39,6 +40,7 @@ export default class Reportepdf extends Component {
         asistentes,
         direccion,
         lugar,
+        actividad
 
       })
     })
@@ -57,8 +59,29 @@ export default class Reportepdf extends Component {
   render () {
     return (
       <div className='fader-pfd'>
-
-        <div>
+        <div className='btn-imprimir'>
+          <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+          </span>
+        <div clasName=''>
+          <ReactToPrint
+            trigger={() =>
+          <span class='material-icons impresora-padding' style={{ cursor:'pointer' }}>
+            <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
+              <ImpIcon />
+            </Fab>
+          </span>}
+            content={() => this.agenda}
+          />
+          <div className="regresars">
+          <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBack.bind(this)}>
+            <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
+              <ReplyIcon />
+            </Fab>
+          </span>
+          </div>
+        </div>
+        </div>
+        <div ref={el => (this.agenda = el)}>
           <div clasName="logos-pdfs">
             <div className='titulo-reporte'>
               <img className='icon-centenario' src={logop} alt='centenario' />
@@ -66,15 +89,38 @@ export default class Reportepdf extends Component {
             </div>
           </div>
           <div clasName="titulos-pdfs">
-            <h2 className='titulo-repo'>AGENDA SEMANAL DE ACTIVIDAD RELEVANTES</h2>
-
+            <div>
+              <h2 className='titulo-repo'>AGENDA SEMANAL DE ACTIVIDAD RELEVANTES</h2>
+            </div>
+            <div className='sub-fe'>
+              <p className='txt-dir'>DIRECCION:DESPACHO DEL PROCURADOR (todas las direcciones )</p>
+              <p  className='txt-dir'>Fecha correspondiente:  </p>
+            </div>
+            <div className='sub-ca'>
+              <table className="tabla-dir">
+                <tr>
+                  <th className='all-tabla color-t tabla-f'>DÍA</th>
+                  <th className='all-tabla color-t tabla-f'>HORA</th>
+                  <th className='all-tabla color-t tabla-a'>ACTIVIDAD</th>
+                  <th className='all-tabla color-t tabla-l'>LUGAR </th>
+                  <th className='all-tabla color-t '>MUNICIPIO/ESTADO</th>
+                  <th className='all-tabla color-t '>SERVIDOR@S PUBLICOS COMISIONAD@S</th>
+                </tr>
+              {this.state.actividades.map(actividades =>
+                <tr>
+                  <td  className='all-tabla tabla-f'>{actividades.fechai}</td>
+                  <td  className='all-tabla tabla-f'>{actividades.horai}</td>
+                  <td  className='all-tabla tabla-a'>{actividades.actividad}</td>
+                  <td  className='all-tabla tabla-l'>{actividades.lugar}</td>
+                  <td  className='all-tabla tabla-l'>{actividades.municipios}, {actividades.estados}</td>
+                  <td  className='all-tabla'>{actividades.convoca}</td>
+                </tr>
+                )
+              }
+              </table>
+            </div>
           </div>
-
-          <div clasName='tabla-n'>
-          </div>
-
         </div>
-
 
 
 

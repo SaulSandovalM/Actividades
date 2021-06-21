@@ -96,14 +96,7 @@ justify-content: space-between;
 
 
 }
-.btn-imprimir{
-  width: 190vh;
-  padding-top:1%;
-  display:flex;
-  justify-content:flex-end;
-  z-index: 5;
 
-}
 .impresora-padding{
   padding-left:20px;
 }
@@ -379,10 +372,7 @@ table{
   border-collapse: collapse;
 }
 
-.tabla-dir{
-  padding-left: 100px;
-  width:1400px;
-}
+
 .tabla-top{
   padding: 10px;
 }
@@ -403,21 +393,8 @@ table{
 .tabla-n{
   width:25px;
 }
-.tabla-f{
-  width:140px;
 
-}
-.tabla-h{
-  width:100px;
 
-}
-.tabla-l{
-  width:150px;
-}
-.tabla-a{
-  width: 350px;
-  padding:5px;
-}
 .tabla-b{
   width: 420px;
 }
@@ -425,18 +402,17 @@ table{
   width:200px;
 }
 
-.sub-ca{
-  padding-left: 155px;
-  width: 1000px;
-}
+
 .txt-dir{
   font-weight: bold;
   font-size: 100%;
 }
 .sub-fe{
-  width:1400px;
+  padding-left: 2%;
+  padding-right:2%;
+  width:100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 
@@ -517,15 +493,16 @@ border: 1px solid #000;
 
 .fader-pfd {
   background:#fafafa;
-  padding-left: 260px;
+  padding-left:260px;
   min-height: 100%;
-  padding-right: 3%;
-  padding-top: 2%;
+  padding-right: 4%;
+  padding-top:.5%;
  }
 
 /*cabecera de Iconos centenario y escudos */
 
 .titulo-reporte {
+  padding-top: 2%;
   width: 100%;
   display: flex;
   justify-content:space-between;
@@ -547,4 +524,59 @@ border: 1px solid #000;
   display: flex;
   justify-content: center;
   padding-bottom: 2%;
+  }
+/*tabla */
+.sub-ca {
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  }
+.tabla-dir {
+  width: 100%;
+  padding-bottom:10%;
+  }
+
+.tabla-f  {
+  width:7%;
+}
+.tabla-a  {
+  width:25%;
+  padding:5px;
+  }
+.tabla-l  {
+  width:20%;
+  }
+.tabla-s {
+  width: 41%;
+  }
+/* boton imprimir */
+.btn-imprimir {
+  width:86%;
+  padding-top:.5%;
+  display:flex;
+  justify-content:flex-end;
+  z-index: 99;
+  position: fixed;
+  }
+@media only screen and (max-width: 600px) {
+ 	.btn-imprimir {
+		right: 20px;
+	}
+}
+.btn-imprimirs {
+  width:85%;
+  padding-top:10%;
+  display:flex;
+  justify-content: flex-end;
+  z-index: 99;
+  position: fixed;
+  }
+@media only screen and (max-width: 600px) {
+ 	.btn-imprimirs {
+		right: 20px;
+	}
+}
+.regresars  {
+  padding-top: 1020%;
+  padding-left: 30%;
   }

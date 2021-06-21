@@ -6,9 +6,6 @@
       <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
         <ReplyIcon />
       </Fab>
-        {/*<p className='txt-impri'>
-          Regresar
-        </p>*/}
     </span>
     <div clasName=''>
       <ReactToPrint
@@ -39,9 +36,7 @@
                 <div>
 
               <div className='sub-fe'>
-
                 <p  className='txt-dir'>Fecha correspondiente:  </p>
-
               </div>
 
               </div>
@@ -99,9 +94,6 @@
       </span>}
         content={() => this.agenda}
       />
-        {/*<p className='txt-impri'>
-          Imprimir
-        </p>*/}
     </div>
     </div>
 
