@@ -22,11 +22,14 @@ export default class Reportepdf extends Component {
 
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
+    var numfila = 0
     querySnapshot.forEach((doc) => {
+      numfila++
       const { tipoActividad, estados, actividad, lugar, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipios, asistentes, direccion} = doc.data()
       actividades.push({
-        key: doc.id,
+        key:doc.id,
         doc,
+        numfila:numfila,
         tipoActividad,
         imparte,
         estados,
@@ -99,6 +102,7 @@ export default class Reportepdf extends Component {
             <div className='sub-ca'>
               <table className="tabla-dir">
                 <tr>
+                  <th className='all-tabla tabla-n'>No.</th>
                   <th className='all-tabla color-t tabla-f'>DÍA</th>
                   <th className='all-tabla color-t tabla-f'>HORA</th>
                   <th className='all-tabla color-t tabla-a'>ACTIVIDAD</th>
@@ -108,11 +112,12 @@ export default class Reportepdf extends Component {
                 </tr>
               {this.state.actividades.map(actividades =>
                 <tr>
+                  <td className='all-tabla color-t'>{actividades.numfila}</td>
                   <td  className='all-tabla tabla-f'>{actividades.fechai}</td>
                   <td  className='all-tabla tabla-f'>{actividades.horai}</td>
-                  <td  className='all-tabla tabla-a'>{actividades.actividad}</td>
+                  <td  className='all-tabla tabla-a'>{actividades.tipoActividad}: {actividades.actividad}</td>
                   <td  className='all-tabla tabla-l'>{actividades.lugar}</td>
-                  <td  className='all-tabla tabla-l'>{actividades.municipios}, {actividades.estados}</td>
+                  <td  className='all-tabla tabla-l'>{actividades.municipios}/{actividades.estados}</td>
                   <td  className='all-tabla'>{actividades.convoca}</td>
                 </tr>
                 )
@@ -121,13 +126,6 @@ export default class Reportepdf extends Component {
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
     </div>
     )
   }
