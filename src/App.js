@@ -19,7 +19,7 @@ import Reportesniveldir from './components/reportes/Reportesniveldir'
 import Autorizacion from './components/autorizacion/Autorizacion'
 import Arelevante from './components/documentos/Arelevante'
 import Agendasemanal from './components/documentos/Agendasemanal'
-import Reporteniveldir from './components/documentos/Reporteniveldir'
+
 import Reportepdf from './components/documentos/Reportepdf'
 import Tarchivos from './components/textos/Tarchivos'
 import Tpresentacion from './components/textos/Tpresentacion'
@@ -35,6 +35,16 @@ import Calendario from './components/aregistradas/Calendario'
 
 
 import estadisticap from './components/Estadisticas/estadisticap'
+
+/*Diana*/
+import Reportedireccionesd from './components/documentos/Reportedireccionesd'
+ /*Procurador*/
+
+ /*Despacho-PROCURADOR*/
+ import Reportedirecciones from './components/documentos/Reportedirecciones'
+
+ /*Reportedirecciones*/
+ import Reporteniveldir from './components/documentos/Reporteniveldir'
 
 
 function App (props) {
@@ -236,8 +246,27 @@ function App (props) {
         component={estadisticap}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
-      />      
+      />
+      <ProtectedRoute
+        exact
+        path='/Reportedireccionesd'
+        component={Reportedireccionesd}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Reportedirecciones'
+        component={Reportedirecciones}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+
+
     </Switch>
+
+
 
   )
 }

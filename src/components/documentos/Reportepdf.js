@@ -112,7 +112,7 @@ export default class Reportepdf extends Component {
                 </tr>
               {this.state.actividades.map(actividades =>
                 <tr>
-                  <td className='all-tabla color-t'>{actividades.numfila}</td>
+                  <td className='all-tabla color-tn'>{actividades.numfila}</td>
                   <td  className='all-tabla tabla-f'>{actividades.fechai}</td>
                   <td  className='all-tabla tabla-f'>{actividades.horai}</td>
                   <td  className='all-tabla tabla-a'>{actividades.tipoActividad}: {actividades.actividad}</td>
