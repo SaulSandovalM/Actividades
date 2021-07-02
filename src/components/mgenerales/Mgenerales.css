@@ -2,6 +2,7 @@
   background: #fafafa;
   margin-left: 256px;
   min-height: 100vh;
+
 }
 .content-all {
   display: flex;
@@ -69,8 +70,9 @@
 
 .titulo-mesaje{
   display: flex;
-  padding-left: 10%;
+  padding-left: 5%;
   padding-top: 1%;
+
 
 
 
@@ -190,4 +192,15 @@
   border-radius: 6px;
   width: 200px;
   height: 100%;
+}
+.nav-ma2 {
+  background: #092432;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: center;
+  margin-top: -20px;
+  width: 100%;
+  z-index: 1;
 }

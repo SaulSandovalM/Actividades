@@ -41,9 +41,9 @@ export default class Mgenerales extends Component {
   render() {
     return (
       <div className='mg-conta'>
-        <div className='nav-ma'>
+        <div className='nav-ma2'>
           <div className='mes-icon'>
-            <h1 className='titulo-mesaje'>¡Bienvend@! </h1>
+            <h1 className='titulo-mesaje'>¡Bienvend@!</h1>
           </div>
         </div>
           {this.state.messages.map(messages =>
@@ -53,7 +53,7 @@ export default class Mgenerales extends Component {
                 <div className='space-b'>
                   <div className='dir-content'>
                     <p className='mg-asunto'>{messages.asunto}</p>
-                    <p className='mg-area'>Despacho del Procurador {messages.fecha}</p>
+                    <p className='mg-area'>Aviso generado por: El Despacho del Procurador {messages.fecha}</p>
                     <p>{messages.descripcion}</p>
                   </div>
                   <div className='image'>
