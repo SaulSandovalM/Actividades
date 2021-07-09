@@ -44,7 +44,7 @@ export  default class  Estadisgeneral extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoA, lugar, fechai, estatus, estados, municipios, area, horai } = doc.data()
+      const { tipoA, lugar, fechai, estatus, estados, municipios, area, horai,  } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -55,7 +55,8 @@ export  default class  Estadisgeneral extends Component {
         municipios,
         estados,
         horai,
-        area
+        area,
+
 
       })
     })
@@ -208,7 +209,6 @@ const rows = [
                       {<button class="mdc-button mdc-button--raised">
                       <span class="mdc-button__label">Generar </span>
                     </button>} filename='
-
                     Excel prueba'>
                     <ExcelSheet data={ciudadesMaspobladas} name='Ciudades mas pobladas'>
                     <div>

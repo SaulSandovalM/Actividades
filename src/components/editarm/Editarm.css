@@ -93,7 +93,7 @@
   width: 4%;
   margin-top: -2px;
 }
-
+.
 
 
 
@@ -330,4 +330,26 @@
   flex-direction: row;
   width: 100%;
   opacity: 0;
+}
+/*Editar/Delete*/
+.icons-delete {
+  display: flex;
+ justify-content: space-between;
+}
+/*Tabita*/
+.dad-tablita{
+  display: flex;
+  justify-content: center;
+}
+.tablita
+{
+  width: 80%;
+
+
+}
+.conte-tablita
+{
+  display: flex;
+  justify-content:center;
+
 }
