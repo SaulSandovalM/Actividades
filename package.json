@@ -24,6 +24,7 @@
     "clsx": "^1.1.1",
     "date-fns": "^2.16.1",
     "firebase": "^7.24.0",
+    "material-table": "^1.69.3",
     "moment": "^2.29.1",
     "print": "^1.2.0",
     "prop-types": "^15.7.2",

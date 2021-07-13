@@ -26,11 +26,11 @@
   z-index: 2;
 }
 .h1-lm {
-  padding-left: 100px;
+  padding-left: 5%;
 }
 .mes-center {
   width: 100%;
-  display: flex;
+  display: flex; 
   justify-content:center;
   padding-top: 30px;
 }
@@ -352,4 +352,7 @@
   display: flex;
   justify-content:center;
 
+}
+.msj-d{
+z-index: 5;
 }
