@@ -173,8 +173,24 @@ export default class Showm extends Component {
                   <MaterialTable
                     columns={columnas}
                     data = {tabla}
+                    title = "Mensajes"
 
+                    actions = {[
+                      {
+                        icon: 'edit',
+                        tooltip: 'Editar',
+                        onClick: (event, rowData)=>Link('/Editarmensaje/${messages.key}')
+                      },
+                      {
+                        icon: 'delete',
+                        tooltip: 'Editar artista',
+                        onClick: (event, rowData)=>window.confirm('Estas seguro que quires elimar el mensaje : ' +rowData.artista+'?')
+                      }
+                    ] }
 
+                    options={{
+                      actionsColumnIndex: -1
+                    }}
 
                   />
                 </div>
