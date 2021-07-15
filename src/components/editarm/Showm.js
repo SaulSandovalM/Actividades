@@ -27,6 +27,12 @@ export default class Showm extends Component {
         this.props.history.push('/Generaciondemensajes');
       }
 
+      handleBackss() {
+            this.props.history.push(`${this.state.messages.key}`);
+          }
+
+
+
   onCollectionUpdate = (querySnapshot) => {
     const messages = []
     querySnapshot.forEach((doc) => {
@@ -119,7 +125,7 @@ export default class Showm extends Component {
                       {
                         icon: 'delete',
                         tooltip: 'Eliminar',
-                        onClick: (event, rowData)=>window.confir('¿Deseas Eliminar el Mensaje?' +rowData.delete)
+                        onClick: (event, rowData) => ("Deseas elimarlo " + rowData)
                       }
                     ] }
 
