@@ -98,7 +98,7 @@ class Nav extends Component {
 
 
           <div className='navbar-left'>
-            <Link to='/BusquedaActividad' className='deco'>
+            <Link to='/Busqueda' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>

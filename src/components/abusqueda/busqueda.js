@@ -86,23 +86,27 @@ export default class busqueda extends Component {
 
       return (
         <div className='mg-conta'>
-          <div><h1>texto de pruebas </h1></div>
-
-          <div>
+        <div className='nav-mms'>
+          <h1 className='h1-lm'>Busqueda</h1>
+        </div>
+          <div style={{ width: '95%', marginRight: '3.5%', marginLeft: '3.5%', paddingTop: '2%'  }}>
             <MaterialTable
               columns = {cols}
               data = {tablas}
-              title = "Busqueda de Actividades"
+              title = "Actividades"
               actions = {[
 
-                {
+                { 
                 icon: 'add',
                 tooltip: 'Ver',
                 onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
-                }
+              }
+
               ]}
+
               options={{
-                actionsColumnIndex: -1
+                actionsColumnIndex: -1,
+                exportButton: true
               }}
 
             />

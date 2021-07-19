@@ -42,12 +42,12 @@ export default class Mgenerales extends Component {
     return (
       <div className='mg-conta'>
         <div className='nav-ma2'>
-          <div className='mes-icon'>
+          <div className='mes-icon' >
             <h1 className='titulo-mesaje'>¡Bienvend@!</h1>
           </div>
         </div>
           {this.state.messages.map(messages =>
-          <div className='content-all'>
+          <div className='content-all' >
             {messages.checked &&
               <div className='content-tarjeta'>
                 <div className='space-b'>

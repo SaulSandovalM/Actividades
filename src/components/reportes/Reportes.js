@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Reportes.css'
 import firebase from '../../Firebase'
 import TextField from '@material-ui/core/TextField'
+import MaterialTable from 'material-table';
 
 export default class Reportes extends Component {
   constructor (props) {
@@ -16,14 +17,15 @@ export default class Reportes extends Component {
       search: '',
       municipios: '',
       estados: '',
-      lugar:''
+      lugar:'',
+      actividad: '',
     }
   }
 
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoA, lugar, fechai, estatus, estados, municipios, area, horai } = doc.data()
+      const { actividad, tipoA, lugar, fechai, estatus, estados, municipios, area, horai } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -34,7 +36,8 @@ export default class Reportes extends Component {
         municipios,
         estados,
         horai,
-        area
+        area,
+        actividad
 
       })
     })
@@ -52,6 +55,36 @@ export default class Reportes extends Component {
   }
 
   render () {
+    const cols = [
+          {
+            title: 'ACTIVIDAD',
+            field: 'actividad'
+
+          },
+          {
+            title: 'LUGAR',
+            field: 'lugar'
+          },
+          {
+            title: 'Fiscalia/Direccion',
+            field: 'estados'
+          },
+          {
+            title: 'FECHA',
+            field: 'fechai'
+          },
+          {
+            title: 'HORA',
+            field: 'horai'
+          },
+        ];
+        const tablas = this.state.actividades.map(actividades => actividades)
+
+
+
+
+
+
     var moment = require('moment')
     var date = moment('2020').add(this.state.search, 'weeks').startOf('isoweek').format('YYYY-MM-DD')
 
@@ -63,9 +96,52 @@ export default class Reportes extends Component {
 
     return (
       <div className='mg-conta'>
-        <div className='nav-mm'>
+        <div className='nav-mmf'>
           <h1 className='h1-lm'>Reportes</h1>
         </div>
+
+
+        <div>
+          <MaterialTable
+          columns = {cols}
+          data = {tablas}
+          title = "Reportes de las Direcciones"
+
+          actions = {[
+
+            {
+            icon: 'add',
+            tooltip: 'Agenda',
+            onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
+          },
+          {
+          icon: 'clear',
+          tooltip: 'Agenda',
+          onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
+        },
+        {
+        icon: 'clear',
+        tooltip: 'Agenda',
+        onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
+      },
+      {
+      icon: 'clear',
+      tooltip: 'Agenda',
+      onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
+    },
+          ]}
+
+          options={{
+            actionsColumnIndex: -1,
+            exportButton: true
+          }}
+
+          />
+        </div>
+
+
+
+
         <div className='busq'>
           <div className='imp-busq-2'>
             <div className='btn-reportes'>
@@ -114,7 +190,7 @@ export default class Reportes extends Component {
                 <div className='head-mes-imp'>
                   <a className='hiper' href='/Reporteniveldir'>
                   <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>
-                  
+
                     article
                   </span>
                   </a>
