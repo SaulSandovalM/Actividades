@@ -7,6 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControl from '@material-ui/core/FormControl'
 import Search from '@material-ui/icons/Search'
+import MaterialTable from 'material-table';
 
 export default class Aregistradas extends Component {
   constructor (props) {
@@ -63,12 +64,36 @@ export default class Aregistradas extends Component {
   }
 
   render () {
+
+    const columnass = [
+          {
+            title: 'ACTIVIDAD',
+            field: 'actividad'
+
+          },
+          {
+            title: 'DESCRIPCIÓN',
+            field: 'responsable'
+          },
+          {
+            title: 'FECHA/HORA',
+            field: 'fechai'
+          },
+          {
+            title: 'Estatus',
+            field: 'lugar'
+          }
+
+        ];
+
+
     const filterData = this.state.actividades.filter(
       (actividades) => {
 
         return  actividades.lugar.indexOf(this.state.search) !== -1
       }
     )
+
 
     return (
       <div className='mg-conta'>
@@ -137,6 +162,18 @@ export default class Aregistradas extends Component {
             </div>
           </div>
           )}
+        </div>
+
+
+
+
+        <div>
+        <MaterialTable
+
+
+          />
+
+
         </div>
       </div>
     )

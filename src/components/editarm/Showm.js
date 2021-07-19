@@ -9,8 +9,6 @@ import MaterialTable from 'material-table';
 
 
 
-
-
 export default class Showm extends Component {
   constructor (props) {
     super(props)
@@ -59,11 +57,7 @@ export default class Showm extends Component {
 
   render() {
 
-    console.log(this.state.messages.key)
-    function deleteMessage(id)
-    {
-      alert(id)
-    }
+
     const columnas = [
           {
             title: 'ASUNTO ',
@@ -126,6 +120,10 @@ export default class Showm extends Component {
                         icon: 'delete',
                         tooltip: 'Eliminar',
                         onClick: (event, rowData) => ("Deseas elimarlo " + rowData)
+                      },
+                      {
+                      icon: 'filter',
+                      tooltip: 'Ver'
                       }
                     ] }
 
@@ -134,6 +132,10 @@ export default class Showm extends Component {
                     }}
 
                   />
+                </div>
+
+                <div>
+
                 </div>
 
 

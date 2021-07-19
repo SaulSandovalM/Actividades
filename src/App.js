@@ -47,6 +47,10 @@ import Reportedireccionesd from './components/documentos/Reportedireccionesd'
  import Reporteniveldir from './components/documentos/Reporteniveldir'
 
 
+
+ import busqueda from './components/abusqueda/busqueda.js'
+
+
 function App (props) {
   const { isAuthenticated, isVerifying } = props
   return (
@@ -261,7 +265,13 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-
+      <ProtectedRoute
+        exact
+        path='/busqueda'
+        component={busqueda}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
 
 
     </Switch>
