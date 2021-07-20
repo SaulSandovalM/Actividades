@@ -38,7 +38,7 @@ export default class Mgenerales extends Component {
   handleBack() {
       this.props.history.push('/ActividadesRegistradas');
     }
-  render() {
+  render () {
     return (
       <div className='mg-conta'>
         <div className='nav-ma2'>

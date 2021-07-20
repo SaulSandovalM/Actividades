@@ -50,6 +50,9 @@ import Reportedireccionesd from './components/documentos/Reportedireccionesd'
 
  import busqueda from './components/abusqueda/busqueda.js'
 
+ /*Borrador de Actividades */
+ import bactividades from './components/bactividades/bactividades.js'
+
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -269,6 +272,14 @@ function App (props) {
         exact
         path='/busqueda'
         component={busqueda}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+      <ProtectedRoute
+        exact
+        path='/bactividades'
+        component={bactividades}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />

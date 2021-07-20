@@ -96,7 +96,7 @@ export default class busqueda extends Component {
               title = "Actividades"
               actions = {[
 
-                { 
+                {
                 icon: 'add',
                 tooltip: 'Ver',
                 onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
