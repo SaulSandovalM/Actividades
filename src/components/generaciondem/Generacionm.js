@@ -62,10 +62,10 @@ export default class Generacionm extends Component {
         checked: true
       })
       this.props.history.push('/')
-      alert('Se Envio el formulario')
+      alert('¡¡¡Maravilloso!!! Se genero el Mensaje 🤩')
     })
     .catch((error) => {
-      console.error('Error al crear: ', error)
+      console.error('Error al crear el Mensaje intenta de nuevo: 😢', error)
     })
   }
 

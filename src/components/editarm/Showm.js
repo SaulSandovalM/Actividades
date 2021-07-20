@@ -25,9 +25,12 @@ export default class Showm extends Component {
         this.props.history.push('/Generaciondemensajes');
       }
 
-      handleBackss() {
-            this.props.history.push(`${this.state.messages.key}`);
-          }
+  handleBackss(id) {
+      var opcion = window.confirm("¿Estás Seguro que deseas Eliminar el Mensaje? 🥺"+id);
+      firebase.firestore().collection('messages').doc(id).delete()
+        .then(()=>{alert("¡¡¡Exitoso!!! Mesaje eliminado 😎")})
+        .catch((error)=>{ alert("Error removing document:", error)})
+    }
 
 
 
@@ -62,7 +65,6 @@ export default class Showm extends Component {
           {
             title: 'ASUNTO ',
             field: 'asunto'
-
           },
           {
             title: 'DESCRIPCIÓN',
@@ -72,7 +74,6 @@ export default class Showm extends Component {
             title: 'FECHA',
             field: 'fecha'
           }
-
         ];
 
         const tabla = this.state.messages.map(messages => messages)
@@ -119,7 +120,7 @@ export default class Showm extends Component {
                       {
                         icon: 'delete',
                         tooltip: 'Eliminar',
-                        onClick: (event, rowData) => ("Deseas elimarlo " + rowData)
+                        onClick: (event, rowData)=>this.handleBackss(rowData.key)
                       },
                       {
                       icon: 'filter',
