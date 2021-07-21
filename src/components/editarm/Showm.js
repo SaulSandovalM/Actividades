@@ -72,8 +72,16 @@ export default class Showm extends Component {
           },
           {
             title: 'FECHA',
-            field: 'fecha'
+            field: 'fecha',
+
+          },
+          {
+            title: 'IMAGEN',
+            field: 'imagen',
+            render: messages => <img src = { messages.imagen } style = {{ width: 100}} />,
+
           }
+
         ];
 
         const tabla = this.state.messages.map(messages => messages)
@@ -105,6 +113,10 @@ export default class Showm extends Component {
                     title = "Mensajes"
                     actions = "Opciones"
 
+
+
+
+
                     actions = {[
                       {
                         icon: 'add',
@@ -121,16 +133,16 @@ export default class Showm extends Component {
                         icon: 'delete',
                         tooltip: 'Eliminar',
                         onClick: (event, rowData)=>this.handleBackss(rowData.key)
-                      },
-                      {
-                      icon: 'filter',
-                      tooltip: 'Ver'
                       }
                     ] }
 
                     options={{
-                      actionsColumnIndex: -1
+                      actionsColumnIndex: -1,
+                      exportButton: true
                     }}
+
+
+
 
                   />
                 </div>
