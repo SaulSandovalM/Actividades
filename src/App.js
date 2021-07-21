@@ -29,9 +29,13 @@ import Edactividad from './components/sactividad/Edactividad'
 
 import Informacionactividad from './components/vistas/Informacionactividad'
 
+
+
+/*Estadisticas*/
 import Estadisgeneral from './components/Estadisticas/Estadisgeneral'
 import Estadisticasint from './components/Estadisticas/Estadisticasint'
 import Calendario from './components/aregistradas/Calendario'
+import Estadisticas from './components/Estadisticas/Estadistica'
 
 
 import estadisticap from './components/Estadisticas/estadisticap'
@@ -51,7 +55,7 @@ import Reportedireccionesd from './components/documentos/Reportedireccionesd'
  import busqueda from './components/abusqueda/busqueda.js'
 
  /*Borrador de Actividades */
- import bactividades from './components/bactividades/bactividades.js'
+ import bactividades from './components/bactividades/bactividades'
 
 
 function App (props) {
