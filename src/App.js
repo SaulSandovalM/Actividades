@@ -35,7 +35,7 @@ import Informacionactividad from './components/vistas/Informacionactividad'
 import Estadisgeneral from './components/Estadisticas/Estadisgeneral'
 import Estadisticasint from './components/Estadisticas/Estadisticasint'
 import Calendario from './components/aregistradas/Calendario'
-import Estadisticas from './components/Estadisticas/Estadistica'
+import Estadistica from './components/Estadisticas/Estadistica'
 
 
 import estadisticap from './components/Estadisticas/estadisticap'
@@ -284,6 +284,13 @@ function App (props) {
         exact
         path='/bactividades'
         component={bactividades}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <ProtectedRoute
+        exact
+        path='/Estadistica'
+        component={Estadistica}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
