@@ -17,7 +17,7 @@ export  default class  Estadistica extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, virpre, dependencia, direccion, tipoActividad, municipios} = doc.data()
+      const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, virpre, dependencia, direccion, tipoActividad, municipios, organismoi, plibro, capacitacion} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -36,20 +36,24 @@ export  default class  Estadistica extends Component {
         tipoActividad,
         municipios,
         lugar,
-
-
+        organismoi,
+        plibro,
+        capacitacion,
 
       })
     })
     this.setState({
       actividades
    })
+   console.log(this.state.capacitacion)
   }
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
 
+
   render () {
+    console.log(this.state.actividades.length)
     const columnas = [
           {
             title: 'ACTIVIDADES TOTALES',
@@ -92,7 +96,7 @@ export  default class  Estadistica extends Component {
               },
               {
                 title: 'SUB. ACTIVIDAD',
-                field: 'curso'
+                field: 'organismoi'
 
               },
               {
@@ -222,7 +226,8 @@ export  default class  Estadistica extends Component {
 
               options={{
                 actionsColumnIndex: -1,
-                exportButton: true
+                exportButton: true,
+
               }}
 
 
@@ -238,7 +243,8 @@ export  default class  Estadistica extends Component {
 
             options={{
               actionsColumnIndex: -1,
-              exportButton: true
+              exportButton: true,
+              filtering: true
             }}
 
 

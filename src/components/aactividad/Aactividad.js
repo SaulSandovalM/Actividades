@@ -307,11 +307,11 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='cursoi'>Curso</MenuItem>
-                      <MenuItem value='cursol'>Curso en Linea</MenuItem>
-                      <MenuItem value='formai'>Formación Inicial</MenuItem>
-                      <MenuItem value='cursoa'>Curso Actualización</MenuItem>
-                      <MenuItem value='otrocc'>Otro</MenuItem>
+                      <MenuItem value='Curso'>Curso</MenuItem>
+                      <MenuItem value='curso en linea'>Curso en Linea</MenuItem>
+                      <MenuItem value='Formacion Inicial'>Formación Inicial</MenuItem>
+                      <MenuItem value='Curso Actualización'>Curso Actualización</MenuItem>
+                      <MenuItem value='Otro'>Otro</MenuItem>
                     </Select>
                     </FormControl>
                 }
@@ -319,7 +319,7 @@ export default class Aactividad extends Component {
                   <TextField
                     label='Otro tipo de Actividad en Curso'
                     style={{ marginTop: '15px', width: '100%' }}
-                    name='otrocc'
+                    name='Otro'
                     onChange={this.onChange}
                   />
                 }
