@@ -45,7 +45,7 @@ export  default class  Estadistica extends Component {
     this.setState({
       actividades
    })
-   console.log(this.state.capacitacion)
+   console.log(this.state.actividades)
   }
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)

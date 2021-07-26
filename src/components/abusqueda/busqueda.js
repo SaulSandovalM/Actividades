@@ -45,7 +45,7 @@ export default class busqueda extends Component {
       this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
     }
     handleBacks() {
-        this.props.history.push(`/Sactividad/${this.state.actividades.key}`);
+        this.props.history.push(`/Iactividad/${this.state.actividades.key}`);
       }
 
 
@@ -98,8 +98,8 @@ export default class busqueda extends Component {
 
                 {
                 icon: 'add',
-                tooltip: 'Ver',
-                onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
+                tooltip: '⚈ Ver Información completa',
+                onClick: (event, rowData)=>this.props.history.push(`/Iactividad/${rowData.key}`)
               }
 
               ]}
@@ -108,6 +108,13 @@ export default class busqueda extends Component {
                 actionsColumnIndex: -1,
                 exportButton: true
               }}
+
+              localization = {{
+                header : {
+                  actions : 'OPCIONES'
+                }
+              }}
+
 
             />
           </div>

@@ -88,6 +88,9 @@ export default class Showm extends Component {
 
         console.log (tabla)
 
+
+
+
     return (
       <div className='mg-conta-msj'>
         <div className='nav-mm-msj'>
@@ -134,11 +137,21 @@ export default class Showm extends Component {
                         tooltip: 'Eliminar',
                         onClick: (event, rowData)=>this.handleBackss(rowData.key)
                       }
-                    ] }
+                    ]}
+
+
+
+
 
                     options={{
                       actionsColumnIndex: -1,
                       exportButton: true
+                    }}
+
+                    localization = {{
+                      header : {
+                        actions : 'OPCIONES'
+                      }
                     }}
 
 

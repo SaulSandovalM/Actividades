@@ -191,20 +191,20 @@ class Nav extends Component {
 
 
           <div className='navbar-left'>
-            <Link to='/Estadisgeneral' className='deco'>
+            <Link to='/Estadistica' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>
                     show_chart
                   </span>
-                  <p className='nav-t'>Estadistica G</p>
+                  <p className='nav-t'>Estadistica</p>
                 </div>
               </div>
             </Link>
           </div>
-        }
 
-          <div className='navbar-left'>
+
+          {/*<div className='navbar-left'>
             <Link to='/Estadisticasint' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -216,7 +216,8 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
-        }
+          */}
+
         </div>
 
         <div className='navbar-left'>
@@ -226,7 +227,7 @@ class Nav extends Component {
                 <span className='material-icons icon-s'>
                   person
                 </span>
-                <p className='nav-t'>Salir</p>
+                <p className='nav-t'>cerrar</p>
               </div>
             </div>
           </Link>
