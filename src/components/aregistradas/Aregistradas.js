@@ -21,11 +21,6 @@ export default class Aregistradas extends Component {
   }
 
 
-  handleBack() {
-    this.props.history.push('/Sactividad/');
-  }
-
-
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {

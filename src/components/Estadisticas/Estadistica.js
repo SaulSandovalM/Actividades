@@ -17,7 +17,7 @@ export  default class  Estadistica extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, virpre, dependencia, direccion, tipoActividad, municipios, organismoi, plibro, capacitacion} = doc.data()
+      const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, virpre, dependencia, direccion, tipoActividad, municipios, organismoi, plibro, capacitacion, dInvitada} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -39,6 +39,7 @@ export  default class  Estadistica extends Component {
         organismoi,
         plibro,
         capacitacion,
+        dInvitada
 
       })
     })
@@ -73,11 +74,11 @@ export  default class  Estadistica extends Component {
 
         const sang = [
           {
-            title: 'NOMBRE DE LA ACTIVIDAD',
-            field: 'fechai',
+            title: 'NOM ACTIVIDAD',
+            field: 'actividad',
           },
               {
-                title: 'VIRTUAL/PRESENCIAL',
+                title: 'VIRTUAL PRESENCIAL',
                 field: 'virpre'
               },
               {
@@ -125,7 +126,7 @@ export  default class  Estadistica extends Component {
             const sangs = [
               {
                 title: 'NOMBRE DE LA ACTIVIDAD',
-                field: 'fechai',
+                field: 'actividad',
               },
                   {
                     title: 'VIRTUAL/PRESENCIAL',
@@ -167,7 +168,7 @@ export  default class  Estadistica extends Component {
                 const sangso = [
                       {
                         title: 'NOMBRE DE LA ACTIVIDAD',
-                        field: 'fechai',
+                        field: 'actividad',
                       },
                       {
                         title: 'VIRTUAL/PRESENCIAL',
@@ -176,6 +177,10 @@ export  default class  Estadistica extends Component {
                       {
                         title: 'INSTITUCION FORANEA',
                         field: 'fechai'
+                      },
+                      {
+                        title: 'DIRECCION INVITADA',
+                        field: 'dInvitada'
                       },
                       {
                         title: 'T. ACTIVIDAD',
@@ -230,6 +235,12 @@ export  default class  Estadistica extends Component {
 
               }}
 
+              localization = {{
+                header : {
+                  actions : 'OPCIONES'
+                }
+              }}
+
 
               />
             </div>
@@ -264,6 +275,12 @@ export  default class  Estadistica extends Component {
               exportButton: true
             }}
 
+            localization = {{
+              header : {
+                actions : 'OPCIONES'
+              }
+            }}
+
 
             />
             </div>
@@ -279,6 +296,12 @@ export  default class  Estadistica extends Component {
             options={{
               actionsColumnIndex: -1,
               exportButton: true
+            }}
+
+            localization = {{
+              header : {
+                actions : 'OPCIONES'
+              }
             }}
 
 

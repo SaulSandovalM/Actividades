@@ -136,6 +136,12 @@ export default class Reportes extends Component {
             exportButton: true
           }}
 
+          localization = {{
+            header : {
+              actions : 'OPCIONES'
+            }
+          }}
+
           />
         </div>
 

@@ -352,17 +352,10 @@ export default class Sactividad extends Component {
         <div>
           <div className='divtop-mg'>
             <div className='title-sa'>
-
-
-
-            <span class="material-icons" style={{ fontSize:60 }} >
-              done_all
-            </span>
-
-
-
+              <span class="material-icons" style={{ fontSize:60 }} >
+                done_all
+              </span>
               <h1 style={{ paddingLeft:'.8%',  paddingTop:'.5%' }}>Seguimiento de Actividad</h1>
-
             </div>
            </div>
 
