@@ -166,7 +166,9 @@ export default class Sactividad extends Component {
 
 
         })
-      } else {
+      }
+
+      else {
         console.log('No hay documento!')
       }
     })
