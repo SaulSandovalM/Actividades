@@ -485,7 +485,7 @@ export default class Aactividad extends Component {
                 <div className='date-cont'>
                   <TextField
                     label='Duración'
-                    style={{ marginTop: '15px', width: '100%' }}
+                    style={{ marginTop: '6.5%', width: '100%' }}
                     name='duracion'
                     onChange={this.onChange}
                     required
@@ -573,7 +573,7 @@ export default class Aactividad extends Component {
                         <MenuItem value=  'Fiscal especializado en Delitos de Corrupción'>Fiscal especializado en Delitos de Corrupción</MenuItem>
                         <MenuItem value=  'Director general de Relaciones Nacionales e Internacionales'>Director general de Relaciones Nacionales e Internacionales</MenuItem>
                         <MenuItem value=  'Titular del Órgano Interno de Control de la Procuraduría'>Titular del Órgano Interno de Control de la Procuraduría</MenuItem>
-                        <MenuItem value=  'Titular del Órgano Interno de Control de la Procuraduría'>LIC. LAURA ISABEL TORRES VILLEGAS </MenuItem>
+                        <MenuItem value=  'Directora de la Unidad de Mandamientos Judiciales y Plataformar'>Directora de la Unidad de Mandamientos Judiciales y Plataformar </MenuItem>
                         <MenuItem value=  'Unidad de Investigacion Patrimonial y Economica'>Unidad de Investigacion Patrimonial y Economica</MenuItem>
 
                       </Select>
@@ -2106,6 +2106,19 @@ export default class Aactividad extends Component {
                   </FormControl>
                 }
                 {this.state.convoca === 'Directora de Prevención del Delito y Atención Ciudadana' &&
+                  <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                    <InputLabel>Responsable de Actividad</InputLabel>
+                    <Select
+                      label='Responsable'
+                      name='responsable'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='Laura Isabel Torres Villegas'>Laura Isabel Torres Villegas</MenuItem>
+                    </Select>
+                  </FormControl>
+                }
+                {this.state.convoca === 'Directora de la Unidad de Mandamientos Judiciales y Plataformar' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
