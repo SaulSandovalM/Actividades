@@ -34,6 +34,7 @@
   height: 6%;
   justify-content: space-between;
 }
+
 .space-cal {
   width: 5%;
 }
@@ -192,4 +193,13 @@
 }
 .hover-prueba{
 
+}
+.nav-ma3{
+margin-top: 60px;
+margin-left: 256px;
+
+
+}
+.content-calendario {
+margin:0;
 }
