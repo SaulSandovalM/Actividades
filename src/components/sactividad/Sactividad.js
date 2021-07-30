@@ -468,7 +468,7 @@ export default class Sactividad extends Component {
 
                           <div className='tipo-act'>
                               <p className='desc-p'>Actividad Generada por:</p>
-                              <p className='desc-left'>{this.stateorganizada} procuraduria Gerneral de justicia de hidalgo</p>
+                              <p className='desc-left'>{this.stateorganizada} Procuraduria Gerneral de Justicia de hidalgo</p>
                           </div>
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
