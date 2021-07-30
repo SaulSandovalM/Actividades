@@ -25,7 +25,6 @@ export default class DemoApp extends Component {
     }
   }
 
-
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
@@ -34,11 +33,7 @@ export default class DemoApp extends Component {
         key: doc.id,
         doc,
         tipoActividad,
-
         fechai,
-
-
-
       })
     })
     this.setState({
@@ -49,14 +44,7 @@ export default class DemoApp extends Component {
   componentDidMount () {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
-
-
-
   render () {
-
-  
-
-
 
       let str = formatDate(new Date(), {
         month: 'short',
@@ -79,17 +67,17 @@ console.log(array)
 var ara = [{title: 'lol', date: '2021-07-20'},{title: 'lol', date: '2021-07-20'}]
 console.log(ara)
 
-    return (
-
-
-      <div className='nav-ma3'>
-
-      <div className='add-ar'>
-        <Link to='/AgregarActividad'>
+return (
+    <div className='nav-ma3'>
+      <div className='add-ar-calen'>
+        <div className='txt-calendario'>
+          <p className='txt-cale'>Agregar Actvidad</p>
+          <Link to='/AgregarActividad'>
           <Fab color='primary' aria-label='add' style={{ background: '#71b631'}}>
             <AddIcon />
           </Fab>
         </Link>
+      </div>
       </div>
         <div className='content-calendario'>
           <div className=''>
@@ -99,10 +87,6 @@ console.log(ara)
               events={
                   array
                 }
-
-
-
-
             />
           </div>
         </div>

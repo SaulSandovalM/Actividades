@@ -82,6 +82,19 @@ class Nav extends Component {
             </Link>
           </div>
 
+          <div className='navbar-left'>
+            <Link to='/calendario' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    search
+                  </span>
+                  <p className='nav-t'>Calendario</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
           {/* <div className='navbar-left'>
             <Link to='/ActividadInforme' className='deco'>
               <div className='hover-center'>
@@ -109,6 +122,8 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
+
+
 
 
 
