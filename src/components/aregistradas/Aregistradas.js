@@ -58,6 +58,8 @@ export default class Aregistradas extends Component {
     var meses = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
     var meses2 = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
     f.setDate(f.getDate() - f.getDay())
+    var dia = ('0' + (f.getDate() + f.getDay() + 1)).slice(-2)
+    console.log(dia)
     const lunes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' + ('0' + (f.getDate() + f.getDay() + 1)).slice(-2)
     console.log(lunes)
     const martes = f.getFullYear() + '-' + meses[f.getMonth()] + '-' +  ('0' + (f.getDate() + f.getDay() +2)).slice(-2)

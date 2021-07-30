@@ -235,8 +235,8 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='presencial'>Actividad Presencial</MenuItem>
-                      <MenuItem value='virtual'>Actividad Virtual</MenuItem>
+                      <MenuItem value='Presencial'>Actividad Presencial</MenuItem>
+                      <MenuItem value='Virtual'>Actividad Virtual</MenuItem>
                     </Select>
                 </FormControl>
 
@@ -247,11 +247,11 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                     required
                    >
-                    <MenuItem value='capacitacion'>Capacitación</MenuItem>
-                    <MenuItem value='vinculacion'>Vinculación</MenuItem>
-                    <MenuItem value='difusion'>Difusión</MenuItem>
-                    <MenuItem value='aespeciales'>Especiales</MenuItem>
-                    <MenuItem value='reuniont'>Reunion de Trabajo</MenuItem>
+                    <MenuItem value='Capacitación'>Capacitación</MenuItem>
+                    <MenuItem value='Vinculación'>Vinculación</MenuItem>
+                    <MenuItem value='Difusión'>Difusión</MenuItem>
+                    <MenuItem value='Extra Oficiales'>Extra Oficieles</MenuItem>
+                    <MenuItem value='Reunion de Trabajo'>Reunion de Trabajo</MenuItem>
                     <MenuItem value='otro'>Otro</MenuItem>
 
                   </Select>
@@ -265,26 +265,26 @@ export default class Aactividad extends Component {
                   /> : null
                 }
 
-                {this.state.tipoActividad === 'capacitacion' ?
+                {this.state.tipoActividad === 'Capacitación' ?
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Capacitación *</InputLabel>
                     <Select
-                      name='capacitacion'
+                      name='Capacitación'
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='taller'>Taller</MenuItem>
-                      <MenuItem value='platica'>Plática (menor a 3 horas)</MenuItem>
-                      <MenuItem value='curso'>Curso</MenuItem>
-                      <MenuItem value='diplomado'>Diplomando</MenuItem>
-                      <MenuItem value='certificado'>Certificación</MenuItem>
-                      <MenuItem value='licenciatu0ra'>Licenciatura</MenuItem>
-                      <MenuItem value='maestria'>Maestria</MenuItem>
-                      <MenuItem value='doctorado'>Doctorado</MenuItem>
-                      <MenuItem value='plibro'>Presentación de Libro</MenuItem>
-                      <MenuItem value='seminario'>Seminario</MenuItem>
-                      <MenuItem value='simpocio'>Simponcio (Simposium)</MenuItem>
-                      <MenuItem value='foro'>Foro</MenuItem>
+                      <MenuItem value='Taller'>Taller</MenuItem>
+                      <MenuItem value='Platica'>Plática (menor a 3 horas)</MenuItem>
+                      <MenuItem value='Curso'>Curso</MenuItem>
+                      <MenuItem value='Diplomado'>Diplomando</MenuItem>
+                      <MenuItem value='Certificado'>Certificación</MenuItem>
+                      <MenuItem value='Licenciatu0ra'>Licenciatura</MenuItem>
+                      <MenuItem value='Maestria'>Maestria</MenuItem>
+                      <MenuItem value='Doctorado'>Doctorado</MenuItem>
+                      <MenuItem value='Presentacion de Libro'>Presentación de Libro</MenuItem>
+                      <MenuItem value='Seminario'>Seminario</MenuItem>
+                      <MenuItem value='Simposium'>Simposium</MenuItem>
+                      <MenuItem value='Foro'>Foro</MenuItem>
 
                       <MenuItem value='otroc'>Otro</MenuItem>
                     </Select>
@@ -299,16 +299,16 @@ export default class Aactividad extends Component {
                   />
                 }
 
-                {this.state.capacitacion === 'curso' &&
+                {this.state.Capacitación === 'Curso' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Curso *</InputLabel>
                     <Select
-                      name='curso'
+                      name='Curso'
                       onChange={this.onChange}
                       required
                     >
                       <MenuItem value='Curso'>Curso</MenuItem>
-                      <MenuItem value='curso en linea'>Curso en Linea</MenuItem>
+                      <MenuItem value='Curso en Linea'>Curso en Linea</MenuItem>
                       <MenuItem value='Formacion Inicial'>Formación Inicial</MenuItem>
                       <MenuItem value='Curso Actualización'>Curso Actualización</MenuItem>
                       <MenuItem value='Otro'>Otro</MenuItem>
@@ -324,16 +324,16 @@ export default class Aactividad extends Component {
                   />
                 }
 
-                {this.state.tipoActividad === 'vinculacion' ?
+                {this.state.tipoActividad === 'Vinculación' ?
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Vinculación *</InputLabel>
                     <Select
-                      name='vinculacion'
+                      name='Vinculación'
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='organizmon'>Organismos Nacionales</MenuItem>
-                      <MenuItem value='organismoi'>Organismos Internacionales</MenuItem>
+                      <MenuItem value='Organismos Nacionales'>Organismos Nacionales</MenuItem>
+                      <MenuItem value='Organismos Internacionales'>Organismos Internacionales</MenuItem>
                       <MenuItem value='otrov'>Otro</MenuItem>
                     </Select>
                     </FormControl> : null
@@ -347,17 +347,16 @@ export default class Aactividad extends Component {
                   />
                 }
 
-                {this.state.vinculacion === 'otrov' ?
+                {this.state.Vinculación === 'Organismos Nacionales' ?
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Local/Repulica/Internacional</InputLabel>
                     <Select
-                      name='organismon'
+                      name='Organismos Nacionales'
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='organizmonlo'>Local</MenuItem>
-                      <MenuItem value='organismoiro'>Resto de la Republica</MenuItem>
-                      <MenuItem value='organimointernacionalo'>Internacional</MenuItem>
+                      <MenuItem value='Local'>Local</MenuItem>
+                      <MenuItem value='Resto de la Republica'>Resto de la Republica</MenuItem>
                     </Select>
                     </FormControl> : null
                 }
@@ -370,27 +369,27 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='local'>Local</MenuItem>
-                      <MenuItem value='republica'>Resto de la Republica</MenuItem>
+                      <MenuItem value='Local'>Local</MenuItem>
+                      <MenuItem value='Resto de la Republica'>Resto de la Republica</MenuItem>
                     </Select>
                 </FormControl> : null
               }
 
 
-                {this.state.tipoActividad === 'difusion' ?
+                {this.state.tipoActividad === 'Difusión' ?
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Difusión *</InputLabel>
                     <Select
-                      name='difusion'
+                      name='Difusión'
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='entrevista'>Entrevista</MenuItem>
-                      <MenuItem value='conferencia'>Conferencia de Prensa</MenuItem>
-                      <MenuItem value='ruedap'>Rueda de Prensa</MenuItem>
-                      <MenuItem value='doctorado'>Doctorado</MenuItem>
-                      <MenuItem value='viconferencia'>Video Conferencias</MenuItem>
-                      <MenuItem value='sintesisd'>Sintesis Digital</MenuItem>
+                      <MenuItem value='Entrevista'>Entrevista</MenuItem>
+                      <MenuItem value='Conferencia'>Conferencia de Prensa</MenuItem>
+                      <MenuItem value='Rueda de Prensa'>Rueda de Prensa</MenuItem>
+                      <MenuItem value='Doctorado'>Doctorado</MenuItem>
+                      <MenuItem value='Video Conferencia'>Video Conferencia</MenuItem>
+                      <MenuItem value='Sintesis Digital'>Sintesis Digital</MenuItem>
                       <MenuItem value='otrod'>Otro</MenuItem>
                     </Select>
                 </FormControl> : null
@@ -403,11 +402,11 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                   />
                 }
-                {this.state.tipoActividad === 'aespeciales' &&
+                {this.state.tipoActividad === 'Extra Oficiales' &&
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Actividades Especiales *</InputLabel>
                     <Select
-                      name='aespeciales'
+                      name='Extra Oficiales'
                       onChange={this.onChange}
                       required
                     >
@@ -573,7 +572,7 @@ export default class Aactividad extends Component {
                         <MenuItem value=  'Fiscal especializado en Delitos de Corrupción'>Fiscal especializado en Delitos de Corrupción</MenuItem>
                         <MenuItem value=  'Director general de Relaciones Nacionales e Internacionales'>Director general de Relaciones Nacionales e Internacionales</MenuItem>
                         <MenuItem value=  'Titular del Órgano Interno de Control de la Procuraduría'>Titular del Órgano Interno de Control de la Procuraduría</MenuItem>
-                        <MenuItem value=  'Directora de la Unidad de Mandamientos Judiciales y Plataformar'>Directora de la Unidad de Mandamientos Judiciales y Plataformar </MenuItem>
+                        <MenuItem value=  'Encargada de la Unidad de Mandamientos Judiciales y Plataformar'>Encargada de la Unidad de Mandamientos Judiciales y Plataformar </MenuItem>
                         <MenuItem value=  'Unidad de Investigacion Patrimonial y Economica'>Unidad de Investigacion Patrimonial y Economica</MenuItem>
 
                       </Select>
@@ -2118,7 +2117,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Directora de la Unidad de Mandamientos Judiciales y Plataformar' &&
+                {this.state.convoca === 'Encargada de la Unidad de Mandamientos Judiciales y Plataformar' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
