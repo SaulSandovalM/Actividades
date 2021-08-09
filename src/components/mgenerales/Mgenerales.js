@@ -43,7 +43,7 @@ export default class Mgenerales extends Component {
       <div className='mg-conta'>
         <div className='nav-ma2'>
           <div className='mes-icon' >
-            <h1 className='titulo-mesaje'>¡Bienvend@!</h1>
+            <h1 className='titulo-mesaje'>¡Bienvenid@!</h1>
           </div>
         </div>
           {this.state.messages.map(messages =>

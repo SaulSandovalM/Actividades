@@ -26,9 +26,9 @@ export default class Showm extends Component {
       }
 
   handleBackss(id) {
-      var opcion = window.confirm("¿Estás Seguro que deseas Eliminar el Mensaje? 🥺"+id);
+      var opcion = window.confirm("¿Estás Seguro que deseas Eliminar el Mensaje?"+id);
       firebase.firestore().collection('messages').doc(id).delete()
-        .then(()=>{alert("¡¡¡Exitoso!!! Mesaje eliminado 😎")})
+        .then(()=>{alert("¡¡¡Exitoso!!! Mesaje eliminado ")})
         .catch((error)=>{ alert("Error removing document:", error)})
     }
 
@@ -136,7 +136,7 @@ export default class Showm extends Component {
                         icon: 'delete',
                         tooltip: 'Eliminar',
                         onClick: (event, rowData)=>this.handleBackss(rowData.key)
-                      }
+                      }, 
                     ]}
 
 
@@ -150,7 +150,7 @@ export default class Showm extends Component {
 
                     localization = {{
                       header : {
-                        actions : 'OPCIONES'
+                      actions : 'OPCIONES'
                       }
                     }}
 

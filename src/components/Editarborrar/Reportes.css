@@ -133,3 +133,8 @@
   text-decoration: none;
 
 }
+/*Editar Actividad*/
+.fader-editaracti {
+  padding-left: 256px;
+  min-height: 100%; 
+}

@@ -14,8 +14,7 @@ import Aactividad from './components/aactividad/Aactividad'
 import Ainforme from './components/aregistradas/Ainforme'
 import Abusqueda from './components/abusqueda/Abusqueda'
 import Sactividad from './components/sactividad/Sactividad'
-import Reportes from './components/reportes/Reportes'
-import Reportesniveldir from './components/reportes/Reportesniveldir'
+
 import Autorizacion from './components/autorizacion/Autorizacion'
 import Arelevante from './components/documentos/Arelevante'
 import Agendasemanal from './components/documentos/Agendasemanal'
@@ -56,8 +55,12 @@ import Reportedireccionesd from './components/documentos/Reportedireccionesd'
  import bactividades from './components/bactividades/bactividades'
 
 
- /*Historial*/
- import Historial from './components/Historial/Historial'
+ /*Editar/Borrar/seguimiento Actividades*/
+ import Seguimientoact from './components/Seguimiento/Seguimientoact'
+ import Editarborrar from './components/Editarborrar/Editarborrar'
+ import Reportesniveldir from './components/Editarborrar/Reportesniveldir'
+ import Actividadeditar from './components/Editarborrar/Actividadeditar'
+
 
 
 function App (props) {
@@ -160,8 +163,8 @@ function App (props) {
       />
       <ProtectedRoute
         exact
-        path='/Reportes'
-        component={Reportes}
+        path='/Editarborrar'
+        component={Editarborrar}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
@@ -298,10 +301,19 @@ function App (props) {
       />
 
 
+
       <ProtectedRoute
         exact
-        path='/Historial'
-        component={Historial}
+        path='/Seguimientoact'
+        component={Seguimientoact}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+
+      <ProtectedRoute
+        exact
+        path='/Actividadeditar'
+        component={Actividadeditar}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />

@@ -128,13 +128,13 @@ class Nav extends Component {
 
 
           <div className='navbar-left'>
-            <Link to='/Reportes' className='deco'>
+            <Link to='/Editarborrar' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>
                     description
                   </span>
-                  <p className='nav-t'>Reportes</p>
+                  <p className='nav-t'>Editar/Eliminar</p>
                 </div>
               </div>
             </Link>
@@ -142,13 +142,13 @@ class Nav extends Component {
 
 
           <div className='navbar-left'>
-            <Link to='/Historial' className='deco'>
+            <Link to='/Seguimientoact' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>
                     event_available
                   </span>
-                  <p className='nav-t'>Historial</p>
+                  <p className='nav-t'>Seguimiento</p>
                 </div>
               </div>
             </Link>
@@ -200,7 +200,7 @@ class Nav extends Component {
                   <span className='material-icons icon-s'>
                     description
                   </span>
-                  <p className='nav-t'>Reporte Direccion</p>
+                  <p className='nav-t'>Reporte </p>
                 </div>
               </div>
             </Link>
@@ -220,7 +220,7 @@ class Nav extends Component {
 
 
           <div className='navbar-left'>
-            <Link to='/Estadistica' className='deco'>
+            <Link to='/Estadisticas' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>

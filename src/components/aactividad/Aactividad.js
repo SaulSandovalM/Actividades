@@ -250,9 +250,8 @@ export default class Aactividad extends Component {
                     <MenuItem value='Capacitación'>Capacitación</MenuItem>
                     <MenuItem value='Vinculación'>Vinculación</MenuItem>
                     <MenuItem value='Difusión'>Difusión</MenuItem>
-                    <MenuItem value='Extra Oficiales'>Extra Oficieles</MenuItem>
                     <MenuItem value='Reunion de Trabajo'>Reunion de Trabajo</MenuItem>
-                    <MenuItem value='otro'>Otro</MenuItem>
+
 
                   </Select>
                 </FormControl>
@@ -286,7 +285,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='Simposium'>Simposium</MenuItem>
                       <MenuItem value='Foro'>Foro</MenuItem>
 
-                      <MenuItem value='otroc'>Otro</MenuItem>
+
                     </Select>
                 </FormControl> : null
                 }
@@ -311,7 +310,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='Curso en Linea'>Curso en Linea</MenuItem>
                       <MenuItem value='Formacion Inicial'>Formación Inicial</MenuItem>
                       <MenuItem value='Curso Actualización'>Curso Actualización</MenuItem>
-                      <MenuItem value='Otro'>Otro</MenuItem>
+
                     </Select>
                     </FormControl>
                 }
@@ -390,7 +389,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='Doctorado'>Doctorado</MenuItem>
                       <MenuItem value='Video Conferencia'>Video Conferencia</MenuItem>
                       <MenuItem value='Sintesis Digital'>Sintesis Digital</MenuItem>
-                      <MenuItem value='otrod'>Otro</MenuItem>
+
                     </Select>
                 </FormControl> : null
                 }
@@ -412,7 +411,7 @@ export default class Aactividad extends Component {
                     >
                       <MenuItem value='actoficial '>Actividades Oficiales</MenuItem>
                       <MenuItem value='actiofi '>Actividad Extra Oficiales</MenuItem>
-                      <MenuItem value='otrog'>Otro</MenuItem>
+
                     </Select>
                 </FormControl>
                 }
@@ -546,31 +545,31 @@ export default class Aactividad extends Component {
                         required
                       >
                         <MenuItem value=  'Subprocurador de Procedimientos Penales Región Oriente'>Subprocurador de Procedimientos Penales Región Oriente</MenuItem>
-                        <MenuItem value=  'Director general de la Unidad Especializada en el Combate al Secuestro'>Director general de la Unidad Especializada en el Combate al Secuestro</MenuItem>
-                        <MenuItem value=  'Director general de Servicios Periciales'>Director general de Servicios Periciales</MenuItem>
-                        <MenuItem value=  'Directora general de la Coordinación de Investigación y Recuperación de Vehículos Robados'>Directora general de la Coordinación de Investigación y Recuperación de Vehículos Robados</MenuItem>
+                        <MenuItem value=  'Director General de la Unidad Especializada en el Combate al Secuestro'>Director General de la Unidad Especializada en el Combate al Secuestro</MenuItem>
+                        <MenuItem value=  'Director General de Servicios Periciales'>Director General de Servicios Periciales</MenuItem>
+                        <MenuItem value=  'Directora General de la Coordinación de Investigación y Recuperación de Vehículos Robados'>Directora General de la Coordinación de Investigación y Recuperación de Vehículos Robados</MenuItem>
                         <MenuItem value=  'Secretaria del Despacho del C. Procurador '>Secretaria del Despacho del C. Procurador </MenuItem>
                         <MenuItem value=  'Director de Planeación'>Director de Planeación</MenuItem>
                         <MenuItem value=  'Subprocuradora de Procedimientos Penales Región Poniente'>Subprocuradora de Procedimientos Penales Región Poniente</MenuItem>
-                        <MenuItem value=  'Director general Jurídico'>Director general Jurídico</MenuItem>
+                        <MenuItem value=  'Director General Jurídico'>Director General Jurídico</MenuItem>
                         <MenuItem value=  'Secretaria del Procurador'>Secretaria del Procurador</MenuItem>
                         <MenuItem value=  'Directora del Instituto de Formación Profesional de la Procuraduría'>Directora del Instituto de Formación Profesional de la Procuraduría</MenuItem>
                         <MenuItem value=  'Visitador general'>Visitador general</MenuItem>
-                        <MenuItem value=  'Encargado de la Dirección general del Sistema Tradicional'>Encargado de la Dirección general del Sistema Tradicional</MenuItem>
+                        <MenuItem value=  'Encargado de la Dirección General del Sistema Tradicional'>Encargado de la Dirección General del Sistema Tradicional</MenuItem>
                         <MenuItem value=  'Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares'>Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares</MenuItem>
-                        <MenuItem value=  'Director general de la Policía Investigadora'>Director general de la Policía Investigadora</MenuItem>
+                        <MenuItem value=  'Director General de la Policía Investigadora'>Director General de la Policía Investigadora</MenuItem>
                         <MenuItem value=  'Subprocurador de Derechos Humanos y Servicios a la Comunidad'>Subprocurador de Derechos Humanos y Servicios a la Comunidad</MenuItem>
                         <MenuItem value=  'Directora de Prevención del Delito y Atención Ciudadana'>Directora de Prevención del Delito y Atención Ciudadana</MenuItem>
                         <MenuItem value=  'Coordinador de Comunicación Social'>Coordinador de Comunicación Social</MenuItem>
                         <MenuItem value=  'Despacho del Procurador'>Despacho del Procurador</MenuItem>
                         <MenuItem value=  'Fiscal para la Atención de Delitos de Género'>Fiscal para la Atención de Delitos de Género</MenuItem>
-                        <MenuItem value=  'Director general de Administración y Finanzas'>Director general de Administración y Finanzas</MenuItem>
+                        <MenuItem value=  'Director General de Administración y Finanzas'>Director General de Administración y Finanzas</MenuItem>
                         <MenuItem value=  'Fiscalía Especializada en Delitos Electorales'>Fiscalía Especializada en Delitos Electorales</MenuItem>
-                        <MenuItem value=  'Director general del Centro de Justicia Restaurativa Penal'>Director general del Centro de Justicia Restaurativa Penal</MenuItem>
+                        <MenuItem value=  'Director General del Centro de Justicia Restaurativa Penal'>Director General del Centro de Justicia Restaurativa Penal</MenuItem>
                         <MenuItem value=  'Fiscal especializada para la Atención  de los Delitos de Trata de Personas'>Fiscal especializada para la Atención  de los Delitos de Trata de Personas</MenuItem>
-                        <MenuItem value=  'Director general del Centro de Operación Estratégica'>Director general del Centro de Operación Estratégica</MenuItem>
+                        <MenuItem value=  'Director General del Centro de Operación Estratégica'>Director General del Centro de Operación Estratégica</MenuItem>
                         <MenuItem value=  'Fiscal especializado en Delitos de Corrupción'>Fiscal especializado en Delitos de Corrupción</MenuItem>
-                        <MenuItem value=  'Director general de Relaciones Nacionales e Internacionales'>Director general de Relaciones Nacionales e Internacionales</MenuItem>
+                        <MenuItem value=  'Director General de Relaciones Nacionales e Internacionales'>Director General de Relaciones Nacionales e Internacionales</MenuItem>
                         <MenuItem value=  'Titular del Órgano Interno de Control de la Procuraduría'>Titular del Órgano Interno de Control de la Procuraduría</MenuItem>
                         <MenuItem value=  'Encargada de la Unidad de Mandamientos Judiciales y Plataformar'>Encargada de la Unidad de Mandamientos Judiciales y Plataformar </MenuItem>
                         <MenuItem value=  'Unidad de Investigacion Patrimonial y Economica'>Unidad de Investigacion Patrimonial y Economica</MenuItem>
@@ -1922,7 +1921,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Director general de la Unidad Especializada en el Combate al Secuestro' &&
+                {this.state.convoca === 'Director General de la Unidad Especializada en el Combate al Secuestro' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -1935,7 +1934,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Director general de Servicios Periciales' &&
+                {this.state.convoca === 'Director General de Servicios Periciales' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -1948,7 +1947,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Directora general de la Coordinación de Investigación y Recuperación de Vehículos Robados' &&
+                {this.state.convoca === 'Directora General de la Coordinación de Investigación y Recuperación de Vehículos Robados' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -2000,7 +1999,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Director general Jurídico' &&
+                {this.state.convoca === 'Director General Jurídico' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -2052,7 +2051,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Encargado de la Dirección general del Sistema Tradicional' &&
+                {this.state.convoca === 'Encargado de la Dirección General del Sistema Tradicional' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -2078,7 +2077,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Director general de la Policía Investigadora' &&
+                {this.state.convoca === 'Director General de la Policía Investigadora' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -2169,7 +2168,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Director general de Administración y Finanzas' &&
+                {this.state.convoca === 'Director General de Administración y Finanzas' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -2195,7 +2194,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Director general del Centro de Justicia Restaurativa Penal' &&
+                {this.state.convoca === 'Director General del Centro de Justicia Restaurativa Penal' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -2221,7 +2220,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Director general del Centro de Operación Estratégica' &&
+                {this.state.convoca === 'Director General del Centro de Operación Estratégica' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select
@@ -2247,7 +2246,7 @@ export default class Aactividad extends Component {
                     </Select>
                   </FormControl>
                 }
-                {this.state.convoca === 'Director general de Relaciones Nacionales e Internacionales' &&
+                {this.state.convoca === 'Director General de Relaciones Nacionales e Internacionales' &&
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                     <InputLabel>Responsable de Actividad</InputLabel>
                     <Select

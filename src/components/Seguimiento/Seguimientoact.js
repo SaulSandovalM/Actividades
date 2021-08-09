@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Historial.css'
+import './Seguimientoact.css'
 import firebase from '../../Firebase'
 import MaterialTable from 'material-table';
 
@@ -16,7 +16,7 @@ export default class Historial extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, imgeevi } = doc.data()
+      const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, imgeevi, descripcion } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -29,7 +29,8 @@ export default class Historial extends Component {
         estatus,
         responsable,
         fecha,
-        imgeevi
+        imgeevi,
+        descripcion
 
       })
     })
@@ -47,6 +48,11 @@ export default class Historial extends Component {
           {
             title: 'ACTIVIDAD',
             field: 'actividad'
+
+          },
+          {
+            title: 'DESCRIPCIÓN',
+            field: 'descripcion'
 
           },
           {
@@ -98,7 +104,7 @@ export default class Historial extends Component {
 
             localization = {{
               header : {
-                actions : 'OPCIONES'
+              actions : 'OPCIONES'
               }
             }}
 

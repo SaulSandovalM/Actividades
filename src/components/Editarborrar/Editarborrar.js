@@ -25,7 +25,7 @@ export default class Reportes extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { actividad, tipoA, lugar, fechai, estatus, estados, municipios, area, horai } = doc.data()
+      const { actividad, tipoA, lugar, fechai, estatus, estados, municipios, area, horai, convoca } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
@@ -37,7 +37,8 @@ export default class Reportes extends Component {
         estados,
         horai,
         area,
-        actividad
+        actividad,
+        convoca
 
       })
     })
@@ -54,6 +55,13 @@ export default class Reportes extends Component {
     this.setState({search: event.target.value});
   }
 
+  handleBackss(id) {
+      var opcion = window.confirm("¿Estás Seguro que deseas Eliminar la Actividad? "+id);
+      firebase.firestore().collection('actividades').doc(id).delete()
+        .then(()=>{alert("¡¡¡Exitoso!!! Actividad Eliminada")})
+        .catch((error)=>{ alert("Error removing document:", error)})
+    }
+
   render () {
     const cols = [
           {
@@ -63,7 +71,7 @@ export default class Reportes extends Component {
           },
           {
             title: 'Fiscalia/Direccion',
-            field: 'estados'
+            field: 'convoca'
           },
           {
             title: 'FECHA',
@@ -113,8 +121,13 @@ export default class Reportes extends Component {
           {
           icon: 'edit',
           tooltip: 'Editar ACtividad',
-          onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
+          onClick: (event, rowData)=>this.props.history.push(`/Actividadeditar/${rowData.key}`)
         },
+        {
+        icon: 'delete',
+        tooltip: 'Eliminar Actividad',
+        onClick: (event, rowData)=>this.handleBackss(rowData.key)
+      },
           ]}
 
           options={{
@@ -124,7 +137,7 @@ export default class Reportes extends Component {
 
           localization = {{
             header : {
-              actions : 'OPCIONES'
+            actions : 'OPCIONES'
             }
           }}
 
