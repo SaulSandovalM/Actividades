@@ -63,7 +63,7 @@ export default class Reportesniveldir extends Component {
     return (
       <div className='mg-conta'>
         <div className='nav-mm'>
-          <h1 className='h1-lm'>Reportes</h1>
+          <h1 className='h1-lm'>Editar </h1>
         </div>
         <div className='busq'>
           <div className='imp-busq-2'>

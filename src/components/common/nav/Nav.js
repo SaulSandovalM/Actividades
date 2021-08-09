@@ -140,6 +140,20 @@ class Nav extends Component {
             </Link>
           </div>
 
+
+          <div className='navbar-left'>
+            <Link to='/Historial' className='deco'>
+              <div className='hover-center'>
+                <div className='row-h'>
+                  <span className='material-icons icon-s'>
+                    event_available
+                  </span>
+                  <p className='nav-t'>Historial</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
           {/* <div className='navbar-left'>
             <Link to='/Autorizacion' className='deco'>
               <div className='hover-center'>

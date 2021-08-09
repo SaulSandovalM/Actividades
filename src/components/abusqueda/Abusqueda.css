@@ -1,6 +1,7 @@
 |.container-aregistradas-b {
   padding: 80px;
   height: 82vh;
+  min-width: 100%;
 }
 .content-title-r {
   display: flex;
@@ -110,5 +111,5 @@ background-color: #fafafa;
 .mes-icond{
     display: flex;
     position: fixed;
-    
+
 }

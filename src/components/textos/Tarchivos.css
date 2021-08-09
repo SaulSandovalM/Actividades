@@ -1,5 +1,6 @@
 .fader-texto{
   padding: 30px 30px 30px 290px;
+  min-width: 100%;
 }
 .mensajesg-container-t {
   height: 80%;

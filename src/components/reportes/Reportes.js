@@ -62,10 +62,6 @@ export default class Reportes extends Component {
 
           },
           {
-            title: 'LUGAR',
-            field: 'lugar'
-          },
-          {
             title: 'Fiscalia/Direccion',
             field: 'estados'
           },
@@ -97,7 +93,7 @@ export default class Reportes extends Component {
     return (
       <div className='mg-conta'>
         <div className='nav-mmf'>
-          <h1 className='h1-lm'>Reportes</h1>
+          <h1 className='h1-lm'>Editar Actividades</h1>
         </div>
 
 
@@ -109,26 +105,16 @@ export default class Reportes extends Component {
 
           actions = {[
 
-            {
+          {
             icon: 'add',
             tooltip: 'Agenda',
             onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
           },
           {
-          icon: 'clear',
-          tooltip: 'Agenda',
+          icon: 'edit',
+          tooltip: 'Editar ACtividad',
           onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
         },
-        {
-        icon: 'clear',
-        tooltip: 'Agenda',
-        onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
-      },
-      {
-      icon: 'clear',
-      tooltip: 'Agenda',
-      onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
-    },
           ]}
 
           options={{
