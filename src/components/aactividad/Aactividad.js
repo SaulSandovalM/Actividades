@@ -263,6 +263,26 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                   /> : null
                 }
+                {this.state.tipoActividad === 'Reunion de Trabajo' ?
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Tipo Reunion de Trabajo *</InputLabel>
+                    <Select
+                      name='Reunion de Trabajo'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='Presentación'>Presentación</MenuItem>
+                      <MenuItem value='Visita'>Visita</MenuItem>
+                      <MenuItem value='Sesión'>Sesión</MenuItem>
+                      <MenuItem value='Gira de Trabajo'>Gira de Trabajo</MenuItem>
+                      <MenuItem value='Ceremonia'>Ceremonia</MenuItem>
+                      <MenuItem value='Asamblea'>Asamblea</MenuItem>
+                      <MenuItem value='Audiencia Publica'>Audiencia Publica</MenuItem>                      
+
+
+                    </Select>
+                </FormControl> : null
+                }
 
                 {this.state.tipoActividad === 'Capacitación' ?
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
@@ -275,6 +295,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='Taller'>Taller</MenuItem>
                       <MenuItem value='Platica'>Plática (menor a 3 horas)</MenuItem>
                       <MenuItem value='Curso'>Curso</MenuItem>
+                      <MenuItem value='Concurso'>Concurso</MenuItem>
                       <MenuItem value='Diplomado'>Diplomando</MenuItem>
                       <MenuItem value='Certificado'>Certificación</MenuItem>
                       <MenuItem value='Licenciatu0ra'>Licenciatura</MenuItem>
