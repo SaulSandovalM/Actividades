@@ -580,19 +580,9 @@ export default class Sactividad extends Component {
                 <div className='txt-info'><h4 className='info-sa'>Agrega Seguimiento de la Actividad</h4></div>
                 </div>
                 <div className='mensajesg-container-3sa'>
+
                 <TextField
-                  label='Descripcion de Actividad'
-                  style={{ marginTop: '15px' }}
-                  name='resultado'
-                  onChange={this.onChange}
-                  inputProps={{
-                    maxLength: 150
-                  }}
-                  multiline
-                  required
-                />
-                <TextField
-                  label='Relevancia'
+                  label='Relevancia/Logro/Beneficio'
                   style={{ marginTop: '15px' }}
                   name='relevancia'
                   onChange={this.onChange}
@@ -602,7 +592,6 @@ export default class Sactividad extends Component {
                   multiline
                   required
                 />
-
 
                 {this.state.checkedCancelada === false &&
                   <div>

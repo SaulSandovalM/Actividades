@@ -277,7 +277,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='Gira de Trabajo'>Gira de Trabajo</MenuItem>
                       <MenuItem value='Ceremonia'>Ceremonia</MenuItem>
                       <MenuItem value='Asamblea'>Asamblea</MenuItem>
-                      <MenuItem value='Audiencia Publica'>Audiencia Publica</MenuItem>                      
+                      <MenuItem value='Audiencia Publica'>Audiencia Publica</MenuItem>
 
 
                     </Select>
@@ -354,7 +354,6 @@ export default class Aactividad extends Component {
                     >
                       <MenuItem value='Organismos Nacionales'>Organismos Nacionales</MenuItem>
                       <MenuItem value='Organismos Internacionales'>Organismos Internacionales</MenuItem>
-                      <MenuItem value='otrov'>Otro</MenuItem>
                     </Select>
                     </FormControl> : null
                 }
