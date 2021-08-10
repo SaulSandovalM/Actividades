@@ -421,20 +421,7 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                   />
                 }
-                {this.state.tipoActividad === 'Extra Oficiales' &&
-                <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Actividades Especiales *</InputLabel>
-                    <Select
-                      name='Extra Oficiales'
-                      onChange={this.onChange}
-                      required
-                    >
-                      <MenuItem value='actoficial '>Actividades Oficiales</MenuItem>
-                      <MenuItem value='actiofi '>Actividad Extra Oficiales</MenuItem>
-
-                    </Select>
-                </FormControl>
-                }
+                
                 {this.state.gobernador === 'otrog' &&
                   <TextField
                     label='Otro tipo de Actividad con el gobernador'

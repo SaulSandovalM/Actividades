@@ -99,7 +99,7 @@ export default class busqueda extends Component {
                 {
                 icon: 'add',
                 tooltip: '⚈ Ver Información completa',
-                onClick: (event, rowData)=>this.props.history.push(`/Iactividad/${rowData.key}`)
+                onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
               }
 
               ]}
