@@ -9,6 +9,7 @@ import Input from '@material-ui/core/Input'
 import Switch from '@material-ui/core/Switch'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { withStyles } from '@material-ui/core/styles'
+import ReplyIcon from '@material-ui/icons/Reply'
 
 
 export default class Sactividad extends Component {
@@ -113,7 +114,9 @@ export default class Sactividad extends Component {
       actividades
    })
   }
-
+  handleBacke() {
+      this.props.history.push('/Busqueda');
+    }
 
   componentDidMount () {
     const ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id)
@@ -619,6 +622,15 @@ export default class Sactividad extends Component {
                   <CloseIcon />
                 </Fab>
               </div>
+              <div className="save-btr-1">
+              <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBacke.bind(this)}>
+                <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
+                  <ReplyIcon />
+                </Fab>
+              </span>
+                <p className='btn-busqueda'>Busqueda</p>
+              </div>
+
             </form>
           </div>
         </div>
