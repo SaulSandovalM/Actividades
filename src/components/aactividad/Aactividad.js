@@ -421,7 +421,7 @@ export default class Aactividad extends Component {
                     onChange={this.onChange}
                   />
                 }
-                
+
                 {this.state.gobernador === 'otrog' &&
                   <TextField
                     label='Otro tipo de Actividad con el gobernador'

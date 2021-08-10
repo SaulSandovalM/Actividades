@@ -85,6 +85,7 @@ export default class Sactividad extends Component {
 
 
 
+
     }
     this.handleChangeCancel = this.handleChangeCancel.bind(this)
     this.handleChangeRe = this.handleChangeRe.bind(this)
@@ -360,7 +361,7 @@ export default class Sactividad extends Component {
               <span class="material-icons" style={{ fontSize:60 }} >
                 done_all
               </span>
-              <h1 style={{ paddingLeft:'.8%',  paddingTop:'.5%' }}>Seguimiento de Actividad</h1>
+              <h1 style={{ paddingLeft:'.8%',  paddingTop:'.5%' }}>Evidencia de la Actividad</h1>
             </div>
            </div>
 
@@ -580,7 +581,7 @@ export default class Sactividad extends Component {
               <span class='material-icons' style={{ fontSize:30, paddingRight:'.8%' }} >
                 maps_ugc
                 </span>
-                <div className='txt-info'><h4 className='info-sa'>Agrega Seguimiento de la Actividad</h4></div>
+                <div className='txt-info'><h4 className='info-sa'>Agrega Evidencia de la Actividad</h4></div>
                 </div>
                 <div className='mensajesg-container-3sa'>
 
