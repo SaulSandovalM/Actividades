@@ -45,7 +45,7 @@ export default class Sactividad extends Component {
       desc: '',
       checkedOrganizada: '',
       otro: '',
-      capacitacion:'',
+      Capacitación:'',
       curso: '',
       otroc:'',
       otrocc:'',
@@ -79,6 +79,10 @@ export default class Sactividad extends Component {
       locRepInt:'',
       aespeciales:'',
       aespeciales:'',
+      Vinculación: '',
+      dependencia: '',
+
+
 
 
 
@@ -116,7 +120,7 @@ export default class Sactividad extends Component {
    })
   }
   handleBacke() {
-      this.props.history.push('/Busqueda');
+      this.props.history.push('/Seguimiento');
     }
 
   componentDidMount () {
@@ -164,6 +168,7 @@ export default class Sactividad extends Component {
           organismon: actividades.organismon,
           locRepInt: actividades.locRepIntt,
           aespeciales: actividades.aespeciales,
+          dependencia: actividades.dependencia,
 
 
 
@@ -408,7 +413,7 @@ export default class Sactividad extends Component {
                 <FormControlLabel
                   control={
                     <IOSSwitch name='checkedReprogramar'
-                      checked={this.state. checkedReprogramar}
+                      checked={this.state.checkedReprogramar}
                       onChange={this.handleChangeRe}
                     />
                   }
@@ -472,16 +477,16 @@ export default class Sactividad extends Component {
 
                           <div className='tipo-act'>
                               <p className='desc-p'>Actividad Generada por:</p>
-                              <p className='desc-left'>{this.stateorganizada} Procuraduria Gerneral de Justicia de hidalgo</p>
+                              <p className='desc-left'>{this.dependencia} </p>
                           </div>
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
-                              <p className='desc-left'>{this.state.tipoActividad} {this.state.otro} {this.state.otroc} {this.state.otrov} {this.state.otrod} </p>
+                              <p className='desc-left'>{this.state.tipoActividad}</p>
                           </div>
 
 
                           <div className='tipo-act'>
-                              <p className='desc-p'>Virtual/Local:</p>
+                              <p className='desc-p'>Virtual/Local/Mixta:</p>
                               <p className='desc-left'>{this.state.virpre}</p>
                           </div>
 
@@ -524,13 +529,11 @@ export default class Sactividad extends Component {
 
                       <div className='tipo-act'>
                           <p className='desc-p'>Sub Tipo-Actividad:</p>
-                          <p className='desc-left'>{this.state.capacitacion} {this.state.otroc} {this.state.vinculacion} {this.state.otrov} {this.state.locRepint} {this.state.aespeciales} {this.state.otrog}</p>
+                          <p className='desc-left'>{this.state.Vinculación}{this.state.vinculacion}</p>
                       </div>
 
-
-
                         <div className='tipo-act'>
-                            <p className='desc-p'>Nombre deActividad:</p>
+                            <p className='desc-p'>Nombre de la Actividad:</p>
                             <p className='desc-left'>{this.state.actividad}</p>
                         </div>
 
