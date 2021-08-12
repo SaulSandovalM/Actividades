@@ -56,6 +56,8 @@ export default class Aactividad extends Component {
       aespeciales: '',
       locRepInt: '',
       aespeciales:'',
+      dependencia:'', 
+
 
 
 

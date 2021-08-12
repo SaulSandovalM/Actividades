@@ -120,7 +120,7 @@ export default class Sactividad extends Component {
    })
   }
   handleBacke() {
-      this.props.history.push('/Seguimiento');
+      this.props.history.push('/Seguimientoact');
     }
 
   componentDidMount () {
