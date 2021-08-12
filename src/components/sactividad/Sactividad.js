@@ -632,7 +632,7 @@ export default class Sactividad extends Component {
                   <ReplyIcon />
                 </Fab>
               </span>
-                <p className='btn-busqueda'>Busqueda</p>
+                <p className='btn-busqueda'>Evidencias</p>
               </div>
 
             </form>
