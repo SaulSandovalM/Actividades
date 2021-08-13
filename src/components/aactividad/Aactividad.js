@@ -42,7 +42,7 @@ export default class Aactividad extends Component {
       difusion : '',
       presencial: '',
       virpre: '',
-      nosistente: '',
+      noasistente: '',
       curso:'',
       capacitacion:'',
       difusion:'',

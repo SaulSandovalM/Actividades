@@ -38,7 +38,7 @@ export default class Sactividad extends Component {
       tipoA: '',
       estado: '',
       internaE: '',
-      municipio: '',
+      municipios: '',
       quien: '',
       lugar: '',
       imparte: '',
@@ -69,7 +69,7 @@ export default class Sactividad extends Component {
       aespeciales:'',
       reuniont:'',
       virpre:'',
-      noasistente:'',
+      noasistentes:'',
       representante: '',
       otrod:'',
       otrog:'',
@@ -86,6 +86,7 @@ export default class Sactividad extends Component {
       Difusión:'',
       Conferencia:'',
       Entrevista: '',
+      responsable: '', 
 
 
 
@@ -165,7 +166,7 @@ export default class Sactividad extends Component {
           difusion: actividades.difusion,
           reuniont: actividades.reuniont,
           virpre: actividades.virpre,
-          noasistente: actividades.noasistente,
+          noasistentes: actividades.noasistentes,
           asistente: actividades.asistente,
           otrod: actividades.otrod,
           otrog: actividades.otrog,
@@ -573,7 +574,7 @@ export default class Sactividad extends Component {
 
                         <div className='tipo-act'>
                         <p className='desc-p'>No. Asistentes:</p>
-                        <p className='desc-left'>{this.state.noasistente}</p>
+                        <p className='desc-left'>{this.state.noasistentes}</p>
                         </div>
 
 
