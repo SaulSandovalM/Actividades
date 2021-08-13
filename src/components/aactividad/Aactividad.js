@@ -55,13 +55,7 @@ export default class Aactividad extends Component {
       otrog:'',
       aespeciales: '',
       locRepInt: '',
-      aespeciales:'',
-      dependencia:'',
-
-
-
-
-
+      aespeciales:''
     }
     this.handleChangeOr = this.handleChangeOr.bind(this)
   }
