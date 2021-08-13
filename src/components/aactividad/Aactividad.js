@@ -85,7 +85,7 @@ export default class Aactividad extends Component {
     e.preventDefault()
     const { fechai, horai, actividad, objetivo, descripcion, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso, capacitacion, vinculacion, locRepInt, aespeciales,} = this.state
+            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso, capacitacion, vinculacion, locRepInt, aespeciales} = this.state
     this.ref.add({
       fechai,
       horai,
@@ -112,6 +112,7 @@ export default class Aactividad extends Component {
       vinculacion,
       locRepInt,
       aespeciales,
+    
 
     }).then((docRef) => {
       this.setState({

@@ -81,6 +81,8 @@ export default class Sactividad extends Component {
       aespeciales:'',
       Vinculación: '',
       dependencia: '',
+      checkedOrganizada: '',
+      onChange:'',
 
 
 
@@ -169,6 +171,8 @@ export default class Sactividad extends Component {
           locRepInt: actividades.locRepIntt,
           aespeciales: actividades.aespeciales,
           dependencia: actividades.dependencia,
+          checkedOrganizada: actividades.checkedOrganizada,
+          onChange: actividades.onChange,
 
 
 
@@ -477,7 +481,7 @@ export default class Sactividad extends Component {
 
                           <div className='tipo-act'>
                               <p className='desc-p'>Actividad Generada por:</p>
-                              <p className='desc-left'>{this.dependencia} </p>
+                              <p className='desc-left'>{this.state.dependencia}{this.state.checkedOrganizada}{this.state.onChange}</p>
                           </div>
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
