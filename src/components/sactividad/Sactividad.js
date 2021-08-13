@@ -527,8 +527,8 @@ export default class Sactividad extends Component {
                       <div className='combo-2'>
 
                       <div className='tipo-act'>
-                        <p className='desc-p'>Convoca:</p>
-                        <p className='desc-left'></p>
+                        <p className='desc-p'>Convoca/Convocado:</p>
+                        <p className='desc-left'>{this.state.convoca}</p>
                       </div>
 
                       <div className='tipo-act'>
