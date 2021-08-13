@@ -26,7 +26,7 @@ export default class Aactividad extends Component {
       descripcion: '',
       checkedOrganizada: false,
       tipoActividad: '',
-      convoca: 'Procuraduria General de Justicia del Estado de Hidalgo',
+      convoca: '',
       dependencia: 'Procuraduria General de Justicia del Estado de Hidalgo',
       estados: 'Hidalgo',
       municipios: 'Pachuca',
@@ -112,7 +112,7 @@ export default class Aactividad extends Component {
       vinculacion,
       locRepInt,
       aespeciales,
-    
+
 
     }).then((docRef) => {
       this.setState({

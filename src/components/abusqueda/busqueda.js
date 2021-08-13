@@ -20,7 +20,7 @@ export default class busqueda extends Component {
     onCollectionUpdate = (querySnapshot) => {
       const actividades = []
       querySnapshot.forEach((doc) => {
-        const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha } = doc.data()
+        const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, dependencia } = doc.data()
         actividades.push({
           key: doc.id,
           doc,
@@ -33,6 +33,7 @@ export default class busqueda extends Component {
           estatus,
           responsable,
           fecha,
+          dependencia
 
         })
       })
@@ -74,8 +75,8 @@ export default class busqueda extends Component {
               field: 'horai'
             },
             {
-              title: 'CONVOCA',
-              field: 'convoca'
+              title: 'DEPENDECIA',
+              field: 'dependencia'
 
             }
 
