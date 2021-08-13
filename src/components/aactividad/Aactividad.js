@@ -235,7 +235,7 @@ export default class Aactividad extends Component {
                       name='virpre'
 
                       onChange={this.onChange}
-                      required                  
+
                     >
                       <MenuItem value='Presencial'>Actividad Presencial</MenuItem>
                       <MenuItem value='Virtual'>Actividad Virtual</MenuItem>
@@ -248,7 +248,7 @@ export default class Aactividad extends Component {
                   <Select
                     name='tipoActividad'
                     onChange={this.onChange}
-                    required
+
                    >
                     <MenuItem value='Capacitación'>Capacitación</MenuItem>
                     <MenuItem value='Difusión'>Difusión</MenuItem>
@@ -276,7 +276,7 @@ export default class Aactividad extends Component {
                     <Select
                       name='Eventos Especiales'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='Condecoración'>Condecoración</MenuItem>
                       <MenuItem value='Ceremonia'>Ceremonia</MenuItem>
@@ -295,7 +295,7 @@ export default class Aactividad extends Component {
                     <Select
                       name='Reunion de Trabajo'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='Operativa'>Operativa</MenuItem>
                       <MenuItem value='Vinculación'>Vinculación</MenuItem>
@@ -314,7 +314,7 @@ export default class Aactividad extends Component {
                     <Select
                       name='Capacitación'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='Taller'>Taller</MenuItem>
                       <MenuItem value='Curso'>Curso</MenuItem>
@@ -343,7 +343,7 @@ export default class Aactividad extends Component {
                     <Select
                       name='Vinculación'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='Organismos Nacionales'>Organismos Nacionales</MenuItem>
                       <MenuItem value='Organismos Estatales'>Organismos Estatales</MenuItem>
@@ -358,7 +358,7 @@ export default class Aactividad extends Component {
                     <Select
                       name='Organismos Nacionales'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='Publico'>Publico</MenuItem>
                       <MenuItem value='Sociedad Civil'>Sociedad Civil</MenuItem>
@@ -373,7 +373,7 @@ export default class Aactividad extends Component {
                     <Select
                       name='locRepInt'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='Local'>Local</MenuItem>
                       <MenuItem value='Resto de la Republica'>Resto de la Republica</MenuItem>
@@ -388,7 +388,7 @@ export default class Aactividad extends Component {
                     <Select
                       name='Difusión'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='Entrevista'>Entrevista</MenuItem>
                       <MenuItem value='Conferencia'>Conferencia</MenuItem>
@@ -447,7 +447,7 @@ export default class Aactividad extends Component {
                     style={{ width: '45%' }}
                     onChange={this.onChange}
                     name='fechai'
-                    required
+
                   />
                   <TextField
                     type='time'
@@ -1610,7 +1610,7 @@ export default class Aactividad extends Component {
                           label='Municipios'
                           name='municipios'
                           onChange={this.onChange}
-                          required
+                          
                         >
                           <MenuItem value='Azcapotzalco'>Azcapotzalco</MenuItem>
                           <MenuItem value='Coyoacán'>Coyoacán</MenuItem>
@@ -2179,7 +2179,7 @@ export default class Aactividad extends Component {
                       label='Responsable'
                       name='responsable'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='José Manning Ramírez'>José Manning Ramírez</MenuItem>
                     </Select>
@@ -2192,7 +2192,7 @@ export default class Aactividad extends Component {
                       label='Responsable'
                       name='responsable'
                       onChange={this.onChange}
-                      required
+
                     >
                       <MenuItem value='Yolanda Samperio Delgadillo'>Yolanda Samperio Delgadillo</MenuItem>
                     </Select>
