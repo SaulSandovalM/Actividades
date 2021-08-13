@@ -83,6 +83,10 @@ export default class Sactividad extends Component {
       dependencia: '',
       checkedOrganizada: '',
       onChange:'',
+      Difusión:'',
+      Conferencia:'',
+      Entrevista: '',
+
 
 
 
@@ -173,6 +177,11 @@ export default class Sactividad extends Component {
           dependencia: actividades.dependencia,
           checkedOrganizada: actividades.checkedOrganizada,
           onChange: actividades.onChange,
+          Conferencia: actividades.Conferencia,
+          Entrevista: actividades.Entrevista,
+          Difusión: actividades.Difusión,
+
+
 
 
 
@@ -533,7 +542,7 @@ export default class Sactividad extends Component {
 
                       <div className='tipo-act'>
                           <p className='desc-p'>Sub Tipo-Actividad:</p>
-                          <p className='desc-left'>{this.state.Vinculación}{this.state.vinculacion}</p>
+                          <p className='desc-left'>{this.state.Difusión}{this.state.vinculacion}</p>
                       </div>
 
                         <div className='tipo-act'>

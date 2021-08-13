@@ -94,7 +94,7 @@ export default class Showm extends Component {
     return (
       <div className='mg-conta-msj'>
         <div className='nav-mm-msj'>
-          <h1 className='h1-lms'>Agregar, Editar o Mensajes </h1>
+          <h1 className='h1-lms'>Mensajes </h1>
           </div>
 
 
@@ -136,7 +136,7 @@ export default class Showm extends Component {
                         icon: 'delete',
                         tooltip: 'Eliminar',
                         onClick: (event, rowData)=>this.handleBackss(rowData.key)
-                      }, 
+                      },
                     ]}
 
 

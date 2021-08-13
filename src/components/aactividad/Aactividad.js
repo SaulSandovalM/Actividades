@@ -388,7 +388,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='Conferencia'>Conferencia</MenuItem>
                       <MenuItem value='Rueda de Prensa'>Rueda de Prensa</MenuItem>
                       <MenuItem value='Video Conferencia'>Video Conferencia</MenuItem>
-                      <MenuItem value='Sintesis Informativa'>Sintesis Informativa</MenuItem>
+                      <MenuItem value='Sintesis_Informativa'>Sintesis Informativa</MenuItem>
 
                     </Select>
                 </FormControl> : null

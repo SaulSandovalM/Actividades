@@ -121,7 +121,7 @@ export default class Reportes extends Component {
           {
           icon: 'edit',
           tooltip: 'Editar ACtividad',
-          onClick: (event, rowData)=>this.props.history.push(`/Actividadeditar/${rowData.key}`)
+          onClick: (event, rowData)=>this.props.history.push(`/Actividadeditar`)
         },
         {
         icon: 'delete',
