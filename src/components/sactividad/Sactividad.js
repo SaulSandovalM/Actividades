@@ -38,7 +38,7 @@ export default class Sactividad extends Component {
       tipoA: '',
       estado: '',
       internaE: '',
-      municipios: '',
+      municipio: '',
       quien: '',
       lugar: '',
       imparte: '',
@@ -57,7 +57,6 @@ export default class Sactividad extends Component {
       aespeciales:'',
       otrog:'',
       actividad: '',
-      dependencia:'',
       asistente:'',
       catalogosAct: '',
       tipoActividad: '',
@@ -69,7 +68,7 @@ export default class Sactividad extends Component {
       aespeciales:'',
       reuniont:'',
       virpre:'',
-      noasistentes:'',
+      noasistente:'',
       representante: '',
       otrod:'',
       otrog:'',
@@ -83,11 +82,6 @@ export default class Sactividad extends Component {
       dependencia: '',
       checkedOrganizada: '',
       onChange:'',
-      Difusión:'',
-      Conferencia:'',
-      Entrevista: '',
-      responsable: '', 
-
 
 
 
@@ -166,7 +160,7 @@ export default class Sactividad extends Component {
           difusion: actividades.difusion,
           reuniont: actividades.reuniont,
           virpre: actividades.virpre,
-          noasistentes: actividades.noasistentes,
+          noasistente: actividades.noasistente,
           asistente: actividades.asistente,
           otrod: actividades.otrod,
           otrog: actividades.otrog,
@@ -178,11 +172,6 @@ export default class Sactividad extends Component {
           dependencia: actividades.dependencia,
           checkedOrganizada: actividades.checkedOrganizada,
           onChange: actividades.onChange,
-          Conferencia: actividades.Conferencia,
-          Entrevista: actividades.Entrevista,
-          Difusión: actividades.Difusión,
-
-
 
 
 
@@ -491,7 +480,7 @@ export default class Sactividad extends Component {
 
                           <div className='tipo-act'>
                               <p className='desc-p'>Actividad Generada por:</p>
-                              <p className='desc-left'>{this.state.dependencia}</p>
+                              <p className='desc-left'>{this.state.dependencia}{this.state.checkedOrganizada}{this.state.onChange}</p>
                           </div>
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
@@ -537,13 +526,13 @@ export default class Sactividad extends Component {
                       <div className='combo-2'>
 
                       <div className='tipo-act'>
-                        <p className='desc-p'>Convoca/Convocado:</p>
+                        <p className='desc-p'>Convoca:</p>
                         <p className='desc-left'>{this.state.convoca}</p>
                       </div>
 
                       <div className='tipo-act'>
                           <p className='desc-p'>Sub Tipo-Actividad:</p>
-                          <p className='desc-left'>{this.state.Difusión}{this.state.vinculacion}</p>
+                          <p className='desc-left'>{this.state.Vinculación}{this.state.vinculacion}</p>
                       </div>
 
                         <div className='tipo-act'>
@@ -574,7 +563,7 @@ export default class Sactividad extends Component {
 
                         <div className='tipo-act'>
                         <p className='desc-p'>No. Asistentes:</p>
-                        <p className='desc-left'>{this.state.noasistentes}</p>
+                        <p className='desc-left'>{this.state.noasistente}</p>
                         </div>
 
 
