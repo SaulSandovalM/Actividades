@@ -292,6 +292,7 @@ export default class Aactividad extends Component {
                       required
                     >
                       <MenuItem value='Operativa'>Operativa</MenuItem>
+                      <MenuItem value='Presetación'>Presentación</MenuItem>
                       <MenuItem value='Vinculación'>Vinculación</MenuItem>
                       <MenuItem value='Visita'>Visita</MenuItem>
                       <MenuItem value='Sesión'>Sesión</MenuItem>
@@ -331,11 +332,11 @@ export default class Aactividad extends Component {
 
 
 
-                {this.state.tipoActividad === 'Reunion de Trabajo' ?
+                {this.state.Reunion === 'Viculación' ?
                   <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo de Vinculación *</InputLabel>
                     <Select
-                      name='Vinculación'
+                      name='organizmos'
                       onChange={this.onChange}
                       required
                     >
