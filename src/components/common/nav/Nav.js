@@ -193,7 +193,7 @@ class Nav extends Component {
           </div>
           */}
 
-          *<div className='navbar-left'>
+          {/*<div className='navbar-left'>
             <Link to='/Reporteniveldir' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
@@ -205,6 +205,7 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
+          */}
           <div className='navbar-left'>
             <Link to='/Reportepdf' className='deco'>
               <div className='hover-center'>

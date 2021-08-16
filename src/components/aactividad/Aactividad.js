@@ -277,9 +277,6 @@ export default class Aactividad extends Component {
                       <MenuItem value='Concurso'>Concurso</MenuItem>
                       <MenuItem value='Presentacion de Libro'>Presentacion de Libro</MenuItem>
 
-
-
-
                     </Select>
                 </FormControl> : null
                 }
@@ -287,7 +284,7 @@ export default class Aactividad extends Component {
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo Reunion de Trabajo *</InputLabel>
                     <Select
-                      name='Reunion de Trabajo'
+                      name='Reuniones'
                       onChange={this.onChange}
                       required
                     >
@@ -297,11 +294,69 @@ export default class Aactividad extends Component {
                       <MenuItem value='Visita'>Visita</MenuItem>
                       <MenuItem value='Sesión'>Sesión</MenuItem>
                       <MenuItem value='Firma de Convenio'>Firma de Convenio</MenuItem>
-
-
                     </Select>
                 </FormControl> : null
                 }
+
+                {this.state.Reuniones === 'Vinculación' ?
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Tipo de Vinculacin *</InputLabel>
+                    <Select
+                      name='Reuniones1'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='Organismos Estatales'>Organismos Estatales</MenuItem>
+                      <MenuItem value='Organismos Nacionales'>Organismos Nacionales</MenuItem>
+                      <MenuItem value='Organismos Internacionales'>Organismos Internacionales</MenuItem>
+                    </Select>
+                </FormControl> : null
+                }
+
+                {this.state.Reuniones1 === 'Organismos Estatales' ?
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Público/Sociedad Civil/Academicos *</InputLabel>
+                    <Select
+                      name='Reuniones2'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='Público'>Público</MenuItem>
+                      <MenuItem value='Sociedad '>Organismos Nacionales</MenuItem>
+                      <MenuItem value='Academicos'>Academicos</MenuItem>
+                    </Select>
+                </FormControl> : null
+                }
+
+                {this.state.Reuniones1 === 'Organismos Nacionales' ?
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Público/Sociedad Civil/Academicos *</InputLabel>
+                    <Select
+                      name='Reuniones3'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='Público'>Público</MenuItem>
+                      <MenuItem value='Sociedad '>Organismos Nacionales</MenuItem>
+                      <MenuItem value='Academicos'>Academicos</MenuItem>
+                    </Select>
+                </FormControl> : null
+                }
+                {this.state.Reuniones1 === 'Organismos Internacionales' ?
+                <FormControl style={{ marginTop: '15px', width: '100%' }}>
+                  <InputLabel>Público/Sociedad Civil/Academicos *</InputLabel>
+                    <Select
+                      name='Reuniones4'
+                      onChange={this.onChange}
+                      required
+                    >
+                      <MenuItem value='Público'>Público</MenuItem>
+                      <MenuItem value='Sociedad '>Organismos Nacionales</MenuItem>
+                      <MenuItem value='Academicos'>Academicos</MenuItem>
+                    </Select>
+                </FormControl> : null
+                }
+
 
                 {this.state.tipoActividad === 'Capacitación' ?
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
@@ -332,49 +387,6 @@ export default class Aactividad extends Component {
 
 
 
-                {this.state.Reunion === 'Viculación' ?
-                  <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Tipo de Vinculación *</InputLabel>
-                    <Select
-                      name='organizmos'
-                      onChange={this.onChange}
-                      required
-                    >
-                      <MenuItem value='Organismos Nacionales'>Organismos Nacionales</MenuItem>
-                      <MenuItem value='Organismos Estatales'>Organismos Estatales</MenuItem>
-                      <MenuItem value='Organismos Internacionales'>Organismos Internacionales</MenuItem>
-                    </Select>
-                    </FormControl> : null
-                }
-
-                {this.state.Vinculación === 'Organismos Nacionales' ?
-                  <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Nacionales/Estatales/Internacional</InputLabel>
-                    <Select
-                      name='Organismos Nacionales'
-                      onChange={this.onChange}
-                      required
-                    >
-                      <MenuItem value='Publico'>Publico</MenuItem>
-                      <MenuItem value='Sociedad Civil'>Sociedad Civil</MenuItem>
-                      <MenuItem value='Academicos'>Academicos</MenuItem>
-                    </Select>
-                    </FormControl> : null
-                }
-
-                {this.state.vinculacion === 'organizmon' ?
-                <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Local/Nacional *</InputLabel>
-                    <Select
-                      name='locRepInt'
-                      onChange={this.onChange}
-                      required
-                    >
-                      <MenuItem value='Local'>Local</MenuItem>
-                      <MenuItem value='Resto de la Republica'>Resto de la Republica</MenuItem>
-                    </Select>
-                </FormControl> : null
-              }
 
 
                 {this.state.tipoActividad === 'Difusión' ?
