@@ -55,7 +55,8 @@ export default class Aactividad extends Component {
       otrog:'',
       aespeciales: '',
       locRepInt: '',
-      aespeciales:''
+      aespeciales:'',
+      dInvitada:''
     }
     this.handleChangeOr = this.handleChangeOr.bind(this)
   }
@@ -79,7 +80,7 @@ export default class Aactividad extends Component {
     e.preventDefault()
     const { fechai, horai, actividad, objetivo, descripcion, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso, capacitacion, vinculacion, locRepInt, aespeciales} = this.state
+            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso, capacitacion, vinculacion, locRepInt, aespeciales, dInvitada} = this.state
     this.ref.add({
       fechai,
       horai,
@@ -106,6 +107,7 @@ export default class Aactividad extends Component {
       vinculacion,
       locRepInt,
       aespeciales,
+      dInvitada,
 
 
     }).then((docRef) => {
@@ -433,7 +435,7 @@ export default class Aactividad extends Component {
 
                 <div className='div_cancel'>
                   <TextField
-                    label='Descripción de Actividad en Agenda'
+                    label='Descripción de la Actividad'
                     style={{ marginTop: '15px' }}
                     name='descripcion'
                     onChange={this.onChange}
@@ -488,7 +490,7 @@ export default class Aactividad extends Component {
                   <div className='date-cont'>
 
                     <TextField
-                      label='Dependencia/Institución que convoca'
+                      label='Dependencia/Institución que organiza'
                       style={{ marginTop: '15px', width: '45%' }}
                       name='dependencia'
                       onChange={this.onChange}
@@ -512,7 +514,7 @@ export default class Aactividad extends Component {
                   <div className='date-cont'>
 
                     <TextField
-                      label='Dependencia/Institución que convoca'
+                      label='Dependencia/Institución que organiza'
                       style={{ marginTop: '15px', width: '45%' }}
                       name='dependencia'
                       onChange={this.onChange}

@@ -479,7 +479,7 @@ export default class Sactividad extends Component {
                         <div className='combo-1'>
 
                           <div className='tipo-act'>
-                              <p className='desc-p'>Actividad Generada por:</p>
+                              <p className='desc-p'>Actividad Organizada por:</p>
                               <p className='desc-left'>{this.state.dependencia}{this.state.checkedOrganizada}{this.state.onChange}</p>
                           </div>
                           <div className='tipo-act'>
@@ -527,7 +527,7 @@ export default class Sactividad extends Component {
 
                       <div className='tipo-act'>
                         <p className='desc-p'>Convoca:</p>
-                        <p className='desc-left'>{this.state.convoca}</p>
+                        <p className='desc-left'>{this.state.dInvitada}{this.state.convoca}</p>
                       </div>
 
                       <div className='tipo-act'>
