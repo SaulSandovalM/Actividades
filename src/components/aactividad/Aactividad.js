@@ -343,7 +343,7 @@ export default class Aactividad extends Component {
                       required
                     >
                       <MenuItem value='Público'>Público</MenuItem>
-                      <MenuItem value='Sociedad '>Organismos Nacionales</MenuItem>
+                      <MenuItem value='Sociedad'>Sociedad</MenuItem>
                       <MenuItem value='Academicos'>Academicos</MenuItem>
                     </Select>
                 </FormControl> : null
@@ -358,7 +358,7 @@ export default class Aactividad extends Component {
                       required
                     >
                       <MenuItem value='Público'>Público</MenuItem>
-                      <MenuItem value='Sociedad '>Organismos Nacionales</MenuItem>
+                      <MenuItem value='Sociedad'>Sociedad</MenuItem>
                       <MenuItem value='Academicos'>Academicos</MenuItem>
                     </Select>
                 </FormControl> : null
@@ -372,7 +372,7 @@ export default class Aactividad extends Component {
                       required
                     >
                       <MenuItem value='Público'>Público</MenuItem>
-                      <MenuItem value='Sociedad '>Organismos Nacionales</MenuItem>
+                      <MenuItem value='Sociedad'>Sociedad</MenuItem>
                       <MenuItem value='Academicos'>Academicos</MenuItem>
                     </Select>
                 </FormControl> : null

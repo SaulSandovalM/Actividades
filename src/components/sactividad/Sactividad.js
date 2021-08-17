@@ -548,7 +548,7 @@ export default class Sactividad extends Component {
 
                       <div className='tipo-act'>
                           <p className='desc-p'>Sub Tipo-Actividad:</p>
-                          <p className='desc-left'>{this.state.Vinculación}{this.state.vinculacion}</p>
+                          <p className='desc-left'>{this.state.Eventos}{this.state.Capacitación}{this.state.Reuniones}, {this.state.Reuniones1} {this.state.Reuniones2}{this.state.Reuiniones3}{this.state.Reuniones4}</p>
                       </div>
 
                         <div className='tipo-act'>
