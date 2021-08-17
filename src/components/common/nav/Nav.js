@@ -148,7 +148,7 @@ class Nav extends Component {
                   <span className='material-icons icon-s'>
                     event_available
                   </span>
-                  <p className='nav-t'>Seguimiento</p>
+                  <p className='nav-t'>Evidencia</p>
                 </div>
               </div>
             </Link>

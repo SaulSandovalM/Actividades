@@ -245,7 +245,7 @@ export default class Aactividad extends Component {
                 </div>
 
                 <FormControl style={{ marginTop: '5px', width: '100%' }}>
-                  <InputLabel>Actividad Presencial/Virtual</InputLabel>
+                  <InputLabel>Presencial/Virtual/Mixta</InputLabel>
                     <Select
                       name='virpre'
 

@@ -495,48 +495,37 @@ export default class Sactividad extends Component {
                         <div className='combo-1'>
 
                           <div className='tipo-act'>
-                              <p className='desc-p'>Actividad Organizada por:</p>
+                              <p className='desc-p'>Organiza:</p>
                               <p className='desc-left'>{this.state.dependencia}{this.state.checkedOrganizada}{this.state.onChange}</p>
                           </div>
+                          <div className='tipo-act'>
+                              <p className='desc-p'>Presencial/Virtual/Mixta:</p>
+                              <p className='desc-left'>{this.state.virpre}</p>
+                          </div>
+
+
                           <div className='tipo-act'>
                               <p className='desc-p'>Tipo de Actividad:</p>
                               <p className='desc-left'>{this.state.tipoActividad}</p>
                           </div>
-
-
                           <div className='tipo-act'>
-                              <p className='desc-p'>Virtual/Local/Mixta:</p>
-                              <p className='desc-left'>{this.state.virpre}</p>
+                              <p className='desc-p'>Sub Tipo-Actividad:</p>
+                              <p className='desc-left'>{this.state.Eventos}{this.state.Capacitación}{this.state.Reuniones}, {this.state.Reuniones1} {this.state.Reuniones2}{this.state.Reuiniones3}{this.state.Reuniones4}</p>
                           </div>
-
                           <div className='tipo-act'>
-                            <p className='desc-p'>Hora de Cita:</p>
-                            <p className='desc-left'>{this.state.horai}</p>
+                              <p className='desc-p'>Nombre:</p>
+                              <p className='desc-left'>{this.state.actividad}</p>
                           </div>
 
 
 
-                          <div className='tipo-act'>
-                            <p className='desc-p'>Estado:</p>
-                            <p className='desc-left'>{this.state.estados}</p>
-                          </div>
-
-                          <div className='tipo-act'>
-                            <p className='desc-p'>Lugar:</p>
-                            <p className='desc-left'>{this.state.lugar}</p>
-                          </div>
 
 
 
-                          <div className='tipo-act'>
-                            <p className='desc-p'>Responsable:</p>
-                            <p className='desc-left'>{this.state.responsable}</p>
-                          </div>
 
-                          <div className='tipo-act'>
-                            <p className='desc-p'>Representante:</p>
-                            <p className='desc-left'>{this.state.asistente}</p>
-                          </div>
+
+
+
 
                       </div>
                       <div className='combo-2'>
@@ -545,21 +534,32 @@ export default class Sactividad extends Component {
                         <p className='desc-p'>Convoca:</p>
                         <p className='desc-left'>{this.state.dInvitada}{this.state.convoca}</p>
                       </div>
-
                       <div className='tipo-act'>
-                          <p className='desc-p'>Sub Tipo-Actividad:</p>
-                          <p className='desc-left'>{this.state.Eventos}{this.state.Capacitación}{this.state.Reuniones}, {this.state.Reuniones1} {this.state.Reuniones2}{this.state.Reuiniones3}{this.state.Reuniones4}</p>
+                        <p className='desc-p'>Estado:</p>
+                        <p className='desc-left'>{this.state.estados}</p>
+                      </div>
+                      <div className='tipo-act'>
+                        <p className='desc-p'>Municipio:</p>
+                        <p className='desc-left'>{this.state.municipios}</p>
                       </div>
 
-                        <div className='tipo-act'>
-                            <p className='desc-p'>Nombre de la Actividad:</p>
-                            <p className='desc-left'>{this.state.actividad}</p>
-                        </div>
+                      <div className='tipo-act'>
+                        <p className='desc-p'>Lugar:</p>
+                        <p className='desc-left'>{this.state.lugar}</p>
+                      </div>
+
+
+
+
 
 
                         <div className='tipo-act'>
-                          <p className='desc-p'>Fecha de Inicio:</p>
+                          <p className='desc-p'>Fecha:</p>
                           <p className='desc-left'>{this.state.fechai}</p>
+                        </div>
+                        <div className='tipo-act'>
+                          <p className='desc-p'>Hora:</p>
+                          <p className='desc-left'>{this.state.horai}</p>
                         </div>
 
                         <div className='tipo-act'>
@@ -567,20 +567,10 @@ export default class Sactividad extends Component {
                           <p className='desc-left'>{this.state.duracion}</p>
                         </div>
 
-                        <div className='tipo-act'>
-                          <p className='desc-p'>Estatus:</p>
-                          <p className='desc-left'>{this.state.estatus}</p>
-                        </div>
 
-                        <div className='tipo-act'>
-                          <p className='desc-p'>Municipio:</p>
-                          <p className='desc-left'>{this.state.municipios}</p>
-                        </div>
 
-                        <div className='tipo-act'>
-                        <p className='desc-p'>No. Asistentes:</p>
-                        <p className='desc-left'>{this.state.noasistente}</p>
-                        </div>
+
+
 
 
                       </div>
@@ -593,8 +583,27 @@ export default class Sactividad extends Component {
                       <p className='desc-p'>Objetivo de la Actividad:</p>
                       <p className='desc-left'>{this.state.objetivo}</p>
                     </div>
+                    <div>
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Responsable:</p>
+                      <p className='desc-left'>{this.state.responsable}</p>
+                    </div>
+
+                    <div className='tipo-act'>
+                      <p className='desc-p'>Representante:</p>
+                      <p className='desc-left'>{this.state.asistente}</p>
+                    </div>
+                    <div className='tipo-act'>
+                    <p className='desc-p'>No. Asistentes:</p>
+                    <p className='desc-left'>{this.state.noasistente}</p>
+                    </div>
+
+                    </div>
                   </div>
+
                </div>
+
+
 
               </div>
 
@@ -603,7 +612,7 @@ export default class Sactividad extends Component {
               <span class='material-icons' style={{ fontSize:30, paddingRight:'.8%' }} >
                 maps_ugc
                 </span>
-                <div className='txt-info'><h4 className='info-sa'>Agrega Evidencia de la Actividad</h4></div>
+                <div className='txt-info'><h4 className='info-sa'>Agrega Evidencia de la Actividad:</h4></div>
                 </div>
                 <div className='mensajesg-container-3sa'>
 
