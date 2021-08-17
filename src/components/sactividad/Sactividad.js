@@ -82,7 +82,14 @@ export default class Sactividad extends Component {
       dependencia: '',
       checkedOrganizada: '',
       onChange:'',
-
+      Eventos:'',
+      Reuniones: '',
+      Reuniones1:'',
+      Reuniones2:'',
+      Reuniones3:'',
+      Reuniones4:'',
+      Capacitacion:'',
+      Difusión:'',
 
 
 
@@ -172,6 +179,15 @@ export default class Sactividad extends Component {
           dependencia: actividades.dependencia,
           checkedOrganizada: actividades.checkedOrganizada,
           onChange: actividades.onChange,
+          dInvitada:actividades.dInvitada,
+          Eventos:actividades.Eventos,
+          Reuniones:actividades.Reuniones,
+          Reuniones1:actividades.Reuniones1,
+          Reuniones2:actividades.Reuniones2,
+          Reuniones3:actividades.Reuniones3,
+          Reuniones4:actividades.Reuniones4,
+          Capacitacion:actividades.Capacitación,
+          Difusión:actividades.Difusión,
 
 
 

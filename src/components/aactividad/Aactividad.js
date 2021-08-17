@@ -56,7 +56,16 @@ export default class Aactividad extends Component {
       aespeciales: '',
       locRepInt: '',
       aespeciales:'',
-      dInvitada:''
+      dInvitada:'',
+      Eventos:'',
+      Reuniones: '',
+      Reuniones1:'',
+      Reuniones2:'',
+      Reuniones3:'',
+      Reuniones4:'',
+      Capacitacion:'',
+      Difusión:''
+
     }
     this.handleChangeOr = this.handleChangeOr.bind(this)
   }
@@ -80,7 +89,9 @@ export default class Aactividad extends Component {
     e.preventDefault()
     const { fechai, horai, actividad, objetivo, descripcion, checkedOrganizada,
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
-            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso, capacitacion, vinculacion, locRepInt, aespeciales, dInvitada} = this.state
+            responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso, capacitacion, vinculacion, locRepInt, aespeciales, dInvitada,
+            Eventos, Reuniones, Reuniones1, Reuniones2, Reuniones3, Reuniones4, Capacitacion,
+            Difusión,} = this.state
     this.ref.add({
       fechai,
       horai,
@@ -108,6 +119,14 @@ export default class Aactividad extends Component {
       locRepInt,
       aespeciales,
       dInvitada,
+      Eventos,
+      Reuniones,
+      Reuniones1,
+      Reuniones2,
+      Reuniones3,
+      Reuniones4,
+      Capacitacion,
+      Difusión,
 
 
     }).then((docRef) => {
@@ -270,7 +289,7 @@ export default class Aactividad extends Component {
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
                   <InputLabel>Tipo Eventos Especiales *</InputLabel>
                     <Select
-                      name='Eventos Especiales'
+                      name='Eventos'
                       onChange={this.onChange}
                       required
                     >
@@ -376,6 +395,7 @@ export default class Aactividad extends Component {
                       <MenuItem value='Curso de Actualización'>Curso de Actualización</MenuItem>
                       <MenuItem value='Diplomado'>Diplomando</MenuItem>
                       <MenuItem value='Doctorado'>Doctorado</MenuItem>
+                      <MenuItem value='Entrega de Material'>Entrega de Material</MenuItem>
                       <MenuItem value='Formacion Inicial'>Formación Inicial</MenuItem>
                       <MenuItem value='Licenciatura'>Licenciatura</MenuItem>
                       <MenuItem value='Maestria'>Maestria</MenuItem>
@@ -1445,7 +1465,7 @@ export default class Aactividad extends Component {
                           <MenuItem value='El Arenal'>El Arenal</MenuItem>
                           <MenuItem value='Eloxochitlán'>Eloxochitlán</MenuItem>
                           <MenuItem value='Emiliano Zapata'>Emiliano Zapata</MenuItem>
-                          <MenuItem value='FEpazoyucan'>FEpazoyucan</MenuItem>
+                          <MenuItem value='Epazoyucan'>Epazoyucan</MenuItem>
                           <MenuItem value='Francisco I. Madero'>Francisco I. Madero</MenuItem>
                           <MenuItem value='Huasca de Ocampo'>Huasca de Ocampo</MenuItem>
                           <MenuItem value='Huautla'>Huautla</MenuItem>
@@ -1460,12 +1480,60 @@ export default class Aactividad extends Component {
                           <MenuItem value='Lolotla'>Lolotla</MenuItem>
                           <MenuItem value='Metepec'>Metepec</MenuItem>
                           <MenuItem value='Nicolás Flores'>Nicolás Flores</MenuItem>
-                          <MenuItem value='Nopala de Villagrán'>Nopala de Villagrán</MenuItem>
                           <MenuItem value='Omitlán de Juárez'>Omitlán de Juárez</MenuItem>
                           <MenuItem value='Pachuca de Soto'>Pachuca de Soto</MenuItem>
                           <MenuItem value='Pacula'>Pacula</MenuItem>
                           <MenuItem value='San Agustín Metzquititlán'>San Agustín Metzquititlán</MenuItem>
                           <MenuItem value='San Felipe Orizatlán'>San Felipe Orizatlán</MenuItem>
+                          <MenuItem value='Tizayuca'>Tizayuca</MenuItem>
+                          <MenuItem value='Metztitlán'>Metztitlán</MenuItem>
+                          <MenuItem value='Mineral del Chico'>Mineral del Chico</MenuItem>
+                          <MenuItem value='Mineral del Monte'>Mineral del Monte</MenuItem>
+                          <MenuItem value='Mineral de la Reforma'>Mineral de la Reforma</MenuItem>
+                          <MenuItem value='La Misión'>La Misión</MenuItem>
+                          <MenuItem value='Mixquiahuala de Juárez'>Mixquiahuala de Juárez</MenuItem>
+                          <MenuItem value='Molango de Escamilla'>Molango de Escamilla</MenuItem>
+                          <MenuItem value='Nopala de Villagrán'>Nopala de Villagrán</MenuItem>
+                          <MenuItem value='Pisaflores'>Pisaflores</MenuItem>
+                          <MenuItem value='Progreso de Obregón'>Progreso de Obregón</MenuItem>
+                          <MenuItem value='San Agustín Tlaxiaca'>San Agustín Tlaxiaca</MenuItem>
+                          <MenuItem value='San Bartolo Tutotepec'>San Bartolo Tutotepec</MenuItem>
+                          <MenuItem value='San Salvador'>San Salvador</MenuItem>
+                          <MenuItem value='Santiago de Anaya'>Santiago de Anaya</MenuItem>
+                          <MenuItem value='Santiago Tulantepec de Lugo Guerrero'>Santiago Tulantepec de Lugo Guerrero</MenuItem>
+                          <MenuItem value='Singuilucan'>Singuilucan</MenuItem>
+                          <MenuItem value='Tasquillo'>Tasquillo</MenuItem>
+                          <MenuItem value='Tecozautla'>Tecozautla</MenuItem>
+                          <MenuItem value='Tenango de Doria'>Tenango de Doria</MenuItem>
+                          <MenuItem value='Tepeapulco'>Tepeapulco</MenuItem>
+                          <MenuItem value='Tepehuacán de Guerrero'>Tepehuacán de Guerrero</MenuItem>
+                          <MenuItem value='Tepeji del Río de Ocampo'>Tepeji del Río de Ocampo</MenuItem>
+                          <MenuItem value='Tepetitlán'>Tepetitlán</MenuItem>
+                          <MenuItem value='Tetepango'>Tetepango</MenuItem>
+                          <MenuItem value='Villa de Tezontepec'>Villa de Tezontepec</MenuItem>
+                          <MenuItem value='Tezontepec de Aldama'>Tezontepec de Aldama</MenuItem>
+                          <MenuItem value='Tianguistengo'>Tianguistengo</MenuItem>
+                          <MenuItem value='Tlahuelilpan'>Tlahuelilpan</MenuItem>
+                          <MenuItem value='Tlahuiltepa'>Tlahuiltepa</MenuItem>
+                          <MenuItem value='Tlanalapa'>Tlanalapa</MenuItem>
+                          <MenuItem value='Tlanchinol'>Tlanchinol</MenuItem>
+                          <MenuItem value='Tlaxcoapan'>Tlaxcoapan</MenuItem>
+                          <MenuItem value='Tolcayuca'>Tolcayuca</MenuItem>
+                          <MenuItem value='Tula de Allende'>Tula de Allende</MenuItem>
+                          <MenuItem value='Tulancingo de Bravo'>Tulancingo de Bravo</MenuItem>
+                          <MenuItem value='Xochiatipan'>Xochiatipan</MenuItem>
+                          <MenuItem value='Xochicoatlán'>Xochicoatlán</MenuItem>
+                          <MenuItem value='Yahualica'>Yahualica</MenuItem>
+                          <MenuItem value='Zacualtipán de Ángeles'>Zacualtipán de Ángeles</MenuItem>
+                          <MenuItem value='Zapotlán de Juárez'>Zapotlán de Juárez</MenuItem>
+                          <MenuItem value='Zempoala'>Zempoala</MenuItem>
+                          <MenuItem value='Zimapán'>Zimapán</MenuItem>
+
+
+
+
+
+
                         </Select>}
                       {this.state.estados === 'Guerrero' &&
                         <Select
