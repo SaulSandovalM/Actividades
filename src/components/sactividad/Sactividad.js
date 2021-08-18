@@ -476,7 +476,9 @@ export default class Sactividad extends Component {
             }
 
             </div>
+
             </div>
+
 
               <div>
 
@@ -494,7 +496,7 @@ export default class Sactividad extends Component {
 
                         <div className='combo-1'>
 
-                          <div className='tipo-act'>
+                          <div className='tipo-act espacio-c'>
                               <p className='desc-p'>Organiza:</p>
                               <p className='desc-left'>{this.state.dependencia}{this.state.checkedOrganizada}{this.state.onChange}</p>
                           </div>
@@ -530,8 +532,8 @@ export default class Sactividad extends Component {
                       </div>
                       <div className='combo-2'>
 
-                      <div className='tipo-act'>
-                        <p className='desc-p'>Convoca:</p>
+                      <div className='tipo-act espacio-c'>
+                        <p className='desc-p '>Convoca:</p>
                         <p className='desc-left'>{this.state.dInvitada}{this.state.convoca}</p>
                       </div>
                       <div className='tipo-act'>
@@ -575,31 +577,43 @@ export default class Sactividad extends Component {
 
                       </div>
                     </div>
+                    <div className= 'descripciones'>
                     <div>
                       <p className='desc-p'>Descripcion de la Actividad </p>
                       <p className='desc-left'>{this.state.descripcion}.</p>
                     </div>
                     <div>
-                      <p className='desc-p'>Objetivo de la Actividad:</p>
+                      <p className='desc-p objetio-c'>Objetivo de la Actividad:</p>
                       <p className='desc-left'>{this.state.objetivo}</p>
                     </div>
+                    </div>
                     <div>
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Responsable:</p>
-                      <p className='desc-left'>{this.state.responsable}</p>
                     </div>
 
-                    <div className='tipo-act'>
-                      <p className='desc-p'>Representante:</p>
-                      <p className='desc-left'>{this.state.asistente}</p>
-                    </div>
-                    <div className='tipo-act'>
-                    <p className='desc-p'>No. Asistentes:</p>
-                    <p className='desc-left'>{this.state.noasistente}</p>
-                    </div>
+                    <div className= 'combo'>
+                    <div className='combo-1'>
+                      <div className='tipo-act'>
+                        <p className='desc-p'>Responsable:</p>
+                        <p className='desc-left'>{this.state.responsable}</p>
+                      </div>
 
                     </div>
-                  </div>
+
+                    <div className= 'combo-2'>
+                      <div className='tipo-act'>
+                        <p className='desc-p'>Representante:</p>
+                        <p className='desc-left'>{this.state.asistente}</p>
+                      </div>
+                      <div className='tipo-act'>
+                        <p className='desc-p'>No. Asistentes:</p>
+                        <p className='desc-left'>{this.state.noasistente}</p>
+                      </div>
+                    </div>
+                    </div>
+
+
+                    </div>
+
 
                </div>
 

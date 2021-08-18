@@ -127,6 +127,11 @@ justify-content: center;
 .combo{
   display: flex;
 }
+
+.descripciones{
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
 .txt-info{
   padding-bottom:2%;
   font-weight:bold;
@@ -136,6 +141,10 @@ justify-content: center;
 }
 .icon-sa{
   display: flex;
+
+}
+.espacio-c {
+  padding-bottom: 3%;
 
 }
 
@@ -418,12 +427,16 @@ select {
   display:flex;
 }
 .desc-left{
-  padding-left:5px;
+  padding-left:8px;
 }
 .desc-p{
   font-weight: bold;
+
 }
 
+.objetio-c{
+  padding-top: 2%; 
+}
 
 
 
