@@ -355,25 +355,17 @@ export default class soñe extends Component {
 
 
             </div>
+            <div className='add-gb'>
+              <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
+                <DoneIcon />
+              </Fab>
+            </div>
+            <div className='save-btr'>
+              <Fab color='primary' aria-label='add' style={{ background: 'red' }} onClick={this.handleBack.bind(this)}>
+                <CloseIcon />
+              </Fab>
+            </div>
 
-                          <div className='add-gb'>
-                            <Fab color='primary' aria-label='add' style={{ background: 'green' }} type='submit'>
-                              <DoneIcon />
-                            </Fab>
-                          </div>
-                          <div className='save-btr'>
-                            <Fab color='primary' aria-label='add' style={{ background: 'red' }} onClick={this.handleBack.bind(this)}>
-                              <CloseIcon />
-                            </Fab>
-                          </div>
-                          <div className="save-btr-1">
-                          <span class="material-icons" style={{ cursor:'pointer'  }} onClick={this.handleBacke.bind(this)}>
-                            <Fab color='primary' aria-label='add' style={{ background: '#092432' }} type='submit'>
-                              <ReplyIcon />
-                            </Fab>
-                          </span>
-                            <p className='btn-busqueda'>Evidencias</p>
-                          </div>
 
           </form>
 
