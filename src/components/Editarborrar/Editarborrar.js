@@ -86,18 +86,6 @@ export default class Reportes extends Component {
 
 
 
-
-
-
-    var moment = require('moment')
-    var date = moment('2020').add(this.state.search, 'weeks').startOf('isoweek').format('YYYY-MM-DD')
-
-    const filterData = this.state.actividades.filter(
-      (actividades) => {
-        return  actividades.fechai.indexOf(date) !== -1
-      }
-    )
-
     return (
       <div className='mg-conta'>
         <div className='nav-mmf'>
@@ -128,6 +116,11 @@ export default class Reportes extends Component {
         tooltip: 'Eliminar Actividad',
         onClick: (event, rowData)=>this.handleBackss(rowData.key)
       },
+      {
+      icon: 'block',
+      tooltip: 'Cancelar/Reprogramar',
+      onClick: (event, rowData)=>this.props.history.push(`/Cancelar`)
+    },
           ]}
 
           options={{
@@ -142,86 +135,6 @@ export default class Reportes extends Component {
           }}
 
           />
-        </div>
-
-
-
-
-        <div className='busq'>
-          <div className='imp-busq-2'>
-            <div className='btn-reportes'>
-              <p className='txt-rep'>Numero de Semana:  * </p>
-              <TextField
-                style={{  width: '30%', paddingLeft: '20px' }}
-                name='fecha'
-                required
-                value={this.state.search}
-                onChange={this.handleChange.bind(this)}
-              />
-            </div>
-          </div>
-        </div>
-        <div className='mes-center' style={{ position: 'fixed', marginTop: '183px', background: '#fafafa' }}>
-          <div className='mes-container' style={{ marginRight: '256px' }}>
-            <div className='head-mes-rep' style={{paddingLeft: '3.5%', color: 'grey'}}>Actividad</div>
-            <div className='head-mes-rep' style={{ color: 'grey' }}>Lugar</div>
-            <div className='head-mes-rep' style={{ color: 'grey' }}>Fiscalia/Direccion</div>
-            <div className='head-mes-rep' style={{ color: 'grey' }}>Fecha/Hora</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Agenda</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Reporte</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Agenda</div>
-            <div className='head-mes-imp' style={{ color: 'grey' }}>Actividades</div>
-            <div className='one-po' />
-          </div>
-        </div>
-        <div style={{ paddingTop: '270px', marginLeft: '0px' }}>
-          {filterData.map(actividades =>
-            <div className='mes-center3'>
-              <div className='mes-container-map' >
-                <span className='material-icons icon-sh' style={{ marginLeft: '-10px', marginRight: '1px'}}>
-                  label_important
-                </span>
-                <div className='head-mes-rep' style={{fontWeight: 'bold'}}>{actividades.tipoA}</div>
-                <div className='head-mes-rep'>{actividades.lugar} {actividades.municipio} {actividades.estados}</div>
-                <div className='head-mes-rep'>{actividades.area}</div>
-                <div className='head-mes-rep'>{actividades.fecha} - {actividades.horai}</div>
-                <div className='head-mes-imp'>
-                  <a  className='hiper' href='/Reportepdf'>
-                  <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>
-                    article
-                  </span>
-                  </a>
-                </div>
-                <div className='head-mes-imp'>
-                  <a className='hiper' href='/Reporteniveldir'>
-                  <span class='material-icons' style={{ cursor:'pointer', color:'gray' }}>
-
-                    article
-                  </span>
-                  </a>
-                </div>
-
-                <div className='head-mes-imp'>
-                  <a className='hiper' href='/Agendasemanal'>
-                   <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
-                    picture_as_pdf
-                  </span>
-                  </a>
-                </div>
-
-                <div className='head-mes-imp'>
-                  <a className='hiper' href='/Arelevante'>
-                   <span class='material-icons' style={{ cursor:'pointer', color:'#F08080' }}>
-                    picture_as_pdf
-                  </span>
-                  </a>
-                </div>
-                <div className='one-po'>
-
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 

@@ -13,7 +13,7 @@ import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
 import Ainforme from './components/aregistradas/Ainforme'
 import Abusqueda from './components/abusqueda/Abusqueda'
-import Sactividad from './components/sactividad/Sactividad'
+
 
 import Autorizacion from './components/autorizacion/Autorizacion'
 import Arelevante from './components/documentos/Arelevante'
@@ -61,7 +61,9 @@ import Reportedireccionesd from './components/documentos/Reportedireccionesd'
  import Reportesniveldir from './components/Editarborrar/Reportesniveldir'
  import Actividadeditar from './components/Editarborrar/Actividadeditar'
 
-
+/*Evidencias*/
+import Sactividad from './components/sactividad/Sactividad'
+import Cancelar from './components/sactividad/Cancelar'
 
 function App (props) {
   const { isAuthenticated, isVerifying } = props
@@ -317,7 +319,13 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-
+      <ProtectedRoute
+        exact
+        path='/Cancelar'
+        component={Cancelar}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
 
     </Switch>
 

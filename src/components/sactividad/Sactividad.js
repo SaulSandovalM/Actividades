@@ -188,11 +188,6 @@ export default class Sactividad extends Component {
           Reuniones4:actividades.Reuniones4,
           Capacitacion:actividades.Capacitación,
           Difusión:actividades.Difusión,
-
-
-
-
-
         })
       }
 
