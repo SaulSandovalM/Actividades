@@ -293,9 +293,12 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
+
+                      <MenuItem value='Comparecencia'>Comparecencia</MenuItem>
                       <MenuItem value='Condecoración'>Condecoración</MenuItem>
                       <MenuItem value='Ceremonia'>Ceremonia</MenuItem>
                       <MenuItem value='Concurso'>Concurso</MenuItem>
+                      <MenuItem value='Informe de Actividades'>Informe de Actividades</MenuItem>
                       <MenuItem value='Presentacion de Libro'>Presentacion de Libro</MenuItem>
 
                     </Select>
@@ -309,6 +312,7 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
+                      <MenuItem value='Conversatorio'>Conversatorio</MenuItem>
                       <MenuItem value='Operativa'>Operativa</MenuItem>
                       <MenuItem value='Presetación'>Presentación</MenuItem>
                       <MenuItem value='Vinculación'>Vinculación</MenuItem>
@@ -424,6 +428,8 @@ export default class Aactividad extends Component {
                       <MenuItem value='Rueda de Prensa'>Rueda de Prensa</MenuItem>
                       <MenuItem value='Video Conferencia'>Video Conferencia</MenuItem>
                       <MenuItem value='Sintesis_Informativa'>Sintesis Informativa</MenuItem>
+                      <MenuItem value='Foro'>Foro</MenuItem>
+
 
                     </Select>
                 </FormControl> : null
@@ -560,7 +566,7 @@ export default class Aactividad extends Component {
                         <MenuItem value=  'Subprocuradora de Procedimientos Penales Región Poniente'>Subprocuradora de Procedimientos Penales Región Poniente</MenuItem>
                         <MenuItem value=  'Director General Jurídico'>Director General Jurídico</MenuItem>
                         <MenuItem value=  'Secretaria del Procurador'>Secretaria del Procurador</MenuItem>
-                        <MenuItem value=  'Directora del Instituto de Formación Profesional de la Procuraduría'>Directora del Instituto de Formación Profesional de la Procuraduría</MenuItem>
+                        <MenuItem value=  'Direccion del Instituto de Formación Profesional de la Procuraduría'>Directora del Instituto de Formación Profesional de la Procuraduría</MenuItem>
                         <MenuItem value=  'Visitador general'>Visitador general</MenuItem>
                         <MenuItem value=  'Encargado de la Dirección General del Sistema Tradicional'>Encargado de la Dirección General del Sistema Tradicional</MenuItem>
                         <MenuItem value=  'Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares'>Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares</MenuItem>
@@ -1386,6 +1392,7 @@ export default class Aactividad extends Component {
                           <MenuItem value='Jilotzingo'>Jilotzingo</MenuItem>
                           <MenuItem value='Jiquipilco'>Jiquipilco</MenuItem>
                           <MenuItem value='Jocotitlán'>Jocotitlán</MenuItem>
+                          <MenuItem value='Toluca'>Toluca</MenuItem>
                           <MenuItem value='Xalatlaco'>Xalatlaco</MenuItem>
                         </Select>}
                       {this.state.estados === 'Jalisco' &&
