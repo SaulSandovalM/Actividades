@@ -242,7 +242,9 @@ export default class Sactividad extends Component {
     e.preventDefault()
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, duracion, imgeevi, estatus, convoca, estados, municipio,
-       lugar,  actividad, objetivo, descripcion, } = this.state
+       lugar,  actividad, objetivo, descripcion, checkedOrganizada, dependencia, virpre,
+       tipoActividad, Eventos, Capacitación, Reuniones, Reuniones1, Reuniones2, Reuiniones3,
+       Reuniones4, dInvitada, municipios, responsable,asistente, noasistente,} = this.state
     const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
 
     updateRef.set({
@@ -263,6 +265,23 @@ export default class Sactividad extends Component {
       estados,
       municipio,
       lugar,
+      checkedOrganizada,
+      dependencia,
+      virpre,
+      tipoActividad,
+      Eventos,
+      Capacitación,
+      Reuniones,
+      Reuniones1,
+      Reuniones2,
+      Reuiniones3,
+      Reuniones4,
+      dInvitada,
+      municipios,
+      responsable,
+      asistente,
+      noasistente,
+
 
 
 

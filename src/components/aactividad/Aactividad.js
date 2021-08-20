@@ -91,7 +91,7 @@ export default class Aactividad extends Component {
             tipoActividad, convoca, dependencia, estados, municipios, lugar,
             responsable, asistente, otro, estatus,  duracion, virpre, noasistente, curos, otroc, curso, capacitacion, vinculacion, locRepInt, aespeciales, dInvitada,
             Eventos, Reuniones, Reuniones1, Reuniones2, Reuniones3, Reuniones4, Capacitacion,
-            Difusión,} = this.state
+            Difusión, } = this.state
     this.ref.add({
       fechai,
       horai,
