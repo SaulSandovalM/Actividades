@@ -243,8 +243,8 @@ export default class Sactividad extends Component {
     const { resultado, relevancia, motivo_cancelado, checkedCancelada, checkedReprogramar,
       fechai, horai, duracion, imgeevi, estatus, convoca, estados, municipio,
        lugar,  actividad, objetivo, descripcion, checkedOrganizada, dependencia, virpre,
-       tipoActividad, Eventos, Capacitación, Reuniones, Reuniones1, Reuniones2, Reuiniones3,
-       Reuniones4, dInvitada, municipios, responsable,asistente, noasistente,} = this.state
+       tipoActividad, Eventos, Capacitación, Reuniones, Reuniones1, Reuniones2, Reuniones3,
+       Reuniones4, dInvitada, municipios, responsable, asistente, noasistente,} = this.state
     const updateRef = firebase.firestore().collection('actividades').doc(this.state.key)
 
     updateRef.set({
@@ -274,7 +274,7 @@ export default class Sactividad extends Component {
       Reuniones,
       Reuniones1,
       Reuniones2,
-      Reuiniones3,
+      Reuniones3,
       Reuniones4,
       dInvitada,
       municipios,
@@ -282,13 +282,10 @@ export default class Sactividad extends Component {
       asistente,
       noasistente,
 
-
-
-
-
     }).then((docRef) => {
       this.setState({
         resultado: '',
+        relevancia:'',
         seguimienton: false,
         descripcion: '',
         motivo_cancelado: '',
@@ -297,7 +294,6 @@ export default class Sactividad extends Component {
         fechai: '',
         actividad: '',
         objetivo: '',
-        descripcion: '',
         horai: '',
         horaf: '',
         imgeevi: '',
@@ -312,7 +308,23 @@ export default class Sactividad extends Component {
         imparte: '',
         desc: '',
         presencial: '',
-        dInvitada:''
+        dInvitada:'',
+        checkedOrganizada:'',
+        dependencia:'',
+        virpre:'',
+        tipoActividad:'',
+        Eventos:'',
+        Capacitación:'',
+        Reuniones:'',
+        Reuniones1:'',
+        Reuniones2:'',
+        Reuniones3:'',
+        Reuniones4:'',
+        municipios:'',
+        responsable:'',
+        asistente:'',
+        noasistente:'',
+        duracion:'',
       })
       this.props.history.push('/ActividadesRegistradas')
     })
