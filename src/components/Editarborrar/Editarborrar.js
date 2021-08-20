@@ -56,10 +56,7 @@ export default class Reportes extends Component {
   }
 
   handleBackss(id) {
-      var opcion = window.confirm("¿Estás Seguro que deseas Eliminar la Actividad? "+id);
-      firebase.firestore().collection('actividades').doc(id).delete()
-        .then(()=>{alert("¡¡¡Exitoso!!! Actividad Eliminada")})
-        .catch((error)=>{ alert("Error removing document:", error)})
+        firebase.firestore().collection('actividades').doc(id).delete()
     }
 
   render () {
@@ -110,11 +107,11 @@ export default class Reportes extends Component {
           icon: 'edit',
           tooltip: 'Editar ACtividad',
           onClick: (event, rowData)=>this.props.history.push(`/Actividadeditar`)
-        },
+          },
         {
         icon: 'delete',
         tooltip: 'Eliminar Actividad',
-        onClick: (event, rowData)=>this.handleBackss(rowData.key)
+        onClick: (event, rowData) => window.confirm('¿Estas Seguro que deseas eliminar el mensaje?') && this.handleBackss(rowData.key)
       },
       {
       icon: 'block',

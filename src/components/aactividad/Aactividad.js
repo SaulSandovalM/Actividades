@@ -393,9 +393,7 @@ export default class Aactividad extends Component {
                     >
                       <MenuItem value='Taller'>Taller</MenuItem>
                       <MenuItem value='Curso'>Curso</MenuItem>
-
                       <MenuItem value='Certificación'>Certificación</MenuItem>
-                      <MenuItem value='Conferencia'>Conferencia de Prensa</MenuItem>
                       <MenuItem value='Curso de Actualización'>Curso de Actualización</MenuItem>
                       <MenuItem value='Diplomado'>Diplomando</MenuItem>
                       <MenuItem value='Doctorado'>Doctorado</MenuItem>
