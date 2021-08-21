@@ -106,7 +106,7 @@ export default class Reportes extends Component {
           {
           icon: 'edit',
           tooltip: 'Editar ACtividad',
-          onClick: (event, rowData)=>this.props.history.push(`/Actividadeditar`)
+          onClick: (event, rowData)=>this.props.history.push(`/Actividadeditar/${rowData.key}`)
           },
         {
         icon: 'delete',
@@ -116,7 +116,7 @@ export default class Reportes extends Component {
       {
       icon: 'block',
       tooltip: 'Cancelar/Reprogramar',
-      onClick: (event, rowData)=>this.props.history.push(`/Cancelar`)
+      onClick: (event, rowData)=>this.props.history.push(`/Cancelar/${rowData.key}`)
     },
           ]}
 

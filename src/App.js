@@ -314,14 +314,14 @@ function App (props) {
 
       <ProtectedRoute
         exact
-        path='/Actividadeditar'
+        path='/Actividadeditar/:id'
         component={Actividadeditar}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
       <ProtectedRoute
         exact
-        path='/Cancelar'
+        path='/Cancelar/:id'
         component={Cancelar}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
