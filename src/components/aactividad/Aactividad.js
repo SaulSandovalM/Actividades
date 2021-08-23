@@ -325,7 +325,7 @@ export default class Aactividad extends Component {
 
                 {this.state.Reuniones === 'Vinculación' ?
                 <FormControl style={{ marginTop: '15px', width: '100%' }}>
-                  <InputLabel>Tipo de Vinculacin *</InputLabel>
+                  <InputLabel>Tipo de Vinculación *</InputLabel>
                     <Select
                       name='Reuniones1'
                       onChange={this.onChange}

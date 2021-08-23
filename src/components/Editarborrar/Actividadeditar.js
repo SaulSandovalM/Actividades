@@ -37,6 +37,8 @@ export default class Reportes extends Component {
       convoca:'',
       estados:'',
       municipios:'',
+      fechai:'',
+
 
 
 
@@ -74,6 +76,7 @@ export default class Reportes extends Component {
           convoca: actividades.convoca,
           estados: actividades.estados,
           municipios: actividades.municipios,
+          fechai: actividades.fechai, 
 
 
 
@@ -115,6 +118,8 @@ export default class Reportes extends Component {
         convoca:'',
         estados:'',
         municipios:'',
+        fechai:'',
+
 
 
 
