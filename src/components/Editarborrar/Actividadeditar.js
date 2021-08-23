@@ -129,7 +129,12 @@ export default class Reportes extends Component {
         convoca:'',
         estados:'',
         municipios:'',
-        fechai:'',
+        lugar:'',
+        responsable:'',
+        asistente:'',
+        noasistente:'',
+        
+
 
 
 

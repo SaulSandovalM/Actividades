@@ -103,11 +103,7 @@ export default class Reportes extends Component {
             tooltip: 'Agenda',
             onClick: (event, rowData)=>this.props.history.push(`/Sactividad/${rowData.key}`)
           },
-          {
-          icon: 'edit',
-          tooltip: 'Editar ACtividad',
-          onClick: (event, rowData)=>this.props.history.push(`/Actividadeditar/${rowData.key}`)
-          },
+
         {
         icon: 'delete',
         tooltip: 'Eliminar Actividad',
