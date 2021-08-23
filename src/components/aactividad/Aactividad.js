@@ -2556,7 +2556,7 @@ export default class Aactividad extends Component {
                       onChange={this.onChange}
                       required
                     >
-                      <MenuItem value='Ricardo César Gonzáles Baños'>Ricardo César Gonzáles Baños</MenuItem>
+                      <MenuItem value='Ricardo César González Baños'>Ricardo César González Baños</MenuItem>
                     </Select>
                   </FormControl>
                 }

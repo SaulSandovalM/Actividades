@@ -38,6 +38,11 @@ export default class Reportes extends Component {
       estados:'',
       municipios:'',
       fechai:'',
+      lugar:'',
+      responsable:'',
+      asistente: '',
+      noasistente:'',
+
 
 
 
@@ -76,7 +81,13 @@ export default class Reportes extends Component {
           convoca: actividades.convoca,
           estados: actividades.estados,
           municipios: actividades.municipios,
-          fechai: actividades.fechai, 
+          lugar: actividades.lugar,
+          responsable: actividades.responsable,
+          asistente: actividades.asistente,
+          noasistente: actividades.noasistente,
+
+
+
 
 
 
@@ -2450,7 +2461,7 @@ render () {
                 onChange={this.onChange}
                 required
               >
-                <MenuItem value='Ricardo César Gonzáles Baños'>Ricardo César Gonzáles Baños</MenuItem>
+                <MenuItem value='Ricardo César González Baños'>Ricardo César González Baños</MenuItem>
               </Select>
             </FormControl>
           }
