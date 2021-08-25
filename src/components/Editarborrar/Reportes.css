@@ -140,3 +140,21 @@
 .fader-edit{
   padding-left: 256px;
 }
+.cuadro-editando{
+  display: flex;
+  justify-content: center;
+}
+.prueba-s{
+  display: flex;
+  justify-content:center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+  background: white;
+  z-index: 2;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  height: 100%;
+}

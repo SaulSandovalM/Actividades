@@ -133,7 +133,7 @@ export default class Reportes extends Component {
         responsable:'',
         asistente:'',
         noasistente:'',
-        
+
 
 
 
@@ -166,7 +166,8 @@ render () {
   return (
     <div className='fader-edit'>
       <div><h1> Editando </h1></div>
-      <form noValidate autoComplete='off' className='mensajesg-container' onSubmit={this.onSubmit}>
+      <div className='cuadro-editando'>
+      <form noValidate autoComplete='off' className='prueba-s' onSubmit={this.onSubmit}>
         <div>
           <FormControl style={{ marginTop: '5px', width: '100%' }}>
         <InputLabel>Presencial/Virtual/Mixta</InputLabel>
@@ -443,6 +444,7 @@ render () {
               label='Dependencia/Institución que organiza'
               style={{ marginTop: '15px', width: '45%' }}
               name='dependencia'
+              value={this.state.dependecia}
               onChange={this.onChange}
               value='Procuraduria General de Justicia del Estado de Hidalgo'
               required
@@ -1982,16 +1984,174 @@ render () {
                   onChange={this.onChange}
                   required
                 >
-                  <MenuItem value='Armería'>Armería</MenuItem>
-                  <MenuItem value='Colima'>Colima</MenuItem>
-                  <MenuItem value='Comala'>Comala</MenuItem>
-                  <MenuItem value='Coquimatlán'>Coquimatlán</MenuItem>
-                  <MenuItem value='Cuauhtémoc'>Cuauhtémoc</MenuItem>
-                  <MenuItem value='Ixtlahuacán'>Ixtlahuacán</MenuItem>
-                  <MenuItem value='Manzanillo'>Manzanillo</MenuItem>
-                  <MenuItem value='Minatitlán'>Minatitlán</MenuItem>
-                  <MenuItem value='Tecomán'>Tecomán</MenuItem>
-                  <MenuItem value='Villa de Álvarez'>Villa de Álvarez</MenuItem>
+                <MenuItem value='Armería'>Armeríao</MenuItem>
+                <MenuItem value='Manzanillo'>Manzanillo</MenuItem>
+                <MenuItem value='Ixtlahuacán'>Ixtlahuacán</MenuItem>
+                <MenuItem value='Minatitlán'>Minatitlán</MenuItem>
+                <MenuItem value='Comala'>Comala</MenuItem>
+                <MenuItem value='Coquimatlán'>Coquimatlán</MenuItem>
+                <MenuItem value='Cuauhtémoc'>Cuauhtémoc</MenuItem>
+                <MenuItem value='Colima'>Colima</MenuItem>
+                <MenuItem value='Tecomán'>Tecomán</MenuItem>
+                <MenuItem value='Villa de Álvarez'>Villa de Álvarez</MenuItem>
+                <MenuItem value='Benemérito de las Américas'>Benemérito de las Américas</MenuItem>
+                <MenuItem value='Berriozábal'>Berriozábal</MenuItem>
+                <MenuItem value='Chanal'>Chanal</MenuItem>
+                <MenuItem value='Jiquipilas'>Jiquipilas</MenuItem>
+                <MenuItem value='La Concordia'>La Concordia</MenuItem>
+                <MenuItem value='Marqués de Comillas'>Marqués de Comillas</MenuItem>
+                <MenuItem value='Ocotepec'>Ocotepec</MenuItem>
+                <MenuItem value='Ocozocoautla de Espinosa'>Ocozocoautla de Espinosa</MenuItem>
+                <MenuItem value='Oxchuc'>Oxchuc</MenuItem>
+                <MenuItem value='Salto de Agua'>Salto de Agua</MenuItem>
+                <MenuItem value='San Juan Cancuc'>San Juan Cancuc</MenuItem>
+                <MenuItem value='Coapilla'>Coapilla</MenuItem>
+                <MenuItem value='El Bosque'>El Bosque</MenuItem>
+                <MenuItem value='Palenque'>Palenque</MenuItem>
+                <MenuItem value='Pantelhó'>Pantelhó</MenuItem>
+                <MenuItem value='Pijijiapan'>Pijijiapan</MenuItem>
+                <MenuItem value='Rayón'>Rayón</MenuItem>
+                <MenuItem value='San Fernando'>San Fernando</MenuItem>
+                <MenuItem value='Bejucal de Ocampo'>Bejucal de Ocampo</MenuItem>
+                <MenuItem value='Chapultenangoz'>Chapultenango</MenuItem>
+                <MenuItem value='Chiapa de Corzo'>Chiapa de Corzo</MenuItem>
+                <MenuItem value='Chicoasén'>Chicoasén</MenuItem>
+                <MenuItem value='Escuintla'>Escuintla</MenuItem>
+                <MenuItem value='Francisco León'>Francisco León</MenuItem>
+                <MenuItem value='La Libertad'>La Libertad</MenuItem>
+                <MenuItem value='Mapastepec'>Mapastepec</MenuItem>
+                <MenuItem value='Montecristo de Guerrero'>Montecristo de Guerrero</MenuItem>
+                <MenuItem value='Ocosingo'>Ocosingo</MenuItem>
+                <MenuItem value='Pueblo Nuevo Solistahuacán'>Pueblo Nuevo Solistahuacán</MenuItem>
+                <MenuItem value='San Andrés Duraznal'>San Andrés Duraznal</MenuItem>
+                <MenuItem value='Chicomuselo'>Chicomuselo</MenuItem>
+                <MenuItem value='Comitán de Domínguez'>Comitán de Domínguez</MenuItem>
+                <MenuItem value='Ixtapangajoya'>Ixtapangajoya</MenuItem>
+                <MenuItem value='Motozintla'>Motozintla</MenuItem>
+                <MenuItem value='Altamirano'>Altamirano</MenuItem>
+                <MenuItem value='Huixtla'>Huixtla</MenuItem>
+                <MenuItem value='Ixhuatán'>Ixhuatán</MenuItem>
+                <MenuItem value='Juárez'>Juárez</MenuItem>
+                <MenuItem value='La Independencia'>La Independencia</MenuItem>
+                <MenuItem value='La Trinitaria'>La Trinitaria</MenuItem>
+                <MenuItem value='Maravilla Tenejapa'>Maravilla Tenejapa</MenuItem>
+                <MenuItem value='Reforma'>Reforma</MenuItem>
+                <MenuItem value='Acacoyagua'>Acacoyagua</MenuItem>
+                <MenuItem value='Acala'>Acala</MenuItem>
+                <MenuItem value='Amatán'>Amatán</MenuItem>
+                <MenuItem value='Amatenango de la Frontera'>Amatenango de la Frontera</MenuItem>
+                <MenuItem value='Angel Albino Corzo'>Angel Albino Corzo</MenuItem>
+                <MenuItem value='Bochil'>Bochil</MenuItem>
+                <MenuItem value='Catazajá'>Catazajá</MenuItem>
+                <MenuItem value='Chalchihuitán'>Chalchihuitán</MenuItem>
+                <MenuItem value='Chamula'>Chamula</MenuItem>
+                <MenuItem value='Chenalhó'>Chenalhó</MenuItem>
+                <MenuItem value='Chiapilla'>Chiapilla</MenuItem>
+                <MenuItem value='Villa de Álvarez'>Villa de Álvarez</MenuItem>
+                <MenuItem value='Frontera Comalapa'>Frontera Comalapa</MenuItem>
+                <MenuItem value='Huehuetán'>Huehuetán</MenuItem>
+                <MenuItem value='Huitiupán'>Huitiupán</MenuItem>
+                <MenuItem value='La Grandeza'>La Grandeza</MenuItem>
+                <MenuItem value='Metapa'>Metapa</MenuItem>
+                <MenuItem value='Pichucalco'>Pichucalco</MenuItem>
+                <MenuItem value='Amatenango del Valle'>Amatenango del Valle</MenuItem>
+                <MenuItem value='Bella Vista'>Bella Vista</MenuItem>
+                <MenuItem value='El Porvenir'>El Porvenir</MenuItem>
+                <MenuItem value='Huixtán'>Huixtán</MenuItem>
+                <MenuItem value='Jitotol'>Jitotol</MenuItem>
+                <MenuItem value='Las Margaritas'>Las Margaritas</MenuItem>
+                <MenuItem value='Las Rosas'>Las Rosas</MenuItem>
+                <MenuItem value='Nicolás Ruíz'>Nicolás Ruíz</MenuItem>
+                <MenuItem value='Pantepec'>Pantepec</MenuItem>
+                <MenuItem value='Sabanilla'>Sabanilla</MenuItem>
+                <MenuItem value='Socoltenango'>Socoltenango</MenuItem>
+                <MenuItem value='Tapachula'>Tapachula</MenuItem>
+                <MenuItem value='Tapilula'>Tapilula</MenuItem>
+                <MenuItem value='Tenejapa'>Tenejapa</MenuItem>
+                <MenuItem value='Unión Juárez'>Unión Juárez</MenuItem>
+                <MenuItem value='Venustiano Carranza'>Venustiano Carranza</MenuItem>
+                <MenuItem value='Villa Comaltitlán'>Villa Comaltitlánz</MenuItem>
+                <MenuItem value='Yajalónz'>Yajalón</MenuItem>
+                <MenuItem value='Zinacantán'>Zinacantán</MenuItem>
+                <MenuItem value='Sitalá'>Sitalá</MenuItem>
+                <MenuItem value='Tonalá'>Tonalá</MenuItem>
+                <MenuItem value='Villa Corzo'>Villa Corzo</MenuItem>
+                <MenuItem value='San Cristóbal de las Casas'>San Cristóbal de las Casas</MenuItem>
+                <MenuItem value='Soyaló'>Soyaló</MenuItem>
+                <MenuItem value='Suchiapa'>Suchiapa</MenuItem>
+                <MenuItem value='Santiago el Pinar'>Santiago el Pinar</MenuItem>
+                <MenuItem value='Tapalapa'>Tapalapa</MenuItem>
+                <MenuItem value='Teopisca'>Teopisca</MenuItem>
+                <MenuItem value='Tumbalá'>Tumbalá</MenuItem>
+                <MenuItem value='Solosuchiapa'>Solosuchiapa</MenuItem>
+                <MenuItem value='Suchiate'>Suchiate</MenuItem>
+                <MenuItem value='Tecpatán'>Tecpatán</MenuItem>
+                <MenuItem value='Totolapa'>Totolapa</MenuItem>
+                <MenuItem value='Tuzantán'>Tuzantán</MenuItem>
+                <MenuItem value='Villaflores'>Villaflores</MenuItem>
+                <MenuItem value='Tila'>Tila</MenuItem>
+                <MenuItem value='Tzimol'>Tzimol</MenuItem>
+                <MenuItem value='San Lucas'>San Lucas</MenuItem>
+                <MenuItem value='Simojovel'>Simojovel</MenuItem>
+                <MenuItem value='Sunuapa'>Sunuapa</MenuItem>
+                <MenuItem value='Acapetahua'>Acapetahua</MenuItem>
+                <MenuItem value='Aldama'>Aldama</MenuItem>
+                <MenuItem value='Arriaga'>Arriaga</MenuItem>
+                <MenuItem value='Cacahoatán'>Cacahoatán</MenuItem>
+                <MenuItem value='Cintalapa'>Cintalapa</MenuItem>
+                <MenuItem value='Copainalá'>Copainalá</MenuItem>
+                <MenuItem value='Frontera Hidalgo'>Frontera Hidalgo</MenuItem>
+                <MenuItem value='Ixtacomitán'>Ixtacomitán</MenuItem>
+                <MenuItem value='Ixtapa'>Ixtapa</MenuItem>
+                <MenuItem value='Larráinzar'>Larráinzar</MenuItem>
+                <MenuItem value='Mazapa de Madero'>Mazapa de Madero</MenuItem>
+                <MenuItem value='Mazatán'>Mazatán</MenuItem>
+                <MenuItem value='Mitontic'>Mitontic</MenuItem>
+                <MenuItem value='Ostuacán'>Ostuacán</MenuItem>
+                <MenuItem value='Osumacinta'>Osumacinta</MenuItem>
+                <MenuItem value='Siltepec'>Siltepec</MenuItem>
+                <MenuItem value='Tuxtla Chico'>Tuxtla Chico</MenuItem>
+                <MenuItem value='Tuxtla Gutiérrez'>Tuxtla Gutiérrez</MenuItem>
+                <MenuItem value='Bachíniva'>Bachíniva</MenuItem>
+                <MenuItem value='Carichí'>Carichí</MenuItem>
+                <MenuItem value='Delicias'>Delicias</MenuItem>
+                <MenuItem value='La Cruz'>La Cruz</MenuItem>
+                <MenuItem value='López'>López</MenuItem>
+                <MenuItem value='Madera'>Madera</MenuItem>
+                <MenuItem value='Matamoros'>Matamoros</MenuItem>
+                <MenuItem value='Rosales'>Rosales</MenuItem>
+                <MenuItem value='Aldama'>Aldama</MenuItem>
+                <MenuItem value='Aquiles Serdán'>Aquiles Serdán</MenuItem>
+                <MenuItem value='Balleza'>Balleza</MenuItem>
+                <MenuItem value='Camargo'>Camargo</MenuItem>
+                <MenuItem value='Galeana'>Galeana</MenuItem>
+                <MenuItem value='Guerrero'>Guerrero</MenuItem>
+                <MenuItem value='Juárez'>Juárez</MenuItem>
+                <MenuItem value='Julimes'>Julimes</MenuItem>
+                <MenuItem value='Namiquipa'>Namiquipa</MenuItem>
+                <MenuItem value='Nonoava'>Nonoava</MenuItem>
+                <MenuItem value='Rosario'>Rosario</MenuItem>
+                <MenuItem value='San Francisco del Oro'>San Francisco del Oro</MenuItem>
+                <MenuItem value='Ahumada'>Ahumada</MenuItem>
+                <MenuItem value='Cusihuiriachi'>Cusihuiriachio</MenuItem>
+                <MenuItem value='Hidalgo del Parral'>Hidalgo del Parral</MenuItem>
+                <MenuItem value='Huejotitán'>Huejotitán</MenuItem>
+                <MenuItem value='San Francisco de Borja'>San Francisco de Borja</MenuItem>
+                <MenuItem value='Ascensión'>Ascensióno</MenuItem>
+                <MenuItem value='Batopilas'>Batopilas</MenuItem>
+                <MenuItem value='Chihuahua'>Chihuahua</MenuItem>
+                <MenuItem value='El Tule'>El Tule</MenuItem>
+                <MenuItem value='Gran Morelos'>Gran Morelos</MenuItem>
+                <MenuItem value='Buenaventura'>Buenaventura</MenuItem>
+                <MenuItem value='Coyame del Sotol'>Coyame del Sotol</MenuItem>
+                <MenuItem value='Cuauhtémoc'>Cuauhtémoc</MenuItem>
+                <MenuItem value='Guachochi'>Guachochi</MenuItem>
+                <MenuItem value='Guadalupe y Calvo'>Guadalupe y Calvo</MenuItem>
+                <MenuItem value='Janos'>Janos</MenuItem>
+                <MenuItem value='Matachí'>Matachí</MenuItem>
+                <MenuItem value='Morelos'>Morelos</MenuItem>
+                <MenuItem value='Ojinaga'>Ojinaga</MenuItem>
+
                 </Select>}
               {this.state.estados === 'Coahuila' &&
                 <Select
@@ -2000,43 +2160,44 @@ render () {
                   onChange={this.onChange}
                   required
                 >
-                  <MenuItem value='Abasolo'>Abasolo</MenuItem>
-                  <MenuItem value='Acuña'>Acuña</MenuItem>
-                  <MenuItem value='Allende'>Allende</MenuItem>
-                  <MenuItem value='Arteaga'>Arteaga</MenuItem>
-                  <MenuItem value='Candela'>Candela</MenuItem>
-                  <MenuItem value='Castaños'>Castaños</MenuItem>
-                  <MenuItem value='Cuatro Ciénegas'>Cuatro Ciénegas</MenuItem>
-                  <MenuItem value='Escobedo'>Escobedo</MenuItem>
-                  <MenuItem value='Francisco I. Madero'>Francisco I. Madero</MenuItem>
-                  <MenuItem value='Frontera'>Frontera</MenuItem>
-                  <MenuItem value='General Cepeda'>General Cepeda</MenuItem>
-                  <MenuItem value='Guerrero'>Guerrero</MenuItem>
-                  <MenuItem value='Hidalgo'>Hidalgo</MenuItem>
-                  <MenuItem value='Jiménez'>Jiménez</MenuItem>
-                  <MenuItem value='Juárez'>Juárez</MenuItem>
-                  <MenuItem value='Lamadrid'>Lamadrid</MenuItem>
-                  <MenuItem value='Matamoros'>Matamoros</MenuItem>
-                  <MenuItem value='Monclova'>Monclova</MenuItem>
-                  <MenuItem value='Morelos'>Morelos</MenuItem>
-                  <MenuItem value='Múzquiz'>Múzquiz</MenuItem>
-                  <MenuItem value='Nadadores'>Nadadores</MenuItem>
-                  <MenuItem value='Nava'>Nava</MenuItem>
-                  <MenuItem value='Ocampo'>Ocampo</MenuItem>
-                  <MenuItem value='Parras'>Parras</MenuItem>
-                  <MenuItem value='Piedras Negras'>Piedras Negras</MenuItem>
-                  <MenuItem value='Progreso'>Progreso</MenuItem>
-                  <MenuItem value='Ramos Arizpe'>Ramos Arizpe</MenuItem>
-                  <MenuItem value='Sabinas'>Sabinas</MenuItem>
-                  <MenuItem value='Sacramento'>Sacramento</MenuItem>
-                  <MenuItem value='Saltillo'>Saltillo</MenuItem>
-                  <MenuItem value='San Buenaventura'>San Buenaventura</MenuItem>
-                  <MenuItem value='San Juan de Sabinas'>San Juan de Sabinas</MenuItem>
-                  <MenuItem value='San Pedro'>San Pedro</MenuItem>
-                  <MenuItem value='Sierra Mojada'>Sierra Mojada</MenuItem>
-                  <MenuItem value='Torreón'>Torreón</MenuItem>
-                  <MenuItem value='Viesca'>Viesca</MenuItem>
-                  <MenuItem value='Villa Unión'>Villa Unión</MenuItem>
+                <MenuItem value='Frontera'>Frontera</MenuItem>
+                <MenuItem value='Lamadrid'>Lamadrid</MenuItem>
+                <MenuItem value='Nadadores'>Nadadores</MenuItem>
+                <MenuItem value='San Buenaventura'>San Buenaventura</MenuItem>
+                <MenuItem value='Abasolo'>Abasolo</MenuItem>
+                <MenuItem value='Francisco I. Madero'>Francisco I. Madero</MenuItem>
+                <MenuItem value='Jiménez'>Jiménez</MenuItem>
+                <MenuItem value='Múzquiz'>Múzquiz</MenuItem>
+                <MenuItem value='Ocampo'>Ocampo</MenuItem>
+                <MenuItem value='Hidalgo'>Hidalgo</MenuItem>
+                <MenuItem value='Matamoros'>Matamoros</MenuItem>
+                <MenuItem value='Candela'>Candela</MenuItem>
+                <MenuItem value='Sabinas'>Sabinas</MenuItem>
+                <MenuItem value='Castaños'>Castaños</MenuItem>
+                <MenuItem value='Cuatro Ciénegas'>Cuatro Ciénegas</MenuItem>
+                <MenuItem value='Guerrero'>Guerrero</MenuItem>
+                <MenuItem value='Juárez'>Juárez</MenuItem>
+                <MenuItem value='Monclova'>Monclova</MenuItem>
+                <MenuItem value='Saltillo'>Saltillo</MenuItem>
+                <MenuItem value='Acuña'>Acuña</MenuItem>
+                <MenuItem value='Arteaga'>Arteaga</MenuItem>
+                <MenuItem value='General Cepeda'>General Cepeda</MenuItem>
+                <MenuItem value='Morelos'>Morelos</MenuItem>
+                <MenuItem value='Progreso'>Progreso</MenuItem>
+                <MenuItem value='Ramos Arizpe'>Ramos Arizpes</MenuItem>
+                <MenuItem value='Allende'>Allende</MenuItem>
+                <MenuItem value='San Juan de Sabinas'>San Juan de Sabinas</MenuItem>
+                <MenuItem value='Torreón'>Torreón</MenuItem>
+                <MenuItem value='Villa Unión'>Villa Unión</MenuItem>
+                <MenuItem value='Sierra Mojada'>Sierra Mojada</MenuItem>
+                <MenuItem value='Viesca'>Viesca</MenuItem>
+                <MenuItem value='San Pedro'>San Pedro</MenuItem>
+                <MenuItem value='Zaragoza'>Zaragoza</MenuItem>
+                <MenuItem value='Escobedo'>Escobedo</MenuItem>
+                <MenuItem value='Nava'>Nava</MenuItem>
+                <MenuItem value='Parras'>Parras</MenuItem>
+                <MenuItem value='Piedras Negras'>Piedras Negras</MenuItem>
+                <MenuItem value='Sacramento'>Sacramento</MenuItem>
                 </Select>}
               {this.state.estados === 'Campeche' &&
                 <Select
@@ -2045,17 +2206,18 @@ render () {
                   onChange={this.onChange}
                   required
                 >
-                  <MenuItem value='Calkiní'>Calkiní</MenuItem>
-                  <MenuItem value='Campeche'>Campeche</MenuItem>
-                  <MenuItem value='Carmen'>Carmen</MenuItem>
-                  <MenuItem value='Champotón'>Champotón</MenuItem>
-                  <MenuItem value='Hecelchakán'>Hecelchakán</MenuItem>
-                  <MenuItem value='Hopelchén'>Hopelchén</MenuItem>
-                  <MenuItem value='Palizada'>Palizada</MenuItem>
-                  <MenuItem value='Tenabo'>Tenabo</MenuItem>
-                  <MenuItem value='Escárcega'>Escárcega</MenuItem>
-                  <MenuItem value='Calakmul'>Calakmul</MenuItem>
-                  <MenuItem value='Candelaria'>Candelaria</MenuItem>
+                <MenuItem value='Escárcega'>Escárcega</MenuItem>
+                <MenuItem value='Calakmul'>Calakmul</MenuItem>
+                <MenuItem value='Palizada'>Palizada</MenuItem>
+                <MenuItem value='Candelaria'>Candelaria</MenuItem>
+                <MenuItem value='Hecelchakán'>Hecelchakán</MenuItem>
+                <MenuItem value='Campeche'>Campeche</MenuItem>
+                <MenuItem value='Hopelchén'>Hopelchén</MenuItem>
+                <MenuItem value='Champotón'>Champotón</MenuItem>
+                <MenuItem value='Aguascalientes'>Aguascalientes</MenuItem>
+                <MenuItem value='Aguascalientes'>Aguascalientes</MenuItem>
+                <MenuItem value='Aguascalientes'>Aguascalientes</MenuItem>
+
                 </Select>}
               {this.state.estados === 'Baja California Sur' &&
                 <Select
@@ -2064,11 +2226,12 @@ render () {
                   onChange={this.onChange}
                   required
                 >
-                  <MenuItem value='Comondú'>Comondú</MenuItem>
-                  <MenuItem value='Mulegé'>Mulegé</MenuItem>
-                  <MenuItem value='La Paz'>La Paz</MenuItem>
-                  <MenuItem value='Los Cabos'>Los Cabos</MenuItem>
-                  <MenuItem value='Loreto'>Loreto</MenuItem>
+                <MenuItem value='Los Cabos'>Los Cabos</MenuItem>
+                <MenuItem value='Mulegé'>Mulegé</MenuItem>
+                <MenuItem value='Comondú'>Comondú</MenuItem>
+                <MenuItem value='La Paz'>La Paz</MenuItem>
+                <MenuItem value='Loreto'>Loreto</MenuItem>
+
                 </Select>}
               {this.state.estados === 'Baja California' &&
                 <Select
@@ -2077,11 +2240,12 @@ render () {
                   onChange={this.onChange}
                   required
                 >
-                  <MenuItem value='Ensenada'>Ensenada</MenuItem>
-                  <MenuItem value='Mexicali'>Mexicali</MenuItem>
-                  <MenuItem value='Tecate'>Tecate</MenuItem>
-                  <MenuItem value='Tijuana'>Tijuana</MenuItem>
-                  <MenuItem value='Playas de Rosarito'>Playas de Rosarito</MenuItem>
+                <MenuItem value='Mexicali'>Mexicali</MenuItem>
+                <MenuItem value='Ensenada'>Ensenada</MenuItem>
+                <MenuItem value='Playas de Rosarito'>Playas de Rosarito</MenuItem>
+                <MenuItem value='Tecate'>Tecate</MenuItem>
+                <MenuItem value='Tijuana'>Tijuana</MenuItem>
+
                 </Select>}
               {this.state.estados === 'Aguascalientes' &&
                 <Select
@@ -2090,17 +2254,18 @@ render () {
                   onChange={this.onChange}
                   required
                 >
-                  <MenuItem value='Aguascalientes'>Aguascalientes</MenuItem>
-                  <MenuItem value='Asientos'>Asientos</MenuItem>
-                  <MenuItem value='Calvillo'>Calvillo</MenuItem>
-                  <MenuItem value='Cosío'>Cosío</MenuItem>
-                  <MenuItem value='Jesús María'>Jesús María</MenuItem>
-                  <MenuItem value='Pabellón de Arteaga'>Pabellón de Arteaga</MenuItem>
-                  <MenuItem value='Rincón de Romos'>Rincón de Romos</MenuItem>
-                  <MenuItem value='San José de Gracia'>San José de Gracia</MenuItem>
-                  <MenuItem value='Tepezalá'>Tepezalá</MenuItem>
-                  <MenuItem value='El Llano'>El Llano</MenuItem>
-                  <MenuItem value='San Francisco de los Romo'>San Francisco de los Romo</MenuItem>
+                <MenuItem value='Aguascalientes'>Aguascalientes</MenuItem>
+                <MenuItem value='Calvillo'>Calvillo</MenuItem>
+                <MenuItem value='Cosío'>Cosío</MenuItem>
+                <MenuItem value='El Llano'>El Llano</MenuItem>
+                <MenuItem value='Rincón de Romos'>Rincón de Romos</MenuItem>
+                <MenuItem value='Pabellón de Arteaga'>Pabellón de Arteaga</MenuItem>
+                <MenuItem value='Jesús María'>Jesús María</MenuItem>
+                <MenuItem value='Asientos'>Asientos</MenuItem>
+                <MenuItem value='San Francisco de los Romo'>San Francisco de los Romo</MenuItem>
+                <MenuItem value='Tepezalá'>Tepezalá</MenuItem>
+                <MenuItem value='San José de Gracia'>San José de Gracia</MenuItem>
+
                 </Select>}
             </FormControl>
           </div>
@@ -2129,411 +2294,41 @@ render () {
             label='Lugar Especifico'
             style={{ marginTop: '15px', width: '100%' }}
             name='lugar'
+            value= {this.state.lugar}
             onChange={this.onChange}
             required
           />
-          {this.state.convoca === 'Subprocurador de Procedimientos Penales Región Oriente' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Víctor Ariel Pérez Benítez'>Víctor Ariel Pérez Benítez</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director General de la Unidad Especializada en el Combate al Secuestro' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Manuel García Guzmán'>Manuel García Guzmán</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director General de Servicios Periciales' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Eduardo González Mata'>Eduardo González Mata</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Directora General de la Coordinación de Investigación y Recuperación de Vehículos Robados' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Sonia Esmeralda Mejía González'>Sonia Esmeralda Mejía González</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Secretaria del Despacho del C. Procurador' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Diana Corona Meneses '>Diana Corona Meneses </MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director de Planeación' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Lucio Rosas Braco'>Lucio Rosas Braco</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Subprocuradora de Procedimientos Penales Región Poniente' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Sissi Anette Rodríguez Fernández'>Sissi Anette Rodríguez Fernández</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director General Jurídico' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Jacob Alejandro Tolentino Habib'>Jacob Alejandro Tolentino Habib</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Secretaria del Procurador' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Lourdes Herrera Fragoso'>Lourdes Herrera Fragoso</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Directora del Instituto de Formación Profesional de la Procuraduría' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Mercedes Citlali Mendoza Meza'>Mercedes Citlali Mendoza Meza</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Visitador general' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Michel Izguerra'>Michel Izguerra</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Encargado de la Dirección General del Sistema Tradicional' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Gilberto Ramírez Rico'>Gilberto Ramírez Rico</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Fiscal especializado para la Investigación y Persecución de Delitos de Desaparición Forzada de Personas y Desaparición Cometida por Particulares' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Humberto Vieyra Alamilla'>Humberto Vieyra Alamilla</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director General de la Policía Investigadora' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Edwin Hernández Garrido'>Edwin Hernández Garrido</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Subprocurador de Derechos Humanos y Servicios a la Comunidad' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Arturo Flores Molina'>Arturo Flores Molina</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Directora de Prevención del Delito y Atención Ciudadana' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Laura Isabel Torres Villegas'>Laura Isabel Torres Villegas</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Encargada de la Unidad de Mandamientos Judiciales y Plataformar' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Laura Isabel Torres Villegas'>Laura Isabel Torres Villegas</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Coordinador de Comunicación Social' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Eder Arteaga Tavera'>Eder Arteaga Tavera</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Despacho del Procurador' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Raúl Arroyo'>Raúl Arroyo</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Fiscal para la Atención de Delitos de Género' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Luz María Ramírez Pérez'>Luz María Ramírez Pérez</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director General de Administración y Finanzas' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='León Maximiliano Hernández Valdés'>León Maximiliano Hernández Valdés</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Fiscalía Especializada en Delitos Electorales' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Sergio Zúñiga Hernández'>Sergio Zúñiga Hernández</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director General del Centro de Justicia Restaurativa Penal' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='José Manning Ramírez'>José Manning Ramírez</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Fiscal especializada para la Atención  de los Delitos de Trata de Personas' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Yolanda Samperio Delgadillo'>Yolanda Samperio Delgadillo</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director General del Centro de Operación Estratégica' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Vladimir Andrade Soto'>Vladimir Andrade Soto</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Fiscal especializado en Delitos de Corrupción' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Ricardo César González Baños'>Ricardo César González Baños</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Director General de Relaciones Nacionales e Internacionales' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Víctor Austria Mercado'>Víctor Austria Mercado</MenuItem>
-              </Select>
-            </FormControl>
-          }
 
-          {this.state.convoca === 'Unidad de Investigacion Patrimonial y Economica' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Víctor Austria Mercado'>Evelia Cruz Gonzalez</MenuItem>
-              </Select>
-            </FormControl>
-          }
-          {this.state.convoca === 'Titular del Órgano Interno de Control de la Procuraduría' &&
-            <FormControl style={{ marginTop: '15px', width: '100%' }}>
-              <InputLabel>Responsable de Actividad</InputLabel>
-              <Select
-                label='Responsable'
-                name='responsable'
-                onChange={this.onChange}
-                required
-              >
-                <MenuItem value='Gerardo Flores Álvarez'>Gerardo Flores Álvarez</MenuItem>
-              </Select>
-            </FormControl>
-          }
           {!this.state.checkedOrganizada &&
             <TextField
-              label='Responsable'
+              label='Responsable de la Actividad'
               style={{ marginTop: '15px', width: '100%' }}
               name='responsable'
+              value={this.state.responsable}
               onChange={this.onChange}
               required
             />
           }
+
           <TextField
             label='Representante'
             style={{ marginTop: '15px', width: '100%' }}
             name='asistente'
             onChange={this.onChange}
+            value={this.state.asistente}
             inputProps={{
               maxLength: 300
             }}
+
             multiline
             required
+
           />
           <TextField
             label='Numero de Asistentes'
             style={{ marginTop: '15px', width: '100%' }}
             name='noasistente'
+            value={this.state.noasistente}
             onChange={this.onChange}
             inputProps={{
               maxLength: 300
@@ -2553,6 +2348,7 @@ render () {
         </Fab>
       </div>
       </form>
+      </div>
 
 
     </div>

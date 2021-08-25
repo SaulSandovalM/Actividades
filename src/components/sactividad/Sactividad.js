@@ -420,7 +420,7 @@ export default class Sactividad extends Component {
 
             <div className='desc-all' >
 
-            <div className='icon-sa'>
+            {/*}<div className='icon-sa'>
             <span class="material-icons" style= {{paddingRight:'.5%', fontSize:35}}>
               delete_forever
             </span>
@@ -501,7 +501,7 @@ export default class Sactividad extends Component {
               </div>
             }
 
-            </div>
+            </div>*/}
 
             </div>
 
@@ -525,6 +525,10 @@ export default class Sactividad extends Component {
                           <div className='tipo-act espacio-c'>
                               <p className='desc-p'>Organiza: </p>
                               <p className='desc-left'>{this.state.dependencia}{this.state.checkedOrganizada}{this.state.onChange}</p>
+                          </div>
+                          <div className='tipo-act espacio-c'>
+                            <p className='desc-p '>Invitado:</p>
+                            <p className='desc-left'>{this.state.dInvitada}</p>
                           </div>
                           <div className='tipo-act'>
                               <p className='desc-p'>Presencial/Virtual/Mixta: </p>
@@ -559,8 +563,8 @@ export default class Sactividad extends Component {
                       <div className='combo-2'>
 
                       <div className='tipo-act espacio-c'>
-                        <p className='desc-p '>Invitado:</p>
-                        <p className='desc-left'>{this.state.dInvitada}{this.state.convoca}</p>
+                        <p className='desc-p '>Área:</p>
+                        <p className='desc-left'>{this.state.convoca}</p>
                       </div>
                       <div className='tipo-act'>
                         <p className='desc-p'>Estado:</p>
@@ -592,7 +596,7 @@ export default class Sactividad extends Component {
 
                         <div className='tipo-act'>
                           <p className='desc-p'>Duracion:</p>
-                          <p className='desc-left'>{this.state.duracion}</p>
+                          <p className='desc-left'>{this.state.duracion} min/hr/hrs</p>
                         </div>
 
 

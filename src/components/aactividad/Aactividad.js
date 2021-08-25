@@ -2602,7 +2602,7 @@ export default class Aactividad extends Component {
                 }
                 {!this.state.checkedOrganizada &&
                   <TextField
-                    label='Responsable'
+                    label='Responsable de la Actividad'
                     style={{ marginTop: '15px', width: '100%' }}
                     name='responsable'
                     onChange={this.onChange}
