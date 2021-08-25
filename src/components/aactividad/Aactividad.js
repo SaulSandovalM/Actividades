@@ -1596,7 +1596,7 @@ export default class Aactividad extends Component {
                           <MenuItem value='La Huacana'>La Huacana</MenuItem>
                           <MenuItem value='Lagunillas'>Lagunillas</MenuItem>
                         </Select>}
-                      {this.state.estados === 'México' &&
+                      {this.state.estados === 'Estado de México' &&
                         <Select
                           label='Municipios'
                           name='municipios'
@@ -2212,7 +2212,7 @@ export default class Aactividad extends Component {
                       name='municipios'
                       onChange={this.onChange}
                       required
-                      value='Pachuca'
+
                     />
                   </div>}
                 <TextField
