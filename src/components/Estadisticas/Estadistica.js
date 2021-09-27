@@ -2,7 +2,7 @@ import React , { Component } from 'react'
 import './estadisticas.css'
 import firebase from  '../../Firebase'
 import MaterialTable from 'material-table';
-
+import AnyChart from 'anychart-react'
 
 export  default class  Estadistica extends Component {
   constructor (props) {
@@ -10,6 +10,7 @@ export  default class  Estadistica extends Component {
     this.ref = firebase.firestore().collection('actividades')
     this.unsubscribe = null
     this.state = {
+
       actividades: []
     }
 
@@ -52,7 +53,19 @@ export  default class  Estadistica extends Component {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
 
-
+ //  state = {
+ //    respuesta : []
+ //  }
+ //   async peticion () {
+ //     var peticion= await firebase.firestore().collection('actividades');
+ //     var respuesta = await  peticion();
+ //     this.state.actividades.map(actividades => actividades)
+ //   console.log(respuesta)
+ // }
+  // async componentDidMount() {
+  //     this.peticion () ;
+  //
+  // }
   render () {
     console.log(this.state.actividades.length)
     const columnas = [
@@ -96,11 +109,6 @@ export  default class  Estadistica extends Component {
 
               },
               {
-                title: 'SUB. ACTIVIDAD',
-                field: 'organismoi'
-
-              },
-              {
                 title: 'EDO',
                 field: 'estados',
               },
@@ -116,6 +124,7 @@ export  default class  Estadistica extends Component {
                 title: 'FECHA',
                 field: 'fechai',
               },
+
               {
                 title: 'HORA',
                 field: 'horai',
@@ -204,12 +213,84 @@ export  default class  Estadistica extends Component {
                         field: 'fechai',
                       },
                       {
+                        title: 'FECHA ',
+                        field: 'fechai',
+                      },
+                      {
                         title: 'HORA',
                         field: 'fechai',
                       }
 
 
                     ];
+
+        const actividades  = this.state.actividades.map(actividades => actividades)
+
+        // var array = [
+        //   { tipo: "Virtual"},
+        //   { tipo: "Presencial"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Virtual"},
+        //   { tipo: "Virtual"},
+        //   { tipo: "Virtual"},
+        //   { tipo: "Virtual"},
+        //   { tipo: "Presencial"},
+        //   { tipo: "Presencial"},
+        //   { tipo: "Presencial"},
+        //   { tipo: "Presencial"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Mixta"},
+        //   { tipo: "Mixta"},
+        //
+        //
+        // ]
+
+        let arrayVirtual = []
+        actividades.map(item =>
+        item.virpre === 'Virtual' ? arrayVirtual.push(item.virpre) : null
+          )
+
+        console.log(arrayVirtual.length)
+
+
+        let arrayMixta = []
+        actividades.map(item =>
+          item.mixta  === 'Mixta' ? arrayVirtual.push(item.mixta) : null
+        )
+        console.log(arrayMixta.length)
+
+        let arrayPresencial = []
+        actividades.map(item =>
+          item.presencial  === 'Presencial' ? arrayVirtual.push(item.presencial) : null
+        )
+        console.log(arrayMixta.length)
+
+
+
+        // let arrayVirtual = []
+        // array.map(item =>
+        //   item.tipo === 'Virtual' ? arrayVirtual.push(item.tipo) : null
+        // )
+        // console.log(arrayVirtual.length)
+
+        // let arrayPresencial = []
+        // array.map(item =>
+        //   item.tipo === 'Presencial' ? arrayPresencial.push(item.tipo) : null
+        // )
+        // console.log(arrayPresencial.length)
+
+        // let arrayMixta = []
+        // array.map(item =>
+        //   item.tipo === 'Mixta' ? arrayMixta.push(item.tipo) : null
+        // )
+        // console.log(arrayMixta.length)
+
 
 
     return (
@@ -218,17 +299,33 @@ export  default class  Estadistica extends Component {
             <h1>Estadisticas </h1>
           </div>
           <div>
+            <AnyChart
+              type="pie"
+              data={[arrayVirtual.length, arrayPresencial.length, arrayMixta.length]}
+              title="Simple pie chart"
+            />
+          </div>
+
+          <div>
+
             <div>
-              <h2>sirve para algo</h2>
+
+
             </div>
-            <div className='est-totales'>
+            <div>
+              <h2>Filtrador de Información</h2>
+            <div>
+
+
+              </div>
+            </div>
+
+
+            {/*<div className='est-totales'>
               <MaterialTable
               columns={columnas}
               data = {tabla}
-              title = "Actividades Totales"
-
-
-
+              title = "Actividades Totale                                                                                                                                                                                                                                                                                                                                                                               s"
               options={{
                 actionsColumnIndex: -1,
                 exportButton: true,
@@ -243,7 +340,9 @@ export  default class  Estadistica extends Component {
 
 
               />
-            </div>
+            </div>*/}
+
+
             <div className='est-totales'>
             <MaterialTable
             columns={sang}
@@ -257,12 +356,10 @@ export  default class  Estadistica extends Component {
               exportButton: true,
               filtering: true
             }}
-
-
             />
             </div>
 
-            <div className='est-totales'>
+            {/*<div className='est-totales'>
             <MaterialTable
             columns={sangs}
             data = {tabla}
@@ -307,6 +404,10 @@ export  default class  Estadistica extends Component {
 
             />
             </div>
+            */}
+
+
+
           </div>
 
 

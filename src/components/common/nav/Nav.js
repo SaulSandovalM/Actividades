@@ -221,7 +221,7 @@ class Nav extends Component {
 
 
           <div className='navbar-left'>
-            <Link to='/Estadisticas' className='deco'>
+            <Link to='/Estadistica' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>

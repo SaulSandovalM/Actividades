@@ -326,6 +326,13 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
+      <ProtectedRoute
+        exact
+        path='/Estadistica'
+        component={Estadistica}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
 
     </Switch>
 

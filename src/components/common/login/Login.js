@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 import './Login.css'
 import logoH from '../../../imgs/logo2.png'
-import centenario from '../../../imgs/logo_01.png'
+
 import ReactPlayer from 'react-player'
 
 

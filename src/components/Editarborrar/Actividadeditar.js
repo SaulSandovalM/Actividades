@@ -547,6 +547,7 @@ render () {
                 <Select
                   label='Municipios'
                   name='municipios'
+                  value={this.state.estados}
                   onChange={this.onChange}
 
                   required
@@ -615,6 +616,7 @@ render () {
                   label='Municipios'
                   name='municipios'
                   onChange={this.onChange}
+                    value={this.state.estados}
                   required
                   >
                   <MenuItem value='Abalá'>Abalá</MenuItem>
@@ -733,6 +735,7 @@ render () {
                   label='Municipios'
                   name='municipios'
                   onChange={this.onChange}
+                  value={this.state.estados}
                   required
                 >
                 <MenuItem value='Acajete'>	Acajete</MenuItem>
@@ -954,6 +957,7 @@ render () {
                   label='Municipios'
                   name='municipios'
                   onChange={this.onChange}
+                  value={this.state.estados}
                   required
                 >
                   <MenuItem value='Acuamanala de Miguel Hidalgo'>Acuamanala de Miguel Hidalgo</MenuItem>
@@ -1003,6 +1007,7 @@ render () {
                   label='Municipios'
                   name='municipios'
                   onChange={this.onChange}
+                  value={this.state.estados}
                   required
                 >
                   <MenuItem value='Abasolo'>Abasolo</MenuItem>
@@ -1048,6 +1053,7 @@ render () {
                 <Select
                   label='Municipios'
                   name='municipios'
+                  value={this.state.estados}
                   onChange={this.onChange}
                   required
                 >
@@ -1073,6 +1079,7 @@ render () {
                 <Select
                   label='Municipios'
                   name='municipios'
+                  value={this.state.estados}
                   onChange={this.onChange}
                   required
                 >
@@ -1123,6 +1130,7 @@ render () {
                 <Select
                   label='Municipios'
                   name='municipios'
+                  value={this.state.estados}
                   onChange={this.onChange}
                   required
                 >
@@ -1149,6 +1157,7 @@ render () {
                 <Select
                   label='Municipios'
                   name='municipios'
+                  value={this.state.estados}
                   onChange={this.onChange}
                   required
                 >
@@ -1199,6 +1208,7 @@ render () {
                 <Select
                   label='Municipios'
                   name='municipios'
+                  value={this.state.estados}
                   onChange={this.onChange}
                   required
                 >
@@ -1217,6 +1227,7 @@ render () {
               {this.state.estados === 'Querétaro' &&
                 <Select
                   label='Municipios'
+                  value={this.state.estados}
                   name='municipios'
                   onChange={this.onChange}
                   required
@@ -1244,6 +1255,7 @@ render () {
                 <Select
                   label='Municipios'
                   name='municipios'
+                  value={this.state.estados}
                   onChange={this.onChange}
                   required
                 >
@@ -1295,6 +1307,7 @@ render () {
                   label='Municipios'
                   name='municipios'
                   onChange={this.onChange}
+                  value={this.state.estados}
                   required
                 >
                   <MenuItem value='Abejones'>Abejones</MenuItem>
@@ -1343,6 +1356,7 @@ render () {
                 <Select
                   label='Municipios'
                   name='municipios'
+                  value={this.state.estados}
                   onChange={this.onChange}
                   required
                 >
@@ -1393,6 +1407,7 @@ render () {
                   label='Municipios'
                   name='municipios'
                   onChange={this.onChange}
+                  value={this.state.estados}
                   required
                 >
                   <MenuItem value='Acaponeta'>Acaponeta</MenuItem>
