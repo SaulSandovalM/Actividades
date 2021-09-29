@@ -91,7 +91,7 @@ export default class busqueda extends Component {
           <h1 className='h1-lm'>Busqueda</h1>
         </div>
           <div style={{ width: '95%', marginRight: '3.5%', marginLeft: '3.5%', paddingTop: '2%'  }}>
-            <MaterialTable
+            {/*}<MaterialTable
               columns = {cols}
               data = {tablas}
               title = "Actividades"
@@ -117,7 +117,7 @@ export default class busqueda extends Component {
               }}
 
 
-            />
+            />*/}
           </div>
 
       </div>

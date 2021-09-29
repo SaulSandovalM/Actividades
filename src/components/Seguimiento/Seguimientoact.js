@@ -83,7 +83,7 @@ export default class Historial extends Component {
               <h1> Actividades Con/Sin Seguimiento  + (Nombre de Usuario)</h1>
           </div>
           <div className = 'tabla-historial'>
-          <MaterialTable
+          {/*<MaterialTable
             columns = {cols}
             data = {tablas}
             title = "Seguimiento"
@@ -109,7 +109,7 @@ export default class Historial extends Component {
             }}
 
 
-          />
+          />*/}
 
 
           </div>

@@ -91,7 +91,7 @@ export default class Reportes extends Component {
 
 
         <div>
-          <MaterialTable
+          {/*<MaterialTable
           columns = {cols}
           data = {tablas}
           title = "Reportes de las Direcciones"
@@ -131,7 +131,7 @@ export default class Reportes extends Component {
             }
           }}
 
-          />
+          />*/}
         </div>
       </div>
 

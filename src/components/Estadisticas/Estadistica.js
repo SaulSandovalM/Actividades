@@ -225,6 +225,9 @@ export  default class  Estadistica extends Component {
                     ];
 
         const actividades  = this.state.actividades.map(actividades => actividades)
+        const nombre = { labels: [ 'Presencial']
+
+        }
 
         // var array = [
         //   { tipo: "Virtual"},
@@ -255,41 +258,40 @@ export  default class  Estadistica extends Component {
         actividades.map(item =>
         item.virpre === 'Virtual' ? arrayVirtual.push(item.virpre) : null
           )
-
         console.log(arrayVirtual.length)
 
 
         let arrayMixta = []
         actividades.map(item =>
-          item.mixta  === 'Mixta' ? arrayVirtual.push(item.mixta) : null
+          item.tipoActividad  === 'Mixta' ? arrayVirtual.push(item.mixta) : null
         )
         console.log(arrayMixta.length)
 
         let arrayPresencial = []
         actividades.map(item =>
-          item.presencial  === 'Presencial' ? arrayVirtual.push(item.presencial) : null
+          item.Presencial  === 'Presencial' ? arrayVirtual.push(item.presencial) : null
         )
         console.log(arrayMixta.length)
 
 
 
-        // let arrayVirtual = []
+        // let arrayVirtuall = []
         // array.map(item =>
         //   item.tipo === 'Virtual' ? arrayVirtual.push(item.tipo) : null
         // )
-        // console.log(arrayVirtual.length)
-
-        // let arrayPresencial = []
+        // console.log(arrayVirtuall.length)
+        //
+        // let arrayPresenciall = []
         // array.map(item =>
         //   item.tipo === 'Presencial' ? arrayPresencial.push(item.tipo) : null
         // )
-        // console.log(arrayPresencial.length)
-
-        // let arrayMixta = []
+        // console.log(arrayPresenciall.length)
+        //
+        // let arrayMixtal = []
         // array.map(item =>
         //   item.tipo === 'Mixta' ? arrayMixta.push(item.tipo) : null
         // )
-        // console.log(arrayMixta.length)
+        // console.log(arrayMixtal.length)
 
 
 
@@ -298,12 +300,13 @@ export  default class  Estadistica extends Component {
           <div>
             <h1>Estadisticas </h1>
           </div>
-          <div>
+          <div className='queso-fa'>
             <AnyChart
               type="pie"
-              data={[arrayVirtual.length, arrayPresencial.length, arrayMixta.length]}
-              title="Simple pie chart"
+              data={[arrayVirtual.length,  arrayPresencial.length, arrayMixta.length]}
+              title="Tipo de Actividad Virtual, Mixta y Presencial"
             />
+
           </div>
 
           <div>
@@ -343,7 +346,7 @@ export  default class  Estadistica extends Component {
             </div>*/}
 
 
-            <div className='est-totales'>
+            {/*<div className='est-totales'>
             <MaterialTable
             columns={sang}
             data = {tabla}
@@ -357,7 +360,7 @@ export  default class  Estadistica extends Component {
               filtering: true
             }}
             />
-            </div>
+            </div>*/}
 
             {/*<div className='est-totales'>
             <MaterialTable

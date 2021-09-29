@@ -107,7 +107,7 @@ export default class Showm extends Component {
 
 
         <div className='tabla-msjx'>
-                  <MaterialTable
+                  {/*<MaterialTable
                     columns={columnas}
                     data = {tabla}
                     title = "Mensajes"
@@ -154,7 +154,7 @@ export default class Showm extends Component {
 
 
 
-                  />
+                  />*/}
                 </div>
 
                 <div>
