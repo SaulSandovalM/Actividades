@@ -12,7 +12,6 @@ import Aregistradas from './components/aregistradas/Aregistradas'
 import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
 import Ainforme from './components/aregistradas/Ainforme'
-import Abusqueda from './components/abusqueda/Abusqueda'
 
 
 import Autorizacion from './components/autorizacion/Autorizacion'
@@ -148,14 +147,7 @@ function App (props) {
         component={Aactividad}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
-      />
-      <ProtectedRoute
-        exact
-        path='/BusquedaActividad'
-        component={Abusqueda}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      />
+      />  
       <ProtectedRoute
         exact
         path='/Sactividad/:id'
