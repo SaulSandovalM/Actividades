@@ -19,28 +19,28 @@ export default class Reportesniveldir extends Component {
     }
   }
 
-  onCollectionUpdate = (querySnapshot) => {
-    const actividades = []
-    querySnapshot.forEach((doc) => {
-      const { tipoA, lugar, fechai, estatus, municipios, horai, estados, area } = doc.data()
-      actividades.push({
-        key: doc.id,
-        doc,
-        tipoA,
-        lugar,
-        fechai,
-        estatus,
-        municipios,
-        estados,
-        horai,
-        area
-
-      })
-    })
-    this.setState({
-      actividades
-   })
-  }
+  // onCollectionUpdate = (querySnapshot) => {
+  //   const actividades = []
+  //   querySnapshot.forEach((doc) => {
+  //     const { tipoA, lugar, fechai, estatus, municipios, horai, estados, area } = doc.data()
+  //     actividades.push({
+  //       key: doc.id,
+  //       doc,
+  //       tipoA,
+  //       lugar,
+  //       fechai,
+  //       estatus,
+  //       municipios,
+  //       estados,
+  //       horai,
+  //       area
+  //
+  //     })
+  //   })
+  //   this.setState({
+  //     actividades
+  //  })
+  // }
 
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)

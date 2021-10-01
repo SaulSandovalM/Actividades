@@ -13,8 +13,6 @@ import Eactividad from './components/aregistradas/Eactividad'
 import Aactividad from './components/aactividad/Aactividad'
 import Ainforme from './components/aregistradas/Ainforme'
 
-
-import Autorizacion from './components/autorizacion/Autorizacion'
 import Arelevante from './components/documentos/Arelevante'
 import Agendasemanal from './components/documentos/Agendasemanal'
 
@@ -28,13 +26,10 @@ import Edactividad from './components/sactividad/Edactividad'
 import Informacionactividad from './components/vistas/Informacionactividad'
 
 /*Estadisticas*/
-import Estadisgeneral from './components/Estadisticas/Estadisgeneral'
-import Estadisticasint from './components/Estadisticas/Estadisticasint'
+
 import Calendario from './components/aregistradas/Calendario'
 import Estadistica from './components/Estadisticas/Estadistica'
 
-
-import estadisticap from './components/Estadisticas/estadisticap'
 
 /*Diana*/
 import Reportedireccionesd from './components/documentos/Reportedireccionesd'
@@ -147,7 +142,7 @@ function App (props) {
         component={Aactividad}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
-      />  
+      />
       <ProtectedRoute
         exact
         path='/Sactividad/:id'
@@ -166,13 +161,6 @@ function App (props) {
         exact
         path='/Reportesniveldir'
         component={Reportesniveldir}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      />
-      <ProtectedRoute
-        exact
-        path='/Autorizacion'
-        component={Autorizacion}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
@@ -226,20 +214,6 @@ function App (props) {
         isVerifying={isVerifying}
       />
 
-      <ProtectedRoute
-        exact
-        path='/Estadisgeneral'
-        component={Estadisgeneral}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      />
-      <ProtectedRoute
-        exact
-        path='/Estadisticasint'
-        component={Estadisticasint}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      />
 
       <ProtectedRoute
         exact
@@ -250,13 +224,6 @@ function App (props) {
       />
 
 
-      <ProtectedRoute
-        exact
-        path='/estadisticap'
-        component={estadisticap}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-      />
       <ProtectedRoute
         exact
         path='/Reportedireccionesd'

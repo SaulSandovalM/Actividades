@@ -37,40 +37,40 @@ export default class Informacionactividad extends Component {
       desc: ''
     }
   }
-  onCollectionUpdate = (querySnapshot) => {
-    const actividades = []
-    querySnapshot.forEach((doc) => {
-      const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, asunto, convocados, tipoA, estados, internaE, municipios, quien, desc,  actividad, duracion, lugar, responsable, descripcion,   } = doc.data()
-      actividades.push({
-        key: doc.id,
-        asunto,
-        convocados,
-        convoca,
-        fechai,
-        doc,
-        tipoActividad,
-        imparte,
-        fechaf,
-        tipoA,
-        estados,
-        internaE,
-        municipios,
-        quien,
-        lugar,
-        desc,
-        actividad,
-        duracion,
-        responsable,
-        objetivo,
-        descripcion,
-        dependencia,
-        horai
-      })
-    })
-    this.setState({
-      actividades
-   })
-  }
+  // onCollectionUpdate = (querySnapshot) => {
+  //   const actividades = []
+  //   querySnapshot.forEach((doc) => {
+  //     const { tipoActividad, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, asunto, convocados, tipoA, estados, internaE, municipios, quien, desc,  actividad, duracion, lugar, responsable, descripcion,   } = doc.data()
+  //     actividades.push({
+  //       key: doc.id,
+  //       asunto,
+  //       convocados,
+  //       convoca,
+  //       fechai,
+  //       doc,
+  //       tipoActividad,
+  //       imparte,
+  //       fechaf,
+  //       tipoA,
+  //       estados,
+  //       internaE,
+  //       municipios,
+  //       quien,
+  //       lugar,
+  //       desc,
+  //       actividad,
+  //       duracion,
+  //       responsable,
+  //       objetivo,
+  //       descripcion,
+  //       dependencia,
+  //       horai
+  //     })
+  //   })
+  //   this.setState({
+  //     actividades
+  //  })
+  // }
   componentDidMount () {
     const ref = firebase.firestore().collection('actividades').doc(this.props.match.params.id)
     ref.get().then((doc) => {

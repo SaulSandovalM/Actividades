@@ -6,6 +6,7 @@ import firebase from '../../Firebase'
 import { useParams } from 'react-router-dom'
 
 function loadServerRows(page, data) {
+  console.log(data)
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(data.rows.slice(page * 5, (page + 1) * 5));
@@ -19,6 +20,8 @@ export default function ServerPaginationGrid() {
     rowLength: 100,
     maxColumns: 6,
   });
+
+
 
   // const onCollectionUpdate = (querySnapshot) => {
   //     const actividades = []
@@ -40,7 +43,12 @@ export default function ServerPaginationGrid() {
   //       })
   //       console.log(actividades)
   //     })
+  //     setActividades(actividades)
   //   }
+
+    // const { data } = firebase.firestore().collection('actividades').onSnapshot(onCollectionUpdate)
+    //
+    // const citiesRef = collection(db, "actividades");
 
  const columnas = [
    {field: 'actividad', headerName: 'Nombre Actividad', width:250},
@@ -52,7 +60,6 @@ export default function ServerPaginationGrid() {
    {field: 'horai', headerName:'Hora', width:200},
 
   ]
-  //const tabl = this.state.actividades.map(actividades => actividades)
 
   const [page, setPage] = useState(0);
   const [rows, setRows] = useState([]);
@@ -81,7 +88,7 @@ export default function ServerPaginationGrid() {
   //   let active = true;
   //   (async () => {
   //     setLoading(true);
-  //     const newRows = await loadServerRows(page, data);
+  //     const newRows = await loadServerRows(page, response);
   //
   //     if (!active) {
   //       return;
@@ -90,20 +97,54 @@ export default function ServerPaginationGrid() {
   //     setRows(newRows);
   //     setLoading(false);
   //   })();
-
+  //
   //   return () => {
   //     active = false;
   //   };
   // }, [page, data]);
 
+
+
+  React.useEffect(() => {
+    const obtenerDatos = async () => {
+        const db = firebase.firestore()
+        try {
+            const data = await db.collection('actividades').get()
+            const arrayData = data.docs.map(doc => ({id: doc.id, ...doc.data()}))
+            console.log(arrayData)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    obtenerDatos()
+
+   let active = true;
+
+   (async () => {
+     setLoading(true);
+     const newRows = await loadServerRows(page, actividades);
+
+     if (!active) {
+       return;
+     }
+
+     setRows(newRows);
+     setLoading(false);
+   })();
+
+   return () => {
+     active = false;
+   };
+ }, [page, data]);
+
   return (
     <div style={{paddingLeft:'13.5%'}}>
     <h1>Busqueda</h1>
 
-    {/*<div style={{ height: 600, width: '100%', paddingRight:'10px', paddingTop:'10%' }}>
+    <div style={{ height: 600, width: '100%', paddingRight:'10px', paddingTop:'10%' }}>
 
       <DataGrid
-        rows={actividades}
+        rows={rows}
         columns={columnas}
         pagination
         pageSize={10}
@@ -114,7 +155,7 @@ export default function ServerPaginationGrid() {
         loading={loading}
       />
 
-    </div>*/}
+    </div>
     </div>
   );
 }

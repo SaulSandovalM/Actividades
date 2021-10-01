@@ -68,161 +68,161 @@ export  default class  Estadistica extends Component {
   // }
   render () {
     console.log(this.state.actividades.length)
-    const columnas = [
-          {
-            title: 'ACTIVIDADES TOTALES',
-            field: '1025'
-          },
-          {
-            title: 'Realizadas Por PGJEH',
-            field: 'fechai'
-          },
-          {
-            title: 'OTRAS INSTITUCIONES',
-            field: 'fechai',
-          }
-        ];
+    // const columnas = [
+    //       {
+    //         title: 'ACTIVIDADES TOTALES',
+    //         field: '1025'
+    //       },
+    //       {
+    //         title: 'Realizadas Por PGJEH',
+    //         field: 'fechai'
+    //       },
+    //       {
+    //         title: 'OTRAS INSTITUCIONES',
+    //         field: 'fechai',
+    //       }
+    //     ];
 
         const tabla = this.state.actividades.map(actividades => actividades)
 
-        const sang = [
-          {
-            title: 'NOM ACTIVIDAD',
-            field: 'actividad',
-          },
-              {
-                title: 'VIRTUAL PRESENCIAL',
-                field: 'virpre'
-              },
-              {
-                title: 'DEPENDENCIA',
-                field: 'dependencia'
-              },
-
-              {
-                title: 'DIRECCION',
-                field: 'convoca'
-              },
-              {
-                title: 'T. ACTIVIDAD',
-                field: 'tipoActividad',
-
-              },
-              {
-                title: 'EDO',
-                field: 'estados',
-              },
-              {
-                title: 'MUNICIPIO',
-                field: 'municipios',
-              },
-              {
-                title: 'LUGAR',
-                field: 'lugar',
-              },
-              {
-                title: 'FECHA',
-                field: 'fechai',
-              },
-
-              {
-                title: 'HORA',
-                field: 'horai',
-              }
-
-            ];
-
-            const sangs = [
-              {
-                title: 'NOMBRE DE LA ACTIVIDAD',
-                field: 'actividad',
-              },
-                  {
-                    title: 'VIRTUAL/PRESENCIAL',
-                    field: 'actividad'
-                  },
-                  {
-                    title: 'INSTITUCION FORANEA',
-                    field: 'fechai'
-                  },
-                  {
-                    title: 'T. ACTIVIDAD',
-                    field: 'fechai',
-
-                  },
-                  {
-                    title: 'EDO',
-                    field: 'fechai',
-                  },
-                  {
-                    title: 'MUNICIPIO',
-                    field: 'fechai',
-                  },
-                  {
-                    title: 'LUGAR',
-                    field: 'fechai',
-                  },
-                  {
-                    title: 'FECHA',
-                    field: 'fechai',
-                  },
-                  {
-                    title: 'HORA',
-                    field: 'fechai',
-                  }
-
-
-                ];
-
-                const sangso = [
-                      {
-                        title: 'NOMBRE DE LA ACTIVIDAD',
-                        field: 'actividad',
-                      },
-                      {
-                        title: 'VIRTUAL/PRESENCIAL',
-                        field: 'actividad'
-                      },
-                      {
-                        title: 'INSTITUCION FORANEA',
-                        field: 'fechai'
-                      },
-                      {
-                        title: 'DIRECCION INVITADA',
-                        field: 'dInvitada'
-                      },
-                      {
-                        title: 'T. ACTIVIDAD',
-                        field: 'fechai',
-
-                      },
-                      {
-                        title: 'EDO',
-                        field: 'fechai',
-                      },
-                      {
-                        title: 'MUNICIPIO',
-                        field: 'fechai',
-                      },
-                      {
-                        title: 'LUGAR',
-                        field: 'fechai',
-                      },
-                      {
-                        title: 'FECHA',
-                        field: 'fechai',
-                      },
-                      {
-                        title: 'FECHA ',
-                        field: 'fechai',
-                      },
-                      {
-                        title: 'HORA',
-                        field: 'fechai',
-                      }
-
-
-                    ];
+        // const sang = [
+        //   {
+        //     title: 'NOM ACTIVIDAD',
+        //     field: 'actividad',
+        //   },
+        //       {
+        //         title: 'VIRTUAL PRESENCIAL',
+        //         field: 'virpre'
+        //       },
+        //       {
+        //         title: 'DEPENDENCIA',
+        //         field: 'dependencia'
+        //       },
+        //
+        //       {
+        //         title: 'DIRECCION',
+        //         field: 'convoca'
+        //       },
+        //       {
+        //         title: 'T. ACTIVIDAD',
+        //         field: 'tipoActividad',
+        //
+        //       },
+        //       {
+        //         title: 'EDO',
+        //         field: 'estados',
+        //       },
+        //       {
+        //         title: 'MUNICIPIO',
+        //         field: 'municipios',
+        //       },
+        //       {
+        //         title: 'LUGAR',
+        //         field: 'lugar',
+        //       },
+        //       {
+        //         title: 'FECHA',
+        //         field: 'fechai',
+        //       },
+        //
+        //       {
+        //         title: 'HORA',
+        //         field: 'horai',
+        //       }
+        //
+        //     ];
+        //
+        //     const sangs = [
+        //       {
+        //         title: 'NOMBRE DE LA ACTIVIDAD',
+        //         field: 'actividad',
+        //       },
+        //           {
+        //             title: 'VIRTUAL/PRESENCIAL',
+        //             field: 'actividad'
+        //           },
+        //           {
+        //             title: 'INSTITUCION FORANEA',
+        //             field: 'fechai'
+        //           },
+        //           {
+        //             title: 'T. ACTIVIDAD',
+        //             field: 'fechai',
+        //
+        //           },
+        //           {
+        //             title: 'EDO',
+        //             field: 'fechai',
+        //           },
+        //           {
+        //             title: 'MUNICIPIO',
+        //             field: 'fechai',
+        //           },
+        //           {
+        //             title: 'LUGAR',
+        //             field: 'fechai',
+        //           },
+        //           {
+        //             title: 'FECHA',
+        //             field: 'fechai',
+        //           },
+        //           {
+        //             title: 'HORA',
+        //             field: 'fechai',
+        //           }
+        //
+        //
+        //         ];
+        //
+        //         const sangso = [
+        //               {
+        //                 title: 'NOMBRE DE LA ACTIVIDAD',
+        //                 field: 'actividad',
+        //               },
+        //               {
+        //                 title: 'VIRTUAL/PRESENCIAL',
+        //                 field: 'actividad'
+        //               },
+        //               {
+        //                 title: 'INSTITUCION FORANEA',
+        //                 field: 'fechai'
+        //               },
+        //               {
+        //                 title: 'DIRECCION INVITADA',
+        //                 field: 'dInvitada'
+        //               },
+        //               {
+        //                 title: 'T. ACTIVIDAD',
+        //                 field: 'fechai',
+        //
+        //               },
+        //               {
+        //                 title: 'EDO',
+        //                 field: 'fechai',
+        //               },
+        //               {
+        //                 title: 'MUNICIPIO',
+        //                 field: 'fechai',
+        //               },
+        //               {
+        //                 title: 'LUGAR',
+        //                 field: 'fechai',
+        //               },
+        //               {
+        //                 title: 'FECHA',
+        //                 field: 'fechai',
+        //               },
+        //               {
+        //                 title: 'FECHA ',
+        //                 field: 'fechai',
+        //               },
+        //               {
+        //                 title: 'HORA',
+        //                 field: 'fechai',
+        //               }
+        //
+        //
+        //             ];
 
         const actividades  = this.state.actividades.map(actividades => actividades)
         const nombre = { labels: [ 'Presencial']

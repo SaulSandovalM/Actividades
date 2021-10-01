@@ -95,18 +95,7 @@ class Nav extends Component {
             </Link>
           </div>
 
-          {/* <div className='navbar-left'>
-            <Link to='/ActividadInforme' className='deco'>
-              <div className='hover-center'>
-                <div className='row-h'>
-                  <span className='material-icons icon-s'>
-                    event_available
-                  </span>
-                  <p className='nav-t'>Informes</p>
-                </div>
-              </div>
-            </Link>
-          </div> */}
+
 
 
 
@@ -154,30 +143,8 @@ class Nav extends Component {
             </Link>
           </div>
 
-          {/* <div className='navbar-left'>
-            <Link to='/Autorizacion' className='deco'>
-              <div className='hover-center'>
-                <div className='row-h'>
-                  <span className='material-icons icon-s'>
-                    description
-                  </span>
-                  <p className='nav-t'>Autorización</p>
-                </div>
-              </div>
-            </Link>
-          </div> */}
-          {/* <div className='navbar-left'>
-            <Link to='/Agendapdf' className='deco'>
-              <div className='hover-center'>
-                <div className='row-h'>
-                  <span className='material-icons icon-s'>
-                    description
-                  </span>
-                  <p className='nav-t'>Resumen Semanal</p>
-                </div>
-              </div>
-            </Link>
-          </div> */}
+
+
 
           {/*<div className='navbar-left'>
             <Link to='/Agendasemanal' className='deco'>
