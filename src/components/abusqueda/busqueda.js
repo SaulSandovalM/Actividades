@@ -91,10 +91,10 @@ export default function ServerPaginationGrid() {
   //     setLoading(false);
   //   })();
 
-    return () => {
-      active = false;
-    };
-  }, [page, data]);
+  //   return () => {
+  //     active = false;
+  //   };
+  // }, [page, data]);
 
   return (
     <div style={{paddingLeft:'13.5%'}}>
