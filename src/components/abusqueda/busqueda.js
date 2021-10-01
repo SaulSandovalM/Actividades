@@ -20,27 +20,27 @@ export default function ServerPaginationGrid() {
     maxColumns: 6,
   });
 
-  const onCollectionUpdate = (querySnapshot) => {
-      const actividades = []
-      querySnapshot.forEach((doc) => {
-        const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, dependencia } = doc.data()
-        actividades.push({
-          key: doc.id,
-          doc,
-          actividad,
-          convoca,
-          lugar,
-          fechai,
-          horai,
-          estados,
-          estatus,
-          responsable,
-          fecha,
-          dependencia
-        })
-        console.log(actividades)
-      })
-    }
+  // const onCollectionUpdate = (querySnapshot) => {
+  //     const actividades = []
+  //     querySnapshot.forEach((doc) => {
+  //       const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, dependencia } = doc.data()
+  //       actividades.push({
+  //         key: doc.id,
+  //         doc,
+  //         actividad,
+  //         convoca,
+  //         lugar,
+  //         fechai,
+  //         horai,
+  //         estados,
+  //         estatus,
+  //         responsable,
+  //         fecha,
+  //         dependencia
+  //       })
+  //       console.log(actividades)
+  //     })
+  //   }
 
  const columnas = [
    {field: 'actividad', headerName: 'Nombre Actividad', width:250},
@@ -61,35 +61,35 @@ export default function ServerPaginationGrid() {
   const [actividades, setActividades] = useState([])
   let { slug } = useParams();
 
-  React.useEffect(() => {
-
-    const fetchData = async() => {
-      try {
-        const response = await firebase.firestore().collection('actividades').onSnapshot(onCollectionUpdate)
-        console.log('response', response);
-        let data = { title: 'not found' };
-        if (response.exists) {
-          data = response.data();
-        }
-        setCurrentPost(data);
-          console.log(data)
-      } catch(err) {
-        console.error(err);
-      }
-    };
-    fetchData();
-    let active = true;
-    (async () => {
-      setLoading(true);
-      const newRows = await loadServerRows(page, data);
-
-      if (!active) {
-        return;
-      }
-
-      setRows(newRows);
-      setLoading(false);
-    })();
+  // React.useEffect(() => {
+  //
+  //   const fetchData = async() => {
+  //     try {
+  //       const response = await firebase.firestore().collection('actividades').onSnapshot(onCollectionUpdate)
+  //       console.log('response', response);
+  //       let data = { title: 'not found' };
+  //       if (response.exists) {
+  //         data = response.data();
+  //       }
+  //       setCurrentPost(data);
+  //         console.log(data)
+  //     } catch(err) {
+  //       console.error(err);
+  //     }
+  //   };
+  //   fetchData();
+  //   let active = true;
+  //   (async () => {
+  //     setLoading(true);
+  //     const newRows = await loadServerRows(page, data);
+  //
+  //     if (!active) {
+  //       return;
+  //     }
+  //
+  //     setRows(newRows);
+  //     setLoading(false);
+  //   })();
 
     return () => {
       active = false;
