@@ -43,13 +43,13 @@ export default function ServerPaginationGrid() {
     }
 
  const columnas = [
-   {field: 'Actividad', headerName: 'Nombre Actividad', width:250},
-   {field: 'Tipo', headerName:'Tipo de actividad', width:250},
-   {field: 'Sub Tipo ', headerName:'Sub Actividad', width:250},
-   {field: 'direccion', headerName:'Direccion', width:250},
-   {field: 'Lugar', headerName:'Lugar', width:250},
+   {field: 'actividad', headerName: 'Nombre Actividad', width:250},
+   {field: 'estados', headerName:'Tipo de actividad', width:250},
+   {field: 'convoca', headerName:'Sub Actividad', width:250},
+   {field: 'responsable', headerName:'Direccion', width:250},
+   {field: 'lugar', headerName:'Lugar', width:250},
    {field: 'fechai', headerName:'Fecha', width:200},
-   {field: 'Hora', headerName:'Hora', width:200},
+   {field: 'horai', headerName:'Hora', width:200},
 
   ]
   //const tabl = this.state.actividades.map(actividades => actividades)
@@ -100,7 +100,7 @@ export default function ServerPaginationGrid() {
     <div style={{paddingLeft:'13.5%'}}>
     <h1>Busqueda</h1>
 
-    <div style={{ height: 600, width: '100%', paddingRight:'10px', paddingTop:'10%' }}>
+    {/*<div style={{ height: 600, width: '100%', paddingRight:'10px', paddingTop:'10%' }}>
 
       <DataGrid
         rows={actividades}
@@ -114,7 +114,7 @@ export default function ServerPaginationGrid() {
         loading={loading}
       />
 
-    </div>
+    </div>*/}
     </div>
   );
 }
