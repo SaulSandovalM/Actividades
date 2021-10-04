@@ -22,26 +22,26 @@ export default class Agendasemanal extends Component {
   }
 
   onCollectionUpdate = (querySnapshot) => {
-    const actividades = []
-    querySnapshot.forEach((doc) => {
-      const {fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado } = doc.data()
-      actividades.push({
-        key: doc.id,
-        doc,
-        fechai,
-        fechaf,
-        convoca,
-        horai,
-        objetivo,
-        resposable,
-        imagen,
-        lugar,
-        estado
-      })
-    })
-    this.setState({
-      actividades
-   })
+  //   const actividades = []
+  //   querySnapshot.forEach((doc) => {
+  //     const {fechai, resposable, fechaf, convoca, horai, objetivo, imagen, lugar, estado } = doc.data()
+  //     actividades.push({
+  //       key: doc.id,
+  //       doc,
+  //       fechai,
+  //       fechaf,
+  //       convoca,
+  //       horai,
+  //       objetivo,
+  //       resposable,
+  //       imagen,
+  //       lugar,
+  //       estado
+  //     })
+  //   })
+  //   this.setState({
+  //     actividades
+  //  })
   }
 
   componentDidMount() {
@@ -92,7 +92,7 @@ export default class Agendasemanal extends Component {
                       </p>
                       {this.state.actividades.map(actividades =>
                       <p className='txt-fe'>
-                      
+
                       </p>
                     )}
                     </div>

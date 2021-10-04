@@ -18,7 +18,7 @@ export default class Reporteniveldir extends Component {
     }
   }
 
-// onCollectionUpdate = (querySnapshot) => {
+onCollectionUpdate = (querySnapshot) => {
 //     const actividades = []
 //     var numfila = 0
 //     querySnapshot.forEach((doc) => {
@@ -43,7 +43,8 @@ export default class Reporteniveldir extends Component {
 //     this.setState({
 //       actividades
 //    })
-//  }}
+  }
+//}
 
 
 

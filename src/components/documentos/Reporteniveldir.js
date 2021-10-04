@@ -14,11 +14,10 @@ export default class Reporteniveldir extends Component {
     this.unsubscribe = null
     this.state = {
       actividades: []
-
     }
   }
 
-  // onCollectionUpdate = (querySnapshot) => {
+  onCollectionUpdate = (querySnapshot) => {
   //   const actividades = []
   //   var numfila = 0
   //   querySnapshot.forEach((doc) => {
@@ -43,7 +42,7 @@ export default class Reporteniveldir extends Component {
   //   this.setState({
   //     actividades
   //  })
-  // }
+  }
 
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
