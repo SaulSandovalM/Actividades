@@ -6,136 +6,61 @@ import firebase from '../../Firebase'
 import { useParams } from 'react-router-dom'
 
 function loadServerRows(page, data) {
-  console.log(data)
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(data.rows.slice(page * 5, (page + 1) * 5));
-    }, Math.random() * 500 + 100); // simulate network latency
+      resolve(data.slice(page * 5, (page + 1) * 5))
+    });
   });
 }
 
 export default function ServerPaginationGrid() {
-  const { data } = useDemoData({
-    dataSet: 'Commodity',
-    rowLength: 100,
-    maxColumns: 6,
-  });
-
-
-
-  // const onCollectionUpdate = (querySnapshot) => {
-  //     const actividades = []
-  //     querySnapshot.forEach((doc) => {
-  //       const { actividad, convoca, lugar, fechai, horai, estados, estatus, responsable, fecha, dependencia } = doc.data()
-  //       actividades.push({
-  //         key: doc.id,
-  //         doc,
-  //         actividad,
-  //         convoca,
-  //         lugar,
-  //         fechai,
-  //         horai,
-  //         estados,
-  //         estatus,
-  //         responsable,
-  //         fecha,
-  //         dependencia
-  //       })
-  //       console.log(actividades)
-  //     })
-  //     setActividades(actividades)
-  //   }
-
-    // const { data } = firebase.firestore().collection('actividades').onSnapshot(onCollectionUpdate)
-    //
-    // const citiesRef = collection(db, "actividades");
+  let data = []
 
  const columnas = [
-   {field: 'actividad', headerName: 'Nombre Actividad', width:250},
-   {field: 'estados', headerName:'Tipo de actividad', width:250},
-   {field: 'convoca', headerName:'Sub Actividad', width:250},
-   {field: 'responsable', headerName:'Direccion', width:250},
-   {field: 'lugar', headerName:'Lugar', width:250},
-   {field: 'fechai', headerName:'Fecha', width:200},
-   {field: 'horai', headerName:'Hora', width:200},
-
+   { field: 'actividad', headerName: 'Nombre Actividad', width: 250 },
+   { field: 'estados', headerName: 'Tipo de actividad', width: 250 },
+   { field: 'convoca', headerName: 'Sub Actividad', width: 250 },
+   { field: 'responsable', headerName: 'Direccion', width: 250 },
+   { field: 'lugar', headerName: 'Lugar', width: 250 },
+   { field: 'fechai', headerName: 'Fecha', width: 200 },
+   { field: 'horai', headerName: 'Hora', width: 200 },
   ]
 
   const [page, setPage] = useState(0);
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPost, setCurrentPost] = useState({});
-  const [actividades, setActividades] = useState([])
-  let { slug } = useParams();
 
-  // React.useEffect(() => {
-  //
-  //   const fetchData = async() => {
-  //     try {
-  //       const response = await firebase.firestore().collection('actividades').onSnapshot(onCollectionUpdate)
-  //       console.log('response', response);
-  //       let data = { title: 'not found' };
-  //       if (response.exists) {
-  //         data = response.data();
-  //       }
-  //       setCurrentPost(data);
-  //         console.log(data)
-  //     } catch(err) {
-  //       console.error(err);
-  //     }
-  //   };
-  //   fetchData();
-  //   let active = true;
-  //   (async () => {
-  //     setLoading(true);
-  //     const newRows = await loadServerRows(page, response);
-  //
-  //     if (!active) {
-  //       return;
-  //     }
-  //
-  //     setRows(newRows);
-  //     setLoading(false);
-  //   })();
-  //
-  //   return () => {
-  //     active = false;
-  //   };
-  // }, [page, data]);
-
-
-
-  React.useEffect(() => {
-    const obtenerDatos = async () => {
+  useEffect(() => {
+    (async () => {
         const db = firebase.firestore()
-        try {
-            const data = await db.collection('actividades').get()
-            const arrayData = data.docs.map(doc => ({id: doc.id, ...doc.data()}))
-            console.log(arrayData)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    obtenerDatos()
+        // try {
+        //     data = await db.collection('actividades').get()
+        //     const arrayData = data.docs.map(doc => ({id: doc.id, ...doc.data()}))
+        //     console.log(arrayData)
+        //
+        //   setLoading(true);
+        //   console.log(data)
+        //   const newRows = await loadServerRows(page, arrayData);
+        //
+        //   if (!active) {
+        //     return;
+        //   }
+        //
+        //   setRows(newRows);
+        //   setLoading(false);
+        //
+        // } catch (error) {
+        //     console.log(error)
+        // }
+    })()
 
    let active = true;
-
-   (async () => {
-     setLoading(true);
-     const newRows = await loadServerRows(page, actividades);
-
-     if (!active) {
-       return;
-     }
-
-     setRows(newRows);
-     setLoading(false);
-   })();
 
    return () => {
      active = false;
    };
- }, [page, data]);
+ },[page]);
 
   return (
     <div style={{paddingLeft:'13.5%'}}>
@@ -147,9 +72,8 @@ export default function ServerPaginationGrid() {
         rows={rows}
         columns={columnas}
         pagination
-        pageSize={10}
-        rowsPerPageOptions={[10]}
-        rowCount={100}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
         paginationMode="server"
         onPageChange={(newPage) => setPage(newPage)}
         loading={loading}
