@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom'
 function loadServerRows(page, data) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(data.slice(page * 5, (page + 1) * 5))
+      resolve(data.slice(page * 10, (page + 1) * 10))
     });
   });
 }
@@ -29,38 +29,42 @@ export default function ServerPaginationGrid() {
   const [page, setPage] = useState(0);
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentPost, setCurrentPost] = useState({});
+  const [actividades, setActividades] = useState([])
 
   useEffect(() => {
     (async () => {
         const db = firebase.firestore()
-        // try {
-        //     data = await db.collection('actividades').get()
-        //     const arrayData = data.docs.map(doc => ({id: doc.id, ...doc.data()}))
-        //     console.log(arrayData)
-        //
-        //   setLoading(true);
-        //   console.log(data)
-        //   const newRows = await loadServerRows(page, arrayData);
-        //
-        //   if (!active) {
-        //     return;
-        //   }
-        //
-        //   setRows(newRows);
-        //   setLoading(false);
-        //
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        try {
+          data = await db.collection('actividades').get()
+          const arrayData = data.docs.map(doc => ({id: doc.id, ...doc.data()}))
+          console.log(arrayData)
+          setActividades(arrayData)
+        } catch (error) {
+          console.log(error)
+        }
+    })()
+  },[]);
+
+  useEffect(() => {
+    let active = true;
+
+    (async () => {
+      setLoading(true)
+      console.log(page)
+      const newRows = await loadServerRows(page, actividades)
+
+      if (!active) {
+        return
+      }
+
+      setRows(newRows)
+      setLoading(false)
     })()
 
-   let active = true;
-
-   return () => {
-     active = false;
-   };
- },[page]);
+    return () => {
+      active = false;
+    }
+  }, [page, actividades])
 
   return (
     <div style={{paddingLeft:'13.5%'}}>
@@ -72,11 +76,13 @@ export default function ServerPaginationGrid() {
         rows={rows}
         columns={columnas}
         pagination
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        pageSize={10}
+        rowsPerPageOptions={[10]}
         paginationMode="server"
+        rowCount={actividades.length}
         onPageChange={(newPage) => setPage(newPage)}
         loading={loading}
+        autoHeight 
       />
 
     </div>
