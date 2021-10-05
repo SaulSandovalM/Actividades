@@ -43,7 +43,7 @@ import Agenda from './components/aregistradas/Agenda'
 
 
 
- import busqueda from './components/abusqueda/busqueda'
+ //import busqueda from './components/abusqueda/busqueda'
 
  /*Borrador de Actividades */
  import bactividades from './components/bactividades/bactividades'
@@ -216,13 +216,13 @@ function App (props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-      <ProtectedRoute
+      {/*<ProtectedRoute
         exact
         path='/busqueda'
         component={busqueda}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
-      />
+      />*/}
 
       <ProtectedRoute
         exact
