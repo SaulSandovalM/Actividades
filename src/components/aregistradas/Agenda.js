@@ -1,6 +1,7 @@
 import React,  {Component} from  'react'
 import './Aregistradas.css'
 import firebase from '../../Firebase'
+import TextField from '@material-ui/core/TextField'
 import Paper from '@material-ui/core/Paper';
 import { ViewState } from '@devexpress/dx-react-scheduler';
 //import {Injet, SchuduleComponent, Day, Week, Month, Agenda, WorkWeek, } from  '@syncfusion/ej2-react-schedule'
@@ -13,6 +14,9 @@ import {Scheduler,
         Title,} from '@devexpress/dx-react-scheduler-material-ui';
 
 import { appointments } from './month-appointments';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+
 
 
 export default class Demo extends React.PureComponent {
@@ -23,19 +27,24 @@ export default class Demo extends React.PureComponent {
       data: appointments,
     };
   }
-
+  handleBack() {
+    this.props.history.push('/AgregarActividad');
+  }
   render() {
 
     const { data } = this.state;
 
     return (
       <div className= 'agenda-fader'>
-        <div>
-          <h1>Agenda</h1>
+        <div className='let-cal'>
+          <h1>Calendario de Actividades</h1>
         </div>
-        <div>
-          Area de botones
-           Agregar actividades
+        <div className='btn-age'>
+           <Box sx={{ '& button': { m: 1 } }}>
+            <Button variant="outlined" size="large" onClick={this.handleBack.bind(this)} >
+              Agregar Actividad
+            </Button>
+           </Box>
         </div>
 
 
@@ -43,7 +52,7 @@ export default class Demo extends React.PureComponent {
         {/*<SchuduleComponent>
           <Injet services={[Day, Week, WorkWeek, Month, Agenda]}/>
 
-        </SchuduleComponent>*/} 
+        </SchuduleComponent>*/}
           <Paper>
 
         <Scheduler

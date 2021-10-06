@@ -245,7 +245,17 @@ margin:0;
 .calendario-age{
   padding-top: 5%;
 }
+.let-cal{
+  display: flex;
+  justify-content: center;
+  padding-top:2%;
+  padding-bottom:2%;
+}
+.btn-age{
+display: flex;
+justify-content:end;
 
+}
 
 
 
