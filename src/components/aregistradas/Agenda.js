@@ -3,6 +3,7 @@ import './Aregistradas.css'
 import firebase from '../../Firebase'
 import Paper from '@material-ui/core/Paper';
 import { ViewState } from '@devexpress/dx-react-scheduler';
+//import {Injet, SchuduleComponent, Day, Week, Month, Agenda, WorkWeek, } from  '@syncfusion/ej2-react-schedule'
 import {Scheduler,
         MonthView,
         Toolbar,
@@ -39,7 +40,12 @@ export default class Demo extends React.PureComponent {
 
 
         <div className='calendario-age'>
+        {/*<SchuduleComponent>
+          <Injet services={[Day, Week, WorkWeek, Month, Agenda]}/>
+
+        </SchuduleComponent>*/} 
           <Paper>
+
         <Scheduler
           data={data}
           locale="Es"

@@ -3,16 +3,17 @@
   flex-direction: column;
   height: 100%;
 	justify-content: space-between;
-	width: 100%;
+	width: 90%;
+
 }
 .navbar-navigation {
 	height: 50px;
-	width: 100%;
+	width: 88%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-bottom: 50px;
-  margin-top: 50px;
+	margin-bottom: 70px;
+  margin-top: 80px;
 }
 .logo {
   display: flex;
@@ -23,10 +24,10 @@
   height: 100px;
 }
 .logoimg-nav {
-  width:90%;
+  width:200%;
+  display: flex;
   padding-top: 12%;
   padding-bottom:10%;
-
 }
 .navbar-left {
 	height: 100%;
@@ -58,24 +59,20 @@
   justify-content: center;
 }
 .icon-s {
-	font-size: 22px;
-	margin: 2px;
-	margin-right: 20px;
-	margin-left: 20px;
+	font-size: 20px;
+	margin: 1px;
+	margin-right: 10px;
+	margin-left: 0px;
 }
 .nav-t {
 	color: #FFF;
   display: flex;
-  font-size: 18px;
-	margin: 3px;
+  font-size: 12px;
+	margin: 1px;
 }
 .position-border {
     display: flex;
     justify-content: center;
 }
-.border-nav{
-  border-top: 2px solid white;
-  height: 5px;
-
-
+.navar-d{
 }

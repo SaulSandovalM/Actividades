@@ -7,12 +7,6 @@ import './Nav.css'
 import firebase from '../../../Firebase'
 import Typography from '@material-ui/core/Typography'
 
-
-
-
-
-
-
 class Nav extends Component {
   constructor (props) {
     super(props)
@@ -44,12 +38,9 @@ class Nav extends Component {
     var user = firebase.auth().currentUser
     var email
 
-
-
-
     return (
       <div className='nav-col'>
-        <div>
+        <div className='navar-d'>
           <div className='navbar-navigation'>
             <Link to='/' className='logo'>
               <img className='logoimg-nav' src={centenariopng} alt='' />
@@ -68,7 +59,7 @@ class Nav extends Component {
               </div>
             </Link>
           </div>
-        }
+
           <div className='navbar-left'>
             <Link to='/ActividadesRegistradas' className='deco'>
               <div className='hover-center'>
@@ -184,21 +175,22 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-          </div>*/
-
+          </div>
 
           <div className='navbar-left'>
             <Link to='/Estadistica' className='deco'>
               <div className='hover-center'>
                 <div className='row-h'>
                   <span className='material-icons icon-s'>
-                    show_chart
+                    description
                   </span>
                   <p className='nav-t'>Estadistica</p>
                 </div>
               </div>
             </Link>
           </div>
+
+
 
 
           {/*<div className='navbar-left'>
