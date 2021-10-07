@@ -243,7 +243,7 @@ margin:0;
   width: 100%
 }
 .calendario-age{
-  padding-top: 5%;
+  padding-top: 1%;
 }
 .let-cal{
   display: flex;
@@ -254,6 +254,9 @@ margin:0;
 .btn-age{
 display: flex;
 justify-content:end;
+padding-right:1%;
+}
+.btn-ag {
 
 }
 

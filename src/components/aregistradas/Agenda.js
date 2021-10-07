@@ -1,5 +1,6 @@
 import React,  {Component} from  'react'
 import './Aregistradas.css'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import firebase from '../../Firebase'
 import TextField from '@material-ui/core/TextField'
 import Paper from '@material-ui/core/Paper';
@@ -12,27 +13,59 @@ import {Scheduler,
         Appointments,
         TodayButton,
         Title,} from '@devexpress/dx-react-scheduler-material-ui';
-
-import { appointments } from './month-appointments';
+//botones
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 
 
 export default class Demo extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
+  constructor (props) {
+    super(props)
+    this.ref = firebase.firestore().collection('actividades').orderBy('horai', 'asc')
+    this.unsubscribe = null
     this.state = {
-      data: appointments,
-    };
+      actividades: [],
+      abierto: false
+    }
+  }
+
+
+  onCollectionUpdate = (querySnapshot) => {
+    const actividades = []
+    querySnapshot.forEach((doc) => {
+      const { tipoActividad, fechai  } = doc.data()
+      actividades.push({
+        key: doc.id,
+        doc,
+        tipoActividad,
+        fechai,
+      })
+    })
+    this.setState({
+      actividades
+   })
   }
   handleBack() {
     this.props.history.push('/AgregarActividad');
   }
   render() {
 
-    const { data } = this.state;
+    const { data } = this.state.actividades.map(actividades => actividades)
+
+
+
+    const array = [{title: '', date: ''}]
+       this.state.actividades.map(item => {
+      array.push({title: item.tipoActividad, date: item.fechai})
+      })
+      var ara = [{
+        title: 'Website Re-Design Plan',
+        startDate: new Date(2021, 9, 7, 9, 30),
+        endDate: new Date(2021, 9, 7, 11, 30),
+      },]
+      console.log(ara)
+
 
     return (
       <div className= 'agenda-fader'>
@@ -47,22 +80,14 @@ export default class Demo extends React.PureComponent {
            </Box>
         </div>
 
-
         <div className='calendario-age'>
-        {/*<SchuduleComponent>
-          <Injet services={[Day, Week, WorkWeek, Month, Agenda]}/>
-
-        </SchuduleComponent>*/}
           <Paper>
-
-        <Scheduler
-          data={data}
-          locale="Es"
-
-        >
+            <Scheduler
+              data={ara}
+              locale="Es"
+          >
           <ViewState
-            defaultCurrentDate="2021-10-05"
-
+            defaultCurrentDate="2021-10-07"
           />
           <MonthView />
           <Toolbar />
@@ -70,8 +95,6 @@ export default class Demo extends React.PureComponent {
           <TodayButton />
           <Appointments />
           </Scheduler>
-
-
           </Paper>
 
         </div>

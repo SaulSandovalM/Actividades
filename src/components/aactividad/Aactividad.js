@@ -216,7 +216,7 @@ export default class Aactividad extends Component {
 
     return (
       <div className='aa-conta'>
-        {/*<div>
+        <div>
           <div className='divtop-mg' />
           <div className='form-content-ac'>
             <form className='mensajesg-container2' onSubmit={this.onSubmit}>
