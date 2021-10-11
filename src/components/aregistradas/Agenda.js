@@ -36,6 +36,7 @@ export default class Demo extends React.PureComponent {
       abierto: false,
       fechai: '',
       tipoActividad: '',
+      actividad:'',
 
     }
   }
@@ -44,12 +45,13 @@ export default class Demo extends React.PureComponent {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad, fechai  } = doc.data()
+      const { tipoActividad, fechai, actividad  } = doc.data()
       actividades.push({
         key: doc.id,
         doc,
         tipoActividad,
         fechai,
+        actividad,
       })
     })
     this.setState({
@@ -105,13 +107,13 @@ export default class Demo extends React.PureComponent {
     this.props.history.push('/AgregarActividad');
   }
   render() {
-    var array = [{title: '', date: ''}]
+    var array = [{title: '', subt:'',  date: ''}]
 
     const { data, resources } = this.state;
 
-    var array = [{title: '', date: ''}]
+    var array = [{title: '', subt:'',   date: ''}]
     this.state.actividades.map(item => {
-    array.push({title: item.tipoActividad, date: item.fechai})
+    array.push({title: item.tipoActividad, subt: item.actividad, date: item.fechai})
     })
     console.log(array)
 
