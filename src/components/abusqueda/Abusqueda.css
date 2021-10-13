@@ -108,8 +108,17 @@ background-color: #fafafa;
   margin-top: -20px;
   z-index: 2;
 }
-.mes-icond{
+.mes-icond {
     display: flex;
     position: fixed;
+
+}
+.fader {
+ padding-left: 13.5;
+}
+.titulo-d {
+  display: flex;
+  padding-top: 2%;
+  padding-left: 3%;
 
 }

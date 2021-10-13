@@ -6,18 +6,18 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ViewState, EditingState } from '@devexpress/dx-react-scheduler';
 import firebase from '../../Firebase'
 import {
-  Scheduler,
-  Resources,
-  MonthView,
-  TodayButton,
-  DateNavigator,
-  Appointments,
-  AppointmentTooltip,
-  AppointmentForm,
-  EditRecurrenceMenu,
-  DragDropProvider,
-  Toolbar,
-} from '@devexpress/dx-react-scheduler-material-ui';
+          Scheduler,
+          Resources,
+          MonthView,
+          TodayButton,
+          DateNavigator,
+          Appointments,
+          AppointmentTooltip,
+          AppointmentForm,
+          EditRecurrenceMenu,
+          DragDropProvider,
+          Toolbar,
+      } from '@devexpress/dx-react-scheduler-material-ui';
 
 import { green, deepOrange, lightBlue } from '@material-ui/core/colors';
 import { owners } from './tasks';
@@ -33,10 +33,9 @@ export default class Demo extends React.PureComponent {
     this.unsubscribe = null
     this.state = {
       actividades: [],
-      abierto: false,
-      fechai: '',
-      tipoActividad: '',
-      actividad:'',
+      tipoActividad: [],
+
+      abierto: false
 
     }
   }
@@ -45,13 +44,12 @@ export default class Demo extends React.PureComponent {
   onCollectionUpdate = (querySnapshot) => {
     const actividades = []
     querySnapshot.forEach((doc) => {
-      const { tipoActividad, fechai, actividad  } = doc.data()
+      const { tipoActividad, fechai,} = doc.data()
       actividades.push({
         key: doc.id,
         doc,
         tipoActividad,
         fechai,
-        actividad,
       })
     })
     this.setState({
@@ -107,13 +105,13 @@ export default class Demo extends React.PureComponent {
     this.props.history.push('/AgregarActividad');
   }
   render() {
-    var array = [{title: '', subt:'',  date: ''}]
+    var array = [{title: '',  date: ''}]
 
     const { data, resources } = this.state;
 
     var array = [{title: '', subt:'',   date: ''}]
-    this.state.actividades.map(item => {
-    array.push({title: item.tipoActividad, subt: item.actividad, date: item.fechai})
+        this.state.actividades.map(item => {
+        array.push({title: item.tipoActividad,  sub:item.activida,  date: item.fechai})
     })
     console.log(array)
 

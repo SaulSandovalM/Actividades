@@ -42,7 +42,7 @@ export default class DemoApp extends Component {
   }
 
   componentDidMount () {
-    // this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
 
   }
   render () {
@@ -60,9 +60,9 @@ export default class DemoApp extends Component {
       });
 
 var array = [{title: '', date: ''}]
-// this.state.actividades.map(item => {
-//   array.push({title: item.tipoActividad, date: item.fechai})
-//})
+this.state.actividades.map(item => {
+  array.push({title: item.tipoActividad, date: item.fechai})
+})
 console.log(array)
 
 var ara = [{title: 'lol', date: '2021-07-20'},{title: 'lol', date: '2021-07-20'}]
