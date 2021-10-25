@@ -83,65 +83,65 @@ export default class Demo extends React.PureComponent {
   //   this.commitChanges = this.commitChanges.bind(this);
   // }
 
-  commitChanges({ added, changed, deleted }) {
-    this.setState((state) => {
-      let { actividades } = state;
-      if (added) {
-        const startingAddedId = actividades.length > 0 ? actividades[actividades.length - 1].id + 1 : 0;
-        actividades = [...actividades, { id: startingAddedId, ...added }];
-      }
-      if (changed) {
-        actividades = actividades.map(appointment => (
-          changed[appointment.id] ?  { ...appointment, ...changed[appointment.id] } : appointment));
-      }
-      if (deleted !== undefined) {
-        actividades = actividades.filter(appointment => appointment.id !== deleted);
-      }
-      return { actividades };
-    });
-  }
+  // commitChanges({ added, changed, deleted }) {
+  //   this.setState((state) => {
+  //     let { actividades } = state;
+  //     if (added) {
+  //       const startingAddedId = actividades.length > 0 ? actividades[actividades.length - 1].id + 1 : 0;
+  //       actividades = [...actividades, { id: startingAddedId, ...added }];
+  //     }
+  //     if (changed) {
+  //       actividades = actividades.map(appointment => (
+  //         changed[appointment.id] ?  { ...appointment, ...changed[appointment.id] } : appointment));
+  //     }
+  //     if (deleted !== undefined) {
+  //       actividades = actividades.filter(appointment => appointment.id !== deleted);
+  //     }
+  //     return { actividades };
+  //   });
+  // }
 
   handleBack() {
     this.props.history.push('/AgregarActividad');
   }
   render() {
-    var array = [{title: '',  date: ''}]
-
-    const { data, resources } = this.state;
-
-    var array = [{title: '', subt:'',   date: ''}]
-        this.state.actividades.map(item => {
-        array.push({title: item.tipoActividad,  sub:item.activida,  date: item.fechai})
-    })
-    console.log(array)
-
-  const owners = [
-      {
-        text: 'Andrew Glover',
-        id: 1,
-        color: '#7E57C2',
-      }, {
-        text: 'Arnie Schwartz',
-        id: 2,
-        color: '#FF7043',
-      }, {
-        text: 'John Heart',
-        id: 3,
-        color: '#E91E63',
-      }, {
-        text: 'Taylor Riley',
-        id: 4,
-        color: '#E91E63',
-      }, {
-        text: 'Brad Farkus',
-        id: 5,
-        color: '#AB47BC',
-      }, {
-        text: 'Arthur Miller',
-        id: 6,
-        color: '#FFA726',
-      },
-    ];
+  //   var array = [{title: '',  date: ''}]
+  //
+  //   const { data, resources } = this.state;
+  //
+  //   var array = [{title: '', subt:'',   date: ''}]
+  //       this.state.actividades.map(item => {
+  //       array.push({title: item.tipoActividad,  sub:item.activida,  date: item.fechai})
+  //   })
+  //   console.log(array)
+  //
+  // const owners = [
+  //     {
+  //       text: 'Andrew Glover',
+  //       id: 1,
+  //       color: '#7E57C2',
+  //     }, {
+  //       text: 'Arnie Schwartz',
+  //       id: 2,
+  //       color: '#FF7043',
+  //     }, {
+  //       text: 'John Heart',
+  //       id: 3,
+  //       color: '#E91E63',
+  //     }, {
+  //       text: 'Taylor Riley',
+  //       id: 4,
+  //       color: '#E91E63',
+  //     }, {
+  //       text: 'Brad Farkus',
+  //       id: 5,
+  //       color: '#AB47BC',
+  //     }, {
+  //       text: 'Arthur Miller',
+  //       id: 6,
+  //       color: '#FFA726',
+  //     },
+  //   ];
 
     return (
       <div className= 'agenda-fader'>
@@ -158,7 +158,7 @@ export default class Demo extends React.PureComponent {
         <div>
       <Paper>
         <Scheduler
-          data={array}
+
           locale="Es"
           >
         <ViewState
@@ -177,10 +177,7 @@ export default class Demo extends React.PureComponent {
         <AppointmentForm />
         <TodayButton/>
         <DateNavigator />
-        <Resources
-            data={resources}
-            mainResourceName="roomId"
-            />
+        
         <DragDropProvider />
         </Scheduler>
       </Paper>
