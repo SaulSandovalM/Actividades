@@ -21,39 +21,39 @@ export default class Reportepdf extends Component {
   }
 
   onCollectionUpdate = (querySnapshot) => {
-   //  const actividades = []
-   //  var numfila = 0
-   //  querySnapshot.forEach((doc) => {
-   //    numfila++
-   //    const { tipoActividad, estados, actividad, lugar, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipios, asistentes, direccion} = doc.data()
-   //    actividades.push({
-   //      key:doc.id,
-   //      doc,
-   //      numfila:numfila,
-   //      tipoActividad,
-   //      imparte,
-   //      estados,
-   //      fechai,
-   //      fechaf,
-   //      convoca,
-   //      dependencia,
-   //      horai,
-   //      objetivo,
-   //      municipios,
-   //      asistentes,
-   //      direccion,
-   //      lugar,
-   //      actividad
-   //
-   //    })
-   //  })
-   //  this.setState({
-   //    actividades
-   // })
+    const actividades = []
+    var numfila = 0
+    querySnapshot.forEach((doc) => {
+      numfila++
+      const { tipoActividad, estados, actividad, lugar, imparte, fechai, fechaf, convoca, dependencia, horai, objetivo, municipios, asistentes, direccion} = doc.data()
+      actividades.push({
+        key:doc.id,
+        doc,
+        numfila:numfila,
+        tipoActividad,
+        imparte,
+        estados,
+        fechai,
+        fechaf,
+        convoca,
+        dependencia,
+        horai,
+        objetivo,
+        municipios,
+        asistentes,
+        direccion,
+        lugar,
+        actividad
+
+      })
+    })
+    this.setState({
+      actividades
+   })
   }
 
   componentDidMount() {
-    // this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
+   this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate)
   }
   handleBack() {
       this.props.history.push('/Reportes');
@@ -110,7 +110,7 @@ export default class Reportepdf extends Component {
                   <th className='all-tabla color-t '>MUNICIPIO/ESTADO</th>
                   <th className='all-tabla color-t '>SERVIDOR@S PUBLICOS COMISIONAD@S</th>
                 </tr>
-              {/* this.state.actividades.map(actividades =>
+              {this.state.actividades.map(actividades =>
                 <tr>
                   <td className='all-tabla color-tn'>{actividades.numfila}</td>
                   <td  className='all-tabla tabla-f'>{actividades.fechai}</td>
@@ -121,7 +121,7 @@ export default class Reportepdf extends Component {
                   <td  className='all-tabla'>{actividades.convoca}</td>
                 </tr>
                 )
-              */}
+              }
               </table>
             </div>
           </div>

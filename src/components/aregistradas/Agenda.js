@@ -177,9 +177,9 @@ export default class Demo extends React.PureComponent {
         <AppointmentForm />
         <TodayButton/>
         <DateNavigator />
-        
+
         <DragDropProvider />
-        </Scheduler>
+        </Scheduler> 
       </Paper>
         </div>
       </div>

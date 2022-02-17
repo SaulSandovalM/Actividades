@@ -555,11 +555,122 @@ export default class Aactividad extends Component {
                         onChange={this.onChange}
                         required
                       >
-                        <MenuItem value=  'Subprocurador de Procedimientos Penales Región Oriente'>Subprocurador de Procedimientos Penales Región Oriente</MenuItem>
+
+//------------------------------- Nuevos catalogos-----------------------------------------------------------------------------------------------------------------------------------
+
+                      //Despacho del Procurador
+                        <MenuItem value= 'Despacho del Procurador' >Despacho del Procurador</MenuItem>
+                        <MenuItem value= 'Jefe del  Despacho del Procurador'>Jefe del  Despacho del Procurador</MenuItem>
+                        <MenuItem value= 'Director de Paneación y Calidad' >Director de Paneación y Calidad</MenuItem>
+                        <MenuItem value= 'Titular de de la Coordinacion de Vinculación' >Titular de de la Coordinacion de Vinculación</MenuItem>
+                        <MenuItem value= 'Unidad Institucional para la Igualdad entre Mujeres y Hombres'>Unidad Institucional para la Igualdad entre Mujeres y Hombres</MenuItem>
+                        <MenuItem value= 'Director del Instituto de Formacion Profesional'>Director del Instituto de Formacion Profesional</MenuItem>
+
+                      //Encargado de la Subprocuraduria Juridica y de Derechos Humanos
+                        <MenuItem value= 'Subprocuraduria Juridica y de Derechos Humanos' >Subprocuraduria Juridica y de Derechos Humanos</MenuItem>
+                        <MenuItem value= 'Unidad de extinción de Dominio y Representacion Legal' >Unidad de extinción de Dominio y Representacion Legal</MenuItem>
+                        <MenuItem value= 'Unidad de Inteligencia Patrimonial y Economica' >Unidad de Inteligencia Patrimonial y Economica</MenuItem>
+                        <MenuItem value= 'Coordinación de Mandamientos Judiciales y Apoyo al Proceso Sustantivo' >Coordinación de Mandamientos Judiciales y Apoyo al Proceso Sustantivo</MenuItem>
+                        <MenuItem value= 'Direccion de Normatividad y Enlace Legislativo' >Direccion de Normatividad y Enlace Legislativo</MenuItem>
+                        <MenuItem value= 'Dirección de Derechos Humanos, Amparo y Trasparencia' >Dirección de Derechos Humanos, Amparo y Trasparencia</MenuItem>
+
+                      //SubProcuraduria Oriente
+                        <MenuItem value= 'SubProcuraduria Oriente'>SubProcuraduria Oriente</MenuItem>
+                        <MenuItem value= 'Director General de Investigación y Litigación Oriente' >Director General de Investigación y Litigación Oriente</MenuItem>
+                        <MenuItem value= 'Director General para Atencion Temprana Oriente' >Director General para Atencion Temprana Oriente</MenuItem>
+                        <MenuItem value= 'Unidad de Analisis y Procesamiento Oriente'>Unidad de Analisis y Procesamiento Oriente</MenuItem>
+
+
+                      //SubProcuraduria Poniente
+                        <MenuItem value= 'SubProcuraduria Poniente'>SubProcuraduria Poniente</MenuItem>
+                        <MenuItem value= 'Dirección General de Investigación Litigación' >Dirección General de Investigación Litigación Poniente</MenuItem>
+                        <MenuItem value= 'Direccion General para Atencion Temprana Poniente' >Direccion General para Atencion Temprana Poniente</MenuItem>
+                        <MenuItem value= 'Unidad de Analisis y Procesamiento Poniente' >Unidad de Analisis y Procesamiento Poniente</MenuItem>
+
+                      //SubProcuraduria de Delitos de Género, Desaparicion de Personas e Impacto
+                        <MenuItem value= 'SubProcuraduria de Delitos de Género, Desaparicion de Personas e Impacto' >SubProcuraduria de Delitos de Género, Desaparicion de Personas e Impacto</MenuItem>
+                        <MenuItem value= 'Fiscalia de Delitos Sexuales y Contra la Familia' >Fiscalia de Delitos Sexuales y Contra la Familia</MenuItem>
+                        <MenuItem value= 'Fiscalia para Adolecentes' >Fiscalia para Adolecentes</MenuItem>
+                        <MenuItem value= 'Fiscalia para delitos de Desaparicion de Personas' >Fiscalia para delitos de Desaparición de Personas</MenuItem>
+                        <MenuItem value= 'Fiscalia de Delitos de Genero y Trata de Personas' >Fiscalia de Delitos de Genero y Trata de Personas</MenuItem>
+                        <MenuItem value= 'Coordinación de Revisión y Seguimineto' >Coordinación de Revisión y Seguimineto</MenuItem>
+                        <MenuItem value= 'Dirección de Atención Temprana' >Dirección de Atención Temprana</MenuItem>
+                        <MenuItem value= 'Unidad de Analisis y Contexto' >Unidad de Analisis y Contexto</MenuItem>
+                        <MenuItem value= 'Coordinación de Busqueda e identificacion de Personas'>Coordinación de Busqueda e identificacion de Personas</MenuItem>
+
+
+                      //Fiscalia Especializada en Delitos Corrupción
+                        <MenuItem value= 'Fiscalia Especializada en Delitos Corrupción' >Fiscalia Especializada en Delitos Corrupción</MenuItem>
+                        <MenuItem value= 'Fiscalia de delitos de Tortura'>Fiscalia de delitos de Tortura</MenuItem>
+                        <MenuItem value= 'Dirección General de Investigacion y Litigación'>Dirección General de Investigacion y Litigación</MenuItem>
+                        <MenuItem value= 'Coordinación Juridica'>Coordinación Juridica</MenuItem>
+
+                      //Fiscalía Especializada de Delitos Electorales
+                        <MenuItem value= 'Fiscalía Especializada de Delitos Electorales' >Fiscalía Especializada de Delitos Electorales</MenuItem>
+                        <MenuItem value= 'Coordinación de Investigación y Litigación' >Coordinación de Investigación y Litigación</MenuItem>
+                        <MenuItem value= 'Coordinación de Verificacion de Control de Procesos' >Coordinación de Verificacion de Control de Procesos</MenuItem>
+
+                      //Visitaduria General
+                        <MenuItem value= 'Visitaduria General' >Visitaduria General</MenuItem>
+                        <MenuItem value= 'Direccion de Asuntos Internos' >Direccion de Asuntos Internos</MenuItem>
+                        <MenuItem value= 'Direccion de Quejas de Quejas y Revisión'>Direccion de Quejas de Quejas y Revisión</MenuItem>
+
+
+                      //Unidad especialida en el combate al secuestro
+                        <MenuItem value= 'Unidad especialida en el combate al secuestro' >Unidad especialida en el combate al secuestro</MenuItem>
+
+                      //Unidad de Recuperación de Vehiculos
+                        <MenuItem value= '' ></MenuItem>
+                        <MenuItem value= 'Unidad de Recuperación de Vehiculos' >Unidad de Recuperación de Vehiculos</MenuItem>
+
+                      //Dirección General del Sistema Mixto
+                        <MenuItem value= 'Dirección General del Sistema Mixto' >Dirección General del Sistema Mixto</MenuItem>
+                        <MenuItem value= 'Dirección de Averiguaciones Previas' >Dirección de Averiguaciones Previas</MenuItem>
+                        <MenuItem value= 'Dirección de control de Procesos' >Dirección de control de Procesos</MenuItem>
+
+                      //Agencia de investigacion Criminal
+                        <MenuItem value= 'División de Investigación'>División de Investigación</MenuItem>
+                        <MenuItem value= 'División Cientifica'>División Cientifica</MenuItem>
+                        <MenuItem value= 'División de Inteligencia'>División de Inteligencia</MenuItem>
+
+                      //Centro de Justicia Restaurativa
+                        <MenuItem value= 'Centro de Justicia Restaurativa' ></MenuItem>
+                        <MenuItem value= '' ></MenuItem>
+
+
+                      //Dirección General de Administación
+                        <MenuItem value= 'Dirección General de Administación' >Dirección General de Administación</MenuItem>
+                        <MenuItem value= 'Centro de Justicia Restaurativa' ></MenuItem>
+                        <MenuItem value= '' ></MenuItem>
+
+                      //Organo interno de Control
+                        <MenuItem value= 'Organo interno de Control' >Organo interno de Control</MenuItem>
+                        <MenuItem value= 'Dirección de Recursos Financieros' >Dirección de Recursos Financieros</MenuItem>
+                        <MenuItem value= 'Dirección de Personal' >Dirección de Personal</MenuItem>
+                        <MenuItem value= 'Dirección de Centenario y Tecnologias de la información y Comunicación' >Dirección de Centenario y Tecnologias de la información y Comunicación</MenuItem>
+                        <MenuItem value= 'Dirección de Recursos Materiales y Servicios Generales'>Dirección de Recursos Materiales y Servicios Generales</MenuItem>
+                        <MenuItem value= 'Dirección de Archivo' >Dirección de Archivo</MenuItem>
+                        <MenuItem value= 'Dirección de Control y Registro de Aseguramientos'>Dirección de Control y Registro de Aseguramientos</MenuItem>
+                        <MenuItem value= 'Dirección de Recursos Federales' >Dirección de Recursos Federales</MenuItem>
+                        <MenuItem value= 'Dirección de Control Administrativo y Validación'>Dirección de Control Administrativo y Validación</MenuItem>
+
+                      //Organo Interno de Control
+                        <MenuItem value= 'Organo Interno de Control' >Organo Interno de Control</MenuItem>
+                        <MenuItem value= 'Área de Auditoría' >Área de Auditoría</MenuItem>
+                        <MenuItem value= 'Área de Denuncia y Responsabilidades Administrativas' >Área de Denuncia y Responsabilidades Administrativas</MenuItem>
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+                        //<MenuItem value=  'Subprocurador de Procedimientos Penales Región Oriente'>Subprocurador de Procedimientos Penales Región Oriente</MenuItem>
+                        <MenuItem value= 'Subprocuraduria Oriente'>Subprocuraduria Oriente</MenuItem>
+
+                        //IX Director General de la Unidad Especializada en el Combate al Secuestro
                         <MenuItem value=  'Director General de la Unidad Especializada en el Combate al Secuestro'>Director General de la Unidad Especializada en el Combate al Secuestro</MenuItem>
                         <MenuItem value=  'Director General de Servicios Periciales'>Director General de Servicios Periciales</MenuItem>
                         <MenuItem value=  'Directora General de la Coordinación de Investigación y Recuperación de Vehículos Robados'>Directora General de la Coordinación de Investigación y Recuperación de Vehículos Robados</MenuItem>
-                        <MenuItem value=  'Secretaria del Despacho del C. Procurador '>Secretaria del Despacho del C. Procurador </MenuItem>
+                        <MenuItem value=  'Secretaria del Despacho del C. Procurador '>Secretaria del Despacho del C. Procurador</MenuItem>
                         <MenuItem value=  'Director de Planeación'>Director de Planeación</MenuItem>
                         <MenuItem value=  'Subprocuradora de Procedimientos Penales Región Poniente'>Subprocuradora de Procedimientos Penales Región Poniente</MenuItem>
                         <MenuItem value=  'Director General Jurídico'>Director General Jurídico</MenuItem>
